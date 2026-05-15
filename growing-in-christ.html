@@ -623,46 +623,116 @@
   }
   .outbound-note strong { color: var(--ink-soft); }
 
-  /* ────────── Discuss / apply tiles ────────── */
-  .apply-grid {
+  /* ────────── Discuss · apply · pray cards ────────── */
+  .discuss-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-top: 4px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 8px;
   }
-  .apply-tile {
+  .discuss-card {
     background: var(--paper-raised);
     border: 1px solid var(--rule);
-    border-radius: 10px;
-    padding: 18px 18px 20px;
-    text-decoration: none;
+    border-radius: 12px;
+    padding: 26px 28px 24px;
     color: inherit;
-    transition: all 0.15s ease;
   }
-  .apply-tile:hover {
-    border-color: var(--accent-soft);
-    transform: translateY(-1px);
-  }
-  .apply-tile-label {
+  .discuss-card-wide { grid-column: 1 / -1; }
+  .discuss-card-label {
     font-family: "Inter", sans-serif;
     font-size: 10px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     color: var(--accent);
     margin-bottom: 8px;
   }
-  .apply-tile-title {
+  .discuss-card-title {
     font-weight: 600;
-    font-size: 16px;
-    margin-bottom: 6px;
+    font-size: 20px;
+    margin: 0 0 16px;
     color: var(--ink);
+    letter-spacing: -0.005em;
   }
-  .apply-tile-desc {
+  .discuss-list {
+    margin: 0 0 12px;
+    padding-left: 22px;
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    line-height: 1.55;
+  }
+  .discuss-list li { margin-bottom: 10px; }
+  .discuss-list li::marker { color: var(--accent); font-weight: 600; }
+  .discuss-card-footer {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    line-height: 1.65;
+    color: var(--ink-faint);
+    border-top: 1px solid var(--rule);
+    padding-top: 14px;
+    margin-top: 16px;
+  }
+  .discuss-card-footer strong { color: var(--ink-soft); font-weight: 600; }
+  .daily-plan { margin: 0; }
+  .daily-row {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .daily-row:last-child { border-bottom: 0; }
+  .daily-day {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 2px;
+  }
+  .daily-row .daily-title { color: var(--ink); font-weight: 600; }
+  .daily-row .daily-ref {
     font-family: "Inter", sans-serif;
     font-size: 12px;
     color: var(--ink-faint);
-    line-height: 1.5;
+    margin-left: 6px;
+  }
+  .daily-row .daily-question { font-style: italic; color: var(--ink-soft); margin-top: 2px; }
+  .prayer-quote, .memorize-quote {
+    font-family: var(--serif), Georgia, serif;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink);
+    border-left: 3px solid var(--accent);
+    padding: 4px 0 4px 18px;
+    margin: 4px 0 0;
+    font-style: italic;
+  }
+  .memorize-quote { font-size: 19px; }
+  .memorize-ref {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 12px;
+  }
+  .discuss-card p {
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    line-height: 1.6;
+    margin: 0 0 12px;
+  }
+  .discuss-card p:last-child { margin-bottom: 0; }
+  .discuss-card p strong { color: var(--ink); font-weight: 600; }
+  @media (max-width: 720px) {
+    .discuss-grid { grid-template-columns: 1fr; }
+    .discuss-card-wide { grid-column: auto; }
   }
 
   /* ────────── About the church ────────── */
@@ -845,12 +915,6 @@
 <header class="site-header">
   <div class="site-header-inner">
     <a href="/" class="site-brand">Providence Community Church</a>
-    <nav class="site-nav ui">
-      <a href="/sermons">Sermons</a>
-      <a href="/topics">Topics</a>
-      <a href="/about">About</a>
-      <a href="/visit">Visit</a>
-    </nav>
   </div>
 </header>
 
@@ -1117,37 +1181,106 @@
       <div class="section-eyebrow ui">Take it further</div>
       <h2 class="section-title-h2">Discuss · apply · pray</h2>
 
-      <div class="apply-grid">
-        <a href="#small-group" class="apply-tile">
-          <div class="apply-tile-label ui">Small groups</div>
-          <div class="apply-tile-title">6 discussion questions</div>
-          <div class="apply-tile-desc">Ready-to-print leader brief with cross-references and landing-zone application. PDF available.</div>
-        </a>
-        <a href="#devotional" class="apply-tile">
-          <div class="apply-tile-label ui">Daily readings</div>
-          <div class="apply-tile-title">5-day reading plan</div>
-          <div class="apply-tile-desc">Mon–Fri scripture readings drawn from this sermon's 25 citations.</div>
-        </a>
-        <a href="#prayer" class="apply-tile">
-          <div class="apply-tile-label ui">Prayer</div>
-          <div class="apply-tile-title">Weekly prayer prompt</div>
-          <div class="apply-tile-desc">A prayer drawn from the sermon's "substance, standard, source, goal" framing.</div>
-        </a>
-        <a href="#family" class="apply-tile">
-          <div class="apply-tile-label ui">Family table</div>
-          <div class="apply-tile-title">Sunday-evening conversation card</div>
-          <div class="apply-tile-desc">One prompt for the table; works for kids and adults alike.</div>
-        </a>
-        <a href="#couples" class="apply-tile">
-          <div class="apply-tile-label ui">Couples</div>
-          <div class="apply-tile-title">Three questions over coffee</div>
-          <div class="apply-tile-desc">For married members — works as a midweek check-in or a longer date conversation.</div>
-        </a>
-        <a href="#memory" class="apply-tile">
-          <div class="apply-tile-label ui">Memorize</div>
-          <div class="apply-tile-title">Ephesians 4:15</div>
-          <div class="apply-tile-desc">"Speaking the truth in love, we are to grow up in every way into him who is the head, into Christ."</div>
-        </a>
+      <p class="section-lede">Six ways to carry this sermon through the week — from your small group on Wednesday to your kids on Sunday night.</p>
+
+      <div class="discuss-grid">
+
+        <!-- Small-group leader brief -->
+        <div class="discuss-card discuss-card-wide">
+          <div class="discuss-card-label ui">Small-group leader brief</div>
+          <h3 class="discuss-card-title">Six questions for midweek</h3>
+          <ol class="discuss-list">
+            <li>When you hear "our church is growing," what's the first metric you reach for? Why?</li>
+            <li>The pastor named <em>relational growth</em> and <em>theological growth</em> as Providence's blind spot. Where have you seen yourself or our group treat one of these as an automatic good?</li>
+            <li>The Rick-Warren-class-at-age-20 story — what's the version of that you've lived through? What changed your discernment?</li>
+            <li>What's the difference between a false shepherd and a doctrinally-orthodox-but-not-Christ-centered teacher? Why does the latter feel safer to follow?</li>
+            <li><em>Preach, pray, love, stay</em> — which one is hardest in our group right now?</li>
+            <li>What would change about how we evaluate ourselves as a group if Christ-centeredness was the only success metric?</li>
+          </ol>
+          <div class="discuss-card-footer">
+            <strong>Cross-references the pastor named:</strong> Eph 4:11–16 · 1 Cor 3:5–9 · Col 1:28 · Phil 3:7–8 · 2 Pet 3:18<br>
+            <strong>Application landing zone:</strong> Sanctification + Ecclesiology
+          </div>
+        </div>
+
+        <!-- 5-day reading plan -->
+        <div class="discuss-card discuss-card-wide">
+          <div class="discuss-card-label ui">Daily readings</div>
+          <h3 class="discuss-card-title">Five-day reading plan</h3>
+          <div class="daily-plan">
+            <div class="daily-row">
+              <div class="daily-day">Mon</div>
+              <div>
+                <span class="daily-title">Not all growth is good</span><span class="daily-ref">Eph 4:11–14</span>
+                <div class="daily-question">Where in your life are you measuring growth without asking whether it's growth in Christ?</div>
+              </div>
+            </div>
+            <div class="daily-row">
+              <div class="daily-day">Tue</div>
+              <div>
+                <span class="daily-title">Christ visible in every direction</span><span class="daily-ref">Eph 4:15–16 · Col 3:11</span>
+                <div class="daily-question">Walk through yesterday — name three moments where Christ was visible to you. Three where he wasn't.</div>
+              </div>
+            </div>
+            <div class="daily-row">
+              <div class="daily-day">Wed</div>
+              <div>
+                <span class="daily-title">Our blind spot</span><span class="daily-ref">1 Cor 3:5–9</span>
+                <div class="daily-question">Where am I taking relational or theological growth as an automatic good?</div>
+              </div>
+            </div>
+            <div class="daily-row">
+              <div class="daily-day">Thu</div>
+              <div>
+                <span class="daily-title">Two kinds of false shepherds</span><span class="daily-ref">Mt 7:15–20 · Phil 3:7–8</span>
+                <div class="daily-question">Whose teaching do I follow because it's true rather than because it points to Christ?</div>
+              </div>
+            </div>
+            <div class="daily-row">
+              <div class="daily-day">Fri</div>
+              <div>
+                <span class="daily-title">Preach, pray, love, stay</span><span class="daily-ref">Acts 2:42–47</span>
+                <div class="daily-question">Which of those four is the hardest for me right now?</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weekly prayer -->
+        <div class="discuss-card">
+          <div class="discuss-card-label ui">Weekly prayer</div>
+          <h3 class="discuss-card-title">A prayer drawn from this sermon</h3>
+          <blockquote class="prayer-quote">Father, you have given me Christ as my substance. You have set Christ as my standard. You have made Christ my source. You have appointed Christ as my goal. Where growth has been happening apart from him, expose it. Where I have been satisfied with growth not in him, give me dissatisfaction. Make him visible in every direction I look this week.</blockquote>
+        </div>
+
+        <!-- Memorize -->
+        <div class="discuss-card">
+          <div class="discuss-card-label ui">Memorize</div>
+          <h3 class="discuss-card-title">Ephesians 4:15</h3>
+          <blockquote class="memorize-quote">"Speaking the truth in love, we are to grow up in every way into him who is the head, into Christ."</blockquote>
+          <div class="memorize-ref">Mon text · Tue lock-screen · Wed audio · Thu prayer · Fri family card · Sat share · Sun recap</div>
+        </div>
+
+        <!-- Family table -->
+        <div class="discuss-card">
+          <div class="discuss-card-label ui">Family table</div>
+          <h3 class="discuss-card-title">Sunday-evening conversation</h3>
+          <p>Tonight's sermon — <em>Growing in Christ.</em></p>
+          <p><strong>One question for everyone:</strong> when you hear something is growing, what's the first thing you think? Pastor Chris talked about how growth isn't automatically good — it depends on <em>what</em> is growing.</p>
+          <p><strong>Then ask:</strong> where do you see growth in our family right now? Is it growth toward Christ?</p>
+        </div>
+
+        <!-- Couples -->
+        <div class="discuss-card">
+          <div class="discuss-card-label ui">Couples</div>
+          <h3 class="discuss-card-title">Three questions over coffee</h3>
+          <ol class="discuss-list">
+            <li>Which of our growth areas is most exciting right now?</li>
+            <li>Is that growth pointing us toward Christ, away from him, or sideways?</li>
+            <li>What's one structural thing we can change in our weekly rhythm to make Christ more visible to each other?</li>
+          </ol>
+        </div>
+
       </div>
     </section>
 
@@ -1230,36 +1363,6 @@ through the books of the Bible.
   <div>Canonical URL: <code>https://providencecommunitychurch.example/sermons/2026/02/growing-in-christ</code></div>
   <div>Page generated by Sermon Steward · processed 2026-02-23 03:17 UTC · model: claude-sonnet-4-6 · 39 units · 25 citations · 2 quotations</div>
 </footer>
-
-<!-- ═══════════ Sticky publish bar ═══════════ -->
-<div class="publish-bar ui" id="publishBar">
-  <div class="publish-bar-status">Status: <strong id="publishStatus">Pending review</strong></div>
-  <button class="btn btn-primary" data-action="publish">Publish</button>
-  <button class="btn" data-action="edit">Edit</button>
-  <button class="btn btn-secondary" data-action="skip">Skip</button>
-</div>
-
-<script>
-  const bar = document.getElementById('publishBar');
-  const statusEl = document.getElementById('publishStatus');
-  const buttons = bar.querySelectorAll('button[data-action]');
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const action = btn.dataset.action;
-      bar.classList.remove('published', 'skipped');
-      if (action === 'publish') {
-        bar.classList.add('published');
-        statusEl.textContent = 'Published · scheduled for 2026-02-23 06:00 UTC';
-      } else if (action === 'skip') {
-        bar.classList.add('skipped');
-        statusEl.textContent = 'Skipped this week';
-      } else if (action === 'edit') {
-        statusEl.textContent = 'In edit · changes save automatically';
-      }
-    });
-  });
-</script>
 
 </body>
 </html>
