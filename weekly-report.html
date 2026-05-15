@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Weekly Sermon Report — Growing in Christ</title>
+<style>
+  :root {
+    --ink:        #1a1a2e;
+    --ink-soft:   #4a4a5e;
+    --ink-faint:  #7a7a8a;
+    --paper:      #faf7f0;
+    --paper-raised: #fffdf7;
+    --rule:       #e8e2d4;
+    --rule-soft:  #f0ebe0;
+    --accent:     #2d5a4a;
+    --accent-soft:#5a8073;
+    --gold:       #b8893a;
+    --gold-bg:    #fdf4d9;
+    --gold-deep:  #6e5018;
+    --tag-live:   #2d5a4a;
+    --tag-adj:    #5a7a8e;
+    --tag-sketch: #8b7355;
+    --danger:     #a8453d;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Source Serif Pro", "Iowan Old Style", "Charter", Georgia, serif;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .ui {
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+
+  code, .mono {
+    font-family: ui-monospace, "SF Mono", Monaco, Consolas, monospace;
+    font-size: 0.88em;
+  }
+
+  /* ────────── Header ────────── */
+  header.report-header {
+    background: var(--paper-raised);
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 32px 22px;
+  }
+
+  .header-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 18px;
+  }
+
+  .brand {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  .brand-sub {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-faint);
+    margin-top: 4px;
+  }
+
+  .tier-toggle {
+    display: inline-flex;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--paper);
+  }
+
+  .tier-toggle button {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    padding: 8px 14px;
+    border: 0;
+    background: transparent;
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .tier-toggle button.active {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .tier-toggle button:not(.active):hover {
+    background: var(--rule-soft);
+  }
+
+  /* ────────── Main column ────────── */
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px;
+  }
+
+  /* ────────── Sermon meta strip ────────── */
+  .sermon-meta {
+    margin-bottom: 36px;
+  }
+
+  .sermon-title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin: 0 0 8px;
+  }
+
+  .sermon-cite {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: var(--ink-faint);
+    letter-spacing: 0.02em;
+    margin-bottom: 14px;
+  }
+
+  .sermon-cite span + span::before {
+    content: "·";
+    margin: 0 8px;
+    color: var(--rule);
+  }
+
+  .loci-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+
+  .locus {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 9px;
+    background: var(--rule-soft);
+    color: var(--ink-soft);
+    border-radius: 999px;
+    letter-spacing: 0.01em;
+  }
+
+  /* ────────── Sections ────────── */
+  section.report-section {
+    padding: 36px 0 28px;
+    border-top: 1px solid var(--rule);
+  }
+
+  section.report-section:first-of-type {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+
+  .section-num {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+  }
+
+  .section-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+  }
+
+  .section-tags {
+    display: inline-flex;
+    gap: 6px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .tag {
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 3px 7px;
+    border-radius: 4px;
+    background: var(--rule-soft);
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .tag.live    { background: #e6efe9; color: var(--tag-live); }
+  .tag.adj     { background: #e7eef2; color: var(--tag-adj); }
+  .tag.sketch  { background: #efe8dc; color: var(--tag-sketch); }
+  .tag.lock    { background: var(--gold-bg); color: var(--gold-deep); }
+
+  .section-lede {
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+
+  /* ────────── Stat grid (§1) ────────── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .stat-cell {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+  .stat-num {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .stat-label {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-top: 6px;
+  }
+
+  blockquote.thesis {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 19px;
+    line-height: 1.45;
+    font-style: italic;
+    color: var(--ink);
+    border-left: 3px solid var(--accent);
+    padding: 6px 0 6px 18px;
+    margin: 20px 0;
+  }
+
+  /* ────────── §1 decomp content blocks ────────── */
+  .citation-chain {
+    font-family: ui-monospace, "SF Mono", Monaco, monospace;
+    font-size: 13px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    word-spacing: 0.05em;
+  }
+  .citation-chain .sep {
+    color: var(--rule);
+    margin: 0 3px;
+  }
+  ol.decomp-list {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 0;
+    counter-reset: decomp;
+  }
+  ol.decomp-list li {
+    counter-increment: decomp;
+    padding: 7px 0 7px 30px;
+    position: relative;
+    border-bottom: 1px solid var(--rule-soft);
+    color: var(--ink);
+  }
+  ol.decomp-list li:last-child { border-bottom: 0; }
+  ol.decomp-list li::before {
+    content: counter(decomp);
+    position: absolute;
+    left: 0;
+    top: 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--accent-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  ol.decomp-list li strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  ol.decomp-list li .ill-type {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+    margin-left: 4px;
+  }
+  ol.decomp-list li .anchor-star {
+    color: var(--gold);
+    margin-right: 4px;
+    font-size: 13px;
+  }
+  blockquote.quote-block {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ink);
+    padding: 8px 0 8px 14px;
+    border-left: 3px solid var(--accent-soft);
+    margin: 8px 0;
+  }
+  blockquote.quote-block .quote-attr {
+    display: block;
+    font-style: normal;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-top: 6px;
+    letter-spacing: 0.02em;
+  }
+  .devo-reading {
+    font-family: ui-monospace, "SF Mono", Monaco, monospace;
+    font-size: 12px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    margin-top: 8px;
+  }
+  .devo-reading .sep {
+    color: var(--rule);
+    margin: 0 2px;
+  }
+
+  .unit-callout {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+  .unit-callout-label {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .unit-callout-text { font-style: italic; color: var(--ink); }
+  .unit-callout-text em { font-style: normal; font-weight: 500; }
+
+  /* ────────── Upsell (locked) block ────────── */
+  .locked-block {
+    background: var(--gold-bg);
+    border: 1px solid #f0d98a;
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    padding: 20px 22px;
+  }
+  .locked-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gold-deep);
+    margin-bottom: 10px;
+  }
+  .lock-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+  .locked-body {
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .cta {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    background: var(--gold-deep);
+    color: #fff;
+    padding: 9px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+  .cta:hover { background: #543c10; }
+
+  /* ────────── Reference list ────────── */
+  .ref-list { list-style: none; padding: 0; margin: 0 0 20px; }
+  .ref-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .ref-list li:last-child { border-bottom: 0; }
+  .ref-title { font-weight: 600; color: var(--ink); }
+  .ref-date  { color: var(--ink-faint); font-family: "Inter", sans-serif; font-size: 13px; }
+  .ref-meta  {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-top: 4px;
+  }
+  .ref-meta code { color: var(--accent); }
+  .ref-meta em { color: var(--ink-soft); font-style: italic; }
+
+  .neighbor-list { list-style: none; padding: 0; margin: 0 0 16px; }
+  .neighbor-list li {
+    padding: 6px 0;
+    color: var(--ink-soft);
+  }
+  .neighbor-list em { color: var(--ink); font-style: italic; }
+
+  .pastoral-note {
+    font-style: italic;
+    color: var(--ink-soft);
+    background: var(--paper-raised);
+    border-left: 3px solid var(--accent-soft);
+    padding: 12px 16px;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* ────────── Drift observations ────────── */
+  .drift-list { list-style: none; padding: 0; margin: 0; }
+  .drift-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .drift-list li:last-child { border-bottom: 0; }
+  .drift-metric { flex: 1; }
+  .drift-metric strong { font-weight: 600; }
+  .drift-delta {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .drift-delta.up   { background: #f7ebd5; color: var(--gold-deep); }
+  .drift-delta.down { background: #e7eef2; color: var(--tag-adj); }
+  .drift-alert {
+    background: #fdf2f0;
+    border: 1px solid #f0c8c0;
+    color: var(--danger);
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-top: 14px;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+  }
+
+  /* ────────── Ranked list (preachers / etc) ────────── */
+  ol.ranked {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: rank;
+  }
+  ol.ranked li {
+    counter-increment: rank;
+    padding: 14px 0 14px 38px;
+    position: relative;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  ol.ranked li:last-child { border-bottom: 0; }
+  ol.ranked li::before {
+    content: counter(rank);
+    position: absolute;
+    left: 0;
+    top: 14px;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--accent-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .preacher { font-weight: 600; }
+  .sermon-name { font-style: italic; }
+  .distance {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    color: var(--ink-faint);
+    margin-left: 4px;
+  }
+
+  /* ────────── Arc visualization ────────── */
+  .arc {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .arc-theme {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .arc-seq {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .arc-node {
+    flex: 1 1 0;
+    min-width: 180px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 10px 12px;
+    position: relative;
+  }
+  .arc-node.current {
+    background: #eef5f1;
+    border-color: var(--accent-soft);
+  }
+  .arc-node-title { font-weight: 600; font-size: 15px; line-height: 1.3; }
+  .arc-node-date {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    color: var(--ink-faint);
+    margin-top: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .arc-detect {
+    margin-top: 12px;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+  .arc-detect code { color: var(--accent); }
+
+  /* ────────── Artifact cards (approval flow) ────────── */
+  .artifact {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    transition: opacity 0.2s ease, background 0.2s ease;
+  }
+  .artifact-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .artifact-title {
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--ink);
+    margin: 0;
+  }
+  .artifact-status {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: var(--rule-soft);
+    color: var(--ink-faint);
+  }
+  .artifact.approved .artifact-status {
+    background: #e6efe9; color: var(--accent);
+  }
+  .artifact.approved .artifact-status::before { content: "✓ "; }
+  .artifact.skipped {
+    opacity: 0.45;
+    background: var(--paper);
+  }
+  .artifact.skipped .artifact-status {
+    background: #efe8dc; color: var(--tag-sketch);
+  }
+
+  .approval-bar {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .approval-bar button {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 7px 14px;
+    border-radius: 5px;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .approval-bar button:hover {
+    background: var(--rule-soft);
+    border-color: var(--ink-faint);
+  }
+  .approval-bar button.approve.active {
+    background: var(--accent); color: #fff; border-color: var(--accent);
+  }
+  .approval-bar button.skip.active {
+    background: var(--ink-soft); color: #fff; border-color: var(--ink-soft);
+  }
+
+  /* ────────── Discussion-question list ────────── */
+  ol.qlist {
+    padding-left: 20px;
+    margin: 0;
+  }
+  ol.qlist li {
+    padding: 5px 0;
+    color: var(--ink);
+  }
+
+  /* ────────── Devotional grid (7a) ────────── */
+  .devo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 6px;
+  }
+  .devo-day {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 12px 12px 14px;
+  }
+  .devo-weekday {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+  }
+  .devo-title {
+    font-weight: 600;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.3;
+    margin: 4px 0 8px;
+    color: var(--ink);
+  }
+  .devo-meta {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    color: var(--ink-faint);
+    line-height: 1.4;
+  }
+
+  /* ────────── Memory verse touch ────────── */
+  .verse-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+  .verse-ref {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+  }
+  .verse-text {
+    font-style: italic;
+    font-size: 16px;
+    margin-top: 4px;
+  }
+  .touch-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+  }
+  .touch-list li {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 5px;
+    padding: 8px 6px;
+    text-align: center;
+  }
+  .touch-day {
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+  }
+  .touch-format {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    color: var(--ink-soft);
+    line-height: 1.3;
+    margin-top: 4px;
+  }
+
+  /* ────────── Counseling card / seeker page / ad campaign ────────── */
+  .counseling-card, .seeker-row, .ad-campaign {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+  }
+  .seeker-slug {
+    font-family: ui-monospace, monospace;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .hero-excerpt {
+    color: var(--ink-soft);
+    font-style: italic;
+    margin-top: 4px;
+  }
+  .ad-campaign .campaign-title {
+    font-weight: 600;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .field {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 12px;
+    padding: 4px 0;
+    font-size: 14px;
+  }
+  .field-label {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding-top: 2px;
+  }
+
+  /* ────────── Next-week prep stats ────────── */
+  .prep-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .prep-cell {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 10px 12px;
+    text-align: left;
+  }
+
+  /* ────────── Footer ────────── */
+  footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 36px 32px 50px;
+    border-top: 1px solid var(--rule);
+    color: var(--ink-faint);
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  footer .version {
+    font-family: ui-monospace, monospace;
+  }
+
+  /* ────────── Tier-toggle visibility ────────── */
+  body.tier-weekly .show-corpus { display: none; }
+  body.tier-corpus .show-weekly { display: none; }
+
+  /* ────────── Responsive ────────── */
+  @media (max-width: 700px) {
+    main { padding: 24px 20px; }
+    .sermon-title { font-size: 26px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .devo-grid { grid-template-columns: repeat(2, 1fr); }
+    .touch-list { grid-template-columns: repeat(4, 1fr); }
+    .prep-grid { grid-template-columns: repeat(2, 1fr); }
+    .field { grid-template-columns: 1fr; gap: 2px; }
+    .section-tags { margin-left: 0; }
+  }
+</style>
+</head>
+<body class="tier-weekly">
+
+<header class="report-header">
+  <div class="header-inner">
+    <div>
+      <div class="brand">The Weekly Sermon Report</div>
+      <div class="brand-sub">Providence Church · Week of Feb 22, 2026</div>
+    </div>
+    <div class="tier-toggle ui" role="tablist" aria-label="Product tier">
+      <button class="active" data-tier="weekly">Weekly-only tier</button>
+      <button data-tier="corpus">Corpus tier</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- Sermon meta strip -->
+  <div class="sermon-meta">
+    <h1 class="sermon-title">Growing in Christ</h1>
+    <div class="sermon-cite">
+      <span>Feb 22, 2026</span>
+      <span>Ephesians 4:11–16</span>
+      <span>Pastor Chris Oswald</span>
+    </div>
+    <div class="loci-row">
+      <span class="locus">Ecclesiology</span>
+      <span class="locus">Christology</span>
+      <span class="locus">Sanctification</span>
+    </div>
+  </div>
+
+  <!-- ═══════════ §1 ═══════════ -->
+  <section class="report-section">
+    <div class="section-head">
+      <span class="section-num">§ 1</span>
+      <h2 class="section-title">The sermon, in numbers</h2>
+      <span class="section-tags">
+        <span class="tag" title="Fires on weekly-only tier">FIRES ✓</span>
+        <span class="tag live">LIVE</span>
+      </span>
+    </div>
+
+    <blockquote class="thesis">
+      All growth — numerical, relational, or theological — is only good if it is growth in Christ, who must be the substance, standard, source, and goal of everything the church is and does.
+    </blockquote>
+
+    <div class="unit-callout">
+      <div class="unit-callout-label">Pastoral correction · unit #11</div>
+      <div class="unit-callout-text">"Providence's blind spot is that we are discerning about numerical growth but may uncritically accept relational and theological growth as automatic goods."</div>
+    </div>
+
+    <div class="unit-callout">
+      <div class="unit-callout-label">Doctrinal loci · 3</div>
+      <div class="loci-row" style="margin-top:8px;">
+        <span class="locus">Ecclesiology</span>
+        <span class="locus">Christology</span>
+        <span class="locus">Sanctification</span>
+      </div>
+    </div>
+
+    <div class="unit-callout">
+      <div class="unit-callout-label">Bible citations · 25</div>
+      <div class="citation-chain">
+        Eph 4:11 <span class="sep">|</span> Eph 4:12 <span class="sep">|</span> Eph 4:13 <span class="sep">|</span> Eph 4:14 <span class="sep">|</span> Eph 4:15 <span class="sep">|</span> Eph 4:16 <span class="sep">|</span> 1 Cor 3:5 <span class="sep">|</span> 1 Cor 3:6 <span class="sep">|</span> 1 Cor 3:7 <span class="sep">|</span> 1 Cor 3:8 <span class="sep">|</span> 1 Cor 3:9 <span class="sep">|</span> Col 1:28 <span class="sep">|</span> Col 3:11 <span class="sep">|</span> Phil 3:7 <span class="sep">|</span> Phil 3:8 <span class="sep">|</span> 2 Pet 3:18 <span class="sep">|</span> Mt 7:15 <span class="sep">|</span> Mt 7:16 <span class="sep">|</span> Mt 7:17 <span class="sep">|</span> Mt 7:18 <span class="sep">|</span> Mt 7:19 <span class="sep">|</span> Mt 7:20 <span class="sep">|</span> Acts 2:42 <span class="sep">|</span> Acts 2:46 <span class="sep">|</span> Acts 2:47
+      </div>
+    </div>
+
+    <div class="unit-callout">
+      <div class="unit-callout-label">Illustrations · 5</div>
+      <ol class="decomp-list">
+        <li><span class="anchor-star" title="Personal-illustration anchor">★</span><strong>Rick-Warren-class-at-age-20</strong> <span class="ill-type">personal narrative · unit #4</span> — the pastor's own youthful enthusiasm for numerical-growth metrics, and the slow maturing that disabused him of treating size as a virtue.</li>
+        <li><strong>Dermatologist-vs-oncologist</strong> <span class="ill-type">analogy</span> — diagnostic precision asks <em>what</em> is growing and <em>where</em>; the church should diagnose growth with the same care rather than welcoming any visible enlargement.</li>
+        <li><strong>The country club that buried itself in members</strong> <span class="ill-type">case</span> — institutional bigness as decline disguised as success.</li>
+        <li><strong>The 25-year marriage drifting sideways</strong> <span class="ill-type">analogy</span> — relational growth that doesn't bend toward shared Christ-centered ground can deepen and disorient at the same time.</li>
+        <li><strong>The seminary classmate</strong> <span class="ill-type">vignette</span> — more confident in his theology each year, less interested in Christ each year. Theological growth divorced from Christology.</li>
+      </ol>
+    </div>
+
+    <div class="unit-callout">
+      <div class="unit-callout-label">Theological claims · 5</div>
+      <ol class="decomp-list">
+        <li>Growth is not a univocal good; the kind, source, and direction of growth determine whether it is good growth.</li>
+        <li>Christ is the only condition under which numerical, relational, and theological growth become unambiguously good.</li>
+        <li>Christ must function in four ways for a church to grow well: as substance, standard, source, and goal.</li>
+        <li>The maturity Paul calls the church toward in Eph 4 is not behavioral improvement but conformity to Christ.</li>
+        <li>False teaching includes not only obvious counterfeits but doctrinally-orthodox teaching that does not consistently point to Christ.</li>
+      </ol>
+    </div>
+
+    <div class="unit-callout">
+      <div class="unit-callout-label">Quotations · 2</div>
+      <blockquote class="quote-block">
+        "Preach, pray, love, stay."
+        <span class="quote-attr">— a revitalization pastor</span>
+      </blockquote>
+      <blockquote class="quote-block">
+        "Stay long enough to see one funeral, one fight, one financial scare, and one revival — then you'll find out whether you're actually a pastor."
+        <span class="quote-attr">— a revitalization pastor</span>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ═══════════ §2 ═══════════ -->
+  <section class="report-section">
+    <div class="section-head">
+      <span class="section-num">§ 2</span>
+      <h2 class="section-title">What you've said about this before</h2>
+      <span class="section-tags">
+        <span class="tag lock">CORPUS</span>
+        <span class="tag live">LIVE</span>
+      </span>
+    </div>
+
+    <div class="show-weekly">
+      <div class="locked-block">
+        <div class="locked-head ui">
+          <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="4" y="11" width="16" height="10" rx="2"/>
+            <path d="M8 11V7a4 4 0 1 1 8 0v4"/>
+          </svg>
+          Unlocked when your archive is processed
+        </div>
+        <div class="locked-body">
+          Find out how this sermon connects to the rest of your archive — every prior reference to <strong>Ephesians 4</strong>, every cross-sermon arc, every illustration you've already used in this theological neighborhood. Pastors on the corpus tier typically see 5–15 prior touchpoints surface per sermon.
+        </div>
+        <a class="cta ui" href="#onboarding">Get the rest of your sermons processed today →</a>
+      </div>
+    </div>
+
+    <div class="show-corpus">
+      <div class="section-lede">You've referenced <strong>Ephesians 4</strong> in <strong>8 prior sermons</strong>. Closest prior moves, most recent first:</div>
+      <ul class="ref-list">
+        <li>
+          <span class="ref-title">Tools for Transformation</span> <span class="ref-date">· Mar 8, 2026</span>
+          <div class="ref-meta">Cites <strong>Eph 4:13</strong> · function: <code>authority</code> · supports: <em>"Christ as the specification and destination for Christian maturity."</em></div>
+        </li>
+        <li>
+          <span class="ref-title">Tools for Transformation</span> <span class="ref-date">· Mar 8, 2026</span>
+          <div class="ref-meta">Cites <strong>Eph 4:15</strong> · supports: <em>"Growth is defined as growing into Christ himself, not just improving behavior."</em></div>
+        </li>
+        <li>
+          <span class="ref-title">Tools for Transformation Part 1</span> <span class="ref-date">· Mar 1, 2026</span>
+          <div class="ref-meta">Cites <strong>Eph 4:11–14</strong> · function: <code>exposition</code> · supports: <em>"The end of growth is Christlikeness, not church-program output."</em></div>
+        </li>
+        <li>
+          <span class="ref-title">God's Cosmic Construction Project</span> <span class="ref-date">· Jan 25, 2026</span>
+          <div class="ref-meta">Cites <strong>Eph 4:11–13</strong> · function: <code>structural</code> · sets up the "Christ as substance / standard / source / goal" frame.</div>
+        </li>
+        <li>
+          <span class="ref-title">Walking in Faith</span> <span class="ref-date">· Jan 11, 2026</span>
+          <div class="ref-meta">Cites <strong>Eph 4:1–6</strong> · function: <code>application</code> · the unity-of-the-body application thread.</div>
+        </li>
+      </ul>
+
+      <div class="section-lede"><strong>Semantic neighbors</strong> in your corpus (same theological move, no direct citation):</div>
+      <ul class="neighbor-list">
+        <li><em>God's Cosmic Construction Project</em> — Jan 25 · the original "Christ visible in every direction" framing.</li>
+        <li><em>Walking in Faith</em> — Jan 11 · same Christ-saturation move applied to congregational unity.</li>
+        <li><em>Pastoral Authority and Pastoral Posture</em> — Dec 14, 2025 · the "false shepherds vs Christ-pointing teachers" distinction.</li>
+      </ul>
+
+      <div class="pastoral-note">
+        Your January Ephesians-series sermons set up this thesis; the "Christ as substance, standard, source, goal" frame here is the payoff of moves you made in <em>God's Cosmic Construction Project</em>. Consider naming that callback explicitly the next time you preach in this arc.
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ §3 ═══════════ -->
+  <section class="report-section">
+    <div class="section-head">
+      <span class="section-num">§ 3</span>
+      <h2 class="section-title">Current Trajectory</h2>
+      <span class="section-tags">
+        <span class="tag lock">CORPUS</span>
+        <span class="tag adj">LIVE-ADJACENT</span>
+      </span>
+    </div>
+
+    <div class="show-weekly">
+      <div class="locked-block">
+        <div class="locked-head ui">
+          <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="4" y="11" width="16" height="10" rx="2"/>
+            <path d="M8 11V7a4 4 0 1 1 8 0v4"/>
+          </svg>
+          Unlocked when your archive is processed
+        </div>
+        <div class="locked-body">
+          See how this sermon's mix compares to your trailing 8-sermon average — exposition vs application vs theological-claim, illustration types, application specificity, BT-move density. Catch quiet drifts before they become patterns.
+        </div>
+        <a class="cta ui" href="#onboarding">Get the rest of your sermons processed today →</a>
+      </div>
+    </div>
+
+    <div class="show-corpus">
+      <div class="section-lede">Gap analysis vs your trailing 8-sermon average:</div>
+      <ul class="drift-list">
+        <li>
+          <span class="drift-metric"><strong>Theological-claim density</strong> — this week 0.31 of units, trailing avg 0.19</span>
+          <span class="drift-delta up">+12% ↑</span>
+        </li>
+        <li>
+          <span class="drift-metric"><strong>Application specificity</strong> — this week 0.42, trailing avg 0.61</span>
+          <span class="drift-delta down">−0.19 abstract</span>
+        </li>
+        <li>
+          <span class="drift-metric"><strong>Illustration mix</strong> — 3 of 5 personal-narrative type vs trailing 1.4</span>
+          <span class="drift-delta up">narrative-heavy</span>
+        </li>
+        <li>
+          <span class="drift-metric"><strong>Cross-references per sermon</strong> — 25, trailing avg 18</span>
+          <span class="drift-delta up">+39% ↑</span>
+        </li>
+      </ul>
+      <div class="drift-alert ui">
+        Locus you haven't preached in 7 months: <strong>Hamartiology.</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ §4 ═══════════ -->
+  <section class="report-section">
+    <div class="section-head">
+      <span class="section-num">§ 4</span>
+      <h2 class="section-title">Preachers who said it like you</h2>
+      <span class="section-tags">
+        <span class="tag" title="Fires on weekly-only tier">FIRES ✓</span>
+        <span class="tag live">LIVE</span>
+      </span>
+    </div>
+    <div class="section-lede">Top 5 canonical preachers whose theological move on this thesis is closest to yours.</div>
+
+    <ol class="ranked">
+      <li>
+        <span class="preacher">James Boice</span> — <span class="sermon-name">Body Life</span><span class="distance">(0.18)</span><br>
+        <span style="color:var(--ink-soft)">Expounds church maturity as three marks: doctrinal strength, Christlikeness, growth. Almost the same triadic move.</span>
+      </li>
+      <li>
+        <span class="preacher">Sinclair Ferguson</span> — <span class="sermon-name">FPC Then and FPC Now</span><span class="distance">(0.22)</span><br>
+        <span style="color:var(--ink-soft)">Philippians church "full of Christ every day." Same Christ-saturation framing.</span>
+      </li>
+      <li>
+        <span class="preacher">John MacArthur</span> — <span class="sermon-name">Keys to Spiritual Growth — Part 4</span><span class="distance">(0.23)</span><br>
+        <span style="color:var(--ink-soft)">Growth toward Christlikeness as fundamental characteristic of spiritual life.</span>
+      </li>
+      <li>
+        <span class="preacher">John MacArthur</span> — <span class="sermon-name">Keys to Spiritual Growth — Part 6</span><span class="distance">(0.23)</span><br>
+        <span style="color:var(--ink-soft)">Growth as command, not option (cites 2 Pet 3:18).</span>
+      </li>
+      <li>
+        <span class="preacher">Tim Keller</span> — <span class="sermon-name">The Marks of a Healthy Church</span><span class="distance">(0.26)</span><br>
+        <span style="color:var(--ink-soft)">Christ-centeredness as the criterion that disambiguates "growth" from "growing in the wrong direction."</span>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ═══════════ §5 ═══════════ -->
+  <section class="report-section">
+    <div class="section-head">
+      <span class="section-num">§ 5</span>
+      <h2 class="section-title">The three-sermon arc this completes</h2>
+      <span class="section-tags">
+        <span class="tag lock">CORPUS</span>
+        <span class="tag adj">LIVE-ADJACENT</span>
+      </span>
+    </div>
+
+    <div class="show-weekly">
+      <div class="locked-block">
+        <div class="locked-head ui">
+          <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="4" y="11" width="16" height="10" rx="2"/>
+            <path d="M8 11V7a4 4 0 1 1 8 0v4"/>
+          </svg>
+          Unlocked when your archive is processed
+        </div>
+        <div class="locked-body">
+          See the natural learning paths this sermon completes or starts — auto-detected sermon arcs your members can be guided through.
+        </div>
+        <a class="cta ui" href="#onboarding">Get the rest of your sermons processed today →</a>
+      </div>
+    </div>
+
+    <div class="show-corpus">
+      <div class="arc">
+        <div class="arc-theme">Arc theme: Growth</div>
+        <div class="arc-seq">
+          <div class="arc-node current">
+            <div class="arc-node-title">Growing in Christ</div>
+            <div class="arc-node-date">Feb 22, 2026 · this week</div>
+          </div>
+          <div class="arc-node">
+            <div class="arc-node-title">Tools for Transformation Part 1</div>
+            <div class="arc-node-date">Mar 1, 2026</div>
+          </div>
+          <div class="arc-node">
+            <div class="arc-node-title">Tools for Transformation</div>
+            <div class="arc-node-date">Mar 8, 2026</div>
+          </div>
+        </div>
+        <div class="arc-detect">
+          Detected by: shared citation chain on <code>Eph 4:13–16</code> + shared <code>Sanctification</code> locus across all three sermons.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ §6 ═══════════ -->
+  <section class="report-section">
+    <div class="section-head">
+      <span class="section-num">§ 6</span>
+      <h2 class="section-title">Drafted for your small-group leaders</h2>
+      <span class="section-tags">
+        <span class="tag" title="Fires on weekly-only tier">FIRES ✓</span>
+        <span class="tag adj">LIVE-ADJACENT</span>
+      </span>
+    </div>
+    <div class="section-lede">Tuesday-AM digest, ready to ship to leaders.</div>
+
+    <div class="artifact" data-artifact>
+      <div class="artifact-head">
+        <h3 class="artifact-title">Leader brief — Growing in Christ</h3>
+        <span class="artifact-status">Pending review</span>
+      </div>
+
+      <p><strong>Thesis:</strong> Christ is the only thing that makes growth good.</p>
+
+      <p><strong>6 discussion questions:</strong></p>
+      <ol class="qlist">
+        <li>When you hear "our church is growing," what's the first metric you reach for? Why?</li>
+        <li>The pastor named <em>relational growth</em> and <em>theological growth</em> as Providence's blind spot. Where have you seen yourself or our group treat one of these as automatic good?</li>
+        <li>The Rick-Warren-class-at-age-20 story — what's the version of that you've lived through? What changed your discernment?</li>
+        <li>Unit #12 — what's the difference between a false shepherd and a doctrinally-orthodox-but-not-Christ-centered teacher? Why does the latter feel safer to follow?</li>
+        <li><em>Preach, pray, love, stay</em> — which one is hardest in our group right now?</li>
+        <li>What would change about how we evaluate ourselves as a group if Christ-centeredness was the only success metric?</li>
+      </ol>
+
+      <p style="margin-top:14px;"><span class="field-label ui">Cross-references:</span> Eph 4:11–16 · 1 Cor 3:5–9 · Col 1:28 · Phil 3:7–8 · 2 Pet 3:18</p>
+      <p><span class="field-label ui">Landing zone:</span> Sanctification + Ecclesiology</p>
+
+      <div class="approval-bar ui">
+        <button class="approve" data-action="approve">Approve</button>
+        <button class="edit" data-action="edit">Edit</button>
+        <button class="skip" data-action="skip">Skip this week</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ §7 ═══════════ -->
+  <section class="report-section">
+    <div class="section-head">
+      <span class="section-num">§ 7</span>
+      <h2 class="section-title">Drafted for your members this week</h2>
+      <span class="section-tags">
+        <span class="tag" title="Fires on weekly-only tier">FIRES ✓</span>
+        <span class="tag adj">LIVE-ADJACENT</span>
+      </span>
+    </div>
+    <div class="section-lede">Five member-facing artifacts. Approve / edit / skip each independently.</div>
+
+    <!-- 7a -->
+    <div class="artifact" data-artifact>
+      <div class="artifact-head">
+        <h3 class="artifact-title">7a — Daily devotional (5-day series)</h3>
+        <span class="artifact-status">Pending review</span>
+      </div>
+      <div class="devo-grid">
+        <div class="devo-day">
+          <div class="devo-weekday">Mon</div>
+          <div class="devo-reading">Eph 4:11 <span class="sep">|</span> Eph 4:12 <span class="sep">|</span> Eph 4:13 <span class="sep">|</span> Eph 4:14 <span class="sep">|</span> Eph 4:15</div>
+        </div>
+        <div class="devo-day">
+          <div class="devo-weekday">Tue</div>
+          <div class="devo-reading">Eph 4:16 <span class="sep">|</span> 1 Cor 3:5 <span class="sep">|</span> 1 Cor 3:6 <span class="sep">|</span> 1 Cor 3:7 <span class="sep">|</span> 1 Cor 3:8</div>
+        </div>
+        <div class="devo-day">
+          <div class="devo-weekday">Wed</div>
+          <div class="devo-reading">1 Cor 3:9 <span class="sep">|</span> Col 1:28 <span class="sep">|</span> Col 3:11 <span class="sep">|</span> Phil 3:7 <span class="sep">|</span> Phil 3:8</div>
+        </div>
+        <div class="devo-day">
+          <div class="devo-weekday">Thu</div>
+          <div class="devo-reading">2 Pet 3:18 <span class="sep">|</span> Mt 7:15 <span class="sep">|</span> Mt 7:16 <span class="sep">|</span> Mt 7:17 <span class="sep">|</span> Mt 7:18</div>
+        </div>
+        <div class="devo-day">
+          <div class="devo-weekday">Fri</div>
+          <div class="devo-reading">Mt 7:19 <span class="sep">|</span> Mt 7:20 <span class="sep">|</span> Acts 2:42 <span class="sep">|</span> Acts 2:46 <span class="sep">|</span> Acts 2:47</div>
+        </div>
+      </div>
+      <div class="approval-bar ui">
+        <button class="approve" data-action="approve">Approve</button>
+        <button class="edit" data-action="edit">Edit</button>
+        <button class="skip" data-action="skip">Skip this week</button>
+      </div>
+    </div>
+
+    <!-- 7b -->
+    <div class="artifact" data-artifact>
+      <div class="artifact-head">
+        <h3 class="artifact-title">7b — Family conversation card</h3>
+        <span class="artifact-status">Pending review</span>
+      </div>
+      <blockquote class="thesis" style="font-size:17px; margin:6px 0 4px;">
+        Tonight's sermon — <em>Growing in Christ.</em> Pastor Chris talked about how growth isn't automatically good — it depends on what's growing. Where do you see growth in our family right now? Is it growth toward Christ?
+      </blockquote>
+      <div class="approval-bar ui">
+        <button class="approve" data-action="approve">Approve</button>
+        <button class="edit" data-action="edit">Edit</button>
+        <button class="skip" data-action="skip">Skip this week</button>
+      </div>
+    </div>
+
+    <!-- 7c -->
+    <div class="artifact" data-artifact>
+      <div class="artifact-head">
+        <h3 class="artifact-title">7c — Couples' guide</h3>
+        <span class="artifact-status">Pending review</span>
+      </div>
+      <p style="margin:6px 0 8px; color:var(--ink-soft);">Three questions over coffee:</p>
+      <ol class="qlist">
+        <li>Which of our growth areas is most exciting right now?</li>
+        <li>Is that growth pointing us toward Christ, away from him, or sideways?</li>
+        <li>What's one structural thing we can change in our weekly rhythm to make Christ more visible to each other?</li>
+      </ol>
+      <div class="approval-bar ui">
+        <button class="approve" data-action="approve">Approve</button>
+        <button class="edit" data-action="edit">Edit</button>
+        <button class="skip" data-action="skip">Skip this week</button>
+      </div>
+    </div>
+
+    <!-- 7d -->
+    <div class="artifact" data-artifact>
+      <div class="artifact-head">
+        <h3 class="artifact-title">7d — Memory verse</h3>
+        <span class="artifact-status">Pending review</span>
+      </div>
+      <div class="verse-card">
+        <div class="verse-ref">Ephesians 4:15</div>
+        <div class="verse-text">"Speaking the truth in love, we are to grow up in every way into him who is the head, into Christ."</div>
+      </div>
+      <div class="approval-bar ui">
+        <button class="approve" data-action="approve">Approve</button>
+        <button class="edit" data-action="edit">Edit</button>
+        <button class="skip" data-action="skip">Skip this week</button>
+      </div>
+    </div>
+
+    <!-- 7e -->
+    <div class="artifact" data-artifact>
+      <div class="artifact-head">
+        <h3 class="artifact-title">7e — Sermon-rooted prayer prompt</h3>
+        <span class="artifact-status">Pending review</span>
+      </div>
+      <blockquote class="thesis" style="font-size:17px;">
+        Father, you have given me Christ as my substance. You have set Christ as my standard. You have made Christ my source. You have appointed Christ as my goal. Where growth has been happening apart from him, expose it. Where I have been satisfied with growth not in him, give me dissatisfaction. Make him visible in every direction I look this week.
+      </blockquote>
+      <div class="approval-bar ui">
+        <button class="approve" data-action="approve">Approve</button>
+        <button class="edit" data-action="edit">Edit</button>
+        <button class="skip" data-action="skip">Skip this week</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ §8 ═══════════ -->
+  <section class="report-section">
+    <div class="section-head">
+      <span class="section-num">§ 8</span>
+      <h2 class="section-title">Drafted for counseling load</h2>
+      <span class="section-tags">
+        <span class="tag" title="Fires on weekly-only tier">FIRES ✓</span>
+        <span class="tag adj">LIVE-ADJACENT</span>
+        <span class="tag lock">+ CORPUS BONUS</span>
+      </span>
+    </div>
+    <div class="section-lede">Counseling-prep cards from this week's pastoral-correction units. Five minutes of your own preaching at hand, in your own voice.</div>
+
+    <div class="artifact" data-artifact>
+      <div class="artifact-head">
+        <h3 class="artifact-title">Card: member frustrated with the local church</h3>
+        <span class="artifact-status">Pending review</span>
+      </div>
+      <div class="field">
+        <div class="field-label">Pull this unit</div>
+        <div>Unit #11 (Providence blind-spot application) and unit #12 (false-shepherd application).</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Why it fits</div>
+        <div>Names the legitimate frustration without sliding into critique of the body; gives the member language to distinguish "doctrinally-orthodox-but-not-Christ-centered" disappointment from genuine alarm.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Quotation</div>
+        <div><em>"Preach, pray, love, stay."</em></div>
+      </div>
+      <div class="approval-bar ui">
+        <button class="approve" data-action="approve">Approve</button>
+        <button class="edit" data-action="edit">Edit</button>
+        <button class="skip" data-action="skip">Skip this week</button>
+      </div>
+    </div>
+
+    <div class="locked-block" style="margin-top:14px;">
+      <div class="locked-head ui">
+        <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <rect x="4" y="11" width="16" height="10" rx="2"/>
+          <path d="M8 11V7a4 4 0 1 1 8 0v4"/>
+        </svg>
+        Corpus-tier bonus
+      </div>
+      <div class="locked-body">
+        See every prior sermon you've preached that bears on this counseling situation — not just this week's, but everything. Type the situation; the system pulls the most relevant units from your full corpus.
+      </div>
+      <a class="cta ui" href="#onboarding">Get the rest of your sermons processed today →</a>
+    </div>
+  </section>
+
+  <!-- ═══════════ §9 ═══════════ -->
+  <section class="report-section">
+    <div class="section-head">
+      <span class="section-num">§ 9</span>
+      <h2 class="section-title">Online Outreach</h2>
+      <span class="section-tags">
+        <span class="tag" title="Fires on weekly-only tier">FIRES ✓</span>
+        <span class="tag sketch">SKETCH</span>
+      </span>
+    </div>
+    <div class="section-lede">Three new indexable seeker pages from this week's application units. Auto-published; no per-page approval (policy set at onboarding).</div>
+
+    <div class="seeker-row">
+      <div class="seeker-slug">/topics/numerical-church-growth-isnt-automatic-good</div>
+      <div class="hero-excerpt">"is numerical growth an automatic good? … many of us now think dermatologically: what exactly is it that's growing? Where exactly are we growing?"</div>
+      <div class="ref-meta" style="margin-top:6px;">From unit #10 · CTA: hear the rest</div>
+    </div>
+    <div class="seeker-row">
+      <div class="seeker-slug">/topics/false-shepherds-vs-true-pastoral-leadership</div>
+      <div class="hero-excerpt">"There are two kinds of false leaders: the obvious counterfeits and those who teach true doctrine but fail to consistently point people to Christ."</div>
+      <div class="ref-meta" style="margin-top:6px;">From unit #12 · CTA: hear the rest</div>
+    </div>
+    <div class="seeker-row">
+      <div class="seeker-slug">/topics/what-makes-a-good-church</div>
+      <div class="hero-excerpt">"A good church is one where Christ is visible in every direction."</div>
+      <div class="ref-meta" style="margin-top:6px;">From unit #8 · CTA: visit Sunday</div>
+    </div>
+
+    <p style="margin-top:14px; color:var(--ink-faint); font-family:'Inter',sans-serif; font-size:13px;">
+      Running total: <strong style="color:var(--ink);">17 seeker pages</strong> indexed across the last 6 sermons. Generic church website indexes zero.
+    </p>
+  </section>
+
+  <!-- ═══════════ §10 ═══════════ -->
+  <section class="report-section">
+    <div class="section-head">
+      <span class="section-num">§ 10</span>
+      <h2 class="section-title">Social Media &amp; Ad-Campaigns</h2>
+      <span class="section-tags">
+        <span class="tag" title="Fires on weekly-only tier">FIRES ✓</span>
+        <span class="tag sketch">SKETCH</span>
+      </span>
+    </div>
+    <div class="section-lede">Two sermon-led ad campaigns drafted from this week's high-specificity application units.</div>
+
+    <div class="artifact" data-artifact>
+      <div class="artifact-head">
+        <h3 class="artifact-title">Campaign: <em>Bigger isn't better.</em></h3>
+        <span class="artifact-status">Pending review</span>
+      </div>
+      <div class="field">
+        <div class="field-label">Search intent</div>
+        <div><em>"numerical church growth bad"</em> · <em>"is bigger church better"</em> · <em>"small church healthy"</em></div>
+      </div>
+      <div class="field">
+        <div class="field-label">Ad copy</div>
+        <div><em>"Pastor Chris on why bigger isn't the same as better."</em></div>
+      </div>
+      <div class="field">
+        <div class="field-label">Landing page</div>
+        <div><code>/topics/numerical-church-growth-isnt-automatic-good</code> + audio anchor + visit prompt</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Source unit</div>
+        <div>#10 · application · Ecclesiology + Sanctification</div>
+      </div>
+      <div class="approval-bar ui">
+        <button class="approve" data-action="approve">Approve</button>
+        <button class="edit" data-action="edit">Edit</button>
+        <button class="skip" data-action="skip">Skip this week</button>
+      </div>
+    </div>
+
+    <div class="artifact" data-artifact>
+      <div class="artifact-head">
+        <h3 class="artifact-title">Campaign: <em>Christ visible in every direction.</em></h3>
+        <span class="artifact-status">Pending review</span>
+      </div>
+      <div class="field">
+        <div class="field-label">Search intent</div>
+        <div><em>"what makes a good church"</em> · <em>"how to choose a church"</em> · <em>"Christ-centered church"</em></div>
+      </div>
+      <div class="field">
+        <div class="field-label">Ad copy</div>
+        <div><em>"A good church is one where Christ is visible in every direction."</em></div>
+      </div>
+      <div class="field">
+        <div class="field-label">Landing page</div>
+        <div><code>/topics/what-makes-a-good-church</code> + audio anchor + visit prompt</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Source unit</div>
+        <div>#8 · application · Ecclesiology + Christology</div>
+      </div>
+      <div class="approval-bar ui">
+        <button class="approve" data-action="approve">Approve</button>
+        <button class="edit" data-action="edit">Edit</button>
+        <button class="skip" data-action="skip">Skip this week</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ §11 ═══════════ -->
+  <section class="report-section">
+    <div class="section-head">
+      <span class="section-num">§ 11</span>
+      <h2 class="section-title">Coming up: prep forming for next Sunday</h2>
+      <span class="section-tags">
+        <span class="tag lock">CORPUS</span>
+        <span class="tag sketch">SKETCH</span>
+      </span>
+    </div>
+
+    <div class="show-weekly">
+      <div class="locked-block">
+        <div class="locked-head ui">
+          <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="4" y="11" width="16" height="10" rx="2"/>
+            <path d="M8 11V7a4 4 0 1 1 8 0v4"/>
+          </svg>
+          Unlocked when your archive is processed
+        </div>
+        <div class="locked-body">
+          See the prep bundle forming for your next sermon — every prior unit, citation, illustration, and BT move from your corpus that bears on next week's announced text, ready Tuesday morning.
+        </div>
+        <a class="cta ui" href="#onboarding">Get the rest of your sermons processed today →</a>
+      </div>
+    </div>
+
+    <div class="show-corpus">
+      <div class="section-lede">You've announced next Sunday's text: <strong>Ephesians 4:25–32.</strong> Prep bundle currently forming:</div>
+      <div class="prep-grid">
+        <div class="prep-cell"><div class="stat-num">14</div><div class="stat-label">Prior units</div></div>
+        <div class="prep-cell"><div class="stat-num">6</div><div class="stat-label">Illustrations (Sanctification)</div></div>
+        <div class="prep-cell"><div class="stat-num">3</div><div class="stat-label">BT moves</div></div>
+        <div class="prep-cell"><div class="stat-num">4</div><div class="stat-label">Quotations</div></div>
+      </div>
+      <ul class="ref-list">
+        <li>
+          <span class="ref-title">Unit · exposition</span> <span class="ref-date">· from <em>Tools for Transformation</em>, Mar 8</span>
+          <div class="ref-meta">"Put off the old self, put on the new — and the new is Christ himself, not a better version of you."</div>
+        </li>
+        <li>
+          <span class="ref-title">Illustration · narrative</span> <span class="ref-date">· from <em>Growing in Christ</em>, Feb 22</span>
+          <div class="ref-meta">The Rick-Warren-class-at-age-20 anecdote could re-anchor the "put off / put on" frame from a different angle.</div>
+        </li>
+        <li>
+          <span class="ref-title">BT move · typology</span> <span class="ref-date">· from <em>God's Cosmic Construction Project</em>, Jan 25</span>
+          <div class="ref-meta">Old-self/new-self frame mapped against temple-building typology.</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p><span class="version">v0.2 preview · 2026-05-13</span> · This is a sample render of the weekly post-ingest pastor report against the worked sermon <em>Growing in Christ.</em> Toggle the tier control in the header to compare the weekly-only and corpus-tier shapes of the same report.</p>
+  <p>v0.1 of the underlying template was a manifesto-style proof — one sermon, every surface, written to convince a buyer. v0.2 is the working template that produces the weekly report itself, written to the pastor whose sermon just got ingested.</p>
+</footer>
+
+<script>
+  // ───── Tier toggle ─────
+  const tierButtons = document.querySelectorAll('.tier-toggle button');
+  tierButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tier = btn.dataset.tier;
+      document.body.classList.remove('tier-weekly', 'tier-corpus');
+      document.body.classList.add('tier-' + tier);
+      tierButtons.forEach(b => b.classList.toggle('active', b === btn));
+    });
+  });
+
+  // ───── Approve / Edit / Skip ─────
+  document.querySelectorAll('[data-artifact]').forEach(card => {
+    const status = card.querySelector('.artifact-status');
+    const buttons = card.querySelectorAll('.approval-bar button');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const action = btn.dataset.action;
+        card.classList.remove('approved', 'skipped');
+        buttons.forEach(b => b.classList.remove('active'));
+
+        if (action === 'approve') {
+          card.classList.add('approved');
+          btn.classList.add('active');
+          status.textContent = 'Approved';
+        } else if (action === 'skip') {
+          card.classList.add('skipped');
+          btn.classList.add('active');
+          status.textContent = 'Skipped';
+        } else if (action === 'edit') {
+          status.textContent = 'In edit';
+          btn.classList.add('active');
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

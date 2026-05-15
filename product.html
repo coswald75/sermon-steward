@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sermon Steward — Sunday's sermon stewarded and shipped by Monday afternoon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #fbf8f1;
+    --bg-card:   #ffffff;
+    --bg-soft:   #f5f1e6;
+    --ink:       #1a1a1a;
+    --ink-soft:  #4a4a4a;
+    --ink-faint: #828282;
+    --rule:      #e6e1d3;
+    --rule-soft: #f0ebde;
+    --accent:    #c4452f;
+    --accent-deep: #9a3624;
+    --accent-soft: #f0d4cc;
+    --highlight: #fef0c8;
+    --green:     #3a7256;
+    --sans: 'Inter', system-ui, -apple-system, "Segoe UI", sans-serif;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-md: 0 2px 4px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.05);
+    --shadow-accent: 0 1px 2px rgba(0,0,0,0.08), 0 4px 12px rgba(196,69,47,0.18);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-decoration: none; text-underline-offset: 3px; }
+  a:hover { color: var(--accent-deep); text-decoration: underline; }
+
+  /* ───── Header ───── */
+  .site-header { background: var(--bg); border-bottom: 1px solid var(--rule); position: sticky; top: 0; z-index: 10; backdrop-filter: blur(8px); background: rgba(251,248,241,0.92); }
+  .site-header-inner { max-width: 1180px; margin: 0 auto; padding: 16px 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .wordmark { font-weight: 800; font-size: 21px; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+  .wordmark .dot { color: var(--accent); }
+  .nav { font-size: 15px; font-weight: 500; display: flex; gap: 28px; align-items: center; }
+  .nav a { color: var(--ink-soft); text-decoration: none; }
+  .nav a:hover { color: var(--ink); }
+  .nav .btn-sm { background: var(--accent); color: #fff; padding: 9px 16px; border-radius: 8px; font-size: 14px; font-weight: 600; box-shadow: var(--shadow-sm); }
+  .nav .btn-sm:hover { background: var(--accent-deep); color: #fff; text-decoration: none; }
+
+  /* ───── Buttons ───── */
+  .btn { font-family: var(--sans); font-size: 16px; font-weight: 600; padding: 14px 22px; border-radius: 10px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: transform 0.12s, box-shadow 0.12s, background 0.12s; border: 1px solid transparent; cursor: pointer; }
+  .btn-primary { background: var(--accent); color: #fff; box-shadow: var(--shadow-accent); }
+  .btn-primary:hover { background: var(--accent-deep); color: #fff; transform: translateY(-1px); text-decoration: none; }
+  .btn-secondary { background: #fff; color: var(--ink); border-color: var(--rule); box-shadow: var(--shadow-sm); }
+  .btn-secondary:hover { border-color: var(--ink-soft); transform: translateY(-1px); text-decoration: none; }
+  .btn .arrow { transition: transform 0.12s; }
+  .btn:hover .arrow { transform: translateX(3px); }
+
+  /* ───── Hero ───── */
+  .hero { max-width: 820px; margin: 0 auto; padding: 88px 28px 64px; text-align: center; }
+  .tag { display: inline-block; background: var(--highlight); color: var(--ink); font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 999px; margin-bottom: 28px; }
+  .hero h1 { font-weight: 800; font-size: clamp(2.6rem, 5.8vw, 4.4rem); line-height: 1.02; letter-spacing: -0.032em; margin: 0 0 22px; }
+  .hero h1 .accent { color: var(--accent); }
+  .hero .deck { font-size: clamp(1.1rem, 1.8vw, 1.3rem); line-height: 1.5; color: var(--ink-soft); max-width: 640px; margin: 0 auto 36px; }
+  .hero .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+  .hero .reassurance { font-size: 14px; color: var(--ink-faint); }
+
+  /* ───── Stat band ───── */
+  .stat-band { background: var(--bg-soft); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .stat-inner { max-width: 1080px; margin: 0 auto; padding: 40px 28px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+  .stat .num { font-weight: 800; font-size: 36px; color: var(--accent); line-height: 1; margin-bottom: 6px; letter-spacing: -0.02em; }
+  .stat .lbl { font-size: 13px; font-weight: 500; color: var(--ink-soft); line-height: 1.45; }
+
+  /* ───── Sections ───── */
+  .section { max-width: 1080px; margin: 0 auto; padding: 88px 28px; }
+  .section-narrow { max-width: 760px; margin: 0 auto; padding: 88px 28px; }
+  .section-title { font-size: 13px; font-weight: 700; letter-spacing: 0.04em; color: var(--accent); margin-bottom: 12px; text-transform: uppercase; }
+  .section h2 { font-weight: 800; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.08; letter-spacing: -0.025em; margin: 0 0 18px; color: var(--ink); }
+  .section .lede { font-size: 18px; line-height: 1.55; color: var(--ink-soft); max-width: 640px; margin: 0 0 48px; }
+
+  /* ───── Split: problem / solution ───── */
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+  .split-card { background: var(--bg-card); border: 1px solid var(--rule); padding: 32px; border-radius: 14px; box-shadow: var(--shadow-sm); }
+  .split-card .tag-pill { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; margin-bottom: 16px; }
+  .split-card.problem .tag-pill { background: var(--accent-soft); color: var(--accent-deep); }
+  .split-card.solution .tag-pill { background: #d8ecdf; color: #1f5b3e; }
+  .split-card h3 { font-size: 22px; font-weight: 700; line-height: 1.2; margin: 0 0 14px; color: var(--ink); letter-spacing: -0.01em; }
+  .split-card ul { font-size: 16px; line-height: 1.7; color: var(--ink-soft); padding-left: 0; list-style: none; margin: 0; }
+  .split-card li { padding-left: 26px; position: relative; margin-bottom: 10px; }
+  .split-card.problem li::before { content: "✕"; position: absolute; left: 0; top: 0; color: var(--accent); font-weight: 700; }
+  .split-card.solution li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--green); font-weight: 700; }
+
+  /* ───── Surfaces grid ───── */
+  .surfaces-section { background: var(--bg-soft); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .surfaces-section .section { padding-bottom: 32px; }
+  .surfaces-grid { max-width: 1080px; margin: 0 auto; padding: 0 28px 80px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .surface-card { background: var(--bg-card); border: 1px solid var(--rule); padding: 26px; border-radius: 14px; box-shadow: var(--shadow-sm); transition: transform 0.18s, box-shadow 0.18s; }
+  .surface-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .surface-card .icon-wrap { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+  .surface-card .icon { width: 22px; height: 22px; color: var(--accent-deep); }
+  .surface-card h3 { font-size: 19px; font-weight: 700; line-height: 1.25; margin: 0 0 8px; letter-spacing: -0.008em; }
+  .surface-card p { font-size: 15px; line-height: 1.55; color: var(--ink-soft); margin: 0 0 14px; }
+  .surface-card .audience { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-faint); background: var(--bg-soft); padding: 4px 10px; border-radius: 999px; }
+
+  /* ───── Pricing ───── */
+  .pricing-section { padding: 88px 28px; }
+  .pricing-inner { max-width: 1080px; margin: 0 auto; }
+  .pricing-head { text-align: center; margin-bottom: 48px; }
+  .pricing-head h2 { font-weight: 800; font-size: clamp(2rem, 4vw, 2.6rem); line-height: 1.1; margin: 0 0 14px; letter-spacing: -0.025em; }
+  .pricing-head .lede { font-size: 18px; line-height: 1.55; color: var(--ink-soft); max-width: 600px; margin: 0 auto; }
+  .charter-wrap { display: flex; justify-content: center; }
+  .charter-card { background: var(--bg-card); border: 2px solid var(--accent); border-radius: 18px; padding: 44px 44px 36px; max-width: 540px; width: 100%; text-align: center; box-shadow: 0 4px 20px rgba(196,69,47,0.1); position: relative; }
+  .charter-tier { font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+  .charter-prices { display: flex; align-items: baseline; justify-content: center; gap: 18px; margin-bottom: 12px; }
+  .charter-price-old { font-size: 32px; font-weight: 600; color: var(--ink-faint); text-decoration: line-through; text-decoration-thickness: 2px; text-decoration-color: var(--accent-soft); line-height: 1; }
+  .charter-price-old .per { font-size: 13px; font-weight: 500; color: var(--ink-faint); text-decoration: none; margin-left: 2px; }
+  .charter-price-new { font-weight: 800; font-size: 64px; color: var(--ink); line-height: 1; letter-spacing: -0.03em; }
+  .charter-price-new .per { font-size: 15px; font-weight: 500; color: var(--ink-faint); margin-left: 4px; letter-spacing: 0; }
+  .charter-locked { font-size: 16px; font-weight: 500; color: var(--accent); margin-bottom: 30px; }
+  .charter-list { font-size: 15px; line-height: 1.7; color: var(--ink-soft); padding-left: 0; list-style: none; margin: 0 0 30px; text-align: left; max-width: 400px; margin-left: auto; margin-right: auto; }
+  .charter-list li { padding-left: 28px; position: relative; margin-bottom: 8px; }
+  .charter-list li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--accent); font-weight: 700; font-size: 16px; }
+  .charter-cta { display: block; width: 100%; text-align: center; padding: 16px 24px; font-size: 16px; margin-bottom: 16px; justify-content: center; }
+  .charter-scarcity { font-size: 14px; line-height: 1.5; color: var(--ink-faint); }
+  .charter-scarcity strong { color: var(--ink-soft); font-weight: 600; }
+
+  /* ───── CTA band ───── */
+  .cta-band { background: var(--ink); color: #fff; padding: 88px 28px; text-align: center; }
+  .cta-band h2 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.1; margin: 0 0 16px; color: #fff; letter-spacing: -0.025em; }
+  .cta-band p { font-size: 18px; color: rgba(255,255,255,0.7); max-width: 580px; margin: 0 auto 32px; }
+  .cta-band .btn-primary { background: var(--accent); border-color: var(--accent); }
+  .cta-band .btn-primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
+
+  /* ───── Contact form ───── */
+  .contact-form-section { background: var(--bg-soft); padding: 88px 28px; border-top: 1px solid var(--rule); }
+  .contact-form-inner { max-width: 640px; margin: 0 auto; }
+  .contact-form-inner .section-title { text-align: center; }
+  .contact-form-inner h2 { font-weight: 800; font-size: clamp(1.9rem, 3.6vw, 2.4rem); line-height: 1.12; margin: 0 0 14px; text-align: center; letter-spacing: -0.022em; }
+  .contact-form-inner .lede { font-size: 17px; line-height: 1.55; color: var(--ink-soft); margin: 0 auto 36px; text-align: center; max-width: 540px; }
+  .contact-form { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 14px; padding: 36px; box-shadow: var(--shadow-sm); }
+  .contact-form .field { margin-bottom: 22px; }
+  .contact-form label { display: block; font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+  .contact-form input, .contact-form textarea { width: 100%; font-family: var(--sans); font-size: 16px; padding: 13px 14px; border: 1px solid var(--rule); border-radius: 10px; background: var(--bg-card); color: var(--ink); line-height: 1.5; transition: border-color 0.18s, box-shadow 0.18s; }
+  .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(196,69,47,0.12); }
+  .contact-form textarea { resize: vertical; min-height: 200px; line-height: 1.55; }
+  .contact-form textarea::placeholder { color: var(--ink-faint); }
+  .contact-form button { width: 100%; padding: 16px 24px; font-size: 16px; font-weight: 600; font-family: var(--sans); cursor: pointer; border: 1px solid var(--accent); background: var(--accent); color: #fff; border-radius: 10px; transition: background 0.18s; box-shadow: var(--shadow-accent); }
+  .contact-form button:hover { background: var(--accent-deep); }
+
+  /* ───── Footer ───── */
+  footer { padding: 40px 28px; border-top: 1px solid var(--rule); }
+  .foot-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .foot-brand { font-weight: 800; font-size: 18px; }
+  .foot-brand .dot { color: var(--accent); }
+  .foot-imprint { font-size: 13px; color: var(--ink-faint); margin-top: 2px; }
+  .foot-imprint a { color: var(--ink-soft); text-decoration: underline; text-underline-offset: 3px; }
+  .foot-nav { font-size: 14px; display: flex; gap: 24px; }
+  .foot-nav a { color: var(--ink-soft); text-decoration: none; }
+  .foot-nav a:hover { color: var(--ink); }
+
+  @media (max-width: 900px) {
+    .stat-inner { grid-template-columns: repeat(2, 1fr); }
+    .split { grid-template-columns: 1fr; }
+    .surfaces-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .nav { display: none; }
+    .hero { padding: 56px 20px 40px; }
+    .section, .section-narrow, .pricing-section, .contact-form-section { padding: 56px 20px; }
+    .charter-card { padding: 32px 24px 28px; }
+    .charter-prices { flex-direction: column; gap: 4px; }
+    .charter-price-new { font-size: 52px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="wordmark" href="/">Sermon Steward<span class="dot">.</span></a>
+    <nav class="nav">
+      <a href="#how">How it works</a>
+      <a href="#surfaces">Surfaces</a>
+      <a href="samples.html">Samples</a>
+      <a href="#pricing">Pricing</a>
+      <a class="btn-sm" href="#contact-form">Talk to us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="tag">Sunday's sermon stewarded and shipped by Monday afternoon.</div>
+  <h1>One Sermon Can Seed a Mighty <span class="accent">Harvest</span></h1>
+  <p class="deck">We take Sunday's sermon and turn it into many things your church can use through the week and for years to come.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="#contact-form">Get a sample sermon stewarded</a>
+    <a class="btn btn-secondary" href="samples.html">Show me the sermons <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<div class="stat-band">
+  <div class="stat-inner">
+    <div class="stat"><div class="num">20 hrs</div><div class="lbl">A pastor's average prep time per sermon</div></div>
+    <div class="stat"><div class="num">2×</div><div class="lbl">Times the average sermon is heard before going silent</div></div>
+    <div class="stat"><div class="num">6+</div><div class="lbl">Surfaces every sermon can produce</div></div>
+    <div class="stat"><div class="num">$0</div><div class="lbl">What your old sermons earn for the church right now</div></div>
+  </div>
+</div>
+
+<section class="section" id="how">
+  <div style="text-align:center;max-width:760px;margin:0 auto 56px">
+    <div class="section-title">How it works</div>
+    <h2>One sermon in. Every surface your church needs out.</h2>
+    <p class="lede" style="margin-left:auto;margin-right:auto">You hand us Sunday's audio. We hand you back a sermon page, topical landing copy, a leader's brief for small groups, family conversation prompts, devotional content, and a private pastor's recall index of everything you've ever preached.</p>
+  </div>
+  <div class="split">
+    <div class="split-card problem">
+      <div class="tag-pill">The way most churches do it</div>
+      <h3>Post audio. Hope someone listens.</h3>
+      <ul>
+        <li>The sermon lives on Subsplash. Nobody searches it.</li>
+        <li>Your website has a "Sermons" tab. Seekers don't click it.</li>
+        <li>Small group leaders write their own questions Saturday night.</li>
+        <li>You can't remember if you preached this passage before.</li>
+        <li>Twenty hours of work. Used once.</li>
+      </ul>
+    </div>
+    <div class="split-card solution">
+      <div class="tag-pill">The way Sermon Steward does it</div>
+      <h3>Steward it. Get years of return.</h3>
+      <ul>
+        <li>Every sermon becomes a search-indexed web page.</li>
+        <li>Topical pages catch seekers Googling specific pain.</li>
+        <li>Leaders walk into group already prepped.</li>
+        <li>Pastor's recall: every illustration, citation, application, indexed.</li>
+        <li>Twenty hours of work. Years of fruit.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="surfaces-section" id="surfaces">
+  <div class="section">
+    <div style="text-align:center;max-width:760px;margin:0 auto 40px">
+      <div class="section-title">Surfaces</div>
+      <h2>The same sermon, met by the right person at the right time.</h2>
+      <p class="lede" style="margin-left:auto;margin-right:auto">Six surfaces, generated automatically from every sermon you preach. <a href="samples.html">See real examples →</a></p>
+    </div>
+  </div>
+  <div class="surfaces-grid">
+    <div class="surface-card">
+      <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+      <h3>The sermon page</h3>
+      <p>A complete web page for every sermon. SEO-built. Audio attached. Linkable to the paragraph.</p>
+      <div class="audience">Seekers · members</div>
+    </div>
+    <div class="surface-card">
+      <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+      <h3>Topical landing</h3>
+      <p>"Help with my marriage." "Anxiety about my kids." Seekers find your actual preaching.</p>
+      <div class="audience">Seekers</div>
+    </div>
+    <div class="surface-card">
+      <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <h3>Leader brief</h3>
+      <p>By Monday afternoon, your small-group leaders have six questions, the application, the cross-references — ready before their next meeting.</p>
+      <div class="audience">Leaders</div>
+    </div>
+    <div class="surface-card">
+      <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2 4 4 8-8 4 4"/><path d="M3 19h18"/></svg></div>
+      <h3>Family guide</h3>
+      <p>A ten-minute dinner conversation about Sunday's sermon, tuned for your kids' ages.</p>
+      <div class="audience">Families</div>
+    </div>
+    <div class="surface-card">
+      <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <h3>Pastor's recall</h3>
+      <p>"Have I preached this before? What illustrations did I use? Where did the application land?"</p>
+      <div class="audience">Pastors only</div>
+    </div>
+    <div class="surface-card">
+      <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+      <h3>Weekly report</h3>
+      <p>The sermon's anatomy — citations, doctrinal loci, illustrations, rhetorical arc.</p>
+      <div class="audience">Pastors · elders</div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-section" id="pricing">
+  <div class="pricing-inner">
+    <div class="pricing-head">
+      <div class="section-title">Early-customer pricing</div>
+      <h2>The next ten churches get the early price. Locked in for life.</h2>
+      <p class="lede">Most churches already spend $400–800/month on a fragmented stack. We're starting Sermon Steward at a price that doesn't even pretend to compete on cost.</p>
+    </div>
+    <div class="charter-wrap">
+      <div class="charter-card">
+        <div class="charter-tier">Early-customer subscription</div>
+        <div class="charter-prices">
+          <span class="charter-price-old">$100<span class="per">/mo</span></span>
+          <span class="charter-price-new">$30<span class="per">/mo</span></span>
+        </div>
+        <div class="charter-locked">Locked in for the lifetime of your subscription.</div>
+        <ul class="charter-list">
+          <li>Every sermon you preach becomes a web page</li>
+          <li>Sermon-led church website on your own domain</li>
+          <li>Topical landing pages (Marriage, Anxiety, Doubt, Parenting&hellip;)</li>
+          <li>Weekly leader's brief, delivered Monday afternoon</li>
+          <li>Family conversation guide for every sermon</li>
+          <li>Pastor's recall index — every illustration, citation, application</li>
+          <li>Weekly anatomy report</li>
+          <li>Works with your existing audio host</li>
+        </ul>
+        <a class="btn btn-primary charter-cta" href="#contact-form">Claim your spot</a>
+        <div class="charter-scarcity">Available to the next <strong>10 churches</strong> only. After that, standard pricing applies at <strong>$100/mo</strong>.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="contact">
+  <h2>Hand us one sermon. See what stewardship looks like.</h2>
+  <p>Send us Sunday's audio or a transcript. Within seven days we'll send you back what the same sermon looks like stewarded. No card, no commitment.</p>
+  <a class="btn btn-primary" href="#contact-form">Send us a sermon</a>
+</section>
+
+<section class="contact-form-section" id="contact-form">
+  <div class="contact-form-inner">
+    <div class="section-title">Get a sample sermon stewarded</div>
+    <h2>Tell us where to reach you.</h2>
+    <p class="lede">Paste your sermon transcript below and we'll send back the stewarded version within seven days. Or leave it blank and we'll reach out to discuss what you're working with.</p>
+    <form class="contact-form" action="#" method="POST" novalidate>
+      <div class="field">
+        <label for="cf-name">Name</label>
+        <input id="cf-name" name="name" type="text" autocomplete="name" placeholder="Pastor John Smith" required>
+      </div>
+      <div class="field">
+        <label for="cf-email">Email</label>
+        <input id="cf-email" name="email" type="email" autocomplete="email" placeholder="you@church.org" required>
+      </div>
+      <div class="field">
+        <label for="cf-transcript">Your sermon</label>
+        <textarea id="cf-transcript" name="transcript" rows="10" placeholder="Paste your sermon transcript here — or just leave it blank and we will reach out."></textarea>
+      </div>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">Sermon Steward<span class="dot">.</span></div>
+      <div class="foot-imprint">Built by pastors, for pastors.</div>
+    </div>
+    <div class="foot-nav">
+      <a href="#how">How it works</a>
+      <a href="#surfaces">Surfaces</a>
+      <a href="samples.html">Samples</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact-form">Talk to us</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

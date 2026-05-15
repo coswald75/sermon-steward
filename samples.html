@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sermon Steward — Samples</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #fbf8f1;
+    --bg-card:   #ffffff;
+    --bg-soft:   #f5f1e6;
+    --ink:       #1a1a1a;
+    --ink-soft:  #4a4a4a;
+    --ink-faint: #828282;
+    --rule:      #e6e1d3;
+    --rule-soft: #f0ebde;
+    --accent:    #c4452f;
+    --accent-deep: #9a3624;
+    --accent-soft: #f0d4cc;
+    --highlight: #fef0c8;
+    --green:     #3a7256;
+    --sans: 'Inter', system-ui, -apple-system, "Segoe UI", sans-serif;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-md: 0 2px 4px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.05);
+    --shadow-accent: 0 1px 2px rgba(0,0,0,0.08), 0 4px 12px rgba(196,69,47,0.18);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-decoration: none; text-underline-offset: 3px; }
+  a:hover { color: var(--accent-deep); text-decoration: underline; }
+
+  /* ───── Header ───── */
+  .site-header { background: rgba(251,248,241,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); position: sticky; top: 0; z-index: 10; }
+  .site-header-inner { max-width: 1180px; margin: 0 auto; padding: 16px 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .wordmark { font-weight: 800; font-size: 21px; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+  .wordmark .dot { color: var(--accent); }
+  .nav { font-size: 15px; font-weight: 500; display: flex; gap: 28px; align-items: center; }
+  .nav a { color: var(--ink-soft); text-decoration: none; }
+  .nav a:hover { color: var(--ink); }
+  .nav .btn-sm { background: var(--accent); color: #fff; padding: 9px 16px; border-radius: 8px; font-size: 14px; font-weight: 600; box-shadow: var(--shadow-sm); }
+  .nav .btn-sm:hover { background: var(--accent-deep); color: #fff; text-decoration: none; }
+
+  /* ───── Hero ───── */
+  .hero { max-width: 820px; margin: 0 auto; padding: 80px 28px 48px; text-align: center; }
+  .tag { display: inline-block; background: var(--highlight); color: var(--ink); font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 999px; margin-bottom: 24px; }
+  .hero h1 { font-weight: 800; font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 18px; }
+  .hero h1 .accent { color: var(--accent); }
+  .hero .deck { font-size: clamp(1.05rem, 1.6vw, 1.2rem); line-height: 1.5; color: var(--ink-soft); max-width: 620px; margin: 0 auto; }
+
+  /* ───── Two-column gallery ───── */
+  .gallery { max-width: 1240px; margin: 0 auto; padding: 32px 28px 96px; display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: start; }
+
+  .column-head { margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--rule); }
+  .column-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .column-title { font-weight: 800; font-size: 28px; letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 8px; }
+  .column-blurb { font-size: 15px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+
+  /* ───── Customer sample card (left column) ───── */
+  .customer-card {
+    display: block; background: var(--bg-card); border: 1px solid var(--rule);
+    border-radius: 14px; padding: 26px 28px; box-shadow: var(--shadow-sm);
+    margin-bottom: 16px; text-decoration: none; color: var(--ink);
+    transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+  }
+  .customer-card:hover {
+    transform: translateY(-2px); box-shadow: var(--shadow-md);
+    border-color: var(--accent-soft); text-decoration: none;
+  }
+  .customer-card .meta-row { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+  .customer-pill { font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; }
+  .customer-pill.surface { background: var(--accent-soft); color: var(--accent-deep); }
+  .customer-pill.audience { background: var(--bg-soft); color: var(--ink-soft); }
+  .customer-card h3 { font-weight: 700; font-size: 22px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.015em; }
+  .customer-card .text-ref { font-size: 15px; color: var(--ink-soft); margin: 0 0 14px; font-style: italic; }
+  .customer-card .description { font-size: 15px; line-height: 1.55; color: var(--ink-soft); margin: 0 0 16px; }
+  .customer-card .anonymized { font-size: 12px; color: var(--ink-faint); display: flex; align-items: center; gap: 6px; }
+  .customer-card .link-out { font-size: 14px; font-weight: 600; color: var(--accent); display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; }
+  .customer-card:hover .link-out { color: var(--accent-deep); }
+  .customer-card.placeholder { background: transparent; border: 1px dashed var(--rule); box-shadow: none; cursor: default; opacity: 0.6; }
+  .customer-card.placeholder:hover { transform: none; box-shadow: none; border-color: var(--rule); }
+  .customer-card.placeholder h3 { color: var(--ink-faint); }
+
+  /* ───── Famous preacher grid (right column) ───── */
+  .preacher-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .preacher-card {
+    background: var(--bg-card); border: 1px solid var(--rule);
+    border-radius: 12px; padding: 18px 18px 16px;
+    text-decoration: none; color: var(--ink); display: block;
+    transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+    box-shadow: var(--shadow-sm);
+  }
+  .preacher-card:hover {
+    transform: translateY(-2px); box-shadow: var(--shadow-md);
+    border-color: var(--accent-soft); text-decoration: none;
+  }
+  .preacher-card .name { font-weight: 700; font-size: 16px; line-height: 1.2; letter-spacing: -0.01em; margin: 0 0 4px; }
+  .preacher-card .pulpit { font-size: 12px; color: var(--ink-faint); margin: 0 0 10px; line-height: 1.4; }
+  .preacher-card .arrow-row { font-size: 12px; font-weight: 600; color: var(--accent); display: flex; align-items: center; gap: 4px; }
+  .preacher-card .arrow { transition: transform 0.12s; }
+  .preacher-card:hover .arrow { transform: translateX(3px); }
+
+  /* ───── CTA at bottom ───── */
+  .closing-cta { background: var(--ink); color: #fff; padding: 72px 28px; text-align: center; }
+  .closing-cta h2 { font-weight: 800; font-size: clamp(1.8rem, 3.5vw, 2.4rem); line-height: 1.15; margin: 0 0 14px; color: #fff; letter-spacing: -0.022em; }
+  .closing-cta p { font-size: 17px; color: rgba(255,255,255,0.7); max-width: 560px; margin: 0 auto 28px; }
+  .btn { font-family: var(--sans); font-size: 16px; font-weight: 600; padding: 14px 22px; border-radius: 10px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: transform 0.12s, background 0.12s; cursor: pointer; }
+  .btn-primary { background: var(--accent); color: #fff; box-shadow: var(--shadow-accent); }
+  .btn-primary:hover { background: var(--accent-deep); color: #fff; transform: translateY(-1px); text-decoration: none; }
+  .closing-cta .btn-primary { background: var(--accent); }
+
+  /* ───── Footer ───── */
+  footer { padding: 40px 28px; border-top: 1px solid var(--rule); background: var(--bg); }
+  .foot-inner { max-width: 1180px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .foot-brand { font-weight: 800; font-size: 18px; }
+  .foot-brand .dot { color: var(--accent); }
+  .foot-imprint { font-size: 13px; color: var(--ink-faint); margin-top: 2px; }
+  .foot-imprint a { color: var(--ink-soft); text-decoration: underline; text-underline-offset: 3px; }
+  .foot-nav { font-size: 14px; display: flex; gap: 24px; }
+  .foot-nav a { color: var(--ink-soft); text-decoration: none; }
+  .foot-nav a:hover { color: var(--ink); }
+
+  @media (max-width: 900px) {
+    .gallery { grid-template-columns: 1fr; gap: 32px; }
+    .preacher-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 540px) {
+    .nav { display: none; }
+    .hero { padding: 56px 20px 32px; }
+    .gallery { padding: 24px 20px 64px; }
+    .preacher-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="wordmark" href="/">Sermon Steward<span class="dot">.</span></a>
+    <nav class="nav">
+      <a href="product.html#how">How it works</a>
+      <a href="product.html#surfaces">Surfaces</a>
+      <a href="samples.html" style="color:var(--ink)">Samples</a>
+      <a href="product.html#pricing">Pricing</a>
+      <a class="btn-sm" href="product.html#contact-form">Talk to us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="tag">Real sermons. Stewarded.</div>
+  <h1>Look at <span class="accent">what we make</span>.</h1>
+  <p class="deck">On the left: pastors using Sermon Steward today. On the right: some of the best known preachers in the west — we've stewarded their corpora as a pilot.</p>
+</section>
+
+<section class="gallery">
+
+  <!-- ───── Column 1: Current customer samples ───── -->
+  <div>
+    <div class="column-head">
+      <div class="column-eyebrow">Customers</div>
+      <h2 class="column-title">Pastors using Sermon Steward today</h2>
+      <p class="column-blurb">Pastor and church details anonymized at the customer's request. The preaching is real.</p>
+    </div>
+
+    <a class="customer-card" href="growing-in-christ.html">
+      <div class="meta-row">
+        <span class="customer-pill surface">Sermon page</span>
+        <span class="customer-pill audience">Seeker · member</span>
+      </div>
+      <h3>Growing in Christ</h3>
+      <p class="text-ref">Ephesians 4:11–16</p>
+      <p class="description">A fully stewarded sermon page — exegesis, illustration ledger, application units, citations, Schema.org structured data, and a paragraph-linkable transcript. The seeker-facing entry point for one Sunday's preaching.</p>
+      <p class="anonymized">Church plant · Midwest US</p>
+      <span class="link-out">View the sermon page <span class="arrow">→</span></span>
+    </a>
+
+    <a class="customer-card" href="weekly-report.html">
+      <div class="meta-row">
+        <span class="customer-pill surface">Weekly report</span>
+        <span class="customer-pill audience">Pastor · elders</span>
+      </div>
+      <h3>Weekly Anatomy Report</h3>
+      <p class="text-ref">A portrait of Sunday's preaching</p>
+      <p class="description">The internal-facing surface — citations, doctrinal loci, illustration types, rhetorical arc. The pastor's mirror; the eldership's accountability tool. Same sermon as above, different audience, different surface.</p>
+      <p class="anonymized">Church plant · Midwest US</p>
+      <span class="link-out">View the weekly report <span class="arrow">→</span></span>
+    </a>
+
+    <div class="customer-card placeholder">
+      <div class="meta-row">
+        <span class="customer-pill surface">Sermon page</span>
+        <span class="customer-pill audience">Seeker · member</span>
+      </div>
+      <h3>Sample forthcoming</h3>
+      <p class="text-ref">Established church · Pastoral team</p>
+      <p class="description">A second customer sample is being prepared for publication. Available on request — talk to us.</p>
+    </div>
+
+    <div class="customer-card placeholder">
+      <div class="meta-row">
+        <span class="customer-pill surface">Leader brief</span>
+        <span class="customer-pill audience">Small-group leaders</span>
+      </div>
+      <h3>Sample forthcoming</h3>
+      <p class="text-ref">Small-group leader brief</p>
+      <p class="description">The leader brief surface, delivered Monday afternoon. Pastor-customer review pending.</p>
+    </div>
+  </div>
+
+  <!-- ───── Column 2: Famous preachers ───── -->
+  <div>
+    <div class="column-head">
+      <div class="column-eyebrow">Famous preachers</div>
+      <h2 class="column-title">Significant Sermons Stewarded</h2>
+      <p class="column-blurb">We've run Sermon Steward against some of the best known preachers in the west. See their sermons properly stewarded.</p>
+    </div>
+
+    <div class="preacher-grid">
+      <a class="preacher-card" href="#preacher-keller">
+        <div class="name">Tim Keller</div>
+        <div class="pulpit">Redeemer Presbyterian · NYC</div>
+        <div class="arrow-row">Open profile <span class="arrow">→</span></div>
+      </a>
+      <a class="preacher-card" href="#preacher-spurgeon">
+        <div class="name">C. H. Spurgeon</div>
+        <div class="pulpit">Metropolitan Tabernacle</div>
+        <div class="arrow-row">Open profile <span class="arrow">→</span></div>
+      </a>
+      <a class="preacher-card" href="#preacher-macarthur">
+        <div class="name">John MacArthur</div>
+        <div class="pulpit">Grace Community Church</div>
+        <div class="arrow-row">Open profile <span class="arrow">→</span></div>
+      </a>
+      <a class="preacher-card" href="#preacher-sproul">
+        <div class="name">R. C. Sproul</div>
+        <div class="pulpit">Saint Andrew's · Ligonier</div>
+        <div class="arrow-row">Open profile <span class="arrow">→</span></div>
+      </a>
+      <a class="preacher-card" href="#preacher-piper">
+        <div class="name">John Piper</div>
+        <div class="pulpit">Bethlehem Baptist · Minneapolis</div>
+        <div class="arrow-row">Open profile <span class="arrow">→</span></div>
+      </a>
+      <a class="preacher-card" href="#preacher-mlj">
+        <div class="name">Martyn Lloyd-Jones</div>
+        <div class="pulpit">Westminster Chapel · London</div>
+        <div class="arrow-row">Open profile <span class="arrow">→</span></div>
+      </a>
+      <a class="preacher-card" href="#preacher-ferguson">
+        <div class="name">Sinclair Ferguson</div>
+        <div class="pulpit">First Presbyterian · Columbia</div>
+        <div class="arrow-row">Open profile <span class="arrow">→</span></div>
+      </a>
+      <a class="preacher-card" href="#preacher-carson">
+        <div class="name">D. A. Carson</div>
+        <div class="pulpit">Trinity Evangelical Divinity</div>
+        <div class="arrow-row">Open profile <span class="arrow">→</span></div>
+      </a>
+      <a class="preacher-card" href="#preacher-stott">
+        <div class="name">John Stott</div>
+        <div class="pulpit">All Souls · Langham Place</div>
+        <div class="arrow-row">Open profile <span class="arrow">→</span></div>
+      </a>
+      <a class="preacher-card" href="#preacher-ryle">
+        <div class="name">J. C. Ryle</div>
+        <div class="pulpit">Bishop of Liverpool</div>
+        <div class="arrow-row">Open profile <span class="arrow">→</span></div>
+      </a>
+      <a class="preacher-card" href="#preacher-watson">
+        <div class="name">Thomas Watson</div>
+        <div class="pulpit">St Stephen's · Walbrook</div>
+        <div class="arrow-row">Open profile <span class="arrow">→</span></div>
+      </a>
+      <a class="preacher-card" href="#preacher-boice">
+        <div class="name">James Boice</div>
+        <div class="pulpit">Tenth Presbyterian · Philadelphia</div>
+        <div class="arrow-row">Open profile <span class="arrow">→</span></div>
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="closing-cta">
+  <h2>Want your sermon on this page?</h2>
+  <p>Send us Sunday's audio or a transcript. Within seven days we'll send you back what the same sermon looks like stewarded.</p>
+  <a class="btn btn-primary" href="product.html#contact-form">Get a sample sermon stewarded</a>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">Sermon Steward<span class="dot">.</span></div>
+      <div class="foot-imprint">Built by pastors, for pastors.</div>
+    </div>
+    <div class="foot-nav">
+      <a href="product.html#how">How it works</a>
+      <a href="product.html#surfaces">Surfaces</a>
+      <a href="samples.html">Samples</a>
+      <a href="product.html#pricing">Pricing</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
