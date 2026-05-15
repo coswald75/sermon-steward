@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Christian Meekness — Thomas Watson · Sermon Steward</title>
+<meta name="description" content="Christian meekness is the third step toward blessedness">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Christian Meekness — Thomas Watson">
+<meta property="og:description" content="Christian meekness is the third step toward blessedness">
+<meta property="og:site_name" content="Sermon Steward">
+<style>
+  :root {
+    --ink: #1a1a2e; --ink-soft: #3d3d52; --ink-faint: #6f6f80;
+    --paper: #faf7f0; --paper-raised: #fffdf7;
+    --rule: #e2dcce; --rule-soft: #ede7d8;
+    --accent: #2d5a4a; --accent-soft: #5a8073; --accent-deep: #1d3d31;
+    --gold: #b8893a; --gold-bg: #fdf4d9;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; background:var(--paper); color:var(--ink);
+    font-family:"Source Serif Pro","Iowan Old Style","Charter",Georgia,serif;
+    font-size:18px; line-height:1.62; -webkit-font-smoothing:antialiased; }
+  .ui { font-family:"Inter",system-ui,sans-serif; }
+  a { color:var(--accent); text-underline-offset:2px; }
+
+  .site-header { border-bottom:1px solid var(--rule); background:var(--paper-raised); padding:16px 24px; }
+  .site-header-inner { max-width:1080px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; }
+  .site-brand { font-family:"Inter",sans-serif; font-weight:600; font-size:13px; letter-spacing:0.06em; color:var(--ink); text-decoration:none; }
+  .site-brand .dot { color:var(--accent); }
+  .site-tag { font-family:"Inter",sans-serif; font-size:11px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.12em; }
+
+  main { max-width:780px; margin:0 auto; padding:56px 24px 96px; }
+
+  .breadcrumb { font-size:12px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:22px; }
+  .breadcrumb a { color:var(--ink-soft); text-decoration:none; }
+
+  .sermon-title { font-size:42px; font-weight:600; line-height:1.1; letter-spacing:-0.015em; margin:0 0 16px; }
+  .sermon-cite { font-family:"Inter",sans-serif; font-size:13px; color:var(--ink-faint);
+    display:flex; gap:18px; flex-wrap:wrap; margin-bottom:36px; }
+  .sermon-cite strong { color:var(--ink-soft); font-weight:600; }
+
+  .thesis-hero { border-left:3px solid var(--accent); background:var(--paper-raised);
+    padding:22px 28px; margin:0 0 36px;
+    font-size:22px; line-height:1.5; color:var(--ink); font-style:italic; }
+  .thesis-label { display:block; font-family:"Inter",sans-serif; font-size:10px;
+    letter-spacing:0.15em; text-transform:uppercase; color:var(--accent);
+    font-style:normal; margin-bottom:8px; }
+
+  .facts-strip { display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
+    border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
+    padding:18px 0; margin-bottom:40px; }
+  .fact-label { font-family:"Inter",sans-serif; font-size:10px; text-transform:uppercase;
+    letter-spacing:0.12em; color:var(--ink-faint); margin-bottom:4px; }
+  .fact-value { font-size:15px; font-weight:600; color:var(--ink-soft); }
+
+  .page-section { margin:0 0 56px; }
+  .section-eyebrow { font-family:"Inter",sans-serif; font-size:11px; letter-spacing:0.16em;
+    text-transform:uppercase; color:var(--accent); margin-bottom:8px; }
+  .section-title-h2 { font-size:28px; font-weight:600; line-height:1.18; margin:0 0 14px; letter-spacing:-0.01em; }
+  .section-lede { color:var(--ink-soft); margin:0 0 24px; font-size:17px; line-height:1.6; }
+
+  /* Discuss/apply/pray cards */
+  .discuss-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:8px; }
+  .discuss-card { background:var(--paper-raised); border:1px solid var(--rule);
+    border-radius:12px; padding:26px 28px 24px; color:inherit; }
+  .discuss-card-wide { grid-column:1/-1; }
+  .discuss-card-label { font-family:"Inter",sans-serif; font-size:10px; font-weight:600;
+    text-transform:uppercase; letter-spacing:0.12em; color:var(--accent); margin-bottom:8px; }
+  .discuss-card-title { font-weight:600; font-size:20px; margin:0 0 16px; color:var(--ink);
+    letter-spacing:-0.005em; }
+  .discuss-card p { color:var(--ink-soft); font-size:15.5px; line-height:1.6; margin:0 0 12px; }
+  .discuss-card p:last-child { margin-bottom:0; }
+  .discuss-list { margin:0; padding-left:22px; color:var(--ink-soft); font-size:15.5px; line-height:1.55; }
+  .discuss-list li { margin-bottom:10px; }
+  .discuss-list li::marker { color:var(--accent); font-weight:600; }
+  .qmeta { font-family:"Inter",sans-serif; font-size:12px; color:var(--ink-faint); margin-left:6px; }
+  .followup { font-style:italic; font-size:14.5px; color:var(--ink-faint); margin-top:6px; line-height:1.5; }
+
+  .daily-plan { margin:0; }
+  .daily-row { display:grid; grid-template-columns:60px 1fr; gap:14px;
+    padding:12px 0; border-bottom:1px solid var(--rule-soft);
+    font-size:15px; line-height:1.55; color:var(--ink-soft); }
+  .daily-row:last-child { border-bottom:0; }
+  .daily-day { font-family:"Inter",sans-serif; font-size:11px; font-weight:700;
+    letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); padding-top:2px; }
+  .daily-title { color:var(--ink); font-weight:600; }
+  .daily-ref { font-family:"Inter",sans-serif; font-size:12px; color:var(--ink-faint); margin-left:8px; }
+  .daily-question { margin-top:4px; color:var(--ink-soft); }
+
+  .prayer-quote { font-family:inherit; font-size:16.5px; line-height:1.62; color:var(--ink);
+    border-left:3px solid var(--accent); padding:4px 0 4px 18px; margin:4px 0 0; font-style:italic; }
+  .prayer-quote p { margin:0 0 12px; color:var(--ink); }
+  .prayer-quote p:last-child { margin-bottom:0; }
+
+  .memorize-quote { font-size:19px; line-height:1.55; color:var(--ink); font-style:italic;
+    border-left:3px solid var(--accent); padding:4px 0 4px 18px; margin:0; }
+  .memorize-ref { font-family:"Inter",sans-serif; font-size:12px; color:var(--ink-faint);
+    margin-top:12px; line-height:1.55; }
+
+  /* About the pastor */
+  .pastor-card { background:var(--paper-raised); border:1px solid var(--rule);
+    border-radius:12px; padding:28px 32px; }
+  .pastor-name { font-size:22px; font-weight:600; margin-bottom:8px; }
+  .pastor-bio { font-size:15.5px; line-height:1.6; color:var(--ink-soft); margin:0; }
+
+  .page-footer { max-width:780px; margin:64px auto 32px; padding:0 24px;
+    font-family:"Inter",sans-serif; font-size:12px; color:var(--ink-faint); line-height:1.6; }
+  .page-footer a { color:var(--ink-soft); }
+
+  @media (max-width:600px) {
+    .sermon-title { font-size:32px; }
+    .facts-strip { grid-template-columns:1fr; }
+    .discuss-grid { grid-template-columns:1fr; }
+    .discuss-card-wide { grid-column:auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-brand" href="/">Sermon Steward<span class="dot">.</span></a>
+    <span class="site-tag">Famous-Preacher Sample · Thomas Watson</span>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb"><a href="/samples">Samples</a> · Significant sermons stewarded</div>
+
+  <h1 class="sermon-title">Christian Meekness</h1>
+
+  <div class="sermon-cite">
+    <span><strong>Matthew 5:5</strong></span>
+    <span>Thomas Watson</span>
+  </div>
+
+  <blockquote class="thesis-hero">
+    <span class="thesis-label">Thesis</span>
+    Meek people are blessed people because meekness is the divine grace that enables Christians to bear, forgive, and repay evil with good, thereby inheriting both earth and heaven.
+  </blockquote>
+
+  <div class="facts-strip">
+    <div class="fact"><div class="fact-label">Primary text</div><div class="fact-value">Matthew 5:5</div></div>
+    <div class="fact"><div class="fact-label">Preacher</div><div class="fact-value">Thomas Watson</div></div>
+    <div class="fact"><div class="fact-label">Surfaces</div><div class="fact-value">6 stewarded</div></div>
+  </div>
+
+  <section class="page-section"><div class="section-eyebrow">What the sermon argues</div><h2 class="section-title-h2">The shape of the message</h2><p class="section-lede">Christian meekness is the third step toward blessedness. This grace operates both toward God (submission to His will and flexibleness to His Word) and toward man (bearing injuries, forgiving injuries, and recompensing good for evil). Meekness is a divine grace that moderates angry passions and makes us like God Himself. Though it contradicts fallen nature, meekness is essential to genuine Christianity, adorning the gospel and silencing opposition. The promise attached to meekness is that the meek shall inherit the earth—possessing both the best title to earthly goods and the blessing of heaven itself.</p></section>
+
+  <section class="page-section">
+    <div class="section-eyebrow">Take it further</div>
+    <h2 class="section-title-h2">Discuss · apply · pray</h2>
+    <p class="section-lede">Six surfaces drawn from this sermon — small-group leader brief, daily reading plan, weekly prayer, memorize, family table, couples — generated automatically by Sermon Steward.</p>
+    <div class="discuss-grid">
+<div class="discuss-card discuss-card-wide"><div class="discuss-card-label ui">Small-group leader brief</div><h3 class="discuss-card-title">Questions for midweek</h3><ol class="discuss-list">
+<li>Watson describes meekness toward God as 'submission to His will without swelling or murmuring under adverse circumstances.' What does it look like in your own life when you are tempted to swell or murmur against God's will, and what typically triggers that response? <span class="qmeta">1 Samuel 3:18</span><div class="followup">How might looking beyond the human instrument of your suffering to God's sovereign hand change the way you respond in those moments?</div></li><li>The sermon distinguishes between anger that is sinful and anger that is holy (as Christ displayed in the temple). What is the difference Watson identifies, and how do you discern whether your own anger is righteous or merely an expression of wounded pride? <span class="qmeta">John 2:14-15</span></li><li>Watson argues that forgiveness is 'a herculean work that runs directly counter to corrupt human nature.' When have you experienced the resistance of your own flesh against forgiving someone, and what does that resistance reveal about your need for divine grace?</li><li>The sermon states that 'where there is one grace, there is all; if meekness is lacking, all other graces are counterfeit.' What do you make of this claim—does it ring true to your observation of the Christian life, and what might it mean to examine whether meekness is actually present in your own repentance and righteousness?<div class="followup">Can you think of a time when you showed genuine kindness or generosity but lacked meekness in how you did it—and what difference did the meekness (or lack thereof) make?</div></li><li>Watson says that 'the miracle of meekness is that it repays good for evil'—that grace 'works a strange alteration in the heart, melting revenge into compassion.' When you consider the gospel itself (Christ suffering unjustly and praying for His killers), how does His work reshape what seems possible for you to do toward those who have harmed you?</li><li>The promise of Matthew 5:5 is that 'the meek shall inherit the earth'—both as a sojourning-house now and as a mansion-house in heaven. How does the security of that double inheritance (both God's present care and His future glory) compel you to lay down your right to retaliate or defend your reputation this week?<div class="followup">What is one concrete situation in your relationships where you are tempted to strike back or hold onto bitterness, and how might believing that promise change your response?</div></li>
+</ol></div>
+<div class="discuss-card discuss-card-wide"><div class="discuss-card-label ui">Daily readings</div><h3 class="discuss-card-title">Five-day reading plan</h3><p style="margin:0 0 14px;color:var(--ink-soft)">This week we trace meekness from its root in submission to God, through its expression in bearing and forgiving injuries, to its highest fruit in returning good for evil—discovering that this grace both adorns the gospel and secures our inheritance.</p><div class="daily-plan"><div class="daily-row"><div class="daily-day">Monday</div><div><span class="daily-title">Meekness toward God is submission to His will without swelling or murmuring under adverse circumstances.</span><span class="daily-ref">1 Samuel 3:18</span><div class="daily-question">Eli's response to the news of his house's ruin—'It is the Lord: let him do what seemeth him good'—captures the essence of meekness toward God. Without denial of pain or pretense of joy, he submits his will entirely to God's sovereignty, teaching us that true meekness bows before the throne without complaint or resistance, finding in God's will the only acceptable frame for our lives.</div></div></div><div class="daily-row"><div class="daily-day">Tuesday</div><div><span class="daily-title">Flexibleness to God's Word means conforming to God's mind rather than quarreling with His instructions.</span><span class="daily-ref">James 1:21</span><div class="daily-question">James calls us to receive the Word 'with meekness,' not as proud judges but as humble learners ready to be shaped by Scripture. Meekness toward God's Word is the opposite of the stiff-necked resistance that hardens us against truth; it is the pliable spirit that says, 'Speak, Lord, for thy servant heareth,' conforming our minds to His rather than insisting He conform to ours.</div></div></div><div class="daily-row"><div class="daily-day">Wednesday</div><div><span class="daily-title">Meekness toward man is a divine grace that moderates angry passions, marking resistance to provocation.</span><span class="daily-ref">Psalm 38:12-13</span><div class="daily-question">The psalmist, surrounded by those who 'lay snares' and 'speak mischief,' responds not with retort but with silence: 'I, as a deaf man, heard not.' This is meekness in action—the grace to absorb injury without the rush of angry response that would cloud reason and hand victory to malice. Such silence is not weakness but strength, for it refuses to let an enemy's provocation become the master of our souls.</div></div></div><div class="daily-row"><div class="daily-day">Thursday</div><div><span class="daily-title">Christ is the exemplar and pattern of meekness, calling us to learn from Him as our primary lesson.</span><span class="daily-ref">Matthew 11:29</span><div class="daily-question">Christ invites us to 'learn of me; for I am meek and lowly in heart,' presenting Himself as the supreme teacher of this grace. We cannot claim to follow the Savior while cultivating pride, anger, and vengeance; to be His disciples is to be transformed by His meekness, allowing His gentle strength to remake our passions and our character into His likeness.</div></div></div><div class="daily-row"><div class="daily-day">Friday</div><div><span class="daily-title">Where there is one grace, there is all; if meekness is lacking, all other graces are counterfeit.</span><span class="daily-ref">Galatians 5:23</span><div class="daily-question">Paul places meekness in the fruit of the Spirit, binding it inseparably to faith, love, and all other virtues. The absence of meekness exposes the absence of true grace; we cannot claim to walk in the Spirit while harboring anger, malice, and revenge. As we examine ourselves this week, we ask: Does meekness adorn my faith, or do I betray through my passions that other graces remain merely profession, not possession?</div></div></div></div></div>
+<div class="discuss-card"><div class="discuss-card-label ui">Weekly prayer</div><h3 class="discuss-card-title">A Meek and Forgiving Spirit</h3><blockquote class="prayer-quote"><p>Father, we adore You for the immeasurable grace of meekness that moderates our angry passions and makes us like You Yourself. We marvel that You, though provoked daily by our rebellion, bear with us in patience and mix majesty with meekness toward those who deserve Your wrath. Yet we confess that meekness runs directly counter to our corrupt nature. Our hearts swell under injury, our anger rises quick as madness, and our tongues burn to retaliate with sharp words. We struggle to bear injuries without bitterness, to forgive from the heart as You forgive us, and to repay evil with good—that highest expression of Christian grace (Matthew 5:5). Lord, our flesh rebels against such gentleness, yet we acknowledge that without meekness, all our other professions of faith are counterfeit.</p><p>But in the gospel we have what our nature cannot produce. Christ Himself is our pattern of meekness, and He calls us to learn from Him, for in His death He bore our provocation and repaid our evil with the supreme good of His sacrifice. By His Spirit, grace works the strange and glorious alteration of our hearts, melting revenge into compassion and teaching us to see Your sovereign hand in every affront we receive (Ephesians 4:26-27). We ask You to grant us the grace to look beyond those who injure us to see You working all things for our good. Give us hearts that bear injuries with resistance to quick provocation, that forgive as You forgive—fully, from the heart, and repeatedly—and that return good for evil as a display of Your transforming power. Make us meek toward You as well, willing to submit to Your will without swelling or murmuring, and flexible to Your Word rather than quarreling with Your instructions (James 1:21). We pray that this precious ornament of meekness would adorn our lives and silence the opposition of those who watch us, that through our meekness they might see the credit of the gospel and be drawn to Your grace.</p><p>We commit ourselves to this glad pursuit of Christlikeness, trusting that You who have called us to inherit the earth and heaven will complete the work You have begun in us. All glory to Your name.</p></blockquote></div>
+<div class="discuss-card"><div class="discuss-card-label ui">Memorize</div><h3 class="discuss-card-title">Matthew 5:5</h3><blockquote class="memorize-quote">&ldquo;Blessed are the meek, for they shall inherit the earth.&rdquo;</blockquote><div class="memorize-ref">This verse is the foundation of the entire sermon—it anchors both the beatitude promise and the central claim that meekness is the divine grace enabling Christians to bear, forgive, and repay evil with good. Memorizing this verse captures Watson's thesis: that meek people are blessed because they inherit both the earth and heaven through their submission to God and their grace toward others.</div></div>
+<div class="discuss-card"><div class="discuss-card-label ui">Family table</div><h3 class="discuss-card-title">The Power of Staying Calm</h3><p><strong>One question for the table:</strong> Pastor Watson said that when we get angry, it's like our brain goes a little crazy and we can't think straight. Can you think of a time this week when you felt really mad about something? What happened to how you were thinking? Now, what do you think would have been different if you'd stayed calm instead?</p><p style="font-size:13px;color:var(--ink-faint)"><em>Works for ages 6+; younger children can share simple examples with parent help; older kids and teens will naturally go deeper into how anger clouds their judgment</em></p><p><strong>For parents:</strong> This prompt anchors in Watson's vivid image of anger as 'a short fit of madness that suspends the use of reason.' The goal is to help your family see that meekness—staying calm when provoked—is not weakness but wisdom, and that it reflects God's own character.</p></div>
+<div class="discuss-card"><div class="discuss-card-label ui">Couples</div><h3 class="discuss-card-title">Meekness: Grace to Bear and Forgive</h3><ol class="discuss-list"><li>What did Watson's vision of meekness stir in your own heart—where do you sense the Spirit calling you to grow in bearing injury or releasing anger rather than revenge?</li><li>Where in our marriage do we struggle most with quick provocation, unforgiving spirits, or the desire to retaliate—and how might meekness toward each other reflect meekness toward God's hand in our lives?</li><li>What specific burden or hurt is the Spirit inviting you to bring to the cross this week, and how can I pray for you as you ask Him to work the grace of forgiveness and good-for-evil in that place?</li></ol></div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="section-eyebrow">About the preacher</div>
+    <h2 class="section-title-h2">Thomas Watson</h2>
+    <div class="pastor-card">
+      <p class="pastor-bio">17th-century English Puritan pastor of St Stephen's Walbrook; his <em>A Body of Divinity</em>, <em>The Beatitudes</em>, and <em>The Doctrine of Repentance</em> remain in print across Reformed publishing houses.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="page-footer">
+  Sample sermon page · stewarded by <a href="/">Sermon Steward</a>. Decomposition + artifact generation produced automatically; voice profile is the default (per-preacher voice profiles are calibrated for paying customers only).
+</footer>
+
+</body>
+</html>
