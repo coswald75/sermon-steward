@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Providence Community Church — Display truth and beauty in community. · Sermon Steward</title>
+<meta name="description" content="Providence Community Church in Lenexa, KS. Display truth and beauty in community. Browse the church&#x27;s full sermon archive, stewarded weekly.">
+<link rel="canonical" href="https://sermonsteward.com/ProvidenceLenexa/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Providence Community Church">
+<meta property="og:description" content="Providence Community Church in Lenexa, KS. Display truth and beauty in community. Browse the church&#x27;s full sermon archive, stewarded weekly.">
+<meta property="og:url" content="https://sermonsteward.com/ProvidenceLenexa/">
+<meta property="og:site_name" content="Sermon Steward">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbf8f1;
+    --bg-card: #ffffff;
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --ink-faint: #828282;
+    --rule: #e6e1d3;
+    --accent: #c4452f;
+    --accent-deep: #9a3624;
+    --highlight: #fef0c8;
+    --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); font-size: 17px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-deep); }
+  .site-header { padding: 24px 32px; border-bottom: 1px solid var(--rule); }
+  .wordmark { font-weight: 800; font-size: 22px; letter-spacing: -0.02em; color: var(--ink); }
+  .wordmark .dot { color: var(--accent); }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 32px 96px; }
+  .breadcrumb { font-size: 13px; color: var(--ink-faint); margin-bottom: 20px; }
+  .breadcrumb a { color: var(--ink-soft); text-decoration: underline; text-underline-offset: 3px; }
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 800;
+    letter-spacing: -0.03em; line-height: 1.04;
+    margin: 0 0 12px;
+  }
+  .hero-tagline {
+    font-size: clamp(1.15rem, 2vw, 1.35rem);
+    color: var(--accent-deep); font-style: italic;
+    margin: 0 0 8px; font-weight: 500;
+  }
+  .hero-meta { color: var(--ink-soft); font-size: 15px; margin: 0 0 56px; }
+  h2 {
+    font-size: 13px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--accent);
+    margin: 56px 0 18px; padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+  h3 { font-size: 21px; font-weight: 700; margin: 32px 0 10px; letter-spacing: -0.01em; }
+  p { margin: 0 0 16px; color: var(--ink); }
+  ul.values { list-style: none; margin: 18px 0 24px; padding: 0; }
+  ul.values li { padding: 10px 0; border-bottom: 1px solid var(--rule); }
+  ul.values li:last-child { border-bottom: 0; }
+  ul.values strong { color: var(--accent-deep); }
+  .kicker {
+    margin-top: 24px; padding: 14px 18px;
+    background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+    font-size: 15px; color: var(--ink-soft);
+  }
+  .card-row {
+    display: grid; gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 24px;
+  }
+  @media (max-width: 640px) { .card-row { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--bg-card); border: 1px solid var(--rule);
+    border-radius: 12px; padding: 22px 24px;
+  }
+  .card-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .card h4 { margin: 0 0 8px; font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+  .card p { font-size: 15px; margin: 0 0 6px; color: var(--ink-soft); }
+  .card a.btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 14px; font-weight: 600; margin-top: 8px;
+    color: var(--accent);
+  }
+  .card a.btn:hover { color: var(--accent-deep); }
+  .archive-cta {
+    margin: 40px 0 0;
+    background: var(--accent); color: #fff;
+    border-radius: 12px; padding: 24px 28px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .archive-cta p { color: #fff; margin: 0; font-size: 16px; font-weight: 500; }
+  .archive-cta a {
+    color: #fff; font-weight: 700;
+    padding: 12px 20px; border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 8px; white-space: nowrap;
+    transition: background 0.12s;
+  }
+  .archive-cta a:hover { background: rgba(255,255,255,0.12); color: #fff; }
+  footer {
+    padding: 24px 32px; font-size: 13px; color: var(--ink-faint);
+    text-align: center; border-top: 1px solid var(--rule);
+  }
+  footer a { color: var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="wordmark" href="/">Sermon Steward<span class="dot">.</span></a>
+</header>
+
+<main>
+  <div class="breadcrumb"><a href="/">Sermon Steward</a> · Providence Community Church</div>
+  <h1>Providence Community Church</h1>
+  <p class="hero-tagline">Display truth and beauty in community.</p>
+  <p class="hero-meta">Lenexa, KS · Sundays at 10:00 AM</p>
+
+  <h2>About the Church</h2>
+  
+<p>Providence Community Church is a gospel-centered congregation in Lenexa, Kansas. Its mission is to <em>display truth and beauty in community</em> — a phrase that names what most churches assume but few articulate. The gospel produces a way of life that is not only true but lovely; not only doctrinally serious but culturally generative; not only personally formative but communally visible.</p>
+
+<p>The church sits inside the classical tradition that treats truth, beauty, and goodness as joined transcendentals, and the preaching reflects that. Sermons engage what's sometimes called "the great conversation" — the long human inquiry into what is real, what is good, what is worth wanting — and bring scripture into that inquiry as both authority and answer. The church culture pairs a strong commitment to truth with an unembarrassed practice of beauty, feasting, and grateful pursuit of the good life as faithful Christian living.</p>
+
+<h3>What Providence values</h3>
+<p>Providence states its values as comparisons rather than slogans — clearer about what is being chosen against:</p>
+<ul class="values">
+  <li><strong>Humility &gt; Pride</strong> — Humility is an accurate view of God and ourselves; the foundation under every other virtue.</li>
+  <li><strong>Courage &gt; Cowardice</strong> — Courage flows from humility, cowardice from pride. The church wants to help people live authentically courageous lives.</li>
+  <li><strong>Celebration &gt; Envy</strong> — Envy is treated as a much bigger spiritual problem than usually credited; the cross makes it possible to root for one another.</li>
+  <li><strong>Facts &gt; Feelings</strong> — Feelings matter, but when feelings and facts disagree, the work is to bring the feeling into the truth — not the truth into the feeling.</li>
+  <li><strong>Honesty &gt; Spin</strong> — Say what you mean and mean what you say. <em>By the open statement of the truth we would commend ourselves to everyone's conscience in the sight of God.</em></li>
+  <li><strong>Freedom &gt; Guilt</strong> — The world uses guilt to coerce conformity; the gospel sets people free. Confession leads to cleansing, not condemnation.</li>
+</ul>
+
+<p class="kicker">Full statement of faith, leadership team, visitor information, and ways to get involved are at <a href="https://sovgracekc.org/" target="_blank" rel="noopener">sovgracekc.org</a>.</p>
+
+
+  <h2>About the Preacher</h2>
+  
+<p>Chris Oswald has served as Senior Pastor of Providence Community Church for more than a decade. Across that span he has built a preaching corpus of <strong>282 sermons and more than 10,000 units of homiletical structure</strong> — and inside that corpus a distinct shape has emerged.</p>
+
+<h3>A pastor whose preaching center is sanctification</h3>
+<p>Most expository preachers anchor primarily on <em>Christology</em> (who Christ is) or <em>Soteriology</em> (what He has done). Chris does both, but with measurable consistency, his preaching keeps returning to what comes next: <strong>the actual shape of a Christian life</strong> — the cost of obedience, the long defeat-and-final-victory rhythm of formation, the work of becoming the kind of person the gospel makes possible. Across his corpus, units of preaching that engage sanctification outnumber every other doctrinal category. That is unusual, and it reflects a settled pastoral conviction: the gospel is announced <em>and</em> applied. A sermon that names the truth without naming what it asks of the hearer has stopped too early.</p>
+
+<h3>Expository, series-driven, patient</h3>
+<p>Eighty-three percent of Chris's sermons are expository — walking through scripture passage by passage rather than gathering verses around a topic. The preferred unit is the multi-week series. Over the years he has worked through <em>Kingdom Come</em> (29 sermons on the Gospel of Luke), <em>Galatians</em> (10), <em>1 John</em> (8), <em>Ephesians</em> (5), <em>Colossians</em> (5), and a 20-sermon arc through the Psalms. The instinct is that the shape of a biblical book matters, the shape of a series matters, and the shape of formation matters — and that a pastor should not arrive at Sunday without a long-arc theological argument already in flight.</p>
+
+<h3>Theologically dense without being academic</h3>
+<p>Chris reads broadly, and it shows. Across the corpus his most-quoted sources span two thousand years of Christian thought: the Apostle Paul, C.S. Lewis, Charles Spurgeon, J.I. Packer, Jonathan Edwards, John Piper, Martin Luther, John Calvin, John Owen, Augustine, Sinclair Ferguson, D.A. Carson, John Stott. Wide reading produces preaching that is at home in both the historical Church and contemporary cultural moments — but never as ornament. Quotes serve the argument; they don't replace it.</p>
+
+<h3>Concrete application — four times per sermon, on average</h3>
+<p>What distinguishes the application is <em>concreteness</em>. Chris averages four applications per sermon — measurably above the working baseline for expository preachers. More importantly, more than half of those applications are concrete: not "trust God in suffering" but the specific Tuesday-afternoon decision. Personal stories appear in roughly a third of his illustrations; cultural references in another fifth. He is preaching to the congregation he knows, not to a generic "modern listener."</p>
+
+<h3>Doctrine that earns the emotion</h3>
+<p>Chris's preaching is mind-engaged before it is heart-engaged — careful, argued, scripturally precise. But he doesn't skip the weight. The rhetorical register sits at roughly <strong>three-quarters Logos and one-third Pathos</strong>: explain the truth, ask what it costs to live in it, and let the listener feel the weight before moving on. The doctrine earns the emotion; the emotion is never manufactured.</p>
+
+<p class="kicker">In short: a pastor's pastor. Theologically serious, pastorally warm, structurally patient, and consistently more concerned with what a sermon <em>does</em> in someone's actual life than with how it sounds in the moment of preaching.</p>
+
+
+  <div class="archive-cta">
+    <p>Browse 95 stewarded sermons from Providence — every page includes the transcript, discussion guide, daily readings, prayer prompt, family card, couples guide, and memory verse.</p>
+    <a href="/ProvidenceLenexa/sermons/">Open the sermon archive →</a>
+  </div>
+
+  <h2>Visit & Connect</h2>
+  <div class="card-row">
+    <div class="card">
+      <div class="card-label">Visit on Sunday</div>
+      <h4>Sundays at 10:00 AM</h4>
+      <p>10113 Lenexa Dr · Lenexa, KS</p>
+      <p>Four songs of worship, then a 35–40 minute expository sermon. Casual dress. Coffee on arrival. Drop-off lane in front for kids and guests who need it.</p>
+      <a class="btn" href="https://sovgracekc.org/visit/" target="_blank" rel="noopener">Plan your visit →</a>
+    </div>
+    <div class="card">
+      <div class="card-label">Church Website</div>
+      <h4>sovgracekc.org</h4>
+      <p>Statement of faith, leadership team, ministries, contact, and the church's own home on the web.</p>
+      <a class="btn" href="https://sovgracekc.org/" target="_blank" rel="noopener">Visit sovgracekc.org →</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  Sermon Steward stewards the preaching of Providence Community Church. The church itself lives at <a href="https://sovgracekc.org/" target="_blank" rel="noopener">sovgracekc.org</a>.
+</footer>
+
+</body>
+</html>
