@@ -580,6 +580,125 @@
     margin-bottom: 8px;
   }
 
+  /* ────────── Indicatives & Imperatives ────────── */
+  .ii-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 24px 28px 28px;
+  }
+  .ii-intro {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0 0 22px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .ii-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 22px;
+  }
+  .ii-col h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0 0 14px;
+  }
+  .ii-col.indicatives h3 { color: var(--accent-deep); }
+  .ii-col.imperatives h3 { color: var(--accent); }
+  .ii-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .ii-list li {
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--rule);
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .ii-list li:last-child { border-bottom: 0; }
+  .ii-statement { display: block; }
+  .ii-meta {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--ink-faint);
+    font-family: "Inter", sans-serif;
+  }
+  .ii-meta .ii-scripture {
+    color: var(--accent-deep);
+    font-weight: 500;
+  }
+  .ii-balance {
+    margin: 0;
+    padding: 16px 18px;
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .ii-balance strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  @media (max-width: 740px) {
+    .ii-grid { grid-template-columns: 1fr; gap: 8px; }
+  }
+
+  /* ────────── When Put In Poetry... (hymn card) ────────── */
+  .hymn-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 0;
+    position: relative;
+  }
+  .hymn-card::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 24px; bottom: 24px;
+    width: 3px;
+    background: var(--accent);
+    border-radius: 0 2px 2px 0;
+  }
+  .hymn-card .hymn-excerpt {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0 0 18px;
+    padding-left: 22px;
+  }
+  .hymn-card .hymn-excerpt .line {
+    display: block;
+  }
+  .hymn-card .hymn-meta {
+    padding-left: 22px;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .hymn-card .hymn-meta strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .hymn-card .hymn-meta .hymn-source {
+    color: var(--ink-faint);
+    margin-left: 6px;
+  }
+
   /* ────────── Related teaching ────────── */
   ol.related-list {
     list-style: none;
@@ -1902,6 +2021,135 @@
     </section>
     
 
+    <!-- ═══════════ Indicatives & Imperatives ═══════════ -->
+    
+    <section class="page-section">
+      <div class="section-eyebrow ui">The structure of the gospel call</div>
+      <h2 class="section-title-h2">Indicatives &amp; Imperatives</h2>
+
+      <div class="ii-card">
+        
+        <p class="ii-intro">Christ is the complete and sufficient revelation of God and the final purification for sin; His victory over all spiritual enemies is finished and requires no supplemental additions. Therefore, believers must reject all parasitic religious and cultural authorities that claim to add to His work, and rest wholly in His supremacy.</p>
+        
+
+        <div class="ii-grid">
+          <div class="ii-col indicatives">
+            <h3>What is true · Indicatives</h3>
+            <ul class="ii-list">
+              
+              <li>
+                <span class="ii-statement">Christ is the final revelation of God—believers need no other source, vision, angelic intermediary, or philosophical system to know what God is like.</span>
+                <span class="ii-meta"><span class="ii-scripture">Colossians 2:2-3, 9</span></span>
+              </li>
+              
+              <li>
+                <span class="ii-statement">Christ is the final purification for sin—believers are made clean and acceptable to God through His finished work alone, not through ritual observance, ascetic practice, or any outside-in purification strategy.</span>
+                <span class="ii-meta"><span class="ii-scripture">Colossians 2:11-15</span></span>
+              </li>
+              
+              <li>
+                <span class="ii-statement">Christ has defeated all spiritual enemies and stripped them of their authority; His victory is complete and requires no further combat or supplemental spiritual strategies.</span>
+                <span class="ii-meta"><span class="ii-scripture">Colossians 2:15, Genesis 3:15</span></span>
+              </li>
+              
+              <li>
+                <span class="ii-statement">Believers are united with Christ in His death and resurrection, have been made alive in Him, and are seated with Him in heavenly places; they possess complete standing before God through union with Christ.</span>
+                <span class="ii-meta"><span class="ii-scripture">Colossians 2:11-14</span></span>
+              </li>
+              
+              <li>
+                <span class="ii-statement">Stoicheia—cultural and spiritual solutions to metaphysical questions about God&#39;s nature and human acceptability—are enslaving powers that operate through human tradition and demonic strongholds, offering false answers to the revelation and purification that Christ alone provides.</span>
+                <span class="ii-meta"><span class="ii-scripture">Colossians 2:8, 20-23</span></span>
+              </li>
+              
+              <li>
+                <span class="ii-statement">The gospel has freed believers from the authority of stoicheia and all parasitic religious authorities; Christ&#39;s supremacy and finished work render all supplemental claims null.</span>
+                <span class="ii-meta"><span class="ii-scripture">Colossians 2:6-7, 20</span></span>
+              </li>
+              
+            </ul>
+          </div>
+          <div class="ii-col imperatives">
+            <h3>What is called for · Imperatives</h3>
+            <ul class="ii-list">
+              
+              <li>
+                <span class="ii-statement">Reject and refuse all parasitic additions to Christ—whether religious practices, philosophical systems, ascetic disciplines, or cultural authorities that claim Jesus said it is finished, but there is a little bit more we need to do.</span>
+                
+                <span class="ii-meta">
+                  <span class="ii-scripture">Colossians 2:8, 20-23</span>
+                   · <em>grounded in:</em> Christ is the final revelation and purification; His victory is complete and requires no supplemental authorities.
+                </span>
+                
+              </li>
+              
+              <li>
+                <span class="ii-statement">Spit the bit of every competing authority—cultural, religious, or spiritual—that seeks to govern your conscience and direct your worship apart from Christ alone.</span>
+                
+                <span class="ii-meta">
+                  <span class="ii-scripture">Colossians 2:20</span>
+                   · <em>grounded in:</em> Believers have been freed from the enslaving power of stoicheia through union with Christ&#39;s death and resurrection.
+                </span>
+                
+              </li>
+              
+              <li>
+                <span class="ii-statement">Root your family, conscience, and communal belonging in Christ rather than in the thick religious or thin cultural practices that surround you, guarding your household against the good desire for belonging that makes you susceptible to parasitic religious addition.</span>
+                
+                <span class="ii-meta">
+                  <span class="ii-scripture">Colossians 2:5-7, 16-23</span>
+                   · <em>grounded in:</em> Christ alone is the final revelation and purification; believers need no supplemental cultural or religious solutions to the metaphysical questions that drive stoicheia.
+                </span>
+                
+              </li>
+              
+              <li>
+                <span class="ii-statement">Discern and name the stoicheia operating in your life—the cultural answers to questions about what God is like and how to be clean before Him—and consciously extract yourself from their rule.</span>
+                
+                <span class="ii-meta">
+                  <span class="ii-scripture">Colossians 2:8, 20</span>
+                   · <em>grounded in:</em> Stoicheia are enslaving powers operating through human tradition and demonic strongholds; awareness and explicit rejection is the path to freedom in Christ.
+                </span>
+                
+              </li>
+              
+              <li>
+                <span class="ii-statement">Stand firm in the conviction that Christ&#39;s work is finished and sufficient; resist the voice—whether from religious community, cultural pressure, or internal conscience—that suggests you must add your own effort, discipline, or alternative revelation to please God.</span>
+                
+                <span class="ii-meta">
+                  <span class="ii-scripture">Colossians 2:4-5, 20-23</span>
+                   · <em>grounded in:</em> Christ is the complete revelation and final purification; His victory over all enemies and all alternative authorities is already accomplished.
+                </span>
+                
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+
+        
+        <p class="ii-balance"><strong>Balance.</strong> The sermon is heavily weighted toward indicative establishment, spending substantial time building a robust theological foundation for why Christ is supremely sufficient—establishing the Christus Victor framework, naming stoicheia as parasitic rather than explicit competitors, and explaining the universal human susceptibility to false answers about revelation and purification. This deep indicative work creates powerful gospel ground for the imperatives of rejection and refusal. The imperatives, though fewer in explicit number, carry their full weight because the hearer has been persuaded of Christ&#39;s completeness and the parasitic nature of additions. The sermon&#39;s rhetorical order moves from doctrine to exhortation, allowing application to flow naturally from established truth.</p>
+        
+      </div>
+    </section>
+    
+
+    <!-- ═══════════ When Put In Poetry... (hymn card) ═══════════ -->
+    
+    <section class="page-section">
+      <div class="section-eyebrow ui">When Put In Poetry…</div>
+      <h2 class="section-title-h2">What think you of Christ? is the test</h2>
+      <div class="hymn-card">
+        <p class="hymn-excerpt">
+          <span class="line">What think you of Christ? is the test</span><span class="line">To try both your state and your scheme;</span><span class="line">You cannot be right in the rest,</span><span class="line">Unless you think rightly of him.</span>
+        </p>
+        <div class="hymn-meta">
+          <strong>John Newton</strong> · Mt 22:42<span class="hymn-source">— Olney Hymns, 1779, Book 1, Hymn 89</span>
+        </div>
+      </div>
+    </section>
+    
+
     <!-- ═══════════ Discuss / apply ═══════════ -->
     <section class="page-section">
       <div class="section-eyebrow ui">Take it further</div>
@@ -1923,8 +2171,8 @@
         
         <a href="#artifact-prayer" class="apply-tile">
           <div class="apply-tile-label ui">Prayer</div>
-          <div class="apply-tile-title">Christ Is Enough—Rejecting the &#39;But More&#39;</div>
-          <div class="apply-tile-desc">Father, we come before You in awe of Your Son, Jesus Christ, who stands as the complete and final revelation of who You are and the ultimate…</div>
+          <div class="apply-tile-title">Prayer for Freedom in Christ&#39;s Sufficiency</div>
+          <div class="apply-tile-desc">Father, we come before you in awe of your Son, Jesus Christ, in whom all the fullness of the Godhead dwells bodily (Colossians 2:9). We than…</div>
         </a>
         
         <a href="#artifact-family" class="apply-tile">
@@ -2057,18 +2305,14 @@
       
       <div class="artifact-card" id="artifact-prayer">
         <div class="artifact-eyebrow ui">Pray together this week</div>
-        <h3 class="artifact-title">Christ Is Enough—Rejecting the &#39;But More&#39;</h3>
+        <h3 class="artifact-title">Prayer for Freedom in Christ&#39;s Sufficiency</h3>
         <div class="artifact-prayer">
           
-          <p>Father, we come before You in awe of Your Son, Jesus Christ, who stands as the complete and final revelation of who You are and the ultimate purification for all our sin. We adore Him as the Christus Victor—the One who has conquered every enemy, disarmed every power that stands against us, and declared with finality: &#34;It is finished&#34; (Colossians 2:15). His victory is total, His work is complete, and He needs no assistance from us or from any other source.</p>
+          <p>Father, we come before you in awe of your Son, Jesus Christ, in whom all the fullness of the Godhead dwells bodily (Colossians 2:9). We thank you that in Him you have revealed yourself completely—there is no hidden knowledge of God, no angelic intermediary, no supplemental vision required to know who you are. We praise you that through Christ&#39;s cross and resurrection, He has disarmed every spiritual power that once held us captive, triumphing over them decisively (Colossians 2:15). His work is finished; His purification is final; His victory is complete. We are made alive in Him, our sins forgiven, our guilt erased—we need add nothing to His accomplished redemption.</p>
           
-          <p>Yet we confess, O Lord, that we are deeply susceptible to the whisper that says, &#34;Yes, but there is still a little more we must do.&#34; We are drawn to supplement Christ&#39;s finished work with our own strategies—with religious practices that promise deeper knowledge of You, with cultural rhythms that seem to offer belonging, with ascetic disciplines that feel like they might earn Your favor or make us more acceptable. We acknowledge our hunger for community and our yearning to know You better, but we grieve how easily these good desires become gateways for the parasitic additions that steal Christ&#39;s supremacy from our hearts.</p>
+          <p>Therefore, we ask you to grant us eyes to see the parasites that whisper, &#34;Christ is good, but...&#34; We confess how easily we are drawn to supplemental strategies, thin religious systems, and cultural authorities that claim to answer the deepest questions of our hearts. Give us grace to recognize these stoicheia—these spiritual strongholds dressed in the language of belonging, wisdom, or spiritual progress—and to reject them with joy. Make us a people who boldly refuse all additions to Christ&#39;s throne, who &#34;spit the bit&#34; of every false authority that contradicts His sufficiency, and who rest secure in the finished work of the cross.</p>
           
-          <p>In the gospel, we have been given everything we need. Christ is the full image of the invisible God (Colossians 1:15); in Him all the fullness of Deity dwells bodily, and we are complete in Him (Colossians 2:9-10). There is no hidden knowledge of God apart from Jesus. There is no purification ritual, no dietary law, no festival observance, no angelic intermediary that improves upon what Christ has accomplished. He has made us alive together with Him and forgiven us all our trespasses (Colossians 2:13). We stand before You clothed in His righteousness alone.</p>
-          
-          <p>Grant us, we pray, the courage to identify and reject every &#34;stoicheia&#34;—every cultural solution, every spiritual stronghold, every alternative authority—that claims to offer what Christ has already provided. Give us discernment to see parasitic additions for what they are, even when they wear the mask of piety or promise deeper spirituality. Strengthen us to &#34;spit the bit&#34; of all competitors for Christ&#39;s throne in our homes, our hearts, and our churches. Help us build a vibrant Christian culture—one that clearly proclaims that Christ is enough, that His work is finished, and that we are eternally secure in His complete victory (Colossians 2:20-23).</p>
-          
-          <p>We commit ourselves anew to Christ alone—not Christ plus philosophy, not Christ plus asceticism, not Christ plus any human tradition. May His sufficiency be our gladness and His supremacy be our joy, now and forevermore.</p>
+          <p>Strengthen us to stand firm in Christ alone (Colossians 2:6-7), holding fast to Him as the head of the church and the source of all true spiritual freedom. Guard our families, our hearts, and our communities from the seduction of parasitic alternatives, and fill us with deep conviction that Jesus Christ—in His person, His work, and His present reign—is all we need and all we shall ever need. Through Christ our Lord. Amen.</p>
           
         </div>
         <div class="artifact-status ui">Draft · pending review</div>
@@ -2205,7 +2449,7 @@ A church preaching expository sermons through the books of the Bible.
     This sermon was preached by <strong>Pastor Chris Oswald</strong> at <strong>Providence Community Church</strong>, Lenexa, KS, on <strong>December 14, 2025</strong>. © 2025 Providence Community Church. Free to share with attribution.
   </div>
   <div>Canonical URL: <code>https://sermonsteward.com/ProvidenceLenexa/sermons/christus-victor-does-not-need-help-2025-12-14</code></div>
-  <div>Page generated by Sermon Steward · processed 2026-05-16 14:33 UTC · model: claude-sonnet-4-5-20250929 · 63 units · 38 citations · 0 quotations</div>
+  <div>Page generated by Sermon Steward · processed 2026-05-18 14:40 UTC · model: claude-sonnet-4-5-20250929 · 63 units · 38 citations · 0 quotations</div>
 </footer>
 
 
