@@ -72,6 +72,56 @@
     letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
   .section-title-h2 { font-size: 32px; font-weight: 600; line-height: 1.15; margin: 0 0 24px; letter-spacing: -0.01em; }
 
+  .series-faq { margin: 0 0 64px; }
+  .faq-intro { font-size: 16px; color: var(--ink-soft); margin: 0 0 22px; line-height: 1.6; max-width: 720px; }
+  .faq-block {
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--paper-raised);
+    margin-bottom: 8px;
+    overflow: hidden;
+  }
+  .faq-block summary {
+    cursor: pointer; list-style: none;
+    padding: 16px 22px;
+    display: grid; grid-template-columns: 60px 1fr auto; gap: 14px;
+    align-items: baseline;
+    font-family: "Inter", sans-serif;
+    transition: background 0.15s ease;
+  }
+  .faq-block summary::-webkit-details-marker { display: none; }
+  .faq-block summary:hover { background: rgba(45, 90, 74, 0.04); }
+  .faq-num {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent);
+  }
+  .faq-title {
+    font-family: "Source Serif Pro", "Iowan Old Style", "Charter", Georgia, serif;
+    font-size: 18px; font-weight: 600; color: var(--ink);
+    text-decoration: none; letter-spacing: -0.005em;
+  }
+  .faq-title:hover { color: var(--accent); text-decoration: underline; }
+  .faq-meta { font-size: 12px; color: var(--ink-faint); white-space: nowrap; }
+  .faq-block[open] summary { background: rgba(45, 90, 74, 0.04); border-bottom: 1px solid var(--rule-soft); }
+  .faq-list {
+    margin: 0; padding: 18px 26px 22px 86px;
+    font-family: "Source Serif Pro", "Iowan Old Style", "Charter", Georgia, serif;
+  }
+  .faq-list dt {
+    font-weight: 600; color: var(--ink);
+    font-size: 15.5px; line-height: 1.45;
+    margin-top: 18px;
+  }
+  .faq-list dt:first-of-type { margin-top: 0; }
+  .faq-list dd {
+    margin: 6px 0 0; padding: 0;
+    color: var(--ink-soft); font-size: 15px; line-height: 1.6;
+  }
+  @media (max-width: 720px) {
+    .faq-block summary { grid-template-columns: 1fr; gap: 6px; }
+    .faq-meta { white-space: normal; }
+    .faq-list { padding-left: 26px; }
+  }
+
   .sermon-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
   .sermon-card {
     display: block; background: var(--paper-raised); border: 1px solid var(--rule);
@@ -159,6 +209,270 @@
       <div class="fact-sub">of stewarded preaching</div>
     </div>
   </div>
+
+  <section class="series-faq">
+    <div class="section-eyebrow">Ask the series</div>
+    <h2 class="section-title-h2">What this series teaches</h2>
+    <p class="faq-intro">Three questions answered in each sermon — the same questions
+      a thoughtful Christian reading Revelation for the first time would want to ask.
+      Tap a title to open the full sermon page.</p>
+
+    <details class="faq-block">
+      <summary>
+        <span class="faq-num">Part 1</span>
+        <a class="faq-title" href="/CoGElPaso/series/revelation-of-jesus-christ/dispatch-from-the-end-of-the-world/">Dispatch From the End of the World</a>
+        <span class="faq-meta">March 20, 2022 · Revelation 1:1</span>
+      </summary>
+      <dl class="faq-list">
+        <dt>What is the central purpose of the Book of Revelation?</dt>
+        <dd>It is the revelation of Jesus Christ, demonstrating that He is alive, actively at work among His churches, and sovereignly bending all of history toward His ultimate victory.</dd>
+        <dt>How did Jesus accomplish the ransoming of His people?</dt>
+        <dd>Revealed as both the conquering Lion and the slain Lamb, Jesus ransomed a people for God from every tribe, language, people, and nation through the shedding of His blood.</dd>
+        <dt>How does the cosmic victory of Revelation connect to the local church?</dt>
+        <dd>God uses the ordinary, everyday means of local churches—such as financial partnership, praying, and supporting missionaries—to accomplish His cosmic mission of gathering the nations.</dd>
+      </dl>
+    </details>
+
+    <details class="faq-block">
+      <summary>
+        <span class="faq-num">Part 2</span>
+        <a class="faq-title" href="/CoGElPaso/series/revelation-of-jesus-christ/what-to-fear-and-fear-not/">What to Fear and Fear Not</a>
+        <span class="faq-meta">March 27, 2022 · Revelation 1:9-20</span>
+      </summary>
+      <dl class="faq-list">
+        <dt>Why does Jesus reveal Himself through such terrifying imagery to John?</dt>
+        <dd>Jesus reveals His blazing holiness, infinite power, and majestic glory to displace the church's fear of earthly threats and persecution.</dd>
+        <dt>If Christ is so fearsome, why should believers not be afraid?</dt>
+        <dd>Believers are commanded to “fear not” because this awe-inspiring King loves them and has freed them by His blood; His terrifying power is entirely <em>for</em> His people, not against them.</dd>
+        <dt>What does it mean that Jesus holds the “keys of death and Hades”?</dt>
+        <dd>It means Jesus has permanently conquered death. Therefore, believers need not fear execution or mortality, because death is now only a servant that brings them into the presence of their King.</dd>
+      </dl>
+    </details>
+
+    <details class="faq-block">
+      <summary>
+        <span class="faq-num">Part 3</span>
+        <a class="faq-title" href="/CoGElPaso/series/revelation-of-jesus-christ/the-faithful-christ/">The Faithful Christ</a>
+        <span class="faq-meta">April 3, 2022 · Revelation 2:12-17</span>
+      </summary>
+      <dl class="faq-list">
+        <dt>How did the church in Pergamum compromise its faith?</dt>
+        <dd>While they remained faithful externally against violent persecution, they compromised internally by tolerating false teachings that seduced believers into sexual immorality and idolatry.</dd>
+        <dt>How must the church respond to sin within its ranks?</dt>
+        <dd>Christ calls for corporate repentance. Believers must not be passive but actively protect and restore one another with a spirit of gentleness, humility, and the life-giving promises of Scripture.</dd>
+        <dt>What is the “hidden manna” offered to those who overcome?</dt>
+        <dd>The hidden manna represents the true, satisfying spiritual sustenance that Jesus provides, contrasting with the empty, shameful feast of sin offered by the world.</dd>
+      </dl>
+    </details>
+
+    <details class="faq-block">
+      <summary>
+        <span class="faq-num">Part 4</span>
+        <a class="faq-title" href="/CoGElPaso/series/revelation-of-jesus-christ/the-citadel-at-the-end-of-time/">The Citadel at the End of Time</a>
+        <span class="faq-meta">April 10, 2022 · Revelation 4:1-11</span>
+      </summary>
+      <dl class="faq-list">
+        <dt>What is the significance of the heavenly throne room in Revelation 4?</dt>
+        <dd>It reveals that despite the chaotic, threatening powers of earth, there is a sovereign, unshakeable throne at the center of the universe occupied by a God of unmatched power, beauty, and mercy.</dd>
+        <dt>Why do the living creatures and elders worship God unceasingly?</dt>
+        <dd>They praise God not merely for what He has done, but for <em>who He is</em>—His intrinsic holiness, eternal nature, and supreme worthiness as the Creator of all things.</dd>
+        <dt>What is the only reasonable response to seeing God as He truly is?</dt>
+        <dd>The proper response is joyful worship and total surrender. We must abandon the despair-inducing illusion of self-rule and gladly bend the knee to the King.</dd>
+      </dl>
+    </details>
+
+    <details class="faq-block">
+      <summary>
+        <span class="faq-num">Part 5</span>
+        <a class="faq-title" href="/CoGElPaso/series/revelation-of-jesus-christ/sealed-and-secured/">Sealed and Secured</a>
+        <span class="faq-meta">April 24, 2022 · Revelation 7:1-17</span>
+      </summary>
+      <dl class="faq-list">
+        <dt>What is the “seal of the living God”?</dt>
+        <dd>The seal is the Holy Spirit and God's covenant name placed upon believers. It signifies divine ownership, protection, and authority, distinguishing God's people from those marked by the beast.</dd>
+        <dt>Does the seal protect believers from earthly suffering?</dt>
+        <dd>No. Believers will still experience death, sickness, and earthly trials, but the seal guarantees they are completely untouchable by God's final, eternal judgment.</dd>
+        <dt>How is the great multitude able to stand securely before God's throne?</dt>
+        <dd>They can stand because they have washed their robes in the blood of the Lamb, meaning Jesus bore the ultimate judgment they deserved so they could be eternally cleansed and secured.</dd>
+      </dl>
+    </details>
+
+    <details class="faq-block">
+      <summary>
+        <span class="faq-num">Part 6</span>
+        <a class="faq-title" href="/CoGElPaso/series/revelation-of-jesus-christ/when-the-man-comes-around/">When the Man Comes Around</a>
+        <span class="faq-meta">May 1, 2022 · Revelation 6:1-17</span>
+      </summary>
+      <dl class="faq-list">
+        <dt>Why is God's wrath an essential part of His goodness?</dt>
+        <dd>If God were not angry at sin, injustice, and evil, He would not be truly good or just. His wrath is the necessary and holy response to put away evil so that the peace of His people can be protected.</dd>
+        <dt>What do the Four Horsemen of the Apocalypse symbolize?</dt>
+        <dd>The Four Horsemen symbolize the partial and present judgments of a fallen world—war, civil strife, economic devastation, and disease—that will continue to ride throughout history until Christ's final return.</dd>
+        <dt>How can anyone escape the wrath of the Lamb?</dt>
+        <dd>Since all humanity is unjust, the only escape from God's wrath is through the substitutionary sacrifice of Jesus Christ. Believers must have their robes washed in the blood of the Lamb.</dd>
+      </dl>
+    </details>
+
+    <details class="faq-block">
+      <summary>
+        <span class="faq-num">Part 7</span>
+        <a class="faq-title" href="/CoGElPaso/series/revelation-of-jesus-christ/few-there-are-who-die-so-hard/">Few There Are Who Die So Hard</a>
+        <span class="faq-meta">May 8, 2022 · Revelation 11:1-13</span>
+      </summary>
+      <dl class="faq-list">
+        <dt>What is the central task assigned to the church in this age?</dt>
+        <dd>The fundamental task of every Christian is to be a faithful witness—proclaiming the truth of the gospel in every sphere of life, from the workplace to the home.</dd>
+        <dt>What is the normative path for a faithful witness?</dt>
+        <dd>The church is called to walk the same path Jesus walked: from faithful witness, through worldly opposition and suffering, ultimately leading to resurrection and eternal glory.</dd>
+        <dt>How does the church conquer its enemies?</dt>
+        <dd>Like the Lamb who conquered by being slain, the church conquers not through military might or worldly triumph, but through daily dying to self, faithful witness, and redemptive suffering.</dd>
+      </dl>
+    </details>
+
+    <details class="faq-block">
+      <summary>
+        <span class="faq-num">Part 8</span>
+        <a class="faq-title" href="/CoGElPaso/series/revelation-of-jesus-christ/here-there-be-dragons/">Here There Be Dragons</a>
+        <span class="faq-meta">May 15, 2022 · Revelation 12:1-17</span>
+      </summary>
+      <dl class="faq-list">
+        <dt>What does the great red dragon reveal about the Christian life?</dt>
+        <dd>It reveals that behind visible earthly conflicts lies a cosmic spiritual war. Satan, the ancient serpent, is a real and terrifying enemy seeking to devour the people of God.</dd>
+        <dt>What is the dragon's most lethal weapon against believers?</dt>
+        <dd>Satan's primary weapon is not overt supernatural attack, but rather accusation and condemnation—tempting believers to sin and then paralyzing them with guilt before God.</dd>
+        <dt>How do believers silence the accuser and conquer the dragon?</dt>
+        <dd>Believers conquer by the blood of the Lamb and the word of their testimony. We must answer every satanic accusation of our unworthiness with the finished, justifying work of Jesus Christ.</dd>
+      </dl>
+    </details>
+
+    <details class="faq-block">
+      <summary>
+        <span class="faq-num">Part 9</span>
+        <a class="faq-title" href="/CoGElPaso/series/revelation-of-jesus-christ/obey-1984-and-the-mark-of-the-beast/">OBEY: 1984, and the Mark of the Beast</a>
+        <span class="faq-meta">May 22, 2022 · Revelation 13:1-18; Revelation 14:1-5</span>
+      </summary>
+      <dl class="faq-list">
+        <dt>How do the two beasts of Revelation 13 operate differently?</dt>
+        <dd>The first beast uses hard power—governmental force, persecution, and the threat of death. The second beast uses soft power—cultural deception, social pressure, and false religion—appearing like a lamb but speaking with the voice of a dragon.</dd>
+        <dt>What does it mean to take the “mark of the beast”?</dt>
+        <dd>It is a present reality for anyone who exalts humanity and self above God, declaring autonomy and refusing divine authority over their life.</dd>
+        <dt>How can Christians resist the deception of the beasts?</dt>
+        <dd>Christians must immerse themselves in God's Word to discern cultural lies, relying not on their own strength but gripping tightly to the Lamb whose book of life secures them for eternity.</dd>
+      </dl>
+    </details>
+
+    <details class="faq-block">
+      <summary>
+        <span class="faq-num">Part 10</span>
+        <a class="faq-title" href="/CoGElPaso/series/revelation-of-jesus-christ/the-siren-song/">The Siren Song</a>
+        <span class="faq-meta">June 12, 2022 · Revelation 17:1-6; 18:1-5</span>
+      </summary>
+      <dl class="faq-list">
+        <dt>What is the “siren song” of Babylon?</dt>
+        <dd>It is the seductive pull of the world's culture that entices Christians with false promises of greed, lust, pride, and self-exaltation, hiding the fact that these lead to ultimate destruction.</dd>
+        <dt>Why must God's people “come out of her”?</dt>
+        <dd>Because it is impossible to separate sharing in Babylon's sins from sharing in her final judgment; what she offers is a temporary illusion that ends in eternal desolation.</dd>
+        <dt>How do believers actively resist Babylon's seduction?</dt>
+        <dd>They must fix their eyes on their true home (the New Jerusalem), stop their ears to what the world calls “normal,” anchor themselves to the truth of Scripture, and sing the praises of the Lamb.</dd>
+      </dl>
+    </details>
+
+    <details class="faq-block">
+      <summary>
+        <span class="faq-num">Part 11</span>
+        <a class="faq-title" href="/CoGElPaso/series/revelation-of-jesus-christ/are-you-lukewarm/">Are You Lukewarm?</a>
+        <span class="faq-meta">June 19, 2022 · Revelation 3:14-22</span>
+      </summary>
+      <dl class="faq-list">
+        <dt>Why was Jesus angry with the church in Laodicea?</dt>
+        <dd>They had become spiritually lukewarm and useless due to their self-reliance. They boasted in their financial wealth, comfort, and self-sufficiency, entirely blind to their actual spiritual poverty and nakedness.</dd>
+        <dt>What is the remedy Christ offers for lukewarmness?</dt>
+        <dd>Jesus counsels them to buy from Him refined gold (holy works), white garments (Christ's righteousness to cover their shame), and eye salve (spiritual sight to see through worldly deception and rely daily on Him).</dd>
+        <dt>What does Jesus' knock at the door reveal about His character?</dt>
+        <dd>It reveals His incredible grace. He disciplines out of deep love and does not write off His lukewarm people; rather, He patiently invites them back to zealous repentance and intimate fellowship.</dd>
+      </dl>
+    </details>
+
+    <details class="faq-block">
+      <summary>
+        <span class="faq-num">Part 12</span>
+        <a class="faq-title" href="/CoGElPaso/series/revelation-of-jesus-christ/he-still-calls-her-his-bride/">He Still Calls Her His Bride</a>
+        <span class="faq-meta">June 26, 2022 · Revelation 19:6-10</span>
+      </summary>
+      <dl class="faq-list">
+        <dt>Why is it impossible to love Jesus while rejecting the local church?</dt>
+        <dd>Because the church, despite her many flaws, is the beloved bride for whom Christ sacrificed His very life. To love Jesus means you must love what He loves, and He and His bride are inseparable.</dd>
+        <dt>How can a flawed, sinful church be presented as a radiant bride?</dt>
+        <dd>The bride's beauty is not earned by her own merit. Jesus thoroughly washes the church's sins with His own blood and clothes her in the fine linen of His perfect righteousness.</dd>
+        <dt>What should be the believer's posture toward the local church?</dt>
+        <dd>Believers are called to a dogged commitment, refusing the cultural instinct to cancel or abandon the church. We must rejoice in the corporate body, recognizing it as the focal point of God's plan to save sinners and mature His people.</dd>
+      </dl>
+    </details>
+
+    <details class="faq-block">
+      <summary>
+        <span class="faq-num">Part 13</span>
+        <a class="faq-title" href="/CoGElPaso/series/revelation-of-jesus-christ/the-return-of-the-king/">The Return of the King</a>
+        <span class="faq-meta">July 3, 2022 · Revelation 19:11-21</span>
+      </summary>
+      <dl class="faq-list">
+        <dt>How does knowing the end of Revelation change how Christians live today?</dt>
+        <dd>Knowing that Christ will permanently and absolutely defeat evil gives believers the joyful courage to take heart and “fight on” amidst present suffering and spiritual warfare.</dd>
+        <dt>What does the vision of Jesus on the white horse reveal about Him?</dt>
+        <dd>It reveals Him as the fierce, conquering King of Kings. He possesses unmatched authority (many crowns), sees through all deception (eyes of fire), and un-makes His enemies with the mere word of His mouth (the sword).</dd>
+        <dt>Why does Christ delay His triumphant return?</dt>
+        <dd>He delays primarily so that the church can proclaim the gospel and gather His elect from every tribe, tongue, and nation, turning our focus toward rescuing those currently held captive by the dragon.</dd>
+      </dl>
+    </details>
+
+    <details class="faq-block">
+      <summary>
+        <span class="faq-num">Part 14</span>
+        <a class="faq-title" href="/CoGElPaso/series/revelation-of-jesus-christ/only-god-can-judge-me/">Only God Can Judge Me</a>
+        <span class="faq-meta">July 10, 2022 · Revelation 20:11-21:1</span>
+      </summary>
+      <dl class="faq-list">
+        <dt>What is the reality of the Great White Throne judgment?</dt>
+        <dd>It reveals that absolutely every person will stand before God to be judged with perfect, inescapable justice according to their deeds; no one can slide in on their family's or church's coattails.</dd>
+        <dt>If all have sinned, how can anyone survive this judgment?</dt>
+        <dd>Believers can stand with joy because Jesus Christ is their advocate. He has already paid for every one of their sins with His blood, and their names are safely recorded in the Lamb's Book of Life.</dd>
+        <dt>How should the reality of God's final judgment free us today?</dt>
+        <dd>It frees us from fearing the trivial judgments of our culture, social media, and peers. It motivates us to make every moment count for eternity and ensures that we trust wholly in Christ's advocacy rather than our own morality.</dd>
+      </dl>
+    </details>
+
+    <details class="faq-block">
+      <summary>
+        <span class="faq-num">Part 15</span>
+        <a class="faq-title" href="/CoGElPaso/series/revelation-of-jesus-christ/as-in-the-beginning-but-better/">As in the Beginning But Better</a>
+        <span class="faq-meta">July 17, 2022 · Revelation 21:1-22:5</span>
+      </summary>
+      <dl class="faq-list">
+        <dt>Why must the old heaven and earth pass away?</dt>
+        <dd>The current, sin-corrupted creation cannot sustain the holy, consuming fire of God's presence. It must be completely renewed so that God can safely tabernacle (dwell) directly with His people.</dd>
+        <dt>What is the significance of there being no temple in the New Jerusalem?</dt>
+        <dd>It signifies the complete removal of any separation between God and humanity. God the Almighty and the Lamb <em>are</em> the temple, granting all glorified believers permanent, unfettered access to His face.</dd>
+        <dt>How will the curse be reversed in eternity?</dt>
+        <dd>Believers will be restored to their kingly mandate to reign with Christ forever. God will wipe away every tear, address all past injustice, and permanently remove hunger, thirst, pain, and death.</dd>
+      </dl>
+    </details>
+
+    <details class="faq-block">
+      <summary>
+        <span class="faq-num">Part 16</span>
+        <a class="faq-title" href="/CoGElPaso/series/revelation-of-jesus-christ/the-story-of-the-lamb/">The Story of the Lamb</a>
+        <span class="faq-meta">July 24, 2022 · Revelation 1-22</span>
+      </summary>
+      <dl class="faq-list">
+        <dt>What is the significance of the repeated promise, “I am coming soon,” at the end of Revelation?</dt>
+        <dd>It emphasizes the imminence and suddenness of Christ's return. He will come like a thief in the night, leaving no room for delayed obedience or planning to repent “later.”</dd>
+        <dt>What ultimately separates the two groups of people at the end of history?</dt>
+        <dd>The only difference between those cast into judgment and those welcomed into the New Jerusalem is that the redeemed have had their robes washed white in the blood of the Lamb.</dd>
+        <dt>How must the church respond to the story of the Lamb?</dt>
+        <dd>The church is called to live “all in” for Christ's kingdom, allowing Revelation to lay its claim on every area of our lives, and crying out with eager expectation, “Amen. Come, Lord Jesus!”</dd>
+      </dl>
+    </details>
+  </section>
 
   <section class="series-section">
     <div class="section-eyebrow">In order</div>
