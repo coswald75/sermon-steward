@@ -7,5 +7,4 @@
 
 # eleventy
 node_modules/
-_dryrun/
 _site/
