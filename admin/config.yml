@@ -1,0 +1,34 @@
+backend:
+  name: github
+  repo: coswald75/sermon-steward
+  branch: main
+  base_url: https://sveltia-cms-auth.chris-386.workers.dev
+
+# Where Sveltia stores uploads. Editors won't use this in the dry run, but the key is required.
+media_folder: "images"
+public_folder: "/images"
+
+# Commits go straight to main → Cloudflare Pages rebuilds → live in ~60s.
+# Switch to "editorial_workflow" if you ever want a draft/review step.
+publish_mode: simple
+
+collections:
+  - name: pages
+    label: Pages
+    description: Edit the copy on individual pages.
+    files:
+      - name: index
+        label: "Landing page (index.html)"
+        file: _src/_data/index.json
+        format: json
+        fields:
+          - { name: title, label: "Browser tab title", widget: string, hint: "Shows in the browser tab and in Google search results." }
+          - { name: tag, label: "Yellow pill (above the headline)", widget: string }
+          - { name: headline_lead, label: "Headline — first part (black)", widget: string, hint: "The big text BEFORE the orange word." }
+          - { name: headline_accent, label: "Headline — orange word", widget: string, hint: "The single orange word at the end of the headline." }
+          - { name: deck, label: "Sub-headline paragraph", widget: text }
+          - { name: cta_primary_label, label: "Primary button — text", widget: string }
+          - { name: cta_primary_href, label: "Primary button — link", widget: string, hint: "e.g. product.html" }
+          - { name: cta_secondary_label, label: "Secondary button — text", widget: string }
+          - { name: cta_secondary_href, label: "Secondary button — link", widget: string, hint: "e.g. samples.html" }
+          - { name: footer, label: "Footer line", widget: string }
