@@ -50,9 +50,10 @@
   h2 {
     font-size: 13px; font-weight: 600; letter-spacing: 0.08em;
     text-transform: uppercase; color: var(--accent);
-    margin: 0 0 16px; padding-bottom: 12px;
+    margin: 32px 0 16px; padding-bottom: 12px;
     border-bottom: 1px solid var(--rule);
   }
+  h2:first-of-type { margin-top: 0; }
   .count { color: var(--ink-faint); font-weight: 400; letter-spacing: 0; text-transform: none; font-size: 13px; margin-left: 8px; }
   ul.sermons { list-style: none; margin: 0; padding: 0; }
   ul.sermons li {
@@ -66,6 +67,12 @@
   .sermon-meta { font-size: 14px; color: var(--ink-soft); }
   .sermon-meta .dot-sep { margin: 0 8px; color: var(--ink-faint); }
   .sermon-meta .series { color: var(--accent-deep); font-weight: 500; }
+  .sermon-meta .badge {
+    display: inline-block; padding: 1px 7px; margin-left: 8px;
+    border-radius: 10px; background: rgba(196, 69, 47, 0.08);
+    color: var(--accent-deep); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.02em; text-transform: uppercase;
+  }
   footer {
     padding: 24px 32px; font-size: 13px; color: var(--ink-faint);
     text-align: center; border-top: 1px solid var(--rule);
@@ -74,6 +81,19 @@
   .note {
     background: #fff; border: 1px solid var(--rule); border-radius: 10px;
     padding: 14px 18px; margin: 0 0 32px; font-size: 14px; color: var(--ink-soft);
+  }
+  .browse-by {
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    margin: 0 0 32px; font-size: 13px; color: var(--ink-faint);
+  }
+  .browse-by .label { letter-spacing: 0.06em; text-transform: uppercase; }
+  .browse-by a {
+    padding: 6px 12px; border: 1px solid var(--rule); border-radius: 16px;
+    color: var(--ink-soft); background: var(--bg-card);
+  }
+  .browse-by a:hover { border-color: var(--accent); color: var(--accent); }
+  .browse-by a[aria-current="page"] {
+    border-color: var(--accent); color: var(--accent); font-weight: 600;
   }
   nav.pagination {
     display: flex; align-items: center; justify-content: space-between;
@@ -88,6 +108,22 @@
   nav.pagination a:hover { border-color: var(--accent); color: var(--accent); }
   nav.pagination span.disabled { color: var(--ink-faint); background: transparent; border-style: dashed; }
   nav.pagination .page-indicator { color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+  .book-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 10px; margin: 0 0 8px;
+  }
+  .book-grid a, .book-grid span.empty {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 8px; padding: 12px 14px;
+    border: 1px solid var(--rule); border-radius: 8px;
+    background: var(--bg-card); color: var(--ink);
+    font-size: 14px; font-weight: 500;
+  }
+  .book-grid a:hover { border-color: var(--accent); color: var(--accent); }
+  .book-grid a .n { color: var(--ink-faint); font-weight: 400; font-variant-numeric: tabular-nums; }
+  .book-grid a:hover .n { color: var(--accent); }
+  .book-grid span.empty { color: var(--ink-faint); background: transparent; border-style: dashed; cursor: default; }
+  .book-grid span.empty .n { font-weight: 400; }
 </style>
 </head>
 <body>
