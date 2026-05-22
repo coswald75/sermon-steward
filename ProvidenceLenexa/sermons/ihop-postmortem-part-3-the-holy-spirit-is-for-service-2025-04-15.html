@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>IHOP Postmortem Part 3, The Holy Spirit is for Service — Pastor Chris Oswald · Providence Community Church</title>
+<meta name="description" content="">
+<link rel="canonical" href="https://sermonsteward.com/ProvidenceLenexa/sermons/2025/04/ihop-postmortem-part-3-the-holy-spirit-is-for-service">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="IHOP Postmortem Part 3, The Holy Spirit is for Service">
+<meta property="og:description" content="">
+<meta property="og:url" content="https://sermonsteward.com/ProvidenceLenexa/sermons/2025/04/ihop-postmortem-part-3-the-holy-spirit-is-for-service">
+<meta property="og:site_name" content="Providence Community Church">
+<meta property="article:published_time" content="2025-04-15">
+<meta property="article:author" content="Chris Oswald">
+
+
+<!-- Twitter card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IHOP Postmortem Part 3, The Holy Spirit is for Service">
+<meta name="twitter:description" content="">
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "IHOP Postmortem Part 3, The Holy Spirit is for Service",
+  "datePublished": "2025-04-15",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Chris Oswald",
+    "jobTitle": "Pastor",
+    "worksFor": {
+      "@type": "Church",
+      "name": "Providence Community Church"
+    }
+  },
+  "publisher": {
+    "@type": "Church",
+    "name": "Providence Community Church",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lenexa",
+      "addressRegion": "KS",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 38.9536,
+      "longitude": -94.7336
+    }
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Ethics / Moral Theology"
+    },
+    {
+      "@type": "Thing",
+      "name": "Pastoral Theology"
+    },
+    {
+      "@type": "Thing",
+      "name": "Sanctification"
+    }
+  ],
+  "keywords": "Ethics / Moral Theology, Pastoral Theology, Sanctification, Providence Community Church, Chris Oswald, expository preaching",
+  "mainEntityOfPage": "https://sermonsteward.com/ProvidenceLenexa/sermons/2025/04/ihop-postmortem-part-3-the-holy-spirit-is-for-service"
+}
+</script>
+
+<style>
+  :root {
+    --ink:        #1a1a2e;
+    --ink-soft:   #3d3d52;
+    --ink-faint:  #6f6f80;
+    --paper:      #faf7f0;
+    --paper-raised: #fffdf7;
+    --rule:       #e2dcce;
+    --rule-soft:  #ede7d8;
+    --accent:     #2d5a4a;
+    --accent-soft:#5a8073;
+    --accent-deep:#1d3d31;
+    --gold:       #b8893a;
+    --gold-bg:    #fdf4d9;
+    --gold-deep:  #6e5018;
+    --link:       #2d5a4a;
+    --highlight-bg: #fdf6e3;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Source Serif Pro", "Iowan Old Style", "Charter", Georgia, serif;
+    font-size: 18px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .ui {
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+
+  code, .mono { font-family: ui-monospace, "SF Mono", Monaco, monospace; font-size: 0.85em; }
+
+  a { color: var(--link); text-underline-offset: 2px; }
+
+  /* ────────── Site header ────────── */
+  .site-header {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper-raised);
+    padding: 16px 24px;
+  }
+  .site-header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  .site-brand {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .site-nav { display: flex; gap: 22px; }
+  .site-nav a {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .site-nav a:hover { color: var(--accent); }
+
+  /* ────────── Page chrome ────────── */
+  main {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 32px 120px;
+  }
+
+  /* ────────── Sermon hero ────────── */
+  .breadcrumb {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin-bottom: 14px;
+  }
+  .breadcrumb a { color: var(--ink-faint); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+
+  h1.sermon-title {
+    font-size: 44px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 14px;
+  }
+  .sermon-cite {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: var(--ink-faint);
+    letter-spacing: 0.01em;
+    margin-bottom: 28px;
+  }
+  .sermon-cite span + span::before {
+    content: "·";
+    margin: 0 8px;
+    color: var(--rule);
+  }
+  .sermon-cite strong { color: var(--ink); font-weight: 500; }
+
+  /* ────────── Audio player ────────── */
+  .audio-player {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .play-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .play-button.disabled { background: var(--rule); cursor: default; }
+  .play-button:not(.disabled):hover { background: var(--accent-deep); }
+  .audio-meta {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: var(--ink-soft);
+    flex: 1;
+  }
+  .audio-track {
+    height: 4px;
+    background: var(--rule);
+    border-radius: 2px;
+    margin-top: 6px;
+    position: relative;
+  }
+  .audio-duration {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+
+  /* ────────── Thesis hero ────────── */
+  blockquote.thesis-hero {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 26px;
+    line-height: 1.4;
+    font-style: italic;
+    color: var(--ink);
+    border-left: 4px solid var(--accent);
+    padding: 8px 0 8px 24px;
+    margin: 0 0 36px;
+    letter-spacing: -0.005em;
+  }
+  blockquote.thesis-hero .thesis-label {
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    font-style: normal;
+    margin-bottom: 8px;
+  }
+
+  /* ────────── Facts strip ────────── */
+  .facts-strip {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 44px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .fact .fact-label {
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin-bottom: 6px;
+  }
+  .fact .fact-value {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .fact .fact-value .chip {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    background: var(--rule-soft);
+    color: var(--ink-soft);
+    border-radius: 999px;
+    margin: 1px 2px 1px 0;
+  }
+
+  /* ────────── Section heading ────────── */
+  section.page-section {
+    padding: 36px 0 28px;
+    border-top: 1px solid var(--rule);
+  }
+  section.page-section:first-of-type { border-top: 0; padding-top: 0; }
+
+  .section-eyebrow {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .section-title-h2 {
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0 0 14px;
+    line-height: 1.2;
+  }
+  .section-lede {
+    color: var(--ink-soft);
+    font-size: 17px;
+    margin-bottom: 22px;
+  }
+
+  /* ────────── Outline / decomp blocks ────────── */
+  .outline-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .outline-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 18px 22px;
+  }
+  .outline-card.full { grid-column: 1 / -1; }
+  .outline-card-label {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .outline-card-label .count {
+    color: var(--ink-faint);
+    font-weight: 400;
+    margin-left: 4px;
+  }
+
+  ol.decomp-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: decomp;
+  }
+  ol.decomp-list li {
+    counter-increment: decomp;
+    padding: 8px 0 8px 30px;
+    position: relative;
+    border-bottom: 1px solid var(--rule-soft);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  ol.decomp-list li:last-child { border-bottom: 0; }
+  ol.decomp-list li::before {
+    content: counter(decomp);
+    position: absolute;
+    left: 0;
+    top: 9px;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--accent-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  ol.decomp-list li strong { font-weight: 600; }
+  .ill-type {
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-left: 4px;
+  }
+
+  .citation-chain {
+    font-family: ui-monospace, "SF Mono", Monaco, monospace;
+    font-size: 13px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+  .citation-chain .sep { color: var(--rule); margin: 0 3px; }
+
+  blockquote.quote-block {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--ink);
+    padding: 6px 0 6px 16px;
+    border-left: 3px solid var(--accent-soft);
+    margin: 10px 0;
+  }
+  blockquote.quote-block .quote-attr {
+    display: block;
+    font-style: normal;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-top: 6px;
+    letter-spacing: 0.02em;
+  }
+
+  .pastoral-correction {
+    background: var(--highlight-bg);
+    border: 1px solid #e6d5a8;
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 22px 0;
+  }
+  .pastoral-correction .pc-label {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-deep);
+    margin-bottom: 8px;
+  }
+  .pastoral-correction .pc-text {
+    font-style: italic;
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* ────────── Transcript ────────── */
+  .transcript-wrap { max-width: 720px; margin: 0 auto; }
+  .transcript-meta {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-bottom: 18px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .transcript-meta strong { color: var(--ink-soft); }
+  .transcript-body p {
+    margin: 0 0 1.1em;
+    font-size: 18px;
+    line-height: 1.7;
+  }
+  .transcript-body h4.unit-anchor {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin: 28px 0 10px;
+    scroll-margin-top: 80px;
+  }
+  .transcript-body h4.unit-anchor::before {
+    content: "§ ";
+    color: var(--ink-faint);
+  }
+  .transcript-collapse {
+    text-align: center;
+    margin: 24px 0;
+  }
+  .expand-btn {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--ink-soft);
+    padding: 9px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .expand-btn:hover { background: var(--rule-soft); color: var(--ink); }
+
+  /* ────────── Arc visualization ────────── */
+  .arc-wrap { display: flex; flex-direction: column; gap: 16px; }
+  .arc-node {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 14px 18px;
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    gap: 14px;
+    align-items: center;
+  }
+  .arc-node.current {
+    background: #eef5f1;
+    border-color: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+  }
+  .arc-node-date {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    font-weight: 600;
+  }
+  .arc-node.current .arc-node-date { color: var(--accent); }
+  .arc-node-title { font-weight: 600; font-size: 16px; }
+  .arc-node-title a { color: var(--ink); text-decoration: none; }
+  .arc-node-title a:hover { color: var(--accent); }
+  .arc-node-text {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    background: var(--rule-soft);
+    padding: 3px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .arc-empty {
+    background: var(--rule-soft);
+    border: 1px dashed var(--rule);
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    color: var(--ink-faint);
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+  }
+
+  .echo-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-top: 18px;
+  }
+  .echo-label {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-deep);
+    margin-bottom: 8px;
+  }
+
+  /* ────────── Related teaching ────────── */
+  ol.related-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: rank;
+  }
+  ol.related-list li {
+    counter-increment: rank;
+    padding: 16px 0 16px 40px;
+    position: relative;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  ol.related-list li:last-child { border-bottom: 0; }
+  ol.related-list li::before {
+    content: counter(rank);
+    position: absolute;
+    left: 0;
+    top: 17px;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    width: 26px;
+    height: 26px;
+    border: 1px solid var(--accent-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .related-preacher { font-weight: 600; }
+  .related-sermon-name { font-style: italic; }
+  .related-meta {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    color: var(--ink-faint);
+    margin-left: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .related-summary {
+    color: var(--ink-soft);
+    margin-top: 5px;
+    font-size: 15px;
+  }
+  .outbound-note {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-top: 18px;
+    background: var(--rule-soft);
+    padding: 10px 14px;
+    border-radius: 6px;
+  }
+  .outbound-note strong { color: var(--ink-soft); }
+
+  /* ────────── Discuss / apply tiles ────────── */
+  .apply-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .apply-tile {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 18px 18px 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.15s ease;
+  }
+  .apply-tile:hover {
+    border-color: var(--accent-soft);
+    transform: translateY(-1px);
+  }
+  .apply-tile-label {
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .apply-tile-title {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+  .apply-tile-desc {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    line-height: 1.5;
+  }
+
+  /* ────────── Expanded artifact cards (prayer / discussion / etc.) ────────── */
+  .artifact-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 26px 32px 28px;
+    margin-top: 22px;
+    scroll-margin-top: 80px;
+  }
+  .artifact-eyebrow {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .artifact-title {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 16px;
+    letter-spacing: -0.005em;
+  }
+  .artifact-prayer p {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink);
+    margin: 0 0 1em;
+  }
+  .artifact-prayer p:last-child { margin-bottom: 0; }
+  .artifact-status {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold-deep);
+    background: var(--gold-bg);
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 16px;
+  }
+  /* small_group_questions + couples_guide shared list styling */
+  ol.artifact-questions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: art;
+  }
+  ol.artifact-questions li {
+    counter-increment: art;
+    padding: 14px 0 14px 44px;
+    position: relative;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  ol.artifact-questions li:last-child { border-bottom: 0; }
+  ol.artifact-questions li::before {
+    content: counter(art);
+    position: absolute;
+    left: 0;
+    top: 14px;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--accent-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .artifact-question-text {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .artifact-question-anchor {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-top: 4px;
+  }
+  .artifact-question-follow {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 15px;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin-top: 6px;
+    padding-left: 0;
+  }
+
+  /* daily_readings */
+  .artifact-intro {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-style: italic;
+    color: var(--ink-soft);
+    margin: 0 0 18px;
+    font-size: 16px;
+  }
+  .artifact-days {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .artifact-day {
+    border-left: 3px solid var(--accent-soft);
+    padding: 4px 0 4px 16px;
+  }
+  .artifact-day-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+  .artifact-day-name {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+  .artifact-day-passage {
+    font-family: ui-monospace, "SF Mono", Monaco, monospace;
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+  .artifact-day-text {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* family_card */
+  .artifact-framing {
+    background: var(--rule-soft);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+  }
+  .artifact-framing-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .artifact-framing p {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin: 0;
+  }
+  blockquote.artifact-family-prompt {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--ink);
+    border-left: 4px solid var(--gold);
+    padding: 6px 0 6px 20px;
+    margin: 16px 0 0;
+    font-style: italic;
+  }
+  .artifact-age-band {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-top: 12px;
+  }
+
+  /* memory_verse */
+  blockquote.artifact-verse {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink);
+    font-style: italic;
+    border-left: 4px solid var(--accent);
+    padding: 8px 0 8px 22px;
+    margin: 6px 0 16px;
+  }
+  .artifact-verse-why {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* ────────── About the church ────────── */
+  .church-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: center;
+  }
+  .church-name {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .church-addr {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .visit-cta {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+    white-space: nowrap;
+  }
+  .visit-cta:hover { background: var(--accent-deep); }
+
+  /* ────────── Crawler-hygiene panel ────────── */
+  details.crawler-panel {
+    margin-top: 28px;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+  }
+  details.crawler-panel summary {
+    cursor: pointer;
+    padding: 12px 18px;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    user-select: none;
+  }
+  details.crawler-panel summary:hover { color: var(--accent); }
+  details.crawler-panel[open] summary { border-bottom: 1px solid var(--rule); }
+  .crawler-body { padding: 18px; }
+  .crawler-body pre {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 14px;
+    font-family: ui-monospace, monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    overflow-x: auto;
+    margin: 6px 0 14px;
+    white-space: pre-wrap;
+  }
+  .crawler-body h5 {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin: 14px 0 4px;
+  }
+  .crawler-body h5:first-child { margin-top: 0; }
+  .crawler-body p {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin: 0 0 8px;
+  }
+
+  /* ────────── Footer ────────── */
+  footer.page-footer {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 32px 48px;
+    border-top: 1px solid var(--rule);
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    line-height: 1.6;
+  }
+  footer.page-footer .attribution {
+    margin-bottom: 14px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  footer.page-footer code {
+    font-size: 11px;
+    color: var(--ink-faint);
+  }
+
+  /* ────────── Responsive ────────── */
+  @media (max-width: 720px) {
+    main { padding: 28px 20px 40px; }
+    h1.sermon-title { font-size: 32px; }
+    blockquote.thesis-hero { font-size: 20px; padding-left: 18px; }
+    .facts-strip { grid-template-columns: repeat(2, 1fr); }
+    .outline-grid { grid-template-columns: 1fr; }
+    .apply-grid { grid-template-columns: 1fr; }
+    .arc-node { grid-template-columns: 80px 1fr; }
+    .arc-node-text { grid-column: 1 / -1; justify-self: start; }
+    .church-card { grid-template-columns: 1fr; text-align: left; }
+    .site-nav { display: none; }
+  }
+</style>
+</head>
+<body><header class="site-header">
+  <div class="site-header-inner">
+    <a href="/ProvidenceLenexa/" class="site-brand">Providence Community Church</a>
+    <nav class="site-nav ui">
+      <a href="/ProvidenceLenexa/sermons">Sermons</a>
+      <a href="/ProvidenceLenexa/topics">Topics</a>
+      <a href="/ProvidenceLenexa/about">About</a>
+      <a href="/ProvidenceLenexa/visit">Visit</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <article class="sermon">
+
+    <!-- ═══════════ Sermon hero ═══════════ -->
+    <div class="breadcrumb ui">
+      <a href="/ProvidenceLenexa/sermons">Sermons</a></div>
+
+    <h1 class="sermon-title">IHOP Postmortem Part 3, The Holy Spirit is for Service</h1>
+
+    <div class="sermon-cite">
+      
+      <span>April 15, 2025</span>
+      <span>Pastor Chris Oswald</span>
+    </div>
+
+    
+    <div class="audio-player" id="audio">
+      <button class="play-button" aria-label="Play sermon audio">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <audio controls preload="none" src="https://sermons-cdn.sermonsteward.com/providence-community-church/ihop-postmortem-part-3-the-holy-spirit-is-for-service-2025-04-15.mp3" class="audio-meta" style="width:100%;">
+        Your browser does not support the audio element.
+        <a href="https://sermons-cdn.sermonsteward.com/providence-community-church/ihop-postmortem-part-3-the-holy-spirit-is-for-service-2025-04-15.mp3">Download the MP3.</a>
+      </audio>
+    </div>
+    
+
+    
+
+    <!-- ═══════════ Facts strip ═══════════ -->
+    <div class="facts-strip">
+      <div class="fact">
+        <div class="fact-label ui">Series</div>
+        <div class="fact-value">—</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label ui">Type</div>
+        <div class="fact-value">—</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label ui">Tone</div>
+        <div class="fact-value">
+          
+          —
+        </div>
+      </div>
+      <div class="fact">
+        <div class="fact-label ui">Method</div>
+        <div class="fact-value">
+          
+          —
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════ Sermon outline ═══════════ -->
+    <section class="page-section">
+      <div class="section-eyebrow ui">What's in this sermon</div>
+      <h2 class="section-title-h2">The shape of the argument</h2>
+      <p class="section-lede">23 units across exposition, application, illustration, theological claim, and conclusion. The pastor's argument is built from these moving parts.</p>
+
+      
+      <div class="pastoral-correction">
+        <div class="pc-label ui">Pastoral correction · unit #21</div>
+        <div class="pc-text">"Issues final concrete instructions for evaluating churches and teachers: test whether Scripture is submitted to (not merely cited) and whether the Holy Spirit is understood as empowerment for loving service."</div>
+      </div>
+      
+
+      <div class="outline-grid">
+        
+        <div class="outline-card">
+          <div class="outline-card-label ui">Doctrinal loci<span class="count ui">· 4 surfaced</span></div>
+          <div style="font-family:'Inter',sans-serif; font-size:13px; line-height:1.8;">
+            
+              
+                <span class="chip" style="background:#e6efe9;color:var(--accent);">Ethics / Moral Theology · 7</span>
+              
+            
+              
+                <span class="chip" style="background:#e6efe9;color:var(--accent);">Pastoral Theology · 7</span>
+              
+            
+              
+                <span class="chip" style="background:#e6efe9;color:var(--accent);">Sanctification · 5</span>
+              
+            
+              
+                <span class="chip">Christology · 2</span>
+              
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="outline-card">
+          <div class="outline-card-label ui">Bible citations<span class="count ui">· 8</span></div>
+          <div class="citation-chain">John 16 <span class="sep">|</span> John 13:34-35 <span class="sep">|</span> John 15:12-13 <span class="sep">|</span> John 7:37-39 <span class="sep">|</span> Galatians 5:22-23 <span class="sep">|</span> 1 Corinthians 12-14 <span class="sep">|</span> Acts 7 <span class="sep">|</span> 1 Corinthians 14</div>
+        </div>
+        
+
+        
+        <div class="outline-card full">
+          <div class="outline-card-label ui">Illustrations<span class="count ui">· 2</span></div>
+          <ol class="decomp-list">
+            
+            <li>
+              
+              <span class="ill-type">personal story · unit #5</span>
+               — Uses the example of Providence&#39;s theologically educated congregation to illustrate how congregational discernment holds preachers accountable to faithful exegesis rather than mere Bible citation.
+            </li>
+            
+            <li>
+              
+              <span class="ill-type">analogy · unit #6</span>
+               — Employs the analogy of hiding a dog&#39;s pill in hamburger to illustrate how preachers use Bible quotations to make their own ideas palatable, deceiving Christians into thinking they&#39;re receiving biblical teaching.
+            </li>
+            
+          </ol>
+        </div>
+        
+
+        
+        <div class="outline-card full">
+          <div class="outline-card-label ui">Theological claims<span class="count ui">· 5</span></div>
+          <ol class="decomp-list">
+            
+            <li>Christians need developed discernment to evaluate whether a ministry is truly Christ-centered and Scripture-centered. <span class="ill-type">unit #3</span></li>
+            
+            <li>Christians often wrongly assume teaching is biblical simply because the preacher quotes Scripture, without verifying textual support. <span class="ill-type">unit #4</span></li>
+            
+            <li>Much contemporary preaching uses the Bible to wrap the preacher&#39;s own ideas (eisegesis) rather than submitting to what the text actually says (exegesis). <span class="ill-type">unit #7</span></li>
+            
+            <li>The Holy Spirit transforms believers into sources of life for the world around them. <span class="ill-type">unit #10</span></li>
+            
+            <li>IHOP&#39;s self-centered, sensation-based view of the Holy Spirit is inseparably connected to its pattern of sexual abuse—a wrong view of the Spirit produces wrong treatment of others. <span class="ill-type">unit #17</span></li>
+            
+          </ol>
+        </div>
+        
+
+        
+        <div class="outline-card full">
+          <div class="outline-card-label ui">Quotations<span class="count ui">· 1</span></div>
+          
+          <blockquote class="quote-block">
+            "I know kung fu"
+            <span class="quote-attr">— Neo (The Matrix character) (unit #3)</span>
+          </blockquote>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- ═══════════ Transcript ═══════════ -->
+    <section class="page-section" id="transcript">
+      <div class="section-eyebrow ui">Read it</div>
+      <h2 class="section-title-h2">Full transcript</h2>
+
+      <div class="transcript-wrap">
+        <div class="transcript-meta ui">
+          <span><strong>14,069</strong> characters</span>
+          <span><strong>23</strong> units</span>
+          <span><strong>~16 min</strong> reading time</span>
+          <span><a href="#audio" class="ui">Listen instead →</a></span>
+        </div>
+
+        <div class="transcript-body">
+          
+          <h4 class="unit-anchor ui" id="unit-0">0 · Pastor Oswald introduces the final installment of a three-part series using errors in the New Apostolic Reformation to teach correct biblical doctrine about the Holy Spirit</h4>
+          
+          <p>Sam. Welcome to the Providence Podcast. This is Chris Oswald, Senior Pastor at Providence Community Church. Today we are going to wrap up this little miniseries I&#39;ve been working on titled ihop, a postmortem where I use some of the errors within the new Apostolic Reformation and what we might generally call hyper charismatic movement. I use some of the errors going on there to illustrate what the Bible actually teaches about the nature and role of the Holy Spirit in the Christian life.</p>
+          
+          
+          <h4 class="unit-anchor ui" id="unit-1">1 · Recaps the first sermon in the series, which established that the apostles had a unique relationship to the Holy Spirit as witnesses of the resurrected Christ and writers of Scripture</h4>
+          
+          <p>And we&#39;ve covered a few things. First of all, we&#39;ve discussed apostolic uniqueness, saying that the Holy Spirit did work uniquely through the apostles. They had a unique qualification to have been witnesses to the resurrected Christ and also to have been writers of scripture. And so there was a unique role that the Holy Spirit played there.</p>
+          
+          
+          <h4 class="unit-anchor ui" id="unit-2">2 · Recaps the second sermon&#39;s central claim: the Holy Spirit&#39;s primary work is revealing Christ through Scripture, contrasting this with the NAR&#39;s non-Christ-centered hermeneutic</h4>
+          
+          <p>The sermon on John 16 touched on what I think is the most important distinction, and that is simply that the Holy Spirit&#39;s main work, both in converting the lost and in sanctifying the saved, is to show Christ and to show Christ specifically through the Scriptures. So one of the big problems I have with the new Apostolic Reformation is an approach to Scripture that is not actually Christ centered.</p>
+          
+          
+          <h4 class="unit-anchor ui" id="unit-3">3 · Expresses the pastoral desire to equip all Christians with immediate discernment to distinguish between genuinely Christ-centered ministry and ministry that merely claims to be biblical</h4>
+          
+          <p>One of the things I would be so eager if I could install a discernment chip in every Christian, kind of like the matrix, you know, where Neo is, like, I know kung fu. I wish, I wish that we could upload a discernment chip into all Christians so that they would know a little bit more about whether or not a ministry is indeed Christ centered and Scripture centered.</p>
+          
+          
+          <h4 class="unit-anchor ui" id="unit-4">4 · Diagnoses a widespread problem: Christians accept teaching as biblical if the Bible is merely cited, without verifying whether the text actually supports the preacher&#39;s claims</h4>
+          
+          <p>One of the things that seems to be deceptive, and I don&#39;t blame Christians exactly for this, is that we tend to be satisfied if a preacher mentions the Bible, if he quotes the Bible, if the Bible is included in his talk. And we don&#39;t tend to be overly picky about asking generally as Christians, does the text actually support what you just said? Is the text actually saying what you just said and so forth.</p>
+          
+          
+          <h4 class="unit-anchor ui" id="unit-5">5 · Uses the example of Providence&#39;s theologically educated congregation to illustrate how congregational discernment holds preachers accountable to faithful exegesis rather than mere Bible citation</h4>
+          
+          <p>And that&#39;s one of the benefits of having the congregation we have at Providence. I know that there have been moments where as I did the work of exposition on a text, I wound up thinking this would pass in a lot of churches. But it&#39;s not going to pass in my church. My church is going to say, well, Chris, that&#39;s not actually what the text says. And so having a somewhat theologically educated congregation is good for the accountability of the preacher because it forces him to make sure that he&#39;s actually not just using the Bible, but submitting to it.</p>
+          
+          
+
+          
+          <div class="transcript-collapse">
+            <button class="expand-btn ui" type="button" onclick="document.getElementById('tx-rest').style.display='block'; this.style.display='none';">Expand the remaining 17 units →</button>
+          </div>
+
+          <div class="tx-rest" id="tx-rest" style="display:none;">
+            
+            <h4 class="unit-anchor ui" id="unit-6">6 · Employs the analogy of hiding a dog&#39;s pill in hamburger to illustrate how preachers use Bible quotations to make their own ideas palatable, deceiving Christians into thinking they&#39;re receiving biblical teaching</h4>
+            
+            <p>One example I would use, and I think this can be Helpful to just general Christians out there thinking through like, well, you know, how did I get deceived into this IHOP thing and you know, into why did I buy in initially to the new Apostolic Reformation and so forth. One of the things we know about if you own a dog, you&#39;ll know that they don&#39;t take medicine. You know, by itself typically dogs will typically not swallow a pill, but if you wrap the pill in hamburger, then you know the dog will swallow the pill. And I think that people need to understand that a lot of preaching that happens in the modern Western church, not just the Western church, is essentially what&#39;s going on there is the Bible is being used to wrap around the speaker&#39;s ideas and the Christians are swallowing really the speaker&#39;s ideas. The Bible is just a sort of way to deceive.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-7">7 · Defines the distinction between eisegesis (reading one&#39;s ideas into Scripture) and exegesis (drawing meaning from Scripture), arguing that much contemporary preaching—including in IHOP—practices eisegesis while appearing biblical, often sincerely but incorrectly</h4>
+            
+            <p>The presence or use of the Bible is simply a way for a non discerning Christian to think he&#39;s getting biblical teaching when he&#39;s really not. He&#39;s getting something else. And that&#39;s a big concern that I have, not just for the new Apostolic Reformation, but just for churches in general. I think a lot of Christians think they&#39;re in churches that are founded on the Word, but it&#39;s, it&#39;s actually a bit of a sleight of hand that&#39;s happening there and it&#39;s not always intentional because I know some guys in that movement who probably are sincere. Lower ranking guys, no, that you would never have heard of. They&#39;re sincere, but they&#39;ve learned how to use the Bible in a way that isn&#39;t actually exegesis, it&#39;s eisegesis. And that, that&#39;s a good way of. People sometimes wonder, well, what is isagesis and exegesis? Well, eisegesis just means putting your ideas into the text. An exegesis just means looking at the text and asking what does it say? And so I do think that there was a lot of that kind of teaching in ihop and I think there&#39;s a lot of that kind of teaching just in the church in general where it sounds like the Bible&#39;s being used and it technically is being used, but it&#39;s really being used more to wrap an individual&#39;s ideas.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-8">8 · Introduces the sermon&#39;s central thesis—the Holy Spirit is power for service, not sensations—contrasting the NAR&#39;s sensual, feeling-oriented view with the biblical vision of Spirit-empowered love, using John 13 to show the connection between the Spirit and the command to love</h4>
+            
+            <p>One of the main things the Bible teaches that we haven&#39;t gotten to yet related to the Holy Spirit is that the Holy Spirit is power for service. The Holy Spirit is power for service. The new Apostolic Reformation hyper charismatic types think that the Holy Spirit is mostly power for sensations. It&#39;s a very sensual, senses oriented religion. And when I say that it&#39;s sensual, I don&#39;t mean that it&#39;s all sexual. It&#39;s bigger than that. Sensuality is really sort of the precursor of, say, Eastern Orthodoxy as well. It&#39;s this idea that your senses are being tickled. And they would talk about a sense of reverence or a sense of awe or a sense of mystic, kind of mysticism. This would be all in the category of seeing the Holy Spirit&#39;s main purpose as being sensations to make you feel certain things. But in reality, the Holy Spirit is presented in Scripture quite clearly as power. Not just not for your sensations, but power for service. For instance, the Holy Spirit is the power that helps us to love one another. It&#39;s no accident that in the farewell discourse we see Jesus&#39;s consistent commands to love one another intermingled with with promises related to the Holy Spirit and the coming of the Holy Spirit. John 13:34, 35. Jesus says, A new commandment I give to you, that you love one another just as I have loved you. You also are to love one another. By this all people will know that you are my disciples if you have love for one another.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-9">9 · Continues exposition of the farewell discourse, citing John 15 to reinforce that Jesus&#39;s command for self-sacrificial love is connected to the Holy Spirit&#39;s empowerment</h4>
+            
+            <p>In John 15, 12, 13, Jesus says, this is my commandment that you love one another as I have loved you. Greater love has no one than this, that someone lay down his life for his friends. And both of these commands are intermingled with the promises of the Holy Spirit&#39;s empowerment.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-10">10 · Synthesizes the exposition into a vivid theological claim: the Holy Spirit transforms believers into sources of life for others, not merely recipients of spiritual experience</h4>
+            
+            <p>That&#39;s one of the main ideas that comes through in Scripture, is that the Holy Spirit turns a person into a kind of life source in the world. The Holy Spirit turns a person into a kind of life source for the rest of the world.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-11">11 · Expounds John 7:37-39 to establish the biblical metaphor of the Spirit-filled believer as a spring of living water—not merely satisfied but overflowing to refresh others</h4>
+            
+            <p>At the end of John 7, Jesus cries out, if anyone thirsts, let him come to me and drink. Whoever believes in me, as the scripture has said, out of his heart will flow rivers of living water. Now this he said about the Spirit, whom those who believed in him were yet to receive. For as they as yet the Spirit had not yet been given, because Jesus was not yet glorified. So a person who has the Holy Spirit is a spring of living water, has a spring of living water inside of himself, and he becomes a kind of watering hole for a thirsty world. That living water that&#39;s flowing out of him doesn&#39;t only satisfy his thirst, but a person who has the Holy Spirit also becomes a kind of life source, a watering hole for a thirsty world.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-12">12 · Expounds Galatians 5:22-23 to develop a second metaphor: the Spirit-filled believer as a spiritual orchard producing virtues that bless relationships, contrasted with the flesh&#39;s relationship-destroying fruit</h4>
+            
+            <p>You know, when we look at Galatians 5, we see that the Holy Spirit turns a person into a kind of Spiritual orchard of virtues. Galatians 5:22, 23. But the fruit of the Spirit is love, joy, peace, patience, kindness, gentleness, faithfulness, self control. Against such things there is no law. And right before then, the word but starts there in Galatians 5:22. But the fruit of the Spirit is. Well, right before then, Paul lists the fruit of the flesh. And the fruit of the flesh is all the stuff that ruins relationships, including sexual usury, anger, and so forth. And so what you see the Holy Spirit doing there is turning people into relationship breakers, into relationship blessers. A person with the Holy Spirit is, has got a living spring inside of him and he becomes a kind of watering hole. A person with the Holy Spirit has the fruit of the Spirit and he becomes a kind of orchard so that people can taste and see that the Lord is good. And the idea is that when people you interact with, if you have the Holy Spirit, should be refreshed and encouraged and challenged. They will taste and see that the Lord is good. The Holy Spirit makes a person hopeful and happy and helpful most of all.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-13">13 · Signals a shift to the third biblical example supporting the sermon&#39;s thesis: Paul&#39;s teaching on spiritual gifts in 1 Corinthians</h4>
+            
+            <p>Another place you can see this dynamic that the Holy Spirit is for service is in Paul&#39;s discussion of the Spirit and spiritual gifts.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-14">14 · Expounds 1 Corinthians 12-14 to show Paul correcting the Corinthians&#39; self-centered use of spiritual gifts by emphasizing love and edification of the body—gifts exist for service, not self</h4>
+            
+            <p>In First Corinthians 12:14. The church in Corinth was misusing the gifts of the Holy Spirit. How did Paul redirect them? Like what were they doing wrong? Well, that&#39;s the purpose of First Corinthians 13 and the discussion of love and then in how the gifts that you use ought to be edifying to the body. It&#39;s a, it&#39;s, it&#39;s power for service. It would be great if you could literally tie everything you think you know about the Holy Spirit back to this overarching purpose of loving service. That is exactly the way that the Bible talks about the Spirit.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-15">15 · Cites Acts 7&#39;s requirement that deacons be filled with the Spirit to demonstrate that Spirit-empowerment is necessary for loving, generous service</h4>
+            
+            <p>The Holy Spirit empowers generosity. It, it&#39;s a generosity rooted in love. And that&#39;s why, for instance, when you see the first deacons appointed in Acts 7, the Holy Spirit, the men must be full of the Spirit. It says that&#39;s because they need the power to serve lovingly.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-16">16 · Issues a direct imperative to shift perspective from the self-centered view (Spirit&#39;s work in me for my experience) to the other-centered view (Spirit&#39;s work through me for others&#39; blessing)</h4>
+            
+            <p>So you need to stop thinking so much about the Holy Spirit as something happening to you and rather start thinking of the Holy Spirit as something that&#39;s happening through you.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-17">17 · Diagnoses the connection between IHOP&#39;s theological error (sensation-based pneumatology) and its ethical failure (systemic sexual abuse), arguing that a self-centered view of the Spirit produces self-serving relationships rather than sacrificial service</h4>
+            
+            <p>And this is the hyper charismatic flaw. It&#39;s a self centered view, a sensual view of the Spirit, a sensation view of the Spirit. Was IHOP so broken because it was in particular full of sexual sin? Well, that was, that wasn&#39;t just the issue with one guy that was a, that was systemic. There was sexual sin all over that particular movement. But I would argue that that&#39;s simply because their larger framework for the Spirit was self serving, it was sensual in nature, it was sensation based. The leaders should have been serving the sheep, but instead they sexualized them. And I don&#39;t, I don&#39;t know, honestly, which came first. Were they, were they, was their misunderstanding of the Holy Spirit what led them to being sexual users of their sheep? Or was. I don&#39;t know, I don&#39;t know exactly, but the two things do exist together. A wrong view of the Holy Spirit. Also a wrong view of how to relate to others. That&#39;s a massive concern that I have.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-18">18 · Applies the sermon&#39;s thesis to the listener&#39;s life with increasingly specific instruction: understand the Spirit&#39;s purpose correctly, ask God to fill you for service, and examine whether your ministry is self-centered or others-centered</h4>
+            
+            <p>As you&#39;re thinking about the Holy Spirit, that you understand, not mostly, the Holy Spirit&#39;s not mostly to give you feelings. The Holy Spirit&#39;s mostly to help you, to give you faith to serve and to be a source of love and to be a source of self sacrificial kindness and care and truth speaking and so on and so forth. Jesus is clear in the farewell discourse that if we love him, we&#39;ll keep his commandments. And his commandments are that we should love one another. That&#39;s, that&#39;s the central piece. Again, the Spirit is central there. So that&#39;s, that&#39;s a big concern that, that I have about new Apostolic Reformation. There doesn&#39;t seem to be the most basic and important understanding of the Holy Spirit, namely that he gives us power, power to serve. You know, this will change your life. If you begin to ask God to fill you with His Holy Spirit so that you can be a watering hole to the people in your life, so that you can be an orchard of virtues to the people in your life, so that you can be a blessing and that you can make much of Christ through your service, that will be a game changer for you. You have particular callings or giftings, you know, and those callings or giftings can be done in a self centered way or a service way. And it&#39;s only in the service way that you can expect the blessings of the Holy Spirit and the power of the Holy Spirit. So sometimes when we&#39;re not seeing much fruit in our ministry, whatever that ministry is, we need to just take a moment and reevaluate like how much of me is this aimed at? Like, is this, is this mostly a thing I&#39;m doing to make myself feel better, to make myself look better, you know, to win arguments, whatever and, and kind of pull back from that and understand? No. Like if I want God&#39;s blessing. God&#39;s blessing is for the betterment of the saints. First Corinthians 14.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-19">19 · Steps outside the expositional flow to acknowledge a theological puzzle—the Corinthians apparently exercised genuine spiritual gifts while misusing them—and draws a pastoral warning about environments where Spirit-power is present but misdirected</h4>
+            
+            <p>Now what gets confusing a little bit is that it appears as if the Corinthians were able to use the Spirit in ways that were not ultimately appropriate. And I do not have an answer for you about why that is, except that it tells me that we, we can imagine environments where there is, quote unquote, a high degree of Holy Spirit power, but that that power is completely misdirected toward the senses and not toward serving, serving others.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-20">20 · Closes the sermon&#39;s argument by restating the central thesis with vivid imagery: the evidence of the Spirit&#39;s presence is sacrificial service, not sensations</h4>
+            
+            <p>So that&#39;s it. That&#39;s the last thing I really wanted to say about this particular topic. If you have the Holy Spirit, you will be a power servant. You will be a watering hole. You will be a life giving orchard to those around you. You will serve and you will serve heroically and boldly and generously and sacrificially. That&#39;s the evidence that the Holy Spirit has you.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-21">21 · Issues final concrete instructions for evaluating churches and teachers: test whether Scripture is submitted to (not merely cited) and whether the Holy Spirit is understood as empowerment for loving service</h4>
+            
+            <p>Okay, well, that&#39;s probably good enough. And I don&#39;t need to continue. Further, make sure that when you&#39;re evaluating a church, number one, you&#39;re understanding that just because the Bible is used doesn&#39;t mean the Bible is being submitted to. It could just be the hamburger around a pillar of the guy&#39;s particular ideas. And understand that nobody is immune to that. And so if the pastor&#39;s not intentionally trying not to do that, he&#39;s probably doing that. And then secondly, understand that the main reason the Holy Spirit comes is to give us the ability to serve the Lord by serving others, to love God with our whole selves and to love our neighbors as ourselves. And that is the summary of the law.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-22">22 · Informal podcast closing acknowledging the sermon&#39;s brevity and extending a blessing to listeners</h4>
+            
+            <p>Okay, that&#39;s all I&#39;ve got for you. Thanks so much for listening. That was a quick one. Have a blessed day.</p>
+            
+            
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ Sermon arc ═══════════ -->
+    <section class="page-section">
+      <div class="section-eyebrow ui">Where this fits</div>
+      <h2 class="section-title-h2">Recent preaching context</h2>
+      <p class="section-lede">The three sermons immediately preceding this one in the preaching schedule.</p>
+
+      <div class="arc-wrap">
+        
+          
+          <div class="arc-node">
+            <div class="arc-node-date ui">Apr 11, 2025</div>
+            <div>
+              <div class="arc-node-title"><a href="/ProvidenceLenexa/sermons/2025/04/the-conscience-coach-an-introduction">The Conscience Coach, An Introduction</a></div>
+              
+            </div>
+            
+          </div>
+          
+          <div class="arc-node">
+            <div class="arc-node-date ui">Apr 13, 2025</div>
+            <div>
+              <div class="arc-node-title"><a href="/ProvidenceLenexa/sermons/2025/04/a-prayer-of-protection">A Prayer of Protection</a></div>
+              <div style="color:var(--ink-soft); font-size:14px; margin-top:4px;">Jesus intercedes for believers not merely to preserve them through tribulation, but to protect and purify them simultaneously, so that his keeping power brings him glory while their struggles produce sanctification, joy, and unity.</div>
+            </div>
+            <span class="arc-node-text ui">John 16:31-17:25</span>
+          </div>
+          
+          <div class="arc-node">
+            <div class="arc-node-date ui">Apr 14, 2025</div>
+            <div>
+              <div class="arc-node-title"><a href="/ProvidenceLenexa/sermons/2025/04/good-friday-preview-the-atonement-is-bigger-than-you-know">Good Friday Preview: The Atonement is Bigger Than You Know</a></div>
+              
+            </div>
+            
+          </div>
+          
+          <div class="arc-node current">
+            <div class="arc-node-date ui">April 15 · This sermon</div>
+            <div>
+              <div class="arc-node-title">IHOP Postmortem Part 3, The Holy Spirit is for Service</div>
+              
+            </div>
+            
+          </div>
+        
+      </div>
+
+      
+    </section>
+
+    <!-- ═══════════ Related teaching ═══════════ -->
+    
+
+    <!-- ═══════════ Discuss / apply ═══════════ -->
+    <section class="page-section">
+      <div class="section-eyebrow ui">Take it further</div>
+      <h2 class="section-title-h2">Discuss · apply · pray</h2>
+
+      <div class="apply-grid">
+        
+        <a href="#artifact-small-group" class="apply-tile">
+          <div class="apply-tile-label ui">Small groups</div>
+          <div class="apply-tile-title">6 discussion questions</div>
+          <div class="apply-tile-desc">Chris described how IHOP leadership quoted Scripture while actually teaching ideas that contradicted what those texts say. What&#39;s the differ…</div>
+        </a>
+        
+        <a href="#artifact-devotional" class="apply-tile">
+          <div class="apply-tile-label ui">Daily readings</div>
+          <div class="apply-tile-title">5-day reading plan</div>
+          <div class="apply-tile-desc">This week we trace how the Holy Spirit&#39;s true work—power for loving service to others—transforms our discernment, our motives, and our corporate life together.</div>
+        </a>
+        
+        <a href="#artifact-prayer" class="apply-tile">
+          <div class="apply-tile-label ui">Prayer</div>
+          <div class="apply-tile-title">A Prayer for Spirit-Filled Service</div>
+          <div class="apply-tile-desc">Father, we lift our eyes to You, the source of all grace and truth. We marvel at Your Spirit—not as a force for our own ecstasy or personal…</div>
+        </a>
+        
+        <a href="#artifact-family" class="apply-tile">
+          <div class="apply-tile-label ui">Family table</div>
+          <div class="apply-tile-title">Watering Holes and Orchards</div>
+          <div class="apply-tile-desc">Chris Oswald used the image of believers becoming &#39;watering holes&#39; and &#39;orchards&#39; — places where others find life and refreshment through th…</div>
+        </a>
+        
+        <a href="#artifact-couples" class="apply-tile">
+          <div class="apply-tile-label ui">Couples</div>
+          <div class="apply-tile-title">The Spirit&#39;s Power for Others</div>
+          <div class="apply-tile-desc">What conviction or shift did you experience hearing that the Holy Spirit&#39;s power is meant to flow *through* us for others, not primarily for…</div>
+        </a>
+        
+        <a href="#artifact-memory" class="apply-tile">
+          <div class="apply-tile-label ui">Memorize</div>
+          <div class="apply-tile-title">John 7:37-39</div>
+          <div class="apply-tile-desc">This passage encapsulates the sermon&#39;s central claim that the Holy Spirit is not primarily for private experience but for generative service—believers become sources of living water (life-giving presence) to others. It directly counters IHOP&#39;s inward-focused spirituality by showing that the Spirit&#39;s work in us necessarily flows outward to refresh and transform those around us.</div>
+        </a>
+        
+      </div>
+
+      
+
+      
+      <div class="artifact-card" id="artifact-small-group">
+        <div class="artifact-eyebrow ui">Small-group discussion</div>
+        <h3 class="artifact-title">6 questions for your group this week</h3>
+        <ol class="artifact-questions">
+          
+          <li>
+            <div class="artifact-question-text">Chris described how IHOP leadership quoted Scripture while actually teaching ideas that contradicted what those texts say. What&#39;s the difference between a preacher who quotes the Bible and a preacher who submits to what the Bible actually says, and why does that distinction matter for discernment?</div>
+            
+            <div class="artifact-question-follow">→ Can you think of a time when you&#39;ve heard teaching that sounded biblical on the surface but didn&#39;t hold up under careful examination?</div>
+          </li>
+          
+          <li>
+            <div class="artifact-question-text">The sermon emphasized that the Holy Spirit&#39;s work produces transformed believers who become sources of life for others. How would you describe the difference between viewing the Holy Spirit primarily as the source of personal spiritual experiences versus viewing Him as the power that works through you to serve others?</div>
+            <div class="artifact-question-anchor ui">John 7:37-39</div>
+            
+          </li>
+          
+          <li>
+            <div class="artifact-question-text">Chris connected IHOP&#39;s distorted theology of the Holy Spirit directly to its culture of abuse and harm. Why would a self-centered, experience-focused view of the Spirit&#39;s work make believers more vulnerable to justifying harmful treatment of others?</div>
+            <div class="artifact-question-anchor ui">John 13:34-35</div>
+            <div class="artifact-question-follow">→ How does understanding the Spirit&#39;s work as fundamentally oriented toward love for God and neighbor reshape how we evaluate whether something is truly of God?</div>
+          </li>
+          
+          <li>
+            <div class="artifact-question-text">Scripture presents the fruit of the Spirit as love, joy, peace, patience, kindness, and others—all of which are fundamentally relational and other-centered. What would it look like for your own pursuit of the Spirit&#39;s fullness to be measured by these relational fruits rather than by internal experiences or emotional highs?</div>
+            <div class="artifact-question-anchor ui">Galatians 5:22-23</div>
+            
+          </li>
+          
+          <li>
+            <div class="artifact-question-text">The sermon called believers to ask God to fill them with the Holy Spirit specifically for the purpose of serving others—to become like &#34;watering holes and orchards&#34; in the world. What honest assessment would you make of your own motivations in ministry or service right now: are you primarily seeking God&#39;s power for your own blessing, or for the blessing of those around you?</div>
+            
+            <div class="artifact-question-follow">→ What would need to shift in your prayers and pursuits this week to align your desires more fully with God&#39;s design?</div>
+          </li>
+          
+          <li>
+            <div class="artifact-question-text">When you evaluate whether a church is truly Christ-centered and Spirit-empowered, what specific signs would you look for? What questions would help you discern whether Scripture is genuinely submitted to and whether the Holy Spirit is understood as power for loving service?</div>
+            <div class="artifact-question-anchor ui">1 Corinthians 12-14</div>
+            
+          </li>
+          
+        </ol>
+        <div class="artifact-status ui">Draft · pending review</div>
+      </div>
+
+      
+
+      
+
+      
+      <div class="artifact-card" id="artifact-devotional">
+        <div class="artifact-eyebrow ui">Daily readings · Monday–Friday</div>
+        <h3 class="artifact-title">5-day reading plan</h3>
+        <p class="artifact-intro">This week we trace how the Holy Spirit&#39;s true work—power for loving service to others—transforms our discernment, our motives, and our corporate life together.</p>
+        <div class="artifact-days">
+          
+          <div class="artifact-day">
+            <div class="artifact-day-head">
+              <span class="artifact-day-name ui">Monday</span>
+              <span class="artifact-day-passage ui">John 7:37-39</span>
+            </div>
+            <p class="artifact-day-text">Jesus promises that from within the believer&#39;s belly will flow rivers of living water—a radical reversal of the self-focused spirituality that views the Spirit&#39;s work as primarily about our own transcendent experience. When we grasp that the Holy Spirit transforms us into sources of life for the world around us, we begin to evaluate our own spiritual hunger with new questions: Am I seeking the Spirit&#39;s filling for my own sensation, or for what He will do *through* me to quench others&#39; thirst?</p>
+          </div>
+          
+          <div class="artifact-day">
+            <div class="artifact-day-head">
+              <span class="artifact-day-name ui">Tuesday</span>
+              <span class="artifact-day-passage ui">John 13:34-35</span>
+            </div>
+            <p class="artifact-day-text">The sermon warned us that contemporary preaching often wraps the preacher&#39;s own ideas in biblical language without submitting to what the text actually says. Here Jesus gives us the diagnostic: the world will know we belong to Him not by our spiritual experiences but by our love for one another. This is the exegetical test we must apply—does a church&#39;s theology and practice produce the fruit of sacrificial love, or does it generate the spiritual pride and relational harm that marked IHOP&#39;s trajectory?</p>
+          </div>
+          
+          <div class="artifact-day">
+            <div class="artifact-day-head">
+              <span class="artifact-day-name ui">Wednesday</span>
+              <span class="artifact-day-passage ui">Galatians 5:22-23</span>
+            </div>
+            <p class="artifact-day-text">Paul&#39;s list of the Spirit&#39;s fruit stands as a direct rebuke to any spirituality that divorces the Spirit&#39;s work from moral transformation and care for others. When we develop discernment to evaluate whether a ministry is truly Spirit-filled and Scripture-centered, we must ask: Does this community increasingly bear these fruits? Or do we see instead the brittle perfectionism, secretiveness, and relational harm that expose a counterfeit view of what the Spirit produces?</p>
+          </div>
+          
+          <div class="artifact-day">
+            <div class="artifact-day-head">
+              <span class="artifact-day-name ui">Thursday</span>
+              <span class="artifact-day-passage ui">1 Corinthians 12-14</span>
+            </div>
+            <p class="artifact-day-text">Paul&#39;s extended teaching on gifts reveals that the Holy Spirit&#39;s distribution of power is corporate and functional: each gift aims at the health of the whole assembly and the edification of others. The sermon showed how IHOP&#39;s self-centered, sensation-based view of the Spirit is inseparably connected to its abuse—when spiritual experience becomes the goal rather than the means of serving others, the door opens to exploitation. We must ask: Are our gifts and our spiritual experiences shaped by the Spirit&#39;s purpose to build up those around us?</p>
+          </div>
+          
+          <div class="artifact-day">
+            <div class="artifact-day-head">
+              <span class="artifact-day-name ui">Friday</span>
+              <span class="artifact-day-passage ui">John 15:12-13</span>
+            </div>
+            <p class="artifact-day-text">This is the application that demands our response: believers must shift from viewing the Holy Spirit&#39;s work as primarily about our own experience to understanding it as working *through* us for others. As you examine your own spiritual life and evaluate churches you belong to or consider, ask God to fill you with the Holy Spirit specifically for the purpose of serving others as watering holes and orchards, testing your motives to ensure your ministry is other-centered rather than self-centered. The Spirit&#39;s power poured into your life becomes the power to love sacrificially, as Christ did.</p>
+          </div>
+          
+        </div>
+        <div class="artifact-status ui">Draft · pending review</div>
+      </div>
+
+      
+
+      
+
+      
+      <div class="artifact-card" id="artifact-prayer">
+        <div class="artifact-eyebrow ui">Pray together this week</div>
+        <h3 class="artifact-title">A Prayer for Spirit-Filled Service</h3>
+        <div class="artifact-prayer">
+          
+          <p>Father, we lift our eyes to You, the source of all grace and truth. We marvel at Your Spirit—not as a force for our own ecstasy or personal experience, but as the power that flows through us to become sources of life for a parched and broken world. You have given us the Holy Spirit to transform us into vessels of Your love, watering holes and orchards in the desert of human need (John 7:37-39).</p>
+          
+          <p>Yet we confess, O Lord, that we often mistake spiritual experience for spiritual maturity. We are prone to evaluate churches and teachers by the excitement they generate rather than by their faithful submission to Your Word. We have absorbed a culture that measures the Spirit&#39;s work by what we feel rather than by what we do for others. We have, at times, been careless students of Scripture, accepting teaching because it was wrapped in biblical language rather than testing whether it actually emerged from the text itself. Grant us the humility to acknowledge these patterns in ourselves.</p>
+          
+          <p>We are grateful that in the gospel, Christ has already given us the Holy Spirit—not as a prize for our devotion, but as the gift of His saving work on our behalf (John 16). Through His death and resurrection, He has secured for us the Spirit&#39;s transforming power. The Spirit now works in us, conforming us to Christ&#39;s image, and through us, loving our neighbors as ourselves (John 13:34-35). This is the gospel that breaks the cycle of self-centeredness and fuels a love that serves.</p>
+          
+          <p>We ask You, therefore, to fill us afresh with Your Holy Spirit—specifically for the service of others. Develop in us discernment to evaluate ministry by whether it centers on Christ and submits genuinely to Scripture, not by emotional intensity or compelling personalities (1 Corinthians 12-14). Examine our motives, we pray, and root out any hidden desire to be admired, to control, or to build our own kingdoms. Transform us into gardeners and well-keepers in the lives of those around us—people who give ourselves away in love because we have been loved by Christ. Make our churches places where the Spirit&#39;s presence is known not by dramatic signs alone, but by the supernatural kindness, patience, and self-sacrifice we show one another and the world (Galatians 5:22-23).</p>
+          
+          <p>To this end, we commit ourselves to the patient, humble study of Your Word, to corporate worship that magnifies Christ, and to a life of service compelled by grace. We lift our voices together: Come, Holy Spirit, and make us instruments of Your love.</p>
+          
+        </div>
+        <div class="artifact-status ui">Draft · pending review</div>
+      </div>
+
+      
+
+      
+
+      
+      <div class="artifact-card" id="artifact-family">
+        <div class="artifact-eyebrow ui">Sunday-evening family table</div>
+        <h3 class="artifact-title">Watering Holes and Orchards</h3>
+        
+        <div class="artifact-framing">
+          <span class="ui artifact-framing-label">For the parent</span>
+          <p>Chris Oswald used the image of believers becoming &#39;watering holes&#39; and &#39;orchards&#39; — places where others find life and refreshment through the Holy Spirit working in us. This prompt helps your family think about how the Spirit&#39;s power in us is meant to overflow toward others, not stay locked inside us for our own experience.</p>
+        </div>
+        
+        <blockquote class="artifact-family-prompt">
+          Who in your life right now feels dry or thirsty — maybe they&#39;re struggling or sad or lonely? How could God use you this week to be a &#39;watering hole&#39; for them — a person who gives them a drink of Jesus&#39; love and hope?
+        </blockquote>
+        <div class="artifact-age-band ui">works for ages 7+</div>
+        <div class="artifact-status ui">Draft · pending review</div>
+      </div>
+
+      
+
+      
+
+      
+      <div class="artifact-card" id="artifact-couples">
+        <div class="artifact-eyebrow ui">Couples · three questions over coffee</div>
+        <h3 class="artifact-title">The Spirit&#39;s Power for Others</h3>
+        <ol class="artifact-questions">
+          
+          <li><div class="artifact-question-text">What conviction or shift did you experience hearing that the Holy Spirit&#39;s power is meant to flow *through* us for others, not primarily for our own spiritual experience?</div></li>
+          
+          <li><div class="artifact-question-text">Where do we see patterns in our marriage or serving together where we&#39;ve been tempted to make ministry about ourselves—our comfort, our reputation, our feelings—rather than about laying down our lives for those around us?</div></li>
+          
+          <li><div class="artifact-question-text">How can we pray for each other this week to be filled with the Holy Spirit specifically for serving others with genuine love, and to examine our motives honestly together?</div></li>
+          
+        </ol>
+        <div class="artifact-status ui">Draft · pending review</div>
+      </div>
+
+      
+
+      
+
+      
+      <div class="artifact-card" id="artifact-memory">
+        <div class="artifact-eyebrow ui">Memory verse this week</div>
+        <h3 class="artifact-title">John 7:37-39</h3>
+        <blockquote class="artifact-verse">On the last day of the feast, the great day, Jesus stood up and cried out, &#39;If anyone thirsts, let him come to me and drink. Whoever believes in me, as the Scripture has said, &#34;Out of his heart will flow rivers of living water.&#34;&#39; Now this he said about the Spirit, whom those who believed in him were to receive, for as yet the Spirit had not been given, because Jesus was not yet glorified.</blockquote>
+        
+        <p class="artifact-verse-why"><strong>Why this verse:</strong> This passage encapsulates the sermon&#39;s central claim that the Holy Spirit is not primarily for private experience but for generative service—believers become sources of living water (life-giving presence) to others. It directly counters IHOP&#39;s inward-focused spirituality by showing that the Spirit&#39;s work in us necessarily flows outward to refresh and transform those around us.</p>
+        
+        <div class="artifact-status ui">Draft · pending review</div>
+      </div>
+      
+
+      
+    </section>
+
+    <!-- ═══════════ About the church ═══════════ -->
+    <section class="page-section">
+      <div class="section-eyebrow ui">Where this was preached</div>
+      <h2 class="section-title-h2">About the church</h2>
+
+      <div class="church-card">
+        <div>
+          <div class="church-name">Providence Community Church</div>
+          <div class="church-addr ui">
+            Lenexa, KS<br>
+            
+            Sundays · 10:00 AM<br>
+            <a href="/ProvidenceLenexa/about" style="color:var(--accent);">About us</a> · <a href="/ProvidenceLenexa/what-we-believe" style="color:var(--accent);">What we believe</a>
+          </div>
+        </div>
+        <a href="/ProvidenceLenexa/visit" class="visit-cta ui">Plan a visit →</a>
+      </div>
+
+      <!-- Crawler hygiene -->
+      <details class="crawler-panel">
+        <summary class="ui">Crawler &amp; AI-search policy · view robots.txt and llms.txt</summary>
+        <div class="crawler-body">
+          <p>This sermon page is intentionally optimized for search engines and AI assistants. We've opted into being crawled by both. The crawler-config files at the domain root:</p>
+
+          <h5 class="ui">/robots.txt</h5>
+          <pre>User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://sermonsteward.com/sitemap.xml</pre>
+
+          <h5 class="ui">/llms.txt</h5>
+          <pre># Providence Community Church
+
+A church preaching expository sermons through the books of the Bible.
+
+## Sermons
+- [The Conscience Coach, An Introduction (2025-04-11)](/ProvidenceLenexa/sermons/2025/04/the-conscience-coach-an-introduction)
+- [A Prayer of Protection (John 16:31-17:25, 2025-04-13)](/ProvidenceLenexa/sermons/2025/04/a-prayer-of-protection)
+- [Good Friday Preview: The Atonement is Bigger Than You Know (2025-04-14)](/ProvidenceLenexa/sermons/2025/04/good-friday-preview-the-atonement-is-bigger-than-you-know)
+- [IHOP Postmortem Part 3, The Holy Spirit is for Service (2025-04-15)](/ProvidenceLenexa/sermons/2025/04/ihop-postmortem-part-3-the-holy-spirit-is-for-service)
+
+## About
+- [About the church](/about)
+- [Plan a visit](/visit)</pre>
+
+          <p>The page itself ships with Schema.org <code>Article</code> + <code>Church</code> markup (with real geo coordinates), Open Graph + Twitter cards for share previews, and a canonical URL. Transcripts are server-rendered HTML — no JS dependency for the readable body.</p>
+        </div>
+      </details>
+    </section>
+
+  </article>
+
+</main>
+
+<footer class="page-footer">
+  <div class="attribution">
+    This sermon was preached by <strong>Pastor Chris Oswald</strong> at <strong>Providence Community Church</strong>, Lenexa, KS, on <strong>April 15, 2025</strong>. © 2025 Providence Community Church. Free to share with attribution.
+  </div>
+  <div>Canonical URL: <code>https://sermonsteward.com/ProvidenceLenexa/sermons/2025/04/ihop-postmortem-part-3-the-holy-spirit-is-for-service</code></div>
+  <div>Page generated by Sermon Steward · processed 2026-05-22 11:48 UTC · 23 units · 8 citations · 1 quotations</div>
+</footer>
+
+</body>
+</html>

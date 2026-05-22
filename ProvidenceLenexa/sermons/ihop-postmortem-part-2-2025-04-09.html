@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>IHOP Postmortem, Part 2 — Pastor Chris Oswald · Providence Community Church</title>
+<meta name="description" content="">
+<link rel="canonical" href="https://sermonsteward.com/ProvidenceLenexa/sermons/2025/04/ihop-postmortem-part-2">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="IHOP Postmortem, Part 2">
+<meta property="og:description" content="">
+<meta property="og:url" content="https://sermonsteward.com/ProvidenceLenexa/sermons/2025/04/ihop-postmortem-part-2">
+<meta property="og:site_name" content="Providence Community Church">
+<meta property="article:published_time" content="2025-04-09">
+<meta property="article:author" content="Chris Oswald">
+
+
+<!-- Twitter card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IHOP Postmortem, Part 2">
+<meta name="twitter:description" content="">
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "IHOP Postmortem, Part 2",
+  "datePublished": "2025-04-09",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Chris Oswald",
+    "jobTitle": "Pastor",
+    "worksFor": {
+      "@type": "Church",
+      "name": "Providence Community Church"
+    }
+  },
+  "publisher": {
+    "@type": "Church",
+    "name": "Providence Community Church",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lenexa",
+      "addressRegion": "KS",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 38.9536,
+      "longitude": -94.7336
+    }
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Pastoral Theology"
+    },
+    {
+      "@type": "Thing",
+      "name": "Providence / Sovereignty"
+    },
+    {
+      "@type": "Thing",
+      "name": "Doxology / Worship"
+    }
+  ],
+  "keywords": "Pastoral Theology, Providence / Sovereignty, Doxology / Worship, Providence Community Church, Chris Oswald, expository preaching",
+  "mainEntityOfPage": "https://sermonsteward.com/ProvidenceLenexa/sermons/2025/04/ihop-postmortem-part-2"
+}
+</script>
+
+<style>
+  :root {
+    --ink:        #1a1a2e;
+    --ink-soft:   #3d3d52;
+    --ink-faint:  #6f6f80;
+    --paper:      #faf7f0;
+    --paper-raised: #fffdf7;
+    --rule:       #e2dcce;
+    --rule-soft:  #ede7d8;
+    --accent:     #2d5a4a;
+    --accent-soft:#5a8073;
+    --accent-deep:#1d3d31;
+    --gold:       #b8893a;
+    --gold-bg:    #fdf4d9;
+    --gold-deep:  #6e5018;
+    --link:       #2d5a4a;
+    --highlight-bg: #fdf6e3;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Source Serif Pro", "Iowan Old Style", "Charter", Georgia, serif;
+    font-size: 18px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .ui {
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+
+  code, .mono { font-family: ui-monospace, "SF Mono", Monaco, monospace; font-size: 0.85em; }
+
+  a { color: var(--link); text-underline-offset: 2px; }
+
+  /* ────────── Site header ────────── */
+  .site-header {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper-raised);
+    padding: 16px 24px;
+  }
+  .site-header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  .site-brand {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .site-nav { display: flex; gap: 22px; }
+  .site-nav a {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .site-nav a:hover { color: var(--accent); }
+
+  /* ────────── Page chrome ────────── */
+  main {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 32px 120px;
+  }
+
+  /* ────────── Sermon hero ────────── */
+  .breadcrumb {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin-bottom: 14px;
+  }
+  .breadcrumb a { color: var(--ink-faint); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+
+  h1.sermon-title {
+    font-size: 44px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 14px;
+  }
+  .sermon-cite {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: var(--ink-faint);
+    letter-spacing: 0.01em;
+    margin-bottom: 28px;
+  }
+  .sermon-cite span + span::before {
+    content: "·";
+    margin: 0 8px;
+    color: var(--rule);
+  }
+  .sermon-cite strong { color: var(--ink); font-weight: 500; }
+
+  /* ────────── Audio player ────────── */
+  .audio-player {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .play-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .play-button.disabled { background: var(--rule); cursor: default; }
+  .play-button:not(.disabled):hover { background: var(--accent-deep); }
+  .audio-meta {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: var(--ink-soft);
+    flex: 1;
+  }
+  .audio-track {
+    height: 4px;
+    background: var(--rule);
+    border-radius: 2px;
+    margin-top: 6px;
+    position: relative;
+  }
+  .audio-duration {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+
+  /* ────────── Thesis hero ────────── */
+  blockquote.thesis-hero {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 26px;
+    line-height: 1.4;
+    font-style: italic;
+    color: var(--ink);
+    border-left: 4px solid var(--accent);
+    padding: 8px 0 8px 24px;
+    margin: 0 0 36px;
+    letter-spacing: -0.005em;
+  }
+  blockquote.thesis-hero .thesis-label {
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    font-style: normal;
+    margin-bottom: 8px;
+  }
+
+  /* ────────── Facts strip ────────── */
+  .facts-strip {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 44px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .fact .fact-label {
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin-bottom: 6px;
+  }
+  .fact .fact-value {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .fact .fact-value .chip {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    background: var(--rule-soft);
+    color: var(--ink-soft);
+    border-radius: 999px;
+    margin: 1px 2px 1px 0;
+  }
+
+  /* ────────── Section heading ────────── */
+  section.page-section {
+    padding: 36px 0 28px;
+    border-top: 1px solid var(--rule);
+  }
+  section.page-section:first-of-type { border-top: 0; padding-top: 0; }
+
+  .section-eyebrow {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .section-title-h2 {
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0 0 14px;
+    line-height: 1.2;
+  }
+  .section-lede {
+    color: var(--ink-soft);
+    font-size: 17px;
+    margin-bottom: 22px;
+  }
+
+  /* ────────── Outline / decomp blocks ────────── */
+  .outline-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .outline-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 18px 22px;
+  }
+  .outline-card.full { grid-column: 1 / -1; }
+  .outline-card-label {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .outline-card-label .count {
+    color: var(--ink-faint);
+    font-weight: 400;
+    margin-left: 4px;
+  }
+
+  ol.decomp-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: decomp;
+  }
+  ol.decomp-list li {
+    counter-increment: decomp;
+    padding: 8px 0 8px 30px;
+    position: relative;
+    border-bottom: 1px solid var(--rule-soft);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  ol.decomp-list li:last-child { border-bottom: 0; }
+  ol.decomp-list li::before {
+    content: counter(decomp);
+    position: absolute;
+    left: 0;
+    top: 9px;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--accent-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  ol.decomp-list li strong { font-weight: 600; }
+  .ill-type {
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-left: 4px;
+  }
+
+  .citation-chain {
+    font-family: ui-monospace, "SF Mono", Monaco, monospace;
+    font-size: 13px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+  .citation-chain .sep { color: var(--rule); margin: 0 3px; }
+
+  blockquote.quote-block {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--ink);
+    padding: 6px 0 6px 16px;
+    border-left: 3px solid var(--accent-soft);
+    margin: 10px 0;
+  }
+  blockquote.quote-block .quote-attr {
+    display: block;
+    font-style: normal;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-top: 6px;
+    letter-spacing: 0.02em;
+  }
+
+  .pastoral-correction {
+    background: var(--highlight-bg);
+    border: 1px solid #e6d5a8;
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 22px 0;
+  }
+  .pastoral-correction .pc-label {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-deep);
+    margin-bottom: 8px;
+  }
+  .pastoral-correction .pc-text {
+    font-style: italic;
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* ────────── Transcript ────────── */
+  .transcript-wrap { max-width: 720px; margin: 0 auto; }
+  .transcript-meta {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-bottom: 18px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .transcript-meta strong { color: var(--ink-soft); }
+  .transcript-body p {
+    margin: 0 0 1.1em;
+    font-size: 18px;
+    line-height: 1.7;
+  }
+  .transcript-body h4.unit-anchor {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin: 28px 0 10px;
+    scroll-margin-top: 80px;
+  }
+  .transcript-body h4.unit-anchor::before {
+    content: "§ ";
+    color: var(--ink-faint);
+  }
+  .transcript-collapse {
+    text-align: center;
+    margin: 24px 0;
+  }
+  .expand-btn {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--ink-soft);
+    padding: 9px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .expand-btn:hover { background: var(--rule-soft); color: var(--ink); }
+
+  /* ────────── Arc visualization ────────── */
+  .arc-wrap { display: flex; flex-direction: column; gap: 16px; }
+  .arc-node {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 14px 18px;
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    gap: 14px;
+    align-items: center;
+  }
+  .arc-node.current {
+    background: #eef5f1;
+    border-color: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+  }
+  .arc-node-date {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    font-weight: 600;
+  }
+  .arc-node.current .arc-node-date { color: var(--accent); }
+  .arc-node-title { font-weight: 600; font-size: 16px; }
+  .arc-node-title a { color: var(--ink); text-decoration: none; }
+  .arc-node-title a:hover { color: var(--accent); }
+  .arc-node-text {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    background: var(--rule-soft);
+    padding: 3px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .arc-empty {
+    background: var(--rule-soft);
+    border: 1px dashed var(--rule);
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    color: var(--ink-faint);
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+  }
+
+  .echo-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-top: 18px;
+  }
+  .echo-label {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-deep);
+    margin-bottom: 8px;
+  }
+
+  /* ────────── Related teaching ────────── */
+  ol.related-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: rank;
+  }
+  ol.related-list li {
+    counter-increment: rank;
+    padding: 16px 0 16px 40px;
+    position: relative;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  ol.related-list li:last-child { border-bottom: 0; }
+  ol.related-list li::before {
+    content: counter(rank);
+    position: absolute;
+    left: 0;
+    top: 17px;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    width: 26px;
+    height: 26px;
+    border: 1px solid var(--accent-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .related-preacher { font-weight: 600; }
+  .related-sermon-name { font-style: italic; }
+  .related-meta {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    color: var(--ink-faint);
+    margin-left: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .related-summary {
+    color: var(--ink-soft);
+    margin-top: 5px;
+    font-size: 15px;
+  }
+  .outbound-note {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-top: 18px;
+    background: var(--rule-soft);
+    padding: 10px 14px;
+    border-radius: 6px;
+  }
+  .outbound-note strong { color: var(--ink-soft); }
+
+  /* ────────── Discuss / apply tiles ────────── */
+  .apply-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .apply-tile {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 18px 18px 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.15s ease;
+  }
+  .apply-tile:hover {
+    border-color: var(--accent-soft);
+    transform: translateY(-1px);
+  }
+  .apply-tile-label {
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .apply-tile-title {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+  .apply-tile-desc {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    line-height: 1.5;
+  }
+
+  /* ────────── Expanded artifact cards (prayer / discussion / etc.) ────────── */
+  .artifact-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 26px 32px 28px;
+    margin-top: 22px;
+    scroll-margin-top: 80px;
+  }
+  .artifact-eyebrow {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .artifact-title {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 16px;
+    letter-spacing: -0.005em;
+  }
+  .artifact-prayer p {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink);
+    margin: 0 0 1em;
+  }
+  .artifact-prayer p:last-child { margin-bottom: 0; }
+  .artifact-status {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold-deep);
+    background: var(--gold-bg);
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 16px;
+  }
+  /* small_group_questions + couples_guide shared list styling */
+  ol.artifact-questions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: art;
+  }
+  ol.artifact-questions li {
+    counter-increment: art;
+    padding: 14px 0 14px 44px;
+    position: relative;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  ol.artifact-questions li:last-child { border-bottom: 0; }
+  ol.artifact-questions li::before {
+    content: counter(art);
+    position: absolute;
+    left: 0;
+    top: 14px;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--accent-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .artifact-question-text {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .artifact-question-anchor {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-top: 4px;
+  }
+  .artifact-question-follow {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 15px;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin-top: 6px;
+    padding-left: 0;
+  }
+
+  /* daily_readings */
+  .artifact-intro {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-style: italic;
+    color: var(--ink-soft);
+    margin: 0 0 18px;
+    font-size: 16px;
+  }
+  .artifact-days {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .artifact-day {
+    border-left: 3px solid var(--accent-soft);
+    padding: 4px 0 4px 16px;
+  }
+  .artifact-day-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+  .artifact-day-name {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+  .artifact-day-passage {
+    font-family: ui-monospace, "SF Mono", Monaco, monospace;
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+  .artifact-day-text {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* family_card */
+  .artifact-framing {
+    background: var(--rule-soft);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+  }
+  .artifact-framing-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .artifact-framing p {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin: 0;
+  }
+  blockquote.artifact-family-prompt {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--ink);
+    border-left: 4px solid var(--gold);
+    padding: 6px 0 6px 20px;
+    margin: 16px 0 0;
+    font-style: italic;
+  }
+  .artifact-age-band {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-top: 12px;
+  }
+
+  /* memory_verse */
+  blockquote.artifact-verse {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink);
+    font-style: italic;
+    border-left: 4px solid var(--accent);
+    padding: 8px 0 8px 22px;
+    margin: 6px 0 16px;
+  }
+  .artifact-verse-why {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* ────────── About the church ────────── */
+  .church-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: center;
+  }
+  .church-name {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .church-addr {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .visit-cta {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+    white-space: nowrap;
+  }
+  .visit-cta:hover { background: var(--accent-deep); }
+
+  /* ────────── Crawler-hygiene panel ────────── */
+  details.crawler-panel {
+    margin-top: 28px;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+  }
+  details.crawler-panel summary {
+    cursor: pointer;
+    padding: 12px 18px;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    user-select: none;
+  }
+  details.crawler-panel summary:hover { color: var(--accent); }
+  details.crawler-panel[open] summary { border-bottom: 1px solid var(--rule); }
+  .crawler-body { padding: 18px; }
+  .crawler-body pre {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 14px;
+    font-family: ui-monospace, monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    overflow-x: auto;
+    margin: 6px 0 14px;
+    white-space: pre-wrap;
+  }
+  .crawler-body h5 {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin: 14px 0 4px;
+  }
+  .crawler-body h5:first-child { margin-top: 0; }
+  .crawler-body p {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin: 0 0 8px;
+  }
+
+  /* ────────── Footer ────────── */
+  footer.page-footer {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 32px 48px;
+    border-top: 1px solid var(--rule);
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    line-height: 1.6;
+  }
+  footer.page-footer .attribution {
+    margin-bottom: 14px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  footer.page-footer code {
+    font-size: 11px;
+    color: var(--ink-faint);
+  }
+
+  /* ────────── Responsive ────────── */
+  @media (max-width: 720px) {
+    main { padding: 28px 20px 40px; }
+    h1.sermon-title { font-size: 32px; }
+    blockquote.thesis-hero { font-size: 20px; padding-left: 18px; }
+    .facts-strip { grid-template-columns: repeat(2, 1fr); }
+    .outline-grid { grid-template-columns: 1fr; }
+    .apply-grid { grid-template-columns: 1fr; }
+    .arc-node { grid-template-columns: 80px 1fr; }
+    .arc-node-text { grid-column: 1 / -1; justify-self: start; }
+    .church-card { grid-template-columns: 1fr; text-align: left; }
+    .site-nav { display: none; }
+  }
+</style>
+</head>
+<body><header class="site-header">
+  <div class="site-header-inner">
+    <a href="/ProvidenceLenexa/" class="site-brand">Providence Community Church</a>
+    <nav class="site-nav ui">
+      <a href="/ProvidenceLenexa/sermons">Sermons</a>
+      <a href="/ProvidenceLenexa/topics">Topics</a>
+      <a href="/ProvidenceLenexa/about">About</a>
+      <a href="/ProvidenceLenexa/visit">Visit</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <article class="sermon">
+
+    <!-- ═══════════ Sermon hero ═══════════ -->
+    <div class="breadcrumb ui">
+      <a href="/ProvidenceLenexa/sermons">Sermons</a></div>
+
+    <h1 class="sermon-title">IHOP Postmortem, Part 2</h1>
+
+    <div class="sermon-cite">
+      
+      <span>April 9, 2025</span>
+      <span>Pastor Chris Oswald</span>
+    </div>
+
+    
+    <div class="audio-player" id="audio">
+      <button class="play-button" aria-label="Play sermon audio">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <audio controls preload="none" src="https://sermons-cdn.sermonsteward.com/providence-community-church/ihop-postmortem-part-2-2025-04-09.mp3" class="audio-meta" style="width:100%;">
+        Your browser does not support the audio element.
+        <a href="https://sermons-cdn.sermonsteward.com/providence-community-church/ihop-postmortem-part-2-2025-04-09.mp3">Download the MP3.</a>
+      </audio>
+    </div>
+    
+
+    
+
+    <!-- ═══════════ Facts strip ═══════════ -->
+    <div class="facts-strip">
+      <div class="fact">
+        <div class="fact-label ui">Series</div>
+        <div class="fact-value">—</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label ui">Type</div>
+        <div class="fact-value">—</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label ui">Tone</div>
+        <div class="fact-value">
+          
+          —
+        </div>
+      </div>
+      <div class="fact">
+        <div class="fact-label ui">Method</div>
+        <div class="fact-value">
+          
+          —
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════ Sermon outline ═══════════ -->
+    <section class="page-section">
+      <div class="section-eyebrow ui">What's in this sermon</div>
+      <h2 class="section-title-h2">The shape of the argument</h2>
+      <p class="section-lede">30 units across exposition, application, illustration, theological claim, and conclusion. The pastor's argument is built from these moving parts.</p>
+
+      
+
+      <div class="outline-grid">
+        
+        <div class="outline-card">
+          <div class="outline-card-label ui">Doctrinal loci<span class="count ui">· 3 surfaced</span></div>
+          <div style="font-family:'Inter',sans-serif; font-size:13px; line-height:1.8;">
+            
+              
+                <span class="chip" style="background:#e6efe9;color:var(--accent);">Pastoral Theology · 6</span>
+              
+            
+              
+                <span class="chip" style="background:#e6efe9;color:var(--accent);">Providence / Sovereignty · 4</span>
+              
+            
+              
+                <span class="chip" style="background:#e6efe9;color:var(--accent);">Doxology / Worship · 2</span>
+              
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="outline-card">
+          <div class="outline-card-label ui">Bible citations<span class="count ui">· 13</span></div>
+          <div class="citation-chain">2 Corinthians 12:7-10 <span class="sep">|</span> Galatians 2:11-14 <span class="sep">|</span> 1 Peter 5:1 <span class="sep">|</span> 2 Corinthians 4:4 <span class="sep">|</span> Ephesians 2:1-10 <span class="sep">|</span> John 3:3 <span class="sep">|</span> 1 Corinthians 1:26-29 <span class="sep">|</span> Acts 4:13 <span class="sep">|</span> 2 Corinthians 12:9 <span class="sep">|</span> 2 Corinthians 4:7 <span class="sep">|</span> Ephesians 2 <span class="sep">|</span> 1 Corinthians 4:7</div>
+        </div>
+        
+
+        
+        <div class="outline-card full">
+          <div class="outline-card-label ui">Illustrations<span class="count ui">· 6</span></div>
+          <ol class="decomp-list">
+            
+            <li>
+              
+              <span class="ill-type">analogy · unit #5</span>
+               — Extended analogy contrasting Arminian and Reformed soteriologies through competing rescue scenarios—drowning man grabbing a rope versus dead corpse being resurrected—to make the theological difference visceral and memorable.
+            </li>
+            
+            <li>
+              
+              <span class="ill-type">personal story · unit #7</span>
+               — Personal story about his child&#39;s question on election introduces the next theological point about God&#39;s purposes in choosing the weak and foolish.
+            </li>
+            
+            <li>
+              
+              <span class="ill-type">analogy · unit #15</span>
+               — Medical/historical analogy explaining &#39;antibodies&#39; metaphor: just as Aztecs lacked immunity to European diseases, Boomers lacked cultural immunity to new ideological threats.
+            </li>
+            
+            <li>
+              
+              <span class="ill-type">historical example · unit #16</span>
+               — Three historical examples (Gen X/internet porn, millennials/HD pornography, WWI/machine guns) demonstrating the &#39;antibodies&#39; pattern across different generations encountering novel threats without cultural preparation.
+            </li>
+            
+            <li>
+              
+              <span class="ill-type">cultural reference · unit #22</span>
+               — Offers humorous but pointed illustration of Boomer gullibility: repeated Facebook account hacking demonstrates their consistent failure to recognize deception, validating the broader critique despite the potentially defensive response.
+            </li>
+            
+            <li>
+              
+              <span class="ill-type">personal story · unit #24</span>
+               — Returns to the protest scene as comprehensive illustration of Boomer hypocrisy: performing anti-establishment postures while benefiting maximally from institutional advantages, embodying the generational contradictions being diagnosed.
+            </li>
+            
+          </ol>
+        </div>
+        
+
+        
+        <div class="outline-card full">
+          <div class="outline-card-label ui">Theological claims<span class="count ui">· 15</span></div>
+          <ol class="decomp-list">
+            
+            <li>Apostles were chosen by God&#39;s sovereign fiat, not by any merit or qualification of their own. <span class="ill-type">unit #3</span></li>
+            
+            <li>The New Apostolic Reformation&#39;s blind spot toward grace-based election causes them to view spiritual specialness as earned rather than sovereignly bestowed, fundamentally distorting their understanding of leadership. <span class="ill-type">unit #4</span></li>
+            
+            <li>Reformed theology enables healthy authority structures where leaders are in charge without being &#39;better,&#39; while Arminian theology conflates authority with merit, producing toxic leadership cultures. <span class="ill-type">unit #6</span></li>
+            
+            <li>IHOP&#39;s unhealthy leader elevation stems from Arminian theology&#39;s inability to hold that a person can be chosen for office without being inherently special or superior. <span class="ill-type">unit #9</span></li>
+            
+            <li>You cannot have the church as it ought to be—a boast-free zone—until you get the gospel right, because your soteriology determines your entire understanding of authority and church life. <span class="ill-type">unit #10</span></li>
+            
+            <li>Baby Boomers constitute a particularly broken generation with outsized cultural influence, and even accounting for substantial exceptions, their problems are numerically significant enough to require serious analysis. <span class="ill-type">unit #13</span></li>
+            
+            <li>The Baby Boomer generation&#39;s problems stem not from bad parenting but from being the first generation to encounter postmodernism and consumerism without cultural antibodies to resist these ideologies. <span class="ill-type">unit #14</span></li>
+            
+            <li>Baby Boomers were the first generation exposed to psychology-driven self-esteem culture and consumerism without cultural antibodies, making them uniquely gullible to these ideologies&#39; destructive effects. <span class="ill-type">unit #17</span></li>
+            
+            <li>When the hyper-charismatic movement emerged, Baby Boomers had no antibodies to resist its audacious elements because they had already been infected by psychology-driven self-importance and consumerism. <span class="ill-type">unit #18</span></li>
+            
+            <li>The hyper-charismatic movement&#39;s growth during the Boomer era is no accident—it perfected experiential worship designed to appeal to a generation conditioned to trust their emotional preferences. <span class="ill-type">unit #20</span></li>
+            
+            <li>Boomers are uniquely vulnerable to predatory leaders who perform casual humility because they trust their first impressions and lack categories for sophisticated manipulation disguised as authenticity. <span class="ill-type">unit #21</span></li>
+            
+            <li>The Boomer trust problem is fundamentally mistaking appearance for reality: they cannot see that loving actions may look harsh while cruel people can project softness. <span class="ill-type">unit #23</span></li>
+            
+            <li>Even godly Boomers exhibit generational over-emphasis on personal tastes and lived experience, which contributed to the hyper-charismatic movement&#39;s emergence and growth. <span class="ill-type">unit #25</span></li>
+            
+            <li>The Baby Boomer generation uniquely dismissed church history as irrelevant, creating conditions where NAR could introduce theological novelties without anyone asking why these practices had been absent for 2,000 years. <span class="ill-type">unit #26</span></li>
+            
+            <li>NAR leaders like Bickle succeeded because they exploited three Baby Boomer vulnerabilities: lack of immunity to therapeutic gospel language, consumerist confidence in personal preferences, and contempt for church history. <span class="ill-type">unit #27</span></li>
+            
+          </ol>
+        </div>
+        
+
+        
+        <div class="outline-card full">
+          <div class="outline-card-label ui">Quotations<span class="count ui">· 3</span></div>
+          
+          <blockquote class="quote-block">
+            "my grace is sufficient for you, and in your weakness, I am made strong"
+            <span class="quote-attr">— God/Jesus (unit #8)</span>
+          </blockquote>
+          
+          <blockquote class="quote-block">
+            "God chose what is foolish in this world to confound the wise. He chose what is weak to confound the strong."
+            <span class="quote-attr">— Paul (unit #8)</span>
+          </blockquote>
+          
+          <blockquote class="quote-block">
+            "who sees anything different in you? And if there&#39;s nothing different in you, then why do you act? And what do you have that you did not receive? ... and if you don&#39;t have anything you did not receive, then why do you boast as if you did not receive it?"
+            <span class="quote-attr">— Paul (unit #10)</span>
+          </blockquote>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- ═══════════ Transcript ═══════════ -->
+    <section class="page-section" id="transcript">
+      <div class="section-eyebrow ui">Read it</div>
+      <h2 class="section-title-h2">Full transcript</h2>
+
+      <div class="transcript-wrap">
+        <div class="transcript-meta ui">
+          <span><strong>24,847</strong> characters</span>
+          <span><strong>30</strong> units</span>
+          <span><strong>~28 min</strong> reading time</span>
+          <span><a href="#audio" class="ui">Listen instead →</a></span>
+        </div>
+
+        <div class="transcript-body">
+          
+          <h4 class="unit-anchor ui" id="unit-0">0 · Oswald opens with personal anecdote about a Zambian pastor to establish relational tone, then frames the sermon&#39;s continuation of examining New Apostolic Reformation theology, specifically IHOP, in light of biblical teaching on the Holy Spirit</h4>
+          
+          <p>Sam. Welcome to the Providence Podcast. This is Chris Oswald, senior pastor at Providence Community Church. Every time I say church I think about my Zambian pastor friend who was much older than me since passed on. But he always used to he had really good English, but just a few words he did weird and one of them was church. And he would always say choich, like the Three Stooges. I don&#39;t know how he maybe he liked American TV from the 50s, so maybe he watched the Three Stooges. He watched a lot of Westerns, but he would always say choich. Anyway, we are continuing our conversation today related to the Holy Spirit and specifically looking at what the Bible actually says about the Holy Spirit versus particular falsehoods perpetrated through what is known as the new Apostolic Reformation here in Casey that would be most commonly associated with the International House of Prayer.</p>
+          
+          
+          <h4 class="unit-anchor ui" id="unit-1">1 · Brief connector summarizing the previous episode&#39;s focus on apostolic nuance, setting up the theological argument to follow</h4>
+          
+          <p>Last time we talked about how there is a bit of a nuance in our understanding if we&#39;re looking at things biblically related to the apostles.</p>
+          
+          
+          <h4 class="unit-anchor ui" id="unit-2">2 · Establishes the first side of apostolic nuance: apostles were fully human, sinful, and made mistakes just as contemporary believers do, supporting this with multiple biblical examples of apostolic error and weakness</h4>
+          
+          <p>We would say that on the one hand the apostles were just like us. They were saved just like us, they were sinners just like us. And we see their sin and their weaknesses and so forth, even in the New Testament. Here I&#39;m thinking of where Peter is temporarily acting in contradiction to the basic themes of the Gospel, shunning the Gentile believers when the Judaizers appeared in the Church of Galatia or to Antioch. And just even things that are less malicious than that, like Paul sometimes making plans that didn&#39;t work, or Paul asking for a thorn to be removed from his flesh so that in his mind he could do X, Y and Z, and how he was actually not correctly understanding the will of God there. And God had a different plan. So yes, the apostles are just like us. They call us their brothers. Peter refers to pastors as fellow under shepherds and so on and so forth.</p>
+          
+          
+          <h4 class="unit-anchor ui" id="unit-3">3 · Asserts the second side of apostolic nuance: despite their humanity, apostles were uniquely chosen by divine decree, not by merit or earning, but by God&#39;s sovereign decision alone</h4>
+          
+          <p>So yes, they are just like us in that sense, but they are in another sense chosen. And they&#39;re chosen simply because of divine fiat. God just decided.</p>
+          
+          
+          <h4 class="unit-anchor ui" id="unit-4">4 · Diagnoses NAR&#39;s leadership problem as rooted in Arminian soteriology that ties specialness to merit, contrasting the Arminian &#39;drowning man grabbing a rope&#39; gospel with the Reformed &#39;dead corpse raised to life&#39; gospel where regeneration precedes faith</h4>
+          
+          <p>And I think that that&#39;s probably one of the reasons for the new Apostolic Reformation blind spot related to like just this ability that seems pretty simple to say the apostles were both like us and not like us. And the difference being that God I just think that they have a blind spot in general toward election. They don&#39;t believe in election in the classical Reformed Protestant way. And so if you&#39;re special, it&#39;s because you&#39;ve earned it in the Arminian perspective, which is the way that they think about salvation if you&#39;re special, it&#39;s because you did something to earn it, you did something to deserve it, even if it&#39;s just that you listened to, to the call of the gospel and chose on your own to believe. I share this a lot and it just seems to work for a lot of people. But the false gospel, the Arminian Gospel, says that I was drowning in a lake and I was frantically kicking and flailing around. Jesus rowed out into the rowboat and threw me a rope and I grabbed hold of the rope and he pulled me onto the boat and he saved me, but he saved me because I grabbed hold of the rope. And that&#39;s the Arminian Gospel, which is not the classic Protestant Reformed gospel at all. And then you have the actual Protestant Reformed gospel. And it&#39;s not that I was drowning in the lake and Jesus wrote out and threw a line to me, but I was dead in my sins and trespasses. Ephesians 2. And Jesus rode out and pulled my dead corpse out of the lake and brought me into the boat and breathed new life into me. And when I woke, I saw Jesus for the first time because the God of this world had previously blinded my eyes to the glory of God and the face of Christ Jesus. Suddenly, through the power of the Holy Spirit, my eyes are awake and I see Jesus. And the first thing I do is repent and believe. But all of that is downstream from the fact that I was chosen before the foundation of the world to be a new creation. And God effectively works regeneration on me. I must be born again. Unless I am born again, I cannot see the kingdom of heaven. And so my born againness happens before my faith and before my repentance.</p>
+          
+          
+          <h4 class="unit-anchor ui" id="unit-5">5 · Extended analogy contrasting Arminian and Reformed soteriologies through competing rescue scenarios—drowning man grabbing a rope versus dead corpse being resurrected—to make the theological difference visceral and memorable</h4>
+          
+          <p>I share this a lot and it just seems to work for a lot of people. But the false gospel, the Arminian Gospel, says that I was drowning in a lake and I was frantically kicking and flailing around. Jesus rowed out into the rowboat and threw me a rope and I grabbed hold of the rope and he pulled me onto the boat and he saved me, but he saved me because I grabbed hold of the rope. And that&#39;s the Arminian Gospel, which is not the classic Protestant Reformed gospel at all. And then you have the actual Protestant Reformed gospel. And it&#39;s not that I was drowning in the lake and Jesus wrote out and threw a line to me, but I was dead in my sins and trespasses. Ephesians 2. And Jesus rode out and pulled my dead corpse out of the lake and brought me into the boat and breathed new life into me. And when I woke, I saw Jesus for the first time because the God of this world had previously blinded my eyes to the glory of God and the face of Christ Jesus. Suddenly, through the power of the Holy Spirit, my eyes are awake and I see Jesus. And the first thing I do is repent and believe. But all of that is downstream from the fact that I was chosen before the foundation of the world to be a new creation.</p>
+          
+          
+
+          
+          <div class="transcript-collapse">
+            <button class="expand-btn ui" type="button" onclick="document.getElementById('tx-rest').style.display='block'; this.style.display='none';">Expand the remaining 24 units →</button>
+          </div>
+
+          <div class="tx-rest" id="tx-rest" style="display:none;">
+            
+            <h4 class="unit-anchor ui" id="unit-6">6 · Contrasts how Reformed and Arminian frameworks handle pastoral authority: Reformed theology allows leadership without superiority claims, while Arminian theology inevitably ties authority to merit, creating unhealthy power dynamics</h4>
+            
+            <p>And so for the reformed guy like me, I don&#39;t think of chosenness or specialness in direct relationship to merit, because it&#39;s not. But I think for the Arminians, and really there are no, within the NAR movement, there are no Calvinists. I think that&#39;s pretty obvious. Chosenness and specialness is related to merit. And so it&#39;s possible within the Calvinist church to look at a guy like me and say, well, he&#39;s the pastor, he&#39;s in charge. He&#39;s been in charge of things for a long time. He&#39;s held to unique account and so on and so forth, but also to say, like, yeah, he&#39;s, you know, he&#39;s in charge, but he&#39;s not like, like he&#39;s not in charge because he&#39;s better. You know what I mean?</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-7">7 · Personal story about his child&#39;s question on election introduces the next theological point about God&#39;s purposes in choosing the weak and foolish</h4>
+            
+            <p>That&#39;s a pretty consistent Calvinist way of thinking about things. I&#39;ve told people before that when my kids were thinking through election and what all this means, one of them came to me one night and said, I just don&#39;t get it. Why did God choose me and not someone else?</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-8">8 · Expounds the biblical pattern of God&#39;s election: choosing the foolish, weak, and unimpressive to demonstrate that power belongs to God alone, using Peter, John, and Paul as examples of this principle</h4>
+            
+            <p>And I pointed him to what Paul tells the Corinthians. God chose what is foolish in this world to confound the wise. He chose what is weak to confound the strong. We&#39;re not chosen because we&#39;re better. If anything, we&#39;re chosen because we&#39;re worse. When the Sanhedrin, when the ruling officials look at Peter and John in the Book of Acts, it says they saw that they were uneducated men and yet nevertheless observed that they had been with Jesus. That&#39;s the whole point. The point of God&#39;s elective plan is to sort of contrast what a person is, a Galilean, a Nazarene or whatever, foolish, uneducated, and so forth with his divine choice. And he does that. He chooses jars of clay to show that the surpassing power of God, the surpassing power, belongs to him. Paul was an impressive guy, and at some level he was too impressive. So God gave him the thorn in the flesh so that he could say, my grace is sufficient for you, and in your weakness, I am made strong.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-9">9 · Applies the election theology directly to IHOP&#39;s leadership problem: their Arminian framework prevents them from holding the tension between chosenness and ordinariness, producing unhealthy leader elevation that inevitably collapses</h4>
+            
+            <p>And so part of what&#39;s going on with the IHOP thing is this issue of soteriology, of understanding. God&#39;s elective choice is not tied at any way to merit. Part of what&#39;s going on in their situation, where they tend to elevate leaders in a way that is unhealthy and ultimately backfires upon them, is they don&#39;t really have any kind of original theology that&#39;s rooted in a sense of you can both be chosen and not anything special. That doesn&#39;t exist in the Arminian world. It exists in the Calvinist world, doesn&#39;t exist in the Armenian world.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-10">10 · Synthesizes the soteriological argument: your understanding of salvation determines your entire ecclesiology, and Arminian merit-based salvation inevitably produces boasting and unhealthy authority structures, violating the church&#39;s design as a boast-free zone</h4>
+            
+            <p>So that&#39;s one of the things that I would have wanted to say in the last podcast about apostolic continuity. It&#39;s just they have a leadership problem. It&#39;s very obvious they have a leadership problem. It is very obvious that they allow their leaders to get away with things that make no sense and then in other places would be called to account immediately. And we&#39;re just looking for answers to why that is. And one of the answers to why that is is because. Because the soteriology, the way they understand salvation, see the guys, the way you understand salvation is the way you understand everything. It&#39;s just the same model reapplied over and over and over again throughout the Christian life. And so the way you get in is the way you stay in, and the way you get in is sort of the way that you act when you&#39;re in. And in the, you know, in the Arminian way, it&#39;s like I grabbed hold of the rope, Jesus threw the thing to me and I grabbed hold of the rope. And the reason I&#39;m saved and not someone else isn&#39;t because God has specific elective choices that he&#39;s made, but it&#39;s because I grabbed the rope and so. And so didn&#39;t. And that transfers all the way through your understanding of authority and your understanding within a church and so on and so forth. And so until you get rid of that, by the way, you will never have the church as it ought to be. Because the whole design of the church, you know, Ephesians 2, the whole design of the church is that it would be a boast free zone. You can&#39;t have a boast free zone. And I&#39;m not saying this to pick on anybody. I&#39;m not saying this to self congratulate because I think I have the right theology, because I don&#39;t think I have the right theology because I&#39;m better than anyone else. It carries across the whole thing. I&#39;m just saying you won&#39;t have the church that you need to have until you get the gospel right. And understand, just as Paul says to the Corinthians, who sees anything different in you? And if there&#39;s nothing different in you, then why do you act? And what do you have that you did not receive? He continues, and then he says, and if you don&#39;t have anything you did not receive, then why do you boast as if you did not receive it? And so, like, you got to get the gospel right. It&#39;s going to affect everything, including your understanding of leadership. And one of the things going on in the new apostolic Reformation is a broken understanding of God&#39;s elective purposes in salvation and so on and so forth.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-11">11 · Brief pastoral pivot acknowledging the sermon&#39;s evolving scope and introducing a new angle on NAR analysis: generational factors, particularly Baby Boomer vulnerabilities, as contributing to charismatic excesses</h4>
+            
+            <p>So that&#39;s one area, another area related to this. And I&#39;m going to get back into the Holy Spirit in the next episode. But a few things have happened since the first episode that make me realize I need to maybe deepen this a little bit. Another issue that I think is worth pointing out related to the hyper charismatic movement is the generational effect.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-12">12 · Personal observation of a protest&#39;s demographic makeup serves as entry point for discussing Baby Boomer generation&#39;s cultural influence and vulnerabilities, connecting contemporary political behavior to church dynamics</h4>
+            
+            <p>So on Saturday there was a big nationwide demonstration against Trump, against Elon Musk and so on and so forth. And one of the sort of observations that&#39;s going out amongst the folks online right now is just how old the crowds were. I myself was on the way to the gym, so I was, I was kind of on 87th and like real close to 4:35 and you know, on the West Lenexa side. And I was there close to City Center. And I was stopped because that&#39;s where the Johnson county anti Trump protest people had decided to be, kind of by sprouts and McKeever&#39;s and Red Door, like that intersection there, that&#39;s right where I come out of my neighborhood to go to the gym. Anyway, I myself noticed wasn&#39;t a small crowd. I mean, it wasn&#39;t like this sea of AI created masses that you&#39;ve seen online. But it also wasn&#39;t small. There was at least a few hundred people there. And it was overwhelmingly obvious that this was by and large an older crowd. By older, I mean baby boomers older than me.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-13">13 · Claims Baby Boomers are a particularly broken generation with outsized cultural influence, carefully qualifying the statement to allow for substantial exceptions while maintaining the statistical force of the critique</h4>
+            
+            <p>And so one of the things, if we&#39;re talking about the new Apostolic Reformation and IHOP and so forth, that we probably need to just handle at least partially, is that the boomers are a particularly broken generation and have a particularly outsized effect on American culture as it stands today. And I can say that in such a way as to not castigate individual people that I know who are of that age. And a leaving room for exceptions and so forth. And friends, listen, the number of boomers is so large that even if the exception is, say, 40% of all boomers are not as I&#39;m describing them to be, and then you still got 60% that are. That&#39;s a massive number of people.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-14">14 · Proposes &#39;low antibodies&#39; framework for understanding Boomer vulnerabilities: they were the first generation to encounter postmodernism and consumerism without cultural immunity, making them uniquely susceptible to these ideological viruses</h4>
+            
+            <p>And so one of the things that is going on in America right now is that we are really undoing a lot of damage created by this particular generation. Now, I don&#39;t really think I want to get into offering, you know, prognosticated explanations as to what went wrong there. I would just say this. I don&#39;t think that blaming the parents is the probably the correct explanation. Exactly. I believe that the most likely explanation, the one that is kind of default in my mind, is that this was a generation with low. With low antibodies for postmodernism and low antibodies for consumerism.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-15">15 · Medical/historical analogy explaining &#39;antibodies&#39; metaphor: just as Aztecs lacked immunity to European diseases, Boomers lacked cultural immunity to new ideological threats</h4>
+            
+            <p>And what I mean by antibodies is like, you know, when you&#39;re kind of surrounded by, you know, the flu or whatever, by a certain age, you&#39;re going to have all these antibodies sort of ready to answer a particular virus if it were to enter your body. But, you know, as you know the stories of the Aztecs getting wiped out or whatever, you know, if, if they&#39;re, if, if a native population encounters a particular disease for the first time, there are no antibodies. And so there&#39;s a really successful infection rate that takes place amongst a population that has not experienced a particular disease before.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-16">16 · Three historical examples (Gen X/internet porn, millennials/HD pornography, WWI/machine guns) demonstrating the &#39;antibodies&#39; pattern across different generations encountering novel threats without cultural preparation</h4>
+            
+            <p>And so I think it&#39;s kind of over simplistic to blame the parents of boomers for the way that this generation, by and large, has turned out. Even if you grant 40% of those turned out great. I think that it&#39;s overly simplistic to say that that&#39;s something to do with parents. I think that there are certainly just been cultural developments over the last 60, 70 years that are uniquely novel. Parents, to some degree, Gen Xers, of which I&#39;m a part, just barely got out of the formative years before Internet pornography became a thing. So millennials are the kind of ground zero there. And I don&#39;t think there were sufficient antibodies built up against this phenomenon of instantly available 1080p pornography. That&#39;s a brand new concept. And so I think millennials were uniquely hit by this. Another example would be The World War I generation, specifically related to automatic gunfire. There was this moment when we have all these soldiers in World War I. And suddenly we have a method of war fighting that is developed around single shot munitions. And now suddenly we have this thing called a machine gun or mustard gas or whatever. And so you find these little overlaps in history where a new virus, technology, whatever you want to call it, emerges. And then like. But the auto, the antibodies of the majority of people who are encountering this new thing hasn&#39;t really elevated to the level of being able to defend against it.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-17">17 · Applies the antibodies framework specifically to Boomers: psychology, self-esteem culture, and consumerism were novel viruses to which they had no immunity, making them particularly vulnerable to deception and manipulation</h4>
+            
+            <p>So I think there&#39;s a reason why, you know, for instance, in millennials where the hardest hit with porn, because it&#39;s like they literally didn&#39;t. It didn&#39;t exist before then, so no one was preparing them. You know, there&#39;s just. There were no cultural supports, there was no even cultural conversation happening about Internet pornography when most of these millennials became addicted to it. And, you know, there just wasn&#39;t like a cultural spiritual antibody to it. Well, my sense with the boomers is that they&#39;re the first generation to be raised where in an environment where psychology, self esteem and consumerism was sort of unleashed as a virus into the world. And they are the ones that have the least number of antibodies. And so they were just far more gullible and bought it and were affected by it far more than other generations.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-18">18 · Connects Boomer vulnerabilities directly to NAR susceptibility: their lack of antibodies against psychology, self-focus, and consumerism left them defenseless against hyper-charismatic excesses when the movement emerged</h4>
+            
+            <p>And you could say, well, I blame the parents for that. Well, how many parents, you know, how many parents are functionally wise enough to understand a brand new emerging concept has fallen upon popular culture and then helped their kids to avoid being, you know, consumed by it? There are certainly some people who have that level of discernment, but not many. So all that to say boomers are a uniquely problematic generation, even if you give a massive exception to a lot of people who aren&#39;t at all like the rest of them. And I know plenty of those people, by the way. But for the most part, or in a majority segment, there are just a lot of boomers who were, in my opinion, infected by a psychologized self, a sense of self importance and consumerism, such that when the hyper charismatic movement emerges, they have literally no antibodies to deal with some of the most audacious elements of it.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-19">19 · Identifies the Jesus Movement&#39;s cultural-music fusion as creating Boomer over-confidence in personal preferences, treating subjective tastes as objective truth, particularly evident in worship wars—a fundamentally consumerist posture toward church</h4>
+            
+            <p>And I&#39;ll just bring up two. One, they were taught very early when there was this movement, and I&#39;m grateful for this movement, but there was a Jesus movement where a bunch of washed up hippies suddenly became interested in Jesus. But all of that was done with, you know, sort of a very unique thing. And that was, let&#39;s take modern cultural kind of expressions of music and Turn and put Jesus words into them. And so even, you know, music&#39;s this very unique thing. It&#39;s almost like food. It&#39;s a kind of a force of will. You know, you really realize like that you&#39;re in missions, for instance, when you go somewhere else and you&#39;re just willing to eat what is put before you and not be a wuss about it and not whine about it and so forth. There are these certain kind of things in life that test whether or not you&#39;re indeed humble. And one of them is like you just presented a plate of food in another country. It&#39;s like, will you just eat it and shut up? Or will you import all of your personal preferences into this? And music is one of those things. And there&#39;s a reason why the worship wars were such a big deal in the time period that they were. It was mostly a boomer issue. And it was mostly sort of, I would say, connected to this personal, like deep confidence in their own tastes and preferences as being essentially the same as truth.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-20">20 · Connects NAR&#39;s experiential worship style to Boomer consumerist preferences: the movement&#39;s success correlates to its mastery of emotional experience designed to appeal to a generation trained to trust their preferences</h4>
+            
+            <p>And so with the hyper charismatic stuff, like, one of the things that has been going on there is that they&#39;ve really have perfected the sort of bells and whistles, experiential aspects of worship. And I don&#39;t think that&#39;s coincidental that they&#39;ve grown largely in this kind of boomer centric period of time.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-21">21 · Diagnoses Boomer gullibility toward wolves in sheep&#39;s clothing: trained to distrust overt authority but lacking categories for sophisticated deception, they&#39;re easily manipulated by leaders who perform casual humility while being predatory</h4>
+            
+            <p>Another piece that&#39;s pretty remarkable and looking back, rough to consider is just that boomers are by and large very trusting of their senses and very non critical of sort of like the first take. And so if you as a leader, say you&#39;re a wolf, if you can successfully put on the sheep&#39;s clothing enough to appear humble and so forth. You know, the one generation most likely to fall for all this stuff are the boomers. They just had a more trusting sort of. What&#39;s funny about it is that they were kind of classically trained to not be trusting toward outward overt expressions of authority. But if you can just put on a sweatshirt and jeans and some tennis shoes and stand behind a pulpit with your hands in your pockets and sort of have your hair a little disheveled, they&#39;re suddenly like, of course this guy&#39;s great, because look, he&#39;s not even trying to impress. It&#39;s like they don&#39;t even have a category for the kind of person who&#39;s three steps ahead of them and understands that I&#39;m going to wear these jeans and this sweatshirt and these tennis shoes so as to appear humble.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-22">22 · Offers humorous but pointed illustration of Boomer gullibility: repeated Facebook account hacking demonstrates their consistent failure to recognize deception, validating the broader critique despite the potentially defensive response</h4>
+            
+            <p>So there was just a level of Trusting one&#39;s senses, that emerged in the boomer generation and it really elevated. It gave legs to the new apostolic reformation in a unique way as well. And listen, if you&#39;re a boomer and you get upset about this, just try to be logical, because, number one, I&#39;m granting that it&#39;s potentially 40% of all the boomers that aren&#39;t like this, and I&#39;m suggesting that even if that were so, the numbers are so massive that 60% is effectively worth talking about. But secondly, let&#39;s be honest. How many times has your Facebook account been hacked?</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-23">23 · Articulates the core Boomer discernment failure: equating appearance with reality, they cannot recognize that truly loving actions may appear harsh while truly cruel people can project gentleness—a fundamental confusion between surface and substance</h4>
+            
+            <p>There is a trust issue. And it is essentially the trust issue appears to be related to if you appear nice, then you are nice, and if you appear mean, then you are mean, which is fundamentally a trusting of your senses. And that&#39;s a problem, because the truth is that lots of times the kind, gracious, loving action will appear to be a harder action. And the mean, cruel person is sophisticated enough to know how to project softness and humility and meekness while being actually terrible as human beings.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-24">24 · Returns to the protest scene as comprehensive illustration of Boomer hypocrisy: performing anti-establishment postures while benefiting maximally from institutional advantages, embodying the generational contradictions being diagnosed</h4>
+            
+            <p>And so as I was parked at this intersection watching all these boomers pass by with signs that literally were just utterly nonsensical, and these are all people, of course, that all of the cliches are absolutely true in this sense. They all bought real estate before it had blown up. They, they somehow managed to perfectly execute this quasi anti conformity vibe coming all the way through the 60s forward, while also just taking advantage of literally every institutional problem, every institutional, what&#39;s the word, inequity. Anyway, it&#39;s a real thing.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-25">25 · Extends the critique even to godly Boomers Oswald respects: their generational over-emphasis on personal preference and lived experience created conditions for NAR emergence regardless of individual piety</h4>
+            
+            <p>But even the boomers that I know now, who I think are godly and I love and respect, probably the biggest issue for them is they really do have an over amount of emphasis on their own tastes and on their own sort of lived experience and on their own preferences and on their own like, sort of, sort of like read on things and you know, so that would be one reason why the hyper Charismatic movement, in my opinion, emerged when it did.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-26">26 · Identifies Boomer contempt for church history as the third key vulnerability: their unprecedented dismissal of tradition allowed NAR novelties to enter evangelicalism without the critical scrutiny that 2,000 years of precedent should have triggered</h4>
+            
+            <p>And the other one that I would add, and I&#39;m trying to make some generational arguments here, is that there&#39;s really, I don&#39;t know of another generation in church history where a group of people just unilaterally decided that everything had happened that had happened before them was meaningless and unworthy of consulting. And so one of the other reasons why I think the new Apostolic Reformation has emerged when it did is because there was a particular moment in Western evangelicalism where church history did not matter at all, or hardly at all. And it really allowed people to bring in completely novel expressions of Christianity without really anybody looking and asking, well, you know, we&#39;ve been at this for 2,000 years. Like, let&#39;s just look back real quick. And I&#39;m not saying you&#39;re wrong, but let&#39;s just look back real quick and just like, see what the old guys have said. There was, for the first time that I&#39;m aware of in a very long time, a real kind of Chesterton fence kind of moment, especially in American church history, where we stopped asking, like, why is it that we didn&#39;t do music like this before? Or why is it that we weren&#39;t asking those Chesterton fence kinds of questions.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-27">27 · Synthesizes the entire generational argument into a comprehensive diagnosis: Bickle and other NAR leaders gained entrance through three Boomer vulnerabilities—no antibodies against therapeutic language, consumerist trust in personal preference, and contempt for church history</h4>
+            
+            <p>And so one of the main reasons, I would say that the Bickles of the world and the Joneses, All of these people who wound up, by the way, being, you know, quite sexually cruel, just like the cult masters of the 60s, the commune masters of the 60s. Like, there&#39;s a reason that these people got an entrance into evangelicalism and some of it is generational, partly because they were able to speak this sort of therapeutic gospel language that appealed to this first generation that had basically no antibodies built up against psychology as we think of it now and then. Also, they just had a really high level of trust in their tastes and preferences and sort of imagined that Christianity could just conform to their particular musical tastes and so forth. And then thirdly, they just were uniquely sort of susceptible to being deceived because they didn&#39;t have really any legitimate amount of respect for church history. And in some facts, some extent, like a decent percentage of them had a contempt for church history, which goes all the way back to don&#39;t trust anyone over 30 and so forth. If my music&#39;s too old or too loud, you&#39;re too old, and so on and so forth.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-28">28 · Concluding qualification reiterating exceptions and pastoral tone while insisting the generational analysis remains statistically and logically necessary for understanding NAR emergence, timing, and funding</h4>
+            
+            <p>So that&#39;s part two of this conversation about the ihop. I don&#39;t. Again, I want to be clear. I know plenty of boomers who love their Lord and are full of generosity and are out there. I see them every day hustling to serve the kingdom and so forth. Plenty of those. I would just argue that they are for sure a minority even within the Christian boomer population. And that that&#39;s one of. And we just have to be somewhat logical about when did this new Apostolic Reformation ar Did they get their money? Who are their leaders? How old are their leaders? And so forth. I think we can just begin to say, like, yeah, there&#39;s probably got to be, at least as we&#39;re trying to understand this some generational element to the explanation.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-29">29 · Final frame previewing the next episode&#39;s focus on biblical pneumatology versus NAR teaching, positioning the Holy Spirit&#39;s service orientation as the corrective to charismatic self-focus</h4>
+            
+            <p>Okay, well, thanks for listening and we&#39;ll come back next time and talk about how the Holy Spirit is fundamentally in the Bible, given for us to serve other people. And we&#39;ll talk about that in contrast to what we see in the new apostolic Reformation. Thank you. The army blues.</p>
+            
+            
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ Sermon arc ═══════════ -->
+    <section class="page-section">
+      <div class="section-eyebrow ui">Where this fits</div>
+      <h2 class="section-title-h2">Recent preaching context</h2>
+      <p class="section-lede">The three sermons immediately preceding this one in the preaching schedule.</p>
+
+      <div class="arc-wrap">
+        
+          
+          <div class="arc-node">
+            <div class="arc-node-date ui">Apr 6, 2025</div>
+            <div>
+              <div class="arc-node-title"><a href="/ProvidenceLenexa/sermons/2025/04/ihop-postmortem-part-1">IHOP Postmortem, Part 1</a></div>
+              
+            </div>
+            
+          </div>
+          
+          <div class="arc-node">
+            <div class="arc-node-date ui">Apr 6, 2025</div>
+            <div>
+              <div class="arc-node-title"><a href="/ProvidenceLenexa/sermons/2025/04/the-holy-spirit">The Holy Spirit</a></div>
+              <div style="color:var(--ink-soft); font-size:14px; margin-top:4px;">The Holy Spirit saves and sanctifies by revealing the glory of Jesus Christ, primarily through Scripture, curing the spiritual blindness that is the root cause of all human sin.</div>
+            </div>
+            <span class="arc-node-text ui">John 16:1-11</span>
+          </div>
+          
+          <div class="arc-node">
+            <div class="arc-node-date ui">Apr 6, 2025</div>
+            <div>
+              <div class="arc-node-title"><a href="/ProvidenceLenexa/sermons/2025/04/for-those-with-broken-bodies">For Those with Broken Bodies</a></div>
+              
+            </div>
+            
+          </div>
+          
+          <div class="arc-node current">
+            <div class="arc-node-date ui">April 9 · This sermon</div>
+            <div>
+              <div class="arc-node-title">IHOP Postmortem, Part 2</div>
+              
+            </div>
+            
+          </div>
+        
+      </div>
+
+      
+    </section>
+
+    <!-- ═══════════ Related teaching ═══════════ -->
+    
+
+    <!-- ═══════════ Discuss / apply ═══════════ -->
+    <section class="page-section">
+      <div class="section-eyebrow ui">Take it further</div>
+      <h2 class="section-title-h2">Discuss · apply · pray</h2>
+
+      <div class="apply-grid">
+        
+        <a href="#artifact-small-group" class="apply-tile">
+          <div class="apply-tile-label ui">Small groups</div>
+          <div class="apply-tile-title">6 discussion questions</div>
+          <div class="apply-tile-desc">Chris traced a connection between how the apostles were chosen and how leaders ought to function in the church today. What does 1 Corinthian…</div>
+        </a>
+        
+        <a href="#artifact-devotional" class="apply-tile">
+          <div class="apply-tile-label ui">Daily readings</div>
+          <div class="apply-tile-title">5-day reading plan</div>
+          <div class="apply-tile-desc">This week we trace how sovereign grace reshapes our understanding of authority, leadership, and the church&#39;s freedom from boasting—and why getting the gospel right is the only antidote to toxic spiritual movements.</div>
+        </a>
+        
+        <a href="#artifact-prayer" class="apply-tile">
+          <div class="apply-tile-label ui">Prayer</div>
+          <div class="apply-tile-title">A Prayer for Grace-Based Authority and Gospel Truth</div>
+          <div class="apply-tile-desc">Father, we come before You in awe of Your sovereign grace. You chose the apostles not because of their merit or qualification, but by Your o…</div>
+        </a>
+        
+        <a href="#artifact-family" class="apply-tile">
+          <div class="apply-tile-label ui">Family table</div>
+          <div class="apply-tile-title">Who Gets to Lead?</div>
+          <div class="apply-tile-desc">This sermon emphasized that God chooses leaders by His grace, not because they&#39;re inherently better or more special than anyone else. Use th…</div>
+        </a>
+        
+        <a href="#artifact-couples" class="apply-tile">
+          <div class="apply-tile-label ui">Couples</div>
+          <div class="apply-tile-title">Gospel, Authority, and Us</div>
+          <div class="apply-tile-desc">What part of Chris&#39;s teaching about grace-based election and leadership struck you most personally—and did it expose any way you&#39;ve been tem…</div>
+        </a>
+        
+        <a href="#artifact-memory" class="apply-tile">
+          <div class="apply-tile-label ui">Memorize</div>
+          <div class="apply-tile-title">1 Corinthians 1:26-29</div>
+          <div class="apply-tile-desc">This verse captures the sermon&#39;s central claim that apostolic authority and church leadership flow from God&#39;s sovereign election, not from human merit or specialness—a truth that exposes both NAR theology&#39;s distortion and the generational vulnerability to leader elevation. It anchors the entire pastoral argument: when we truly grasp that God chooses the weak to shame the wise, we create a &#39;boast-free zone&#39; where authority exists without superiority.</div>
+        </a>
+        
+      </div>
+
+      
+
+      
+      <div class="artifact-card" id="artifact-memory">
+        <div class="artifact-eyebrow ui">Memory verse this week</div>
+        <h3 class="artifact-title">1 Corinthians 1:26-29</h3>
+        <blockquote class="artifact-verse">For consider your calling, brothers: not many of you were wise according to worldly standards, not many were powerful, not many were of noble birth. But God chose what is foolish in the world to shame the wise; God chose what is weak in the world to shame the strong; God chose what is low and despised in the world, even things that are not, to bring to nothing things that are, so that no one may boast in the presence of God.</blockquote>
+        
+        <p class="artifact-verse-why"><strong>Why this verse:</strong> This verse captures the sermon&#39;s central claim that apostolic authority and church leadership flow from God&#39;s sovereign election, not from human merit or specialness—a truth that exposes both NAR theology&#39;s distortion and the generational vulnerability to leader elevation. It anchors the entire pastoral argument: when we truly grasp that God chooses the weak to shame the wise, we create a &#39;boast-free zone&#39; where authority exists without superiority.</p>
+        
+        <div class="artifact-status ui">Draft · pending review</div>
+      </div>
+      
+
+      
+
+      
+      <div class="artifact-card" id="artifact-small-group">
+        <div class="artifact-eyebrow ui">Small-group discussion</div>
+        <h3 class="artifact-title">6 questions for your group this week</h3>
+        <ol class="artifact-questions">
+          
+          <li>
+            <div class="artifact-question-text">Chris traced a connection between how the apostles were chosen and how leaders ought to function in the church today. What does 1 Corinthians 1:26-29 reveal about God&#39;s pattern in selecting His instruments, and what does that pattern tell us about what authority in the church should and should not communicate?</div>
+            <div class="artifact-question-anchor ui">1 Corinthians 1:26-29</div>
+            <div class="artifact-question-follow">→ How might a leader&#39;s understanding of *why* they were chosen shape the way they exercise authority over others?</div>
+          </li>
+          
+          <li>
+            <div class="artifact-question-text">The sermon identified a blind spot in the New Apostolic Reformation: the inability to separate being chosen for a role from being inherently superior or special. Where do you see this confusion showing up in evangelical churches today, and what damage does it create in how leaders relate to those they serve?</div>
+            
+            
+          </li>
+          
+          <li>
+            <div class="artifact-question-text">According to the sermon, Reformed theology holds that a person can be in charge without being &#39;better,&#39; while Arminian theology tends to conflate authority with merit. What&#39;s the gospel foundation that allows a leader to be genuinely in authority while remaining genuinely humble about their own standing before God?</div>
+            <div class="artifact-question-anchor ui">Ephesians 2:1-10</div>
+            <div class="artifact-question-follow">→ Can you think of a leader you&#39;ve respected who exemplified this—authority without superiority? What made the difference in how they led?</div>
+          </li>
+          
+          <li>
+            <div class="artifact-question-text">The sermon made a striking claim: you cannot have a boast-free church until you get the gospel right. Unpack that. Why would a church&#39;s theology of how people are saved directly shape whether leaders boast or whether the body of Christ remains humble?</div>
+            <div class="artifact-question-anchor ui">1 Corinthians 4:7</div>
+            
+          </li>
+          
+          <li>
+            <div class="artifact-question-text">Chris argued that Baby Boomers—and even many godly ones—were the first generation without cultural antibodies to resist psychology-driven self-esteem messaging and consumerism. How have you personally felt the pull of &#39;trust your preferences&#39; or &#39;follow your heart&#39; language in evaluating spiritual leaders or spiritual experiences, and where has that instinct led you astray?</div>
+            
+            <div class="artifact-question-follow">→ What would it look like to evaluate a leader or a church not primarily by how it &#39;feels&#39; to you, but by whether it aligns with Scripture and church history?</div>
+          </li>
+          
+          <li>
+            <div class="artifact-question-text">The sermon identified a specific vulnerability: mistaking appearance for reality, especially in leaders who perform casual humility. In light of 2 Corinthians 12:7-10, where Paul boasts in his weakness rather than hiding it, what&#39;s the difference between genuine humility and the performed humility that can mask manipulation?</div>
+            <div class="artifact-question-anchor ui">2 Corinthians 12:7-10</div>
+            <div class="artifact-question-follow">→ How might we grow in discernment to see past smooth exteriors to what&#39;s actually true about a leader&#39;s character and motives?</div>
+          </li>
+          
+        </ol>
+        <div class="artifact-status ui">Draft · pending review</div>
+      </div>
+
+      
+
+      
+
+      
+      <div class="artifact-card" id="artifact-devotional">
+        <div class="artifact-eyebrow ui">Daily readings · Monday–Friday</div>
+        <h3 class="artifact-title">5-day reading plan</h3>
+        <p class="artifact-intro">This week we trace how sovereign grace reshapes our understanding of authority, leadership, and the church&#39;s freedom from boasting—and why getting the gospel right is the only antidote to toxic spiritual movements.</p>
+        <div class="artifact-days">
+          
+          <div class="artifact-day">
+            <div class="artifact-day-head">
+              <span class="artifact-day-name ui">Monday</span>
+              <span class="artifact-day-passage ui">1 Corinthians 1:26-29</span>
+            </div>
+            <p class="artifact-day-text">Paul reminds the Corinthians that God deliberately chose the foolish, weak, and lowborn—not the wise, strong, or noble—so that no flesh would boast before Him. This is the foundation of all healthy authority: our leaders are not chosen because they are inherently superior, but because God in His sovereignty deemed it so. When we grasp this, we begin to see that authority and personal merit have been severed by the cross.</p>
+          </div>
+          
+          <div class="artifact-day">
+            <div class="artifact-day-head">
+              <span class="artifact-day-name ui">Tuesday</span>
+              <span class="artifact-day-passage ui">Ephesians 2:1-10</span>
+            </div>
+            <p class="artifact-day-text">We are dead in sin, made alive together in Christ, and raised up and seated with Him—all by grace, all by His work, never by ours. Yet movements like NAR teach that some believers earn special access, special words, special authority through their responsiveness or gifting. This inverts the gospel: it makes spiritual position a function of human performance rather than divine election and grace alone. The boasting returns when we believe our spiritual standing flows from anything we have done.</p>
+          </div>
+          
+          <div class="artifact-day">
+            <div class="artifact-day-head">
+              <span class="artifact-day-name ui">Wednesday</span>
+              <span class="artifact-day-passage ui">2 Corinthians 4:7</span>
+            </div>
+            <p class="artifact-day-text">We have this treasure—the light of the gospel—in jars of clay, so that the surpassing power belongs to God and not to us. A leader functioning within this framework knows that authority is a stewardship, not a possession, and that his weakness actually displays Christ&#39;s strength. By contrast, when leaders believe they were chosen because they are more responsive or more spiritual, they inevitably elevate themselves, creating the toxic cultures we see in hyper-charismatic movements. The jar remains clay; only the treasure is transcendent.</p>
+          </div>
+          
+          <div class="artifact-day">
+            <div class="artifact-day-head">
+              <span class="artifact-day-name ui">Thursday</span>
+              <span class="artifact-day-passage ui">2 Corinthians 12:7-10</span>
+            </div>
+            <p class="artifact-day-text">Paul received a thorn in the flesh—not despite being an apostle, but *to keep him from exalting himself*—so that he would learn that God&#39;s grace is sufficient in weakness. Leaders who understand sovereign grace actually crave this kind of humbling, knowing it keeps them gospel-centered. But leaders shaped by Arminian theology, where God&#39;s choice validates their superiority, resist the thorn; they interpret weakness as disqualification rather than as the very place where Christ&#39;s power is perfected. The thorn becomes intolerable rather than welcome.</p>
+          </div>
+          
+          <div class="artifact-day">
+            <div class="artifact-day-head">
+              <span class="artifact-day-name ui">Friday</span>
+              <span class="artifact-day-passage ui">1 Corinthians 4:7</span>
+            </div>
+            <p class="artifact-day-text">What do you have that you did not receive? And if you received it, why do you boast as if you did not? This one question is the litmus test for healthy church culture. When we truly believe that everything—our position, our gifts, our calling, our authority—comes to us as a gift of grace, boasting becomes not merely sinful but absurd. This is why the sermon&#39;s diagnosis cuts so deep: IHOP&#39;s toxic culture is not incidental to NAR theology; it is the inevitable fruit of a soteriology that has smuggled merit back into salvation. Fix the gospel, and you fix the church.</p>
+          </div>
+          
+        </div>
+        <div class="artifact-status ui">Draft · pending review</div>
+      </div>
+
+      
+
+      
+
+      
+      <div class="artifact-card" id="artifact-prayer">
+        <div class="artifact-eyebrow ui">Pray together this week</div>
+        <h3 class="artifact-title">A Prayer for Grace-Based Authority and Gospel Truth</h3>
+        <div class="artifact-prayer">
+          
+          <p>Father, we come before You in awe of Your sovereign grace. You chose the apostles not because of their merit or qualification, but by Your own fiat—and in that choice You humbled them and filled them with gratitude for a grace they did not earn (1 Corinthians 1:26-29). We adore You for a character that exalts the lowly and makes boasting impossible in Your presence.</p>
+          
+          <p>Yet we confess, O God, that we are heirs to broken patterns of thinking about authority and leadership. We have imbibed the world&#39;s lie that those in charge must be inherently superior, that leadership is a mark of personal specialness rather than a calling grounded in grace. We have trusted appearances over truth, mistaken softness for kindness and harshness for cruelty. We have forgotten the testimony of the ages, imagining that the Spirit&#39;s work today must look nothing like His work through two thousand years of faithful history. Forgive us for these captivities.</p>
+          
+          <p>But we rejoice in the gospel that humbles us and liberates us. In Christ, we are stripped of every ground for boasting; in His finished work, authority is separated forever from superiority (2 Corinthians 4:7). The gospel alone creates the conditions for a boast-free zone where leaders can be in charge without being &#39;better,&#39; where the whole church delights in sovereign grace rather than performing self-importance. This is the power that breaks the cycle of predatory leadership and therapeutic spirituality.</p>
+          
+          <p>Grant us, we pray, the wisdom to see clearly—to discern between appearance and reality, to recover a deep reverence for church history and its hard-won wisdom, and to train our affections by the gospel itself rather than by our feelings or preferences. Teach us to build communities where authority flows from grace, where leaders model the humility of those who were chosen by fiat rather than earned through merit. Make us a generation that boasts only in the cross of Christ, and give us courage to name and resist the subtle idolatries that prey upon us. To Your glory alone, we pray.</p>
+          
+        </div>
+        <div class="artifact-status ui">Draft · pending review</div>
+      </div>
+
+      
+
+      
+
+      
+      <div class="artifact-card" id="artifact-family">
+        <div class="artifact-eyebrow ui">Sunday-evening family table</div>
+        <h3 class="artifact-title">Who Gets to Lead?</h3>
+        
+        <div class="artifact-framing">
+          <span class="ui artifact-framing-label">For the parent</span>
+          <p>This sermon emphasized that God chooses leaders by His grace, not because they&#39;re inherently better or more special than anyone else. Use this prompt to help your family see that real Christian leadership looks humble, not elevated.</p>
+        </div>
+        
+        <blockquote class="artifact-family-prompt">
+          Pastor Chris talked about how some churches make their leaders seem like they&#39;re in a totally different category—like they&#39;re super-special people. But the Bible says Jesus picked ordinary people like fishermen to lead His church. If a leader is truly chosen by God&#39;s grace like everyone else, what would that look like? How would they act differently than someone who thinks they got picked because they&#39;re better?
+        </blockquote>
+        <div class="artifact-age-band ui">works for ages 8+</div>
+        <div class="artifact-status ui">Draft · pending review</div>
+      </div>
+
+      
+
+      
+
+      
+      <div class="artifact-card" id="artifact-couples">
+        <div class="artifact-eyebrow ui">Couples · three questions over coffee</div>
+        <h3 class="artifact-title">Gospel, Authority, and Us</h3>
+        <ol class="artifact-questions">
+          
+          <li><div class="artifact-question-text">What part of Chris&#39;s teaching about grace-based election and leadership struck you most personally—and did it expose any way you&#39;ve been tempted to earn specialness or measure your worth by role or performance?</div></li>
+          
+          <li><div class="artifact-question-text">How do we as a couple guard against the consumerist mindset and emotional-preference Christianity that shaped our culture, so that we&#39;re building our marriage on gospel truth rather than what feels good in the moment?</div></li>
+          
+          <li><div class="artifact-question-text">Where do you sense the Lord calling one of us to grow in humility about authority, or to trust His sovereignty more deeply—and how can I pray that specific growth into your life this week?</div></li>
+          
+        </ol>
+        <div class="artifact-status ui">Draft · pending review</div>
+      </div>
+
+      
+
+      
+    </section>
+
+    <!-- ═══════════ About the church ═══════════ -->
+    <section class="page-section">
+      <div class="section-eyebrow ui">Where this was preached</div>
+      <h2 class="section-title-h2">About the church</h2>
+
+      <div class="church-card">
+        <div>
+          <div class="church-name">Providence Community Church</div>
+          <div class="church-addr ui">
+            Lenexa, KS<br>
+            
+            Sundays · 10:00 AM<br>
+            <a href="/ProvidenceLenexa/about" style="color:var(--accent);">About us</a> · <a href="/ProvidenceLenexa/what-we-believe" style="color:var(--accent);">What we believe</a>
+          </div>
+        </div>
+        <a href="/ProvidenceLenexa/visit" class="visit-cta ui">Plan a visit →</a>
+      </div>
+
+      <!-- Crawler hygiene -->
+      <details class="crawler-panel">
+        <summary class="ui">Crawler &amp; AI-search policy · view robots.txt and llms.txt</summary>
+        <div class="crawler-body">
+          <p>This sermon page is intentionally optimized for search engines and AI assistants. We've opted into being crawled by both. The crawler-config files at the domain root:</p>
+
+          <h5 class="ui">/robots.txt</h5>
+          <pre>User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://sermonsteward.com/sitemap.xml</pre>
+
+          <h5 class="ui">/llms.txt</h5>
+          <pre># Providence Community Church
+
+A church preaching expository sermons through the books of the Bible.
+
+## Sermons
+- [IHOP Postmortem, Part 1 (2025-04-06)](/ProvidenceLenexa/sermons/2025/04/ihop-postmortem-part-1)
+- [The Holy Spirit (John 16:1-11, 2025-04-06)](/ProvidenceLenexa/sermons/2025/04/the-holy-spirit)
+- [For Those with Broken Bodies (2025-04-06)](/ProvidenceLenexa/sermons/2025/04/for-those-with-broken-bodies)
+- [IHOP Postmortem, Part 2 (2025-04-09)](/ProvidenceLenexa/sermons/2025/04/ihop-postmortem-part-2)
+
+## About
+- [About the church](/about)
+- [Plan a visit](/visit)</pre>
+
+          <p>The page itself ships with Schema.org <code>Article</code> + <code>Church</code> markup (with real geo coordinates), Open Graph + Twitter cards for share previews, and a canonical URL. Transcripts are server-rendered HTML — no JS dependency for the readable body.</p>
+        </div>
+      </details>
+    </section>
+
+  </article>
+
+</main>
+
+<footer class="page-footer">
+  <div class="attribution">
+    This sermon was preached by <strong>Pastor Chris Oswald</strong> at <strong>Providence Community Church</strong>, Lenexa, KS, on <strong>April 9, 2025</strong>. © 2025 Providence Community Church. Free to share with attribution.
+  </div>
+  <div>Canonical URL: <code>https://sermonsteward.com/ProvidenceLenexa/sermons/2025/04/ihop-postmortem-part-2</code></div>
+  <div>Page generated by Sermon Steward · processed 2026-05-22 11:48 UTC · 30 units · 13 citations · 3 quotations</div>
+</footer>
+
+</body>
+</html>

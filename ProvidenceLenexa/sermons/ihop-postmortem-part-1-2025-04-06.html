@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>IHOP Postmortem, Part 1 — Pastor Chris Oswald · Providence Community Church</title>
+<meta name="description" content="">
+<link rel="canonical" href="https://sermonsteward.com/ProvidenceLenexa/sermons/2025/04/ihop-postmortem-part-1">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="IHOP Postmortem, Part 1">
+<meta property="og:description" content="">
+<meta property="og:url" content="https://sermonsteward.com/ProvidenceLenexa/sermons/2025/04/ihop-postmortem-part-1">
+<meta property="og:site_name" content="Providence Community Church">
+<meta property="article:published_time" content="2025-04-06">
+<meta property="article:author" content="Chris Oswald">
+
+
+<!-- Twitter card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IHOP Postmortem, Part 1">
+<meta name="twitter:description" content="">
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "IHOP Postmortem, Part 1",
+  "datePublished": "2025-04-06",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Chris Oswald",
+    "jobTitle": "Pastor",
+    "worksFor": {
+      "@type": "Church",
+      "name": "Providence Community Church"
+    }
+  },
+  "publisher": {
+    "@type": "Church",
+    "name": "Providence Community Church",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lenexa",
+      "addressRegion": "KS",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 38.9536,
+      "longitude": -94.7336
+    }
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Ecclesiology"
+    },
+    {
+      "@type": "Thing",
+      "name": "Bibliology"
+    },
+    {
+      "@type": "Thing",
+      "name": "Pastoral Theology"
+    }
+  ],
+  "keywords": "Ecclesiology, Bibliology, Pastoral Theology, Providence Community Church, Chris Oswald, expository preaching",
+  "mainEntityOfPage": "https://sermonsteward.com/ProvidenceLenexa/sermons/2025/04/ihop-postmortem-part-1"
+}
+</script>
+
+<style>
+  :root {
+    --ink:        #1a1a2e;
+    --ink-soft:   #3d3d52;
+    --ink-faint:  #6f6f80;
+    --paper:      #faf7f0;
+    --paper-raised: #fffdf7;
+    --rule:       #e2dcce;
+    --rule-soft:  #ede7d8;
+    --accent:     #2d5a4a;
+    --accent-soft:#5a8073;
+    --accent-deep:#1d3d31;
+    --gold:       #b8893a;
+    --gold-bg:    #fdf4d9;
+    --gold-deep:  #6e5018;
+    --link:       #2d5a4a;
+    --highlight-bg: #fdf6e3;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Source Serif Pro", "Iowan Old Style", "Charter", Georgia, serif;
+    font-size: 18px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .ui {
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+
+  code, .mono { font-family: ui-monospace, "SF Mono", Monaco, monospace; font-size: 0.85em; }
+
+  a { color: var(--link); text-underline-offset: 2px; }
+
+  /* ────────── Site header ────────── */
+  .site-header {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper-raised);
+    padding: 16px 24px;
+  }
+  .site-header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  .site-brand {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .site-nav { display: flex; gap: 22px; }
+  .site-nav a {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .site-nav a:hover { color: var(--accent); }
+
+  /* ────────── Page chrome ────────── */
+  main {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 32px 120px;
+  }
+
+  /* ────────── Sermon hero ────────── */
+  .breadcrumb {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin-bottom: 14px;
+  }
+  .breadcrumb a { color: var(--ink-faint); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+
+  h1.sermon-title {
+    font-size: 44px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 14px;
+  }
+  .sermon-cite {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: var(--ink-faint);
+    letter-spacing: 0.01em;
+    margin-bottom: 28px;
+  }
+  .sermon-cite span + span::before {
+    content: "·";
+    margin: 0 8px;
+    color: var(--rule);
+  }
+  .sermon-cite strong { color: var(--ink); font-weight: 500; }
+
+  /* ────────── Audio player ────────── */
+  .audio-player {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .play-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .play-button.disabled { background: var(--rule); cursor: default; }
+  .play-button:not(.disabled):hover { background: var(--accent-deep); }
+  .audio-meta {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: var(--ink-soft);
+    flex: 1;
+  }
+  .audio-track {
+    height: 4px;
+    background: var(--rule);
+    border-radius: 2px;
+    margin-top: 6px;
+    position: relative;
+  }
+  .audio-duration {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+
+  /* ────────── Thesis hero ────────── */
+  blockquote.thesis-hero {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 26px;
+    line-height: 1.4;
+    font-style: italic;
+    color: var(--ink);
+    border-left: 4px solid var(--accent);
+    padding: 8px 0 8px 24px;
+    margin: 0 0 36px;
+    letter-spacing: -0.005em;
+  }
+  blockquote.thesis-hero .thesis-label {
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    font-style: normal;
+    margin-bottom: 8px;
+  }
+
+  /* ────────── Facts strip ────────── */
+  .facts-strip {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 44px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .fact .fact-label {
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin-bottom: 6px;
+  }
+  .fact .fact-value {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .fact .fact-value .chip {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    background: var(--rule-soft);
+    color: var(--ink-soft);
+    border-radius: 999px;
+    margin: 1px 2px 1px 0;
+  }
+
+  /* ────────── Section heading ────────── */
+  section.page-section {
+    padding: 36px 0 28px;
+    border-top: 1px solid var(--rule);
+  }
+  section.page-section:first-of-type { border-top: 0; padding-top: 0; }
+
+  .section-eyebrow {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .section-title-h2 {
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0 0 14px;
+    line-height: 1.2;
+  }
+  .section-lede {
+    color: var(--ink-soft);
+    font-size: 17px;
+    margin-bottom: 22px;
+  }
+
+  /* ────────── Outline / decomp blocks ────────── */
+  .outline-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .outline-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 18px 22px;
+  }
+  .outline-card.full { grid-column: 1 / -1; }
+  .outline-card-label {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .outline-card-label .count {
+    color: var(--ink-faint);
+    font-weight: 400;
+    margin-left: 4px;
+  }
+
+  ol.decomp-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: decomp;
+  }
+  ol.decomp-list li {
+    counter-increment: decomp;
+    padding: 8px 0 8px 30px;
+    position: relative;
+    border-bottom: 1px solid var(--rule-soft);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  ol.decomp-list li:last-child { border-bottom: 0; }
+  ol.decomp-list li::before {
+    content: counter(decomp);
+    position: absolute;
+    left: 0;
+    top: 9px;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--accent-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  ol.decomp-list li strong { font-weight: 600; }
+  .ill-type {
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-left: 4px;
+  }
+
+  .citation-chain {
+    font-family: ui-monospace, "SF Mono", Monaco, monospace;
+    font-size: 13px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+  .citation-chain .sep { color: var(--rule); margin: 0 3px; }
+
+  blockquote.quote-block {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--ink);
+    padding: 6px 0 6px 16px;
+    border-left: 3px solid var(--accent-soft);
+    margin: 10px 0;
+  }
+  blockquote.quote-block .quote-attr {
+    display: block;
+    font-style: normal;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-top: 6px;
+    letter-spacing: 0.02em;
+  }
+
+  .pastoral-correction {
+    background: var(--highlight-bg);
+    border: 1px solid #e6d5a8;
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 22px 0;
+  }
+  .pastoral-correction .pc-label {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-deep);
+    margin-bottom: 8px;
+  }
+  .pastoral-correction .pc-text {
+    font-style: italic;
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* ────────── Transcript ────────── */
+  .transcript-wrap { max-width: 720px; margin: 0 auto; }
+  .transcript-meta {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-bottom: 18px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .transcript-meta strong { color: var(--ink-soft); }
+  .transcript-body p {
+    margin: 0 0 1.1em;
+    font-size: 18px;
+    line-height: 1.7;
+  }
+  .transcript-body h4.unit-anchor {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin: 28px 0 10px;
+    scroll-margin-top: 80px;
+  }
+  .transcript-body h4.unit-anchor::before {
+    content: "§ ";
+    color: var(--ink-faint);
+  }
+  .transcript-collapse {
+    text-align: center;
+    margin: 24px 0;
+  }
+  .expand-btn {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--ink-soft);
+    padding: 9px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .expand-btn:hover { background: var(--rule-soft); color: var(--ink); }
+
+  /* ────────── Arc visualization ────────── */
+  .arc-wrap { display: flex; flex-direction: column; gap: 16px; }
+  .arc-node {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 14px 18px;
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    gap: 14px;
+    align-items: center;
+  }
+  .arc-node.current {
+    background: #eef5f1;
+    border-color: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+  }
+  .arc-node-date {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    font-weight: 600;
+  }
+  .arc-node.current .arc-node-date { color: var(--accent); }
+  .arc-node-title { font-weight: 600; font-size: 16px; }
+  .arc-node-title a { color: var(--ink); text-decoration: none; }
+  .arc-node-title a:hover { color: var(--accent); }
+  .arc-node-text {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    background: var(--rule-soft);
+    padding: 3px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .arc-empty {
+    background: var(--rule-soft);
+    border: 1px dashed var(--rule);
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    color: var(--ink-faint);
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+  }
+
+  .echo-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-top: 18px;
+  }
+  .echo-label {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-deep);
+    margin-bottom: 8px;
+  }
+
+  /* ────────── Related teaching ────────── */
+  ol.related-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: rank;
+  }
+  ol.related-list li {
+    counter-increment: rank;
+    padding: 16px 0 16px 40px;
+    position: relative;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  ol.related-list li:last-child { border-bottom: 0; }
+  ol.related-list li::before {
+    content: counter(rank);
+    position: absolute;
+    left: 0;
+    top: 17px;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    width: 26px;
+    height: 26px;
+    border: 1px solid var(--accent-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .related-preacher { font-weight: 600; }
+  .related-sermon-name { font-style: italic; }
+  .related-meta {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    color: var(--ink-faint);
+    margin-left: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .related-summary {
+    color: var(--ink-soft);
+    margin-top: 5px;
+    font-size: 15px;
+  }
+  .outbound-note {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-top: 18px;
+    background: var(--rule-soft);
+    padding: 10px 14px;
+    border-radius: 6px;
+  }
+  .outbound-note strong { color: var(--ink-soft); }
+
+  /* ────────── Discuss / apply tiles ────────── */
+  .apply-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .apply-tile {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 18px 18px 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.15s ease;
+  }
+  .apply-tile:hover {
+    border-color: var(--accent-soft);
+    transform: translateY(-1px);
+  }
+  .apply-tile-label {
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .apply-tile-title {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+  .apply-tile-desc {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    line-height: 1.5;
+  }
+
+  /* ────────── Expanded artifact cards (prayer / discussion / etc.) ────────── */
+  .artifact-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 26px 32px 28px;
+    margin-top: 22px;
+    scroll-margin-top: 80px;
+  }
+  .artifact-eyebrow {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .artifact-title {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 16px;
+    letter-spacing: -0.005em;
+  }
+  .artifact-prayer p {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink);
+    margin: 0 0 1em;
+  }
+  .artifact-prayer p:last-child { margin-bottom: 0; }
+  .artifact-status {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold-deep);
+    background: var(--gold-bg);
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 16px;
+  }
+  /* small_group_questions + couples_guide shared list styling */
+  ol.artifact-questions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: art;
+  }
+  ol.artifact-questions li {
+    counter-increment: art;
+    padding: 14px 0 14px 44px;
+    position: relative;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  ol.artifact-questions li:last-child { border-bottom: 0; }
+  ol.artifact-questions li::before {
+    content: counter(art);
+    position: absolute;
+    left: 0;
+    top: 14px;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--accent-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .artifact-question-text {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .artifact-question-anchor {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-top: 4px;
+  }
+  .artifact-question-follow {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 15px;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin-top: 6px;
+    padding-left: 0;
+  }
+
+  /* daily_readings */
+  .artifact-intro {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-style: italic;
+    color: var(--ink-soft);
+    margin: 0 0 18px;
+    font-size: 16px;
+  }
+  .artifact-days {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .artifact-day {
+    border-left: 3px solid var(--accent-soft);
+    padding: 4px 0 4px 16px;
+  }
+  .artifact-day-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+  .artifact-day-name {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+  .artifact-day-passage {
+    font-family: ui-monospace, "SF Mono", Monaco, monospace;
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+  .artifact-day-text {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* family_card */
+  .artifact-framing {
+    background: var(--rule-soft);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+  }
+  .artifact-framing-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .artifact-framing p {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin: 0;
+  }
+  blockquote.artifact-family-prompt {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--ink);
+    border-left: 4px solid var(--gold);
+    padding: 6px 0 6px 20px;
+    margin: 16px 0 0;
+    font-style: italic;
+  }
+  .artifact-age-band {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-top: 12px;
+  }
+
+  /* memory_verse */
+  blockquote.artifact-verse {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink);
+    font-style: italic;
+    border-left: 4px solid var(--accent);
+    padding: 8px 0 8px 22px;
+    margin: 6px 0 16px;
+  }
+  .artifact-verse-why {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* ────────── About the church ────────── */
+  .church-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: center;
+  }
+  .church-name {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .church-addr {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .visit-cta {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+    white-space: nowrap;
+  }
+  .visit-cta:hover { background: var(--accent-deep); }
+
+  /* ────────── Crawler-hygiene panel ────────── */
+  details.crawler-panel {
+    margin-top: 28px;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+  }
+  details.crawler-panel summary {
+    cursor: pointer;
+    padding: 12px 18px;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    user-select: none;
+  }
+  details.crawler-panel summary:hover { color: var(--accent); }
+  details.crawler-panel[open] summary { border-bottom: 1px solid var(--rule); }
+  .crawler-body { padding: 18px; }
+  .crawler-body pre {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 14px;
+    font-family: ui-monospace, monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    overflow-x: auto;
+    margin: 6px 0 14px;
+    white-space: pre-wrap;
+  }
+  .crawler-body h5 {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin: 14px 0 4px;
+  }
+  .crawler-body h5:first-child { margin-top: 0; }
+  .crawler-body p {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin: 0 0 8px;
+  }
+
+  /* ────────── Footer ────────── */
+  footer.page-footer {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 32px 48px;
+    border-top: 1px solid var(--rule);
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    line-height: 1.6;
+  }
+  footer.page-footer .attribution {
+    margin-bottom: 14px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  footer.page-footer code {
+    font-size: 11px;
+    color: var(--ink-faint);
+  }
+
+  /* ────────── Responsive ────────── */
+  @media (max-width: 720px) {
+    main { padding: 28px 20px 40px; }
+    h1.sermon-title { font-size: 32px; }
+    blockquote.thesis-hero { font-size: 20px; padding-left: 18px; }
+    .facts-strip { grid-template-columns: repeat(2, 1fr); }
+    .outline-grid { grid-template-columns: 1fr; }
+    .apply-grid { grid-template-columns: 1fr; }
+    .arc-node { grid-template-columns: 80px 1fr; }
+    .arc-node-text { grid-column: 1 / -1; justify-self: start; }
+    .church-card { grid-template-columns: 1fr; text-align: left; }
+    .site-nav { display: none; }
+  }
+</style>
+</head>
+<body><header class="site-header">
+  <div class="site-header-inner">
+    <a href="/ProvidenceLenexa/" class="site-brand">Providence Community Church</a>
+    <nav class="site-nav ui">
+      <a href="/ProvidenceLenexa/sermons">Sermons</a>
+      <a href="/ProvidenceLenexa/topics">Topics</a>
+      <a href="/ProvidenceLenexa/about">About</a>
+      <a href="/ProvidenceLenexa/visit">Visit</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <article class="sermon">
+
+    <!-- ═══════════ Sermon hero ═══════════ -->
+    <div class="breadcrumb ui">
+      <a href="/ProvidenceLenexa/sermons">Sermons</a></div>
+
+    <h1 class="sermon-title">IHOP Postmortem, Part 1</h1>
+
+    <div class="sermon-cite">
+      
+      <span>April 6, 2025</span>
+      <span>Pastor Chris Oswald</span>
+    </div>
+
+    
+    <div class="audio-player" id="audio">
+      <button class="play-button" aria-label="Play sermon audio">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <audio controls preload="none" src="https://sermons-cdn.sermonsteward.com/providence-community-church/ihop-postmortem-part-1-2025-04-06.mp3" class="audio-meta" style="width:100%;">
+        Your browser does not support the audio element.
+        <a href="https://sermons-cdn.sermonsteward.com/providence-community-church/ihop-postmortem-part-1-2025-04-06.mp3">Download the MP3.</a>
+      </audio>
+    </div>
+    
+
+    
+
+    <!-- ═══════════ Facts strip ═══════════ -->
+    <div class="facts-strip">
+      <div class="fact">
+        <div class="fact-label ui">Series</div>
+        <div class="fact-value">—</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label ui">Type</div>
+        <div class="fact-value">—</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label ui">Tone</div>
+        <div class="fact-value">
+          
+          —
+        </div>
+      </div>
+      <div class="fact">
+        <div class="fact-label ui">Method</div>
+        <div class="fact-value">
+          
+          —
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════ Sermon outline ═══════════ -->
+    <section class="page-section">
+      <div class="section-eyebrow ui">What's in this sermon</div>
+      <h2 class="section-title-h2">The shape of the argument</h2>
+      <p class="section-lede">37 units across exposition, application, illustration, theological claim, and conclusion. The pastor's argument is built from these moving parts.</p>
+
+      
+      <div class="pastoral-correction">
+        <div class="pc-label ui">Pastoral correction · unit #36</div>
+        <div class="pc-text">"Issues direct invitation to NAR refugees while acknowledging the interpretive barriers NAR teaching has created, calling them to reconsider which churches are spiritually alive."</div>
+      </div>
+      
+
+      <div class="outline-grid">
+        
+        <div class="outline-card">
+          <div class="outline-card-label ui">Doctrinal loci<span class="count ui">· 10 surfaced</span></div>
+          <div style="font-family:'Inter',sans-serif; font-size:13px; line-height:1.8;">
+            
+              
+                <span class="chip" style="background:#e6efe9;color:var(--accent);">Ecclesiology · 18</span>
+              
+            
+              
+                <span class="chip" style="background:#e6efe9;color:var(--accent);">Bibliology · 16</span>
+              
+            
+              
+                <span class="chip" style="background:#e6efe9;color:var(--accent);">Pastoral Theology · 15</span>
+              
+            
+              
+                <span class="chip">Pneumatology · 5</span>
+              
+            
+              
+                <span class="chip">Covenant Theology · 2</span>
+              
+            
+              
+                <span class="chip">Ethics / Moral Theology · 2</span>
+              
+            
+              
+                <span class="chip">Hamartiology · 2</span>
+              
+            
+              
+                <span class="chip">Anthropology · 1</span>
+              
+            
+              
+                <span class="chip">Sanctification · 1</span>
+              
+            
+              
+                <span class="chip">Soteriology · 1</span>
+              
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="outline-card">
+          <div class="outline-card-label ui">Bible citations<span class="count ui">· 13</span></div>
+          <div class="citation-chain">Titus 2:11-15 <span class="sep">|</span> 2 Timothy 2:24-26 <span class="sep">|</span> John 14:16 <span class="sep">|</span> Acts 1:21-22 <span class="sep">|</span> 1 Corinthians 9:1 <span class="sep">|</span> 2 Peter 3:2 <span class="sep">|</span> Galatians 1:1 <span class="sep">|</span> Ephesians 2:20 <span class="sep">|</span> Matthew 28:19-20 <span class="sep">|</span> Matthew 5:11-12 <span class="sep">|</span> John 16:1-4 <span class="sep">|</span> John 16:12-15</div>
+        </div>
+        
+
+        
+        <div class="outline-card full">
+          <div class="outline-card-label ui">Illustrations<span class="count ui">· 5</span></div>
+          <ol class="decomp-list">
+            
+            <li>
+              
+              <span class="ill-type">historical example · unit #2</span>
+               — Provides historical examples of effective polemical preachers throughout church history to validate the method and build credibility for the approach.
+            </li>
+            
+            <li>
+              
+              <span class="ill-type">personal story · unit #10</span>
+               — Personal story establishing the pastor&#39;s tendency toward critical questioning and investigation, building ethos and preparing the listener for the analytical approach to follow.
+            </li>
+            
+            <li>
+              
+              <span class="ill-type">analogy · unit #20</span>
+               — Demonstrates the particulars-versus-patterns framework using the Great Commission, showing how geographic specifics for the apostles become concentric mission principles for contemporary believers.
+            </li>
+            
+            <li>
+              
+              <span class="ill-type">analogy · unit #22</span>
+               — Provides a second example demonstrating particulars versus patterns using Jesus&#39;s prophecy of persecution, showing how literal apostolic experience becomes figurative application for contemporary believers.
+            </li>
+            
+            <li>
+              
+              <span class="ill-type">personal story · unit #32</span>
+               — Provides concrete illustration of how false apostolic authority manifests in dangerous pastoral practice—specifically the normalization of unchaperoned counseling that healthy churches would never tolerate.
+            </li>
+            
+          </ol>
+        </div>
+        
+
+        
+        <div class="outline-card full">
+          <div class="outline-card-label ui">Theological claims<span class="count ui">· 10</span></div>
+          <ol class="decomp-list">
+            
+            <li>Polemical preaching serves primarily to safeguard believers from error rather than to correct the erring parties themselves. <span class="ill-type">unit #3</span></li>
+            
+            <li>The primary value of polemical preaching is to clarify truth for believers not in error by providing contrast with falsehood. <span class="ill-type">unit #6</span></li>
+            
+            <li>A critical hermeneutical question often overlooked is whether Jesus&#39;s words to the apostles apply directly to us or require distinction between apostolic particularity and contemporary application. <span class="ill-type">unit #11</span></li>
+            
+            <li>Despite sharing our human condition, the apostles held a unique office with distinctive authority, miraculous power, and the commission to write Scripture that sets them apart from all subsequent believers. <span class="ill-type">unit #14</span></li>
+            
+            <li>Jesus&#39;s words to the apostles function as particulars for them but as patterns for us. <span class="ill-type">unit #19</span></li>
+            
+            <li>The New Apostolic Reformation&#39;s failure to distinguish apostolic uniqueness from contemporary church life produces multiple downstream errors. <span class="ill-type">unit #24</span></li>
+            
+            <li>The hyper-charismatic movement&#39;s failure to recognize the unrepeatable nature of apostolic authority results in granting contemporary leaders dangerous levels of trust and power that produce inevitable corruption. <span class="ill-type">unit #28</span></li>
+            
+            <li>Affirming the continuation of spiritual gifts does not require denying the unique, unrepeatable nature of the apostolic age and office. <span class="ill-type">unit #29</span></li>
+            
+            <li>A leader&#39;s willingness to treat contemporary prophetic words as equal to Scripture reveals the same narcissistic disregard for authority that manifests in other forms of abuse. <span class="ill-type">unit #30</span></li>
+            
+            <li>The NAR movement&#39;s elevation of leaders to apostolic status is historically unprecedented and stands in stark contrast to how the church has viewed even its greatest theologians and preachers. <span class="ill-type">unit #33</span></li>
+            
+          </ol>
+        </div>
+        
+
+        
+        <div class="outline-card full">
+          <div class="outline-card-label ui">Quotations<span class="count ui">· 1</span></div>
+          
+          <blockquote class="quote-block">
+            "I am the chief of sinners"
+            <span class="quote-attr">— Paul (unit #13)</span>
+          </blockquote>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- ═══════════ Transcript ═══════════ -->
+    <section class="page-section" id="transcript">
+      <div class="section-eyebrow ui">Read it</div>
+      <h2 class="section-title-h2">Full transcript</h2>
+
+      <div class="transcript-wrap">
+        <div class="transcript-meta ui">
+          <span><strong>28,172</strong> characters</span>
+          <span><strong>37</strong> units</span>
+          <span><strong>~31 min</strong> reading time</span>
+          <span><a href="#audio" class="ui">Listen instead →</a></span>
+        </div>
+
+        <div class="transcript-body">
+          
+          <h4 class="unit-anchor ui" id="unit-0">0 · The pastor introduces the podcast&#39;s polemical nature, defining it as direct correction of errors within the hyper-charismatic movement</h4>
+          
+          <p>Sam, Greetings and salutations. This is the Providence Podcast. My name is Chris Oswald. I&#39;m the senior pastor at Providence Community Church. And those people you hear clapping are probably not hyper charismatics. I&#39;m going to engage in a polemical podcast today. By polemical I mean I&#39;m actually going to spend this podcast correcting errors extant within a particular subset of the visible church, and that being the hyper charismatic movement.</p>
+          
+          
+          <h4 class="unit-anchor ui" id="unit-1">1 · Establishes the legitimacy and historical precedent of polemical preaching as a valid form of Christian teaching, defending the approach before employing it</h4>
+          
+          <p>Before I begin into those critiques, I first want to talk a little bit about this idea of polemical preaching, polemical teaching and so forth. We don&#39;t get much of it these days and I don&#39;t really know how much is enough. I don&#39;t think it&#39;s a steady diet kind of thing. But I will say that some of the greatest preaching in the history greatest preaching and teaching in the history of the church was polemical in nature.</p>
+          
+          
+          <h4 class="unit-anchor ui" id="unit-2">2 · Provides historical examples of effective polemical preachers throughout church history to validate the method and build credibility for the approach</h4>
+          
+          <p>I&#39;m thinking for instance of Irenaeus work against heretics. Spurgeon did this when he opposed Marxism. And one of the best sermons I&#39;ve ever heard was preached by The Baptist great W.A. criswell, who preached a sermon at the Southern Baptist Convention. Gosh, probably late 70s, aimed directly at theological liberalism. That guy was one of those examples. This is. Adrian Rogers fits into this category as well. The expository formula does not work for them. They don&#39;t preach that way. But man, it&#39;s hard not to be edified when you listen to some of those old Southern Baptist preachers. Adrian Rogers, in my opinion, is a seriously overlooked guy when it comes to. If you&#39;re a person who wants to learn how to preach, I don&#39;t know how you don&#39;t spend time listening to Adrian Rogers sermons. He does have his failures, his weaknesses, but boy, man, he, he does a great job. That was completely unintended rabbit trail. Sorry about that.</p>
+          
+          
+          <h4 class="unit-anchor ui" id="unit-3">3 · Defines the specific theological target—the New Apostolic Reformation and hyper-charismatic movement—and establishes the protective purpose of the polemic</h4>
+          
+          <p>My point is, is that polemical preaching does have value. It is not always per se value in correcting the opponents themselves, but certainly in safeguarding the sheep from the errors that exist in a particular movement. Like it&#39;s, it&#39;s got its value today I&#39;m going to be polemical. I&#39;m going to be critical, corrective, admonishing toward what is commonly considered the hyper charismatic movement. Specifically, what I mean by the hyper charismatics are those churches and movements related to what is known as nar, the New Apostolic Reformation. IHOP was a part of that, as is Bethel, and there are many other groups that are loosely connected to this movement.</p>
+          
+          
+          <h4 class="unit-anchor ui" id="unit-4">4 · Establishes the biblical warrant for firm polemical teaching from Titus, showing that correction with authority is commanded in Scripture</h4>
+          
+          <p>So there&#39;s probably three things about polemical preaching teaching that you should think about. First of all, it needs to be firm and clear. Titus 2:11 15 says, for the grace of God has appeared, bringing salvation for all people, training us to renounce ungodliness and worldly passions, and to live self controlled, upright and godly lives in the present age, waiting for our blessed hope, the appearing of the glory of our great God and Savior, Jesus Christ, who gave himself for us, to redeem us from all lawlessness and to purify for himself a people for his own possession who are zealous for good works. And then Paul tells the young pastor Titus, declare these things. Exhort and rebuke with all authority. Let no one disregard you. So polemical preaching needs to be firm.</p>
+          
+          
+          <h4 class="unit-anchor ui" id="unit-5">5 · Balances the call to firmness with the biblical requirement for gentleness in correction, establishing both authority and pastoral care as framework for the polemic</h4>
+          
+          <p>Secondly, it needs to be gentle. 2nd Timothy 2, 2426 says again to a young pastor and the Lord&#39;s servant must not be quarrelsome, but kind to everyone, able to teach patiently, enduring evil, correcting his opponents with gentleness. God may perhaps grant them repentance, leading to a knowledge of the truth, and they may come to their senses and escape from the snare of the devil after being captured by him to do his will. So you won&#39;t be hearing anything that is particularly spicy. I will be direct, I will be firm, but I will not be hyperbolic or bombastic. Even though these are parts of my personality, naturally, I turn those dials down. In this conversation, intentionally</p>
+          
+          
+
+          
+          <div class="transcript-collapse">
+            <button class="expand-btn ui" type="button" onclick="document.getElementById('tx-rest').style.display='block'; this.style.display='none';">Expand the remaining 31 units →</button>
+          </div>
+
+          <div class="tx-rest" id="tx-rest" style="display:none;">
+            
+            <h4 class="unit-anchor ui" id="unit-6">6 · Articulates the primary pedagogical function of polemic—clarifying truth through contrast with error, primarily for those not in error rather than those caught in it</h4>
+            
+            <p>and thirdly related to polemical preaching, the point is to use the error as a way of offering contrast with the truth. While we do hope that people involved in the error receive correction and repent, I think the main value of polemical preaching, kind of like the main value of apologetics, is to sure up the faith of those who are not currently in error. With polemical preaching and teaching, you have this way of being able to say, not this, but that. And that winds up actually clarifying key truths and further edifying believers who aren&#39;t themselves in error.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-7">7 · Transitions from methodological framework to biblical grounding, establishing that the forthcoming critique derives its authority from Scripture rather than personal opinion</h4>
+            
+            <p>So that&#39;s kind of a guide that I&#39;m working through. I&#39;m going to attempt to follow as I talk about the various errors at work in the new Apostolic Reformation movement. And I guess fourthly, it of course needs to be biblical. If you&#39;re going to be firm, you have to be firm based on some sense of authority. And that authority can&#39;t be yours. It has to be the authority of the Holy Scriptures. And so we have to work through this biblically.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-8">8 · Establishes John 14-16 as the biblical foundation for the critique, connecting the polemic to the ongoing expositional series and Jesus&#39;s own teaching on the Holy Spirit</h4>
+            
+            <p>For me, John 14:16, though, not by any means, the only place the Bible talks about the Holy Spirit offers sufficient clarity about the Holy Spirit that can be used to address this issue in a political fashion. So I&#39;m going to actually just try to stay as close as I can to what Jesus talks about the Holy Spirit in his farewell discourse in John 14:16. And for those of you who may have been handed this podcast by someone else, this isn&#39;t like I was. This isn&#39;t like I just coming up with this idea of like correcting gnar stuff out in thin air. This is tied into our sermon series, which is working through the book of John. And this Sunday, the most recent Sunday, I was in John 16. But in reality, I&#39;ve been thinking about the Holy Spirit really extensively through 14 through 16 because Jesus talks about it so much in these passages.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-9">9 · Provides the structural roadmap for the entire sermon by outlining three specific critiques: failure to distinguish apostolic age, division between Spirit and Word, and failure to emphasize Christ</h4>
+            
+            <p>So I&#39;m going to try to limit this to three particular critiques of the hyper charismatic movement in relationship to their understanding and practice with the Holy Spirit. And the first, the three critiques would be, number one, within that movement, there is a failure to distinguish the discontinuity between the apostolic age and this current age. And I&#39;ll explain what that means in a moment. Number two, there is a division between the Spirit and the Word. And when we look in the Word, we&#39;ll see that there is no way to create that division. The Spirit and the Word go hand in hand. And finally, a general failure to emphasize Christ.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-10">10 · Personal story establishing the pastor&#39;s tendency toward critical questioning and investigation, building ethos and preparing the listener for the analytical approach to follow</h4>
+            
+            <p>Now, those of you who know me know that I, from a very young age have come to the Scriptures with a lot of questions. I tend to wonder. I tend to ask questions behind questions behind questions. And kind of one of the classic experiences of my childhood was I was the annoying kid in Sunday school who kept asking why. I asked too many whys. At one point, this very sweet couple who taught our Sunday school class when I was probably 11 or something like that, and this is, you know, in a Southern Baptist church, they gave books out to all the kids who. And the books were like these little children&#39;s books about certain Bible characters, and they gave them according to our personalities. And I remember this one kid in my class who I think now is actually running for political office. He got the Thief on the Cross because he was just a butthole. He was just an ornery kid. And I got Doubting Thomas. I got a little children&#39;s book about Doubting Thomas. And it was explained to me by this sweet couple like Kris. You just have a lot of questions and you are kind of always wondering the why behind the why. And I remember kind of feeling ashamed at the time by that, not because of the couple. They were very nice about it. But I remember asking the kid like, hey, do you want to switch books? And he&#39;s like, yeah, I don&#39;t think either of us ready to deal with the essential nature of our personalities. So we switched and I came home with the Thief on the Cross book. And he came home with the. He went home with the Doubting Thomas book.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-11">11 · Identifies the central hermeneutical question that drives the entire critique: whether Jesus&#39;s words to the apostles apply directly to contemporary believers or require interpretation through apostolic uniqueness</h4>
+            
+            <p>I ask a lot of questions when I read the Bible. And to me, these questions kind of feel like elephants in the room. You know, it&#39;s like, is anyone else seeing this particular problem with this passage? And so on and so forth. So I don&#39;t know any pastor in particular that is more like naturally doubtful than I am in terms of. I just tend to focus on the weak points of an argument. And one of the things that has stood out to me for a very long time as kind of an elephant in the room is when Jesus is talking to the apostles. How do I know that he&#39;s talking to me?</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-12">12 · Establishes the hermeneutical problem through the example of the Great Commission, demonstrating that the question of apostolic uniqueness versus universal application is not trivial or hypothetical</h4>
+            
+            <p>Does that make sense? And this goes to the Great Commission. I don&#39;t know if you know this, but some people actually feel as if the Great Commission is not for all Christians, that that was word given explicitly to the apostles. So I dabbled in that question and wondered, well, is that true? And you would be probably quite disturbed by the number of questions I&#39;ve explored over the years. The nice thing for you is, if I&#39;m your pastor, is that you&#39;re probably not going to bring any doubt up that I&#39;ve not had myself. So, you know, you read through the Gospels and Jesus is saying all this stuff, but he&#39;s saying this stuff to a particular group of people in sort of the natural way. You rarely hear preachers ask this question, like, is this for all of us or just for them?</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-13">13 · Acknowledges the legitimate continuity between apostles and contemporary believers—they are saved by grace through faith in the same way, sharing the same human condition and need for redemption</h4>
+            
+            <p>And that&#39;s going to really come up in John 14:16, because he&#39;s making all these promises about power and about the power of the Holy Spirit. And you begin to wonder, okay, is this for all of us or is this just for them? Now, the simple and I would argue, you know, overly simplistic way of handling that is to just say, well, they&#39;re just like we are. And so it all applies across the board. And that&#39;s true to some extent. The apostles are just like us. I mean, Paul himself says, I am the chief of sinners. Peter himself calls himself a fellow shepherd. The apostles routinely refer to themselves as brothers and co laborers with other Christians. So in one sense, they are like us. And definitely in this sense, we all enter through the same door. We were all enemies of God. We were all dead in our sins and trespasses, following the course of the prince of the power of the air, by nature, children of wrath. That&#39;s just as true with Peter as it is of me.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-14">14 · Establishes the critical discontinuity—the apostles held a unique, unrepeatable office with distinctive authority, miraculous power, and the commission to write inspired Scripture</h4>
+            
+            <p>And so there is a sense in which they are just like us. And so we can read the Bible that way to some degree. But there is another sense in which they were special. They were given unique apostolic authority and anointing. They did perform miracles of unique quality, quantity, and predictability. And most importantly, they wrote the Scriptures.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-15">15 · Places the apostolic continuity/discontinuity question within the broader hermeneutical framework of redemptive history, showing how over-emphasizing either continuity or discontinuity produces theological errors</h4>
+            
+            <p>So the apostles are like us in the way that we are all saved by faith, faith in Jesus that not of works, lest any man should boast. But they are unlike us also. They held a unique place in the development of the Church. This question is a subset of a broader question related to continuity and discontinuity. It is a place where a lot of errors occur, including, I would argue, the error of paedobaptism. And the error is always something like the error, or the question behind the error is always something like what has stayed the same and what has changed. And for the Presbyterians, the error I believe they are committing is that they emphasize too much continuity between the covenants. And so they look for a replacement sign of circumcision and call that baptism. So there&#39;s a lot of controversies that emerge out of this question of how much have things changed and how much have things stayed the same.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-16">16 · Specifies the two biblical qualifications for apostleship that are temporally unrepeatable: being an eyewitness to the resurrected Christ and receiving direct commission from Jesus</h4>
+            
+            <p>The cessationists who believe that there was a very particular period of time in which God worked in a particularly miraculous way, they are very firm on the discontinuation or the discontinuity side of things. They&#39;re like, this was a very special time. The early church was a very special time. And this particular period of time that we&#39;re living in is very different from that time. The hyper charismatics do the exact opposite. They&#39;re on the opposite extreme. They see no difference between the early church age and our age. That&#39;s where one of their errors lies. The apostles were special. They were given unique apostolic authority and anointing. And like I said, they performed miracles not only of unique quality, but of unique quantity and predictability. And again, most importantly, they wrote the Scriptures. So they are like us in one way. We are all just sinners saved by grace. But they were appointed to a unique position at a unique moment in the history of the development of the church. That&#39;s what I believe anyway. The apostles were a unique group of men who existed for a specific period of time. And they had two qualifications that no longer. That no longer really work. The first was that they had to be eyewitnesses to the resurrected Christ. Acts 1:21 22 is your proof text for there for that. And 1 Corinthians 9:1 includes Paul in that equation.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-17">17 · Continues establishing biblical qualifications for apostleship, focusing on the unique commission to write inspired Scripture with divine authority</h4>
+            
+            <p>And secondly, they were directly commissioned by Jesus to speak and write the Scriptures and were treated as foundations. Here we would turn to Galatians 1:1 and 2 Peter 3:2. I&#39;ll include all these texts in the, in the show notes. So Galatians 1:1 deals with this second Peter 3:2.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-18">18 · Uses the metaphor of foundation from Ephesians 2:20 to establish that the apostolic office was temporary and unrepeatable, serving a unique foundational purpose in the church&#39;s establishment</h4>
+            
+            <p>And important, I think most importantly Ephesians 2:20, where the church is said to have been built on the foundation of the apostles and the prophets. So I think the proper view is to see that foundation as being laid once and for all in the centuries leading up to and continuing into the first century of the church, that there was a foundation laying period. And I think that&#39;s the most natural way to think about what Paul is talking about. In Ephesians, the apostles were part of the foundation for the church and the foundation has been poured and it&#39;s been set and we don&#39;t go back and mess with the foundation.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-19">19 · Introduces the interpretive framework of particulars versus patterns—Jesus gave particular instructions to the apostles that become general patterns for contemporary believers</h4>
+            
+            <p>So this really, this view of a discontinuity between the apostles and the apostolic age, I guess you could say, and the rest of church history is pretty significant. In his farewell discourse. Here&#39;s how I would propose that you think about this. When Jesus is talking to the apostles, he is providing with. He&#39;s providing them particulars, but when he&#39;s talking also to us through the apostles, and there he&#39;s providing patterns.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-20">20 · Demonstrates the particulars-versus-patterns framework using the Great Commission, showing how geographic specifics for the apostles become concentric mission principles for contemporary believers</h4>
+            
+            <p>Here&#39;s a good example of that. The Great Commission, the apostles literally did go from Jerusalem to Judea to Samaria to the outermost parts. So there&#39;s the particulars. Now that passage does apply to us, but not in that particular way. That passage applies more in a general pattern. Right. I think pretty much everybody, including hyper charismatics, understand that they don&#39;t have to start in Jerusalem and then go to Judea and then go to Samaria and then go to the outermost parts. I think pretty much everybody understands that that passage, the Great Commission in Matthew 28 was a particular thing for the apostles, but more of a pattern thing for us. And so for us it would be something like start where you live and move into your broader city and then into regional things and then finally into the outermost parts.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-21">21 · Restates the hermeneutical framework before moving to the next example, reinforcing the distinction between apostolic particularity and contemporary application</h4>
+            
+            <p>Here&#39;s another example of this particulars versus patterns kind of thing. Again, what I&#39;m arguing is that the apostles were special and that when Jesus was speaking to them, what he said had something to do with their particular upcoming experience. But Jesus was also speaking to us through them. Only the particulars fade away into something more like patterns.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-22">22 · Provides a second example demonstrating particulars versus patterns using Jesus&#39;s prophecy of persecution, showing how literal apostolic experience becomes figurative application for contemporary believers</h4>
+            
+            <p>One example being the Great Commission, another being John 16:1 9. The gospel of John 16:1 4. Jesus says this. I have said all these things to you to keep you from falling away. They will put you out of the synagogues. Indeed, the hour is coming when whoever kills you will think he is offering service to God. And they will do these things because they have not known the Father, nor Me. But I have said these things to you that when their hour comes, you may remember that I told them to you. That literally happened to the apostles. But it didn&#39;t literally happen to us. It figuratively happens to us when we are excluded or persecuted. See Matthew 5, 11, 12.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-23">23 · Applies the particulars-versus-patterns framework to the critical issue of the Holy Spirit&#39;s work, distinguishing apostolic revelation (Scripture writing) from contemporary illumination (Scripture understanding)</h4>
+            
+            <p>Here&#39;s another example. In John 16:12, Jesus says, I still have many things to say to you, but you cannot bear them. Now, when the Spirit of truth comes, he will guide you into all truth, for he will not speak on his own authority, but whatever he hears, he will speak. And he will declare to you the things that are to come. He will glorify me, for he will take what is mine and declare it to you. All that the Father has is mine. Therefore I said that he will take what is mine and declare it to you. Now, when directed toward the apostles, this promise predicts the formation of the New Testament. They received direct revelation from the Holy Spirit that allowed them to write the books of the New Testament. They were, as the Scriptures say, carried along by the Holy Spirit. Writing inspired inerrant and divine revelation. So for the apostles, Jesus words starting in John 16:12 are particular. There&#39;s also something there for us, but it&#39;s more like a pattern when directed toward us. The idea moves from revelation, the writing of new Scripture, to illumination for the apostles. The Holy Spirit gave them the words of Christ to write as Bible. We are beneath the apostles in this regard. And instead of revelation, the Holy Spirit provides illumination of what the apostles and the prophets before them wrote. Illumination means that the Holy Spirit opens our spiritual eyes to the existing Scriptures to help us understand and apply them in a way that pleases God.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-24">24 · Restates the first major critique in compressed form, preparing to unpack the practical consequences of this theological error</h4>
+            
+            <p>And so one of the critiques I would have for the new apostolic reformation is that they failed to make the distinction that involves understanding some level of discontinuity between the apostolic age and this current age. This will lead to many errors.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-25">25 · Identifies the first practical consequence of the error: elevation of contemporary leaders to apostolic status creates dangerous concentrations of authority in ordinary men, leading inevitably to abuse</h4>
+            
+            <p>Number one, it will give guys just like me who do not, do not deserve the title of apostle. It will give guys just like me that have a certain level of leadership, natural leadership capacity and charisma, who know how to put themselves before people in a way that, you know, seems winsome and credible and so forth. It will give Guys like me more authority than guys like me should have. So this is one of the things you&#39;ll see in the new Apostolic Reformation. People literally just like me, both as impressive and unimpressive as me, suddenly become in the eyes of the people apostolic. They throw the title apostle around as if it is up to them or someone else, I don&#39;t know, to assign who an apostle is. And this creates a unique level of authority for people who should not have that kind of authority. What filters downstream from that is of course an abuse of that authority.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-26">26 · Explains the mechanism by which false apostolic authority corrupts leaders—natural giftedness combined with excessive trust creates temptations that ordinary pastoral accountability structures would prevent</h4>
+            
+            <p>There is a way in which the new Apostolic Reformation, one of the most toxic aspects of it, is this sort of concentration of credibility on people who shouldn&#39;t be viewed with as much credibility as they have as they&#39;re viewed with. And that&#39;s a really big problem. We see these guys that literally guys like, they&#39;re just at their beginning in particular, I don&#39;t know how many of these guys were noxious evil wolves to begin with. It seems to me that many of them were not that way to begin with, but due to in particular just natural giftings. You know, I, if I wasn&#39;t a pastor, if I wasn&#39;t a Christian, my brain would still be the same way. I could still take Dostoevsky&#39;s Crime and Punish. Well, that was Tolstoy, right? Dostoevsky. I thinking it, boy, I always get those confused. I could take some novel and I could exposit it in a way that opens up things that people wouldn&#39;t normally see. That&#39;s my natural brain to some extent. That&#39;s a set of natural giftings. I&#39;d probably still be in, you know, running things in somewhere. I have a natural leadership gift. It&#39;s not a really especially pronounced one, but it&#39;s not the worst one either. And I&#39;d probably still naturally, even if I wasn&#39;t a Christian, be leading things. The tendency in the NAR and the new Apostolic Reformation is to take guys just like me who have like some elevated giftings in particular areas and give them way too much power and credibility and authority and that ruins them and also winds up ultimately leading to all sorts of temptations that guys like me would not normally have.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-27">27 · Announces the structural decision to limit this episode to the first critique and defer the remaining two critiques to subsequent episodes</h4>
+            
+            <p>I&#39;m realizing I&#39;m already 30 minutes in and I&#39;m. There&#39;s a few things going on here. One, I don&#39;t think it&#39;s going to be useful for you to listen to a 90 minute podcast about this. And also it&#39;s Sunday afternoon and I want to take a nap. So I think I&#39;m going to. I&#39;m just going to talk about this aspect of it, the continuity discontinuity issue with the apostles, and then, you know, make a few concluding comments on this and then end here and come back with these two other criticisms in either another podcast or another two podcasts.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-28">28 · Synthesizes the entire first critique, restating the foundational metaphor and connecting the theological error to its practical manifestation in dangerous leadership dynamics</h4>
+            
+            <p>So I think it&#39;s important to understand that as I&#39;ve shown you, there are clear examples where there is a kind of particularity to the apostles. They are foundational. And the most natural way to think of a foundation is it&#39;s set and then the stuff that happens after that is stuff built on top of the foundation. We don&#39;t keep adding to the foundation. And I&#39;ve shown you a number of examples where Jesus particularities apply to the apostles and the patterns apply to us. And my point is that one of the key issues associated with the hyper Charismatic movement is an over investment of authority into people who should not have it. Whether or not they are technically called apostles. The hyper Charismatics have failed to distinguish the uniqueness of the apostolic season in the history of the church and therefore tend to grant leaders just like me more authority than is safe, wise, biblical, true or good. And this has contributed to a lot of problems.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-29">29 · Clarifies the pastor&#39;s own pneumatological position to prevent misunderstanding—affirming spiritual gifts while denying apostolic continuity, establishing that this is an internal critique rather than cessationist polemic</h4>
+            
+            <p>So that&#39;s my first argument, my first critique of the new apostolic Reformation and the hyper Charismatic movement. There is a sense. Now, to be clear, I&#39;m not a cessationist. I don&#39;t believe that certain gifts ceased during the age of the church. But I&#39;m a continuationist. And technically I would fall in the charismatic side of things. But I don&#39;t believe that there&#39;s any argument to be had to be successfully waged to suggest that what was happening in the first century was not unique. It was unique. It was unique. It was a handoff between the Old and New Covenant. It was the establishment of Christ&#39;s visible and invisible church. It was unique. And it was uniquely guided by unique men who walked with Jesus, witnessed the resurrected Christ and had authority to write the Scriptures.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-30">30 · Makes the sharp polemical move connecting theological error to moral failure—arguing that carelessness with Scripture reveals the same character defect that produces abuse in other areas</h4>
+            
+            <p>And that leads me to my last critique associated with this. And it&#39;ll kind of serve as a hinge into the next critique. You know, the confusion in the new Apostolic Reformation between Scripture and prophetic words. It&#39;s a profound confusion. I&#39;m going to say the most spicy thing I&#39;ll probably say in this whole series, and that is this. It would have not taken me three minutes of listening to a Mike Bickle sermon to understand that a man who abuses the word so carelessly as he did will abuse anything else if you don&#39;t have a holy fear and Caution as you teach the Word and you feel willing to routinely introduce your own prophetic insights in a way that winds up being, practically speaking, equal to Scripture. Well, if you&#39;ll abuse the Word, of course you&#39;ll abuse women, of course you will. Of course you&#39;ll abuse other things.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-31">31 · Analyzes the psychological and structural mechanism by which flattening biblical hierarchy paradoxically creates inflated human hierarchy—a perverse inversion that concentrates power in the wrong hands</h4>
+            
+            <p>There&#39;s a kind of narcissism that emerges out of this failure to distinguish. It&#39;s a flattening of hierarchy suggesting that somehow there wasn&#39;t something unique and special and superior going on in the apostles lives than there was in ours. That flattening of hierarchy winds up creating all kinds of problems. And one of the crazy things it does is that in some ways it actually builds a false hierarchy where these anointed leaders wind up with more authority than they should have ever had and more trust than they should have ever had.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-32">32 · Provides concrete illustration of how false apostolic authority manifests in dangerous pastoral practice—specifically the normalization of unchaperoned counseling that healthy churches would never tolerate</h4>
+            
+            <p>I&#39;ll close this section by telling you a quick story. Someone kind of familiar with the IHOP stuff and was considering joining our church texted me one day and a series of texts. And it just like had me totally confused. And the basic idea of these texts was something like, tell me how you counsel women alone. Tell me how that works. And I was confused because everybody knows you don&#39;t do that. Everybody knows that except the people in NAR apparently everybody knows you don&#39;t do that. There&#39;s no reason to do that. It is unwise, it is unsafe. There&#39;s absolutely no way I would do that, let alone do that down the hall in a room with no windows, with a door that locks. It just literally would not happen. And friends, if I tried to do that in our church, I would be called on the carpet in two seconds by about a hundred men. Why? Because they don&#39;t see me as that special, as that exempt from the temptations of the flesh, as that holy, that somehow I&#39;m above all this. And they would think, well, that is insane. Why would Chris ever do that? It would never be allowed because I&#39;m not an apostle. And I wouldn&#39;t be viewed as an apostle.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-33">33 · Establishes the historical contrast between how the church has traditionally viewed pastors and the aberrant elevation of leaders in NAR, using Reformation and post-Reformation examples</h4>
+            
+            <p>Just to be clear in arguing that apostles were counseling women alone, the broad point I&#39;m making is that one of the toxic elements of the new apostolic reformation is this sense that there&#39;s these really, really special guys with this really, really special spirituality and, and we can trust them. Well, that&#39;s just. I don&#39;t think that the people who were involved in the movement understand how ahistoric, unusual and unique that is. Nobody has treated pastors that way until recently. John Calvin wasn&#39;t treated that way. Martin Luther wasn&#39;t treated that way. Jonathan Edwards wasn&#39;t treated that way. These were just men in the eyes of their congregation. Exceptionally gifted, yes, some of them gifted in exposition, some of them gifted in leadership, so forth, but just men, not apostles and not even really apostolic per se.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-34">34 · Formally closes the first critique and previews the second critique for the next episode, providing structural clarity for the multi-part series</h4>
+            
+            <p>So that&#39;s my first critique. There is a failure within this movement to acknowledge there is some discontinuity between the apostles and us. And the next time, I&#39;ll start talking a little bit more about how there is a division between the Spirit and the Word within the new apostolic Reformation. But for now, that&#39;s it.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-35">35 · Direct pastoral address to those recovering from NAR involvement, offering hope, prayer, and a path forward centered on Scripture and healthy church life</h4>
+            
+            <p>Hope you have a great day. And hey, listen, if you are kind of floundering out there, you went to one of these churches and now you&#39;re just kind of floundering. Hey, chin up. You know, there are people like me who are praying for you and have been since this all broke out. And I&#39;m not praying for you in some kind of judgmental way. I literally just want you to find a sweet church with a normal, frumpy pastor who doesn&#39;t counsel women in a locked room with no windows. There is a future for you. I know this is really hurting and confusing you, but listen, man, you&#39;re going to be okay. Just. Just lean into God&#39;s word. His Word is the only thing we have that really keeps us safe. And maybe you went through a season where the Word was minimized in a way where you didn&#39;t even know it was. But maybe, maybe this podcast can be helpful to you. I hope it is.</p>
+            
+            
+            <h4 class="unit-anchor ui" id="unit-36">36 · Issues direct invitation to NAR refugees while acknowledging the interpretive barriers NAR teaching has created, calling them to reconsider which churches are spiritually alive</h4>
+            
+            <p>You&#39;re always welcome to come to Providence. And I will tell you, like, listen, you&#39;re going to. There&#39;s going to be some judgment you feel not coming from us to you, but from you to us. Because one of the insidious little things that&#39;s been happening in the NAR movement is that churches like ours that are really sweet, really loving, and surprise tend to expect actual holiness in association with the Holy Spirit. You know, we&#39;ve been portrayed by your leaders as the spiritual dead Pharisees. And so there&#39;s going to be, you know, some adjustment for you. But, you know, just like any other error, there&#39;s a period of deprogramming. And I would encourage you to come to Providence and spend some time with us and just kind of suspend the old ways that you evaluated things and try your best to just consider that possibly what you were told about these regular, average churches that don&#39;t have 24. Seven prayer rooms and apostolic anointing, try to consider that maybe all along we were the ones who were alive and not the whitewashed tombs with the rotting bones inside.</p>
+            
+            
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ Sermon arc ═══════════ -->
+    <section class="page-section">
+      <div class="section-eyebrow ui">Where this fits</div>
+      <h2 class="section-title-h2">Recent preaching context</h2>
+      <p class="section-lede">The three sermons immediately preceding this one in the preaching schedule.</p>
+
+      <div class="arc-wrap">
+        
+          
+          <div class="arc-node">
+            <div class="arc-node-date ui">Mar 28, 2025</div>
+            <div>
+              <div class="arc-node-title"><a href="/ProvidenceLenexa/sermons/2025/03/a-covid-post-mortem-why-did-so-many-godly-people-get-it-wrong">A COVID Post-Mortem: Why Did So Many Godly People Get It Wrong?</a></div>
+              
+            </div>
+            
+          </div>
+          
+          <div class="arc-node">
+            <div class="arc-node-date ui">Apr 4, 2025</div>
+            <div>
+              <div class="arc-node-title"><a href="/ProvidenceLenexa/sermons/2025/04/facts-and-feelings-in-the-christian-life">Facts and Feelings in the Christian Life</a></div>
+              
+            </div>
+            
+          </div>
+          
+          <div class="arc-node">
+            <div class="arc-node-date ui">Apr 4, 2025</div>
+            <div>
+              <div class="arc-node-title"><a href="/ProvidenceLenexa/sermons/2025/04/10-minutes-on-the-saving-foreknowledge-of-god">10 Minutes on the Saving Foreknowledge of God</a></div>
+              
+            </div>
+            
+          </div>
+          
+          <div class="arc-node current">
+            <div class="arc-node-date ui">April 6 · This sermon</div>
+            <div>
+              <div class="arc-node-title">IHOP Postmortem, Part 1</div>
+              
+            </div>
+            
+          </div>
+        
+      </div>
+
+      
+    </section>
+
+    <!-- ═══════════ Related teaching ═══════════ -->
+    
+
+    <!-- ═══════════ Discuss / apply ═══════════ -->
+    <section class="page-section">
+      <div class="section-eyebrow ui">Take it further</div>
+      <h2 class="section-title-h2">Discuss · apply · pray</h2>
+
+      <div class="apply-grid">
+        
+        <a href="#artifact-small-group" class="apply-tile">
+          <div class="apply-tile-label ui">Small groups</div>
+          <div class="apply-tile-title">6 discussion questions</div>
+          <div class="apply-tile-desc">The sermon distinguishes between polemical preaching meant to correct the erring and polemical preaching meant to safeguard believers from e…</div>
+        </a>
+        
+        <a href="#artifact-devotional" class="apply-tile">
+          <div class="apply-tile-label ui">Daily readings</div>
+          <div class="apply-tile-title">5-day reading plan</div>
+          <div class="apply-tile-desc">This week we examine how the apostles&#39; unique office and authority shapes our understanding of Scripture, spiritual gifts, and church leadership—and why conflating apostolic particularity with contemporary practice produces dangerous error.</div>
+        </a>
+        
+        <a href="#artifact-prayer" class="apply-tile">
+          <div class="apply-tile-label ui">Prayer</div>
+          <div class="apply-tile-title">For Discernment and Doctrinal Faithfulness</div>
+          <div class="apply-tile-desc">Father, we come before you in gratitude for your Word, which stands as the authoritative foundation of all truth and the measure by which al…</div>
+        </a>
+        
+        <a href="#artifact-family" class="apply-tile">
+          <div class="apply-tile-label ui">Family table</div>
+          <div class="apply-tile-title">When Leaders Act Like Apostles</div>
+          <div class="apply-tile-desc">This sermon addressed a serious error in some churches: treating modern leaders as if they have the same authority and power that Jesus gave…</div>
+        </a>
+        
+        <a href="#artifact-couples" class="apply-tile">
+          <div class="apply-tile-label ui">Couples</div>
+          <div class="apply-tile-title">Apostolic Authority and Our Shepherd</div>
+          <div class="apply-tile-desc">When you heard Chris explain the difference between apostolic authority then and leadership today, what conviction or clarity did the Spirit…</div>
+        </a>
+        
+        <a href="#artifact-memory" class="apply-tile">
+          <div class="apply-tile-label ui">Memorize</div>
+          <div class="apply-tile-title">Ephesians 2:20</div>
+          <div class="apply-tile-desc">This verse crystallizes the sermon&#39;s central claim that apostles occupied a unique, unrepeatable office—they are part of the church&#39;s *foundation*, not its ongoing structure. Memorizing this distinction guards believers from the NAR error of granting contemporary leaders apostolic authority, clarifying that the apostolic age was singularly constitutive for the church&#39;s establishment.</div>
+        </a>
+        
+      </div>
+
+      
+
+      
+      <div class="artifact-card" id="artifact-memory">
+        <div class="artifact-eyebrow ui">Memory verse this week</div>
+        <h3 class="artifact-title">Ephesians 2:20</h3>
+        <blockquote class="artifact-verse">built on the foundation of the apostles and prophets, Christ Jesus himself being the cornerstone</blockquote>
+        
+        <p class="artifact-verse-why"><strong>Why this verse:</strong> This verse crystallizes the sermon&#39;s central claim that apostles occupied a unique, unrepeatable office—they are part of the church&#39;s *foundation*, not its ongoing structure. Memorizing this distinction guards believers from the NAR error of granting contemporary leaders apostolic authority, clarifying that the apostolic age was singularly constitutive for the church&#39;s establishment.</p>
+        
+        <div class="artifact-status ui">Draft · pending review</div>
+      </div>
+      
+
+      
+
+      
+      <div class="artifact-card" id="artifact-small-group">
+        <div class="artifact-eyebrow ui">Small-group discussion</div>
+        <h3 class="artifact-title">6 questions for your group this week</h3>
+        <ol class="artifact-questions">
+          
+          <li>
+            <div class="artifact-question-text">The sermon distinguishes between polemical preaching meant to correct the erring and polemical preaching meant to safeguard believers from error. What&#39;s the difference, and why does that distinction matter for how we receive teaching that critiques false movements?</div>
+            <div class="artifact-question-anchor ui">Titus 2:11-15; 2 Timothy 2:24-26</div>
+            <div class="artifact-question-follow">→ Can you think of a time when you&#39;ve heard a critique of false teaching that actually clarified something true for you rather than just attacking an opponent?</div>
+          </li>
+          
+          <li>
+            <div class="artifact-question-text">Chris emphasized that Jesus&#39;s words to the apostles in passages like John 14:16 and Matthew 28:19-20 functioned as particulars for them but as patterns for us. How does recognizing that distinction change the way you read the Great Commission or Jesus&#39;s promise of the Holy Spirit?</div>
+            <div class="artifact-question-anchor ui">Matthew 28:19-20; John 14:16</div>
+            
+          </li>
+          
+          <li>
+            <div class="artifact-question-text">The sermon argues that the apostles held a unique office with distinctive authority, miraculous power, and the commission to write Scripture that sets them apart from all subsequent believers. What would be lost in the church if we failed to make this distinction clear?</div>
+            <div class="artifact-question-anchor ui">Acts 1:21-22; 1 Corinthians 9:1; Ephesians 2:20</div>
+            <div class="artifact-question-follow">→ How might blurring this line between apostolic and post-apostolic authority create the kind of power imbalances the sermon describes?</div>
+          </li>
+          
+          <li>
+            <div class="artifact-question-text">What does it mean, practically, that a leader&#39;s willingness to treat contemporary prophetic words as equal to Scripture reveals a disregard for authority—and how is that the same disregard that shows up in other forms of abuse?</div>
+            <div class="artifact-question-anchor ui">2 Peter 3:2; Galatians 1:1</div>
+            
+          </li>
+          
+          <li>
+            <div class="artifact-question-text">The sermon identifies a fallen condition: our tendency to grant dangerous levels of trust and power to charismatic leaders who lack the qualifications Scripture demands. Where do you see this temptation at work—not just in movements like the NAR, but in your own heart or in contexts closer to home?</div>
+            
+            <div class="artifact-question-follow">→ What makes a leader trustworthy to you, and how does that measure up against what Scripture requires?</div>
+          </li>
+          
+          <li>
+            <div class="artifact-question-text">In the gospel, Christ has already ascended and sent His Spirit to indwell and guide His church corporately through Scripture and godly leadership—not through contemporary apostles claiming special revelation. How does resting in that reality free you from the anxiety that might otherwise drive you toward charismatic leaders claiming to have direct access to God&#39;s will?</div>
+            <div class="artifact-question-anchor ui">John 16:12-15</div>
+            <div class="artifact-question-follow">→ What difference does it make to your faith that the apostles have finished their work, and that work is recorded and complete for us?</div>
+          </li>
+          
+        </ol>
+        <div class="artifact-status ui">Draft · pending review</div>
+      </div>
+
+      
+
+      
+
+      
+      <div class="artifact-card" id="artifact-devotional">
+        <div class="artifact-eyebrow ui">Daily readings · Monday–Friday</div>
+        <h3 class="artifact-title">5-day reading plan</h3>
+        <p class="artifact-intro">This week we examine how the apostles&#39; unique office and authority shapes our understanding of Scripture, spiritual gifts, and church leadership—and why conflating apostolic particularity with contemporary practice produces dangerous error.</p>
+        <div class="artifact-days">
+          
+          <div class="artifact-day">
+            <div class="artifact-day-head">
+              <span class="artifact-day-name ui">Monday</span>
+              <span class="artifact-day-passage ui">Acts 1:21-22</span>
+            </div>
+            <p class="artifact-day-text">Luke&#39;s account of choosing Judas&#39;s replacement shows the apostolic office required eyewitness testimony to Christ&#39;s resurrection and direct commission from the risen Lord—qualifications no contemporary leader can satisfy. We see in this passage that apostleship was not a transferable title or spiritual gift, but a historically bounded and divinely appointed role with irreplaceable significance for the church&#39;s foundation.</p>
+          </div>
+          
+          <div class="artifact-day">
+            <div class="artifact-day-head">
+              <span class="artifact-day-name ui">Tuesday</span>
+              <span class="artifact-day-passage ui">Ephesians 2:20</span>
+            </div>
+            <p class="artifact-day-text">Paul describes the church as built on the foundation of apostles and prophets, with Christ as the cornerstone—a metaphor that honors apostolic authority precisely by situating it as foundational, not ongoing. Once a foundation is laid, we build *on* it, not alongside it; this clarifies why apostolic words carry unique weight for doctrine while apostolic patterns instruct our faith and practice without identical replication.</p>
+          </div>
+          
+          <div class="artifact-day">
+            <div class="artifact-day-head">
+              <span class="artifact-day-name ui">Wednesday</span>
+              <span class="artifact-day-passage ui">2 Peter 3:2</span>
+            </div>
+            <p class="artifact-day-text">Peter himself distinguishes between the apostles&#39; direct appointment by Christ and the church&#39;s subsequent obedience to what the apostles wrote and taught, signaling that we approach apostolic instruction as Scripture—binding and authoritative—rather than as direct personal commission. This distinction protects us from the error of assuming every promise or command given to the Twelve extends unchanged to every believer, while honoring Scripture&#39;s full authority in our lives.</p>
+          </div>
+          
+          <div class="artifact-day">
+            <div class="artifact-day-head">
+              <span class="artifact-day-name ui">Thursday</span>
+              <span class="artifact-day-passage ui">Titus 2:11-15</span>
+            </div>
+            <p class="artifact-day-text">Paul charges Titus to teach sound doctrine and refute those who contradict it—not through claiming personal prophetic revelation, but through apostolic instruction grounded in Scripture. The polemical texture of this passage shows that the apostle&#39;s remedy for error is doctrinal clarity rooted in written authority, not the ascendancy of charismatic leaders whose utterances are treated as Scripture-level truth.</p>
+          </div>
+          
+          <div class="artifact-day">
+            <div class="artifact-day-head">
+              <span class="artifact-day-name ui">Friday</span>
+              <span class="artifact-day-passage ui">2 Timothy 2:24-26</span>
+            </div>
+            <p class="artifact-day-text">Paul instructs Timothy that the Lord&#39;s servant must be able to teach and gently correct opponents, holding out hope that God may grant them repentance—but the *primary* posture is one of patient instruction *for believers*, not aggressive confrontation of false teachers. This shapes how we approach controversial teaching: our first duty is to clarify truth for those under our care, trusting God to work in the hearts of those in error while we stand guard over the flock.</p>
+          </div>
+          
+        </div>
+        <div class="artifact-status ui">Draft · pending review</div>
+      </div>
+
+      
+
+      
+
+      
+      <div class="artifact-card" id="artifact-prayer">
+        <div class="artifact-eyebrow ui">Pray together this week</div>
+        <h3 class="artifact-title">For Discernment and Doctrinal Faithfulness</h3>
+        <div class="artifact-prayer">
+          
+          <p>Father, we come before you in gratitude for your Word, which stands as the authoritative foundation of all truth and the measure by which all claims to spiritual authority must be tested. We acknowledge that you have given us the Scriptures not merely as history or inspiration, but as the very voice by which your Spirit speaks to your church in every generation. We confess that we are susceptible to the seductions of power, to the appeal of leaders who promise deeper revelation or greater spiritual experience than what Scripture offers, and to the subtle idolatry of elevating human messengers above the finality of Christ&#39;s redemptive work and apostolic witness.</p>
+          
+          <p>Yet we marvel at the gospel, which humbles all pretense to continuing apostolic office and redirects our longing for encounter with the risen Christ through the completed deposit of His Word and the present ministry of His Spirit (John 14:16; Ephesians 2:20). In Christ, we are freed from the burden of testing every contemporary claim against new revelations; instead, we are called to the joy of standing firm on the foundation laid by the apostles, whose unique authority and miraculous signs authenticated a once-for-all gospel, never to be superseded. We thank you that your grace enables us to affirm the continuation of spiritual gifts while refusing the spiritual confusion that conflates apostolic particularity with contemporary patterns.</p>
+          
+          <p>Grant us, we pray, clear eyes to discern the difference between biblical pattern and apostolic particularity, that we might neither despise the gifts of your Spirit nor grant to contemporary leaders an authority reserved for those whom Christ Himself commissioned and equipped with apostolic signs. Give us courage to resist the seduction of power-hungry leadership that elevates human words above your Scripture, and give us pastoral tenderness toward those entangled in such movements, that we might speak truth in love (2 Timothy 2:24-26). Strengthen our local churches to be communities of doctrinal faithfulness, where the sufficiency of Scripture and the supremacy of Christ are defended not as burdensome corrections but as the glad foundation of our corporate worship and witness.</p>
+          
+          <p>To the all-glorious, triune God—Father, Son, and Spirit—who has given us all we need for godliness and truth, we commit ourselves and our generation, that your name alone be exalted.</p>
+          
+        </div>
+        <div class="artifact-status ui">Draft · pending review</div>
+      </div>
+
+      
+
+      
+
+      
+      <div class="artifact-card" id="artifact-family">
+        <div class="artifact-eyebrow ui">Sunday-evening family table</div>
+        <h3 class="artifact-title">When Leaders Act Like Apostles</h3>
+        
+        <div class="artifact-framing">
+          <span class="ui artifact-framing-label">For the parent</span>
+          <p>This sermon addressed a serious error in some churches: treating modern leaders as if they have the same authority and power that Jesus gave to the apostles. Use this prompt to help your family think together about why that distinction matters and how to spot it.</p>
+        </div>
+        
+        <blockquote class="artifact-family-prompt">
+          In the sermon, Chris explained that Jesus gave the apostles a special job that nobody else has today—they could do miracles, write Scripture, and speak Jesus&#39;s words directly to the church. If someone today claimed to be an apostle or said their words were as important as the Bible, what questions would you want to ask them to know if that&#39;s true?
+        </blockquote>
+        <div class="artifact-age-band ui">works for ages 9+ — younger kids can listen and offer simple answers with parent help</div>
+        <div class="artifact-status ui">Draft · pending review</div>
+      </div>
+
+      
+
+      
+
+      
+      <div class="artifact-card" id="artifact-couples">
+        <div class="artifact-eyebrow ui">Couples · three questions over coffee</div>
+        <h3 class="artifact-title">Apostolic Authority and Our Shepherd</h3>
+        <ol class="artifact-questions">
+          
+          <li><div class="artifact-question-text">When you heard Chris explain the difference between apostolic authority then and leadership today, what conviction or clarity did the Spirit press on your own heart about how you relate to leaders in the church?</div></li>
+          
+          <li><div class="artifact-question-text">How might our marriage be affected if we granted a pastor or spiritual leader the kind of unquestioned authority that the NAR grants to apostles—and what does it mean for us to submit to leadership while still holding leaders accountable to Scripture?</div></li>
+          
+          <li><div class="artifact-question-text">Who is a faithful shepherd in our church community whose biblical leadership we can thank God for this week, and how can we pray for them to stand firm against the pressures to assume authority they were never meant to carry?</div></li>
+          
+        </ol>
+        <div class="artifact-status ui">Draft · pending review</div>
+      </div>
+
+      
+
+      
+    </section>
+
+    <!-- ═══════════ About the church ═══════════ -->
+    <section class="page-section">
+      <div class="section-eyebrow ui">Where this was preached</div>
+      <h2 class="section-title-h2">About the church</h2>
+
+      <div class="church-card">
+        <div>
+          <div class="church-name">Providence Community Church</div>
+          <div class="church-addr ui">
+            Lenexa, KS<br>
+            
+            Sundays · 10:00 AM<br>
+            <a href="/ProvidenceLenexa/about" style="color:var(--accent);">About us</a> · <a href="/ProvidenceLenexa/what-we-believe" style="color:var(--accent);">What we believe</a>
+          </div>
+        </div>
+        <a href="/ProvidenceLenexa/visit" class="visit-cta ui">Plan a visit →</a>
+      </div>
+
+      <!-- Crawler hygiene -->
+      <details class="crawler-panel">
+        <summary class="ui">Crawler &amp; AI-search policy · view robots.txt and llms.txt</summary>
+        <div class="crawler-body">
+          <p>This sermon page is intentionally optimized for search engines and AI assistants. We've opted into being crawled by both. The crawler-config files at the domain root:</p>
+
+          <h5 class="ui">/robots.txt</h5>
+          <pre>User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://sermonsteward.com/sitemap.xml</pre>
+
+          <h5 class="ui">/llms.txt</h5>
+          <pre># Providence Community Church
+
+A church preaching expository sermons through the books of the Bible.
+
+## Sermons
+- [A COVID Post-Mortem: Why Did So Many Godly People Get It Wrong? (2025-03-28)](/ProvidenceLenexa/sermons/2025/03/a-covid-post-mortem-why-did-so-many-godly-people-get-it-wrong)
+- [Facts and Feelings in the Christian Life (2025-04-04)](/ProvidenceLenexa/sermons/2025/04/facts-and-feelings-in-the-christian-life)
+- [10 Minutes on the Saving Foreknowledge of God (2025-04-04)](/ProvidenceLenexa/sermons/2025/04/10-minutes-on-the-saving-foreknowledge-of-god)
+- [IHOP Postmortem, Part 1 (2025-04-06)](/ProvidenceLenexa/sermons/2025/04/ihop-postmortem-part-1)
+
+## About
+- [About the church](/about)
+- [Plan a visit](/visit)</pre>
+
+          <p>The page itself ships with Schema.org <code>Article</code> + <code>Church</code> markup (with real geo coordinates), Open Graph + Twitter cards for share previews, and a canonical URL. Transcripts are server-rendered HTML — no JS dependency for the readable body.</p>
+        </div>
+      </details>
+    </section>
+
+  </article>
+
+</main>
+
+<footer class="page-footer">
+  <div class="attribution">
+    This sermon was preached by <strong>Pastor Chris Oswald</strong> at <strong>Providence Community Church</strong>, Lenexa, KS, on <strong>April 6, 2025</strong>. © 2025 Providence Community Church. Free to share with attribution.
+  </div>
+  <div>Canonical URL: <code>https://sermonsteward.com/ProvidenceLenexa/sermons/2025/04/ihop-postmortem-part-1</code></div>
+  <div>Page generated by Sermon Steward · processed 2026-05-22 11:48 UTC · 37 units · 13 citations · 1 quotations</div>
+</footer>
+
+</body>
+</html>
