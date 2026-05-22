@@ -124,6 +124,55 @@
   .book-grid a:hover .n { color: var(--accent); }
   .book-grid span.empty { color: var(--ink-faint); background: transparent; border-style: dashed; cursor: default; }
   .book-grid span.empty .n { font-weight: 400; }
+  .locus-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px; margin: 0;
+  }
+  .locus-card {
+    display: block; padding: 18px 20px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .locus-card:hover { border-color: var(--accent); }
+  .locus-card .head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 8px; margin-bottom: 8px;
+  }
+  .locus-card .name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+  .locus-card:hover .name { color: var(--accent); }
+  .locus-card .n {
+    color: var(--ink-faint); font-size: 13px; font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .locus-card .blurb {
+    font-size: 14px; line-height: 1.5; color: var(--ink-soft);
+    margin: 0;
+  }
+  .locus-blurb {
+    background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+    padding: 18px 22px; margin: 0 0 32px;
+    font-size: 16px; line-height: 1.6; color: var(--ink-soft);
+  }
+  .locus-blurb em { color: var(--ink); font-style: italic; }
+  .series-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px; margin: 0;
+  }
+  .series-card {
+    display: block; padding: 16px 18px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .series-card:hover { border-color: var(--accent); }
+  .series-card .name {
+    display: block; font-size: 17px; font-weight: 700;
+    letter-spacing: -0.01em; margin-bottom: 6px;
+  }
+  .series-card:hover .name { color: var(--accent); }
+  .series-card .meta {
+    font-size: 13px; color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
 </style>
 </head>
 <body>
@@ -135,33 +184,9 @@
 <main>
   <div class="breadcrumb"><a href="/">Sermon Steward</a> · <a href="/ProvidenceLenexa/">Providence Community Church</a> · <a href="/ProvidenceLenexa/sermons/">Sermons</a> · <a href="/ProvidenceLenexa/sermons/scripture/">Scripture</a> · John</div>
   <h1>John</h1>
-  <p class="location">165 sermons from Providence Community Church · page 3 of 7</p>
+  <p class="location">157 sermons from Providence Community Church · page 3 of 7</p>
   <h2>Sermons<span class="count">(primary-text sermons listed first)</span></h2>
   <ul class="sermons">
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-divine-vinedresser-2025-03-30">The Divine Vinedresser</a></p>
-      <p class="sermon-meta">Mar 30, 2025</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/gyroscopic-hearts-2025-03-23">Gyroscopic Hearts</a></p>
-      <p class="sermon-meta">Mar 23, 2025</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/he-goes-to-prepare-the-earth-for-us-a-biblical-theological-exploration-of-john-14-2025-03-21">He Goes to Prepare the Earth for Us. A Biblical Theological Exploration of John 14</a></p>
-      <p class="sermon-meta">Mar 21, 2025</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/understanding-verbal-persecution-2025-03-14">Understanding Verbal Persecution</a></p>
-      <p class="sermon-meta">Mar 14, 2025</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/suffering-is-a-showcase-for-god-2025-02-16">Suffering is a Showcase for God</a></p>
-      <p class="sermon-meta">Feb 16, 2025</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/eternal-divergence-2025-02-09">Eternal Divergence</a></p>
-      <p class="sermon-meta">Feb 9, 2025</p>
-    </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/no-one-ever-spoke-like-this-man-2025-02-02">No One Ever Spoke Like This Man</a></p>
       <p class="sermon-meta">Feb 2, 2025</p>
@@ -219,10 +244,6 @@
       <p class="sermon-meta">Jun 26, 2024</p>
     </li>
     <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/mountains-of-assurance-for-molehills-of-doubts-2024-06-23">Mountains of Assurance for Molehills of Doubts</a></p>
-      <p class="sermon-meta">Jun 23, 2024</p>
-    </li>
-    <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/leadership-and-the-crisis-of-confidence-2024-06-16">Leadership and the Crisis of Confidence</a></p>
       <p class="sermon-meta">Jun 16, 2024</p>
     </li>
@@ -237,6 +258,34 @@
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-great-i-am-2024-05-26">The Great I Am</a></p>
       <p class="sermon-meta">May 26, 2024</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/understanding-covenant-theology-2024-05-06">Understanding Covenant Theology</a></p>
+      <p class="sermon-meta">May 6, 2024<span class="dot-sep">·</span><span class="series">Covenant Theology</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/exodus-the-serpent-the-seed-2024-05-05">Exodus: The Serpent &amp; The Seed</a></p>
+      <p class="sermon-meta">May 5, 2024<span class="dot-sep">·</span><span class="series">Exodus</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/how-to-thrive-in-hard-times-2024-03-05">How to Thrive in Hard Times</a></p>
+      <p class="sermon-meta">Mar 5, 2024</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/how-to-make-friends-2024-02-06">How to Make Friends</a></p>
+      <p class="sermon-meta">Feb 6, 2024</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/christ-in-isaiah-2023-12-10">Christ in Isaiah</a></p>
+      <p class="sermon-meta">Dec 10, 2023</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/do-christianity-2023-12-03">Do Christianity</a></p>
+      <p class="sermon-meta">Dec 3, 2023</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/cultural-demoralization-is-real-and-the-gospel-has-a-cure-2023-11-19">Cultural Demoralization is Real and the Gospel has a Cure!</a></p>
+      <p class="sermon-meta">Nov 19, 2023</p>
     </li>
   </ul>
   <nav class="pagination" aria-label="Sermon listing pagination">

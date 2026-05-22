@@ -123,6 +123,55 @@
   .book-grid a:hover .n { color: var(--accent); }
   .book-grid span.empty { color: var(--ink-faint); background: transparent; border-style: dashed; cursor: default; }
   .book-grid span.empty .n { font-weight: 400; }
+  .locus-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px; margin: 0;
+  }
+  .locus-card {
+    display: block; padding: 18px 20px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .locus-card:hover { border-color: var(--accent); }
+  .locus-card .head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 8px; margin-bottom: 8px;
+  }
+  .locus-card .name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+  .locus-card:hover .name { color: var(--accent); }
+  .locus-card .n {
+    color: var(--ink-faint); font-size: 13px; font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .locus-card .blurb {
+    font-size: 14px; line-height: 1.5; color: var(--ink-soft);
+    margin: 0;
+  }
+  .locus-blurb {
+    background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+    padding: 18px 22px; margin: 0 0 32px;
+    font-size: 16px; line-height: 1.6; color: var(--ink-soft);
+  }
+  .locus-blurb em { color: var(--ink); font-style: italic; }
+  .series-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px; margin: 0;
+  }
+  .series-card {
+    display: block; padding: 16px 18px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .series-card:hover { border-color: var(--accent); }
+  .series-card .name {
+    display: block; font-size: 17px; font-weight: 700;
+    letter-spacing: -0.01em; margin-bottom: 6px;
+  }
+  .series-card:hover .name { color: var(--accent); }
+  .series-card .meta {
+    font-size: 13px; color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
 </style>
 </head>
 <body>
@@ -134,7 +183,7 @@
 <main>
   <div class="breadcrumb"><a href="/">Sermon Steward</a> · <a href="/ProvidenceLenexa/">Providence Community Church</a> · <a href="/ProvidenceLenexa/sermons/">Sermons</a> · <a href="/ProvidenceLenexa/sermons/scripture/">Scripture</a> · Philippians</div>
   <h1>Philippians</h1>
-  <p class="location">84 sermons from Providence Community Church · page 1 of 4</p>
+  <p class="location">81 sermons from Providence Community Church · page 1 of 4</p>
   <h2>Sermons<span class="count">(primary-text sermons listed first)</span></h2>
   <ul class="sermons">
     <li>
@@ -190,20 +239,12 @@
       <p class="sermon-meta">Jan 11, 2026<span class="dot-sep">·</span>Ephesians 2:11-22<span class="dot-sep">·</span><span class="series">Ephesians</span></p>
     </li>
     <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/outgrowing-anxiety-part-4-2025-12-23">Outgrowing Anxiety, Part 4</a></p>
-      <p class="sermon-meta">Dec 23, 2025<span class="dot-sep">·</span><span class="series">Outgrowing Anxiety</span></p>
-    </li>
-    <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/romans-5-12-6-4-2025-12-07">Romans 5:12-6:4</a></p>
       <p class="sermon-meta">Dec 7, 2025</p>
     </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/1-john-2-love-of-this-world-2025-10-19">1 John 2 - Love of This World</a></p>
       <p class="sermon-meta">Oct 19, 2025<span class="dot-sep">·</span>1 John 2:1-29<span class="dot-sep">·</span><span class="series">1 John</span></p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/john-as-an-example-leader-2025-10-05">John as an Example Leader</a></p>
-      <p class="sermon-meta">Oct 5, 2025<span class="dot-sep">·</span>1 John 2:1-5<span class="dot-sep">·</span><span class="series">1 John</span></p>
     </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/seven-habits-of-highly-successful-sufferers-2025-08-24">Seven Habits of Highly Successful Sufferers</a></p>
@@ -236,6 +277,14 @@
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/leadership-and-the-crisis-of-confidence-2024-06-16">Leadership and the Crisis of Confidence</a></p>
       <p class="sermon-meta">Jun 16, 2024</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/zipporah-and-the-bridegroom-of-blood-2024-06-04">Zipporah and the Bridegroom of Blood</a></p>
+      <p class="sermon-meta">Jun 4, 2024</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/she-did-what-she-could-do-2024-05-12">She Did What She Could Do</a></p>
+      <p class="sermon-meta">May 12, 2024<span class="dot-sep">·</span>Exodus 2:1-10</p>
     </li>
   </ul>
   <nav class="pagination" aria-label="Sermon listing pagination">

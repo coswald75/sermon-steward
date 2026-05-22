@@ -122,6 +122,55 @@
   .book-grid a:hover .n { color: var(--accent); }
   .book-grid span.empty { color: var(--ink-faint); background: transparent; border-style: dashed; cursor: default; }
   .book-grid span.empty .n { font-weight: 400; }
+  .locus-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px; margin: 0;
+  }
+  .locus-card {
+    display: block; padding: 18px 20px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .locus-card:hover { border-color: var(--accent); }
+  .locus-card .head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 8px; margin-bottom: 8px;
+  }
+  .locus-card .name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+  .locus-card:hover .name { color: var(--accent); }
+  .locus-card .n {
+    color: var(--ink-faint); font-size: 13px; font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .locus-card .blurb {
+    font-size: 14px; line-height: 1.5; color: var(--ink-soft);
+    margin: 0;
+  }
+  .locus-blurb {
+    background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+    padding: 18px 22px; margin: 0 0 32px;
+    font-size: 16px; line-height: 1.6; color: var(--ink-soft);
+  }
+  .locus-blurb em { color: var(--ink); font-style: italic; }
+  .series-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px; margin: 0;
+  }
+  .series-card {
+    display: block; padding: 16px 18px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .series-card:hover { border-color: var(--accent); }
+  .series-card .name {
+    display: block; font-size: 17px; font-weight: 700;
+    letter-spacing: -0.01em; margin-bottom: 6px;
+  }
+  .series-card:hover .name { color: var(--accent); }
+  .series-card .meta {
+    font-size: 13px; color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
 </style>
 </head>
 <body>
@@ -133,7 +182,7 @@
 <main>
   <div class="breadcrumb"><a href="/">Sermon Steward</a> · <a href="/CoGElPaso/">Cross of Grace Church</a> · <a href="/CoGElPaso/sermons/">Sermons</a> · <a href="/CoGElPaso/sermons/scripture/">Scripture</a> · Galatians</div>
   <h1>Galatians</h1>
-  <p class="location">4 sermons from Cross of Grace Church</p>
+  <p class="location">7 sermons from Cross of Grace Church</p>
   <h2>Sermons<span class="count">(primary-text sermons listed first)</span></h2>
   <ul class="sermons">
     <li>
@@ -151,6 +200,18 @@
     <li>
       <p class="sermon-title"><a href="/CoGElPaso/sermons/a-life-well-lived-2025-01-12">A Life Well Lived</a></p>
       <p class="sermon-meta">Jan 12, 2025<span class="dot-sep">·</span>Daniel 12:1-4<span class="dot-sep">·</span><span class="series">Book of Daniel</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/CoGElPaso/sermons/here-there-be-dragons-2022-05-15">Here There Be Dragons</a></p>
+      <p class="sermon-meta">May 15, 2022<span class="dot-sep">·</span>Revelation 12:1-17</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/CoGElPaso/sermons/sealed-and-secured">Sealed and Secured</a></p>
+      <p class="sermon-meta">Apr 24, 2022<span class="dot-sep">·</span>Revelation 7:1-17</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/CoGElPaso/sermons/the-faithful-christ">The Faithful Christ</a></p>
+      <p class="sermon-meta">Apr 3, 2022<span class="dot-sep">·</span>Revelation 2:12-17<span class="dot-sep">·</span><span class="series">Seven Churches of Revelation</span></p>
     </li>
   </ul>
 </main>

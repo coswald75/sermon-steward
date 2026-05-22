@@ -123,6 +123,55 @@
   .book-grid a:hover .n { color: var(--accent); }
   .book-grid span.empty { color: var(--ink-faint); background: transparent; border-style: dashed; cursor: default; }
   .book-grid span.empty .n { font-weight: 400; }
+  .locus-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px; margin: 0;
+  }
+  .locus-card {
+    display: block; padding: 18px 20px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .locus-card:hover { border-color: var(--accent); }
+  .locus-card .head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 8px; margin-bottom: 8px;
+  }
+  .locus-card .name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+  .locus-card:hover .name { color: var(--accent); }
+  .locus-card .n {
+    color: var(--ink-faint); font-size: 13px; font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .locus-card .blurb {
+    font-size: 14px; line-height: 1.5; color: var(--ink-soft);
+    margin: 0;
+  }
+  .locus-blurb {
+    background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+    padding: 18px 22px; margin: 0 0 32px;
+    font-size: 16px; line-height: 1.6; color: var(--ink-soft);
+  }
+  .locus-blurb em { color: var(--ink); font-style: italic; }
+  .series-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px; margin: 0;
+  }
+  .series-card {
+    display: block; padding: 16px 18px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .series-card:hover { border-color: var(--accent); }
+  .series-card .name {
+    display: block; font-size: 17px; font-weight: 700;
+    letter-spacing: -0.01em; margin-bottom: 6px;
+  }
+  .series-card:hover .name { color: var(--accent); }
+  .series-card .meta {
+    font-size: 13px; color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
 </style>
 </head>
 <body>
@@ -134,7 +183,7 @@
 <main>
   <div class="breadcrumb"><a href="/">Sermon Steward</a> · <a href="/ProvidenceLenexa/">Providence Community Church</a> · <a href="/ProvidenceLenexa/sermons/">Sermons</a> · <a href="/ProvidenceLenexa/sermons/scripture/">Scripture</a> · Isaiah</div>
   <h1>Isaiah</h1>
-  <p class="location">105 sermons from Providence Community Church · page 1 of 5</p>
+  <p class="location">99 sermons from Providence Community Church · page 1 of 4</p>
   <h2>Sermons<span class="count">(primary-text sermons listed first)</span></h2>
   <ul class="sermons">
     <li>
@@ -170,10 +219,6 @@
       <p class="sermon-meta">Dec 23, 2025<span class="dot-sep">·</span><span class="series">Outgrowing Anxiety</span></p>
     </li>
     <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/outgrowing-anxiety-part-4-2025-12-23">Outgrowing Anxiety, Part 4</a></p>
-      <p class="sermon-meta">Dec 23, 2025<span class="dot-sep">·</span><span class="series">Outgrowing Anxiety</span></p>
-    </li>
-    <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/what-kind-of-preaching-pleases-god-part-1-2025-12-16">What Kind of Preaching Pleases God? Part 1</a></p>
       <p class="sermon-meta">Dec 16, 2025<span class="dot-sep">·</span><span class="series">What Kind of Preaching Pleases God?</span></p>
     </li>
@@ -190,24 +235,12 @@
       <p class="sermon-meta">Nov 3, 2025</p>
     </li>
     <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/see-what-kind-of-love-2025-11-03">See What Kind of Love</a></p>
-      <p class="sermon-meta">Nov 3, 2025<span class="dot-sep">·</span>1 John 3:1<span class="dot-sep">·</span><span class="series">1 John</span></p>
-    </li>
-    <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/outgrowing-anxiety-part-3-fear-of-man-vs-fear-of-god-2025-10-18">Outgrowing Anxiety, Part 3: Fear of Man vs. Fear of God</a></p>
       <p class="sermon-meta">Oct 18, 2025<span class="dot-sep">·</span><span class="series">Outgrowing Anxiety</span></p>
     </li>
     <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/understanding-god-s-personality-2025-08-10">Understanding God&#x27;s Personality</a></p>
-      <p class="sermon-meta">Aug 10, 2025<span class="dot-sep">·</span>Psalm 103<span class="dot-sep">·</span><span class="series">Psalms</span></p>
-    </li>
-    <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/how-to-get-a-good-night-s-sleep-2025-08-03">How to Get a Good Night&#x27;s Sleep</a></p>
       <p class="sermon-meta">Aug 3, 2025</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/reverence-reward-2025-07-27">Reverence &amp; Reward</a></p>
-      <p class="sermon-meta">Jul 27, 2025<span class="dot-sep">·</span>Psalm 128:1-6<span class="dot-sep">·</span><span class="series">Psalms</span></p>
     </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/political-power-purity-spirals-and-the-2025-07-06">Political Power, Purity Spirals, and the Perfections of Christ</a></p>
@@ -222,10 +255,6 @@
       <p class="sermon-meta">May 25, 2025<span class="dot-sep">·</span><span class="series">Dominion Inside and Out</span></p>
     </li>
     <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/four-common-objections-to-the-christian-faith-2025-04-20">Four Common Objections to the Christian Faith</a></p>
-      <p class="sermon-meta">Apr 20, 2025<span class="dot-sep">·</span>John 18:1-20:31<span class="dot-sep">·</span><span class="series">John</span></p>
-    </li>
-    <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/good-friday-preview-the-atonement-is-bigger-than-you-know-2025-04-14">Good Friday Preview: The Atonement is Bigger Than You Know</a></p>
       <p class="sermon-meta">Apr 14, 2025</p>
     </li>
@@ -237,10 +266,30 @@
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/eternal-divergence-2025-02-09">Eternal Divergence</a></p>
       <p class="sermon-meta">Feb 9, 2025</p>
     </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-menu-is-not-the-meal-2025-01-26">The Menu is Not the Meal</a></p>
+      <p class="sermon-meta">Jan 26, 2025</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/good-wine-the-grace-of-god-2024-12-29">Good Wine &amp; the Grace of God</a></p>
+      <p class="sermon-meta">Dec 29, 2024</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-messiah-s-gift-2024-12-15">The Messiah&#x27;s Gift</a></p>
+      <p class="sermon-meta">Dec 15, 2024</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/comfortable-certainty-2024-11-13">Comfortable Certainty</a></p>
+      <p class="sermon-meta">Nov 13, 2024</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/you-were-made-for-love-2024-10-06">You Were Made For Love</a></p>
+      <p class="sermon-meta">Oct 6, 2024</p>
+    </li>
   </ul>
   <nav class="pagination" aria-label="Sermon listing pagination">
     <span class="disabled">← Previous</span>
-    <span class="page-indicator">Page 1 of 5</span>
+    <span class="page-indicator">Page 1 of 4</span>
     <a href="/ProvidenceLenexa/sermons/scripture/isaiah/page/2/" rel="next">Next →</a>
   </nav>
 </main>

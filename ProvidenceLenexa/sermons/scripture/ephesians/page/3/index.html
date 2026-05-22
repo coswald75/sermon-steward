@@ -124,6 +124,55 @@
   .book-grid a:hover .n { color: var(--accent); }
   .book-grid span.empty { color: var(--ink-faint); background: transparent; border-style: dashed; cursor: default; }
   .book-grid span.empty .n { font-weight: 400; }
+  .locus-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px; margin: 0;
+  }
+  .locus-card {
+    display: block; padding: 18px 20px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .locus-card:hover { border-color: var(--accent); }
+  .locus-card .head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 8px; margin-bottom: 8px;
+  }
+  .locus-card .name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+  .locus-card:hover .name { color: var(--accent); }
+  .locus-card .n {
+    color: var(--ink-faint); font-size: 13px; font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .locus-card .blurb {
+    font-size: 14px; line-height: 1.5; color: var(--ink-soft);
+    margin: 0;
+  }
+  .locus-blurb {
+    background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+    padding: 18px 22px; margin: 0 0 32px;
+    font-size: 16px; line-height: 1.6; color: var(--ink-soft);
+  }
+  .locus-blurb em { color: var(--ink); font-style: italic; }
+  .series-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px; margin: 0;
+  }
+  .series-card {
+    display: block; padding: 16px 18px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .series-card:hover { border-color: var(--accent); }
+  .series-card .name {
+    display: block; font-size: 17px; font-weight: 700;
+    letter-spacing: -0.01em; margin-bottom: 6px;
+  }
+  .series-card:hover .name { color: var(--accent); }
+  .series-card .meta {
+    font-size: 13px; color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
 </style>
 </head>
 <body>
@@ -135,29 +184,9 @@
 <main>
   <div class="breadcrumb"><a href="/">Sermon Steward</a> · <a href="/ProvidenceLenexa/">Providence Community Church</a> · <a href="/ProvidenceLenexa/sermons/">Sermons</a> · <a href="/ProvidenceLenexa/sermons/scripture/">Scripture</a> · Ephesians</div>
   <h1>Ephesians</h1>
-  <p class="location">136 sermons from Providence Community Church · page 3 of 6</p>
+  <p class="location">129 sermons from Providence Community Church · page 3 of 6</p>
   <h2>Sermons<span class="count">(primary-text sermons listed first)</span></h2>
   <ul class="sermons">
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/infertility-and-the-glory-of-god-2024-07-09">Infertility and the Glory of God</a></p>
-      <p class="sermon-meta">Jul 9, 2024</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/rebellion-to-tyrants-is-obedience-to-god-2024-06-30">Rebellion to Tyrants is Obedience To God</a></p>
-      <p class="sermon-meta">Jun 30, 2024<span class="dot-sep">·</span><span class="series">Exodus</span></p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/patriarchs-in-paradise-2024-06-26">Patriarchs in Paradise</a></p>
-      <p class="sermon-meta">Jun 26, 2024</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/paleo-evangelism-2024-06-02">Paleo-Evangelism</a></p>
-      <p class="sermon-meta">Jun 2, 2024</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-great-i-am-2024-05-26">The Great I Am</a></p>
-      <p class="sermon-meta">May 26, 2024</p>
-    </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/understanding-covenant-theology-2024-05-06">Understanding Covenant Theology</a></p>
       <p class="sermon-meta">May 6, 2024<span class="dot-sep">·</span><span class="series">Covenant Theology</span></p>
@@ -187,10 +216,6 @@
       <p class="sermon-meta">Jan 16, 2024<span class="dot-sep">·</span><span class="series">True North</span></p>
     </li>
     <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/unity-in-diversity-2023-12-31">Unity in Diversity</a></p>
-      <p class="sermon-meta">Dec 31, 2023<span class="dot-sep">·</span><span class="series">Let Earth Receive Her King</span></p>
-    </li>
-    <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/podcast-where-crunchy-women-go-wrong-2023-10-28">Podcast: Where Crunchy Women Go Wrong</a></p>
       <p class="sermon-meta">Oct 28, 2023</p>
     </li>
@@ -205,10 +230,6 @@
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-mystery-of-godliness-2023-10-15">The Mystery of Godliness</a></p>
       <p class="sermon-meta">Oct 15, 2023</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/deacons-servants-of-the-king-2023-10-08">Deacons: Servants of the King</a></p>
-      <p class="sermon-meta">Oct 8, 2023</p>
     </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-power-of-undistracted-devotion-2023-09-17">The Power of Undistracted Devotion</a></p>
@@ -237,6 +258,34 @@
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/prayer-for-god-2019-08-19">Prayer for God</a></p>
       <p class="sermon-meta">Aug 19, 2019<span class="dot-sep">·</span>Acts 1:14</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/march-10-2019-sermon-2019-03-10">Teaching That Adores Jesus</a></p>
+      <p class="sermon-meta">Mar 10, 2019<span class="dot-sep">·</span>Acts 2:42<span class="dot-sep">·</span><span class="series">Acts 2:42 Series</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/earth-wind-fire-2018-09-02-2">Earth, Wind Fire</a></p>
+      <p class="sermon-meta">Sep 2, 2018<span class="dot-sep">·</span>Acts 2:1-5</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-holy-spirit-as-a-gift-2018-07-15">The Holy Spirit as a Gift</a></p>
+      <p class="sermon-meta">Jul 15, 2018<span class="dot-sep">·</span>Acts 1:6-15</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/sermon-4-22-18-adjusted-2018-04-22">The Emmaus Fog</a></p>
+      <p class="sermon-meta">Apr 22, 2018<span class="dot-sep">·</span>Luke 24:13-35</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/a-new-relationship-with-scripture-after-the-2018-04-15">A New Relationship with Scripture After the Resurrection</a></p>
+      <p class="sermon-meta">Apr 15, 2018<span class="dot-sep">·</span>Luke 24:13-32<span class="dot-sep">·</span><span class="series">Luke</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/resurrected-reading-part-1-forgetfulness-2018-04-08">Resurrected Reading Part 1: Forgetfulness, Foolishness, and Faithlessness</a></p>
+      <p class="sermon-meta">Apr 8, 2018<span class="dot-sep">·</span>Luke 24:1-53<span class="dot-sep">·</span><span class="series">Resurrected Reading</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/submission-part-2-2017-11-12">Submission Part 2</a></p>
+      <p class="sermon-meta">Nov 12, 2017<span class="dot-sep">·</span>Luke 22:42<span class="dot-sep">·</span><span class="series">The Cross-Centered Marriage</span></p>
     </li>
   </ul>
   <nav class="pagination" aria-label="Sermon listing pagination">

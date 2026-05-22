@@ -124,6 +124,55 @@
   .book-grid a:hover .n { color: var(--accent); }
   .book-grid span.empty { color: var(--ink-faint); background: transparent; border-style: dashed; cursor: default; }
   .book-grid span.empty .n { font-weight: 400; }
+  .locus-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px; margin: 0;
+  }
+  .locus-card {
+    display: block; padding: 18px 20px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .locus-card:hover { border-color: var(--accent); }
+  .locus-card .head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 8px; margin-bottom: 8px;
+  }
+  .locus-card .name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+  .locus-card:hover .name { color: var(--accent); }
+  .locus-card .n {
+    color: var(--ink-faint); font-size: 13px; font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .locus-card .blurb {
+    font-size: 14px; line-height: 1.5; color: var(--ink-soft);
+    margin: 0;
+  }
+  .locus-blurb {
+    background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+    padding: 18px 22px; margin: 0 0 32px;
+    font-size: 16px; line-height: 1.6; color: var(--ink-soft);
+  }
+  .locus-blurb em { color: var(--ink); font-style: italic; }
+  .series-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px; margin: 0;
+  }
+  .series-card {
+    display: block; padding: 16px 18px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .series-card:hover { border-color: var(--accent); }
+  .series-card .name {
+    display: block; font-size: 17px; font-weight: 700;
+    letter-spacing: -0.01em; margin-bottom: 6px;
+  }
+  .series-card:hover .name { color: var(--accent); }
+  .series-card .meta {
+    font-size: 13px; color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
 </style>
 </head>
 <body>
@@ -135,17 +184,9 @@
 <main>
   <div class="breadcrumb"><a href="/">Sermon Steward</a> · <a href="/ProvidenceLenexa/">Providence Community Church</a> · <a href="/ProvidenceLenexa/sermons/">Sermons</a> · <a href="/ProvidenceLenexa/sermons/scripture/">Scripture</a> · Exodus</div>
   <h1>Exodus</h1>
-  <p class="location">81 sermons from Providence Community Church · page 2 of 4</p>
+  <p class="location">76 sermons from Providence Community Church · page 2 of 4</p>
   <h2>Sermons<span class="count">(primary-text sermons listed first)</span></h2>
   <ul class="sermons">
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-wisdom-of-god-in-the-cross-2025-04-27">The Wisdom of God in the Cross</a></p>
-      <p class="sermon-meta">Apr 27, 2025<span class="dot-sep">·</span>John 19:1-42<span class="dot-sep">·</span><span class="series">John</span></p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/a-covid-post-mortem-why-did-so-many-godly-people-get-it-wrong-2025-03-28">A COVID Post-Mortem: Why Did So Many Godly People Get It Wrong?</a></p>
-      <p class="sermon-meta">Mar 28, 2025</p>
-    </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/when-depravity-meets-divinity-2025-01-19">When Depravity Meets Divinity</a></p>
       <p class="sermon-meta">Jan 19, 2025</p>
@@ -167,16 +208,8 @@
       <p class="sermon-meta">Dec 1, 2024</p>
     </li>
     <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/eldership-announcement-2024-11-24">Eldership Announcement</a></p>
-      <p class="sermon-meta">Nov 24, 2024</p>
-    </li>
-    <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/comfortable-certainty-2024-11-13">Comfortable Certainty</a></p>
       <p class="sermon-meta">Nov 13, 2024</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/aaron-s-failure-of-nerve-2024-11-10">Aaron&#x27;s Failure of Nerve</a></p>
-      <p class="sermon-meta">Nov 10, 2024</p>
     </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/thou-shall-not-steal-2024-10-13">Thou Shall Not Steal</a></p>
@@ -189,10 +222,6 @@
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/you-were-made-for-love-2024-10-06">You Were Made For Love</a></p>
       <p class="sermon-meta">Oct 6, 2024</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/two-mountains-one-mandate-2024-08-18">Two Mountains: One Mandate</a></p>
-      <p class="sermon-meta">Aug 18, 2024<span class="dot-sep">·</span><span class="series">The Ten Commandments</span></p>
     </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-lord-is-a-man-of-war-part-2-2024-08-04">The Lord is a Man of War, Part 2</a></p>
@@ -237,6 +266,26 @@
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-great-i-am-2024-05-26">The Great I Am</a></p>
       <p class="sermon-meta">May 26, 2024</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/exodus-the-serpent-the-seed-2024-05-05">Exodus: The Serpent &amp; The Seed</a></p>
+      <p class="sermon-meta">May 5, 2024<span class="dot-sep">·</span><span class="series">Exodus</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/overview-israel-in-the-exodus-2024-04-28">Overview: Israel in the Exodus</a></p>
+      <p class="sermon-meta">Apr 28, 2024<span class="dot-sep">·</span><span class="series">Exodus</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-sadducees-and-the-resurrection-2024-04-28">The Sadducees and the Resurrection</a></p>
+      <p class="sermon-meta">Apr 28, 2024<span class="dot-sep">·</span>Luke 20:27-40<span class="dot-sep">·</span><span class="series">Luke</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/how-to-thrive-in-hard-times-2024-03-05">How to Thrive in Hard Times</a></p>
+      <p class="sermon-meta">Mar 5, 2024</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/wisdom-for-the-new-year-2024-01-07">Wisdom for the New Year</a></p>
+      <p class="sermon-meta">Jan 7, 2024</p>
     </li>
   </ul>
   <nav class="pagination" aria-label="Sermon listing pagination">

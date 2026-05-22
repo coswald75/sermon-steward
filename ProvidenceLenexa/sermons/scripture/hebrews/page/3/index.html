@@ -124,6 +124,55 @@
   .book-grid a:hover .n { color: var(--accent); }
   .book-grid span.empty { color: var(--ink-faint); background: transparent; border-style: dashed; cursor: default; }
   .book-grid span.empty .n { font-weight: 400; }
+  .locus-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px; margin: 0;
+  }
+  .locus-card {
+    display: block; padding: 18px 20px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .locus-card:hover { border-color: var(--accent); }
+  .locus-card .head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 8px; margin-bottom: 8px;
+  }
+  .locus-card .name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+  .locus-card:hover .name { color: var(--accent); }
+  .locus-card .n {
+    color: var(--ink-faint); font-size: 13px; font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .locus-card .blurb {
+    font-size: 14px; line-height: 1.5; color: var(--ink-soft);
+    margin: 0;
+  }
+  .locus-blurb {
+    background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+    padding: 18px 22px; margin: 0 0 32px;
+    font-size: 16px; line-height: 1.6; color: var(--ink-soft);
+  }
+  .locus-blurb em { color: var(--ink); font-style: italic; }
+  .series-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px; margin: 0;
+  }
+  .series-card {
+    display: block; padding: 16px 18px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .series-card:hover { border-color: var(--accent); }
+  .series-card .name {
+    display: block; font-size: 17px; font-weight: 700;
+    letter-spacing: -0.01em; margin-bottom: 6px;
+  }
+  .series-card:hover .name { color: var(--accent); }
+  .series-card .meta {
+    font-size: 13px; color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
 </style>
 </head>
 <body>
@@ -135,45 +184,9 @@
 <main>
   <div class="breadcrumb"><a href="/">Sermon Steward</a> · <a href="/ProvidenceLenexa/">Providence Community Church</a> · <a href="/ProvidenceLenexa/sermons/">Sermons</a> · <a href="/ProvidenceLenexa/sermons/scripture/">Scripture</a> · Hebrews</div>
   <h1>Hebrews</h1>
-  <p class="location">139 sermons from Providence Community Church · page 3 of 6</p>
+  <p class="location">130 sermons from Providence Community Church · page 3 of 6</p>
   <h2>Sermons<span class="count">(primary-text sermons listed first)</span></h2>
   <ul class="sermons">
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-joseph-series-pardon-2024-04-21">The Joseph Series: Pardon</a></p>
-      <p class="sermon-meta">Apr 21, 2024<span class="dot-sep">·</span><span class="series">The Joseph Series</span></p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/strengthened-by-grace-2024-02-11">Strengthened by Grace</a></p>
-      <p class="sermon-meta">Feb 11, 2024</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/when-friends-become-enemies-2024-02-09">When Friends Become Enemies</a></p>
-      <p class="sermon-meta">Feb 9, 2024<span class="dot-sep">·</span><span class="series">Friendship Week</span></p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/christian-friendship-2024-02-04">Christian Friendship</a></p>
-      <p class="sermon-meta">Feb 4, 2024</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/he-abolished-death-2024-01-28">He Abolished Death</a></p>
-      <p class="sermon-meta">Jan 28, 2024</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/fan-it-into-flame-2024-01-16">Fan It Into Flame</a></p>
-      <p class="sermon-meta">Jan 16, 2024<span class="dot-sep">·</span><span class="series">True North</span></p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/comfort-is-not-a-compass-2024-01-14">Comfort is Not a Compass</a></p>
-      <p class="sermon-meta">Jan 14, 2024</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/hope-as-help-2024-01-14">Hope as Help</a></p>
-      <p class="sermon-meta">Jan 14, 2024</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/christ-in-isaiah-2023-12-10">Christ in Isaiah</a></p>
-      <p class="sermon-meta">Dec 10, 2023</p>
-    </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/do-christianity-2023-12-03">Do Christianity</a></p>
       <p class="sermon-meta">Dec 3, 2023</p>
@@ -237,6 +250,42 @@
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/submission-part-2-2017-11-12">Submission Part 2</a></p>
       <p class="sermon-meta">Nov 12, 2017<span class="dot-sep">·</span>Luke 22:42<span class="dot-sep">·</span><span class="series">The Cross-Centered Marriage</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-cross-centered-marriage-jesus-submission-2017-11-12">The Cross-Centered Marriage: Jesus&#x27; Submission</a></p>
+      <p class="sermon-meta">Nov 12, 2017<span class="dot-sep">·</span>Luke 22:39-42<span class="dot-sep">·</span><span class="series">The Cross-Centered Marriage</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/nov-12-2017-2017-11-12">The Power to Submit</a></p>
+      <p class="sermon-meta">Nov 12, 2017<span class="dot-sep">·</span>Luke 22:39-46<span class="dot-sep">·</span><span class="series">The Cross-Centered Marriage</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/aug-27-2017-2017-08-27">Sowing into Flesh or Spirit</a></p>
+      <p class="sermon-meta">Aug 27, 2017<span class="dot-sep">·</span>Galatians 6:7-8</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/july-16-2017-2017-07-16">Where Two or Three Take Sin Seriously</a></p>
+      <p class="sermon-meta">Jul 16, 2017<span class="dot-sep">·</span>Matthew 18:15-20</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/june-18-2017-2017-06-18">Seeking God&#x27;s Face When He Seems Hidden</a></p>
+      <p class="sermon-meta">Jun 18, 2017<span class="dot-sep">·</span>Psalm 13<span class="dot-sep">·</span><span class="series">Seeking God&#x27;s Presence</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/a-gatekeeper-s-song">A Gatekeeper&#x27;s Song</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Psalm 84:1-12</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/a-preview-of-glory">A Preview of Glory</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Luke 9:28-36<span class="dot-sep">·</span><span class="series">Kingdom Come</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/ascetic1tim4">ascetic1tim4</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>1 Timothy 4:1-5</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/before-and-after-a-change-in-perspective">Before and After - A Change in Perspective</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Psalm 73<span class="dot-sep">·</span><span class="series">Summer Psalms</span></p>
     </li>
   </ul>
   <nav class="pagination" aria-label="Sermon listing pagination">

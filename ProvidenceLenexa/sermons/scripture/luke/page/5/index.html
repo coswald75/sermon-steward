@@ -124,6 +124,55 @@
   .book-grid a:hover .n { color: var(--accent); }
   .book-grid span.empty { color: var(--ink-faint); background: transparent; border-style: dashed; cursor: default; }
   .book-grid span.empty .n { font-weight: 400; }
+  .locus-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px; margin: 0;
+  }
+  .locus-card {
+    display: block; padding: 18px 20px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .locus-card:hover { border-color: var(--accent); }
+  .locus-card .head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 8px; margin-bottom: 8px;
+  }
+  .locus-card .name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+  .locus-card:hover .name { color: var(--accent); }
+  .locus-card .n {
+    color: var(--ink-faint); font-size: 13px; font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .locus-card .blurb {
+    font-size: 14px; line-height: 1.5; color: var(--ink-soft);
+    margin: 0;
+  }
+  .locus-blurb {
+    background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+    padding: 18px 22px; margin: 0 0 32px;
+    font-size: 16px; line-height: 1.6; color: var(--ink-soft);
+  }
+  .locus-blurb em { color: var(--ink); font-style: italic; }
+  .series-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px; margin: 0;
+  }
+  .series-card {
+    display: block; padding: 16px 18px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .series-card:hover { border-color: var(--accent); }
+  .series-card .name {
+    display: block; font-size: 17px; font-weight: 700;
+    letter-spacing: -0.01em; margin-bottom: 6px;
+  }
+  .series-card:hover .name { color: var(--accent); }
+  .series-card .meta {
+    font-size: 13px; color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
 </style>
 </head>
 <body>
@@ -135,29 +184,9 @@
 <main>
   <div class="breadcrumb"><a href="/">Sermon Steward</a> · <a href="/ProvidenceLenexa/">Providence Community Church</a> · <a href="/ProvidenceLenexa/sermons/">Sermons</a> · <a href="/ProvidenceLenexa/sermons/scripture/">Scripture</a> · Luke</div>
   <h1>Luke</h1>
-  <p class="location">134 sermons from Providence Community Church · page 5 of 6</p>
+  <p class="location">129 sermons from Providence Community Church · page 5 of 6</p>
   <h2>Sermons<span class="count">(primary-text sermons listed first)</span></h2>
   <ul class="sermons">
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/a-theology-of-change-2018-11-11">A Theology of Change</a></p>
-      <p class="sermon-meta">Nov 11, 2018<span class="dot-sep">·</span>Acts 2:36-39</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/10-28-18-raw-2018-10-28">When the Whole Church Speaks</a></p>
-      <p class="sermon-meta">Oct 28, 2018<span class="dot-sep">·</span>Acts 2</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/8-26-18-2018-08-26">When God Gives Us What We Demand</a></p>
-      <p class="sermon-meta">Aug 26, 2018<span class="dot-sep">·</span>1 Samuel 8:1-9, 12:1-25</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/8-5-18-raw-dr000559-2018-08-05">Prayer Precedes Power</a></p>
-      <p class="sermon-meta">Aug 5, 2018<span class="dot-sep">·</span>Acts 1:12-14</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/july-16-2017-2017-07-16">Where Two or Three Take Sin Seriously</a></p>
-      <p class="sermon-meta">Jul 16, 2017<span class="dot-sep">·</span>Matthew 18:15-20</p>
-    </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/june-18-2017-2017-06-18">Seeking God&#x27;s Face When He Seems Hidden</a></p>
       <p class="sermon-meta">Jun 18, 2017<span class="dot-sep">·</span>Psalm 13<span class="dot-sep">·</span><span class="series">Seeking God&#x27;s Presence</span></p>
@@ -237,6 +266,26 @@
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/pursue-godliness">Pursue Godliness</a></p>
       <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>1 Timothy 4:6-16</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/quintessential-wisdom-teacher">quintessential-wisdom-teacher</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Romans 9:1-8<span class="dot-sep">·</span><span class="series">Testify</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/renewing-worship">Renewing Worship</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Malachi 1:1-14<span class="dot-sep">·</span><span class="series">Malachi: Reformation and Renewal</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/romans-9-a-heart-for-the-lost">Romans 9: A Heart for the Lost</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Romans 9:1-8<span class="dot-sep">·</span><span class="series">Testify</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/some-will-depart">Some Will Depart</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>1 Timothy 4:1-4</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/successful-christian-parenting-part-1">Successful Christian Parenting, Part 1</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>2 Timothy 3:14-17<span class="dot-sep">·</span><span class="series">Successful Christian Parenting</span></p>
     </li>
   </ul>
   <nav class="pagination" aria-label="Sermon listing pagination">

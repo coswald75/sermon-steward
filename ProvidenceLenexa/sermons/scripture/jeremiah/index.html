@@ -123,6 +123,55 @@
   .book-grid a:hover .n { color: var(--accent); }
   .book-grid span.empty { color: var(--ink-faint); background: transparent; border-style: dashed; cursor: default; }
   .book-grid span.empty .n { font-weight: 400; }
+  .locus-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px; margin: 0;
+  }
+  .locus-card {
+    display: block; padding: 18px 20px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .locus-card:hover { border-color: var(--accent); }
+  .locus-card .head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 8px; margin-bottom: 8px;
+  }
+  .locus-card .name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+  .locus-card:hover .name { color: var(--accent); }
+  .locus-card .n {
+    color: var(--ink-faint); font-size: 13px; font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .locus-card .blurb {
+    font-size: 14px; line-height: 1.5; color: var(--ink-soft);
+    margin: 0;
+  }
+  .locus-blurb {
+    background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+    padding: 18px 22px; margin: 0 0 32px;
+    font-size: 16px; line-height: 1.6; color: var(--ink-soft);
+  }
+  .locus-blurb em { color: var(--ink); font-style: italic; }
+  .series-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px; margin: 0;
+  }
+  .series-card {
+    display: block; padding: 16px 18px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .series-card:hover { border-color: var(--accent); }
+  .series-card .name {
+    display: block; font-size: 17px; font-weight: 700;
+    letter-spacing: -0.01em; margin-bottom: 6px;
+  }
+  .series-card:hover .name { color: var(--accent); }
+  .series-card .meta {
+    font-size: 13px; color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
 </style>
 </head>
 <body>
@@ -134,7 +183,7 @@
 <main>
   <div class="breadcrumb"><a href="/">Sermon Steward</a> · <a href="/ProvidenceLenexa/">Providence Community Church</a> · <a href="/ProvidenceLenexa/sermons/">Sermons</a> · <a href="/ProvidenceLenexa/sermons/scripture/">Scripture</a> · Jeremiah</div>
   <h1>Jeremiah</h1>
-  <p class="location">30 sermons from Providence Community Church · page 1 of 2</p>
+  <p class="location">28 sermons from Providence Community Church · page 1 of 2</p>
   <h2>Sermons<span class="count">(primary-text sermons listed first)</span></h2>
   <ul class="sermons">
     <li>
@@ -170,20 +219,12 @@
       <p class="sermon-meta">Jul 22, 2024<span class="dot-sep">·</span><span class="series">Repentance in Exodus</span></p>
     </li>
     <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/mountains-of-assurance-for-molehills-of-doubts-2024-06-23">Mountains of Assurance for Molehills of Doubts</a></p>
-      <p class="sermon-meta">Jun 23, 2024</p>
-    </li>
-    <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/monotheism-made-our-world-2024-06-09">Monotheism Made Our World</a></p>
       <p class="sermon-meta">Jun 9, 2024</p>
     </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-status-of-the-jews-in-the-new-covenant-2024-04-27">The Status of the Jews in the New Covenant</a></p>
       <p class="sermon-meta">Apr 27, 2024</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/successful-christian-parenting-part-2-2024-03-24">Successful Christian Parenting, Part 2</a></p>
-      <p class="sermon-meta">Mar 24, 2024<span class="dot-sep">·</span><span class="series">Successful Christian Parenting</span></p>
     </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/how-jesus-is-establishing-his-kingdom-2023-12-24">How Jesus is Establishing His Kingdom</a></p>
@@ -236,6 +277,14 @@
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/successful-christian-parenting-part-2">Successful Christian Parenting, Part 2</a></p>
       <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>2 Timothy 3:14-15<span class="dot-sep">·</span><span class="series">Successful Christian Parenting</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/teach-us-to-pray-your-kingdom-come">Teach Us to Pray: Your Kingdom Come</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Luke 11:1-4<span class="dot-sep">·</span><span class="series">Teach Us to Pray</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/temple-of-god">Temple of God</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>2 Kings 25:8-17<span class="dot-sep">·</span><span class="series">Testify</span></p>
     </li>
   </ul>
   <nav class="pagination" aria-label="Sermon listing pagination">

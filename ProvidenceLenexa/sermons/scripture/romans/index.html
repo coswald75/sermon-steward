@@ -123,6 +123,55 @@
   .book-grid a:hover .n { color: var(--accent); }
   .book-grid span.empty { color: var(--ink-faint); background: transparent; border-style: dashed; cursor: default; }
   .book-grid span.empty .n { font-weight: 400; }
+  .locus-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px; margin: 0;
+  }
+  .locus-card {
+    display: block; padding: 18px 20px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .locus-card:hover { border-color: var(--accent); }
+  .locus-card .head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 8px; margin-bottom: 8px;
+  }
+  .locus-card .name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+  .locus-card:hover .name { color: var(--accent); }
+  .locus-card .n {
+    color: var(--ink-faint); font-size: 13px; font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .locus-card .blurb {
+    font-size: 14px; line-height: 1.5; color: var(--ink-soft);
+    margin: 0;
+  }
+  .locus-blurb {
+    background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+    padding: 18px 22px; margin: 0 0 32px;
+    font-size: 16px; line-height: 1.6; color: var(--ink-soft);
+  }
+  .locus-blurb em { color: var(--ink); font-style: italic; }
+  .series-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px; margin: 0;
+  }
+  .series-card {
+    display: block; padding: 16px 18px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .series-card:hover { border-color: var(--accent); }
+  .series-card .name {
+    display: block; font-size: 17px; font-weight: 700;
+    letter-spacing: -0.01em; margin-bottom: 6px;
+  }
+  .series-card:hover .name { color: var(--accent); }
+  .series-card .meta {
+    font-size: 13px; color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
 </style>
 </head>
 <body>
@@ -134,16 +183,12 @@
 <main>
   <div class="breadcrumb"><a href="/">Sermon Steward</a> · <a href="/ProvidenceLenexa/">Providence Community Church</a> · <a href="/ProvidenceLenexa/sermons/">Sermons</a> · <a href="/ProvidenceLenexa/sermons/scripture/">Scripture</a> · Romans</div>
   <h1>Romans</h1>
-  <p class="location">190 sermons from Providence Community Church · page 1 of 8</p>
+  <p class="location">180 sermons from Providence Community Church · page 1 of 8</p>
   <h2>Sermons<span class="count">(primary-text sermons listed first)</span></h2>
   <ul class="sermons">
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-final-adam-recapitulation-and-the-2025-12-07">The Final Adam: Recapitulation and the Restoration of Humanity</a></p>
       <p class="sermon-meta">Dec 7, 2025<span class="dot-sep">·</span>Romans 5:12-6:4<span class="dot-sep">·</span><span class="series">The Final Adam</span><span class="badge">primary text</span></p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/anger-and-the-body">Anger and the Body</a></p>
-      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Romans 8:12-13<span class="dot-sep">·</span><span class="series">Providence Podcast</span><span class="badge">primary text</span></p>
     </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/christian-principles-for-the-democratic-process">Christian Principles for the Democratic Process</a></p>
@@ -186,32 +231,16 @@
       <p class="sermon-meta">Dec 23, 2025<span class="dot-sep">·</span><span class="series">Outgrowing Anxiety</span></p>
     </li>
     <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/outgrowing-anxiety-part-4-2025-12-23">Outgrowing Anxiety, Part 4</a></p>
-      <p class="sermon-meta">Dec 23, 2025<span class="dot-sep">·</span><span class="series">Outgrowing Anxiety</span></p>
-    </li>
-    <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/romans-5-12-6-4-2025-12-07">Romans 5:12-6:4</a></p>
       <p class="sermon-meta">Dec 7, 2025</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/john-as-an-example-leader-2025-10-05">John as an Example Leader</a></p>
-      <p class="sermon-meta">Oct 5, 2025<span class="dot-sep">·</span>1 John 2:1-5<span class="dot-sep">·</span><span class="series">1 John</span></p>
     </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/psalm-147-inner-health-made-audible-2025-08-31">Psalm 147: Inner Health Made Audible</a></p>
       <p class="sermon-meta">Aug 31, 2025<span class="dot-sep">·</span>Psalm 147:1<span class="dot-sep">·</span><span class="series">Psalms</span></p>
     </li>
     <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/understanding-god-s-personality-2025-08-10">Understanding God&#x27;s Personality</a></p>
-      <p class="sermon-meta">Aug 10, 2025<span class="dot-sep">·</span>Psalm 103<span class="dot-sep">·</span><span class="series">Psalms</span></p>
-    </li>
-    <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/how-to-get-a-good-night-s-sleep-2025-08-03">How to Get a Good Night&#x27;s Sleep</a></p>
       <p class="sermon-meta">Aug 3, 2025</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/reverence-reward-2025-07-27">Reverence &amp; Reward</a></p>
-      <p class="sermon-meta">Jul 27, 2025<span class="dot-sep">·</span>Psalm 128:1-6<span class="dot-sep">·</span><span class="series">Psalms</span></p>
     </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/asaph-s-odyssey-2025-07-13">Asaph&#x27;s Odyssey</a></p>
@@ -234,8 +263,28 @@
       <p class="sermon-meta">Jun 1, 2025<span class="dot-sep">·</span>Psalm 1:1-6<span class="dot-sep">·</span><span class="series">Psalms</span></p>
     </li>
     <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/are-all-sins-equal-2025-05-23">Are All Sins Equal?</a></p>
-      <p class="sermon-meta">May 23, 2025</p>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/an-introduction-to-the-psalms-2025-05-18">An Introduction to the Psalms</a></p>
+      <p class="sermon-meta">May 18, 2025<span class="dot-sep">·</span>Psalms (entire book)<span class="dot-sep">·</span><span class="series">Psalms</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/exploring-providence-part-3-expectations-for-members-2025-05-04">Exploring Providence Part 3: Expectations for Members</a></p>
+      <p class="sermon-meta">May 4, 2025<span class="dot-sep">·</span><span class="series">Exploring Providence</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/resurrection-responsibilities-2025-05-04">Resurrection Responsibilities</a></p>
+      <p class="sermon-meta">May 4, 2025<span class="dot-sep">·</span>John 20:1-31<span class="dot-sep">·</span><span class="series">John</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-cross-of-christ-and-its-cosmic-consequences-2025-04-19">The Cross of Christ and its Cosmic Consequences</a></p>
+      <p class="sermon-meta">Apr 19, 2025</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/a-prayer-of-protection-2025-04-13">A Prayer of Protection</a></p>
+      <p class="sermon-meta">Apr 13, 2025<span class="dot-sep">·</span>John 16:31-17:25<span class="dot-sep">·</span><span class="series">John</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-holy-spirit-2025-04-06">The Holy Spirit</a></p>
+      <p class="sermon-meta">Apr 6, 2025<span class="dot-sep">·</span>John 16:1-11</p>
     </li>
   </ul>
   <nav class="pagination" aria-label="Sermon listing pagination">

@@ -124,6 +124,55 @@
   .book-grid a:hover .n { color: var(--accent); }
   .book-grid span.empty { color: var(--ink-faint); background: transparent; border-style: dashed; cursor: default; }
   .book-grid span.empty .n { font-weight: 400; }
+  .locus-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px; margin: 0;
+  }
+  .locus-card {
+    display: block; padding: 18px 20px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .locus-card:hover { border-color: var(--accent); }
+  .locus-card .head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 8px; margin-bottom: 8px;
+  }
+  .locus-card .name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+  .locus-card:hover .name { color: var(--accent); }
+  .locus-card .n {
+    color: var(--ink-faint); font-size: 13px; font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .locus-card .blurb {
+    font-size: 14px; line-height: 1.5; color: var(--ink-soft);
+    margin: 0;
+  }
+  .locus-blurb {
+    background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+    padding: 18px 22px; margin: 0 0 32px;
+    font-size: 16px; line-height: 1.6; color: var(--ink-soft);
+  }
+  .locus-blurb em { color: var(--ink); font-style: italic; }
+  .series-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px; margin: 0;
+  }
+  .series-card {
+    display: block; padding: 16px 18px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .series-card:hover { border-color: var(--accent); }
+  .series-card .name {
+    display: block; font-size: 17px; font-weight: 700;
+    letter-spacing: -0.01em; margin-bottom: 6px;
+  }
+  .series-card:hover .name { color: var(--accent); }
+  .series-card .meta {
+    font-size: 13px; color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
 </style>
 </head>
 <body>
@@ -135,49 +184,9 @@
 <main>
   <div class="breadcrumb"><a href="/">Sermon Steward</a> · <a href="/ProvidenceLenexa/">Providence Community Church</a> · <a href="/ProvidenceLenexa/sermons/">Sermons</a> · <a href="/ProvidenceLenexa/sermons/scripture/">Scripture</a> · Romans</div>
   <h1>Romans</h1>
-  <p class="location">190 sermons from Providence Community Church · page 6 of 8</p>
+  <p class="location">180 sermons from Providence Community Church · page 6 of 8</p>
   <h2>Sermons<span class="count">(primary-text sermons listed first)</span></h2>
   <ul class="sermons">
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/do-not-covet">Do Not Covet</a></p>
-      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Exodus 20:17</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/faith-in-gear">Faith in Gear</a></p>
-      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>James 2:14-26<span class="dot-sep">·</span><span class="series">James: Faith in Gear</span></p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/fellowship-sharing-a-common-life">Fellowship: Sharing a Common Life</a></p>
-      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Acts 2:42-47<span class="dot-sep">·</span><span class="series">Kingdom Come</span></p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/free-to-love">Free to Love</a></p>
-      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Galatians 5:13-15</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/from-slavery-to-sonship">From Slavery to Sonship</a></p>
-      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Galatians 4:1-7<span class="dot-sep">·</span><span class="series">Galatians</span></p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/god-s-self-substitution">God&#x27;s Self-Substitution</a></p>
-      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Galatians 3:10-14</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/gospel-desertion-is-a-fatal-decision">Gospel Desertion Is a Fatal Decision</a></p>
-      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Galatians 1:6-10<span class="dot-sep">·</span><span class="series">Galatians</span></p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/grace-and-peace">Grace and Peace</a></p>
-      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Colossians 1:1-2</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/gyroscopic-hearts">Gyroscopic Hearts</a></p>
-      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>John 14:1-31</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/hope-as-help">Hope as Help</a></p>
-      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Genesis 3:6</p>
-    </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/how-saints-grow-in-holiness">How Saints Grow in Holiness</a></p>
       <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Galatians 5:16-25<span class="dot-sep">·</span><span class="series">Galatians</span></p>
@@ -237,6 +246,46 @@
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/nothing-is-impossible-with-god">Nothing Is Impossible with God</a></p>
       <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Luke 1:26-38<span class="dot-sep">·</span><span class="series">Kingdom Come</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/nov-19">nov-19</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Acts 2:42-47</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/overview-israel-in-the-exodus">Overview: Israel in the Exodus</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Exodus 1:1<span class="dot-sep">·</span><span class="series">Exodus</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/paleo-evangelism">Paleo-Evangelism</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Exodus 3:10-4:17</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/parables-of-wedding-feasts-and-banquets">Parables of Wedding Feasts and Banquets</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Luke 14:7-24<span class="dot-sep">·</span><span class="series">Kingdom Come</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/paul-s-love-for-the-thessalonians">Paul&#x27;s Love for the Thessalonians</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>1 Thessalonians 2:17-3:13</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/praying-for-treasure">Praying for Treasure</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Colossians 2:1-5<span class="dot-sep">·</span><span class="series">Christ in Us, the Hope of Glory</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/pursue-godliness">Pursue Godliness</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>1 Timothy 4:6-16</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/put-off">Put Off</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Colossians 3:5-11<span class="dot-sep">·</span><span class="series">Colossians, the Hope of Glory</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/put-on">Put On</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Colossians 3:12-17<span class="dot-sep">·</span><span class="series">Colossians</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/rebellion-to-tyrants-is-obedience-to-god">Rebellion to Tyrants is Obedience To God</a></p>
+      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Exodus 6:6-8<span class="dot-sep">·</span><span class="series">Exodus</span></p>
     </li>
   </ul>
   <nav class="pagination" aria-label="Sermon listing pagination">

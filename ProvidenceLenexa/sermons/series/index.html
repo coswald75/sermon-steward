@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Browse by Series — Providence Community Church · Sermon Steward</title>
+<meta name="description" content="Sermons from Providence Community Church in Lenexa, KS grouped by preaching series.">
+<link rel="canonical" href="https://sermonsteward.com/ProvidenceLenexa/sermons/series">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Browse by Series — Providence Community Church">
+<meta property="og:url" content="https://sermonsteward.com/ProvidenceLenexa/sermons/series">
+<meta property="og:site_name" content="Sermon Steward">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbf8f1;
+    --bg-card: #ffffff;
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --ink-faint: #828282;
+    --rule: #e6e1d3;
+    --accent: #c4452f;
+    --accent-deep: #9a3624;
+    --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); font-size: 17px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-deep); }
+  .site-header { padding: 24px 32px; border-bottom: 1px solid var(--rule); }
+  .wordmark { font-weight: 800; font-size: 22px; letter-spacing: -0.02em; color: var(--ink); }
+  .wordmark .dot { color: var(--accent); }
+  main { max-width: 860px; margin: 0 auto; padding: 56px 32px 96px; }
+  .breadcrumb { font-size: 13px; color: var(--ink-faint); margin-bottom: 16px; }
+  .breadcrumb a { color: var(--ink-soft); text-decoration: underline; text-underline-offset: 3px; }
+  h1 {
+    font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800;
+    letter-spacing: -0.03em; line-height: 1.05;
+    margin: 0 0 8px;
+  }
+  .location { color: var(--ink-soft); font-size: 16px; margin: 0 0 40px; }
+  h2 {
+    font-size: 13px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--accent);
+    margin: 32px 0 16px; padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+  h2:first-of-type { margin-top: 0; }
+  .count { color: var(--ink-faint); font-weight: 400; letter-spacing: 0; text-transform: none; font-size: 13px; margin-left: 8px; }
+  ul.sermons { list-style: none; margin: 0; padding: 0; }
+  ul.sermons li {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  ul.sermons li:last-child { border-bottom: 0; }
+  .sermon-title { font-size: 19px; font-weight: 600; margin: 0 0 4px; }
+  .sermon-title a { color: var(--ink); }
+  .sermon-title a:hover { color: var(--accent); }
+  .sermon-meta { font-size: 14px; color: var(--ink-soft); }
+  .sermon-meta .dot-sep { margin: 0 8px; color: var(--ink-faint); }
+  .sermon-meta .series { color: var(--accent-deep); font-weight: 500; }
+  .sermon-meta .badge {
+    display: inline-block; padding: 1px 7px; margin-left: 8px;
+    border-radius: 10px; background: rgba(196, 69, 47, 0.08);
+    color: var(--accent-deep); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.02em; text-transform: uppercase;
+  }
+  footer {
+    padding: 24px 32px; font-size: 13px; color: var(--ink-faint);
+    text-align: center; border-top: 1px solid var(--rule);
+  }
+  footer a { color: var(--ink-soft); }
+  .note {
+    background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+    padding: 14px 18px; margin: 0 0 32px; font-size: 14px; color: var(--ink-soft);
+  }
+  .browse-by {
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    margin: 0 0 32px; font-size: 13px; color: var(--ink-faint);
+  }
+  .browse-by .label { letter-spacing: 0.06em; text-transform: uppercase; }
+  .browse-by a {
+    padding: 6px 12px; border: 1px solid var(--rule); border-radius: 16px;
+    color: var(--ink-soft); background: var(--bg-card);
+  }
+  .browse-by a:hover { border-color: var(--accent); color: var(--accent); }
+  .browse-by a[aria-current="page"] {
+    border-color: var(--accent); color: var(--accent); font-weight: 600;
+  }
+  nav.pagination {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; margin-top: 40px; padding-top: 24px;
+    border-top: 1px solid var(--rule); font-size: 14px;
+  }
+  nav.pagination a, nav.pagination span.disabled {
+    padding: 8px 14px; border: 1px solid var(--rule); border-radius: 6px;
+    background: var(--bg-card);
+  }
+  nav.pagination a { color: var(--ink); }
+  nav.pagination a:hover { border-color: var(--accent); color: var(--accent); }
+  nav.pagination span.disabled { color: var(--ink-faint); background: transparent; border-style: dashed; }
+  nav.pagination .page-indicator { color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+  .book-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 10px; margin: 0 0 8px;
+  }
+  .book-grid a, .book-grid span.empty {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 8px; padding: 12px 14px;
+    border: 1px solid var(--rule); border-radius: 8px;
+    background: var(--bg-card); color: var(--ink);
+    font-size: 14px; font-weight: 500;
+  }
+  .book-grid a:hover { border-color: var(--accent); color: var(--accent); }
+  .book-grid a .n { color: var(--ink-faint); font-weight: 400; font-variant-numeric: tabular-nums; }
+  .book-grid a:hover .n { color: var(--accent); }
+  .book-grid span.empty { color: var(--ink-faint); background: transparent; border-style: dashed; cursor: default; }
+  .book-grid span.empty .n { font-weight: 400; }
+  .locus-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px; margin: 0;
+  }
+  .locus-card {
+    display: block; padding: 18px 20px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .locus-card:hover { border-color: var(--accent); }
+  .locus-card .head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 8px; margin-bottom: 8px;
+  }
+  .locus-card .name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+  .locus-card:hover .name { color: var(--accent); }
+  .locus-card .n {
+    color: var(--ink-faint); font-size: 13px; font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .locus-card .blurb {
+    font-size: 14px; line-height: 1.5; color: var(--ink-soft);
+    margin: 0;
+  }
+  .locus-blurb {
+    background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+    padding: 18px 22px; margin: 0 0 32px;
+    font-size: 16px; line-height: 1.6; color: var(--ink-soft);
+  }
+  .locus-blurb em { color: var(--ink); font-style: italic; }
+  .series-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px; margin: 0;
+  }
+  .series-card {
+    display: block; padding: 16px 18px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .series-card:hover { border-color: var(--accent); }
+  .series-card .name {
+    display: block; font-size: 17px; font-weight: 700;
+    letter-spacing: -0.01em; margin-bottom: 6px;
+  }
+  .series-card:hover .name { color: var(--accent); }
+  .series-card .meta {
+    font-size: 13px; color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="wordmark" href="/">Sermon Steward<span class="dot">.</span></a>
+</header>
+
+<main>
+  <div class="breadcrumb"><a href="/">Sermon Steward</a> · <a href="/ProvidenceLenexa/">Providence Community Church</a> · <a href="/ProvidenceLenexa/sermons/">Sermons</a> · Series</div>
+  <h1>Browse by Series</h1>
+  <p class="location">214 sermons across 82 preaching series</p>
+  <div class="browse-by"><span class="label">Browse:</span><a href="/ProvidenceLenexa/sermons/">All sermons</a><a href="/ProvidenceLenexa/sermons/scripture/">Scripture</a><a href="/ProvidenceLenexa/sermons/doctrine/">Doctrine</a><a href="/ProvidenceLenexa/sermons/series/" aria-current="page">Series</a></div>
+  <div class="series-grid">
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/1-peter/">
+      <span class="name">1 Peter</span>
+      <span class="meta">3 sermons · Apr 2026 – Apr 2026</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/ephesians/">
+      <span class="name">Ephesians</span>
+      <span class="meta">8 sermons · Dec 2025 – Mar 2026</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/tools-for-transformation/">
+      <span class="name">Tools for Transformation</span>
+      <span class="meta">1 sermon · Mar 2026</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/preaching-that-pleases-god/">
+      <span class="name">Preaching That Pleases God</span>
+      <span class="meta">1 sermon · Jan 2026</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/outgrowing-anxiety/">
+      <span class="name">Outgrowing Anxiety</span>
+      <span class="meta">3 sermons · Oct 2025 – Dec 2025</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/what-kind-of-preaching-pleases-god/">
+      <span class="name">What Kind of Preaching Pleases God?</span>
+      <span class="meta">1 sermon · Dec 2025</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/the-final-adam/">
+      <span class="name">The Final Adam</span>
+      <span class="meta">2 sermons · Dec 2025 – Dec 2025</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/1-john/">
+      <span class="name">1 John</span>
+      <span class="meta">10 sermons · Sep 2025 – Nov 2025</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/psalms/">
+      <span class="name">Psalms</span>
+      <span class="meta">13 sermons · May 2025 – Aug 2025</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/dominion-inside-and-out/">
+      <span class="name">Dominion Inside and Out</span>
+      <span class="meta">1 sermon · May 2025</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/john/">
+      <span class="name">John</span>
+      <span class="meta">5 sermons · Apr 2025 – May 2025</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/exploring-providence/">
+      <span class="name">Exploring Providence</span>
+      <span class="meta">4 sermons · May 2025 – May 2025</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/ihop-a-postmortem/">
+      <span class="name">IHOP: A Postmortem</span>
+      <span class="meta">1 sermon · Apr 2025</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/the-conscience-coach/">
+      <span class="name">The Conscience Coach</span>
+      <span class="meta">1 sermon · Apr 2025</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/ihop-postmortem/">
+      <span class="name">IHOP Postmortem</span>
+      <span class="meta">1 sermon · Apr 2025</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/gospel-of-john/">
+      <span class="name">Gospel of John</span>
+      <span class="meta">1 sermon · Apr 2025</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/the-gospel-of-john/">
+      <span class="name">The Gospel of John</span>
+      <span class="meta">2 sermons · Dec 2024</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/mission-discipleship/">
+      <span class="name">Mission Discipleship</span>
+      <span class="meta">2 sermons · Oct 2024</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/ten-commandments/">
+      <span class="name">Ten Commandments</span>
+      <span class="meta">1 sermon · Oct 2024</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/the-ten-commandments/">
+      <span class="name">The Ten Commandments</span>
+      <span class="meta">3 sermons · Aug 2024</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/the-lord-is-a-man-of-war/">
+      <span class="name">The Lord is a Man of War</span>
+      <span class="meta">2 sermons · Aug 2024</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/providence-podcast/">
+      <span class="name">Providence Podcast</span>
+      <span class="meta">2 sermons · Aug 2024</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/repentance-in-exodus/">
+      <span class="name">Repentance in Exodus</span>
+      <span class="meta">1 sermon · Jul 2024</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/exodus/">
+      <span class="name">Exodus</span>
+      <span class="meta">6 sermons · Apr 2024 – Jun 2024</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/covenant-theology/">
+      <span class="name">Covenant Theology</span>
+      <span class="meta">1 sermon · May 2024</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/luke/">
+      <span class="name">Luke</span>
+      <span class="meta">5 sermons · Aug 2016 – Apr 2024</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/the-joseph-series/">
+      <span class="name">The Joseph Series</span>
+      <span class="meta">1 sermon · Apr 2024</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/1-and-2-timothy/">
+      <span class="name">1 and 2 Timothy</span>
+      <span class="meta">1 sermon · Mar 2024</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/lukes-gospel/">
+      <span class="name">Luke&#x27;s Gospel</span>
+      <span class="meta">3 sermons · Mar 2024</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/successful-christian-parenting/">
+      <span class="name">Successful Christian Parenting</span>
+      <span class="meta">4 sermons · Mar 2024 – Mar 2024</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/friendship-week/">
+      <span class="name">Friendship Week</span>
+      <span class="meta">1 sermon · Feb 2024</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/friendship-series/">
+      <span class="name">Friendship Series</span>
+      <span class="meta">1 sermon · Feb 2024</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/true-north/">
+      <span class="name">True North</span>
+      <span class="meta">1 sermon · Jan 2024</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/let-earth-receive-her-king/">
+      <span class="name">Let Earth Receive Her King</span>
+      <span class="meta">2 sermons · Dec 2023</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/1-timothy/">
+      <span class="name">1 Timothy</span>
+      <span class="meta">5 sermons · Sep 2023 – Nov 2023</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/1-corinthians-13/">
+      <span class="name">1 Corinthians 13</span>
+      <span class="meta">1 sermon · Aug 2022</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/acts/">
+      <span class="name">Acts</span>
+      <span class="meta">2 sermons · Jan 2019 – Jan 2021</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/corporate-prayer/">
+      <span class="name">Corporate Prayer</span>
+      <span class="meta">1 sermon · Jul 2019</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/acts-242-series/">
+      <span class="name">Acts 2:42 Series</span>
+      <span class="meta">1 sermon · Mar 2019</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/3-habits-for-2019/">
+      <span class="name">3 Habits for 2019</span>
+      <span class="meta">1 sermon · Jan 2019</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/joseph/">
+      <span class="name">Joseph</span>
+      <span class="meta">1 sermon · Dec 2018</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/resurrected-reading/">
+      <span class="name">Resurrected Reading</span>
+      <span class="meta">1 sermon · Apr 2018</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/the-cross-centered-marriage/">
+      <span class="name">The Cross-Centered Marriage</span>
+      <span class="meta">4 sermons · Nov 2017 – Nov 2017</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/fear-of-man/">
+      <span class="name">Fear of Man</span>
+      <span class="meta">1 sermon · Oct 2017</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/the-presence-of-god/">
+      <span class="name">The Presence of God</span>
+      <span class="meta">1 sermon · Jul 2017</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/seeking-gods-presence/">
+      <span class="name">Seeking God&#x27;s Presence</span>
+      <span class="meta">1 sermon · Jun 2017</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/galatians/">
+      <span class="name">Galatians</span>
+      <span class="meta">10 sermons</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/the-hope-of-glory/">
+      <span class="name">The Hope of Glory</span>
+      <span class="meta">7 sermons</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/kingdom-come/">
+      <span class="name">Kingdom Come</span>
+      <span class="meta">29 sermons</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/in-his-presence/">
+      <span class="name">In His Presence</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/reformation-and-renewal/">
+      <span class="name">Reformation and Renewal</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/the-sacraments/">
+      <span class="name">The Sacraments</span>
+      <span class="meta">2 sermons</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/colossians-the-hope-of-glory/">
+      <span class="name">Colossians: The Hope of Glory</span>
+      <span class="meta">2 sermons</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/the-foundations-for-our-life-together/">
+      <span class="name">The Foundations for Our Life Together</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/summer-psalm-series/">
+      <span class="name">Summer Psalm Series</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/summer-psalms/">
+      <span class="name">Summer Psalms</span>
+      <span class="meta">7 sermons</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/considering-membership-at-providence-community-church/">
+      <span class="name">Considering Membership at Providence Community Church</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/faith-in-gear/">
+      <span class="name">Faith in Gear</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/what-is-our-mission-at-providence/">
+      <span class="name">What is Our Mission at Providence?</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/making-disciples/">
+      <span class="name">Making Disciples</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/acts-of-the-apostles/">
+      <span class="name">Acts of the Apostles</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/a-call-to-pray/">
+      <span class="name">A Call to Pray</span>
+      <span class="meta">2 sermons</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/christ-in-us-the-hope-of-glory/">
+      <span class="name">Christ in Us, the Hope of Glory</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/colossians-the-hope-of-glory/">
+      <span class="name">Colossians, the Hope of Glory</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/colossians/">
+      <span class="name">Colossians</span>
+      <span class="meta">3 sermons</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/advent/">
+      <span class="name">Advent</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/anticipate-his-arrival/">
+      <span class="name">Anticipate His Arrival</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/testify-tracing-christ-through-the-old-testament/">
+      <span class="name">Testify: Tracing Christ Through the Old Testament</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/make-disciples/">
+      <span class="name">Make Disciples</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/devoted/">
+      <span class="name">Devoted</span>
+      <span class="meta">2 sermons</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/devoted-discipleship/">
+      <span class="name">Devoted Discipleship</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/testify/">
+      <span class="name">Testify</span>
+      <span class="meta">4 sermons</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/james-faith-in-gear/">
+      <span class="name">James: Faith in Gear</span>
+      <span class="meta">3 sermons</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/kingdom-sexuality/">
+      <span class="name">Kingdom Sexuality</span>
+      <span class="meta">2 sermons</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/the-kings-command/">
+      <span class="name">The King&#x27;s Command</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/gospel-of-luke/">
+      <span class="name">Gospel of Luke</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/church-polity-miniseries/">
+      <span class="name">Church Polity Miniseries</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/mission-series/">
+      <span class="name">Mission Series</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/mighty-mercy/">
+      <span class="name">Mighty Mercy</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/malachi-reformation-and-renewal/">
+      <span class="name">Malachi: Reformation and Renewal</span>
+      <span class="meta">3 sermons</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/teach-us-to-pray/">
+      <span class="name">Teach Us to Pray</span>
+      <span class="meta">1 sermon</span>
+    </a>
+    <a class="series-card" href="/ProvidenceLenexa/sermons/series/james/">
+      <span class="name">James</span>
+      <span class="meta">1 sermon</span>
+    </a>
+  </div>
+</main>
+
+<footer>
+  Built by pastors, for pastors. · <a href="/">Sermon Steward</a>
+</footer>
+
+</body>
+</html>

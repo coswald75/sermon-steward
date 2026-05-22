@@ -123,6 +123,55 @@
   .book-grid a:hover .n { color: var(--accent); }
   .book-grid span.empty { color: var(--ink-faint); background: transparent; border-style: dashed; cursor: default; }
   .book-grid span.empty .n { font-weight: 400; }
+  .locus-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px; margin: 0;
+  }
+  .locus-card {
+    display: block; padding: 18px 20px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .locus-card:hover { border-color: var(--accent); }
+  .locus-card .head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 8px; margin-bottom: 8px;
+  }
+  .locus-card .name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+  .locus-card:hover .name { color: var(--accent); }
+  .locus-card .n {
+    color: var(--ink-faint); font-size: 13px; font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .locus-card .blurb {
+    font-size: 14px; line-height: 1.5; color: var(--ink-soft);
+    margin: 0;
+  }
+  .locus-blurb {
+    background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+    padding: 18px 22px; margin: 0 0 32px;
+    font-size: 16px; line-height: 1.6; color: var(--ink-soft);
+  }
+  .locus-blurb em { color: var(--ink); font-style: italic; }
+  .series-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px; margin: 0;
+  }
+  .series-card {
+    display: block; padding: 16px 18px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .series-card:hover { border-color: var(--accent); }
+  .series-card .name {
+    display: block; font-size: 17px; font-weight: 700;
+    letter-spacing: -0.01em; margin-bottom: 6px;
+  }
+  .series-card:hover .name { color: var(--accent); }
+  .series-card .meta {
+    font-size: 13px; color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
 </style>
 </head>
 <body>
@@ -134,41 +183,9 @@
 <main>
   <div class="breadcrumb"><a href="/">Sermon Steward</a> · <a href="/ProvidenceLenexa/">Providence Community Church</a> · <a href="/ProvidenceLenexa/sermons/">Sermons</a> · <a href="/ProvidenceLenexa/sermons/scripture/">Scripture</a> · John</div>
   <h1>John</h1>
-  <p class="location">165 sermons from Providence Community Church · page 7 of 7</p>
+  <p class="location">157 sermons from Providence Community Church · page 7 of 7</p>
   <h2>Sermons<span class="count">(primary-text sermons listed first)</span></h2>
   <ul class="sermons">
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/stand-in-awe">Stand in Awe</a></p>
-      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Luke 12:1-12<span class="dot-sep">·</span><span class="series">Kingdom Come</span></p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/temple-of-god">Temple of God</a></p>
-      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>2 Kings 25:8-17<span class="dot-sep">·</span><span class="series">Testify</span></p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-blessing-and-the-curse">The Blessing and the Curse</a></p>
-      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Galatians 3:6-9<span class="dot-sep">·</span><span class="series">Galatians</span></p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-covenant-lord">The Covenant Lord</a></p>
-      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Exodus 3:13-15<span class="dot-sep">·</span><span class="series">Testify</span></p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-gospel-and-the-christian-soul">The Gospel and the Christian Soul</a></p>
-      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Philippians 4:4-7</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-kingdom-of-his-son">The Kingdom of His Son</a></p>
-      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Colossians 1:9-14<span class="dot-sep">·</span><span class="series">Colossians: The Hope of Glory</span></p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-local-church">The Local Church</a></p>
-      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span><span class="series">Church Polity Miniseries</span></p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-messiah-s-gift">The Messiah&#x27;s Gift</a></p>
-      <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>Ephesians 2:17-22</p>
-    </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-mystery-of-godliness">The Mystery of Godliness</a></p>
       <p class="sermon-meta">Date unknown<span class="dot-sep">·</span>1 Timothy 3:14-16</p>

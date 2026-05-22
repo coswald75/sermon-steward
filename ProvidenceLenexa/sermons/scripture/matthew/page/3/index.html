@@ -124,6 +124,55 @@
   .book-grid a:hover .n { color: var(--accent); }
   .book-grid span.empty { color: var(--ink-faint); background: transparent; border-style: dashed; cursor: default; }
   .book-grid span.empty .n { font-weight: 400; }
+  .locus-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px; margin: 0;
+  }
+  .locus-card {
+    display: block; padding: 18px 20px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .locus-card:hover { border-color: var(--accent); }
+  .locus-card .head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 8px; margin-bottom: 8px;
+  }
+  .locus-card .name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+  .locus-card:hover .name { color: var(--accent); }
+  .locus-card .n {
+    color: var(--ink-faint); font-size: 13px; font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .locus-card .blurb {
+    font-size: 14px; line-height: 1.5; color: var(--ink-soft);
+    margin: 0;
+  }
+  .locus-blurb {
+    background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+    padding: 18px 22px; margin: 0 0 32px;
+    font-size: 16px; line-height: 1.6; color: var(--ink-soft);
+  }
+  .locus-blurb em { color: var(--ink); font-style: italic; }
+  .series-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px; margin: 0;
+  }
+  .series-card {
+    display: block; padding: 16px 18px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .series-card:hover { border-color: var(--accent); }
+  .series-card .name {
+    display: block; font-size: 17px; font-weight: 700;
+    letter-spacing: -0.01em; margin-bottom: 6px;
+  }
+  .series-card:hover .name { color: var(--accent); }
+  .series-card .meta {
+    font-size: 13px; color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
 </style>
 </head>
 <body>
@@ -135,41 +184,9 @@
 <main>
   <div class="breadcrumb"><a href="/">Sermon Steward</a> · <a href="/ProvidenceLenexa/">Providence Community Church</a> · <a href="/ProvidenceLenexa/sermons/">Sermons</a> · <a href="/ProvidenceLenexa/sermons/scripture/">Scripture</a> · Matthew</div>
   <h1>Matthew</h1>
-  <p class="location">164 sermons from Providence Community Church · page 3 of 7</p>
+  <p class="location">154 sermons from Providence Community Church · page 3 of 7</p>
   <h2>Sermons<span class="count">(primary-text sermons listed first)</span></h2>
   <ul class="sermons">
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/infertility-and-the-glory-of-god-2024-07-09">Infertility and the Glory of God</a></p>
-      <p class="sermon-meta">Jul 9, 2024</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/patriarchs-in-paradise-2024-06-26">Patriarchs in Paradise</a></p>
-      <p class="sermon-meta">Jun 26, 2024</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/how-does-god-view-political-entities-2024-06-12">How Does God View Political Entities?</a></p>
-      <p class="sermon-meta">Jun 12, 2024</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/did-jesus-condemn-homosexuality-2024-06-05">Did Jesus Condemn Homosexuality?</a></p>
-      <p class="sermon-meta">Jun 5, 2024</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/paleo-evangelism-2024-06-02">Paleo-Evangelism</a></p>
-      <p class="sermon-meta">Jun 2, 2024</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-great-i-am-2024-05-26">The Great I Am</a></p>
-      <p class="sermon-meta">May 26, 2024</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/exodus-the-serpent-the-seed-2024-05-05">Exodus: The Serpent &amp; The Seed</a></p>
-      <p class="sermon-meta">May 5, 2024<span class="dot-sep">·</span><span class="series">Exodus</span></p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/overview-israel-in-the-exodus-2024-04-28">Overview: Israel in the Exodus</a></p>
-      <p class="sermon-meta">Apr 28, 2024<span class="dot-sep">·</span><span class="series">Exodus</span></p>
-    </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-sadducees-and-the-resurrection-2024-04-28">The Sadducees and the Resurrection</a></p>
       <p class="sermon-meta">Apr 28, 2024<span class="dot-sep">·</span>Luke 20:27-40<span class="dot-sep">·</span><span class="series">Luke</span></p>
@@ -197,10 +214,6 @@
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/how-to-make-friends-2024-02-06">How to Make Friends</a></p>
       <p class="sermon-meta">Feb 6, 2024</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/christian-friendship-2024-02-04">Christian Friendship</a></p>
-      <p class="sermon-meta">Feb 4, 2024</p>
     </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/fan-it-into-flame-2024-01-16">Fan It Into Flame</a></p>
@@ -237,6 +250,42 @@
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/podcast-eschatology-without-prophecy-2023-10-26">Podcast: Eschatology without Prophecy</a></p>
       <p class="sermon-meta">Oct 26, 2023</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/some-will-depart-2023-10-22">Some Will Depart</a></p>
+      <p class="sermon-meta">Oct 22, 2023</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/podcast-the-epicenter-of-godly-ambition-2023-10-03">Podcast: The Epicenter of Godly Ambition</a></p>
+      <p class="sermon-meta">Oct 3, 2023</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/elders-burly-church-fathers-2023-10-01">Elders: Burly Church Fathers</a></p>
+      <p class="sermon-meta">Oct 1, 2023</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-power-of-undistracted-devotion-2023-09-17">The Power of Undistracted Devotion</a></p>
+      <p class="sermon-meta">Sep 17, 2023<span class="dot-sep">·</span>1 Timothy 2:8-10<span class="dot-sep">·</span><span class="series">1 Timothy</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/8222022-2022-08-22">Patient Kindness</a></p>
+      <p class="sermon-meta">Aug 22, 2022<span class="dot-sep">·</span>1 Corinthians 13:4<span class="dot-sep">·</span><span class="series">1 Corinthians 13</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/july52020sermon-7-5-20-6-30-pm-2020-07-05">Love God Alone, Love Neighbor Rightly</a></p>
+      <p class="sermon-meta">Jul 5, 2020<span class="dot-sep">·</span>Mark 12:31</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/9-22-19-2019-09-22">Open Homes, Open Gospel</a></p>
+      <p class="sermon-meta">Sep 22, 2019<span class="dot-sep">·</span>Acts 2:46-47</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/8-25-19-2019-08-25">Greatness Through Sacrifice</a></p>
+      <p class="sermon-meta">Aug 25, 2019<span class="dot-sep">·</span>Acts 2:46-47</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/prayer-for-god-2019-08-19">Prayer for God</a></p>
+      <p class="sermon-meta">Aug 19, 2019<span class="dot-sep">·</span>Acts 1:14</p>
     </li>
   </ul>
   <nav class="pagination" aria-label="Sermon listing pagination">

@@ -123,6 +123,55 @@
   .book-grid a:hover .n { color: var(--accent); }
   .book-grid span.empty { color: var(--ink-faint); background: transparent; border-style: dashed; cursor: default; }
   .book-grid span.empty .n { font-weight: 400; }
+  .locus-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px; margin: 0;
+  }
+  .locus-card {
+    display: block; padding: 18px 20px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .locus-card:hover { border-color: var(--accent); }
+  .locus-card .head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 8px; margin-bottom: 8px;
+  }
+  .locus-card .name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+  .locus-card:hover .name { color: var(--accent); }
+  .locus-card .n {
+    color: var(--ink-faint); font-size: 13px; font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .locus-card .blurb {
+    font-size: 14px; line-height: 1.5; color: var(--ink-soft);
+    margin: 0;
+  }
+  .locus-blurb {
+    background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+    padding: 18px 22px; margin: 0 0 32px;
+    font-size: 16px; line-height: 1.6; color: var(--ink-soft);
+  }
+  .locus-blurb em { color: var(--ink); font-style: italic; }
+  .series-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px; margin: 0;
+  }
+  .series-card {
+    display: block; padding: 16px 18px;
+    border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg-card); color: var(--ink);
+  }
+  .series-card:hover { border-color: var(--accent); }
+  .series-card .name {
+    display: block; font-size: 17px; font-weight: 700;
+    letter-spacing: -0.01em; margin-bottom: 6px;
+  }
+  .series-card:hover .name { color: var(--accent); }
+  .series-card .meta {
+    font-size: 13px; color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
 </style>
 </head>
 <body>
@@ -134,7 +183,7 @@
 <main>
   <div class="breadcrumb"><a href="/">Sermon Steward</a> · <a href="/ProvidenceLenexa/">Providence Community Church</a> · <a href="/ProvidenceLenexa/sermons/">Sermons</a> · <a href="/ProvidenceLenexa/sermons/scripture/">Scripture</a> · Hebrews</div>
   <h1>Hebrews</h1>
-  <p class="location">139 sermons from Providence Community Church · page 1 of 6</p>
+  <p class="location">130 sermons from Providence Community Church · page 1 of 6</p>
   <h2>Sermons<span class="count">(primary-text sermons listed first)</span></h2>
   <ul class="sermons">
     <li>
@@ -170,10 +219,6 @@
       <p class="sermon-meta">Nov 30, 2025<span class="dot-sep">·</span><span class="series">1 John</span></p>
     </li>
     <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/faith-as-victory-overcoming-the-world-in-1-john-5-2025-11-30">Faith as Victory: Overcoming the World in 1 John 5</a></p>
-      <p class="sermon-meta">Nov 30, 2025<span class="dot-sep">·</span>1 John 5:1-21<span class="dot-sep">·</span><span class="series">1 John</span></p>
-    </li>
-    <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/1-john-3-11-2025-11-16">1 John 3:11</a></p>
       <p class="sermon-meta">Nov 16, 2025<span class="dot-sep">·</span><span class="series">1 John</span></p>
     </li>
@@ -184,10 +229,6 @@
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/1-john-3-1-2025-11-03">1 John 3:1</a></p>
       <p class="sermon-meta">Nov 3, 2025</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/see-what-kind-of-love-2025-11-03">See What Kind of Love</a></p>
-      <p class="sermon-meta">Nov 3, 2025<span class="dot-sep">·</span>1 John 3:1<span class="dot-sep">·</span><span class="series">1 John</span></p>
     </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/1-john-2-love-of-this-world-2025-10-19">1 John 2 - Love of This World</a></p>
@@ -202,16 +243,8 @@
       <p class="sermon-meta">Aug 24, 2025<span class="dot-sep">·</span>Psalm 141:1-10<span class="dot-sep">·</span><span class="series">Psalms</span></p>
     </li>
     <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/understanding-god-s-personality-2025-08-10">Understanding God&#x27;s Personality</a></p>
-      <p class="sermon-meta">Aug 10, 2025<span class="dot-sep">·</span>Psalm 103<span class="dot-sep">·</span><span class="series">Psalms</span></p>
-    </li>
-    <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/how-to-get-a-good-night-s-sleep-2025-08-03">How to Get a Good Night&#x27;s Sleep</a></p>
       <p class="sermon-meta">Aug 3, 2025</p>
-    </li>
-    <li>
-      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/reverence-reward-2025-07-27">Reverence &amp; Reward</a></p>
-      <p class="sermon-meta">Jul 27, 2025<span class="dot-sep">·</span>Psalm 128:1-6<span class="dot-sep">·</span><span class="series">Psalms</span></p>
     </li>
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/asaph-s-odyssey-2025-07-13">Asaph&#x27;s Odyssey</a></p>
@@ -236,6 +269,22 @@
     <li>
       <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-wisdom-of-god-in-the-cross-2025-04-27">The Wisdom of God in the Cross</a></p>
       <p class="sermon-meta">Apr 27, 2025<span class="dot-sep">·</span>John 19:1-42<span class="dot-sep">·</span><span class="series">John</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-cross-of-christ-and-its-cosmic-consequences-2025-04-19">The Cross of Christ and its Cosmic Consequences</a></p>
+      <p class="sermon-meta">Apr 19, 2025</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/good-friday-preview-the-atonement-is-bigger-than-you-know-2025-04-14">Good Friday Preview: The Atonement is Bigger Than You Know</a></p>
+      <p class="sermon-meta">Apr 14, 2025</p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-conscience-coach-an-introduction-2025-04-11">The Conscience Coach, An Introduction</a></p>
+      <p class="sermon-meta">Apr 11, 2025<span class="dot-sep">·</span><span class="series">The Conscience Coach</span></p>
+    </li>
+    <li>
+      <p class="sermon-title"><a href="/ProvidenceLenexa/sermons/the-holy-spirit-2025-04-06">The Holy Spirit</a></p>
+      <p class="sermon-meta">Apr 6, 2025<span class="dot-sep">·</span>John 16:1-11</p>
     </li>
   </ul>
   <nav class="pagination" aria-label="Sermon listing pagination">
