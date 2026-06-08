@@ -1,0 +1,27 @@
+{
+  "preachers": [
+    {
+      "name": "Chris Oswald",
+      "slug": "chris-oswald",
+      "church": "Providence Community Church",
+      "church_short": "Providence",
+      "location": "Lenexa, Kansas",
+      "tradition": "Reformed, Sovereign Grace",
+      "sermon_count": 446,
+      "voice_prompt": "chris-oswald-voice",
+      "bio": "Lead pastor at Providence Community Church. Expositional, doctrinally precise preaching from a Reformed Sovereign Grace tradition. Two decades of weekly preaching. (Bio placeholder — replace with hand-written copy when ready.)"
+    },
+    {
+      "name": "Ricky Alcantar",
+      "slug": "ricky-alcantar",
+      "church": "Cross of Grace Church",
+      "church_short": "Cross of Grace",
+      "location": "El Paso, Texas",
+      "tradition": "Reformed, Sovereign Grace",
+      "sermon_count": 190,
+      "voice_prompt": "ricky-alcantar-voice",
+      "bio": "Lead pastor at Cross of Grace Church. Series-driven expositional preaching with a particular gift for working through the Pastoral Epistles. (Bio placeholder — replace with hand-written copy when ready.)"
+    }
+  ],
+  "mcp_base_url": "https://corpus-mcp.chris-386.workers.dev"
+}

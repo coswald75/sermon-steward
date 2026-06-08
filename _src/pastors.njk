@@ -1,0 +1,361 @@
+---
+permalink: /pastors/index.html
+title: Pastors — Sermon Steward
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="Browse pastors whose preaching corpora are connectable to Claude / Cowork as a Model Context Protocol server. Two-click setup; no account required.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pastors — Sermon Steward">
+<meta property="og:description" content="Browse pastors whose preaching corpora are connectable to Claude / Cowork as a Model Context Protocol server.">
+<meta property="og:site_name" content="Sermon Steward">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+Pro:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg:        #fbf8f1;
+    --bg-card:   #ffffff;
+    --ink:       #1a1a1a;
+    --ink-soft:  #4a4a4a;
+    --ink-faint: #828282;
+    --rule:      #e6e1d3;
+    --accent:    #c4452f;
+    --accent-deep: #9a3624;
+    --accent-soft: #f0d4cc;
+    --gold:      #b8893a;
+    --highlight: #fef0c8;
+    --ok:        #2d7a3d;
+    --sans: 'Inter', system-ui, -apple-system, "Segoe UI", sans-serif;
+    --serif: 'Source Serif Pro', 'Iowan Old Style', Georgia, serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); font-size: 17px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-deep); }
+
+  /* ───── Header ───── */
+  .site-header { padding: 28px 32px; border-bottom: 1px solid var(--rule); background: var(--bg-card); }
+  .site-header-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  .wordmark { font-weight: 800; font-size: 22px; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+  .wordmark .dot { color: var(--accent); }
+  .site-tag { font-size: 11px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.12em; }
+
+  /* ───── Page intro ───── */
+  main { max-width: 1080px; margin: 0 auto; padding: 56px 32px 96px; }
+  .page-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .page-title { font-family: var(--serif); font-weight: 600; font-size: 44px; line-height: 1.1; letter-spacing: -0.015em; margin: 0 0 18px; color: var(--ink); }
+  .page-sub { font-size: 18px; color: var(--ink-soft); max-width: 640px; margin: 0 0 48px; }
+  .page-sub a { font-weight: 600; }
+
+  /* ───── Pastor grid ───── */
+  .pastor-grid {
+    display: grid; gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  }
+  .pastor-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 28px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .pastor-card:hover { border-color: var(--gold); }
+
+  .card-name { font-family: var(--serif); font-weight: 600; font-size: 26px; line-height: 1.2; margin: 0; letter-spacing: -0.01em; }
+  .card-church, .card-location { font-size: 14px; color: var(--ink-soft); margin: 0; }
+  .card-location { color: var(--ink-faint); }
+
+  /* ───── Install paths ───── */
+  .install-section-header {
+    margin: 14px 0 6px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink-faint); font-weight: 600;
+  }
+  .install-section-header em { font-style: normal; color: var(--ink-soft); }
+  .install-paths { display: flex; flex-direction: column; gap: 18px; }
+  .install-path { display: flex; flex-direction: column; gap: 8px; }
+  .path-label {
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700;
+  }
+  .path-label .path-method {
+    color: var(--ink-soft); font-weight: 600;
+    margin-left: 6px; letter-spacing: 0.04em;
+  }
+
+  .btn {
+    display: block; text-align: center; padding: 10px 14px;
+    border-radius: 6px; font-size: 14px; font-weight: 600;
+    text-decoration: none; cursor: pointer;
+    transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+    font-family: var(--sans); border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-deep); }
+  .btn-secondary { background: var(--bg); color: var(--ink-soft); border-color: var(--rule); }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--ink); }
+  .btn.is-copied { background: var(--ok); color: #fff; border-color: var(--ok); }
+
+  .path-steps {
+    font-size: 13px; color: var(--ink-faint); line-height: 1.5;
+    margin: 0; padding: 0 0 0 18px;
+  }
+  .path-steps li { margin-bottom: 3px; }
+  .path-steps code {
+    font-family: var(--mono); font-size: 12px;
+    background: var(--bg); padding: 1px 5px; border-radius: 3px;
+    color: var(--ink-soft);
+  }
+
+  pre.json-snippet {
+    background: var(--bg); border: 1px solid var(--rule); border-radius: 6px;
+    padding: 12px; margin: 0; font-size: 12px;
+    overflow-x: auto; line-height: 1.45;
+    font-family: var(--mono); color: var(--ink-soft);
+  }
+
+  .raw-link {
+    display: inline-block; margin-top: 16px;
+    font-size: 12px; color: var(--ink-faint);
+    text-decoration: none; border-bottom: 1px dotted var(--ink-faint);
+  }
+  .raw-link:hover { color: var(--ink-soft); border-bottom-color: var(--ink-soft); }
+
+  /* ───── Footer note ───── */
+  .footer-note {
+    margin-top: 64px; padding: 24px; background: var(--bg-card);
+    border: 1px solid var(--rule); border-radius: 10px;
+    font-size: 14px; color: var(--ink-soft);
+  }
+  .footer-note h3 { margin: 0 0 8px; font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--ink); }
+  .footer-note p { margin: 0 0 10px; }
+  .footer-note p:last-child { margin: 0; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="wordmark">Sermon<span class="dot">·</span>Steward</a>
+    <span class="site-tag">Pastors directory</span>
+  </div>
+</header>
+
+<main>
+  <div class="page-eyebrow">Browse</div>
+  <h1 class="page-title">Pastors with connectable corpora</h1>
+  <p class="page-sub">
+    Each pastor below has their preaching corpus exposed as a Model
+    Context Protocol server you can add to Claude Desktop or Cowork
+    in about a minute. No account, no token — sermon material is
+    public, and every citation is attributed correctly.
+  </p>
+
+  <div class="pastor-grid">
+    {% for p in pastors.preachers %}
+    {% set mcpUrl = pastors.mcp_base_url + "/p/" + p.slug %}
+    <article class="pastor-card">
+      <h2 class="card-name">{{ p.name }}</h2>
+      <p class="card-church">{{ p.church }}</p>
+      <p class="card-location">{{ p.location }}</p>
+
+      <div class="install-section-header">
+        Three ways to install — <em>they all do the same thing</em>
+      </div>
+
+      <div class="install-paths">
+
+        <!-- ─── Path A: Copy URL, paste in Cowork's Add Connector UI ─── -->
+        <div class="install-path">
+          <div class="path-label">
+            Try this first<span class="path-method">— Copy connector URL</span>
+          </div>
+          <button
+            type="button"
+            class="btn btn-primary copy-btn"
+            data-copy-text="{{ mcpUrl }}"
+            data-label-default="Copy connector URL"
+            data-label-copied="Copied ✓"
+          >Copy connector URL</button>
+          <ol class="path-steps">
+            <li>Open Cowork / Claude Desktop.</li>
+            <li>Customize → Connectors → click <code>+</code> or <strong>Add custom connector</strong>.</li>
+            <li>Paste URL · name it <code>{{ p.slug }}</code> · save. No token / auth needed.</li>
+          </ol>
+        </div>
+
+        <!-- ─── Path B: Copy a Cowork prompt that edits the config for you ─── -->
+        <div class="install-path">
+          <div class="path-label">
+            Try this<span class="path-method">— Copy Cowork install prompt</span>
+          </div>
+          <button
+            type="button"
+            class="btn btn-secondary copy-btn"
+            data-copy-target="prompt-{{ p.slug }}"
+            data-label-default="Copy Cowork install prompt"
+            data-label-copied="Copied ✓"
+          >Copy Cowork install prompt</button>
+          <p class="path-steps" style="list-style:none; padding:0;">
+            Paste into a new Cowork chat. Cowork uses local agent mode
+            to edit your <code>claude_desktop_config.json</code>,
+            then tells you to restart.
+          </p>
+          <script type="text/plain" id="prompt-{{ p.slug }}">You are helping me add the {{ p.name }} Sermon Steward connector to this machine. Do not ask clarifying questions. Just do the steps below, report success, and stop.
+
+# Steps
+
+1. Determine the Claude Desktop config path:
+   - macOS: ~/Library/Application Support/Claude/claude_desktop_config.json
+   - Windows: %APPDATA%\Claude\claude_desktop_config.json
+
+2. Read it. If it doesn't exist, treat it as {"mcpServers": {}}.
+
+3. Parse the JSON. Inside mcpServers (create the key if missing), add or overwrite the key "{{ p.slug }}" with this exact value:
+
+   {
+     "command": "npx",
+     "args": [
+       "-y",
+       "mcp-remote",
+       "{{ mcpUrl }}"
+     ]
+   }
+
+   IMPORTANT:
+   - Preserve all OTHER entries in mcpServers — do NOT replace the whole object, just add or overwrite the "{{ p.slug }}" key.
+   - Do NOT touch any other top-level keys in the config (preferences, coworkUserFilesPath, etc.).
+   - Keep the file as valid JSON. No trailing commas, no comments.
+
+4. Save the file.
+
+5. Report back to me in plain English:
+   - Confirm the file was updated and the "{{ p.slug }}" entry was added.
+   - Tell me to fully quit Cowork / Claude Desktop (Cmd+Q on Mac; right-click tray icon → Quit on Windows) and reopen it. Note that closing the window is NOT enough.
+   - Mention that the first launch will spend 10–30 seconds downloading mcp-remote via npx — that's normal.
+   - Tell me that after the restart I should look for a hammer/tool icon near the message box showing one tool: ask_corpus.
+   - Tell me that to use it, I should click the "+" or paperclip icon → "Use a prompt" → pick {{ p.voice_prompt }}.
+   - Give me one suggested first query to verify it works: "Surprise me with three sermon units I might have forgotten."
+
+If you can't read or write the config file because of permissions, tell me exactly what permission to grant and stop. Don't try a workaround.
+</script>
+        </div>
+
+        <!-- ─── Path C: Manual JSON for power users / fallback ─── -->
+        <div class="install-path">
+          <div class="path-label">
+            Try this<span class="path-method">— Manual JSON setup</span>
+          </div>
+          <button
+            type="button"
+            class="btn btn-secondary copy-btn"
+            data-copy-target="json-{{ p.slug }}"
+            data-label-default="Copy JSON snippet"
+            data-label-copied="Copied ✓"
+          >Copy JSON snippet</button>
+          <pre class="json-snippet" id="json-{{ p.slug }}">"{{ p.slug }}": {
+  "command": "npx",
+  "args": [
+    "-y",
+    "mcp-remote",
+    "{{ mcpUrl }}"
+  ]
+}</pre>
+          <p class="path-steps" style="list-style:none; padding:0;">
+            Paste into <code>claude_desktop_config.json</code> as a
+            sibling of any existing <code>mcpServers</code> entries.
+            ⌘Q + reopen Cowork.
+          </p>
+        </div>
+
+      </div>
+
+      <a class="raw-link" href="{{ mcpUrl }}" target="_blank" rel="noopener">View raw endpoint ↗</a>
+    </article>
+    {% endfor %}
+  </div>
+
+  <div class="footer-note">
+    <h3>What is this?</h3>
+    <p>
+      Each card is a sermon corpus exposed as an MCP (Model Context
+      Protocol) server. When you add one as a connector in Claude
+      Desktop or Cowork, Claude can search that pastor's sermons in
+      any conversation — citing real sermons by title and date, never
+      inventing material.
+    </p>
+    <p>
+      <strong>Three install paths, all equivalent.</strong> Each
+      ends with the same connector registered in Cowork / Claude
+      Desktop. The first is a URL paste in Cowork's connector
+      settings. The second is a prompt you drop into a Cowork chat,
+      and Cowork edits your config for you. The third is the raw
+      JSON for anyone who prefers to edit the config file by hand.
+      Try them in order — if one path doesn't fit your setup, the
+      next one will.
+    </p>
+    <p>
+      No tokens. No sign-in. Sermon material is public; attribution
+      is enforced at the data layer.
+    </p>
+  </div>
+</main>
+
+<script>
+  // Copy-to-clipboard handler for both Quick and Automated buttons.
+  // Two input modes:
+  //   - data-copy-text="<string>"      → copy the literal string
+  //   - data-copy-target="<elem-id>"  → copy the textContent of an element
+  //                                      (used for multi-line prompts stored
+  //                                      in <script type="text/plain">)
+  // After a successful copy, the button briefly displays its
+  // data-label-copied text in a green state, then reverts.
+  document.querySelectorAll('.copy-btn').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      let text = btn.dataset.copyText;
+      if (!text && btn.dataset.copyTarget) {
+        const el = document.getElementById(btn.dataset.copyTarget);
+        text = el ? el.textContent.trim() : '';
+      }
+      if (!text) return;
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (_) {
+        // Fallback: textarea + execCommand for browsers that block
+        // the async clipboard API (older Safari, insecure contexts).
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (_e) {}
+        document.body.removeChild(ta);
+      }
+      const original = btn.dataset.labelDefault || btn.textContent;
+      btn.textContent = btn.dataset.labelCopied || 'Copied ✓';
+      btn.classList.add('is-copied');
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove('is-copied');
+      }, 1500);
+    });
+  });
+</script>
+
+</body>
+</html>
