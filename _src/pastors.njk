@@ -8,10 +8,10 @@ title: Pastors — Sermon Steward
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ title }}</title>
-<meta name="description" content="Browse pastors whose preaching corpora are connectable to Claude / Cowork as a Model Context Protocol server. Two-click setup; no account required.">
+<meta name="description" content="Browse pastors whose preaching corpora are connectable to Claude, ChatGPT, or Grok as a Model Context Protocol server. One URL, no account.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Pastors — Sermon Steward">
-<meta property="og:description" content="Browse pastors whose preaching corpora are connectable to Claude / Cowork as a Model Context Protocol server.">
+<meta property="og:description" content="Browse pastors whose preaching corpora are connectable to Claude, ChatGPT, or Grok as a Model Context Protocol server.">
 <meta property="og:site_name" content="Sermon Steward">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +22,7 @@ title: Pastors — Sermon Steward
   :root {
     --bg:        #fbf8f1;
     --bg-card:   #ffffff;
+    --bg-sub:    #f5f1e4;
     --ink:       #1a1a1a;
     --ink-soft:  #4a4a4a;
     --ink-faint: #828282;
@@ -57,53 +58,63 @@ title: Pastors — Sermon Steward
   main { max-width: 1080px; margin: 0 auto; padding: 56px 32px 96px; }
   .page-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
   .page-title { font-family: var(--serif); font-weight: 600; font-size: 44px; line-height: 1.1; letter-spacing: -0.015em; margin: 0 0 18px; color: var(--ink); }
-  .page-sub { font-size: 18px; color: var(--ink-soft); max-width: 640px; margin: 0 0 48px; }
+  .page-sub { font-size: 18px; color: var(--ink-soft); max-width: 720px; margin: 0 0 12px; }
   .page-sub a { font-weight: 600; }
+  .supported-row {
+    display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+    margin: 8px 0 48px; font-size: 12px; color: var(--ink-faint);
+    letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600;
+  }
+  .supported-row .label { color: var(--ink-soft); }
+  .supported-row .badge {
+    background: var(--bg-card); border: 1px solid var(--rule);
+    padding: 4px 10px; border-radius: 999px; letter-spacing: 0.04em;
+    color: var(--ink-soft);
+  }
 
   /* ───── Pastor grid ───── */
   .pastor-grid {
-    display: grid; gap: 24px;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    display: grid; gap: 28px;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
   }
   .pastor-card {
     background: var(--bg-card);
     border: 1px solid var(--rule);
-    border-radius: 10px;
-    padding: 28px;
-    display: flex; flex-direction: column; gap: 14px;
-  }
-  .pastor-card:hover { border-color: var(--gold); }
-
-  .card-name { font-family: var(--serif); font-weight: 600; font-size: 26px; line-height: 1.2; margin: 0; letter-spacing: -0.01em; }
-  .card-church, .card-location { font-size: 14px; color: var(--ink-soft); margin: 0; }
-  .card-location { color: var(--ink-faint); }
-
-  /* ───── Install paths ───── */
-  .install-section-header {
-    margin: 14px 0 6px;
-    padding-top: 16px;
-    border-top: 1px solid var(--rule);
-    font-size: 11px; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--ink-faint); font-weight: 600;
-  }
-  .install-section-header em { font-style: normal; color: var(--ink-soft); }
-  .install-paths { display: flex; flex-direction: column; gap: 18px; }
-  .install-path { display: flex; flex-direction: column; gap: 8px; }
-  .path-label {
-    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--accent); font-weight: 700;
-  }
-  .path-label .path-method {
-    color: var(--ink-soft); font-weight: 600;
-    margin-left: 6px; letter-spacing: 0.04em;
+    border-radius: 12px;
+    padding: 32px;
+    display: flex; flex-direction: column; gap: 16px;
   }
 
+  .card-name { font-family: var(--serif); font-weight: 600; font-size: 28px; line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
+  .card-church { font-size: 15px; color: var(--ink-soft); margin: 0; }
+  .card-location { font-size: 14px; color: var(--ink-faint); margin: 0 0 4px; }
+
+  /* ───── Card sections ───── */
+  .card-section { padding-top: 18px; border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: 10px; }
+  .section-label {
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-faint); font-weight: 700;
+  }
+
+  /* ───── URL row ───── */
+  .url-row { display: flex; gap: 8px; align-items: center; }
+  .url-display {
+    flex: 1; font-family: var(--mono); font-size: 12px;
+    background: var(--bg-sub); border: 1px solid var(--rule);
+    border-radius: 6px; padding: 10px 12px;
+    color: var(--ink-soft); overflow-x: auto; white-space: nowrap;
+    min-width: 0;
+  }
+  .url-hint { font-size: 13px; color: var(--ink-faint); margin: 0; }
+
+  /* ───── Buttons ───── */
   .btn {
-    display: block; text-align: center; padding: 10px 14px;
+    display: inline-block; text-align: center; padding: 10px 14px;
     border-radius: 6px; font-size: 14px; font-weight: 600;
     text-decoration: none; cursor: pointer;
     transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
     font-family: var(--sans); border: 1px solid transparent;
+    white-space: nowrap;
   }
   .btn-primary { background: var(--accent); color: #fff; }
   .btn-primary:hover { background: var(--accent-deep); }
@@ -111,26 +122,67 @@ title: Pastors — Sermon Steward
   .btn-secondary:hover { border-color: var(--gold); color: var(--ink); }
   .btn.is-copied { background: var(--ok); color: #fff; border-color: var(--ok); }
 
-  .path-steps {
-    font-size: 13px; color: var(--ink-faint); line-height: 1.5;
-    margin: 0; padding: 0 0 0 18px;
+  /* ───── Tabs ───── */
+  .tabs-bar {
+    display: inline-flex; background: var(--bg-sub);
+    border-radius: 8px; padding: 4px;
+    border: 1px solid var(--rule);
+    flex-wrap: wrap; gap: 2px;
   }
-  .path-steps li { margin-bottom: 3px; }
-  .path-steps code {
+  .tab-btn {
+    padding: 6px 14px; border: none; background: transparent;
+    cursor: pointer; border-radius: 6px;
+    font-size: 13px; font-weight: 600; color: var(--ink-faint);
+    font-family: var(--sans);
+    transition: background 120ms ease, color 120ms ease;
+  }
+  .tab-btn:hover { color: var(--ink-soft); }
+  .tab-btn[aria-selected="true"] {
+    background: var(--bg-card); color: var(--ink);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+
+  .tab-panel { display: none; flex-direction: column; gap: 14px; padding-top: 4px; }
+  .tab-panel.is-active { display: flex; }
+
+  /* ───── Steps + sub-paths inside tabs ───── */
+  .steps-list {
+    margin: 0; padding: 0 0 0 22px;
+    font-size: 14px; color: var(--ink-soft); line-height: 1.55;
+  }
+  .steps-list li { margin-bottom: 4px; }
+  .steps-list code, .step-inline code {
+    font-family: var(--mono); font-size: 12.5px;
+    background: var(--bg-sub); padding: 1px 5px; border-radius: 3px;
+    color: var(--ink-soft);
+  }
+  .steps-list strong { color: var(--ink); font-weight: 600; }
+
+  .sub-path { display: flex; flex-direction: column; gap: 8px; }
+  .sub-path-label {
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700;
+  }
+  .sub-path-label .method-name {
+    color: var(--ink-soft); font-weight: 600;
+    margin-left: 6px; letter-spacing: 0.04em;
+  }
+  .sub-path-hint { font-size: 13px; color: var(--ink-faint); margin: 0; line-height: 1.5; }
+  .sub-path-hint code {
     font-family: var(--mono); font-size: 12px;
-    background: var(--bg); padding: 1px 5px; border-radius: 3px;
+    background: var(--bg-sub); padding: 1px 5px; border-radius: 3px;
     color: var(--ink-soft);
   }
 
   pre.json-snippet {
-    background: var(--bg); border: 1px solid var(--rule); border-radius: 6px;
+    background: var(--bg-sub); border: 1px solid var(--rule); border-radius: 6px;
     padding: 12px; margin: 0; font-size: 12px;
     overflow-x: auto; line-height: 1.45;
     font-family: var(--mono); color: var(--ink-soft);
   }
 
   .raw-link {
-    display: inline-block; margin-top: 16px;
+    align-self: flex-start; margin-top: 4px;
     font-size: 12px; color: var(--ink-faint);
     text-decoration: none; border-bottom: 1px dotted var(--ink-faint);
   }
@@ -138,11 +190,11 @@ title: Pastors — Sermon Steward
 
   /* ───── Footer note ───── */
   .footer-note {
-    margin-top: 64px; padding: 24px; background: var(--bg-card);
+    margin-top: 64px; padding: 28px; background: var(--bg-card);
     border: 1px solid var(--rule); border-radius: 10px;
-    font-size: 14px; color: var(--ink-soft);
+    font-size: 15px; color: var(--ink-soft);
   }
-  .footer-note h3 { margin: 0 0 8px; font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--ink); }
+  .footer-note h3 { margin: 0 0 10px; font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--ink); }
   .footer-note p { margin: 0 0 10px; }
   .footer-note p:last-child { margin: 0; }
 </style>
@@ -158,13 +210,19 @@ title: Pastors — Sermon Steward
 
 <main>
   <div class="page-eyebrow">Browse</div>
-  <h1 class="page-title">Pastors with connectable corpora</h1>
+  <h1 class="page-title">Connect Your LLM to a Pastor's Sermon Archive</h1>
   <p class="page-sub">
-    Each pastor below has their preaching corpus exposed as a Model
-    Context Protocol server you can add to Claude Desktop or Cowork
-    in about a minute. No account, no token — sermon material is
-    public, and every citation is attributed correctly.
+    You can use your preferred AI to search the sermon archives
+    of any of the pastors below. Add the URL to any supported LLM
+    so that you can search the pastor's sermons in any conversation
+    with correct citations by sermon title and date.
   </p>
+  <div class="supported-row">
+    <span class="label">Works in:</span>
+    <span class="badge">Claude / Cowork</span>
+    <span class="badge">ChatGPT</span>
+    <span class="badge">Grok</span>
+  </div>
 
   <div class="pastor-grid">
     {% for p in pastors.preachers %}
@@ -174,49 +232,66 @@ title: Pastors — Sermon Steward
       <p class="card-church">{{ p.church }}</p>
       <p class="card-location">{{ p.location }}</p>
 
-      <div class="install-section-header">
-        Three ways to install — <em>they all do the same thing</em>
-      </div>
-
-      <div class="install-paths">
-
-        <!-- ─── Path A: Copy URL, paste in Cowork's Add Connector UI ─── -->
-        <div class="install-path">
-          <div class="path-label">
-            Try this first<span class="path-method">— Copy connector URL</span>
-          </div>
+      <!-- ─── CONNECTOR URL ─── -->
+      <div class="card-section">
+        <div class="section-label">Connector URL</div>
+        <div class="url-row">
+          <code class="url-display">{{ mcpUrl }}</code>
           <button
             type="button"
             class="btn btn-primary copy-btn"
             data-copy-text="{{ mcpUrl }}"
-            data-label-default="Copy connector URL"
+            data-label-default="Copy URL"
             data-label-copied="Copied ✓"
-          >Copy connector URL</button>
-          <ol class="path-steps">
-            <li>Open Cowork / Claude Desktop.</li>
-            <li>Customize → Connectors → click <code>+</code> or <strong>Add custom connector</strong>.</li>
-            <li>Paste URL · name it <code>{{ p.slug }}</code> · save. No token / auth needed.</li>
-          </ol>
+          >Copy URL</button>
+        </div>
+        <p class="url-hint">
+          Public — no token, no auth. Same URL works in every supported
+          LLM client. Pick yours below for setup steps.
+        </p>
+      </div>
+
+      <!-- ─── SET UP IN YOUR LLM (tabbed) ─── -->
+      <div class="card-section">
+        <div class="section-label">Set up in your LLM</div>
+
+        <div class="tabs-bar" role="tablist">
+          <button type="button" class="tab-btn" role="tab" aria-selected="true"
+            data-tab-target="panel-claude-{{ p.slug }}">Claude / Cowork</button>
+          <button type="button" class="tab-btn" role="tab" aria-selected="false"
+            data-tab-target="panel-chatgpt-{{ p.slug }}">ChatGPT</button>
+          <button type="button" class="tab-btn" role="tab" aria-selected="false"
+            data-tab-target="panel-grok-{{ p.slug }}">Grok</button>
         </div>
 
-        <!-- ─── Path B: Copy a Cowork prompt that edits the config for you ─── -->
-        <div class="install-path">
-          <div class="path-label">
-            Try this<span class="path-method">— Copy Cowork install prompt</span>
+        <!-- Claude / Cowork panel -->
+        <div class="tab-panel is-active" id="panel-claude-{{ p.slug }}" role="tabpanel">
+
+          <div class="sub-path">
+            <div class="sub-path-label">Try this first<span class="method-name">— Paste in Cowork UI</span></div>
+            <ol class="steps-list">
+              <li>Open Cowork / Claude Desktop.</li>
+              <li><strong>Customize → Connectors</strong> → click <code>+</code> or <strong>Add custom connector</strong>.</li>
+              <li>Paste URL above · name it <code>{{ p.slug }}</code> · save.</li>
+              <li>No token / auth needed.</li>
+            </ol>
           </div>
-          <button
-            type="button"
-            class="btn btn-secondary copy-btn"
-            data-copy-target="prompt-{{ p.slug }}"
-            data-label-default="Copy Cowork install prompt"
-            data-label-copied="Copied ✓"
-          >Copy Cowork install prompt</button>
-          <p class="path-steps" style="list-style:none; padding:0;">
-            Paste into a new Cowork chat. Cowork uses local agent mode
-            to edit your <code>claude_desktop_config.json</code>,
-            then tells you to restart.
-          </p>
-          <script type="text/plain" id="prompt-{{ p.slug }}">You are helping me add the {{ p.name }} Sermon Steward connector to this machine. Do not ask clarifying questions. Just do the steps below, report success, and stop.
+
+          <div class="sub-path">
+            <div class="sub-path-label">Try this<span class="method-name">— Let Cowork edit the config</span></div>
+            <button
+              type="button"
+              class="btn btn-secondary copy-btn"
+              data-copy-target="prompt-{{ p.slug }}"
+              data-label-default="Copy Cowork install prompt"
+              data-label-copied="Copied ✓"
+            >Copy Cowork install prompt</button>
+            <p class="sub-path-hint">
+              Paste into a new Cowork chat. Cowork uses local agent mode
+              to edit your <code>claude_desktop_config.json</code>,
+              then tells you to restart.
+            </p>
+            <script type="text/plain" id="prompt-{{ p.slug }}">You are helping me add the {{ p.name }} Sermon Steward connector to this machine. Do not ask clarifying questions. Just do the steps below, report success, and stop.
 
 # Steps
 
@@ -254,21 +329,18 @@ title: Pastors — Sermon Steward
 
 If you can't read or write the config file because of permissions, tell me exactly what permission to grant and stop. Don't try a workaround.
 </script>
-        </div>
-
-        <!-- ─── Path C: Manual JSON for power users / fallback ─── -->
-        <div class="install-path">
-          <div class="path-label">
-            Try this<span class="path-method">— Manual JSON setup</span>
           </div>
-          <button
-            type="button"
-            class="btn btn-secondary copy-btn"
-            data-copy-target="json-{{ p.slug }}"
-            data-label-default="Copy JSON snippet"
-            data-label-copied="Copied ✓"
-          >Copy JSON snippet</button>
-          <pre class="json-snippet" id="json-{{ p.slug }}">"{{ p.slug }}": {
+
+          <div class="sub-path">
+            <div class="sub-path-label">Try this<span class="method-name">— Manual JSON setup</span></div>
+            <button
+              type="button"
+              class="btn btn-secondary copy-btn"
+              data-copy-target="json-{{ p.slug }}"
+              data-label-default="Copy JSON snippet"
+              data-label-copied="Copied ✓"
+            >Copy JSON snippet</button>
+            <pre class="json-snippet" id="json-{{ p.slug }}">"{{ p.slug }}": {
   "command": "npx",
   "args": [
     "-y",
@@ -276,10 +348,51 @@ If you can't read or write the config file because of permissions, tell me exact
     "{{ mcpUrl }}"
   ]
 }</pre>
-          <p class="path-steps" style="list-style:none; padding:0;">
-            Paste into <code>claude_desktop_config.json</code> as a
-            sibling of any existing <code>mcpServers</code> entries.
-            ⌘Q + reopen Cowork.
+            <p class="sub-path-hint">
+              Paste into <code>claude_desktop_config.json</code> as a
+              sibling of any existing <code>mcpServers</code> entries.
+              ⌘Q + reopen Cowork.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- ChatGPT panel -->
+        <div class="tab-panel" id="panel-chatgpt-{{ p.slug }}" role="tabpanel">
+          <ol class="steps-list">
+            <li>In ChatGPT, click your profile → <strong>Settings</strong>.</li>
+            <li>Open <strong>Apps &amp; Connectors</strong> → <strong>Add new connector</strong> (or <strong>New App</strong>).</li>
+            <li>Fill in:
+              <ul>
+                <li><strong>Name:</strong> <code>{{ p.name }} Sermons</code></li>
+                <li><strong>Description:</strong> <em>Search {{ p.name }}'s preaching corpus by topic, scripture, or theme.</em> (optional)</li>
+                <li><strong>Connection:</strong> leave as <strong>Server URL</strong>.</li>
+                <li><strong>Server URL:</strong> paste the URL above.</li>
+                <li><strong>Authentication:</strong> change to <strong>No Auth</strong>.</li>
+              </ul>
+            </li>
+            <li>Check <strong>I understand and want to continue</strong>.</li>
+            <li>Click <strong>Create</strong>. The app appears in your apps list with one tool: <code>ask_corpus</code>.</li>
+          </ol>
+          <p class="sub-path-hint">
+            Individual ChatGPT Plus/Pro accounts can use the connector
+            in read-only mode (which is all this is). Business / Enterprise
+            workspaces have the same access.
+          </p>
+        </div>
+
+        <!-- Grok panel -->
+        <div class="tab-panel" id="panel-grok-{{ p.slug }}" role="tabpanel">
+          <ol class="steps-list">
+            <li>Go to <a href="https://grok.com/connectors" target="_blank" rel="noopener"><strong>grok.com/connectors</strong></a>.</li>
+            <li>Click <strong>New Connector</strong> → select <strong>Custom</strong>.</li>
+            <li>Paste the URL above as the MCP server URL.</li>
+            <li>No authentication required.</li>
+            <li>Save. The connector appears in your Grok connectors list.</li>
+          </ol>
+          <p class="sub-path-hint">
+            Tested and working as of June 2026. Grok's MCP support
+            shipped May 2026 via the "Bring Your Own MCP" launch.
           </p>
         </div>
 
@@ -291,40 +404,33 @@ If you can't read or write the config file because of permissions, tell me exact
   </div>
 
   <div class="footer-note">
-    <h3>What is this?</h3>
+    <h3>One URL, three LLMs</h3>
     <p>
-      Each card is a sermon corpus exposed as an MCP (Model Context
-      Protocol) server. When you add one as a connector in Claude
-      Desktop or Cowork, Claude can search that pastor's sermons in
-      any conversation — citing real sermons by title and date, never
-      inventing material.
+      Each pastor's corpus lives at a single public URL. Add it to
+      Claude / Cowork, ChatGPT, or Grok — same URL, no account, no
+      sign-in. The connector exposes one tool (<code>ask_corpus</code>)
+      that searches the sermons and returns citations with title and
+      date.
     </p>
     <p>
-      <strong>Three install paths, all equivalent.</strong> Each
-      ends with the same connector registered in Cowork / Claude
-      Desktop. The first is a URL paste in Cowork's connector
-      settings. The second is a prompt you drop into a Cowork chat,
-      and Cowork edits your config for you. The third is the raw
-      JSON for anyone who prefers to edit the config file by hand.
-      Try them in order — if one path doesn't fit your setup, the
-      next one will.
+      Sermon material is public by design. Attribution is enforced at
+      the data layer: every search result carries the preacher's name
+      and church directly from the joined database row. A query about
+      one pastor will never return another pastor's material.
     </p>
     <p>
-      No tokens. No sign-in. Sermon material is public; attribution
-      is enforced at the data layer.
+      Gemini Enterprise is supported in principle — we've just not
+      written a setup walkthrough yet. If you'd like one, get in touch
+      and we'll prioritize it.
     </p>
   </div>
 </main>
 
 <script>
-  // Copy-to-clipboard handler for both Quick and Automated buttons.
-  // Two input modes:
-  //   - data-copy-text="<string>"      → copy the literal string
-  //   - data-copy-target="<elem-id>"  → copy the textContent of an element
-  //                                      (used for multi-line prompts stored
-  //                                      in <script type="text/plain">)
-  // After a successful copy, the button briefly displays its
-  // data-label-copied text in a green state, then reverts.
+  // ─── Copy-to-clipboard for any .copy-btn ───────────────────────────────
+  // Supports either data-copy-text (literal string) or data-copy-target
+  // (id of an element whose textContent should be copied — used for the
+  // multi-line install prompt stored in <script type="text/plain">).
   document.querySelectorAll('.copy-btn').forEach((btn) => {
     btn.addEventListener('click', async () => {
       let text = btn.dataset.copyText;
@@ -336,8 +442,6 @@ If you can't read or write the config file because of permissions, tell me exact
       try {
         await navigator.clipboard.writeText(text);
       } catch (_) {
-        // Fallback: textarea + execCommand for browsers that block
-        // the async clipboard API (older Safari, insecure contexts).
         const ta = document.createElement('textarea');
         ta.value = text;
         ta.style.position = 'fixed'; ta.style.opacity = '0';
@@ -353,6 +457,26 @@ If you can't read or write the config file because of permissions, tell me exact
         btn.textContent = original;
         btn.classList.remove('is-copied');
       }, 1500);
+    });
+  });
+
+  // ─── Tab switching, scoped per pastor card ─────────────────────────────
+  // Each card has its own tablist + panels; switching one card's tabs
+  // shouldn't affect another card's. Hence the closest('.pastor-card')
+  // scoping.
+  document.querySelectorAll('[role="tablist"]').forEach((tablist) => {
+    tablist.querySelectorAll('[role="tab"]').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const card = tab.closest('.pastor-card');
+        if (!card) return;
+        const targetId = tab.dataset.tabTarget;
+        card.querySelectorAll('[role="tab"]').forEach((t) => {
+          t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+        });
+        card.querySelectorAll('.tab-panel').forEach((p) => {
+          p.classList.toggle('is-active', p.id === targetId);
+        });
+      });
     });
   });
 </script>
