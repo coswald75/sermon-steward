@@ -1,0 +1,249 @@
+{
+  "audiences": [
+    {
+      "key": "pastors",
+      "label": "Pastors",
+      "lead": "Using your own preaching corpus for prep, audit, pastoral care, and series planning. Substitute the bracketed [items] with what you're actually working on.",
+      "sections": [
+        {
+          "title": "Sermon prep",
+          "intro": "Working out next week's sermon, or revising one in flight.",
+          "prompts": [
+            {
+              "title": "Have I preached on this passage?",
+              "prompt": "Have I preached on [Ephesians 4:1-6] before? Pull every sermon that handles this passage, summarize what I said, and list any illustrations I used. Cite by sermon title and date.",
+              "what": "Surfaces prior treatment of a passage so you don't unknowingly retread."
+            },
+            {
+              "title": "Pull my raw material on a theme",
+              "prompt": "I'm preparing to preach on [grace under suffering]. Pull every sermon and sermon unit where I've touched on this theme. Group them by which angle I took.",
+              "what": "Gets your own past thinking on the table before you start writing."
+            },
+            {
+              "title": "Synthesize what I've already said",
+              "prompt": "I want to preach a single sermon that brings together everything I've said about [the cross]. Aggregate the strongest sentences and themes from my preaching on this — and tell me what's missing.",
+              "what": "Builds a coherent synthesis from your own corpus, including the gaps."
+            }
+          ]
+        },
+        {
+          "title": "Avoiding repetition",
+          "intro": "Catching the illustration or angle you've leaned on too hard.",
+          "prompts": [
+            {
+              "title": "Don't let me retread",
+              "prompt": "I'm preaching on [the prodigal son] this Sunday. Have I covered it before? What angle did I take, what illustrations did I use? I want to come in fresh — show me what to avoid.",
+              "what": "Prevents accidentally giving the same sermon twice."
+            },
+            {
+              "title": "Illustrations I'm overusing",
+              "prompt": "Pull a list of illustrations I've used more than once across my preaching. Group them by topic and tell me which ones are starting to feel like crutches.",
+              "what": "Finds the patterns you stopped noticing in yourself."
+            },
+            {
+              "title": "What's recent",
+              "prompt": "List my sermons from the last 12 months by date, with a one-sentence summary of each. I want a bird's-eye view of where I've been so I don't repeat myself.",
+              "what": "A quick recap of your own recent direction."
+            }
+          ]
+        },
+        {
+          "title": "Series planning",
+          "intro": "Surveying past arcs before charting the next one.",
+          "prompts": [
+            {
+              "title": "Recap my last series",
+              "prompt": "Walk me through my last sermon series, sermon by sermon. What was the arc? Where did I land? What did I leave underdeveloped that I might come back to?",
+              "what": "Helps you see your own series' shape from the outside."
+            },
+            {
+              "title": "Pull raw material for the next series",
+              "prompt": "I'm planning a series on [the book of Titus]. What sermons have I preached on Titus or its themes (leadership, doctrine, false teaching)? Pull them as raw material for the new series.",
+              "what": "Mines what you've already done so the new series builds on it."
+            },
+            {
+              "title": "Three sermons that set the tone",
+              "prompt": "Pick three sermons from my archive that represent how I want this next series to sound. Quote a representative sentence from each.",
+              "what": "Gives you a voice/tone reference before you start writing."
+            }
+          ]
+        },
+        {
+          "title": "Pastoral care prep",
+          "intro": "Finding what you've said before a hard conversation.",
+          "prompts": [
+            {
+              "title": "Material for grief",
+              "prompt": "I'm meeting with a member walking through grief. What have I preached on lament, suffering, or hope in death? Pull the most pastoral moments — direct quotes I could share or summarize in conversation.",
+              "what": "Surfaces your own most tender material on a hard topic."
+            },
+            {
+              "title": "Material for doubt",
+              "prompt": "Someone in my church is wrestling with doubt about scripture. What have I said in sermons that addresses this directly? Give me a list with brief summaries so I can prepare to talk with them.",
+              "what": "Pulls a focused excerpt of your preaching on a specific issue."
+            },
+            {
+              "title": "Just the tender material",
+              "prompt": "Pull anything I've preached on [the doctrine of assurance] that's particularly tender — meant for hurting people, not academic explanation.",
+              "what": "Filters by pastoral register, not just topic."
+            }
+          ]
+        },
+        {
+          "title": "Self-knowledge / serendipity",
+          "intro": "Auditing your preaching, or letting the archive surprise you.",
+          "prompts": [
+            {
+              "title": "What I keep coming back to",
+              "prompt": "What three scripture passages do I return to most across my preaching? Quote a representative sentence from each so I can see what I do with them.",
+              "what": "Reveals the texts that anchor your preaching, sometimes invisibly."
+            },
+            {
+              "title": "Surprise me",
+              "prompt": "Surprise me with three sermon units from at least a year ago. Pick ones that feel forgotten — maybe sermons I haven't thought about lately. Quote a striking sentence from each.",
+              "what": "Resurfaces material you'd otherwise lose track of."
+            },
+            {
+              "title": "Honest audit",
+              "prompt": "Across all my preaching, what's my dominant theme? Be honest. If you had to characterize what I'm always coming back to, what would it be — and what am I underweighting?",
+              "what": "An outside-view summary of your own preaching's center of gravity."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "members",
+      "label": "Church members",
+      "lead": "Using your pastor's preaching corpus for devotion, study, formation, and pastoral conversations. Substitute the bracketed [items] with what you're working through.",
+      "sections": [
+        {
+          "title": "After Sunday",
+          "intro": "Following up on the sermon you just heard.",
+          "prompts": [
+            {
+              "title": "Keep meditating on Sunday's sermon",
+              "prompt": "I just heard my pastor preach on [the prodigal son]. Pull a related sermon or two from his archive so I can keep meditating on the theme this week. Cite by sermon title and date.",
+              "what": "Extends Sunday into the week instead of letting it fade by Tuesday."
+            },
+            {
+              "title": "What did I miss?",
+              "prompt": "I missed church last Sunday. What was the most recent sermon? Summarize the main points and the passages my pastor worked through.",
+              "what": "A reliable recap when you couldn't be there."
+            },
+            {
+              "title": "Has he said this before?",
+              "prompt": "My pastor said something striking on Sunday about [the kingdom of God]. Has he said similar things in other sermons? Show me where so I can dig deeper.",
+              "what": "Connects a memorable line to a fuller body of teaching."
+            }
+          ]
+        },
+        {
+          "title": "Daily Bible reading companion",
+          "intro": "Pairing your devotions with your pastor's teaching.",
+          "prompts": [
+            {
+              "title": "Pastor on today's passage",
+              "prompt": "I'm reading [Romans 8] in my devotions today. What has my pastor preached about this chapter? Give me a summary I can read alongside it.",
+              "what": "Pastor's voice as a study companion to your Bible."
+            },
+            {
+              "title": "Work through a book",
+              "prompt": "I'm working through the Book of [Ephesians] this month. Pull every sermon my pastor has done on Ephesians, in canonical order. I want to use them as a guide as I read.",
+              "what": "Builds a one-pastor commentary on a book you're studying."
+            },
+            {
+              "title": "Hard text, help me sit with it",
+              "prompt": "I'm wrestling with [Psalm 88 — it's a dark psalm]. What has my pastor said about lament or suffering that might help me sit with it instead of skipping past?",
+              "what": "Brings pastoral help to a passage that's hard to read alone."
+            }
+          ]
+        },
+        {
+          "title": "Working through something",
+          "intro": "Bringing a life issue or doctrinal question to your pastor's teaching.",
+          "prompts": [
+            {
+              "title": "A hard season",
+              "prompt": "I'm walking through [anxiety] right now. What has my pastor preached on this? Pull the most pastoral, gentle material — not just doctrinal explanation. I need encouragement, not a lecture.",
+              "what": "Filters by pastoral tone, not just topic match."
+            },
+            {
+              "title": "Going deeper on a doctrine",
+              "prompt": "I'm trying to understand [the doctrine of justification] more deeply. Walk me through how my pastor teaches it across his sermons. What does he emphasize? What does he warn against?",
+              "what": "Builds a coherent doctrinal picture from many sermons."
+            },
+            {
+              "title": "Growing in a practice",
+              "prompt": "I want to grow in [prayer]. What has my pastor said about it across his preaching? Pull the most concrete, actionable material — not just exhortations to do it.",
+              "what": "Surfaces the how, not just the why."
+            }
+          ]
+        },
+        {
+          "title": "Family devotions & parenting",
+          "intro": "Adapting your pastor's preaching for the table or for talking with your kids.",
+          "prompts": [
+            {
+              "title": "A kid-accessible quote",
+              "prompt": "I'm leading a family devotion this week on [the resurrection]. Find a kid-accessible quote or illustration from one of my pastor's sermons that I can share at the table.",
+              "what": "Pulls something age-appropriate from adult preaching."
+            },
+            {
+              "title": "Teach my kids about a topic",
+              "prompt": "I want to teach my kids about [forgiveness]. What has my pastor said about it in his sermons that I can adapt into something they can understand?",
+              "what": "Raw material for parent-led teaching."
+            },
+            {
+              "title": "Talk with my teenager about doubt",
+              "prompt": "Help me prepare to talk with my teenager about [doubt about the faith]. What does my pastor say about wrestling with hard questions? Pull the most honest, non-defensive material.",
+              "what": "Gives you a posture and language for hard conversations at home."
+            }
+          ]
+        },
+        {
+          "title": "Find that thing I vaguely remember",
+          "intro": "When a sermon detail is half-remembered and you want to look it up.",
+          "prompts": [
+            {
+              "title": "Find the story",
+              "prompt": "My pastor told a story in a sermon — something about [a man walking through a graveyard, I think]. I can't remember exactly. Help me find it.",
+              "what": "Search by fuzzy detail when you can't remember the citation."
+            },
+            {
+              "title": "Find the quote",
+              "prompt": "What was that line my pastor used about [contentment]? Pull a few candidates — I'll know it when I see it.",
+              "what": "Like a memory aid for the line you almost remember."
+            },
+            {
+              "title": "Pull all the illustrations",
+              "prompt": "Pull every illustration my pastor has used about [marriage]. I want to share one with a friend going through a hard season.",
+              "what": "Treats the corpus as an illustration library."
+            }
+          ]
+        },
+        {
+          "title": "Hard questions",
+          "intro": "When you or a friend is asking something the faith has to answer.",
+          "prompts": [
+            {
+              "title": "Why does God allow suffering?",
+              "prompt": "A friend is asking how a good God can allow suffering. What has my pastor said about this in his preaching? Pull the most thoughtful, non-defensive material.",
+              "what": "Equips you to talk about hard things using your pastor's framing."
+            },
+            {
+              "title": "What does pastor teach about [X]?",
+              "prompt": "How does my pastor handle [the doctrine of hell] in his preaching? Pull his clearest teaching on this. I want to understand it well enough to explain it.",
+              "what": "A focused doctrinal pull on a specific question."
+            },
+            {
+              "title": "When the Bible feels off-putting",
+              "prompt": "I'm struggling with how the Bible talks about [a hard topic, e.g. divine wrath]. What has my pastor said that might help me think through it instead of recoiling?",
+              "what": "Brings pastoral framing to a text or theme that's hard to receive."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

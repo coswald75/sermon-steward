@@ -1,0 +1,310 @@
+---
+permalink: /pastors/prompts/index.html
+title: Prompts to explore a sermon archive — Sermon Steward
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="A library of prompts for using a pastor's sermon archive in Claude, ChatGPT, or Grok — for pastors and for church members.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Prompts to explore a sermon archive — Sermon Steward">
+<meta property="og:description" content="A library of prompts for using a pastor's sermon archive — for pastors and for church members.">
+<meta property="og:site_name" content="Sermon Steward">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+Pro:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg:        #fbf8f1;
+    --bg-card:   #ffffff;
+    --bg-sub:    #f5f1e4;
+    --ink:       #1a1a1a;
+    --ink-soft:  #4a4a4a;
+    --ink-faint: #828282;
+    --rule:      #e6e1d3;
+    --accent:    #c4452f;
+    --accent-deep: #9a3624;
+    --gold:      #b8893a;
+    --highlight: #fef0c8;
+    --ok:        #2d7a3d;
+    --sans: 'Inter', system-ui, -apple-system, "Segoe UI", sans-serif;
+    --serif: 'Source Serif Pro', 'Iowan Old Style', Georgia, serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); font-size: 17px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-deep); }
+
+  /* ───── Header ───── */
+  .site-header { padding: 28px 32px; border-bottom: 1px solid var(--rule); background: var(--bg-card); }
+  .site-header-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  .wordmark { font-weight: 800; font-size: 22px; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+  .wordmark .dot { color: var(--accent); }
+  .site-tag { font-size: 11px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.12em; }
+
+  /* ───── Page intro ───── */
+  main { max-width: 880px; margin: 0 auto; padding: 56px 32px 96px; }
+  .back-link {
+    display: inline-block; font-size: 13px; color: var(--ink-faint);
+    margin-bottom: 16px; text-decoration: none;
+  }
+  .back-link:hover { color: var(--ink-soft); }
+  .page-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .page-title { font-family: var(--serif); font-weight: 600; font-size: 40px; line-height: 1.1; letter-spacing: -0.015em; margin: 0 0 18px; color: var(--ink); }
+  .page-sub { font-size: 17px; color: var(--ink-soft); margin: 0 0 32px; max-width: 720px; }
+  .page-sub a { font-weight: 600; }
+
+  /* ───── Audience tabs ───── */
+  .audience-tabs {
+    display: inline-flex; background: var(--bg-sub);
+    border-radius: 10px; padding: 5px;
+    border: 1px solid var(--rule);
+    margin: 0 0 12px;
+  }
+  .audience-tab {
+    padding: 9px 22px; border: none; background: transparent;
+    cursor: pointer; border-radius: 7px;
+    font-size: 14px; font-weight: 600; color: var(--ink-faint);
+    font-family: var(--sans);
+    transition: background 120ms ease, color 120ms ease;
+  }
+  .audience-tab:hover { color: var(--ink-soft); }
+  .audience-tab[aria-selected="true"] {
+    background: var(--bg-card); color: var(--ink);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+
+  .audience-panel { display: none; }
+  .audience-panel.is-active { display: block; }
+  .audience-lead {
+    font-size: 16px; color: var(--ink-soft); margin: 16px 0 40px;
+    max-width: 720px; line-height: 1.55;
+  }
+
+  /* ───── Sections ───── */
+  .section { margin-bottom: 48px; }
+  .section-header {
+    border-top: 1px solid var(--rule);
+    padding-top: 24px; margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: var(--serif); font-weight: 600; font-size: 26px;
+    line-height: 1.2; margin: 0 0 6px; letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .section-intro {
+    font-size: 14px; color: var(--ink-faint); margin: 0;
+    font-style: italic;
+  }
+
+  /* ───── Prompt cards ───── */
+  .prompts { display: flex; flex-direction: column; gap: 16px; }
+  .prompt-card {
+    background: var(--bg-card); border: 1px solid var(--rule);
+    border-radius: 10px; padding: 20px 22px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .prompt-header {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 12px;
+  }
+  .prompt-title {
+    font-weight: 600; font-size: 16px; line-height: 1.3;
+    color: var(--ink); margin: 0; flex: 1;
+  }
+  .copy-btn {
+    flex-shrink: 0;
+    padding: 6px 12px; border-radius: 5px;
+    background: var(--bg-sub); color: var(--ink-soft);
+    border: 1px solid var(--rule); cursor: pointer;
+    font-size: 12px; font-weight: 600;
+    font-family: var(--sans);
+    transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+  }
+  .copy-btn:hover { border-color: var(--gold); color: var(--ink); }
+  .copy-btn.is-copied { background: var(--ok); color: #fff; border-color: var(--ok); }
+
+  .prompt-body {
+    font-family: var(--mono); font-size: 13px; line-height: 1.55;
+    background: var(--bg-sub); border: 1px solid var(--rule);
+    border-radius: 6px; padding: 14px 16px; margin: 0;
+    color: var(--ink-soft); white-space: pre-wrap;
+  }
+  .prompt-body em, .prompt-body i {
+    font-style: normal; color: var(--accent); font-weight: 600;
+  }
+
+  .prompt-what {
+    font-size: 13px; color: var(--ink-faint); margin: 0;
+    line-height: 1.5;
+  }
+  .prompt-what::before {
+    content: "What this gives you:";
+    font-weight: 700; color: var(--ink-soft);
+    letter-spacing: 0.04em; text-transform: uppercase; font-size: 10px;
+    margin-right: 8px;
+  }
+
+  /* ───── Footer ───── */
+  .footer-note {
+    margin-top: 56px; padding: 24px; background: var(--bg-card);
+    border: 1px solid var(--rule); border-radius: 10px;
+    font-size: 14px; color: var(--ink-soft);
+  }
+  .footer-note h3 { margin: 0 0 8px; font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--ink); }
+  .footer-note p { margin: 0 0 10px; }
+  .footer-note p:last-child { margin: 0; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="wordmark">Sermon<span class="dot">·</span>Steward</a>
+    <span class="site-tag">Prompts library</span>
+  </div>
+</header>
+
+<main>
+  <a href="/pastors/" class="back-link">← Back to pastors directory</a>
+  <div class="page-eyebrow">How to use it</div>
+  <h1 class="page-title">Prompts to explore a sermon archive</h1>
+  <p class="page-sub">
+    A library of prompts you can paste into Claude / Cowork, ChatGPT,
+    or Grok once you've added a pastor's connector from the
+    <a href="/pastors/">pastors directory</a>. Bracketed <em>[items]</em>
+    are placeholders — swap them for the topic, passage, or detail
+    you're actually working on.
+  </p>
+
+  <!-- ─── Audience tabs ─── -->
+  <div class="audience-tabs" role="tablist">
+    {% for a in prompts.audiences %}
+    <button
+      type="button"
+      class="audience-tab"
+      role="tab"
+      aria-selected="{{ 'true' if loop.first else 'false' }}"
+      data-audience-target="audience-{{ a.key }}"
+    >{{ a.label }}</button>
+    {% endfor %}
+  </div>
+
+  {% for a in prompts.audiences %}
+  <div class="audience-panel {{ 'is-active' if loop.first }}" id="audience-{{ a.key }}" role="tabpanel">
+    <p class="audience-lead">{{ a.lead }}</p>
+
+    {% for section in a.sections %}
+    {% set sectionIdx = loop.index0 %}
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">{{ section.title }}</h2>
+        <p class="section-intro">{{ section.intro }}</p>
+      </div>
+      <div class="prompts">
+        {% for p in section.prompts %}
+        {# Include both section and prompt indices so IDs are unique across the page. #}
+        {% set promptId = "prompt-" + a.key + "-s" + sectionIdx|string + "-p" + loop.index0|string %}
+        <article class="prompt-card">
+          <div class="prompt-header">
+            <h3 class="prompt-title">{{ p.title }}</h3>
+            <button
+              type="button"
+              class="copy-btn"
+              data-copy-target="{{ promptId }}-text"
+              data-label-default="Copy"
+              data-label-copied="Copied ✓"
+            >Copy</button>
+          </div>
+          <pre class="prompt-body" id="{{ promptId }}-text">{{ p.prompt }}</pre>
+          <p class="prompt-what">{{ p.what }}</p>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+  {% endfor %}
+
+  <div class="footer-note">
+    <h3>A few tips</h3>
+    <p>
+      <strong>Pick the right connector first.</strong> If you're a
+      pastor using your own corpus, install your own connector. If
+      you're a church member, install your pastor's. The connector
+      determines whose sermons get searched.
+    </p>
+    <p>
+      <strong>Load the voice prompt if your client supports it.</strong>
+      Claude / Cowork shows a "Use a prompt" picker next to the
+      message box. Pick the pastor's voice prompt before you start
+      a session — it sets the tone for how Claude reads and quotes
+      from the sermons.
+    </p>
+    <p>
+      <strong>Citations are part of the answer.</strong> Every
+      response should cite real sermon titles and dates. If something
+      looks invented, ask: <em>"Cite that — sermon title and date,
+      please."</em>
+    </p>
+  </div>
+</main>
+
+<script>
+  // Copy-to-clipboard for prompt cards.
+  document.querySelectorAll('.copy-btn').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const el = document.getElementById(btn.dataset.copyTarget);
+      const text = el ? el.textContent.trim() : '';
+      if (!text) return;
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (_) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (_e) {}
+        document.body.removeChild(ta);
+      }
+      const original = btn.dataset.labelDefault || btn.textContent;
+      btn.textContent = btn.dataset.labelCopied || 'Copied ✓';
+      btn.classList.add('is-copied');
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove('is-copied');
+      }, 1500);
+    });
+  });
+
+  // Audience tabs (pastors vs church members).
+  document.querySelectorAll('.audience-tab').forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const targetId = tab.dataset.audienceTarget;
+      document.querySelectorAll('.audience-tab').forEach((t) => {
+        t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+      });
+      document.querySelectorAll('.audience-panel').forEach((p) => {
+        p.classList.toggle('is-active', p.id === targetId);
+      });
+      // Scroll to top of the audience content on switch.
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
