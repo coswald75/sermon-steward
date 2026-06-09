@@ -1,0 +1,577 @@
+---
+permalink: /GuildHall/index.html
+title: Guild Hall — Sermon Steward
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="The canonical Reformed reference library as one MCP connector. 18 voices — Piper, Keller, Spurgeon, MacArthur, Lloyd-Jones, Sproul, Ferguson, DeYoung, Carson, Watson, and more — searchable from Claude, ChatGPT, or Grok.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Guild Hall — Sermon Steward">
+<meta property="og:description" content="The canonical Reformed reference library as one MCP connector. 18 voices — Piper, Keller, Spurgeon, MacArthur, Lloyd-Jones, Sproul, Ferguson, DeYoung, Carson, Watson, and more.">
+<meta property="og:site_name" content="Sermon Steward">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+Pro:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg:        #fbf8f1;
+    --bg-card:   #ffffff;
+    --bg-sub:    #f5f1e4;
+    --ink:       #1a1a1a;
+    --ink-soft:  #4a4a4a;
+    --ink-faint: #828282;
+    --rule:      #e6e1d3;
+    --accent:    #c4452f;
+    --accent-deep: #9a3624;
+    --accent-soft: #f0d4cc;
+    --gold:      #b8893a;
+    --highlight: #fef0c8;
+    --ok:        #2d7a3d;
+    --sans: 'Inter', system-ui, -apple-system, "Segoe UI", sans-serif;
+    --serif: 'Source Serif Pro', 'Iowan Old Style', Georgia, serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); font-size: 17px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-deep); }
+
+  /* ───── Header ───── */
+  .site-header { padding: 28px 32px; border-bottom: 1px solid var(--rule); background: var(--bg-card); }
+  .site-header-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  .wordmark { font-weight: 800; font-size: 22px; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+  .wordmark .dot { color: var(--accent); }
+  .site-tag { font-size: 11px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.12em; }
+
+  /* ───── Page intro ───── */
+  main { max-width: 1080px; margin: 0 auto; padding: 56px 32px 96px; }
+  .page-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .page-title { font-family: var(--serif); font-weight: 600; font-size: 48px; line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 18px; color: var(--ink); }
+  .page-sub { font-size: 18px; color: var(--ink-soft); max-width: 720px; margin: 0 0 12px; }
+  .page-sub a { font-weight: 600; }
+
+  .stats-row {
+    display: flex; gap: 32px; flex-wrap: wrap;
+    margin: 24px 0 24px;
+    padding: 18px 24px;
+    background: var(--bg-card); border: 1px solid var(--rule);
+    border-radius: 10px;
+  }
+  .stat { display: flex; flex-direction: column; gap: 2px; }
+  .stat-value { font-family: var(--serif); font-weight: 600; font-size: 26px; color: var(--ink); line-height: 1; }
+  .stat-label { font-size: 11px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+
+  .supported-row {
+    display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+    margin: 8px 0 40px; font-size: 12px; color: var(--ink-faint);
+    letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600;
+  }
+  .supported-row .label { color: var(--ink-soft); }
+  .supported-row .badge {
+    background: var(--bg-card); border: 1px solid var(--rule);
+    padding: 4px 10px; border-radius: 999px; letter-spacing: 0.04em;
+    color: var(--ink-soft);
+  }
+
+  /* ───── Connector card (the main act) ───── */
+  .connector-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 40px;
+    display: flex; flex-direction: column; gap: 22px;
+    margin-bottom: 56px;
+  }
+
+  /* ───── Card sections ───── */
+  .card-section { padding-top: 20px; border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: 12px; }
+  .card-section:first-child { padding-top: 0; border-top: 0; }
+  .section-label {
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-faint); font-weight: 700;
+  }
+
+  /* ───── URL row ───── */
+  .url-row { display: flex; gap: 8px; align-items: center; }
+  .url-display {
+    flex: 1; font-family: var(--mono); font-size: 13px;
+    background: var(--bg-sub); border: 1px solid var(--rule);
+    border-radius: 6px; padding: 12px 14px;
+    color: var(--ink-soft); overflow-x: auto; white-space: nowrap;
+    min-width: 0;
+  }
+  .url-hint { font-size: 13px; color: var(--ink-faint); margin: 0; }
+
+  /* ───── Buttons ───── */
+  .btn {
+    display: inline-block; text-align: center; padding: 10px 14px;
+    border-radius: 6px; font-size: 14px; font-weight: 600;
+    text-decoration: none; cursor: pointer;
+    transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+    font-family: var(--sans); border: 1px solid transparent;
+    white-space: nowrap;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-deep); }
+  .btn-secondary { background: var(--bg); color: var(--ink-soft); border-color: var(--rule); }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--ink); }
+  .btn.is-copied { background: var(--ok); color: #fff; border-color: var(--ok); }
+
+  /* ───── Tabs ───── */
+  .tabs-bar {
+    display: inline-flex; background: var(--bg-sub);
+    border-radius: 8px; padding: 4px;
+    border: 1px solid var(--rule);
+    flex-wrap: wrap; gap: 2px;
+  }
+  .tab-btn {
+    padding: 6px 14px; border: none; background: transparent;
+    cursor: pointer; border-radius: 6px;
+    font-size: 13px; font-weight: 600; color: var(--ink-faint);
+    font-family: var(--sans);
+    transition: background 120ms ease, color 120ms ease;
+  }
+  .tab-btn:hover { color: var(--ink-soft); }
+  .tab-btn[aria-selected="true"] {
+    background: var(--bg-card); color: var(--ink);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .tab-panel { display: none; flex-direction: column; gap: 14px; padding-top: 4px; }
+  .tab-panel.is-active { display: flex; }
+
+  /* ───── Steps + sub-paths inside tabs ───── */
+  .steps-list {
+    margin: 0; padding: 0 0 0 22px;
+    font-size: 14px; color: var(--ink-soft); line-height: 1.55;
+  }
+  .steps-list li { margin-bottom: 4px; }
+  .steps-list code, .step-inline code {
+    font-family: var(--mono); font-size: 12.5px;
+    background: var(--bg-sub); padding: 1px 5px; border-radius: 3px;
+    color: var(--ink-soft);
+  }
+  .steps-list strong { color: var(--ink); font-weight: 600; }
+
+  .sub-path { display: flex; flex-direction: column; gap: 8px; }
+  .sub-path-label {
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700;
+  }
+  .sub-path-label .method-name {
+    color: var(--ink-soft); font-weight: 600;
+    margin-left: 6px; letter-spacing: 0.04em;
+  }
+  .sub-path-hint { font-size: 13px; color: var(--ink-faint); margin: 0; line-height: 1.5; }
+  .sub-path-hint code {
+    font-family: var(--mono); font-size: 12px;
+    background: var(--bg-sub); padding: 1px 5px; border-radius: 3px;
+    color: var(--ink-soft);
+  }
+
+  pre.json-snippet {
+    background: var(--bg-sub); border: 1px solid var(--rule); border-radius: 6px;
+    padding: 12px; margin: 0; font-size: 12px;
+    overflow-x: auto; line-height: 1.45;
+    font-family: var(--mono); color: var(--ink-soft);
+  }
+
+  .raw-link {
+    align-self: flex-start; margin-top: 4px;
+    font-size: 12px; color: var(--ink-faint);
+    text-decoration: none; border-bottom: 1px dotted var(--ink-faint);
+  }
+  .raw-link:hover { color: var(--ink-soft); border-bottom-color: var(--ink-soft); }
+
+  /* ───── Members grid ───── */
+  .members-heading {
+    font-family: var(--serif); font-weight: 600;
+    font-size: 26px; margin: 0 0 6px;
+    color: var(--ink); letter-spacing: -0.01em;
+  }
+  .members-heading-sub {
+    font-size: 15px; color: var(--ink-soft);
+    margin: 0 0 28px; max-width: 720px;
+  }
+
+  .members-grid {
+    display: grid; gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    margin-bottom: 56px;
+  }
+  .member-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 14px 16px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .member-name {
+    font-family: var(--serif); font-weight: 600;
+    font-size: 17px; line-height: 1.2; margin: 0;
+    color: var(--ink);
+  }
+  .member-url {
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--ink-faint);
+    overflow-x: auto; white-space: nowrap;
+  }
+  .member-actions {
+    display: flex; gap: 6px; margin-top: 2px;
+  }
+  .member-actions .btn {
+    padding: 5px 10px; font-size: 12px;
+  }
+
+  /* ───── Footer note ───── */
+  .footer-note {
+    margin-top: 16px; padding: 28px; background: var(--bg-card);
+    border: 1px solid var(--rule); border-radius: 10px;
+    font-size: 15px; color: var(--ink-soft);
+  }
+  .footer-note h3 { margin: 0 0 10px; font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--ink); }
+  .footer-note p { margin: 0 0 10px; }
+  .footer-note p:last-child { margin: 0; }
+  .footer-note code {
+    font-family: var(--mono); font-size: 13px;
+    background: var(--bg-sub); padding: 1px 5px; border-radius: 3px;
+    color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="wordmark">Sermon<span class="dot">·</span>Steward</a>
+    <span class="site-tag">Guild Hall</span>
+  </div>
+</header>
+
+<main>
+  <div class="page-eyebrow">Reference library</div>
+  <h1 class="page-title">The Guild Hall</h1>
+  <p class="page-sub">
+    Eighteen voices from the canonical Reformed reference library —
+    Piper, Keller, Spurgeon, MacArthur, Lloyd-Jones, Sproul, Ferguson,
+    DeYoung, Carson, Watson, Mahaney, Boice, Stott, Robinson, Baucham,
+    Campbell Morgan, S. Lewis Johnson, and David VanAcker —
+    queryable as <em>one</em> MCP corpus from Claude, ChatGPT, or Grok.
+  </p>
+  <p class="page-sub" style="margin-top: 4px;">
+    Add one URL, get every voice. Add <code style="font-family: var(--mono); font-size: 13px; background: var(--bg-sub); padding: 1px 5px; border-radius: 3px;">?speaker=&lt;slug&gt;</code> to narrow to a single member without changing the connector.
+  </p>
+
+  <div class="stats-row">
+    <div class="stat">
+      <div class="stat-value">{{ guild.members | length }}</div>
+      <div class="stat-label">Reformed voices</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">{{ guild.total_sermons }}</div>
+      <div class="stat-label">Sermons indexed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">1</div>
+      <div class="stat-label">Connector URL</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">$0</div>
+      <div class="stat-label">No account, no auth</div>
+    </div>
+  </div>
+
+  <div class="supported-row">
+    <span class="label">Works in:</span>
+    <span class="badge">Claude / Cowork</span>
+    <span class="badge">ChatGPT</span>
+    <span class="badge">Grok</span>
+  </div>
+
+  {% set mcpUrl = guild.mcp_base_url + guild.endpoint_path %}
+
+  <!-- ─── Main connector card ─────────────────────────────────────────── -->
+  <article class="connector-card">
+
+    <!-- Connector URL -->
+    <div class="card-section">
+      <div class="section-label">Connector URL</div>
+      <div class="url-row">
+        <code class="url-display">{{ mcpUrl }}</code>
+        <button
+          type="button"
+          class="btn btn-primary copy-btn"
+          data-copy-text="{{ mcpUrl }}"
+          data-label-default="Copy URL"
+          data-label-copied="Copied ✓"
+        >Copy URL</button>
+      </div>
+      <p class="url-hint">
+        Public — no token, no auth. Same URL works in every supported
+        LLM client. Each result is attributed to the speaker by name,
+        sermon title, and date.
+      </p>
+    </div>
+
+    <!-- Set up in your LLM (tabbed) -->
+    <div class="card-section">
+      <div class="section-label">Set up in your LLM</div>
+
+      <div class="tabs-bar" role="tablist">
+        <button type="button" class="tab-btn" role="tab" aria-selected="true"
+          data-tab-target="panel-claude">Claude / Cowork</button>
+        <button type="button" class="tab-btn" role="tab" aria-selected="false"
+          data-tab-target="panel-chatgpt">ChatGPT</button>
+        <button type="button" class="tab-btn" role="tab" aria-selected="false"
+          data-tab-target="panel-grok">Grok</button>
+      </div>
+
+      <!-- Claude / Cowork -->
+      <div class="tab-panel is-active" id="panel-claude" role="tabpanel">
+
+        <div class="sub-path">
+          <div class="sub-path-label">Try this first<span class="method-name">— Paste in Cowork UI</span></div>
+          <ol class="steps-list">
+            <li>Open Cowork / Claude Desktop.</li>
+            <li><strong>Customize → Connectors</strong> → click <code>+</code> or <strong>Add custom connector</strong>.</li>
+            <li>Paste URL above · name it <code>guild-hall</code> · save.</li>
+            <li>No token / auth needed.</li>
+          </ol>
+        </div>
+
+        <div class="sub-path">
+          <div class="sub-path-label">Try this<span class="method-name">— Let Cowork edit the config</span></div>
+          <button
+            type="button"
+            class="btn btn-secondary copy-btn"
+            data-copy-target="prompt-guild"
+            data-label-default="Copy Cowork install prompt"
+            data-label-copied="Copied ✓"
+          >Copy Cowork install prompt</button>
+          <p class="sub-path-hint">
+            Paste into a new Cowork chat. Cowork uses local agent mode
+            to edit your <code>claude_desktop_config.json</code>,
+            then tells you to restart.
+          </p>
+          <script type="text/plain" id="prompt-guild">You are helping me add the Guild Hall Sermon Steward connector to this machine. Do not ask clarifying questions. Just do the steps below, report success, and stop.
+
+# Steps
+
+1. Determine the Claude Desktop config path:
+   - macOS: ~/Library/Application Support/Claude/claude_desktop_config.json
+   - Windows: %APPDATA%\Claude\claude_desktop_config.json
+
+2. Read it. If it doesn't exist, treat it as {"mcpServers": {}}.
+
+3. Parse the JSON. Inside mcpServers (create the key if missing), add or overwrite the key "guild-hall" with this exact value:
+
+   {
+     "command": "npx",
+     "args": [
+       "-y",
+       "mcp-remote",
+       "{{ mcpUrl }}"
+     ]
+   }
+
+   IMPORTANT:
+   - Preserve all OTHER entries in mcpServers — do NOT replace the whole object, just add or overwrite the "guild-hall" key.
+   - Do NOT touch any other top-level keys in the config (preferences, coworkUserFilesPath, etc.).
+   - Keep the file as valid JSON. No trailing commas, no comments.
+
+4. Save the file.
+
+5. Report back to me in plain English:
+   - Confirm the file was updated and the "guild-hall" entry was added.
+   - Tell me to fully quit Cowork / Claude Desktop (Cmd+Q on Mac; right-click tray icon → Quit on Windows) and reopen it. Note that closing the window is NOT enough.
+   - Mention that the first launch will spend 10-30 seconds downloading mcp-remote via npx — that's normal.
+   - Tell me that after the restart I should look for a hammer/tool icon near the message box showing one tool: ask_corpus.
+   - Give me one suggested first query to verify it works: "Show me a few of John Piper's sermons on suffering."
+
+If you can't read or write the config file because of permissions, tell me exactly what permission to grant and stop. Don't try a workaround.
+</script>
+        </div>
+
+        <div class="sub-path">
+          <div class="sub-path-label">Try this<span class="method-name">— Manual JSON setup</span></div>
+          <button
+            type="button"
+            class="btn btn-secondary copy-btn"
+            data-copy-target="json-guild"
+            data-label-default="Copy JSON snippet"
+            data-label-copied="Copied ✓"
+          >Copy JSON snippet</button>
+          <pre class="json-snippet" id="json-guild">"guild-hall": {
+  "command": "npx",
+  "args": [
+    "-y",
+    "mcp-remote",
+    "{{ mcpUrl }}"
+  ]
+}</pre>
+          <p class="sub-path-hint">
+            Paste into <code>claude_desktop_config.json</code> as a
+            sibling of any existing <code>mcpServers</code> entries.
+            ⌘Q + reopen Cowork.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- ChatGPT -->
+      <div class="tab-panel" id="panel-chatgpt" role="tabpanel">
+        <ol class="steps-list">
+          <li>In ChatGPT, click your profile → <strong>Settings</strong>.</li>
+          <li>Open <strong>Apps &amp; Connectors</strong> → <strong>Add new connector</strong>.</li>
+          <li>Fill in:
+            <ul>
+              <li><strong>Name:</strong> <code>Guild Hall (Sermon Steward)</code></li>
+              <li><strong>Description:</strong> <em>Search the canonical Reformed sermon reference library by topic, scripture, or theme.</em> (optional)</li>
+              <li><strong>Connection:</strong> leave as <strong>Server URL</strong>.</li>
+              <li><strong>Server URL:</strong> paste the URL above.</li>
+              <li><strong>Authentication:</strong> change to <strong>No Auth</strong>.</li>
+            </ul>
+          </li>
+          <li>Check <strong>I understand and want to continue</strong>.</li>
+          <li>Click <strong>Create</strong>. The app appears in your apps list with one tool: <code>ask_corpus</code>.</li>
+        </ol>
+        <p class="sub-path-hint">
+          Individual ChatGPT Plus/Pro accounts can use the connector in
+          read-only mode (which is all this is). Business / Enterprise
+          workspaces have the same access.
+        </p>
+      </div>
+
+      <!-- Grok -->
+      <div class="tab-panel" id="panel-grok" role="tabpanel">
+        <ol class="steps-list">
+          <li>Go to <a href="https://grok.com/connectors" target="_blank" rel="noopener"><strong>grok.com/connectors</strong></a>.</li>
+          <li>Click <strong>New Connector</strong> → select <strong>Custom</strong>.</li>
+          <li>Paste the URL above as the MCP server URL.</li>
+          <li>No authentication required.</li>
+          <li>Save. The connector appears in your Grok connectors list.</li>
+        </ol>
+        <p class="sub-path-hint">
+          Tested and working as of June 2026. Grok's MCP support
+          shipped May 2026 via the "Bring Your Own MCP" launch.
+        </p>
+      </div>
+
+    </div>
+
+    <a class="raw-link" href="{{ mcpUrl }}" target="_blank" rel="noopener">View raw endpoint ↗</a>
+  </article>
+
+  <!-- ─── Member grid (per-speaker filter URLs) ────────────────────────── -->
+  <h2 class="members-heading">Narrow to a single voice</h2>
+  <p class="members-heading-sub">
+    Each Guild member has a filtered endpoint. Use these when you want
+    Claude / ChatGPT / Grok to draw <em>only</em> from one voice — for
+    example, "what did Spurgeon say about Psalm 23?" on the Spurgeon URL.
+    Same setup as above; just substitute that member's URL.
+  </p>
+
+  <div class="members-grid">
+    {% for m in guild.members %}
+    {% set memberUrl = mcpUrl + "?speaker=" + m.slug %}
+    <article class="member-card">
+      <h3 class="member-name">{{ m.name }}</h3>
+      <code class="member-url">{{ memberUrl }}</code>
+      <div class="member-actions">
+        <button
+          type="button"
+          class="btn btn-secondary copy-btn"
+          data-copy-text="{{ memberUrl }}"
+          data-label-default="Copy URL"
+          data-label-copied="Copied ✓"
+        >Copy URL</button>
+        <a class="btn btn-secondary" href="{{ memberUrl }}" target="_blank" rel="noopener">View raw ↗</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+
+  <div class="footer-note">
+    <h3>What the Guild Hall is — and isn't</h3>
+    <p>
+      The Guild Hall is the <strong>canonical reference library</strong>
+      — the voices the Sermon Steward pipeline canonically compares
+      working pastors against for theological alignment, illustrative
+      patterns, and exegetical neighbors. It's a study tool, not a
+      product hosted by the speakers themselves.
+    </p>
+    <p>
+      All material is public (sermon transcripts, talks, expositions).
+      Attribution is enforced at the data layer: every result carries
+      the speaker's name directly from the joined database row. A query
+      about one voice will never return another's material.
+    </p>
+    <p>
+      Looking for working pastors instead? See
+      <a href="/pastors/">the pastors directory</a> — Chris Oswald,
+      Ricky Alcantar, and others who use Sermon Steward to publish
+      their weekly preaching.
+    </p>
+  </div>
+</main>
+
+<script>
+  // ─── Copy-to-clipboard for any .copy-btn ───────────────────────────────
+  document.querySelectorAll('.copy-btn').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      let text = btn.dataset.copyText;
+      if (!text && btn.dataset.copyTarget) {
+        const el = document.getElementById(btn.dataset.copyTarget);
+        text = el ? el.textContent.trim() : '';
+      }
+      if (!text) return;
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (_) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (_e) {}
+        document.body.removeChild(ta);
+      }
+      const original = btn.dataset.labelDefault || btn.textContent;
+      btn.textContent = btn.dataset.labelCopied || 'Copied ✓';
+      btn.classList.add('is-copied');
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove('is-copied');
+      }, 1500);
+    });
+  });
+
+  // ─── Tab switching (single tablist on this page) ───────────────────────
+  document.querySelectorAll('[role="tablist"]').forEach((tablist) => {
+    tablist.querySelectorAll('[role="tab"]').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const root = tab.closest('.connector-card') || document;
+        const targetId = tab.dataset.tabTarget;
+        root.querySelectorAll('[role="tab"]').forEach((t) => {
+          t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+        });
+        root.querySelectorAll('.tab-panel').forEach((p) => {
+          p.classList.toggle('is-active', p.id === targetId);
+        });
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

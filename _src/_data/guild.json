@@ -1,0 +1,25 @@
+{
+  "mcp_base_url": "https://corpus-mcp.chris-386.workers.dev",
+  "endpoint_path": "/g",
+  "total_sermons": 644,
+  "members": [
+    { "name": "C.J. Mahaney",        "slug": "c-j-mahaney" },
+    { "name": "Charles Spurgeon",    "slug": "charles-spurgeon" },
+    { "name": "D.A. Carson",         "slug": "d-a-carson" },
+    { "name": "David VanAcker",      "slug": "david-vanacker" },
+    { "name": "G. Campbell Morgan",  "slug": "g-campbell-morgan" },
+    { "name": "Haddon Robinson",     "slug": "haddon-robinson" },
+    { "name": "James Boice",         "slug": "james-boice" },
+    { "name": "John MacArthur",      "slug": "john-macarthur" },
+    { "name": "John Piper",          "slug": "john-piper" },
+    { "name": "John Stott",          "slug": "john-stott" },
+    { "name": "Kevin DeYoung",       "slug": "kevin-deyoung" },
+    { "name": "Martyn Lloyd-Jones",  "slug": "martyn-lloyd-jones" },
+    { "name": "R.C. Sproul",         "slug": "r-c-sproul" },
+    { "name": "S. Lewis Johnson",    "slug": "s-lewis-johnson" },
+    { "name": "Sinclair Ferguson",   "slug": "sinclair-ferguson" },
+    { "name": "Thomas Watson",       "slug": "thomas-watson" },
+    { "name": "Tim Keller",          "slug": "tim-keller" },
+    { "name": "Voddie Baucham",      "slug": "voddie-baucham" }
+  ]
+}
