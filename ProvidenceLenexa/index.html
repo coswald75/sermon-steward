@@ -150,6 +150,72 @@
     display: block; color: var(--ink-soft); font-size: 14px;
   }
   .topic-more { font-size: 14px; color: var(--ink-soft); margin-top: 16px; }
+
+  /* ───── LLM connector toggle (scoped under .mcp-connect) ───── */
+  .mcp-connect { --ok: #2d7a3d; }
+  .mcp-connect .section-label {
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-faint); font-weight: 700; margin: 18px 0 10px;
+  }
+  .mcp-connect .url-row { display: flex; gap: 8px; align-items: center; }
+  .mcp-connect .url-display {
+    flex: 1; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px; background: #f5f1e4; border: 1px solid var(--rule);
+    border-radius: 6px; padding: 10px 12px; color: var(--ink-soft);
+    overflow-x: auto; white-space: nowrap; min-width: 0;
+  }
+  .mcp-connect .url-hint { font-size: 13px; color: var(--ink-faint); margin: 8px 0 0; }
+  .mcp-connect .cbtn {
+    display: inline-block; text-align: center; padding: 10px 14px;
+    border-radius: 6px; font-size: 14px; font-weight: 600;
+    cursor: pointer; border: 1px solid transparent; white-space: nowrap;
+    font-family: var(--sans);
+    transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+  }
+  .mcp-connect .cbtn-primary { background: var(--accent); color: #fff; }
+  .mcp-connect .cbtn-primary:hover { background: var(--accent-deep); }
+  .mcp-connect .cbtn-secondary { background: var(--bg); color: var(--ink-soft); border-color: var(--rule); align-self: flex-start; }
+  .mcp-connect .cbtn-secondary:hover { border-color: var(--accent); color: var(--ink); }
+  .mcp-connect .cbtn.is-copied { background: var(--ok); color: #fff; border-color: var(--ok); }
+  .mcp-connect .tabs-bar {
+    display: inline-flex; background: #f5f1e4; border-radius: 8px;
+    padding: 4px; border: 1px solid var(--rule); flex-wrap: wrap; gap: 2px;
+    margin-bottom: 12px;
+  }
+  .mcp-connect .tab-btn {
+    padding: 6px 14px; border: none; background: transparent; cursor: pointer;
+    border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-faint);
+    font-family: var(--sans);
+  }
+  .mcp-connect .tab-btn[aria-selected="true"] {
+    background: #fff; color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .mcp-connect .tab-panel { display: none; flex-direction: column; gap: 14px; }
+  .mcp-connect .tab-panel.is-active { display: flex; }
+  .mcp-connect .steps-list { margin: 0; padding: 0 0 0 22px; font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
+  .mcp-connect .steps-list li { margin-bottom: 4px; }
+  .mcp-connect .steps-list code, .mcp-connect .sub-path-hint code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px;
+    background: #f5f1e4; padding: 1px 5px; border-radius: 3px; color: var(--ink-soft);
+  }
+  .mcp-connect .steps-list strong { color: var(--ink); font-weight: 600; }
+  .mcp-connect .sub-path { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+  .mcp-connect .sub-path-label {
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700;
+  }
+  .mcp-connect .sub-path-label .method-name { color: var(--ink-soft); font-weight: 600; margin-left: 6px; letter-spacing: 0.04em; }
+  .mcp-connect .sub-path-hint { font-size: 13px; color: var(--ink-faint); margin: 0; line-height: 1.5; }
+  .mcp-connect pre.json-snippet {
+    background: #f5f1e4; border: 1px solid var(--rule); border-radius: 6px;
+    padding: 12px; margin: 0; font-size: 12px; overflow-x: auto; line-height: 1.45;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--ink-soft);
+  }
+  .mcp-connect .raw-link {
+    display: inline-block; margin-top: 14px; font-size: 12px; color: var(--ink-faint);
+    border-bottom: 1px dotted var(--ink-faint);
+  }
+  .mcp-connect .raw-link:hover { color: var(--ink-soft); border-bottom-color: var(--ink-soft); }
 </style>
 </head>
 <body>
@@ -748,6 +814,175 @@
     </div>
   </details>
 
+  <details class="toggle mcp-connect">
+    <summary>Use your own LLM to interact with Providence sermons</summary>
+    <div class="toggle-body">
+
+      <div class="section-label">Connector URL</div>
+      <div class="url-row">
+        <code class="url-display">https://corpus-mcp.chris-386.workers.dev/p/chris-oswald</code>
+        <button
+          type="button"
+          class="cbtn cbtn-primary copy-btn"
+          data-copy-text="https://corpus-mcp.chris-386.workers.dev/p/chris-oswald"
+          data-label-default="Copy URL"
+          data-label-copied="Copied ✓"
+        >Copy URL</button>
+      </div>
+      <p class="url-hint">
+        Public — no token, no auth, no account. Add this URL as a custom
+        connector in Claude, ChatGPT, or Grok and your AI can search every
+        Providence sermon in any conversation, with citations by sermon
+        title and date. Pick your LLM below for setup steps.
+      </p>
+
+      <div class="section-label">Set up in your LLM</div>
+
+      <div class="tabs-bar" role="tablist">
+        <button type="button" class="tab-btn" role="tab" aria-selected="true"
+          data-tab-target="mcp-panel-claude">Claude / Cowork</button>
+        <button type="button" class="tab-btn" role="tab" aria-selected="false"
+          data-tab-target="mcp-panel-chatgpt">ChatGPT</button>
+        <button type="button" class="tab-btn" role="tab" aria-selected="false"
+          data-tab-target="mcp-panel-grok">Grok</button>
+      </div>
+
+      <!-- Claude / Cowork -->
+      <div class="tab-panel is-active" id="mcp-panel-claude" role="tabpanel">
+
+        <div class="sub-path">
+          <div class="sub-path-label">Try this first<span class="method-name">— Paste in Cowork UI</span></div>
+          <ol class="steps-list">
+            <li>Open Cowork / Claude Desktop.</li>
+            <li><strong>Customize → Connectors</strong> → click <code>+</code> or <strong>Add custom connector</strong>.</li>
+            <li>Paste the URL above · name it <code>chris-oswald</code> · save.</li>
+            <li>No token / auth needed.</li>
+          </ol>
+        </div>
+
+        <div class="sub-path">
+          <div class="sub-path-label">Try this<span class="method-name">— Let Cowork edit the config</span></div>
+          <button
+            type="button"
+            class="cbtn cbtn-secondary copy-btn"
+            data-copy-target="mcp-prompt-chris"
+            data-label-default="Copy Cowork install prompt"
+            data-label-copied="Copied ✓"
+          >Copy Cowork install prompt</button>
+          <p class="sub-path-hint">
+            Paste into a new Cowork chat. Cowork uses local agent mode to
+            edit your <code>claude_desktop_config.json</code>, then tells
+            you to restart.
+          </p>
+          <script type="text/plain" id="mcp-prompt-chris">You are helping me add the Chris Oswald Sermon Steward connector to this machine. Do not ask clarifying questions. Just do the steps below, report success, and stop.
+
+# Steps
+
+1. Determine the Claude Desktop config path:
+   - macOS: ~/Library/Application Support/Claude/claude_desktop_config.json
+   - Windows: %APPDATA%\Claude\claude_desktop_config.json
+
+2. Read it. If it doesn't exist, treat it as {"mcpServers": {}}.
+
+3. Parse the JSON. Inside mcpServers (create the key if missing), add or overwrite the key "chris-oswald" with this exact value:
+
+   {
+     "command": "npx",
+     "args": [
+       "-y",
+       "mcp-remote",
+       "https://corpus-mcp.chris-386.workers.dev/p/chris-oswald"
+     ]
+   }
+
+   IMPORTANT:
+   - Preserve all OTHER entries in mcpServers — do NOT replace the whole object, just add or overwrite the "chris-oswald" key.
+   - Do NOT touch any other top-level keys in the config (preferences, coworkUserFilesPath, etc.).
+   - Keep the file as valid JSON. No trailing commas, no comments.
+
+4. Save the file.
+
+5. Report back to me in plain English:
+   - Confirm the file was updated and the "chris-oswald" entry was added.
+   - Tell me to fully quit Cowork / Claude Desktop (Cmd+Q on Mac; right-click tray icon → Quit on Windows) and reopen it. Note that closing the window is NOT enough.
+   - Mention that the first launch will spend 10–30 seconds downloading mcp-remote via npx — that's normal.
+   - Tell me that after the restart I should look for a hammer/tool icon near the message box showing one tool: ask_corpus.
+   - Tell me that to use it, I should click the "+" or paperclip icon → "Use a prompt" → pick chris-oswald-voice.
+   - Give me one suggested first query to verify it works: "Surprise me with three sermon units I might have forgotten."
+
+If you can't read or write the config file because of permissions, tell me exactly what permission to grant and stop. Don't try a workaround.
+</script>
+        </div>
+
+        <div class="sub-path">
+          <div class="sub-path-label">Try this<span class="method-name">— Manual JSON setup</span></div>
+          <button
+            type="button"
+            class="cbtn cbtn-secondary copy-btn"
+            data-copy-target="mcp-json-chris"
+            data-label-default="Copy JSON snippet"
+            data-label-copied="Copied ✓"
+          >Copy JSON snippet</button>
+          <pre class="json-snippet" id="mcp-json-chris">"chris-oswald": {
+  "command": "npx",
+  "args": [
+    "-y",
+    "mcp-remote",
+    "https://corpus-mcp.chris-386.workers.dev/p/chris-oswald"
+  ]
+}</pre>
+          <p class="sub-path-hint">
+            Paste into <code>claude_desktop_config.json</code> as a sibling
+            of any existing <code>mcpServers</code> entries. ⌘Q + reopen
+            Cowork.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- ChatGPT -->
+      <div class="tab-panel" id="mcp-panel-chatgpt" role="tabpanel">
+        <ol class="steps-list">
+          <li>In ChatGPT, click your profile → <strong>Settings</strong>.</li>
+          <li>Open <strong>Apps &amp; Connectors</strong> → <strong>Add new connector</strong> (or <strong>New App</strong>).</li>
+          <li>Fill in:
+            <ul>
+              <li><strong>Name:</strong> <code>Chris Oswald Sermons</code></li>
+              <li><strong>Description:</strong> <em>Search Chris Oswald's preaching corpus by topic, scripture, or theme.</em> (optional)</li>
+              <li><strong>Connection:</strong> leave as <strong>Server URL</strong>.</li>
+              <li><strong>Server URL:</strong> paste the URL above.</li>
+              <li><strong>Authentication:</strong> change to <strong>No Auth</strong>.</li>
+            </ul>
+          </li>
+          <li>Check <strong>I understand and want to continue</strong>.</li>
+          <li>Click <strong>Create</strong>. The app appears in your apps list with one tool: <code>ask_corpus</code>.</li>
+        </ol>
+        <p class="sub-path-hint">
+          Individual ChatGPT Plus/Pro accounts can use the connector in
+          read-only mode (which is all this is). Business / Enterprise
+          workspaces have the same access.
+        </p>
+      </div>
+
+      <!-- Grok -->
+      <div class="tab-panel" id="mcp-panel-grok" role="tabpanel">
+        <ol class="steps-list">
+          <li>Go to <a href="https://grok.com/connectors" target="_blank" rel="noopener"><strong>grok.com/connectors</strong></a>.</li>
+          <li>Click <strong>New Connector</strong> → select <strong>Custom</strong>.</li>
+          <li>Paste the URL above as the MCP server URL.</li>
+          <li>No authentication required.</li>
+          <li>Save. The connector appears in your Grok connectors list.</li>
+        </ol>
+        <p class="sub-path-hint">
+          Tested and working as of June 2026. Grok's MCP support shipped
+          May 2026 via the "Bring Your Own MCP" launch.
+        </p>
+      </div>
+
+      <a class="raw-link" href="https://corpus-mcp.chris-386.workers.dev/p/chris-oswald" target="_blank" rel="noopener">View raw endpoint ↗</a>
+    </div>
+  </details>
+
 </div>
 
 <h3>What Providence values</h3>
@@ -785,6 +1020,57 @@
 <footer>
   Sermon Steward stewards the preaching of Providence Community Church. The church itself lives at <a href="https://sovgracekc.org/" target="_blank" rel="noopener">sovgracekc.org</a>.
 </footer>
+
+<script>
+  // Copy-to-clipboard for .copy-btn — supports data-copy-text (literal)
+  // or data-copy-target (id of an element whose textContent is copied,
+  // used for the multi-line Cowork install prompt).
+  document.querySelectorAll('.copy-btn').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      let text = btn.dataset.copyText;
+      if (!text && btn.dataset.copyTarget) {
+        const el = document.getElementById(btn.dataset.copyTarget);
+        text = el ? el.textContent.trim() : '';
+      }
+      if (!text) return;
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (_) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (_e) {}
+        document.body.removeChild(ta);
+      }
+      const original = btn.dataset.labelDefault || btn.textContent;
+      btn.textContent = btn.dataset.labelCopied || 'Copied ✓';
+      btn.classList.add('is-copied');
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove('is-copied');
+      }, 1500);
+    });
+  });
+
+  // Tab switching, scoped to the enclosing <details> so future toggles
+  // with their own tablists don't interfere with each other.
+  document.querySelectorAll('[role="tablist"]').forEach((tablist) => {
+    tablist.querySelectorAll('[role="tab"]').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const scope = tab.closest('details') || document;
+        const targetId = tab.dataset.tabTarget;
+        scope.querySelectorAll('[role="tab"]').forEach((t) => {
+          t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+        });
+        scope.querySelectorAll('.tab-panel').forEach((p) => {
+          p.classList.toggle('is-active', p.id === targetId);
+        });
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
