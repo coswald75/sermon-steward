@@ -107,6 +107,63 @@
     text-align: center; border-top: 1px solid var(--rule);
   }
   footer a { color: var(--ink-soft); }
+
+  /* ───── Expand/collapse toggles ───── */
+  .toggles { margin: 32px 0 8px; }
+  details.toggle {
+    background: var(--bg-card); border: 1px solid var(--rule);
+    border-radius: 10px; margin: 0 0 12px;
+  }
+  details.toggle summary {
+    cursor: pointer; list-style: none;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 20px; font-weight: 700; font-size: 17px;
+    letter-spacing: -0.01em;
+  }
+  details.toggle summary::-webkit-details-marker { display: none; }
+  details.toggle summary::after {
+    content: "+"; color: var(--accent);
+    font-size: 24px; font-weight: 500; line-height: 1;
+    transition: transform 0.12s;
+  }
+  details.toggle[open] summary::after { content: "–"; }
+  details.toggle .toggle-body {
+    padding: 4px 20px 20px; border-top: 1px solid var(--rule);
+  }
+  details.toggle .toggle-body > :first-child { margin-top: 16px; }
+
+  /* Full sermon index inside toggle */
+  .sermon-index-year {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent);
+    margin: 20px 0 4px;
+  }
+  ul.sermon-index { list-style: none; margin: 0; padding: 0; }
+  ul.sermon-index li {
+    display: flex; gap: 14px; align-items: baseline;
+    padding: 7px 0; border-bottom: 1px solid var(--rule);
+    font-size: 15px;
+  }
+  ul.sermon-index li:last-child { border-bottom: 0; }
+  ul.sermon-index .d {
+    color: var(--ink-faint); flex: none; width: 88px;
+    font-variant-numeric: tabular-nums; font-size: 13.5px;
+  }
+
+  /* Topical index inside toggle */
+  ul.topic-index { list-style: none; margin: 0; padding: 0; }
+  ul.topic-index li {
+    padding: 10px 0; border-bottom: 1px solid var(--rule);
+    font-size: 15px; line-height: 1.5;
+  }
+  ul.topic-index li:last-child { border-bottom: 0; }
+  ul.topic-index .topic-count {
+    color: var(--ink-faint); font-size: 13px; margin-left: 6px;
+  }
+  ul.topic-index .topic-blurb {
+    display: block; color: var(--ink-soft); font-size: 14px;
+  }
+  .topic-more { font-size: 14px; color: var(--ink-soft); margin-top: 16px; }
 </style>
 </head>
 <body>
@@ -127,22 +184,11 @@
 
 <p>The church sits inside the classical tradition that treats truth, beauty, and goodness as joined transcendentals, and the preaching reflects that. Sermons engage what's sometimes called "the great conversation" — the long human inquiry into what is real, what is good, what is worth wanting — and bring scripture into that inquiry as both authority and answer. The church culture pairs a strong commitment to truth with an unembarrassed practice of beauty, feasting, and grateful pursuit of the good life as faithful Christian living.</p>
 
-<h3>What Providence values</h3>
-<p>Providence states its values as comparisons rather than slogans — clearer about what is being chosen against:</p>
-<ul class="values">
-  <li><strong>Humility &gt; Pride</strong> — Humility is an accurate view of God and ourselves; the foundation under every other virtue.</li>
-  <li><strong>Courage &gt; Cowardice</strong> — Courage flows from humility, cowardice from pride. The church wants to help people live authentically courageous lives.</li>
-  <li><strong>Celebration &gt; Envy</strong> — Envy is treated as a much bigger spiritual problem than usually credited; the cross makes it possible to root for one another.</li>
-  <li><strong>Facts &gt; Feelings</strong> — Feelings matter, but when feelings and facts disagree, the work is to bring the feeling into the truth — not the truth into the feeling.</li>
-  <li><strong>Honesty &gt; Spin</strong> — Say what you mean and mean what you say. <em>By the open statement of the truth we would commend ourselves to everyone's conscience in the sight of God.</em></li>
-  <li><strong>Freedom &gt; Guilt</strong> — The world uses guilt to coerce conformity; the gospel sets people free. Confession leads to cleansing, not condemnation.</li>
-</ul>
+<div class="toggles">
 
-<p class="kicker">Full statement of faith, leadership team, visitor information, and ways to get involved are at <a href="https://sovgracekc.org/" target="_blank" rel="noopener">sovgracekc.org</a>.</p>
-
-
-  <h2>About the Preacher</h2>
-  
+  <details class="toggle">
+    <summary>About the preaching</summary>
+    <div class="toggle-body">
 <p>Chris Oswald is in his tenth year of serving as the Senior Pastor at Providence Community Church. During that time he has built a substantial sermon archive with a distinct approach uniquely his own.</p>
 
 <h3>The Gospel of Jesus Christ, Accomplished and Applied</h3>
@@ -168,6 +214,549 @@
 <p>Chris's preaching is mind-engaged before it is heart-engaged — careful, argued, scripturally precise. But he doesn't skip the weight. The rhetorical register sits at roughly <strong>three-quarters Logos and one-third Pathos</strong>: explain the truth, ask what it costs to live in it, and let the listener feel the weight before moving on. The doctrine earns the emotion; the emotion is never manufactured.</p>
 
 <p class="kicker">In short: a pastor's pastor. Theologically serious, pastorally warm, structurally patient, and consistently more concerned with what a sermon <em>does</em> in someone's actual life than with how it sounds in the moment of preaching.</p>
+    </div>
+  </details>
+
+  <details class="toggle">
+    <summary>Full sermon index</summary>
+    <div class="toggle-body">
+<!-- accordion:sermon-index -->
+      <div class="sermon-index-year">2026</div>
+      <ul class="sermon-index">
+        <li><span class="d">2026-05-31</span><a href="sermons/arm-yourselves-1-peter-3-18-4-2-2026-05-31.html">Arm Yourselves - 1 Peter 3:18-4:2</a></li>
+        <li><span class="d">2026-05-24</span><a href="sermons/virtue-as-a-vehicle-2026-05-24.html">Virtue as a Vehicle</a></li>
+        <li><span class="d">2026-05-17</span><a href="sermons/the-word-of-god-increased-2026-05-17.html">The Word of God Increased</a></li>
+        <li><span class="d">2026-05-15</span><a href="sermons/don-t-waste-your-crisis-how-to-recover-from-a-2026-05-15.html">Don&#x27;t Waste Your Crisis: How to Recover from a Self-Inflicted Wound</a></li>
+        <li><span class="d">2026-05-10</span><a href="sermons/imperishable-beauty-2026-05-10.html">Imperishable Beauty</a></li>
+        <li><span class="d">2026-04-26</span><a href="sermons/a-people-for-his-praise-1-peter-2-4-10-2026-04-26.html">A People for His Praise</a></li>
+        <li><span class="d">2026-04-19</span><a href="sermons/new-birth-brotherly-love-2026-04-19.html">New Birth &amp; Brotherly Love</a></li>
+        <li><span class="d">2026-04-12</span><a href="sermons/the-life-of-christ-fuels-christian-endurance-2026-04-12.html">The Life of Christ Fuels Christian Endurance</a></li>
+        <li><span class="d">2026-04-05</span><a href="sermons/a-living-hope-2026-04-05.html">A Living Hope</a></li>
+        <li><span class="d">2026-04-03</span><a href="sermons/suffering-for-joy-2026-04-03.html">Suffering for Joy</a></li>
+        <li><span class="d">2026-03-29</span><a href="sermons/put-on-christ-the-armor-of-god-2026-03-29.html">Put on Christ, the Armor of God</a></li>
+        <li><span class="d">2026-03-22</span><a href="sermons/our-gods-on-display-2026-03-22.html">Our Gods On Display</a></li>
+        <li><span class="d">2026-03-15</span><a href="sermons/marriage-the-mission-of-god-2026-03-15.html">Marriage &amp; The Mission of God</a></li>
+        <li><span class="d">2026-03-08</span><a href="sermons/tools-for-transformation-2026-03-08.html">Tools for Transformation</a></li>
+        <li><span class="d">2026-03-01</span><a href="sermons/tools-for-transformation-part-1-2026-03-01.html">Tools for Transformation Part 1</a></li>
+        <li><span class="d">2026-02-22</span><a href="sermons/growing-in-christ-2026-02-22.html">Growing in Christ</a></li>
+        <li><span class="d">2026-02-15</span><a href="sermons/ephesians-4-7-13-fostering-a-leadership-factory-2026-02-15.html">Fostering a Leadership Factory</a></li>
+        <li><span class="d">2026-02-08</span><a href="sermons/ephesians-4-1-6-unity-in-the-church-2026-02-08.html">Ephesians 4:1-6 Unity in the Church</a></li>
+        <li><span class="d">2026-02-01</span><a href="sermons/walking-in-faith-2026-02-01.html">Walking in Faith</a></li>
+        <li><span class="d">2026-01-20</span><a href="sermons/preaching-that-pleases-god-part-2-2026-01-20.html">Preaching That Pleases God, Part 2</a></li>
+        <li><span class="d">2026-01-18</span><a href="sermons/god-s-cosmic-construction-project-2026-01-18.html">God&#x27;s Cosmic Construction Project</a></li>
+        <li><span class="d">2026-01-11</span><a href="sermons/gospel-unity-2026-01-11.html">Gospel Unity</a></li>
+      </ul>
+      <div class="sermon-index-year">2025</div>
+      <ul class="sermon-index">
+        <li><span class="d">2025-12-23</span><a href="sermons/introducing-the-ephesians-sermon-series-2025-12-23.html">Introducing the Ephesians Sermon Series</a></li>
+        <li><span class="d">2025-12-23</span><a href="sermons/outgrowing-anxiety-part-3-2025-12-23.html">Outgrowing Anxiety, Part 3</a></li>
+        <li><span class="d">2025-12-23</span><a href="sermons/outgrowing-anxiety-part-4-2025-12-23.html">Outgrowing Anxiety, Part 4</a></li>
+        <li><span class="d">2025-12-16</span><a href="sermons/what-kind-of-preaching-pleases-god-part-1-2025-12-16.html">What Kind of Preaching Pleases God? Part 1</a></li>
+        <li><span class="d">2025-12-14</span><a href="sermons/christus-victor-does-not-need-help-2025-12-14.html">Christus Victor Does Not Need Help</a></li>
+        <li><span class="d">2025-12-07</span><a href="sermons/romans-5-12-6-4-2025-12-07.html">Romans 5:12-6:4</a></li>
+        <li><span class="d">2025-12-07</span><a href="sermons/the-final-adam-recapitulation-and-the-2025-12-07.html">The Final Adam: Recapitulation and the Restoration of Humanity</a></li>
+        <li><span class="d">2025-11-30</span><a href="sermons/1-john-5-2025-11-30.html">1 John 5</a></li>
+        <li><span class="d">2025-11-30</span><a href="sermons/faith-as-victory-overcoming-the-world-in-1-john-5-2025-11-30.html">Faith as Victory: Overcoming the World in 1 John 5</a></li>
+        <li><span class="d">2025-11-23</span><a href="sermons/1-john-5-1-5-2025-11-23.html">Delighting in God&#x27;s Commands</a></li>
+        <li><span class="d">2025-11-16</span><a href="sermons/1-john-3-11-2025-11-16.html">1 John 3:11</a></li>
+        <li><span class="d">2025-11-16</span><a href="sermons/love-assurance-and-the-coming-exposure-2025-11-16.html">Love, Assurance, and the Coming Exposure</a></li>
+        <li><span class="d">2025-11-09</span><a href="sermons/1-john-3-1-18-revisited-2025-11-09.html">1 John 3:1-18 Revisited</a></li>
+        <li><span class="d">2025-11-03</span><a href="sermons/1-john-3-1-2025-11-03.html">1 John 3:1</a></li>
+        <li><span class="d">2025-11-03</span><a href="sermons/see-what-kind-of-love-2025-11-03.html">See What Kind of Love</a></li>
+        <li><span class="d">2025-10-26</span><a href="sermons/1-john-2-18-2025-10-26.html">1 John 2:18</a></li>
+        <li><span class="d">2025-10-26</span><a href="sermons/many-antichrists-have-come-2025-10-26.html">Many Antichrists Have Come</a></li>
+        <li><span class="d">2025-10-19</span><a href="sermons/1-john-2-love-of-this-world-2025-10-19.html">1 John 2 - Love of This World</a></li>
+        <li><span class="d">2025-10-18</span><a href="sermons/outgrowing-anxiety-part-3-fear-of-man-vs-fear-of-god-2025-10-18.html">Outgrowing Anxiety, Part 3: Fear of Man vs. Fear of God</a></li>
+        <li><span class="d">2025-10-05</span><a href="sermons/john-as-an-example-leader-2025-10-05.html">John as an Example Leader</a></li>
+        <li><span class="d">2025-09-25</span><a href="sermons/outgrowing-anxiety-part-2-gospel-grace-turns-2025-09-25.html">Outgrowing Anxiety Part 2: Gospel Grace Turns Flaws Into Features</a></li>
+        <li><span class="d">2025-09-23</span><a href="sermons/church-update-and-philippines-trip-review-2025-09-23.html">Church Update and Philippines Trip Review</a></li>
+        <li><span class="d">2025-09-23</span><a href="sermons/the-classical-view-of-biblical-sufficiency-2025-09-23.html">The Classical View of Biblical Sufficiency</a></li>
+        <li><span class="d">2025-09-22</span><a href="sermons/outgrowing-anxiety-part-1-saying-goodbye-to-2025-09-22.html">Outgrowing Anxiety Part 1: Saying Goodbye to Plastic Prayer</a></li>
+        <li><span class="d">2025-09-21</span><a href="sermons/1-john-introduction-2025-09-21.html">1 John - Introduction</a></li>
+        <li><span class="d">2025-09-07</span><a href="sermons/psalm-121-undaunted-courage-for-the-year-ahead-2025-09-07.html">Undaunted Courage for the Year Ahead</a></li>
+        <li><span class="d">2025-08-31</span><a href="sermons/psalm-147-inner-health-made-audible-2025-08-31.html">Psalm 147: Inner Health Made Audible</a></li>
+        <li><span class="d">2025-08-24</span><a href="sermons/seven-habits-of-highly-successful-sufferers-2025-08-24.html">Seven Habits of Highly Successful Sufferers</a></li>
+        <li><span class="d">2025-08-17</span><a href="sermons/developing-a-godly-personality-2025-08-17.html">Developing a Godly Personality</a></li>
+        <li><span class="d">2025-08-10</span><a href="sermons/understanding-god-s-personality-2025-08-10.html">Understanding God&#x27;s Personality</a></li>
+        <li><span class="d">2025-08-03</span><a href="sermons/how-to-get-a-good-night-s-sleep-2025-08-03.html">How to Get a Good Night&#x27;s Sleep</a></li>
+        <li><span class="d">2025-07-27</span><a href="sermons/reverence-reward-2025-07-27.html">Reverence &amp; Reward</a></li>
+        <li><span class="d">2025-07-20</span><a href="sermons/science-the-scriptures-2025-07-20.html">Science &amp; the Scriptures</a></li>
+        <li><span class="d">2025-07-13</span><a href="sermons/asaph-s-odyssey-2025-07-13.html">Asaph&#x27;s Odyssey</a></li>
+        <li><span class="d">2025-07-06</span><a href="sermons/political-power-purity-spirals-and-the-2025-07-06.html">Political Power, Purity Spirals, and the Perfections of Christ</a></li>
+        <li><span class="d">2025-06-29</span><a href="sermons/the-steadfast-love-of-god-2025-06-29.html">The Steadfast Love of God</a></li>
+        <li><span class="d">2025-06-22</span><a href="sermons/spiritual-warfare-and-the-psalms-part-2-2025-06-22.html">Spiritual Warfare and the Psalms, Part 2</a></li>
+        <li><span class="d">2025-06-15</span><a href="sermons/spiritual-warfare-in-the-psalms-2025-06-15.html">Spiritual Warfare in the Psalms</a></li>
+        <li><span class="d">2025-06-08</span><a href="sermons/seeing-savoring-christ-in-the-psalms-2025-06-08.html">Seeing &amp; Savoring Christ in the Psalms</a></li>
+        <li><span class="d">2025-06-01</span><a href="sermons/seeing-christ-in-the-psalms-part-1-2025-06-01.html">Seeing Christ in the Psalms, Part 1</a></li>
+        <li><span class="d">2025-05-28</span><a href="sermons/robert-murray-m-cheyne-a-soul-aimed-at-christ-2025-05-28.html">Robert Murray M&#x27;Cheyne: A Soul Aimed at Christ</a></li>
+        <li><span class="d">2025-05-27</span><a href="sermons/robert-murray-m-cheyne-a-soul-aimed-at-christ-2025-05-27.html">Robert Murray M&#x27;Cheyne: A Soul Aimed at Christ</a></li>
+        <li><span class="d">2025-05-25</span><a href="sermons/the-joy-of-god-s-forgiveness-2025-05-25.html">The Joy of God&#x27;s Forgiveness</a></li>
+        <li><span class="d">2025-05-23</span><a href="sermons/are-all-sins-equal-2025-05-23.html">Are All Sins Equal?</a></li>
+        <li><span class="d">2025-05-18</span><a href="sermons/an-introduction-to-the-psalms-2025-05-18.html">An Introduction to the Psalms</a></li>
+        <li><span class="d">2025-05-11</span><a href="sermons/mothers-day-god-s-ordinary-means-of-grace-2025-05-11.html">Mothers Day &amp; God&#x27;s Ordinary Means of Grace</a></li>
+        <li><span class="d">2025-05-05</span><a href="sermons/exploring-providence-part-4-the-church-covenant-2025-05-05.html">Exploring Providence Part 4: The Church Covenant</a></li>
+        <li><span class="d">2025-05-04</span><a href="sermons/exploring-providence-part-1-vision-values-2025-05-04.html">Exploring Providence Part 1: Vision &amp; Values</a></li>
+        <li><span class="d">2025-05-04</span><a href="sermons/exploring-providence-part-2-leadership-ministries-2025-05-04.html">Exploring Providence Part 2: Leadership &amp; Ministries</a></li>
+        <li><span class="d">2025-05-04</span><a href="sermons/exploring-providence-part-3-expectations-for-2025-05-04.html">Exploring Providence Part 3: Expectations for Members</a></li>
+        <li><span class="d">2025-05-04</span><a href="sermons/exploring-providence-part-3-expectations-for-members-2025-05-04.html">Exploring Providence Part 3: Expectations for Members</a></li>
+        <li><span class="d">2025-05-04</span><a href="sermons/resurrection-responsibilities-2025-05-04.html">Resurrection Responsibilities</a></li>
+        <li><span class="d">2025-04-27</span><a href="sermons/the-wisdom-of-god-in-the-cross-2025-04-27.html">The Wisdom of God in the Cross</a></li>
+        <li><span class="d">2025-04-20</span><a href="sermons/four-common-objections-to-the-christian-faith-2025-04-20.html">Four Common Objections to the Christian Faith</a></li>
+        <li><span class="d">2025-04-19</span><a href="sermons/the-cross-of-christ-and-its-cosmic-consequences-2025-04-19.html">The Cross of Christ and its Cosmic Consequences</a></li>
+        <li><span class="d">2025-04-15</span><a href="sermons/ihop-postmortem-part-3-the-holy-spirit-is-for-service-2025-04-15.html">IHOP Postmortem Part 3, The Holy Spirit is for Service</a></li>
+        <li><span class="d">2025-04-14</span><a href="sermons/good-friday-preview-the-atonement-is-bigger-than-you-know-2025-04-14.html">Good Friday Preview: The Atonement is Bigger Than You Know</a></li>
+        <li><span class="d">2025-04-13</span><a href="sermons/a-prayer-of-protection-2025-04-13.html">A Prayer of Protection</a></li>
+        <li><span class="d">2025-04-11</span><a href="sermons/the-conscience-coach-an-introduction-2025-04-11.html">The Conscience Coach, An Introduction</a></li>
+        <li><span class="d">2025-04-09</span><a href="sermons/ihop-postmortem-part-2-2025-04-09.html">IHOP Postmortem, Part 2</a></li>
+        <li><span class="d">2025-04-06</span><a href="sermons/for-those-with-broken-bodies-2025-04-06.html">For Those with Broken Bodies</a></li>
+        <li><span class="d">2025-04-06</span><a href="sermons/ihop-postmortem-part-1-2025-04-06.html">IHOP Postmortem, Part 1</a></li>
+        <li><span class="d">2025-04-06</span><a href="sermons/the-holy-spirit-2025-04-06.html">The Holy Spirit</a></li>
+        <li><span class="d">2025-04-04</span><a href="sermons/10-minutes-on-the-saving-foreknowledge-of-god-2025-04-04.html">10 Minutes on the Saving Foreknowledge of God</a></li>
+        <li><span class="d">2025-04-04</span><a href="sermons/facts-and-feelings-in-the-christian-life-2025-04-04.html">Facts and Feelings in the Christian Life</a></li>
+        <li><span class="d">2025-03-30</span><a href="sermons/the-divine-vinedresser-2025-03-30.html">The Divine Vinedresser</a></li>
+        <li><span class="d">2025-03-28</span><a href="sermons/a-covid-post-mortem-why-did-so-many-godly-people-get-it-wrong-2025-03-28.html">A COVID Post-Mortem: Why Did So Many Godly People Get It Wrong?</a></li>
+        <li><span class="d">2025-03-23</span><a href="sermons/gyroscopic-hearts-2025-03-23.html">Gyroscopic Hearts</a></li>
+        <li><span class="d">2025-03-21</span><a href="sermons/he-goes-to-prepare-the-earth-for-us-a-biblical-theological-exploration-of-john-14-2025-03-21.html">He Goes to Prepare the Earth for Us. A Biblical Theological Exploration of John 14</a></li>
+        <li><span class="d">2025-03-19</span><a href="sermons/pride-in-parenting-2025-03-19.html">Pride in Parenting</a></li>
+        <li><span class="d">2025-03-16</span><a href="sermons/the-christian-leader-as-both-lion-and-lamb-2025-03-16.html">The Christian Leader as Both Lion and Lamb</a></li>
+        <li><span class="d">2025-03-15</span><a href="sermons/the-story-of-absalom-and-the-problem-of-evil-2025-03-15.html">The Story of Absalom and the Problem of Evil</a></li>
+        <li><span class="d">2025-03-14</span><a href="sermons/five-questions-for-pastoral-side-quests-2025-03-14.html">Five Questions for Pastoral Side Quests</a></li>
+        <li><span class="d">2025-03-14</span><a href="sermons/understanding-verbal-persecution-2025-03-14.html">Understanding Verbal Persecution</a></li>
+        <li><span class="d">2025-03-13</span><a href="sermons/reading-that-russian-at-5-a-m-2025-03-13.html">Reading that Russian at 5 A.M.</a></li>
+        <li><span class="d">2025-03-09</span><a href="sermons/the-whole-world-has-gone-after-him-2025-03-09.html">The Whole World Has Gone After Him</a></li>
+        <li><span class="d">2025-03-02</span><a href="sermons/glory-to-the-shepherd-not-the-sheep-2025-03-02.html">Glory to the Shepherd, Not the Sheep</a></li>
+        <li><span class="d">2025-02-23</span><a href="sermons/the-good-shepherd-2025-02-23.html">The Good Shepherd</a></li>
+        <li><span class="d">2025-02-16</span><a href="sermons/suffering-is-a-showcase-for-god-2025-02-16.html">Suffering is a Showcase for God</a></li>
+        <li><span class="d">2025-02-09</span><a href="sermons/eternal-divergence-2025-02-09.html">Eternal Divergence</a></li>
+        <li><span class="d">2025-02-02</span><a href="sermons/no-one-ever-spoke-like-this-man-2025-02-02.html">No One Ever Spoke Like This Man</a></li>
+        <li><span class="d">2025-01-26</span><a href="sermons/the-menu-is-not-the-meal-2025-01-26.html">The Menu is Not the Meal</a></li>
+        <li><span class="d">2025-01-21</span><a href="sermons/dov-chris-talk-marriage-2025-01-21.html">Dov &amp; Chris Talk Marriage</a></li>
+        <li><span class="d">2025-01-19</span><a href="sermons/when-depravity-meets-divinity-2025-01-19.html">When Depravity Meets Divinity</a></li>
+        <li><span class="d">2025-01-12</span><a href="sermons/let-s-talk-about-preparationism-2025-01-12.html">Let&#x27;s Talk About Preparationism</a></li>
+      </ul>
+      <div class="sermon-index-year">2024</div>
+      <ul class="sermon-index">
+        <li><span class="d">2024-12-29</span><a href="sermons/good-wine-the-grace-of-god-2024-12-29.html">Good Wine &amp; the Grace of God</a></li>
+        <li><span class="d">2024-12-23</span><a href="sermons/kindness-2024-12-23.html">Kindness</a></li>
+        <li><span class="d">2024-12-22</span><a href="sermons/new-men-for-the-messiah-2024-12-22.html">New Men for the Messiah</a></li>
+        <li><span class="d">2024-12-15</span><a href="sermons/the-messiah-s-gift-2024-12-15.html">The Messiah&#x27;s Gift</a></li>
+        <li><span class="d">2024-12-12</span><a href="sermons/how-to-commune-with-god-2024-12-12.html">How to Commune with God</a></li>
+        <li><span class="d">2024-12-10</span><a href="sermons/what-to-do-when-you-disappoint-yourself-2024-12-10.html">What to Do When You Disappoint Yourself</a></li>
+        <li><span class="d">2024-12-08</span><a href="sermons/priest-2024-12-08.html">Priest</a></li>
+        <li><span class="d">2024-12-01</span><a href="sermons/money-the-mission-of-god-2024-12-01.html">Money &amp; The Mission of God</a></li>
+        <li><span class="d">2024-11-24</span><a href="sermons/eldership-announcement-2024-11-24.html">Eldership Announcement</a></li>
+        <li><span class="d">2024-11-24</span><a href="sermons/truth-beauty-part-1-2024-11-24.html">Truth &amp; Beauty, Part 1</a></li>
+        <li><span class="d">2024-11-17</span><a href="sermons/tell-the-coming-generation-2024-11-17.html">Tell the Coming Generation</a></li>
+        <li><span class="d">2024-11-13</span><a href="sermons/comfortable-certainty-2024-11-13.html">Comfortable Certainty</a></li>
+        <li><span class="d">2024-11-10</span><a href="sermons/aaron-s-failure-of-nerve-2024-11-10.html">Aaron&#x27;s Failure of Nerve</a></li>
+        <li><span class="d">2024-10-27</span><a href="sermons/on-covetousness-contentment-2024-10-27.html">On Covetousness &amp; Contentment</a></li>
+        <li><span class="d">2024-10-20</span><a href="sermons/when-a-snake-takes-the-stand-2024-10-20.html">When a Snake Takes the Stand</a></li>
+        <li><span class="d">2024-10-13</span><a href="sermons/thou-shall-not-steal-2024-10-13.html">Thou Shall Not Steal</a></li>
+        <li><span class="d">2024-10-09</span><a href="sermons/are-legalism-and-licentiousness-really-equal-threats-2024-10-09.html">Are Legalism and Licentiousness Really Equal Threats?</a></li>
+        <li><span class="d">2024-10-09</span><a href="sermons/treasuring-god-2024-10-09.html">Treasuring God</a></li>
+        <li><span class="d">2024-10-06</span><a href="sermons/you-were-made-for-love-2024-10-06.html">You Were Made For Love</a></li>
+        <li><span class="d">2024-09-29</span><a href="sermons/life-death-motive-means-opportunity-2024-09-29.html">Life &amp; Death: Motive, Means, &amp; Opportunity</a></li>
+        <li><span class="d">2024-09-15</span><a href="sermons/growing-for-the-glory-of-god-2024-09-15.html">Growing for the Glory of God</a></li>
+        <li><span class="d">2024-09-08</span><a href="sermons/rest-in-a-busy-world-2024-09-08.html">Rest in a Busy World</a></li>
+        <li><span class="d">2024-09-01</span><a href="sermons/verbal-vandalism-the-third-commandment-2024-09-01.html">Verbal Vandalism &amp; The Third Commandment</a></li>
+        <li><span class="d">2024-08-19</span><a href="sermons/ode-to-sovereign-joy-sermon-remix-2024-08-19.html">Ode to Sovereign Joy (Sermon Remix)</a></li>
+        <li><span class="d">2024-08-18</span><a href="sermons/two-mountains-one-mandate-2024-08-18.html">Two Mountains: One Mandate</a></li>
+        <li><span class="d">2024-08-11</span><a href="sermons/how-to-outgrow-grumbling-2024-08-11.html">How to Outgrow Grumbling</a></li>
+        <li><span class="d">2024-08-04</span><a href="sermons/the-lord-is-a-man-of-war-part-2-2024-08-04.html">The Lord is a Man of War, Part 2</a></li>
+        <li><span class="d">2024-08-01</span><a href="sermons/insider-outsider-status-aka-how-to-trick-a-feminist-2024-08-01.html">Insider &amp; Outsider Status. AKA: How to Trick a Feminist</a></li>
+        <li><span class="d">2024-07-28</span><a href="sermons/the-lord-is-a-man-of-war-2024-07-28.html">The Lord is a Man of War</a></li>
+        <li><span class="d">2024-07-25</span><a href="sermons/how-to-hate-your-sin-2024-07-25.html">How to Hate Your Sin</a></li>
+        <li><span class="d">2024-07-22</span><a href="sermons/the-narcissism-of-sin-2024-07-22.html">The Narcissism of Sin</a></li>
+        <li><span class="d">2024-07-21</span><a href="sermons/pharaoh-the-problem-of-false-repentance-2024-07-21.html">Pharaoh &amp; the Problem of False Repentance</a></li>
+        <li><span class="d">2024-07-21</span><a href="sermons/the-narcissism-of-sin-2024-07-21.html">The Narcissism of Sin</a></li>
+        <li><span class="d">2024-07-09</span><a href="sermons/infertility-and-the-glory-of-god-2024-07-09.html">Infertility and the Glory of God</a></li>
+        <li><span class="d">2024-07-07</span><a href="sermons/that-you-may-know-2024-07-07.html">That You May Know</a></li>
+        <li><span class="d">2024-07-02</span><a href="sermons/how-we-got-the-bible-2024-07-02.html">How We Got the Bible</a></li>
+        <li><span class="d">2024-06-30</span><a href="sermons/rebellion-to-tyrants-is-obedience-to-god-2024-06-30.html">Rebellion to Tyrants is Obedience To God</a></li>
+        <li><span class="d">2024-06-28</span><a href="sermons/does-public-theology-need-its-own-hermeneutic-2024-06-28.html">Does Public Theology Need Its Own Hermeneutic?</a></li>
+        <li><span class="d">2024-06-26</span><a href="sermons/patriarchs-in-paradise-2024-06-26.html">Patriarchs in Paradise</a></li>
+        <li><span class="d">2024-06-23</span><a href="sermons/mountains-of-assurance-for-molehills-of-doubts-2024-06-23.html">Mountains of Assurance for Molehills of Doubts</a></li>
+        <li><span class="d">2024-06-16</span><a href="sermons/leadership-and-the-crisis-of-confidence-2024-06-16.html">Leadership and the Crisis of Confidence</a></li>
+        <li><span class="d">2024-06-12</span><a href="sermons/how-does-god-view-political-entities-2024-06-12.html">How Does God View Political Entities?</a></li>
+        <li><span class="d">2024-06-09</span><a href="sermons/monotheism-made-our-world-2024-06-09.html">Monotheism Made Our World</a></li>
+        <li><span class="d">2024-06-05</span><a href="sermons/did-jesus-condemn-homosexuality-2024-06-05.html">Did Jesus Condemn Homosexuality?</a></li>
+        <li><span class="d">2024-06-04</span><a href="sermons/zipporah-and-the-bridegroom-of-blood-2024-06-04.html">Zipporah and the Bridegroom of Blood</a></li>
+        <li><span class="d">2024-06-02</span><a href="sermons/paleo-evangelism-2024-06-02.html">Paleo-Evangelism</a></li>
+        <li><span class="d">2024-05-26</span><a href="sermons/the-great-i-am-2024-05-26.html">The Great I Am</a></li>
+        <li><span class="d">2024-05-19</span><a href="sermons/how-moses-became-meek-2024-05-19.html">How Moses Became Meek</a></li>
+        <li><span class="d">2024-05-12</span><a href="sermons/she-did-what-she-could-do-2024-05-12.html">She Did What She Could Do</a></li>
+        <li><span class="d">2024-05-06</span><a href="sermons/understanding-covenant-theology-2024-05-06.html">Understanding Covenant Theology</a></li>
+        <li><span class="d">2024-05-05</span><a href="sermons/exodus-the-serpent-the-seed-2024-05-05.html">Exodus: The Serpent &amp; The Seed</a></li>
+        <li><span class="d">2024-04-28</span><a href="sermons/overview-israel-in-the-exodus-2024-04-28.html">Overview: Israel in the Exodus</a></li>
+        <li><span class="d">2024-04-28</span><a href="sermons/the-sadducees-and-the-resurrection-2024-04-28.html">The Sadducees and the Resurrection</a></li>
+        <li><span class="d">2024-04-27</span><a href="sermons/the-status-of-the-jews-in-the-new-covenant-2024-04-27.html">The Status of the Jews in the New Covenant</a></li>
+        <li><span class="d">2024-04-21</span><a href="sermons/chris-dov-talk-forgiveness-2024-04-21.html">Chris &amp; Dov Talk Forgiveness</a></li>
+        <li><span class="d">2024-04-21</span><a href="sermons/the-joseph-series-pardon-2024-04-21.html">The Joseph Series: Pardon</a></li>
+        <li><span class="d">2024-04-14</span><a href="sermons/the-joseph-series-patience-2024-04-14.html">The Joseph Series: Patience</a></li>
+        <li><span class="d">2024-04-07</span><a href="sermons/the-joseph-series-providence-2024-04-07.html">The Joseph Series: Providence - Learning to Trust the Hidden Smile of God</a></li>
+        <li><span class="d">2024-04-01</span><a href="sermons/some-thoughts-about-mentorship-2024-04-01.html">Some Thoughts About Mentorship</a></li>
+        <li><span class="d">2024-03-31</span><a href="sermons/no-mere-myth-2024-03-31.html">No Mere Myth</a></li>
+        <li><span class="d">2024-03-31</span><a href="sermons/the-prize-2024-03-31.html">The Prize</a></li>
+        <li><span class="d">2024-03-24</span><a href="sermons/successful-christian-parenting-part-2-2024-03-24.html">Successful Christian Parenting, Part 2</a></li>
+        <li><span class="d">2024-03-17</span><a href="sermons/successful-christian-parenting-part-1-2024-03-17.html">Successful Christian Parenting, Part 1</a></li>
+        <li><span class="d">2024-03-05</span><a href="sermons/how-to-thrive-in-hard-times-2024-03-05.html">How to Thrive in Hard Times</a></li>
+        <li><span class="d">2024-02-29</span><a href="sermons/resurrection-heresies-2024-02-29.html">Resurrection Heresies</a></li>
+        <li><span class="d">2024-02-26</span><a href="sermons/a-kingdom-divided-evangelicalism-in-the-american-civil-war-2024-02-26.html">A Kingdom Divided: Evangelicalism in the American Civil War</a></li>
+        <li><span class="d">2024-02-26</span><a href="sermons/systems-and-strategies-for-fending-off-spiritual-attacks-2024-02-26.html">Systems and Strategies for Fending Off Spiritual Attacks</a></li>
+        <li><span class="d">2024-02-25</span><a href="sermons/ready-for-every-good-work-2024-02-25.html">Ready for Every Good Work</a></li>
+        <li><span class="d">2024-02-18</span><a href="sermons/toward-theological-endurance-2024-02-18.html">Toward Theological Endurance</a></li>
+        <li><span class="d">2024-02-11</span><a href="sermons/strengthened-by-grace-2024-02-11.html">Strengthened by Grace</a></li>
+        <li><span class="d">2024-02-09</span><a href="sermons/when-friends-become-enemies-2024-02-09.html">When Friends Become Enemies</a></li>
+        <li><span class="d">2024-02-08</span><a href="sermons/get-more-of-your-entertainment-calories-from-friendship-2024-02-08.html">Get More of Your &quot;Entertainment Calories&quot; From Friendship</a></li>
+        <li><span class="d">2024-02-06</span><a href="sermons/how-to-make-friends-2024-02-06.html">How to Make Friends</a></li>
+        <li><span class="d">2024-02-04</span><a href="sermons/christian-friendship-2024-02-04.html">Christian Friendship</a></li>
+        <li><span class="d">2024-02-04</span><a href="sermons/knox-classical-school-information-meeting-2024-02-04.html">Knox Classical School Information Meeting</a></li>
+        <li><span class="d">2024-01-29</span><a href="sermons/how-to-think-through-our-objections-to-hell-2024-01-29.html">How to Think Through Our Objections to Hell</a></li>
+        <li><span class="d">2024-01-28</span><a href="sermons/he-abolished-death-2024-01-28.html">He Abolished Death</a></li>
+        <li><span class="d">2024-01-16</span><a href="sermons/fan-it-into-flame-2024-01-16.html">Fan It Into Flame</a></li>
+        <li><span class="d">2024-01-14</span><a href="sermons/comfort-is-not-a-compass-2024-01-14.html">Comfort is Not a Compass</a></li>
+        <li><span class="d">2024-01-14</span><a href="sermons/hope-as-help-2024-01-14.html">Hope as Help</a></li>
+        <li><span class="d">2024-01-07</span><a href="sermons/wisdom-for-the-new-year-2024-01-07.html">Wisdom for the New Year</a></li>
+      </ul>
+      <div class="sermon-index-year">2023</div>
+      <ul class="sermon-index">
+        <li><span class="d">2023-12-31</span><a href="sermons/unity-in-diversity-2023-12-31.html">Unity in Diversity</a></li>
+        <li><span class="d">2023-12-24</span><a href="sermons/how-jesus-is-establishing-his-kingdom-2023-12-24.html">How Jesus is Establishing His Kingdom</a></li>
+        <li><span class="d">2023-12-17</span><a href="sermons/the-government-on-his-shoulder-2023-12-17.html">The Government on His Shoulder?</a></li>
+        <li><span class="d">2023-12-10</span><a href="sermons/christ-in-isaiah-2023-12-10.html">Christ in Isaiah</a></li>
+        <li><span class="d">2023-12-03</span><a href="sermons/do-christianity-2023-12-03.html">Do Christianity</a></li>
+        <li><span class="d">2023-11-30</span><a href="sermons/quotes-and-comments-concerning-contentment-2023-11-30.html">Quotes and Comments Concerning Contentment</a></li>
+        <li><span class="d">2023-11-26</span><a href="sermons/paul-s-secret-to-contentment-2023-11-26.html">Paul&#x27;s Secret to Contentment</a></li>
+        <li><span class="d">2023-11-19</span><a href="sermons/cultural-demoralization-is-real-and-the-gospel-has-a-cure-2023-11-19.html">Cultural Demoralization is Real and the Gospel has a Cure!</a></li>
+        <li><span class="d">2023-11-07</span><a href="sermons/podcast-denominational-plank-pulling-2023-11-07.html">Podcast: Denominational Plank Pulling</a></li>
+        <li><span class="d">2023-11-05</span><a href="sermons/finally-a-real-plan-for-helping-the-poor-2023-11-05.html">Finally, A Real Plan for Helping the Poor</a></li>
+        <li><span class="d">2023-10-31</span><a href="sermons/podcast-the-three-laws-of-excellence-applied-to-godliness-2023-10-31.html">Podcast: The Three Laws of Excellence Applied to Godliness</a></li>
+        <li><span class="d">2023-10-29</span><a href="sermons/keep-a-close-watch-2023-10-29.html">Keep a Close Watch</a></li>
+        <li><span class="d">2023-10-28</span><a href="sermons/podcast-where-crunchy-women-go-wrong-2023-10-28.html">Podcast: Where Crunchy Women Go Wrong</a></li>
+        <li><span class="d">2023-10-26</span><a href="sermons/podcast-eschatology-without-prophecy-2023-10-26.html">Podcast: Eschatology without Prophecy</a></li>
+        <li><span class="d">2023-10-22</span><a href="sermons/some-will-depart-2023-10-22.html">Some Will Depart</a></li>
+        <li><span class="d">2023-10-17</span><a href="sermons/podcast-godliness-2023-10-17.html">Podcast: Godliness</a></li>
+        <li><span class="d">2023-10-15</span><a href="sermons/the-mystery-of-godliness-2023-10-15.html">The Mystery of Godliness</a></li>
+        <li><span class="d">2023-10-08</span><a href="sermons/deacons-servants-of-the-king-2023-10-08.html">Deacons: Servants of the King</a></li>
+        <li><span class="d">2023-10-03</span><a href="sermons/podcast-the-epicenter-of-godly-ambition-2023-10-03.html">Podcast: The Epicenter of Godly Ambition</a></li>
+        <li><span class="d">2023-10-01</span><a href="sermons/elders-burly-church-fathers-2023-10-01.html">Elders: Burly Church Fathers</a></li>
+        <li><span class="d">2023-09-17</span><a href="sermons/the-power-of-undistracted-devotion-2023-09-17.html">The Power of Undistracted Devotion</a></li>
+        <li><span class="d">2023-09-05</span><a href="sermons/community-group-conscience-2023-09-05.html">Community Group Conscience</a></li>
+        <li><span class="d">2023-06-04</span><a href="sermons/blessed-are-the-poor-in-spirit-2023-06-04.html">Blessed Are the Poor in Spirit</a></li>
+        <li><span class="d">2023-01-21</span><a href="sermons/rely-on-god-s-spirit-rehearse-god-s-sovereignty-2023-01-21.html">Rely on God&#x27;s Spirit, Rehearse God&#x27;s Sovereignty</a></li>
+      </ul>
+      <div class="sermon-index-year">2022</div>
+      <ul class="sermon-index">
+        <li><span class="d">2022-08-22</span><a href="sermons/8222022-2022-08-22.html">Patient Kindness</a></li>
+        <li><span class="d">2022-01-30</span><a href="sermons/january-30-2022-sermon-2022-01-30.html">The Sin of Slackness</a></li>
+      </ul>
+      <div class="sermon-index-year">2021</div>
+      <ul class="sermon-index">
+        <li><span class="d">2021-01-17</span><a href="sermons/january-17-2021-sermon-2021-01-17.html">Worshipping the Gift Instead of the Giver</a></li>
+      </ul>
+      <div class="sermon-index-year">2020</div>
+      <ul class="sermon-index">
+        <li><span class="d">2020-11-29</span><a href="sermons/dragon-slayers-the-heroic-christian-life-2020-11-29.html">Dragon Slayers: The Heroic Christian Life</a></li>
+        <li><span class="d">2020-07-05</span><a href="sermons/july52020sermon-7-5-20-6-30-pm-2020-07-05.html">Love God Alone, Love Neighbor Rightly</a></li>
+        <li><span class="d">2020-01-12</span><a href="sermons/truth-beauty-community-2020-01-12.html">Truth, Beauty, Community</a></li>
+      </ul>
+      <div class="sermon-index-year">2019</div>
+      <ul class="sermon-index">
+        <li><span class="d">2019-09-22</span><a href="sermons/9-22-19-2019-09-22.html">Open Homes, Open Gospel</a></li>
+        <li><span class="d">2019-08-25</span><a href="sermons/8-25-19-2019-08-25.html">Greatness Through Sacrifice</a></li>
+        <li><span class="d">2019-08-19</span><a href="sermons/prayer-for-god-2019-08-19.html">Prayer for God</a></li>
+        <li><span class="d">2019-07-07</span><a href="sermons/7-7-19-2019-07-07.html">Broken People in Beautiful Places</a></li>
+        <li><span class="d">2019-03-10</span><a href="sermons/march-10-2019-sermon-2019-03-10.html">Teaching That Adores Jesus</a></li>
+        <li><span class="d">2019-02-03</span><a href="sermons/feb-3-2019-2019-02-03.html">What Is Your Soul Worth?</a></li>
+        <li><span class="d">2019-01-27</span><a href="sermons/why-church-membership-matters-2019-01-27.html">Why Church Membership Matters</a></li>
+        <li><span class="d">2019-01-20</span><a href="sermons/jan-20th-19-sermon-1-2019-01-20.html">Gratitude as the Soul&#x27;s Anchor</a></li>
+        <li><span class="d">2019-01-13</span><a href="sermons/1-13-19-2019-01-13.html">Rest Without Complacency</a></li>
+      </ul>
+      <div class="sermon-index-year">2018</div>
+      <ul class="sermon-index">
+        <li><span class="d">2018-12-16</span><a href="sermons/12-16-18-2018-12-16.html">From Worry to the Word</a></li>
+        <li><span class="d">2018-12-02</span><a href="sermons/12-2-18-raw-2018-12-02.html">Walking Side by Side</a></li>
+        <li><span class="d">2018-11-25</span><a href="sermons/11-25-18-sermon-2018-11-25.html">The Believer&#x27;s Reward</a></li>
+        <li><span class="d">2018-11-11</span><a href="sermons/a-theology-of-change-2018-11-11.html">A Theology of Change</a></li>
+        <li><span class="d">2018-10-28</span><a href="sermons/10-28-18-raw-2018-10-28.html">When the Whole Church Speaks</a></li>
+        <li><span class="d">2018-09-02</span><a href="sermons/earth-wind-fire-2018-09-02-2.html">Earth, Wind Fire</a></li>
+        <li><span class="d">2018-09-02</span><a href="sermons/earth-wind-fire-2018-09-02.html">Earth, Wind, Fire</a></li>
+        <li><span class="d">2018-08-26</span><a href="sermons/8-26-18-2018-08-26.html">When God Gives Us What We Demand</a></li>
+        <li><span class="d">2018-08-05</span><a href="sermons/8-5-18-raw-dr000559-2018-08-05.html">Prayer Precedes Power</a></li>
+        <li><span class="d">2018-07-15</span><a href="sermons/the-holy-spirit-as-a-gift-2018-07-15.html">The Holy Spirit as a Gift</a></li>
+        <li><span class="d">2018-04-22</span><a href="sermons/sermon-4-22-18-adjusted-2018-04-22.html">The Emmaus Fog</a></li>
+        <li><span class="d">2018-04-15</span><a href="sermons/a-new-relationship-with-scripture-after-the-2018-04-15.html">A New Relationship with Scripture After the Resurrection</a></li>
+        <li><span class="d">2018-04-08</span><a href="sermons/resurrected-reading-part-1-forgetfulness-2018-04-08.html">Resurrected Reading Part 1: Forgetfulness, Foolishness, and Faithlessness</a></li>
+      </ul>
+      <div class="sermon-index-year">2017</div>
+      <ul class="sermon-index">
+        <li><span class="d">2017-12-24</span><a href="sermons/12242017sermon-2017-12-24.html">The Son of Man We&#x27;ve Longed For</a></li>
+        <li><span class="d">2017-11-12</span><a href="sermons/nov-12-2017-2017-11-12.html">The Power to Submit</a></li>
+        <li><span class="d">2017-11-12</span><a href="sermons/submission-part-2-2017-11-12.html">Submission Part 2</a></li>
+        <li><span class="d">2017-11-12</span><a href="sermons/the-cross-centered-marriage-jesus-submission-2017-11-12.html">The Cross-Centered Marriage: Jesus&#x27; Submission</a></li>
+        <li><span class="d">2017-11-05</span><a href="sermons/the-cross-centered-marriage-submission-2017-11-05.html">The Cross-Centered Marriage: Submission</a></li>
+        <li><span class="d">2017-10-01</span><a href="sermons/oct-1-2017-2017-10-01.html">Greatness Through Service</a></li>
+        <li><span class="d">2017-09-24</span><a href="sermons/sept-24-2017-2017-09-24.html">The True Feast and the False</a></li>
+        <li><span class="d">2017-08-27</span><a href="sermons/aug-27-2017-2017-08-27.html">Sowing into Flesh or Spirit</a></li>
+        <li><span class="d">2017-07-16</span><a href="sermons/july-16-2017-2017-07-16.html">Where Two or Three Take Sin Seriously</a></li>
+        <li><span class="d">2017-07-09</span><a href="sermons/july-9th-2017-2017-07-09.html">Together in His Presence</a></li>
+        <li><span class="d">2017-06-18</span><a href="sermons/june-18-2017-2017-06-18.html">Seeking God&#x27;s Face When He Seems Hidden</a></li>
+      </ul>
+      <div class="sermon-index-year">2016</div>
+      <ul class="sermon-index">
+        <li><span class="d">2016-08-07</span><a href="sermons/lost-and-found-2016-08-07.html">Lost and Found</a></li>
+        <li><span class="d">2016-05-08</span><a href="sermons/count-it-all-joy-2016-05-08.html">Count It All Joy</a></li>
+      </ul>
+      <div class="sermon-index-year">2015</div>
+      <ul class="sermon-index">
+        <li><span class="d">2015-10-25</span><a href="sermons/reformation-sunday-2015-2015-10-25.html">Reformation Sunday 2015</a></li>
+        <li><span class="d">2015-01-04</span><a href="sermons/new-year-same-priority-2015-01-04.html">New Year, Same Priority</a></li>
+      </ul>
+      <div class="sermon-index-year">2014</div>
+      <ul class="sermon-index">
+        <li><span class="d">2014-05-18</span><a href="sermons/paul-s-prayer-for-the-thessalonians-a-model-of-2014-05-18.html">Paul&#x27;s Prayer for the Thessalonians: A Model of Passionate Intercession</a></li>
+        <li><span class="d">2014-01-05</span><a href="sermons/friend-of-sinners-2014-01-05.html">Friend of Sinners</a></li>
+      </ul>
+      <div class="sermon-index-year">Undated</div>
+      <ul class="sermon-index">
+        <li><span class="d">—</span><a href="sermons/5-2f27-2f18.html">5-2f27-2f18</a></li>
+        <li><span class="d">—</span><a href="sermons/9-2f23-2f18.html">9-2f23-2f18</a></li>
+        <li><span class="d">—</span><a href="sermons/a-call-to-pray-for-communion.html">A Call to Pray for Communion</a></li>
+        <li><span class="d">—</span><a href="sermons/a-focused-prayer.html">A Focused Prayer</a></li>
+        <li><span class="d">—</span><a href="sermons/a-gatekeeper-s-song.html">A Gatekeeper&#x27;s Song</a></li>
+        <li><span class="d">—</span><a href="sermons/a-prayer-for-guidance-a-man-after-god-s-own-heart.html">A Prayer for Guidance: A Man After God&#x27;s Own Heart</a></li>
+        <li><span class="d">—</span><a href="sermons/a-prayer-to-imitate.html">A Prayer to Imitate</a></li>
+        <li><span class="d">—</span><a href="sermons/a-preview-of-glory.html">A Preview of Glory</a></li>
+        <li><span class="d">—</span><a href="sermons/a-song-of-praise.html">A Song of Praise</a></li>
+        <li><span class="d">—</span><a href="sermons/a-plentiful-harvest.html">a-plentiful-harvest</a></li>
+        <li><span class="d">—</span><a href="sermons/aaron-s-failure-of-nerve.html">Aaron&#x27;s Failure of Nerve</a></li>
+        <li><span class="d">—</span><a href="sermons/anger-and-the-body.html">Anger and the Body</a></li>
+        <li><span class="d">—</span><a href="sermons/apr21-providence.html">apr21_providence</a></li>
+        <li><span class="d">—</span><a href="sermons/as-you-go.html">as-you-go</a></li>
+        <li><span class="d">—</span><a href="sermons/ascetic1tim4.html">ascetic1tim4</a></li>
+        <li><span class="d">—</span><a href="sermons/authority-identity.html">Authority &amp; Identity</a></li>
+        <li><span class="d">—</span><a href="sermons/before-and-after-a-change-in-perspective.html">Before and After - A Change in Perspective</a></li>
+        <li><span class="d">—</span><a href="sermons/blessed-citizens.html">Blessed Citizens</a></li>
+        <li><span class="d">—</span><a href="sermons/boasting-in-the-cross.html">Boasting in the Cross</a></li>
+        <li><span class="d">—</span><a href="sermons/captive-to-christ-part-2.html">Captive to Christ - Part 2</a></li>
+        <li><span class="d">—</span><a href="sermons/centered-in-christ.html">Centered in Christ</a></li>
+        <li><span class="d">—</span><a href="sermons/christ-the-king.html">Christ the King</a></li>
+        <li><span class="d">—</span><a href="sermons/christ-the-priest.html">Christ the Priest</a></li>
+        <li><span class="d">—</span><a href="sermons/christ-the-reconciler.html">Christ the Reconciler</a></li>
+        <li><span class="d">—</span><a href="sermons/christ-lord-of-redemption.html">Christ: Lord of Redemption</a></li>
+        <li><span class="d">—</span><a href="sermons/christian-friendship.html">Christian Friendship</a></li>
+        <li><span class="d">—</span><a href="sermons/christian-principles-for-the-democratic-process.html">Christian Principles for the Democratic Process</a></li>
+        <li><span class="d">—</span><a href="sermons/come-to-the-feast.html">Come to the Feast</a></li>
+        <li><span class="d">—</span><a href="sermons/comfort-is-not-a-compass.html">Comfort is Not a Compass</a></li>
+        <li><span class="d">—</span><a href="sermons/compassion-confidence-calling-and-consuming-awe.html">Compassion, Confidence, Calling, and Consuming Awe</a></li>
+        <li><span class="d">—</span><a href="sermons/conquest-for-covenant.html">Conquest for Covenant</a></li>
+        <li><span class="d">—</span><a href="sermons/considering-membership-at-providence-community-church-why.html">Considering Membership at Providence Community Church - Why Church Membership?</a></li>
+        <li><span class="d">—</span><a href="sermons/consolation-for-israel-light-for-the-nations.html">Consolation for Israel, Light for the Nations</a></li>
+        <li><span class="d">—</span><a href="sermons/count-the-cost-part-ii.html">Count the Cost, Part II</a></li>
+        <li><span class="d">—</span><a href="sermons/dangerous-assumptions.html">Dangerous Assumptions</a></li>
+        <li><span class="d">—</span><a href="sermons/deacons-servants-of-the-king.html">Deacons: Servants of the King</a></li>
+        <li><span class="d">—</span><a href="sermons/denominationalplankpulling.html">denominationalplankpulling</a></li>
+        <li><span class="d">—</span><a href="sermons/devoted-to-fellowship.html">Devoted to Fellowship</a></li>
+        <li><span class="d">—</span><a href="sermons/devoted-to-prayer.html">Devoted to Prayer</a></li>
+        <li><span class="d">—</span><a href="sermons/devoted-to-the-word.html">Devoted to the Word</a></li>
+        <li><span class="d">—</span><a href="sermons/do-christianity.html">Do Christianity</a></li>
+        <li><span class="d">—</span><a href="sermons/do-not-be-anxious.html">Do Not Be Anxious</a></li>
+        <li><span class="d">—</span><a href="sermons/do-not-covet.html">Do Not Covet</a></li>
+        <li><span class="d">—</span><a href="sermons/do-not-taste-do-not-touch.html">Do Not Taste, Do Not Touch</a></li>
+        <li><span class="d">—</span><a href="sermons/doers-of-the-word.html">Doers of the Word</a></li>
+        <li><span class="d">—</span><a href="sermons/elders-burly-church-fathers.html">Elders: Burly Church Fathers</a></li>
+        <li><span class="d">—</span><a href="sermons/faith-in-gear.html">Faith in Gear</a></li>
+        <li><span class="d">—</span><a href="sermons/faithful-unto-death.html">Faithful Unto Death</a></li>
+        <li><span class="d">—</span><a href="sermons/faithless-and-twisted.html">Faithless and Twisted</a></li>
+        <li><span class="d">—</span><a href="sermons/fellowship-sharing-a-common-life.html">Fellowship: Sharing a Common Life</a></li>
+        <li><span class="d">—</span><a href="sermons/free-to-love.html">Free to Love</a></li>
+        <li><span class="d">—</span><a href="sermons/from-envy-and-desire.html">From Envy and Desire</a></li>
+        <li><span class="d">—</span><a href="sermons/from-slavery-to-sonship.html">From Slavery to Sonship</a></li>
+        <li><span class="d">—</span><a href="sermons/from-envy-to-satisfaction.html">from-envy-to-satisfaction</a></li>
+        <li><span class="d">—</span><a href="sermons/god-s-self-substitution.html">God&#x27;s Self-Substitution</a></li>
+        <li><span class="d">—</span><a href="sermons/godliness.html">godliness</a></li>
+        <li><span class="d">—</span><a href="sermons/gospel-desertion-is-a-fatal-decision.html">Gospel Desertion Is a Fatal Decision</a></li>
+        <li><span class="d">—</span><a href="sermons/grace-and-peace.html">Grace and Peace</a></li>
+        <li><span class="d">—</span><a href="sermons/growing-for-the-glory-of-god.html">Growing for the Glory of God</a></li>
+        <li><span class="d">—</span><a href="sermons/gyroscopic-hearts.html">Gyroscopic Hearts</a></li>
+        <li><span class="d">—</span><a href="sermons/he-abolished-death.html">He Abolished Death</a></li>
+        <li><span class="d">—</span><a href="sermons/he-gives-good-gifts.html">He Gives Good Gifts</a></li>
+        <li><span class="d">—</span><a href="sermons/hear-and-do.html">hear-and-do</a></li>
+        <li><span class="d">—</span><a href="sermons/hometown-rejection.html">Hometown Rejection</a></li>
+        <li><span class="d">—</span><a href="sermons/hope-as-help.html">Hope as Help</a></li>
+        <li><span class="d">—</span><a href="sermons/how-majestic-is-your-name.html">How Majestic Is Your Name</a></li>
+        <li><span class="d">—</span><a href="sermons/how-saints-grow-in-holiness.html">How Saints Grow in Holiness</a></li>
+        <li><span class="d">—</span><a href="sermons/how-we-worship.html">How We Worship</a></li>
+        <li><span class="d">—</span><a href="sermons/in-his-presence-prophecy.html">In His Presence: Prophecy</a></li>
+        <li><span class="d">—</span><a href="sermons/james-5-13-20-dq.html">james-5-13-20-dq</a></li>
+        <li><span class="d">—</span><a href="sermons/jesus-cleanses-the-temple.html">Jesus Cleanses the Temple</a></li>
+        <li><span class="d">—</span><a href="sermons/jesus-friend-of-sinners.html">Jesus, Friend of Sinners</a></li>
+        <li><span class="d">—</span><a href="sermons/jesus-warrior-priest-and-king.html">Jesus: Warrior, Priest and King</a></li>
+        <li><span class="d">—</span><a href="sermons/june-25th.html">june-25th</a></li>
+        <li><span class="d">—</span><a href="sermons/june10.html">june10</a></li>
+        <li><span class="d">—</span><a href="sermons/june17.html">june17</a></li>
+        <li><span class="d">—</span><a href="sermons/june3.html">june3</a></li>
+        <li><span class="d">—</span><a href="sermons/justified-by-faith.html">Justified by Faith</a></li>
+        <li><span class="d">—</span><a href="sermons/keep-a-close-watch.html">Keep a Close Watch</a></li>
+        <li><span class="d">—</span><a href="sermons/keep-in-step-together.html">Keep in Step Together</a></li>
+        <li><span class="d">—</span><a href="sermons/keeping-sabbath.html">Keeping Sabbath</a></li>
+        <li><span class="d">—</span><a href="sermons/knowing-and-walking.html">Knowing and Walking</a></li>
+        <li><span class="d">—</span><a href="sermons/leadership-and-the-crisis-of-confidence.html">Leadership and the Crisis of Confidence</a></li>
+        <li><span class="d">—</span><a href="sermons/life-death-motive-means-opportunity.html">Life &amp; Death: Motive, Means, &amp; Opportunity</a></li>
+        <li><span class="d">—</span><a href="sermons/looking-to-christ-in-the-unexpected.html">Looking to Christ in the Unexpected</a></li>
+        <li><span class="d">—</span><a href="sermons/lord-willing.html">Lord Willing</a></li>
+        <li><span class="d">—</span><a href="sermons/luke-15.html">luke-15</a></li>
+        <li><span class="d">—</span><a href="sermons/luke-16-19-31.html">luke-16-19-31</a></li>
+        <li><span class="d">—</span><a href="sermons/luke-17-1-6.html">luke-17-1-6</a></li>
+        <li><span class="d">—</span><a href="sermons/luke-17-5-10.html">luke-17-5-10</a></li>
+        <li><span class="d">—</span><a href="sermons/luke-4.html">luke-4</a></li>
+        <li><span class="d">—</span><a href="sermons/magnify-the-lord.html">Magnify the Lord</a></li>
+        <li><span class="d">—</span><a href="sermons/make-disciples.html">Make Disciples</a></li>
+        <li><span class="d">—</span><a href="sermons/make-disciples-count-the-cost-part-1.html">Make Disciples: Count the Cost, Part 1</a></li>
+        <li><span class="d">—</span><a href="sermons/make-disciples-intro-message.html">Make Disciples: Intro Message</a></li>
+        <li><span class="d">—</span><a href="sermons/matthew-18.html">matthew-18</a></li>
+        <li><span class="d">—</span><a href="sermons/matthew13.html">matthew13</a></li>
+        <li><span class="d">—</span><a href="sermons/may7-providence.html">may7_providence</a></li>
+        <li><span class="d">—</span><a href="sermons/meek-men.html">Meek Men</a></li>
+        <li><span class="d">—</span><a href="sermons/money-the-mission-of-god.html">Money &amp; The Mission of God</a></li>
+        <li><span class="d">—</span><a href="sermons/monotheism-made-our-world.html">Monotheism Made Our World</a></li>
+        <li><span class="d">—</span><a href="sermons/mountains-of-assurance-for-molehills-of-doubts.html">Mountains of Assurance for Molehills of Doubts</a></li>
+        <li><span class="d">—</span><a href="sermons/my-father-s-house.html">My Father&#x27;s House</a></li>
+        <li><span class="d">—</span><a href="sermons/new-men-for-the-messiah.html">New Men for the Messiah</a></li>
+        <li><span class="d">—</span><a href="sermons/no-greater-man.html">No Greater Man</a></li>
+        <li><span class="d">—</span><a href="sermons/nothing-is-impossible-with-god.html">Nothing Is Impossible with God</a></li>
+        <li><span class="d">—</span><a href="sermons/nov-19.html">nov-19</a></li>
+        <li><span class="d">—</span><a href="sermons/only-believe.html">only-believe</a></li>
+        <li><span class="d">—</span><a href="sermons/out-of-the-depths.html">Out of the Depths</a></li>
+        <li><span class="d">—</span><a href="sermons/overview-israel-in-the-exodus.html">Overview: Israel in the Exodus</a></li>
+        <li><span class="d">—</span><a href="sermons/paleo-evangelism.html">Paleo-Evangelism</a></li>
+        <li><span class="d">—</span><a href="sermons/parables-of-wedding-feasts-and-banquets.html">Parables of Wedding Feasts and Banquets</a></li>
+        <li><span class="d">—</span><a href="sermons/partnership-in-mission.html">Partnership in Mission</a></li>
+        <li><span class="d">—</span><a href="sermons/partying-with-sinners.html">Partying with Sinners</a></li>
+        <li><span class="d">—</span><a href="sermons/paul-s-love-for-the-thessalonians.html">Paul&#x27;s Love for the Thessalonians</a></li>
+        <li><span class="d">—</span><a href="sermons/paul-s-secret-to-contentment.html">Paul&#x27;s Secret to Contentment</a></li>
+        <li><span class="d">—</span><a href="sermons/pharaoh-the-problem-of-false-repentance.html">Pharaoh &amp; the Problem of False Repentance</a></li>
+        <li><span class="d">—</span><a href="sermons/possessed-by-possessions.html">Possessed by Possessions</a></li>
+        <li><span class="d">—</span><a href="sermons/praying-for-renewal.html">Praying for Renewal</a></li>
+        <li><span class="d">—</span><a href="sermons/praying-for-treasure.html">Praying for Treasure</a></li>
+        <li><span class="d">—</span><a href="sermons/priest.html">Priest</a></li>
+        <li><span class="d">—</span><a href="sermons/prophet-on-the-run.html">Prophet on the Run</a></li>
+        <li><span class="d">—</span><a href="sermons/pursue-godliness.html">Pursue Godliness</a></li>
+        <li><span class="d">—</span><a href="sermons/put-off.html">Put Off</a></li>
+        <li><span class="d">—</span><a href="sermons/put-on.html">Put On</a></li>
+        <li><span class="d">—</span><a href="sermons/quintessential-wisdom-teacher.html">quintessential-wisdom-teacher</a></li>
+        <li><span class="d">—</span><a href="sermons/rebellion-to-tyrants-is-obedience-to-god.html">Rebellion to Tyrants is Obedience To God</a></li>
+        <li><span class="d">—</span><a href="sermons/receive-the-word.html">Receive the Word</a></li>
+        <li><span class="d">—</span><a href="sermons/reformation-sunday-2014.html">Reformation Sunday 2014</a></li>
+        <li><span class="d">—</span><a href="sermons/renewing-giving.html">Renewing Giving</a></li>
+        <li><span class="d">—</span><a href="sermons/renewing-justice.html">Renewing Justice</a></li>
+        <li><span class="d">—</span><a href="sermons/renewing-leadership.html">Renewing Leadership</a></li>
+        <li><span class="d">—</span><a href="sermons/renewing-marriage.html">Renewing Marriage</a></li>
+        <li><span class="d">—</span><a href="sermons/renewing-worship.html">Renewing Worship</a></li>
+        <li><span class="d">—</span><a href="sermons/romans-9-a-heart-for-the-lost.html">Romans 9: A Heart for the Lost</a></li>
+        <li><span class="d">—</span><a href="sermons/seed-and-soil.html">seed-and-soil</a></li>
+        <li><span class="d">—</span><a href="sermons/sermon-feb-24th.html">sermon-feb-24th</a></li>
+        <li><span class="d">—</span><a href="sermons/set-your-gaze-on-christ.html">Set Your Gaze on Christ</a></li>
+        <li><span class="d">—</span><a href="sermons/sexuality-by-design-part-2.html">Sexuality by Design Part 2</a></li>
+        <li><span class="d">—</span><a href="sermons/sexuality-by-design-part-1.html">Sexuality by Design, Part 1</a></li>
+        <li><span class="d">—</span><a href="sermons/shine-sow-and-serve-the-kingdom.html">Shine, Sow, and Serve the Kingdom</a></li>
+        <li><span class="d">—</span><a href="sermons/some-will-depart.html">Some Will Depart</a></li>
+        <li><span class="d">—</span><a href="sermons/spirit-sealed-by-faith.html">Spirit-Sealed by Faith</a></li>
+        <li><span class="d">—</span><a href="sermons/stand-in-awe.html">Stand in Awe</a></li>
+        <li><span class="d">—</span><a href="sermons/stand-in-the-freedom-of-faith.html">Stand in the Freedom of Faith</a></li>
+        <li><span class="d">—</span><a href="sermons/strengthened-by-grace.html">Strengthened by Grace</a></li>
+        <li><span class="d">—</span><a href="sermons/successful-christian-parenting-part-1.html">Successful Christian Parenting, Part 1</a></li>
+        <li><span class="d">—</span><a href="sermons/successful-christian-parenting-part-2.html">Successful Christian Parenting, Part 2</a></li>
+        <li><span class="d">—</span><a href="sermons/suffering-is-a-showcase-for-god.html">Suffering is a Showcase for God</a></li>
+        <li><span class="d">—</span><a href="sermons/teach-us-to-pray-the-essential-bread.html">Teach Us to Pray: The Essential Bread</a></li>
+        <li><span class="d">—</span><a href="sermons/teach-us-to-pray-your-kingdom-come.html">Teach Us to Pray: Your Kingdom Come</a></li>
+        <li><span class="d">—</span><a href="sermons/temple-of-god.html">Temple of God</a></li>
+        <li><span class="d">—</span><a href="sermons/that-you-may-have-certainty.html">That You May Have Certainty</a></li>
+        <li><span class="d">—</span><a href="sermons/the-blessing-and-the-curse.html">The Blessing and the Curse</a></li>
+        <li><span class="d">—</span><a href="sermons/the-centurion-s-faith.html">The Centurion&#x27;s Faith</a></li>
+        <li><span class="d">—</span><a href="sermons/the-confession.html">The Confession</a></li>
+        <li><span class="d">—</span><a href="sermons/the-confounding-life-of-the-christian.html">The Confounding Life of the Christian</a></li>
+        <li><span class="d">—</span><a href="sermons/the-cost-of-discipleship-2.html">The Cost of Discipleship</a></li>
+        <li><span class="d">—</span><a href="sermons/the-cost-of-discipleship.html">The Cost of Discipleship</a></li>
+        <li><span class="d">—</span><a href="sermons/the-covenant-lord.html">The Covenant Lord</a></li>
+        <li><span class="d">—</span><a href="sermons/the-dark-night-of-the-soul.html">The Dark Night of the Soul</a></li>
+        <li><span class="d">—</span><a href="sermons/the-former-days.html">The Former Days</a></li>
+        <li><span class="d">—</span><a href="sermons/the-foundation-of-our-participation-part-2-stewardship.html">The Foundation of Our Participation Part 2: Stewardship</a></li>
+        <li><span class="d">—</span><a href="sermons/the-good-portion.html">The Good Portion</a></li>
+        <li><span class="d">—</span><a href="sermons/the-good-samaritan.html">The Good Samaritan</a></li>
+        <li><span class="d">—</span><a href="sermons/the-gospel-and-the-christian-soul.html">The Gospel and the Christian Soul</a></li>
+        <li><span class="d">—</span><a href="sermons/the-government-on-his-shoulder.html">The Government on His Shoulder?</a></li>
+        <li><span class="d">—</span><a href="sermons/the-king-of-glory.html">The King of Glory</a></li>
+        <li><span class="d">—</span><a href="sermons/the-kingdom-of-god.html">The Kingdom of God</a></li>
+        <li><span class="d">—</span><a href="sermons/the-kingdom-of-his-son.html">The Kingdom of His Son</a></li>
+        <li><span class="d">—</span><a href="sermons/the-local-church.html">The Local Church</a></li>
+        <li><span class="d">—</span><a href="sermons/the-lord-is-a-man-of-war-part-2.html">The Lord is a Man of War, Part 2</a></li>
+        <li><span class="d">—</span><a href="sermons/the-lost-sons.html">The Lost Sons</a></li>
+        <li><span class="d">—</span><a href="sermons/the-meaning-of-the-resurrection.html">The Meaning of the Resurrection</a></li>
+        <li><span class="d">—</span><a href="sermons/the-menu-is-not-the-meal.html">The Menu is Not the Meal</a></li>
+        <li><span class="d">—</span><a href="sermons/the-messiah-s-gift.html">The Messiah&#x27;s Gift</a></li>
+        <li><span class="d">—</span><a href="sermons/the-mystery-of-godliness.html">The Mystery of Godliness</a></li>
+        <li><span class="d">—</span><a href="sermons/the-mystery-revealed.html">The Mystery Revealed</a></li>
+        <li><span class="d">—</span><a href="sermons/the-sacrament-of-baptism.html">The Sacrament of Baptism</a></li>
+        <li><span class="d">—</span><a href="sermons/the-sacrament-of-the-lord-s-supper.html">The Sacrament of the Lord&#x27;s Supper</a></li>
+        <li><span class="d">—</span><a href="sermons/the-sign-of-jonah.html">The Sign of Jonah</a></li>
+        <li><span class="d">—</span><a href="sermons/the-steadfastness-of-job.html">The Steadfastness of Job</a></li>
+        <li><span class="d">—</span><a href="sermons/the-story-of-two-sons.html">The Story of Two Sons</a></li>
+        <li><span class="d">—</span><a href="sermons/the-supremacy-of-christ-in-creation.html">The Supremacy of Christ in Creation</a></li>
+        <li><span class="d">—</span><a href="sermons/the-offer.html">the-offer</a></li>
+        <li><span class="d">—</span><a href="sermons/thou-shall-not-steal.html">Thou Shall Not Steal</a></li>
+        <li><span class="d">—</span><a href="sermons/toward-theological-endurance.html">Toward Theological Endurance</a></li>
+        <li><span class="d">—</span><a href="sermons/two-mountains-one-mandate.html">Two Mountains: One Mandate</a></li>
+        <li><span class="d">—</span><a href="sermons/unity-in-diversity.html">Unity in Diversity</a></li>
+        <li><span class="d">—</span><a href="sermons/verbal-vandalism-the-third-commandment.html">Verbal Vandalism &amp; The Third Commandment</a></li>
+        <li><span class="d">—</span><a href="sermons/when-depravity-meets-divinity.html">When Depravity Meets Divinity</a></li>
+        <li><span class="d">—</span><a href="sermons/you-were-made-for-love.html">You Were Made For Love</a></li>
+      </ul>
+<!-- /accordion:sermon-index -->
+    </div>
+  </details>
+
+  <details class="toggle">
+    <summary>Topical index</summary>
+    <div class="toggle-body">
+<!-- accordion:topical-index -->
+      <ul class="topic-index">
+        <li><a href="/ProvidenceLenexa/sermons/doctrine/theology-proper/"><strong>Theology Proper</strong></a> <span class="topic-count">300 sermons</span> <span class="topic-blurb">Sermons on who God is — his being, attributes, character, and triune life.</span></li>
+        <li><a href="/ProvidenceLenexa/sermons/doctrine/christology/"><strong>Christology</strong></a> <span class="topic-count">410 sermons</span> <span class="topic-blurb">Sermons centered on the person and work of Jesus Christ — his eternal divinity, incarnation, atoning death, bodily resurrection, ascension, and present reign.</span></li>
+        <li><a href="/ProvidenceLenexa/sermons/doctrine/pneumatology/"><strong>Pneumatology</strong></a> <span class="topic-count">225 sermons</span> <span class="topic-blurb">Sermons on the person and work of the Holy Spirit — his deity, his role in salvation and sanctification, his gifts to the church, and his fruit in the believer.</span></li>
+        <li><a href="/ProvidenceLenexa/sermons/doctrine/bibliology/"><strong>Bibliology</strong></a> <span class="topic-count">295 sermons</span> <span class="topic-blurb">Sermons on the Bible itself — its inspiration, inerrancy, sufficiency, clarity, and authority.</span></li>
+        <li><a href="/ProvidenceLenexa/sermons/doctrine/anthropology/"><strong>Anthropology</strong></a> <span class="topic-count">259 sermons</span> <span class="topic-blurb">Sermons on what it means to be human — created in God&#x27;s image, embodied, gendered, fallen, redeemable.</span></li>
+        <li><a href="/ProvidenceLenexa/sermons/doctrine/hamartiology/"><strong>Hamartiology</strong></a> <span class="topic-count">311 sermons</span> <span class="topic-blurb">Sermons on the nature, depth, and reach of human sin — original sin, indwelling sin, sins of commission and omission, and the death that sin brings.</span></li>
+        <li><a href="/ProvidenceLenexa/sermons/doctrine/soteriology/"><strong>Soteriology</strong></a> <span class="topic-count">346 sermons</span> <span class="topic-blurb">Sermons engaging the gospel itself — what God has done in Christ to rescue sinners, how that salvation is applied, and how a person enters into it.</span></li>
+        <li><a href="/ProvidenceLenexa/sermons/doctrine/sanctification/"><strong>Sanctification</strong></a> <span class="topic-count">411 sermons</span> <span class="topic-blurb">Sermons on the Spirit&#x27;s work to conform believers to the image of Christ — putting sin to death, growing in grace, persevering through trial, and bearing fruit.</span></li>
+        <li><a href="/ProvidenceLenexa/sermons/doctrine/ecclesiology/"><strong>Ecclesiology</strong></a> <span class="topic-count">345 sermons</span> <span class="topic-blurb">Sermons on the church — what it is, who belongs to it, how it gathers and governs, and what it is for in the world.</span></li>
+        <li><a href="/ProvidenceLenexa/sermons/doctrine/covenant-theology/"><strong>Covenant Theology</strong></a> <span class="topic-count">132 sermons</span> <span class="topic-blurb">Sermons that read Scripture through the covenants — the unfolding promise that runs from Eden through Abraham, Sinai, and David to its fulfillment in Christ and inheritance by his church.</span></li>
+        <li><a href="/ProvidenceLenexa/sermons/doctrine/providence-sovereignty/"><strong>Providence / Sovereignty</strong></a> <span class="topic-count">290 sermons</span> <span class="topic-blurb">Sermons on God&#x27;s active rule over every event of history — orchestrating salvation, ordaining suffering, governing nations, hearing prayers, and never letting the smallest sparrow fall outside his decree.</span></li>
+        <li><a href="/ProvidenceLenexa/sermons/doctrine/eschatology/"><strong>Eschatology</strong></a> <span class="topic-count">234 sermons</span> <span class="topic-blurb">Sermons engaging the doctrine of last things — Christ&#x27;s return, the resurrection, the new creation, judgment, and the kingdom that does not end.</span></li>
+        <li><a href="/ProvidenceLenexa/sermons/doctrine/doxology-worship/"><strong>Doxology / Worship</strong></a> <span class="topic-count">271 sermons</span> <span class="topic-blurb">Sermons on what it means to worship God — the why and the how of corporate and personal praise, the place of prayer, singing, the Lord&#x27;s Supper, and the daily affections of a heart aimed at God.</span></li>
+        <li><a href="/ProvidenceLenexa/sermons/doctrine/ethics-moral-theology/"><strong>Ethics / Moral Theology</strong></a> <span class="topic-count">310 sermons</span> <span class="topic-blurb">Sermons applying Scripture to how Christians live — work and money, sex and marriage, speech and conduct, the use of the body, the use of the day.</span></li>
+        <li><a href="/ProvidenceLenexa/sermons/doctrine/pastoral-theology/"><strong>Pastoral Theology</strong></a> <span class="topic-count">317 sermons</span> <span class="topic-blurb">Sermons that address the practical work of shepherding — pastoring families, walking through suffering, counseling the doubting, confronting sin in love, and forming the next generation in the faith.</span></li>
+        <li><a href="/ProvidenceLenexa/sermons/doctrine/spiritual-warfare/"><strong>Spiritual Warfare</strong></a> <span class="topic-count">119 sermons</span> <span class="topic-blurb">Sermons on the conflict every Christian is in — against sin and indwelling temptation, against the world&#x27;s pressures, and against unseen spiritual opposition.</span></li>
+      </ul>
+      <p class="topic-more">You can also browse <a href="sermons/scripture/">by book of the Bible</a> or <a href="sermons/series/">by sermon series</a>.</p>
+<!-- /accordion:topical-index -->
+    </div>
+  </details>
+
+</div>
+
+<h3>What Providence values</h3>
+<p>Providence states its values as comparisons rather than slogans — clearer about what is being chosen against:</p>
+<ul class="values">
+  <li><strong>Humility &gt; Pride</strong> — Humility is an accurate view of God and ourselves; the foundation under every other virtue.</li>
+  <li><strong>Courage &gt; Cowardice</strong> — Courage flows from humility, cowardice from pride. The church wants to help people live authentically courageous lives.</li>
+  <li><strong>Celebration &gt; Envy</strong> — Envy is treated as a much bigger spiritual problem than usually credited; the cross makes it possible to root for one another.</li>
+  <li><strong>Facts &gt; Feelings</strong> — Feelings matter, but when feelings and facts disagree, the work is to bring the feeling into the truth — not the truth into the feeling.</li>
+  <li><strong>Honesty &gt; Spin</strong> — Say what you mean and mean what you say. <em>By the open statement of the truth we would commend ourselves to everyone's conscience in the sight of God.</em></li>
+  <li><strong>Freedom &gt; Guilt</strong> — The world uses guilt to coerce conformity; the gospel sets people free. Confession leads to cleansing, not condemnation.</li>
+</ul>
+
+<p class="kicker">Full statement of faith, leadership team, visitor information, and ways to get involved are at <a href="https://sovgracekc.org/" target="_blank" rel="noopener">sovgracekc.org</a>.</p>
 
 
   <div class="archive-cta">
