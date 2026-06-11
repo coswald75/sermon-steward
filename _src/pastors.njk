@@ -233,8 +233,7 @@ title: Pastors — Sermon Steward
     {% for p in pastors.preachers %}
     {% set mcpUrl = pastors.mcp_base_url + "/p/" + p.slug %}
     <article class="pastor-card">
-      <h2 class="card-name">{{ p.name }}</h2>
-      <p class="card-church">{{ p.church }}</p>
+      <h2 class="card-name">{{ p.church }}</h2>
       <p class="card-location">{{ p.location }}</p>
 
       <!-- ─── CONNECTOR URL ─── -->
@@ -296,7 +295,7 @@ title: Pastors — Sermon Steward
               to edit your <code>claude_desktop_config.json</code>,
               then tells you to restart.
             </p>
-            <script type="text/plain" id="prompt-{{ p.slug }}">You are helping me add the {{ p.name }} Sermon Steward connector to this machine. Do not ask clarifying questions. Just do the steps below, report success, and stop.
+            <script type="text/plain" id="prompt-{{ p.slug }}">You are helping me add the {{ p.church }} Sermon Steward connector to this machine. Do not ask clarifying questions. Just do the steps below, report success, and stop.
 
 # Steps
 
@@ -369,8 +368,8 @@ If you can't read or write the config file because of permissions, tell me exact
             <li>Open <strong>Apps &amp; Connectors</strong> → <strong>Add new connector</strong> (or <strong>New App</strong>).</li>
             <li>Fill in:
               <ul>
-                <li><strong>Name:</strong> <code>{{ p.name }} Sermons</code></li>
-                <li><strong>Description:</strong> <em>Search {{ p.name }}'s preaching corpus by topic, scripture, or theme.</em> (optional)</li>
+                <li><strong>Name:</strong> <code>{{ p.church_short }} Sermons</code></li>
+                <li><strong>Description:</strong> <em>Search the {{ p.church_short }} sermon archive by topic, scripture, or theme.</em> (optional)</li>
                 <li><strong>Connection:</strong> leave as <strong>Server URL</strong>.</li>
                 <li><strong>Server URL:</strong> paste the URL above.</li>
                 <li><strong>Authentication:</strong> change to <strong>No Auth</strong>.</li>
