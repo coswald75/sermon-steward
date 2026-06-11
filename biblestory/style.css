@@ -1,0 +1,349 @@
+/* Knowing the Bible's Story — course pages */
+:root {
+  --ink:        #1a1a2e;
+  --ink-soft:   #3d3d52;
+  --ink-faint:  #6f6f80;
+  --paper:      #faf7f0;
+  --paper-raised: #fffdf7;
+  --rule:       #e2dcce;
+  --rule-soft:  #ede7d8;
+  --accent:     #2d5a4a;
+  --accent-soft:#5a8073;
+  --accent-deep:#1d3d31;
+  --gold:       #b8893a;
+  --gold-bg:    #fdf4d9;
+  --gold-deep:  #6e5018;
+  --link:       #2d5a4a;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Source Serif Pro", "Iowan Old Style", "Charter", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--link); text-underline-offset: 2px; }
+
+/* ── Header ── */
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper-raised);
+  padding: 14px 20px;
+}
+.site-header-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+}
+.site-brand {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.course-tag {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--ink-faint);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.course-tag:hover { color: var(--accent); }
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 30px 20px 90px;
+}
+
+/* ── Lesson hero ── */
+.breadcrumb {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  margin-bottom: 12px;
+}
+.breadcrumb a { color: var(--ink-faint); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent); }
+
+h1.lesson-title {
+  font-size: 32px;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+.lesson-subtitle {
+  font-size: 19px;
+  font-style: italic;
+  color: var(--ink-soft);
+  line-height: 1.4;
+  margin: 0 0 34px;
+}
+
+/* ── Section headings (fill-in style) ── */
+h2.section-head {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.9;
+  color: var(--accent-deep);
+  border-top: 2px solid var(--accent);
+  padding-top: 14px;
+  margin: 44px 0 18px;
+}
+h3.sub-head {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-deep);
+  margin: 30px 0 10px;
+}
+
+/* ── Scripture passages ── */
+.passage {
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin: 18px 0;
+}
+.passage figcaption,
+.passage .ref {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.passage .ref .note {
+  font-weight: 400;
+  color: var(--ink-faint);
+  font-style: italic;
+  letter-spacing: 0;
+}
+.passage p { margin: 0 0 12px; }
+.passage p:last-child { margin-bottom: 0; }
+.passage .verse {
+  margin: 0 0 12px;
+  padding-left: 14px;
+  white-space: pre-line;
+}
+
+/* ── Fill-in blanks ── */
+.blank {
+  display: inline-block;
+  min-width: 7.5em;
+  max-width: 100%;
+  border-bottom: 2px dotted var(--gold);
+  background: var(--gold-bg);
+  border-radius: 3px 3px 0 0;
+  padding: 0 6px;
+  line-height: 1.45;
+  font-family: "Caveat", "Bradley Hand", cursive;
+  font-size: 1.06em;
+  font-weight: 600;
+  color: var(--accent-deep);
+  text-transform: none;
+  letter-spacing: 0;
+  vertical-align: bottom;
+  outline: none;
+  white-space: normal;
+}
+.blank.wide { min-width: 96%; display: block; margin: 6px 0; }
+.blank:focus { background: #fbedc4; border-bottom-color: var(--gold-deep); }
+.blank:empty::before { content: "\00a0"; }
+
+.fill-note {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  color: var(--ink-faint);
+  background: var(--paper-raised);
+  border: 1px dashed var(--rule);
+  border-radius: 8px;
+  padding: 9px 13px;
+  margin: 0 0 26px;
+}
+
+/* ── Questions ── */
+.question {
+  font-weight: 600;
+  color: var(--ink);
+  margin: 22px 0 10px;
+}
+.question::before {
+  content: "Q";
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 5px;
+  padding: 2px 7px;
+  margin-right: 9px;
+  vertical-align: 1px;
+}
+
+/* ── Lists ── */
+ul.points, ol.points { padding-left: 22px; margin: 14px 0; }
+ul.points li, ol.points li { margin-bottom: 9px; }
+
+/* ── Big idea box ── */
+.big-idea {
+  background: var(--accent-deep);
+  color: #f3efe4;
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 38px 0;
+  font-size: 19px;
+  line-height: 1.5;
+  font-style: italic;
+  text-align: center;
+}
+
+/* ── Reflection ── */
+.reflection {
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--gold);
+  background: var(--paper-raised);
+  border-radius: 0 10px 10px 0;
+  padding: 20px 20px 6px;
+  margin: 40px 0;
+}
+.reflection-label {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--gold-deep);
+  margin: 0 0 6px;
+}
+.reflection h2.section-head {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 6px;
+}
+.reflection .passage { background: var(--paper); }
+
+/* ── Two-column compare table ── */
+.compare {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 15px;
+}
+.compare th {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--accent-deep);
+  border-bottom: 2px solid var(--accent);
+  padding: 8px 10px;
+  text-align: left;
+}
+.compare td {
+  border-bottom: 1px solid var(--rule-soft);
+  padding: 10px;
+  vertical-align: top;
+}
+
+/* ── Lesson nav ── */
+.lesson-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 56px;
+  border-top: 1px solid var(--rule);
+  padding-top: 22px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14px;
+}
+.lesson-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--accent);
+  max-width: 46%;
+}
+.lesson-nav a:hover { color: var(--accent-deep); }
+.lesson-nav .nav-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--ink-faint);
+  margin-bottom: 3px;
+}
+.lesson-nav .next { text-align: right; margin-left: auto; }
+
+/* ── Index page ── */
+.lesson-list { list-style: none; margin: 30px 0; padding: 0; }
+.lesson-list li { margin-bottom: 12px; }
+.lesson-list a {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 15px 17px;
+  text-decoration: none;
+  color: var(--ink);
+}
+.lesson-list a:hover { border-color: var(--accent-soft); }
+.lesson-num {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.lesson-list .lesson-name { font-weight: 600; line-height: 1.35; }
+.lesson-list .lesson-range {
+  display: block;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--ink-faint);
+  margin-top: 2px;
+}
+
+/* ── Footer ── */
+.course-footer {
+  border-top: 1px solid var(--rule);
+  margin-top: 60px;
+  padding: 18px 20px 40px;
+  text-align: center;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 12.5px;
+  color: var(--ink-faint);
+}
+.course-footer a { color: var(--ink-faint); }
+
+@media (min-width: 600px) {
+  html, body { font-size: 18px; }
+  h1.lesson-title { font-size: 40px; }
+  h2.section-head { font-size: 16px; }
+}

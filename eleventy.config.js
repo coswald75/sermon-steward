@@ -3,6 +3,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("CoGElPaso");
   eleventyConfig.addPassthroughCopy("ProvidenceLenexa");
   eleventyConfig.addPassthroughCopy("admin");
+  eleventyConfig.addPassthroughCopy("biblestory");
 
   return {
     dir: {
