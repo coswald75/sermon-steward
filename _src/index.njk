@@ -74,6 +74,16 @@
     .col .col-sub { min-height: 0; }
     .site-header { padding: 20px; }
   }
+
+  .try-overlay { position: fixed; inset: 0; background: rgba(26,26,26,0.5); display: flex; align-items: center; justify-content: center; z-index: 100; padding: 20px; }
+  .try-overlay[hidden] { display: none; }
+  .try-card { position: relative; background: var(--bg-card); border: 1px solid var(--rule); border-radius: 18px; padding: 38px 34px 28px; max-width: 440px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.25); }
+  .try-card h3 { font-size: 23px; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 12px; }
+  .try-card p { font-size: 15.5px; color: var(--ink-soft); margin: 0 0 22px; line-height: 1.5; }
+  .try-close { position: absolute; top: 12px; right: 16px; background: none; border: none; font-size: 26px; line-height: 1; color: var(--ink-faint); cursor: pointer; font-family: inherit; }
+  .try-close:hover { color: var(--ink); }
+  .try-later { display: block; margin: 14px auto 0; background: none; border: none; color: var(--ink-faint); font-size: 14px; cursor: pointer; font-family: inherit; }
+  .try-later:hover { color: var(--ink-soft); text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -131,6 +141,31 @@
 </div>
 
 <footer>Sermon Steward &middot; <a href="mailto:chris@sermonsteward.com">get in touch</a></footer>
+
+<div id="try-modal" class="try-overlay" role="dialog" aria-modal="true" aria-labelledby="try-h" hidden>
+  <div class="try-card">
+    <button class="try-close" aria-label="Close" onclick="closeTry()">&times;</button>
+    <h3 id="try-h">Would you like to try one of your sermons?</h3>
+    <p>Upload one sermon and we&rsquo;ll email you the full report &mdash; transcript, discussion questions, writing prompts, and more. Free, and no account needed.</p>
+    <a class="btn btn-primary" href="https://try.sermonsteward.com">Try it with your sermon <span class="arrow">&rarr;</span></a>
+    <button class="try-later" onclick="closeTry()">Maybe later</button>
+  </div>
+</div>
+
+<script>
+  (function () {
+    try { if (localStorage.getItem('ss_try_dismissed')) return; } catch (e) {}
+    setTimeout(function () {
+      var m = document.getElementById('try-modal');
+      if (m) m.hidden = false;
+    }, 25000);
+  })();
+  function closeTry() {
+    var m = document.getElementById('try-modal');
+    if (m) m.hidden = true;
+    try { localStorage.setItem('ss_try_dismissed', '1'); } catch (e) {}
+  }
+</script>
 
 </body>
 </html>
