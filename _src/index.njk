@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ index.title }}</title>
+<title>Sermon Steward — Simply Superior Sermon Hosting</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -21,124 +21,116 @@
     --highlight: #fef0c8;
     --sans: 'Inter', system-ui, -apple-system, "Segoe UI", sans-serif;
   }
-
   * { box-sizing: border-box; }
   html, body {
     margin: 0; padding: 0; background: var(--bg); color: var(--ink);
     font-family: var(--sans); font-size: 17px; line-height: 1.55;
     -webkit-font-smoothing: antialiased;
-    min-height: 100vh; display: flex; flex-direction: column;
   }
   a { color: var(--accent); text-decoration: none; }
   a:hover { color: var(--accent-deep); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 
-  /* ───── Header ───── */
-  .site-header { padding: 28px 32px; }
-  .wordmark { font-weight: 800; font-size: 22px; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+  .site-header { padding: 26px 32px; }
+  .wordmark { font-weight: 800; font-size: 22px; letter-spacing: -0.02em; color: var(--ink); }
   .wordmark .dot { color: var(--accent); }
 
-  /* ───── Main ───── */
-  main {
-    flex: 1; display: flex; align-items: center; justify-content: center;
-    padding: 24px 32px 64px;
-  }
-  .landing-inner { text-align: center; max-width: 720px; }
-
-  .tag {
-    display: inline-block;
-    background: var(--highlight); color: var(--ink);
-    font-size: 13px; font-weight: 600;
-    padding: 6px 14px; border-radius: 999px;
-    margin-bottom: 32px;
-  }
-
-  h1 {
-    font-family: var(--sans); font-weight: 800;
-    font-size: clamp(2.6rem, 6vw, 4.6rem);
-    line-height: 1.02; letter-spacing: -0.035em;
-    margin: 0 0 24px; color: var(--ink);
-  }
+  .hero { text-align: center; padding: 40px 0 20px; }
+  h1 { font-weight: 800; font-size: clamp(2.5rem, 6vw, 4.3rem); line-height: 1.03;
+       letter-spacing: -0.035em; margin: 0 0 20px; }
   h1 .accent { color: var(--accent); }
+  .price { font-size: clamp(1.15rem, 2.4vw, 1.5rem); color: var(--ink-soft); margin: 0 0 30px; }
+  .price strong { color: var(--ink); font-weight: 700; }
+  .price .amt { color: var(--accent); }
 
-  .deck {
-    font-size: clamp(1.15rem, 2.2vw, 1.4rem);
-    line-height: 1.45; color: var(--ink-soft);
-    max-width: 580px; margin: 0 auto 48px;
-  }
-
-  .button-row {
-    display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
-  }
-  .btn {
-    font-family: var(--sans); font-size: 17px; font-weight: 600;
-    padding: 18px 30px; border-radius: 10px; text-decoration: none;
-    display: inline-flex; align-items: center; gap: 8px;
-    transition: transform 0.12s, box-shadow 0.12s, background 0.12s;
-    border: 1px solid transparent; cursor: pointer;
-  }
-  .btn-primary {
-    background: var(--accent); color: #fff;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 4px 12px rgba(196,69,47,0.18);
-  }
-  .btn-primary:hover {
-    background: var(--accent-deep); color: #fff;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 8px 18px rgba(196,69,47,0.24);
-  }
-  .btn-secondary {
-    background: #fff; color: var(--ink); border-color: var(--rule);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-  }
-  .btn-secondary:hover {
-    border-color: var(--ink-soft); transform: translateY(-1px);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-  }
-  .btn .arrow { transition: transform 0.12s; }
+  .btn { font-family: var(--sans); font-size: 17px; font-weight: 600;
+    padding: 16px 30px; border-radius: 10px; display: inline-flex; align-items: center; gap: 8px;
+    transition: transform .12s, box-shadow .12s, background .12s; border: 1px solid transparent; cursor: pointer; }
+  .btn-primary { background: var(--accent); color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 4px 12px rgba(196,69,47,0.18); }
+  .btn-primary:hover { background: var(--accent-deep); color: #fff; transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 8px 18px rgba(196,69,47,0.24); }
+  .btn .arrow { transition: transform .12s; }
   .btn:hover .arrow { transform: translateX(3px); }
+  .hero-note { margin-top: 12px; font-size: 13px; color: var(--ink-faint); }
 
-  .meta {
-    margin-top: 56px;
-    font-size: 13px; color: var(--ink-faint);
-  }
-  .meta a { color: var(--ink-soft); text-decoration: underline; text-underline-offset: 3px; }
+  .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin: 56px 0 40px; }
+  .col { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 16px; padding: 30px 26px; }
+  .col h2 { font-size: 20px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 6px; text-align: center; }
+  .col .col-sub { font-size: 14.5px; color: var(--ink-soft); text-align: center; margin: 0 0 22px; line-height: 1.45; min-height: 42px; }
+  .col.ai h2 { color: var(--accent); }
+  .col ul { list-style: none; margin: 0; padding: 0; }
+  .col li { display: flex; align-items: flex-start; gap: 10px; font-size: 15.5px; color: var(--ink); padding: 7px 0; }
+  .col li .tick { color: var(--accent); font-weight: 700; flex: none; line-height: 1.5; }
 
-  /* ───── Footer ───── */
-  footer {
-    padding: 24px 32px;
-    font-size: 13px; color: var(--ink-faint);
-    text-align: center;
-    border-top: 1px solid var(--rule);
-  }
+  .cta-bottom { text-align: center; padding: 20px 0 64px; }
+  .cta-bottom p { font-size: 17px; color: var(--ink-soft); margin: 0 0 18px; }
+
+  footer { padding: 24px 32px; font-size: 13px; color: var(--ink-faint); text-align: center; border-top: 1px solid var(--rule); }
   footer a { color: var(--ink-soft); }
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
+    .cols { grid-template-columns: 1fr; gap: 16px; margin: 40px 0 32px; }
+    .col .col-sub { min-height: 0; }
     .site-header { padding: 20px; }
-    main { padding: 16px 20px 48px; }
-    .btn { padding: 16px 22px; font-size: 16px; }
   }
 </style>
 </head>
 <body>
 
-<header class="site-header">
-  <a class="wordmark" href="#">Sermon Steward<span class="dot">.</span></a>
-</header>
+<header class="site-header"><span class="wordmark">Sermon Steward<span class="dot">.</span></span></header>
 
-<main>
-  <div class="landing-inner">
-    <div class="tag">{{ index.tag }}</div>
-    <h1>{{ index.headline_lead }} <span class="accent">{{ index.headline_accent }}</span></h1>
-    <p class="deck">{{ index.deck }}</p>
-    <div class="button-row">
-      <a class="btn btn-primary" href="{{ index.cta_primary_href }}">{{ index.cta_primary_label }}</a>
-      <a class="btn btn-secondary" href="{{ index.cta_secondary_href }}">{{ index.cta_secondary_label }} <span class="arrow">→</span></a>
+<div class="wrap">
+  <section class="hero">
+    <h1>Simply Superior<br><span class="accent">Sermon Hosting</span></h1>
+    <p class="price">You get <strong>all of this</strong> for <span class="amt">$30 a month.</span></p>
+    <a class="btn btn-primary" href="/ProvidenceLenexa/sermons/">See it live <span class="arrow">&rarr;</span></a>
+    <div class="hero-note">A real church, hosted on Sermon Steward — click any sermon to see the extras.</div>
+  </section>
+
+  <section class="cols">
+    <div class="col hosting">
+      <h2>Hosting</h2>
+      <p class="col-sub">Everything a great sermon host should do &mdash; clean, fast, and reliable.</p>
+      <ul>
+        <li><span class="tick">&check;</span> A clean, fast page for every sermon</li>
+        <li><span class="tick">&check;</span> Automatic, accurate transcripts</li>
+        <li><span class="tick">&check;</span> Search across your whole library</li>
+        <li><span class="tick">&check;</span> Browse by Scripture, series &amp; topic</li>
+        <li><span class="tick">&check;</span> Reliable audio hosting on a global network</li>
+      </ul>
     </div>
-  </div>
-</main>
 
-<footer>
-  {{ index.footer }}
-</footer>
+    <div class="col resources">
+      <h2>Resources</h2>
+      <p class="col-sub">Sermon-based resources to share with your congregation.</p>
+      <ul>
+        <li><span class="tick">&check;</span> Daily devotional readings</li>
+        <li><span class="tick">&check;</span> Small-group discussion questions</li>
+        <li><span class="tick">&check;</span> Article &amp; writing prompts</li>
+        <li><span class="tick">&check;</span> Family &amp; couples conversation guides</li>
+        <li><span class="tick">&check;</span> A large collection of cross-references</li>
+      </ul>
+    </div>
+
+    <div class="col ai">
+      <h2>AI-friendly</h2>
+      <p class="col-sub">The most AI-friendly sermon hosting on the planet.</p>
+      <ul>
+        <li><span class="tick">&check;</span> Search your own sermon library by meaning, not just keywords</li>
+        <li><span class="tick">&check;</span> Every sermon is good article material</li>
+        <li><span class="tick">&check;</span> Use your AI to interact with your own sermons</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta-bottom">
+    <p>See it all working on a real church&rsquo;s sermons.</p>
+    <a class="btn btn-primary" href="/ProvidenceLenexa/sermons/">See a live example <span class="arrow">&rarr;</span></a>
+  </section>
+</div>
+
+<footer>Sermon Steward &middot; <a href="mailto:chris@sermonsteward.com">get in touch</a></footer>
 
 </body>
 </html>
