@@ -7,10 +7,10 @@
 // Only /pastors/* is gated (see `run_worker_first` in wrangler.jsonc —
 // every other path is served straight from the asset cache without
 // invoking this Worker at all, so the gate adds zero latency to the
-// public site). HTTP Basic Auth: any username, password checked,
-// enforced at the edge — content never reaches the browser without it.
+// public site). HTTP Basic Auth: any username, password checked
+// against the PASTORS_PASSWORD Worker secret, enforced at the edge —
+// content never reaches the browser without it.
 
-const PASSWORD = "Gosp3l4U!";
 const REALM = "Sermon Steward — Pastors";
 
 function unauthorized() {
@@ -23,6 +23,15 @@ function unauthorized() {
   });
 }
 
+function authNotConfigured() {
+  return new Response("Authentication is not configured.", {
+    status: 500,
+    headers: {
+      "Content-Type": "text/plain",
+    },
+  });
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -30,6 +39,11 @@ export default {
       url.pathname === "/pastors" || url.pathname.startsWith("/pastors/");
 
     if (gated) {
+      const expected = env.PASTORS_PASSWORD;
+      if (typeof expected !== "string" || expected.length === 0) {
+        return authNotConfigured();
+      }
+
       const auth = request.headers.get("Authorization") || "";
       if (!auth.startsWith("Basic ")) return unauthorized();
       try {
@@ -37,7 +51,7 @@ export default {
         // Split on the FIRST colon only — passwords may contain colons.
         const idx = decoded.indexOf(":");
         const pass = idx >= 0 ? decoded.slice(idx + 1) : "";
-        if (pass !== PASSWORD) return unauthorized();
+        if (pass !== expected) return unauthorized();
       } catch (_) {
         return unauthorized();
       }
