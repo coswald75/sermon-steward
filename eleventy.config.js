@@ -5,7 +5,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("biblestory");
   eleventyConfig.addPassthroughCopy({
-    "_src/og-sermon-steward-a.png": "og-sermon-steward-a.png",
+    "_src/og-sermon-steward-a.jpg": "og-sermon-steward-a.jpg",
   });
 
   return {
