@@ -1,0 +1,176 @@
+---
+permalink: /how-we-read-a-sermon/index.html
+title: How we read a sermon — Sermon Steward
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="We read your sermon the way a careful listener would — by what you are doing in the pulpit at that moment. That is how the extras get written from the sermon you actually preached.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #fbf8f1;
+    --bg-card:   #ffffff;
+    --ink:       #1a1a1a;
+    --ink-soft:  #4a4a4a;
+    --ink-faint: #828282;
+    --rule:      #e6e1d3;
+    --accent:    #c4452f;
+    --accent-deep: #9a3624;
+    --accent-soft: #f0d4cc;
+    --highlight: #fef0c8;
+    --sans: 'Inter', system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); font-size: 17px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-deep); }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  .site-header {
+    padding: 26px 32px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .wordmark { font-weight: 800; font-size: 22px; letter-spacing: -0.02em; color: var(--ink); }
+  .wordmark .dot { color: var(--accent); }
+  .site-nav a { font-size: 15px; font-weight: 600; color: var(--ink-soft); }
+  .site-nav a:hover { color: var(--ink); }
+  .site-nav a[aria-current="page"] { color: var(--ink); }
+
+  .hero { padding: 28px 0 8px; }
+  .eyebrow {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 14px;
+  }
+  h1 {
+    font-weight: 800; font-size: clamp(1.85rem, 5vw, 2.7rem); line-height: 1.12;
+    letter-spacing: -0.03em; margin: 0 0 18px;
+  }
+  .lede { font-size: 18px; color: var(--ink-soft); margin: 0 0 8px; }
+
+  .step {
+    background: var(--bg-card); border: 1px solid var(--rule);
+    border-radius: 16px; padding: 30px 28px; margin: 28px 0;
+  }
+  .step h2 {
+    font-size: 22px; font-weight: 800; letter-spacing: -0.015em;
+    margin: 0 0 16px; display: flex; align-items: flex-start; gap: 12px;
+    line-height: 1.25;
+  }
+  .step .n {
+    flex: none; width: 28px; height: 28px; border-radius: 8px;
+    background: var(--accent-soft); color: var(--accent-deep);
+    font-size: 15px; font-weight: 800; display: inline-flex;
+    align-items: center; justify-content: center; margin-top: 1px;
+  }
+  .step p { margin: 0 0 14px; color: var(--ink); }
+  .step p:last-child { margin-bottom: 0; }
+  .step ul { list-style: none; margin: 4px 0 16px; padding: 0; }
+  .step li {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 6px 0; color: var(--ink);
+  }
+  .step li .tick { color: var(--accent); font-weight: 700; flex: none; line-height: 1.5; }
+
+  .close { padding: 12px 0 56px; }
+  .close h2 {
+    font-size: 22px; font-weight: 800; letter-spacing: -0.015em;
+    margin: 0 0 16px;
+  }
+  .close p { margin: 0 0 12px; }
+  .cta-row {
+    display: flex; flex-wrap: wrap; gap: 12px;
+    margin: 22px 0 18px;
+  }
+  .btn { font-family: var(--sans); font-size: 17px; font-weight: 600;
+    padding: 16px 30px; border-radius: 10px; display: inline-flex; align-items: center; gap: 8px;
+    transition: transform .12s, box-shadow .12s, background .12s; border: 1px solid transparent; cursor: pointer; }
+  .btn-primary { background: var(--accent); color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 4px 12px rgba(196,69,47,0.18); }
+  .btn-primary:hover { background: var(--accent-deep); color: #fff; transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 8px 18px rgba(196,69,47,0.24); }
+  .btn-secondary { background: #fff; color: var(--ink); border-color: var(--rule); }
+  .btn-secondary:hover { color: var(--ink); border-color: var(--ink-soft); transform: translateY(-1px); }
+  .btn .arrow { transition: transform .12s; }
+  .btn:hover .arrow { transform: translateX(3px); }
+  .close-note { font-size: 16px; color: var(--ink-soft); }
+
+  footer { padding: 24px 32px; font-size: 13px; color: var(--ink-faint); text-align: center; border-top: 1px solid var(--rule); }
+  footer a { color: var(--ink-soft); }
+
+  @media (max-width: 800px) {
+    .site-header { padding: 20px; }
+    .step { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="wordmark" href="/">Sermon Steward<span class="dot">.</span></a>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/how-we-read-a-sermon/" aria-current="page">How we read a sermon</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">How Sermon Steward works</p>
+    <h1>We read your sermon the way a careful listener would.</h1>
+    <p class="lede">Not by the paragraph. Not by the word count. By what you are doing in the pulpit at that moment — explaining the text, making a claim, telling a story, turning to your people. That is how the extras get written from the sermon you actually preached.</p>
+  </section>
+
+  <article class="step">
+    <h2><span class="n">1</span> We cut where the sermon turns</h2>
+    <p>A sermon is not a block of audio. It moves. You open the text. You press a truth. You reach for a picture. You look your people in the eye.</p>
+    <p>We mark those turns. Each slice is a unit: a stretch of the sermon that is doing one job, until the job changes. That is why a Steward page does not feel like a transcript dumped under a player. It feels like the sermon, in order.</p>
+    <p>See it on a live church: <a href="https://sermonsteward.com/ProvidenceLenexa/sermons/">https://sermonsteward.com/ProvidenceLenexa/sermons/</a> — click any sermon. The transcript is broken into those units.</p>
+  </article>
+
+  <article class="step">
+    <h2><span class="n">2</span> We name what that slice is doing</h2>
+    <p>Once the sermon is cut, we name the work of each slice — in ordinary words a pastor already uses.</p>
+    <p>You will see this on a live page as type, tone, and method, plus a short map of what is in the sermon: the shape of the argument, the doctrines it touches, the Scriptures it cites, the illustrations, the claims.</p>
+    <p>We are not grading you. We are labeling the moves so the rest of the page can be honest. Small-group questions should come from the places you applied the text. A family conversation should come from the claim you actually made, not from a generic theme we guessed.</p>
+  </article>
+
+  <article class="step">
+    <h2><span class="n">3</span> The extras come out of those slices</h2>
+    <p>For $30 a month you get the hosting — a clean page, the audio, an automatic transcript, browse by Scripture, series, and topic — and the resources for your people.</p>
+    <p>Those resources are pulled from the units, not invented beside them:</p>
+    <ul>
+      <li><span class="tick">&check;</span> Daily readings from the Scriptures you opened</li>
+      <li><span class="tick">&check;</span> Small-group questions from the claims and applications you made</li>
+      <li><span class="tick">&check;</span> Family and couples conversation guides from the same sermon</li>
+      <li><span class="tick">&check;</span> Cross-references that showed up in the preaching</li>
+    </ul>
+    <p>That is the point of the free try, too. Upload one MP3 at <a href="https://try.sermonsteward.com">https://try.sermonsteward.com</a>. No account. We email a report — usually in about fifteen minutes — drawn from that sermon. We use the file to make the report. We never publish it without your say-so.</p>
+    <p>A try is a try. It does not become your church library.</p>
+  </article>
+
+  <section class="close">
+    <h2>See it, then try one of yours</h2>
+    <p>See it live: <a href="https://sermonsteward.com/ProvidenceLenexa/sermons/">https://sermonsteward.com/ProvidenceLenexa/sermons/</a> — audio, unitized transcript, discussion questions, family and couples guides, daily readings, memory verse.</p>
+    <p>Try one sermon: <a href="https://try.sermonsteward.com">https://try.sermonsteward.com</a> — name, email, one MP3.</p>
+    <p>Questions: <a href="mailto:chris@sermonsteward.com">chris@sermonsteward.com</a></p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://sermonsteward.com/ProvidenceLenexa/sermons/">See it live <span class="arrow">&rarr;</span></a>
+      <a class="btn btn-secondary" href="https://try.sermonsteward.com">Try one sermon <span class="arrow">&rarr;</span></a>
+    </div>
+    <p class="close-note">Hosting and extras. Thirty dollars a month. No checkout on this page — if you want to talk about your church, write Chris.</p>
+  </section>
+</div>
+
+<footer>Sermon Steward &middot; <a href="mailto:chris@sermonsteward.com">get in touch</a></footer>
+
+</body>
+</html>

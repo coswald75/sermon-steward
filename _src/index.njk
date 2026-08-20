@@ -31,9 +31,13 @@
   a:hover { color: var(--accent-deep); }
   .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 
-  .site-header { padding: 26px 32px; }
+  .site-header { padding: 26px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
   .wordmark { font-weight: 800; font-size: 22px; letter-spacing: -0.02em; color: var(--ink); }
   .wordmark .dot { color: var(--accent); }
+  .site-nav a { font-size: 15px; font-weight: 600; color: var(--ink-soft); }
+  .site-nav a:hover { color: var(--ink); }
+  .hero-path { margin: 16px 0 0; font-size: 15.5px; font-weight: 600; }
+  .cta-path { margin: 16px 0 0; font-size: 15.5px; font-weight: 600; }
 
   .hero { text-align: center; padding: 40px 0 20px; }
   h1 { font-weight: 800; font-size: clamp(2.5rem, 6vw, 4.3rem); line-height: 1.03;
@@ -88,13 +92,19 @@
 </head>
 <body>
 
-<header class="site-header"><span class="wordmark">Sermon Steward<span class="dot">.</span></span></header>
+<header class="site-header">
+  <span class="wordmark">Sermon Steward<span class="dot">.</span></span>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/how-we-read-a-sermon/">How we read a sermon</a>
+  </nav>
+</header>
 
 <div class="wrap">
   <section class="hero">
     <h1>Simply Superior<br><span class="accent">Sermon Hosting</span></h1>
     <p class="price">You get <strong>all of this</strong> for <span class="amt">$30 a month.</span></p>
     <a class="btn btn-primary" href="/ProvidenceLenexa/sermons/">See it live <span class="arrow">&rarr;</span></a>
+    <p class="hero-path"><a href="/how-we-read-a-sermon/">How we read a sermon</a></p>
     <div class="hero-note">A real church, hosted on Sermon Steward — click any sermon to see the extras.</div>
   </section>
 
@@ -137,10 +147,11 @@
   <section class="cta-bottom">
     <p>See it all working on a real church&rsquo;s sermons.</p>
     <a class="btn btn-primary" href="/ProvidenceLenexa/sermons/">See a live example <span class="arrow">&rarr;</span></a>
+    <p class="cta-path"><a href="/how-we-read-a-sermon/">How it works</a></p>
   </section>
 </div>
 
-<footer>Sermon Steward &middot; <a href="mailto:chris@sermonsteward.com">get in touch</a></footer>
+<footer>Sermon Steward &middot; <a href="/how-we-read-a-sermon/">How we read a sermon</a> &middot; <a href="mailto:chris@sermonsteward.com">get in touch</a></footer>
 
 <div id="try-modal" class="try-overlay" role="dialog" aria-modal="true" aria-labelledby="try-h" hidden>
   <div class="try-card">
