@@ -1,0 +1,30 @@
+{
+  // Prep King public stub. Separate Worker so prep.sermonsteward.com
+  // does not share the sermon-steward asset tree or /pastors gate.
+  // try.sermonsteward.com is already its own Worker (sermon-steward-try);
+  // this follows that split. Custom Domain here creates the DNS record
+  // on the existing sermonsteward.com zone at deploy time.
+  //
+  // Deploy (does not run on git push):
+  //   npm run build
+  //   npx wrangler deploy --config wrangler.prep.jsonc
+  //
+  // Do not add routes to wrangler.jsonc — that file has none, and
+  // sermonsteward.com is bound in the dashboard. Listing only prep
+  // there would replace those bindings on the next main deploy.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sermon-steward-prep",
+  "compatibility_date": "2026-05-15",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "_site/prep"
+  },
+  "routes": [
+    {
+      "pattern": "prep.sermonsteward.com",
+      "custom_domain": true
+    }
+  ]
+}
