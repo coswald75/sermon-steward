@@ -16,6 +16,8 @@ title: Prep King
     --bg: #f7f4ee;
     --ink: #1c1b18;
     --ink-soft: #4a4843;
+    --navy: #1a365d;
+    --camel: #b38b59;
     --sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
   }
   * { box-sizing: border-box; }
@@ -24,20 +26,55 @@ title: Prep King
     font-family: var(--sans); font-size: 17px; line-height: 1.55;
     -webkit-font-smoothing: antialiased;
   }
-  a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
-  a:hover { color: var(--ink-soft); }
-  .page { max-width: 36rem; margin: 0 auto; padding: 72px 24px 96px; }
-  p { margin: 0 0 16px; color: var(--ink-soft); }
-  p:last-child { margin-bottom: 0; }
+  a { color: var(--navy); text-decoration: underline; text-underline-offset: 2px; }
+  a:hover { color: var(--camel); }
+  .page { max-width: 52rem; margin: 0 auto; padding: 40px 24px 80px; }
+  .wordmark {
+    display: block; width: min(100%, 28rem); height: auto;
+    margin: 0 auto 28px;
+  }
+  .band {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(10rem, 16rem);
+    gap: 28px 36px;
+    align-items: start;
+  }
+  .copy p { margin: 0 0 16px; color: var(--ink-soft); }
+  .copy p:last-child { margin-bottom: 0; }
+  .mascot, .support { margin: 0; }
+  .mascot img, .support img {
+    display: block; width: 100%; height: auto;
+  }
+  .support {
+    max-width: 11rem;
+    margin: 28px 0 0 auto;
+  }
+  @media (max-width: 720px) {
+    .page { padding: 28px 20px 64px; }
+    .band { display: flex; flex-direction: column; }
+    .mascot { max-width: 18rem; margin: 0 auto; order: -1; }
+    .support { margin: 24px auto 0; }
+  }
 </style>
 </head>
 <body>
   <main class="page">
-    <p>Prep King is $20 a month for four Sundays.</p>
-    <p>You send a text or a topic. You get sixty minutes of prep you can hear and read, on a private link. Not a public show, not a file in your inbox.</p>
-    <p>Use that month’s packs for your own preaching. We keep the audio and the coverage. We do not keep the sermon you write. Your name never goes on a pack.</p>
-    <p>This is the week before you preach. Sermon Steward is the page after.</p>
-    <p>Write Chris at <a href="mailto:chris@sovgracekc.org">chris@sovgracekc.org</a> if you want in.</p>
+    <img class="wordmark" src="wordmark.jpg" width="1400" height="781" alt="Prep King">
+    <div class="band">
+      <div class="copy">
+        <p>Prep King is $20 a month for four Sundays.</p>
+        <p>You send a text or a topic. You get sixty minutes of prep you can hear and read, on a private link. Not a public show, not a file in your inbox.</p>
+        <p>Use that month’s packs for your own preaching. We keep the audio and the coverage. We do not keep the sermon you write. Your name never goes on a pack.</p>
+        <p>This is the week before you preach. Sermon Steward is the page after.</p>
+        <p>Write Chris at <a href="mailto:chris@sovgracekc.org">chris@sovgracekc.org</a> if you want in.</p>
+      </div>
+      <figure class="mascot">
+        <img src="character-a.jpg" width="900" height="900" alt="Prep King mascot, an invented cartoon character">
+      </figure>
+    </div>
+    <figure class="support">
+      <img src="character-b.jpg" width="720" height="964" alt="">
+    </figure>
   </main>
 </body>
 </html>

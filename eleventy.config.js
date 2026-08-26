@@ -4,6 +4,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("ProvidenceLenexa");
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("biblestory");
+  eleventyConfig.addPassthroughCopy({ "_src/prep-media": "prep" });
 
   return {
     dir: {
