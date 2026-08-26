@@ -8,6 +8,7 @@ title: Prep King
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prep King</title>
+<meta name="description" content="Prep King is $20 a month for four Sundays.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -35,31 +36,71 @@ title: Prep King
   }
   .band {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(10rem, 16rem);
+    grid-template-columns: minmax(0, 1fr) minmax(12rem, 18rem);
     gap: 28px 36px;
     align-items: start;
   }
   .copy p { margin: 0 0 16px; color: var(--ink-soft); }
-  .copy p:last-child { margin-bottom: 0; }
-  .mascot, .support { margin: 0; }
-  .mascot img, .support img {
+  .mascot { margin: 0; }
+  .mascot img {
     display: block; width: 100%; height: auto;
   }
-  .support {
-    max-width: 11rem;
-    margin: 28px 0 0 auto;
+  .access {
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid #e4ddcd;
   }
+  .access label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .access-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .access input[type="email"] {
+    flex: 1 1 12rem;
+    min-width: 0;
+    padding: 10px 12px;
+    border: 1px solid #d4cbb8;
+    border-radius: 2px;
+    background: #fffdf8;
+    color: var(--ink);
+    font: inherit;
+    font-size: 16px;
+  }
+  .access input[type="email"]:focus {
+    outline: 2px solid var(--navy);
+    outline-offset: 1px;
+  }
+  .access button {
+    padding: 10px 16px;
+    border: 1px solid var(--navy);
+    border-radius: 2px;
+    background: var(--navy);
+    color: #f7f4ee;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .access button:hover { background: #142844; }
   @media (max-width: 720px) {
     .page { padding: 28px 20px 64px; }
     .band { display: flex; flex-direction: column; }
     .mascot { max-width: 18rem; margin: 0 auto; order: -1; }
-    .support { margin: 24px auto 0; }
   }
 </style>
 </head>
 <body>
   <main class="page">
-    <img class="wordmark" src="wordmark.jpg" width="1400" height="781" alt="Prep King">
+    <img class="wordmark" src="wordmark-url.jpg" width="1376" height="768" alt="Prep King">
     <div class="band">
       <div class="copy">
         <p>Prep King is $20 a month for four Sundays.</p>
@@ -67,14 +108,29 @@ title: Prep King
         <p>Use that month’s packs for your own preaching. We keep the audio and the coverage. We do not keep the sermon you write. Your name never goes on a pack.</p>
         <p>This is the week before you preach. Sermon Steward is the page after.</p>
         <p>Write Chris at <a href="mailto:chris@sovgracekc.org">chris@sovgracekc.org</a> if you want in.</p>
+        <form class="access" action="mailto:chris@sovgracekc.org" method="post" enctype="text/plain">
+          <label for="access-email">Request Access</label>
+          <div class="access-row">
+            <input id="access-email" name="email" type="email" required autocomplete="email" placeholder="Your email">
+            <button type="submit">Request Access</button>
+          </div>
+        </form>
       </div>
       <figure class="mascot">
-        <img src="character-a.jpg" width="900" height="900" alt="Prep King mascot, an invented cartoon character">
+        <img src="character-b.jpg" width="720" height="964" alt="Prep King mascot, an invented cartoon character">
       </figure>
     </div>
-    <figure class="support">
-      <img src="character-b.jpg" width="720" height="964" alt="">
-    </figure>
   </main>
+  <script>
+    document.querySelector(".access").addEventListener("submit", function (event) {
+      event.preventDefault();
+      var email = this.email.value.trim();
+      if (!email) return;
+      var query = new URLSearchParams();
+      query.set("subject", "Prep King access request");
+      query.set("body", email);
+      window.location.href = "mailto:chris@sovgracekc.org?" + query.toString();
+    });
+  </script>
 </body>
 </html>

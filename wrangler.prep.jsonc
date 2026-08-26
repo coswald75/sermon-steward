@@ -1,30 +1,21 @@
 {
-  // Prep King public stub. Separate Worker so prep.sermonsteward.com
-  // does not share the sermon-steward asset tree or /pastors gate.
-  // try.sermonsteward.com is already its own Worker (sermon-steward-try);
-  // this follows that split. Custom Domain here creates the DNS record
-  // on the existing sermonsteward.com zone at deploy time.
+  // Live Prep King host is getprepking.com.
+  // That hostname is the Cloudflare Pages project `prepking`
+  // (same HTML as https://prepking.pages.dev). There is no
+  // sermon-steward-prep Worker. prep.sermonsteward.com does
+  // not resolve — do not depend on it, and do not create that
+  // record from this file.
   //
-  // Deploy (does not run on git push):
+  // A git push does not publish. Deploy replaces the old
+  // "Coming Soon / podcast" stub:
   //   npm run build
-  //   npx wrangler deploy --config wrangler.prep.jsonc
+  //   npx wrangler pages deploy _site/prep --project-name prepking
   //
-  // Do not add routes to wrangler.jsonc — that file has none, and
-  // sermonsteward.com is bound in the dashboard. Listing only prep
-  // there would replace those bindings on the next main deploy.
+  // Do not add routes to wrangler.jsonc. Do not attach this
+  // page to the sermon-steward Worker (that Worker gates /pastors).
+  // Do not touch try.sermonsteward.com.
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "sermon-steward-prep",
+  "name": "prepking",
   "compatibility_date": "2026-05-15",
-  "observability": {
-    "enabled": true
-  },
-  "assets": {
-    "directory": "_site/prep"
-  },
-  "routes": [
-    {
-      "pattern": "prep.sermonsteward.com",
-      "custom_domain": true
-    }
-  ]
+  "pages_build_output_dir": "_site/prep"
 }

@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "eleventy",
-    "dev": "eleventy --serve"
+    "dev": "eleventy --serve",
+    "deploy:prep": "eleventy && npx wrangler pages deploy _site/prep --project-name prepking"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"
