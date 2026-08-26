@@ -4,7 +4,12 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("ProvidenceLenexa");
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("biblestory");
-  eleventyConfig.addPassthroughCopy({ "_src/prep-media": "prep" });
+  eleventyConfig.addPassthroughCopy({
+    "_src/prep-media/wordmark-url.jpg": "prep/wordmark-url.jpg",
+  });
+  eleventyConfig.addPassthroughCopy({
+    "_src/prep-media/character-b.jpg": "prep/character-b.jpg",
+  });
 
   return {
     dir: {
