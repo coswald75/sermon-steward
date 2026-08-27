@@ -1,0 +1,21 @@
+{
+  // Live Prep King host is getprepking.com.
+  // That hostname is the Cloudflare Pages project `prepking`
+  // (same HTML as https://prepking.pages.dev). There is no
+  // sermon-steward-prep Worker. prep.sermonsteward.com does
+  // not resolve — do not depend on it, and do not create that
+  // record from this file.
+  //
+  // A git push does not publish. Deploy replaces the old
+  // "Coming Soon / podcast" stub:
+  //   npm run build
+  //   npx wrangler pages deploy _site/prep --project-name prepking
+  //
+  // Do not add routes to wrangler.jsonc. Do not attach this
+  // page to the sermon-steward Worker (that Worker gates /pastors).
+  // Do not touch try.sermonsteward.com.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "prepking",
+  "compatibility_date": "2026-05-15",
+  "pages_build_output_dir": "_site/prep"
+}
