@@ -4,6 +4,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("ProvidenceLenexa");
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("biblestory");
+  eleventyConfig.addPassthroughCopy("7391842");
   eleventyConfig.addPassthroughCopy({
     "_src/prep-media/wordmark-url.jpg": "prep/wordmark-url.jpg",
   });
