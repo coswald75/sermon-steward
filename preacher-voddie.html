@@ -1,0 +1,544 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voddie Baucham — Preacher Analysis · Sermon Steward</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --ink:#1a1a1a;--parchment:#fbf8f1;--cream:#f5f1e6;--warm-gray:#828282;
+    --gold:#c4452f;--gold-dim:#9a3624;--gold-bright:#c4452f;
+    --burgundy:#9a3624;--burgundy-light:#c4452f;--forest:#3a7256;--slate:#4a4a4a;
+    --reform:#1e3148;--reform-mid:#2a4460;--reform-light:#3a5a80;
+    --shadow-soft:0 2px 20px rgba(26,23,20,0.06);--shadow-card:0 4px 30px rgba(26,23,20,0.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:var(--parchment);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+
+  .nav{position:sticky;top:0;z-index:100;background:rgba(26,26,26,0.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(196,69,47,0.15);padding:0 30px;}
+  .nav-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px;}
+  .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .nav-brand-icon{width:28px;height:28px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .nav-brand-icon svg{width:12px;height:12px;}
+  .nav-brand-text{font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);}
+  .nav-brand-text span{color:var(--gold);}
+  .nav-links{display:flex;align-items:center;gap:4px;}
+  .nav-links a{font-size:0.7rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--slate);text-decoration:none;padding:6px 12px;border-radius:4px;transition:all 0.2s;}
+  .nav-links a:hover{color:var(--burgundy);background:rgba(196,69,47,0.08);}
+  .nav-cta{font-size:0.76rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:11px 22px;background:var(--gold);border-radius:4px;transition:all 0.2s;box-shadow:0 2px 12px rgba(196,69,47,0.28);}
+  .nav-cta:hover{background:var(--gold-bright);}
+
+  .hero{background:var(--reform);color:#1a1a1a;padding:100px 30px 80px;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 30% 50%,rgba(196,69,47,0.05) 0%,transparent 70%),radial-gradient(ellipse 50% 80% at 80% 20%,rgba(30,49,72,0.6) 0%,transparent 60%);pointer-events:none;}
+  .hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c4452f' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none;}
+  .hero-inner{max-width:1160px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:1fr 320px;gap:80px;align-items:start;}
+  .hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:28px;}
+  .hero-eyebrow a{font-size:0.65rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(196,69,47,0.6);text-decoration:none;}
+  .hero-eyebrow a:hover{color:var(--gold);}
+  .hero-eyebrow-sep{width:1px;height:14px;background:rgba(196,69,47,0.3);}
+  .hero-eyebrow span{font-size:0.65rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
+  .hero-name{font-family:'Inter',serif;font-size:clamp(3rem,5vw,4.5rem);font-weight:300;line-height:1.05;letter-spacing:-0.02em;margin-bottom:16px;}
+  .hero-name em{font-style:italic;color:var(--gold-bright);}
+  .hero-role{font-size:0.9rem;color:rgba(26,26,26,0.5);margin-bottom:32px;}
+  .hero-role strong{color:rgba(26,26,26,0.75);font-weight:500;}
+  .hero-divider{width:48px;height:1px;background:var(--gold-dim);margin-bottom:28px;}
+  .hero-summary{font-size:1rem;color:rgba(26,26,26,0.6);max-width:560px;line-height:1.9;}
+  .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(196,69,47,0.1);border:1px solid rgba(196,69,47,0.1);border-radius:12px;overflow:hidden;align-self:start;margin-top:8px;}
+  .hero-stat{background:rgba(30,49,72,0.7);padding:28px 24px;}
+  .hero-stat-value{font-family:'Inter',serif;font-size:2.4rem;font-weight:600;color:var(--gold-bright);line-height:1;margin-bottom:6px;}
+  .hero-stat-label{font-size:0.63rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,26,26,0.35);}
+  .hero-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:28px;}
+  .hero-tag{font-size:0.63rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:5px 12px;border:1px solid rgba(196,69,47,0.2);border-radius:20px;color:rgba(196,69,47,0.7);}
+  .hero-tag.active{background:rgba(196,69,47,0.1);border-color:rgba(196,69,47,0.35);color:var(--gold);}
+
+  .page-body{max-width:1160px;margin:0 auto;padding:0 30px 120px;}
+  .section{padding:80px 0 0;opacity:0;transform:translateY(24px);transition:all 0.7s cubic-bezier(0.25,0.46,0.45,0.94);}
+  .section.visible{opacity:1;transform:translateY(0);}
+  .section-label{font-size:0.63rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+  .section-title{font-family:'Inter',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;line-height:1.2;margin-bottom:14px;}
+  .section-intro{font-size:0.93rem;color:var(--slate);max-width:600px;line-height:1.85;margin-bottom:48px;}
+  .section-rule{width:100%;height:1px;background:rgba(196,69,47,0.15);margin-top:56px;}
+
+  /* REFORMED CALLOUT — deep slate/blue tone */
+  .reform-callout{background:#ffffff;border:1px solid rgba(58,90,128,0.3);border-radius:16px;padding:40px 44px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:32px;margin-bottom:48px;}
+  .reform-callout-label{font-size:0.6rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:rgba(196,69,47,0.6);margin-bottom:10px;}
+  .reform-callout-headline{font-family:'Inter',serif;font-size:1.5rem;font-weight:400;line-height:1.3;margin-bottom:8px;color:#1a1a1a;}
+  .reform-callout-headline em{font-style:italic;color:var(--gold-bright);}
+  .reform-callout-body{font-size:0.85rem;color:rgba(26,26,26,0.5);line-height:1.75;}
+  .reform-callout-stat{text-align:right;}
+  .reform-callout-stat-value{font-family:'Inter',serif;font-size:4.5rem;font-weight:600;color:var(--gold-bright);line-height:1;}
+  .reform-callout-stat-label{font-size:0.62rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:rgba(196,69,47,0.4);margin-top:6px;}
+
+  .loci-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 48px;}
+  .loci-row{display:flex;flex-direction:column;gap:6px;}
+  .loci-meta{display:flex;align-items:baseline;justify-content:space-between;}
+  .loci-name{font-size:0.82rem;font-weight:500;color:var(--ink);}
+  .loci-count{font-family:'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace',monospace;font-size:0.72rem;color:var(--warm-gray);}
+  .loci-bar{height:4px;background:var(--cream);border-radius:2px;overflow:hidden;}
+  .loci-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--reform-mid),var(--gold));transition:width 1.2s cubic-bezier(0.25,0.46,0.45,0.94);width:0;}
+
+  .charts-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;}
+  .chart-card{background:white;border:1px solid rgba(196,69,47,0.12);border-radius:16px;padding:32px 28px;box-shadow:var(--shadow-soft);}
+  .chart-card-title{font-size:0.68rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--warm-gray);margin-bottom:24px;}
+  .chart-canvas-wrap{position:relative;height:180px;display:flex;align-items:center;justify-content:center;}
+
+  .logos-bar{background:white;border:1px solid rgba(196,69,47,0.12);border-radius:16px;padding:36px 40px;box-shadow:var(--shadow-soft);display:grid;grid-template-columns:1fr 200px;gap:48px;align-items:center;}
+  .logos-bar-left{}
+  .logos-bar-label{font-size:0.62rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--warm-gray);margin-bottom:20px;}
+  .logos-register-row{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
+  .logos-register-meta{display:flex;align-items:center;justify-content:space-between;}
+  .logos-register-name{font-size:0.82rem;font-weight:500;color:var(--ink);display:flex;align-items:center;gap:8px;}
+  .logos-register-count{font-family:'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace',monospace;font-size:0.7rem;color:var(--warm-gray);}
+  .logos-register-track{height:5px;background:var(--cream);border-radius:2.5px;overflow:hidden;}
+  .logos-register-fill{height:100%;border-radius:2.5px;transition:width 1.2s cubic-bezier(0.25,0.46,0.45,0.94);width:0;}
+  .logos-bar-right{text-align:center;}
+  .logos-ratio{font-family:'Inter',serif;font-size:3.5rem;font-weight:600;color:var(--reform-mid);line-height:1;}
+  .logos-ratio-label{font-size:0.68rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--warm-gray);margin-top:8px;line-height:1.5;}
+
+  .illus-list{display:flex;flex-direction:column;gap:16px;max-width:640px;}
+  .illus-row{display:grid;grid-template-columns:180px 1fr 48px;align-items:center;gap:16px;}
+  .illus-name{font-size:0.84rem;font-weight:500;color:var(--ink);}
+  .illus-track{height:6px;background:var(--cream);border-radius:3px;overflow:hidden;}
+  .illus-fill{height:100%;border-radius:3px;transition:width 1.2s cubic-bezier(0.25,0.46,0.45,0.94);width:0;}
+  .illus-fill.gold{background:var(--gold);}
+  .illus-fill.reform{background:var(--reform-mid);}
+  .illus-fill.burgundy{background:var(--burgundy);}
+  .illus-fill.forest{background:var(--forest);}
+  .illus-fill.slate{background:var(--slate);}
+  .illus-val{font-family:'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace',monospace;font-size:0.72rem;color:var(--warm-gray);text-align:right;}
+
+  /* CONFESSION FEATURE */
+  .confession-feature{background:var(--reform);color:#1a1a1a;border-radius:16px;padding:44px 48px;margin-bottom:28px;position:relative;overflow:hidden;}
+  .confession-feature::before{content:'1689';position:absolute;right:-10px;bottom:-40px;font-family:'Inter',serif;font-size:12rem;font-weight:700;color:rgba(196,69,47,0.05);line-height:1;pointer-events:none;}
+  .confession-feature-label{font-size:0.6rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:rgba(196,69,47,0.6);margin-bottom:12px;}
+  .confession-feature-title{font-family:'Inter',serif;font-size:2rem;font-weight:400;margin-bottom:12px;}
+  .confession-feature-count{font-family:'Inter',serif;font-size:4.5rem;font-weight:600;color:var(--gold-bright);line-height:1;margin-bottom:4px;}
+  .confession-feature-count-label{font-size:0.62rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(196,69,47,0.4);margin-bottom:20px;}
+  .confession-feature-body{font-size:0.9rem;color:rgba(26,26,26,0.55);line-height:1.8;max-width:560px;}
+
+  .quotes-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px;}
+  .quote-hero-card{background:var(--ink);color:#1a1a1a;border-radius:16px;padding:40px 36px;position:relative;overflow:hidden;}
+  .quote-hero-card::before{content:'\201C';position:absolute;top:-20px;right:20px;font-family:'Inter',serif;font-size:14rem;color:rgba(196,69,47,0.05);line-height:1;pointer-events:none;}
+  .quote-hero-count{font-family:'Inter',serif;font-size:4rem;font-weight:600;color:var(--gold-bright);line-height:1;margin-bottom:4px;}
+  .quote-hero-count-label{font-size:0.62rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:20px;}
+  .quote-hero-author{font-family:'Inter',serif;font-size:1.8rem;color:#1a1a1a;margin-bottom:6px;}
+  .quote-hero-tradition{font-size:0.72rem;color:rgba(26,26,26,0.4);margin-bottom:20px;}
+  .quote-hero-text{font-family:'Inter',serif;font-size:1.05rem;font-style:italic;color:rgba(26,26,26,0.65);line-height:1.75;}
+  .quotes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;}
+  .quote-card{background:white;border:1px solid rgba(196,69,47,0.12);border-radius:12px;padding:24px 20px;box-shadow:var(--shadow-soft);transition:all 0.25s;}
+  .quote-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-card);border-color:rgba(196,69,47,0.3);}
+  .quote-card-count{font-family:'Inter',serif;font-size:2rem;font-weight:600;color:var(--gold);line-height:1;margin-bottom:8px;}
+  .quote-card-author{font-family:'Inter',serif;font-size:1.05rem;font-weight:500;color:var(--ink);margin-bottom:4px;line-height:1.3;}
+  .quote-card-tradition{font-size:0.65rem;color:var(--warm-gray);}
+  .quote-card-bar{height:2px;background:var(--cream);border-radius:1px;overflow:hidden;margin-top:14px;}
+  .quote-card-fill{height:100%;background:linear-gradient(90deg,var(--reform-mid),var(--gold));transition:width 1.2s;width:0;}
+
+  /* POLEMIC TARGETS */
+  .polemic-section{background:var(--cream);border:1px solid rgba(154,54,36,0.15);border-radius:16px;padding:36px 40px;margin-bottom:28px;}
+  .polemic-label{font-size:0.62rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--burgundy);margin-bottom:14px;}
+  .polemic-title{font-family:'Inter',serif;font-size:1.4rem;font-weight:400;margin-bottom:8px;}
+  .polemic-body{font-size:0.85rem;color:var(--slate);line-height:1.75;margin-bottom:24px;}
+  .polemic-targets{display:flex;flex-wrap:wrap;gap:8px;}
+  .polemic-chip{display:flex;align-items:center;gap:8px;background:white;border:1px solid rgba(154,54,36,0.18);border-radius:40px;padding:7px 14px;}
+  .polemic-chip-name{font-size:0.78rem;font-weight:500;color:var(--burgundy);}
+  .polemic-chip-count{font-family:'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace',monospace;font-size:0.65rem;color:rgba(154,54,36,0.5);}
+
+  /* CREEDS */
+  .creeds-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;}
+  .creed-chip{background:var(--reform);color:#1a1a1a;border-radius:8px;padding:10px 18px;}
+  .creed-chip-name{font-family:'Inter',serif;font-size:0.95rem;display:block;margin-bottom:2px;}
+  .creed-chip-count{font-family:'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace',monospace;font-size:0.65rem;color:rgba(196,69,47,0.6);}
+
+  .quotes-minor{display:flex;flex-wrap:wrap;gap:8px;}
+  .quote-chip{display:flex;align-items:center;gap:8px;background:var(--cream);border-radius:40px;padding:7px 14px;}
+  .quote-chip-name{font-size:0.78rem;font-weight:500;color:var(--slate);}
+  .quote-chip-count{font-family:'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace',monospace;font-size:0.65rem;color:var(--warm-gray);}
+
+  .insight-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .insight-card{background:var(--ink);color:#1a1a1a;border-radius:16px;padding:36px 32px;}
+  .insight-card.light{background:white;color:var(--ink);border:1px solid rgba(196,69,47,0.12);box-shadow:var(--shadow-soft);}
+  .insight-card-label{font-size:0.63rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:16px;}
+  .insight-card.light .insight-card-label{color:var(--gold-dim);}
+  .insight-card:not(.light) .insight-card-label{color:var(--gold-dim);}
+  .insight-card-text{font-family:'Inter',serif;font-size:1.15rem;line-height:1.75;}
+  .insight-card:not(.light) .insight-card-text{color:rgba(26,26,26,0.82);}
+  .insight-card.light .insight-card-text{color:var(--slate);}
+  .insight-card-text em{font-style:italic;color:var(--gold-bright);}
+  .insight-card.light .insight-card-text em{color:var(--reform-mid);}
+
+  .series-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;}
+  .series-card{background:white;border:1px solid rgba(196,69,47,0.12);border-radius:12px;padding:24px 20px;box-shadow:var(--shadow-soft);transition:all 0.25s;}
+  .series-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-card);border-color:rgba(196,69,47,0.3);}
+  .series-name{font-family:'Inter',serif;font-size:1.1rem;font-weight:500;margin-bottom:6px;}
+  .series-detail{font-size:0.72rem;color:var(--warm-gray);}
+
+  .corpus-header{display:grid;grid-template-columns:48px 1fr 160px 100px;gap:16px;padding:0 8px 12px;border-bottom:1px solid rgba(196,69,47,0.2);}
+  .corpus-col-head{font-size:0.62rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--warm-gray);}
+  .corpus-row{display:grid;grid-template-columns:48px 1fr 160px 100px;gap:16px;padding:13px 8px;border-bottom:1px solid rgba(196,69,47,0.07);align-items:center;border-radius:8px;transition:background 0.15s;}
+  .corpus-row:hover{background:rgba(196,69,47,0.05);}
+  .corpus-num{font-family:'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace',monospace;font-size:0.68rem;color:var(--warm-gray);}
+  .corpus-title{font-size:0.86rem;font-weight:500;color:var(--ink);line-height:1.4;}
+  .corpus-text{font-size:0.72rem;color:var(--warm-gray);margin-top:2px;}
+  .corpus-date{font-family:'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace',monospace;font-size:0.7rem;color:var(--slate);}
+  .corpus-type-badge{display:inline-block;font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:3px 9px;border-radius:20px;background:rgba(30,49,72,0.1);color:var(--reform);}
+  .corpus-lang-badge{display:inline-block;font-size:0.6rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:3px 9px;border-radius:20px;background:rgba(154,54,36,0.1);color:var(--burgundy);margin-left:4px;}
+
+  .modal-overlay{position:fixed;inset:0;background:rgba(26,23,20,0.7);backdrop-filter:blur(6px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity 0.3s;}
+  .modal-overlay.open{opacity:1;pointer-events:all;}
+  .modal{background:var(--parchment);border-radius:16px;padding:52px 48px;max-width:480px;width:100%;position:relative;transform:translateY(20px);transition:transform 0.3s;box-shadow:0 24px 80px rgba(26,23,20,0.25);}
+  .modal-overlay.open .modal{transform:translateY(0);}
+  .modal-close{position:absolute;top:20px;right:20px;background:none;border:none;cursor:pointer;color:var(--warm-gray);font-size:1.4rem;line-height:1;padding:4px;}
+  .modal-close:hover{color:var(--ink);}
+  .modal-eyebrow{font-size:0.62rem;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+  .modal-title{font-family:'Inter',serif;font-size:2rem;font-weight:500;line-height:1.2;margin-bottom:10px;}
+  .modal-body{font-size:0.88rem;color:var(--slate);line-height:1.75;margin-bottom:28px;}
+  .modal-form{display:flex;flex-direction:column;gap:14px;}
+  .form-field{display:flex;flex-direction:column;gap:6px;}
+  .form-field label{font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--slate);}
+  .form-field input{background:#fff;border:1.5px solid rgba(196,69,47,0.25);border-radius:6px;padding:12px 16px;font-size:0.9rem;font-family:'Inter',sans-serif;color:var(--ink);transition:border-color 0.2s;outline:none;}
+  .form-field input:focus{border-color:var(--gold);}
+  .form-field input::placeholder{color:var(--warm-gray);}
+  .form-submit{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:var(--ink);font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border:none;padding:15px 32px;border-radius:6px;cursor:pointer;transition:all 0.25s;margin-top:6px;}
+  .form-submit:hover{background:var(--gold-bright);transform:translateY(-2px);}
+  .form-note{font-size:0.7rem;color:var(--warm-gray);text-align:center;margin-top:4px;}
+  .form-success{text-align:center;padding:20px 0;}
+  .form-success h3{font-family:'Inter',serif;font-size:1.6rem;margin-bottom:10px;}
+  .form-success p{font-size:0.88rem;color:var(--slate);}
+
+  @media(max-width:900px){
+    .hero-inner{grid-template-columns:1fr;gap:48px;}
+    .hero-stats{grid-template-columns:repeat(4,1fr);}
+    .charts-row{grid-template-columns:1fr;}
+    .loci-grid{grid-template-columns:1fr;}
+    .insight-grid{grid-template-columns:1fr;}
+    .quotes-layout{grid-template-columns:1fr;}
+    .quotes-grid{grid-template-columns:1fr 1fr;}
+    .logos-bar{grid-template-columns:1fr;}
+    .reform-callout{grid-template-columns:1fr;}
+    .corpus-header,.corpus-row{grid-template-columns:40px 1fr 90px;}
+  }
+
+  /* Sermon Steward skin — white + red, shared with product.html */
+  :root {
+    --ink:#1a1a1a; --parchment:#fbf8f1; --cream:#f5f1e6; --warm-gray:#828282; --slate:#4a4a4a;
+    --gold:#c4452f; --gold-dim:#9a3624; --gold-bright:#c4452f;
+    --burgundy:#9a3624; --burgundy-light:#c4452f; --forest:#3a7256;
+    --bg:#fbf8f1; --rule:#e6e1d3; --accent:#c4452f; --accent-deep:#9a3624;
+  }
+  body { font-family: Inter, system-ui, sans-serif !important; background:#fbf8f1 !important; color:#1a1a1a !important; }
+  .hero, .page-hero { background:#fff !important; background-image:none !important; color:#1a1a1a !important; border-bottom:1px solid #e6e1d3; }
+  .hero::before, .hero::after, .page-hero::before, .page-hero::after { display:none !important; }
+  .hero-name, .section-title, .page-title, .hero-stat-value, .quote-hero-count, .quote-hero-author,
+  .bio-name, .insight-card-label, [class$="-headline"], [class$="-stat-value"], [class$="-title"] {
+    font-family: Inter, system-ui, sans-serif !important;
+  }
+  .hero-name, .section-title, .page-title { font-weight:800 !important; letter-spacing:-0.03em; color:#1a1a1a !important; }
+  .hero-name em, .page-title em, .section-label, .hero-eyebrow span, .page-eyebrow { color:#c4452f !important; font-style:normal !important; }
+  .hero-stat { background:#f5f1e6 !important; }
+  .hero-stat-value, [class$="-stat-value"], .quote-hero-count { color:#c4452f !important; }
+  .hero-summary, .hero-role, .hero-role strong, .section-intro, [class$="-body"], .insight-card-text, .quote-hero-text {
+    color:#4a4a4a !important;
+  }
+  .hero-tag, .hero-stat-label { color:#4a4a4a !important; border-color:#e6e1d3 !important; }
+  .hero-tag.active { background:#f0d4cc !important; color:#9a3624 !important; border-color:#f0d4cc !important; }
+  [class*="callout"], .quote-hero-card, .bio-card, .insight-card, .chart-card, .explainer-card {
+    background:#fff !important; background-image:none !important; color:#1a1a1a !important;
+    border:1px solid #e6e1d3 !important;
+  }
+  .site-header { background:rgba(251,248,241,0.92); backdrop-filter:blur(8px); border-bottom:1px solid #e6e1d3; position:sticky; top:0; z-index:50; }
+  .site-header-inner { max-width:1180px; margin:0 auto; padding:16px 28px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+  .wordmark { font-family:Inter, system-ui, sans-serif; font-weight:800; font-size:21px; letter-spacing:-0.02em; color:#1a1a1a; text-decoration:none; }
+  .wordmark .dot { color:#c4452f; }
+  .site-nav { font-family:Inter, system-ui, sans-serif; font-size:15px; font-weight:500; display:flex; gap:22px; align-items:center; flex-wrap:wrap; }
+  .site-nav a { color:#4a4a4a; text-decoration:none; letter-spacing:0; text-transform:none; font-size:15px; font-weight:500; padding:0; }
+  .site-nav a:hover { color:#1a1a1a; background:transparent; }
+  .archive-link { font-family:Inter, system-ui, sans-serif; font-size:15px; font-weight:600; margin:0 0 8px; }
+  .archive-link a { color:#c4452f; text-decoration:none; }
+  .archive-link a:hover { color:#9a3624; }
+  .site-footer { padding:40px 28px; border-top:1px solid #e6e1d3; background:#fbf8f1; margin-top:48px; }
+  .foot-inner { max-width:1080px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; }
+  .foot-brand { font-family:Inter, system-ui, sans-serif; font-weight:800; font-size:18px; color:#1a1a1a; }
+  .foot-brand .dot { color:#c4452f; }
+  .foot-imprint { font-family:Inter, system-ui, sans-serif; font-size:13px; color:#828282; margin-top:2px; }
+  .foot-nav { font-family:Inter, system-ui, sans-serif; font-size:14px; display:flex; gap:20px; }
+  .foot-nav a { color:#4a4a4a; text-decoration:none; }
+  .foot-nav a:hover { color:#1a1a1a; }
+  @media (max-width: 720px) {
+    .site-nav { display:none; }
+    .hero-inner, .charts-row, .loci-grid, .insight-grid, .quotes-featured { grid-template-columns:1fr !important; }
+  }
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="wordmark" href="/">Sermon Steward<span class="dot">.</span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/hall/">Hall</a>
+      <a href="/product.html">Product</a>
+      <a href="/samples.html">Samples</a>
+      <a href="/how-we-read-a-sermon/">How we read</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">
+        <a href="/hall/">The Guild Hall</a>
+        <div class="hero-eyebrow-sep"></div>
+        <span>Hall Member Profile</span>
+      </div>
+      <h1 class="hero-name">Voddie <em>Baucham</em></h1>
+      <p class="hero-role">Dean of Theology, <strong>African Christian University, Zambia</strong> · Former Pastor, Grace Family Baptist Church</p>
+      <div class="hero-divider"></div>
+      <p class="hero-summary">Every single sermon is expository — the only preacher in the Hall with a perfect record. His rhetorical register is dominated by logos at a 3:1 ratio over pathos, and he is the only Hall member who cites a confessional document — the Second London Baptist Confession of 1689 — as a primary theological authority, citing it 19 times across the corpus.</p>
+      <div class="hero-tags">
+        <span class="hero-tag active">Reformed Baptist</span>
+        <span class="hero-tag active">Confessionalist</span>
+        <span class="hero-tag active">Expository</span>
+        <span class="hero-tag active">Apologist</span>
+        <span class="hero-tag">1689</span>
+        <span class="hero-tag">International Ministry</span>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-value">138</div><div class="hero-stat-label">BT Moves</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">100%</div><div class="hero-stat-label">Expository Rate</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">19×</div><div class="hero-stat-label">SLBC Cited</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">3:1</div><div class="hero-stat-label">Logos:Pathos</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="page-body">
+  <p class="archive-link"><a href="/hall/voddie/">Archive analysis — the sermons behind this profile</a></p>
+
+
+  <!-- 01 -->
+  <div class="section" id="sec-fingerprint">
+    <div class="section-label">01 — Theological Fingerprint</div>
+    <h2 class="section-title">What He Preaches About</h2>
+    <p class="section-intro">Soteriology leads — consistent with a preacher whose core concern is the nature and application of salvation. High Hamartiology (268) and Anthropology (136) reflect his conviction that you cannot preach the gospel without an accurate diagnosis of the human problem. Covenant Theology ranking in the top 16 is unique to this corpus in the Hall.</p>
+    <div class="loci-grid">
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Soteriology</span><span class="loci-count">548 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="100"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Christology</span><span class="loci-count">338 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="62"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Hamartiology</span><span class="loci-count">268 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="49"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Ecclesiology</span><span class="loci-count">264 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="48"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Sanctification</span><span class="loci-count">214 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="39"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Theology Proper</span><span class="loci-count">185 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="34"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Bibliology</span><span class="loci-count">174 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="32"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Pastoral Theology</span><span class="loci-count">164 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="30"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Ethics / Moral Theology</span><span class="loci-count">138 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="25"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Anthropology</span><span class="loci-count">136 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="25"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Providence / Sovereignty</span><span class="loci-count">134 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="24"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Covenant Theology</span><span class="loci-count">45 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="8"></div></div></div>
+    </div>
+  </div>
+  <div class="section-rule"></div>
+
+  <!-- 02 -->
+  <div class="section" id="sec-homiletical">
+    <div class="section-label">02 — Homiletical Profile</div>
+    <h2 class="section-title">How He Preaches</h2>
+
+    <div class="reform-callout">
+      <div>
+        <div class="reform-callout-label">Hall Distinction</div>
+        <div class="reform-callout-headline"><em>100% expository</em> — the only preacher in the Hall with a perfect record across all analyzed sermons</div>
+        <div class="reform-callout-body">Where other Hall members shift between topical, biographical, and polemic forms, Baucham does not. Every sermon in the corpus is anchored in a primary text and structured by that text's argument. The form is not flexible; it is a conviction.</div>
+      </div>
+      <div class="reform-callout-stat">
+        <div class="reform-callout-stat-value">100%</div>
+        <div class="reform-callout-stat-label">Expository</div>
+      </div>
+    </div>
+
+    <div class="logos-bar">
+      <div class="logos-bar-left">
+        <div class="logos-bar-label">Rhetorical Register — Unit-Level</div>
+        <div class="logos-register-row"><div class="logos-register-meta"><span class="logos-register-name">Logos <span style="font-size:0.65rem;color:var(--warm-gray);font-weight:400;">reason / argument / proof</span></span><span class="logos-register-count">1,417</span></div><div class="logos-register-track"><div class="logos-register-fill" style="background:var(--reform-mid);" data-pct="100"></div></div></div>
+        <div class="logos-register-row"><div class="logos-register-meta"><span class="logos-register-name">Pathos <span style="font-size:0.65rem;color:var(--warm-gray);font-weight:400;">emotion / appeal</span></span><span class="logos-register-count">432</span></div><div class="logos-register-track"><div class="logos-register-fill" style="background:var(--gold);" data-pct="30"></div></div></div>
+        <div class="logos-register-row"><div class="logos-register-meta"><span class="logos-register-name">Ethos <span style="font-size:0.65rem;color:var(--warm-gray);font-weight:400;">authority / credibility</span></span><span class="logos-register-count">203</span></div><div class="logos-register-track"><div class="logos-register-fill" style="background:var(--slate);" data-pct="14"></div></div></div>
+        <div class="logos-register-row"><div class="logos-register-meta"><span class="logos-register-name">Doxological <span style="font-size:0.65rem;color:var(--warm-gray);font-weight:400;">praise / worship</span></span><span class="logos-register-count">177</span></div><div class="logos-register-track"><div class="logos-register-fill" style="background:var(--burgundy);" data-pct="12"></div></div></div>
+        <div class="logos-register-row"><div class="logos-register-meta"><span class="logos-register-name">Polemic <span style="font-size:0.65rem;color:var(--warm-gray);font-weight:400;">refutation / confrontation</span></span><span class="logos-register-count">108</span></div><div class="logos-register-track"><div class="logos-register-fill" style="background:var(--burgundy-light);" data-pct="8"></div></div></div>
+      </div>
+      <div class="logos-bar-right">
+        <div class="logos-ratio">3:1</div>
+        <div class="logos-ratio-label">Logos to Pathos<br>ratio across corpus</div>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;" class="charts-row">
+      <div class="chart-card"><div class="chart-card-title">Hermeneutical Methods</div><div class="chart-canvas-wrap"><canvas id="chartMethod"></canvas></div></div>
+      <div class="chart-card"><div class="chart-card-title">Polemic Function — 108 units</div><div class="chart-canvas-wrap" style="align-items:start;padding-top:12px;">
+        <div style="width:100%;font-size:0.84rem;color:var(--slate);line-height:1.9;">
+          <p>Polemic units average <strong>2.3 per sermon.</strong></p><br>
+          <p>Baucham names error and refutes it. The pulpit is not a safe space for bad theology. He confronts the prosperity gospel, critical theory, gender ideology, and liberal theological revisionism by name.</p>
+        </div>
+      </div></div>
+      <div class="chart-card"><div class="chart-card-title">Sermon Type Distribution</div><div class="chart-canvas-wrap"><canvas id="chartType"></canvas></div></div>
+    </div>
+  </div>
+  <div class="section-rule"></div>
+
+  <!-- 03 -->
+  <div class="section" id="sec-illustrations">
+    <div class="section-label">03 — Illustration Arsenal</div>
+    <h2 class="section-title">How He Makes It Concrete</h2>
+    <p class="section-intro">Personal story leads, but cultural reference (32) is unusually high relative to his theological register — Baucham is culturally engaged in a way Piper is not, though always from a polemical posture. He names cultural systems, ideologies, and figures specifically in order to expose and refute them.</p>
+    <div class="illus-list">
+      <div class="illus-row"><span class="illus-name">Personal Story</span><div class="illus-track"><div class="illus-fill gold" data-pct="100"></div></div><span class="illus-val">43</span></div>
+      <div class="illus-row"><span class="illus-name">Hypothetical</span><div class="illus-track"><div class="illus-fill reform" data-pct="79"></div></div><span class="illus-val">34</span></div>
+      <div class="illus-row"><span class="illus-name">Cultural Reference</span><div class="illus-track"><div class="illus-fill burgundy" data-pct="74"></div></div><span class="illus-val">32</span></div>
+      <div class="illus-row"><span class="illus-name">Historical Example</span><div class="illus-track"><div class="illus-fill forest" data-pct="60"></div></div><span class="illus-val">26</span></div>
+      <div class="illus-row"><span class="illus-name">Analogy</span><div class="illus-track"><div class="illus-fill slate" data-pct="58"></div></div><span class="illus-val">25</span></div>
+    </div>
+  </div>
+  <div class="section-rule"></div>
+
+  <!-- 04 -->
+  <div class="section" id="sec-quotes">
+    <div class="section-label">04 — Intellectual Lineage</div>
+    <h2 class="section-title">Who Baucham Quotes</h2>
+    <p class="section-intro">The Second London Baptist Confession of 1689 is the most-cited source in the corpus — not a theologian, but a confessional document. Unique in the Hall. He reads it from the pulpit, expounds it, and grounds doctrinal claims in its language. Calvin leads personal citations at 12×.</p>
+
+    <div class="confession-feature">
+      <div class="confession-feature-label">The Confessional Anchor — Hall Unique</div>
+      <div class="confession-feature-title">Second London Baptist Confession of 1689</div>
+      <div class="confession-feature-count">19×</div>
+      <div class="confession-feature-count-label">Citations across the corpus — most-cited source</div>
+      <p class="confession-feature-body">No other Hall member cites a confessional document as a theological authority. Baucham reads the Confession from the pulpit, preaches through it as a series text, and grounds doctrinal claims in its language. The 1689 is not background reading for him — it is a primary preaching source.</p>
+    </div>
+
+    <div style="margin-bottom:16px;">
+      <div style="font-size:0.63rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--warm-gray);margin-bottom:12px;">Ecumenical Creeds — Also Cited</div>
+      <div class="creeds-row">
+        <div class="creed-chip"><span class="creed-chip-name">Nicene Creed</span><span class="creed-chip-count">2×</span></div>
+        <div class="creed-chip"><span class="creed-chip-name">Athanasian Creed</span><span class="creed-chip-count">2×</span></div>
+        <div class="creed-chip"><span class="creed-chip-name">Symbol of Chalcedon</span><span class="creed-chip-count">2×</span></div>
+        <div class="creed-chip"><span class="creed-chip-name">Council of Trent, Canon IX</span><span class="creed-chip-count">3×</span></div>
+      </div>
+    </div>
+
+    <div class="quotes-layout">
+      <div class="quote-hero-card">
+        <div class="quote-hero-count">12×</div>
+        <div class="quote-hero-count-label">Top personal citation</div>
+        <div class="quote-hero-author">John Calvin</div>
+        <div class="quote-hero-tradition">Geneva Reformer · Institutes of the Christian Religion</div>
+        <p class="quote-hero-text">"We are not our own: let not our reason nor our will, therefore, sway our plans and deeds. We are not our own: let us therefore not seek what is expedient for us according to the flesh."</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div class="quote-hero-card" style="flex:1;padding:28px;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+            <div>
+              <div style="font-family:'Inter',serif;font-size:2.8rem;font-weight:600;color:var(--gold-bright);line-height:1;">8×</div>
+              <div style="font-size:0.6rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:12px;">Citations</div>
+              <div style="font-family:'Inter',serif;font-size:1.4rem;color:#1a1a1a;margin-bottom:4px;">A.W. Pink</div>
+              <div style="font-size:0.7rem;color:rgba(26,26,26,0.35);">English Calvinist · Sovereignty of God</div>
+            </div>
+          </div>
+        </div>
+        <div class="quote-hero-card" style="flex:1;padding:28px;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+            <div>
+              <div style="font-family:'Inter',serif;font-size:2.8rem;font-weight:600;color:var(--gold-bright);line-height:1;">4×</div>
+              <div style="font-size:0.6rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:12px;">Citations each</div>
+              <div style="font-family:'Inter',serif;font-size:1.4rem;color:#1a1a1a;margin-bottom:4px;">Wayne Grudem · Tom Schreiner · B.B. Warfield</div>
+              <div style="font-size:0.7rem;color:rgba(26,26,26,0.35);">Contemporary Reformed scholars</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="polemic-section">
+      <div class="polemic-label">Polemical Citations — Quoted to Refute</div>
+      <div class="polemic-title">He Names the Errors</div>
+      <p class="polemic-body">These are not influences — they are targets. Baucham's polemic engagement is specific and named: he quotes false teachers and false systems by name, then dismantles them from Scripture. The cultural reference (32) and polemic unit count (108) are partly explained by this practice.</p>
+      <div class="polemic-targets">
+        <div class="polemic-chip"><span class="polemic-chip-name">Eckhart Tolle</span><span class="polemic-chip-count">2×</span></div>
+        <div class="polemic-chip"><span class="polemic-chip-name">Rhonda Byrne — The Secret</span><span class="polemic-chip-count">2×</span></div>
+        <div class="polemic-chip"><span class="polemic-chip-name">Bob Proctor</span><span class="polemic-chip-count">2×</span></div>
+        <div class="polemic-chip"><span class="polemic-chip-name">Dr. Joe Vitale</span><span class="polemic-chip-count">2×</span></div>
+        <div class="polemic-chip"><span class="polemic-chip-name">Marcus Borg</span><span class="polemic-chip-count">2×</span></div>
+        <div class="polemic-chip"><span class="polemic-chip-name">Dr. Jeffrey John</span><span class="polemic-chip-count">2×</span></div>
+        <div class="polemic-chip"><span class="polemic-chip-name">Kirk &amp; Madsen</span><span class="polemic-chip-count">2×</span></div>
+        <div class="polemic-chip"><span class="polemic-chip-name">Tony Evans</span><span class="polemic-chip-count">4×</span></div>
+      </div>
+    </div>
+
+    <div class="quotes-minor">
+      <div class="quote-chip"><span class="quote-chip-name">Martin Luther</span><span class="quote-chip-count">3×</span></div>
+      <div class="quote-chip"><span class="quote-chip-name">Charles Ryrie</span><span class="quote-chip-count">2×</span></div>
+      <div class="quote-chip"><span class="quote-chip-name">Daniel Aiken</span><span class="quote-chip-count">2×</span></div>
+      <div class="quote-chip"><span class="quote-chip-name">John Gill</span><span class="quote-chip-count">2×</span></div>
+    </div>
+  </div>
+  <div class="section-rule"></div>
+
+  <!-- 05 -->
+  <div class="section" id="sec-insights">
+    <div class="section-label">05 — Analytical Insights</div>
+    <h2 class="section-title">What the Data Reveals</h2>
+    <div class="insight-grid">
+      <div class="insight-card">
+        <div class="insight-card-label">The Apologist's Pulpit</div>
+        <p class="insight-card-text">A 3:1 logos-to-pathos ratio is not an accident of style — it is a theology of preaching. Baucham treats the sermon as an argument that must be won. The listeners are not primarily moved; they are <em>persuaded</em>. Every point is proven, every claim is grounded, and the application emerges from the logic rather than the emotion. He is the closest thing the Hall has to a preaching apologist.</p>
+      </div>
+      <div class="insight-card">
+        <div class="insight-card-label">The 1689 as Primary Source</div>
+        <p class="insight-card-text">No other Hall member reads a confessional document from the pulpit as a theological authority. For Baucham, the Second London Baptist Confession is not a historical artifact — <em>it is a living instrument of discipleship</em>. He preaches it, cites it, and grounds doctrinal claims in its language. This is confessionalism as a preaching method, not just a theological category.</p>
+      </div>
+      <div class="insight-card">
+        <div class="insight-card-label">Naming Error Specifically</div>
+        <p class="insight-card-text">108 polemic units. Tolle, The Secret, Kirk and Madsen, Marcus Borg — Baucham's cultural engagement is not irenic. He names the systems and the people who teach them, then dismantles them from Scripture. <em>The error is never generic.</em> Where other Hall members diagnose cultural drift abstractly, Baucham hands the congregation a specific case to examine.</p>
+      </div>
+      <div class="insight-card">
+        <div class="insight-card-label">Soteriology as Foundation</div>
+        <p class="insight-card-text">Soteriology leads the loci at 548 units — higher than Christology (338) or Sanctification (214). For most preachers Christology anchors the corpus; for Baucham, the application of salvation does. High Hamartiology (268) and Anthropology (136) sit beneath it: <em>he believes you must understand what is wrong with man before you can understand what God has done about it.</em> Diagnosis precedes cure.</p>
+      </div>
+    </div>
+  </div>
+  <div class="section-rule"></div>
+
+</div>
+
+<script>
+const C={reform:'#c4452f',reformMid:'#9a3624',gold:'#c4452f',goldBright:'#c4452f',burgundy:'#9a3624',forest:'#3a7256',slate:'#4a4a4a',warm:'#828282'};
+new Chart(document.getElementById('chartMethod'),{type:'bar',data:{labels:['Gram-Hist','Canonical','Redemp-Hist','Applicatory','Polemic'],datasets:[{data:[46,41,27,8,7],backgroundColor:[C.reformMid,C.gold,C.burgundy,C.forest,C.slate],borderRadius:4,borderWidth:0}]},options:{indexAxis:'y',layout:{padding:{left:8}},scales:{x:{display:false,grid:{display:false}},y:{grid:{display:false},ticks:{font:{family:'Inter',size:11},color:C.slate}}},plugins:{legend:{display:false}},animation:{duration:1200}}});
+new Chart(document.getElementById('chartType'),{type:'doughnut',data:{labels:['Expository'],datasets:[{data:[100],backgroundColor:[C.reformMid],borderWidth:0,hoverOffset:0}]},options:{cutout:'62%',plugins:{legend:{display:false},tooltip:{callbacks:{label:()=>'100% Expository'}}},animation:{duration:800}}});
+
+const observer=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');observer.unobserve(x.target);}}),{threshold:0.06});
+document.querySelectorAll('.section').forEach(s=>observer.observe(s));
+document.querySelectorAll('[data-pct]').forEach(el=>{
+  const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){setTimeout(()=>{el.style.width=el.dataset.pct+'%';},120);o.unobserve(el);}}),{threshold:0.1});
+  o.observe(el);
+});
+</script>
+
+</div>
+<footer class="site-footer">
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">Sermon Steward<span class="dot">.</span></div>
+      <div class="foot-imprint">Guild Hall — a gallery of masters, on the Sermon Steward site.</div>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/hall/">Hall</a>
+      <a href="/hall/glossary.html">Glossary</a>
+      <a href="/samples.html">Samples</a>
+      <a href="/product.html">Product</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>James Boice · Archive Analysis · Sermon Steward</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:        #1a1a1a;
+      --parchment:  #fbf8f1;
+      --gold:       #c4452f;
+      --gold-light: #c4452f;
+      --burgundy:   #9a3624;
+      --forest:     #3a7256;
+      --muted:      #4a4a4a;
+      --rule:       rgba(196,69,47,0.22);
+      --serif:      'Inter', Georgia, serif;
+      --sans:       'Inter', system-ui, sans-serif;
+      --mono:       'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--ink); color:#1a1a1a; font-family: var(--sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: linear-gradient(to bottom, rgba(26,23,16,0.98), rgba(26,23,16,0)); border-bottom: 1px solid rgba(196,69,47,0.08); }
+    .nav-brand { font-family: var(--serif); font-size: 0.95rem; color:#1a1a1a; text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 28px; }
+    .nav-right a { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-right a:hover { color: var(--gold-light); }
+    .section-nav { position: sticky; top: 57px; z-index: 90; background: rgba(26,23,16,0.97); border-bottom: 1px solid var(--rule); display: flex; gap: 0; overflow-x: auto; }
+    .section-nav a { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none; padding: 14px 24px; border-bottom: 2px solid transparent; white-space: nowrap; transition: color 0.2s, border-color 0.2s; }
+    .section-nav a:hover, .section-nav a.active { color: var(--gold-light); border-bottom-color: var(--gold); }
+    .hero { padding: 130px 48px 80px; max-width: 1000px; border-bottom: 1px solid var(--rule); }
+    .hero-eyebrow { font-family: var(--mono); font-size: 0.65rem; color: var(--gold); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
+    .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+    h1 { font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 300; line-height: 1.1; margin-bottom: 8px; }
+    h1 em { font-style: italic; color: var(--gold-light); }
+    .hero-role { font-family: var(--sans); font-size: 0.9rem; color: var(--muted); margin-bottom: 36px; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+    .tag { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--rule); padding: 4px 10px; border-radius: 2px; }
+    .hero-stats { display: grid; grid-template-columns: repeat(5, auto); gap: 40px; width: fit-content; }
+    .hero-stat-n { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: var(--gold-light); line-height: 1; }
+    .hero-stat-l { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
+    section { padding: 80px 48px; max-width: 1100px; margin: 0 auto; border-bottom: 1px solid var(--rule); }
+    .eyebrow { font-family: var(--mono); font-size: 0.62rem; color: var(--gold); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 12px; }
+    h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300; line-height: 1.2; margin-bottom: 48px; }
+    h2 em { font-style: italic; color: var(--gold-light); }
+    h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; margin-bottom: 10px; }
+    p { font-family: var(--sans); font-size: 0.9rem; color: rgba(26,26,26,0.7); line-height: 1.8; }
+    .analysis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .analysis-col h3 { font-size: 1rem; font-family: var(--mono); letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; margin-bottom: 20px; font-weight: 400; }
+    .bar-chart { display: flex; flex-direction: column; gap: 10px; }
+    .bar-row { display: flex; align-items: center; gap: 12px; }
+    .bar-label { font-family: var(--sans); font-size: 0.78rem; color: rgba(26,26,26,0.65); width: 180px; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 6px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 3px; background: var(--gold); transition: width 1s ease; }
+    .bar-fill.forest { background: var(--forest); }
+    .bar-fill.burgundy { background: var(--burgundy); }
+    .bar-fill.muted { background: var(--muted); }
+    .bar-n { font-family: var(--mono); font-size: 0.65rem; color: var(--muted); width: 52px; text-align: right; flex-shrink: 0; }
+    .register-block { margin-top: 40px; }
+    .register-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+    .register-pill { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 14px; border-radius: 2px; border: 1px solid var(--rule); }
+    .register-pill.logos { background: rgba(45,74,53,0.3); border-color: var(--forest); color: #7ab88a; }
+    .register-pill.pathos { background: rgba(122,45,45,0.3); border-color: var(--burgundy); color: #c47a7a; }
+    .register-pill.ethos { background: rgba(196,69,47,0.15); border-color: var(--gold); color: var(--gold-light); }
+    .register-pill.doxological { background: rgba(107,100,85,0.3); border-color: var(--muted); color: #a89d8a; }
+    .register-pill.narrative { background: rgba(60,80,100,0.3); border-color: #4a6a8a; color: #7a9aaa; }
+    .distinction-box { background: rgba(196,69,47,0.04); border: 1px solid rgba(196,69,47,0.2); border-radius: 2px; padding: 24px 28px; margin-top: 32px; }
+    .distinction-label { font-family: var(--mono); font-size: 0.6rem; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; }
+    .distinction-box p { font-size: 0.88rem; font-style: italic; color: rgba(26,26,26,0.75); }
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 56px; }
+    .stat-box { border: 1px solid var(--rule); border-radius: 2px; padding: 28px 24px; text-align: center; }
+    .stat-box-n { font-family: var(--serif); font-size: 2.4rem; font-weight: 300; color: var(--gold-light); line-height: 1; }
+    .stat-box-l { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 8px; }
+    .illus-controls { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+    .filter-btn { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 14px; border: 1px solid var(--rule); border-radius: 2px; background: none; color: var(--muted); cursor: pointer; transition: all 0.2s; }
+    .filter-btn:hover, .filter-btn.active { border-color: var(--gold); color: var(--gold-light); background: rgba(196,69,47,0.06); }
+    .illus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .illus-card { border: 1px solid var(--rule); border-radius: 2px; padding: 24px; transition: border-color 0.2s; cursor: default; }
+    .illus-card:hover { border-color: rgba(196,69,47,0.35); }
+    .illus-type { font-family: var(--mono); font-size: 0.58rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
+    .illus-text { font-family: var(--sans); font-size: 0.85rem; color: rgba(26,26,26,0.72); line-height: 1.7; }
+    .illus-source { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); margin-top: 12px; }
+    .quotes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .quote-card { border-left: 2px solid var(--rule); padding: 20px 24px; transition: border-color 0.2s; }
+    .quote-card:hover { border-left-color: var(--gold); }
+    .quote-text { font-family: var(--serif); font-size: 1.05rem; font-style: italic; color: rgba(26,26,26,0.82); line-height: 1.65; margin-bottom: 12px; }
+    .quote-attr { font-family: var(--mono); font-size: 0.6rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
+    .quote-source { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); margin-top: 2px; }
+    .author-counts { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+    .author-chip { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; padding: 5px 12px; border: 1px solid var(--rule); border-radius: 20px; color: var(--muted); }
+    .author-chip span { color: var(--gold-light); margin-left: 4px; }
+    .claims-list { display: flex; flex-direction: column; gap: 0; }
+    .claim-row { padding: 18px 0; border-bottom: 1px solid rgba(196,69,47,0.08); display: grid; grid-template-columns: 1fr 220px; gap: 24px; align-items: start; }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-text { font-family: var(--sans); font-size: 0.88rem; color: rgba(26,26,26,0.82); line-height: 1.65; }
+    .claim-meta { text-align: right; }
+    .claim-fn { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; border: 1px solid var(--rule); color: var(--muted); display: inline-block; margin-bottom: 6px; }
+    .claim-fn.theological_claim { border-color: rgba(196,69,47,0.4); color: var(--gold-light); }
+    .claim-fn.exposition { border-color: rgba(45,74,53,0.5); color: #7ab88a; }
+    .claim-sermon { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); }
+    .sermon-table { width: 100%; border-collapse: collapse; }
+    .sermon-table th { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); letter-spacing: 0.14em; text-transform: uppercase; text-align: left; padding: 10px 16px; border-bottom: 1px solid var(--rule); }
+    .sermon-table td { font-family: var(--sans); font-size: 0.84rem; color: rgba(26,26,26,0.7); padding: 13px 16px; border-bottom: 1px solid rgba(196,69,47,0.06); vertical-align: top; }
+    .sermon-table tr:hover td { background: rgba(196,69,47,0.03); }
+    .sermon-title { color:#1a1a1a; font-weight: 400; }
+    .sermon-text { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+    .sermon-type { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; border: 1px solid var(--rule); color: var(--muted); white-space: nowrap; }
+    .sermon-type.expository { border-color: rgba(45,74,53,0.5); color: #7ab88a; }
+    .sermon-type.topical { border-color: rgba(122,45,45,0.5); color: #c47a7a; }
+    .sermon-type.textual { border-color: rgba(196,69,47,0.4); color: var(--gold-light); }
+    .series-group-header td { padding: 24px 16px 8px; font-family: var(--mono); font-size: 0.6rem; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; border-bottom: 1px solid var(--rule); background: rgba(196,69,47,0.03); }
+    footer { border-top: 1px solid var(--rule); padding: 40px 48px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-brand { font-family: var(--serif); font-size: 0.95rem; color:#1a1a1a; }
+    footer p { font-size: 0.75rem; color: var(--muted); }
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .hero, section { padding-left: 20px; padding-right: 20px; }
+      .hero-stats { grid-template-columns: repeat(3,auto); gap: 24px; }
+      .analysis-grid, .illus-grid, .quotes-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .claim-row { grid-template-columns: 1fr; }
+      .section-nav a { padding: 12px 16px; }
+    }
+  
+  :root {
+    --ink:#fbf8f1; --parchment:#1a1a1a; --gold:#c4452f; --gold-light:#c4452f;
+    --burgundy:#9a3624; --forest:#3a7256; --muted:#4a4a4a; --rule:#e6e1d3;
+    --serif: Inter, system-ui, sans-serif; --sans: Inter, system-ui, sans-serif;
+  }
+  body { background:#fbf8f1 !important; color:#1a1a1a !important; font-family:Inter, system-ui, sans-serif !important; }
+  h1, h2, h3, .footer-brand, .nav-brand { font-family:Inter, system-ui, sans-serif !important; font-weight:800; color:#1a1a1a; }
+  h1 em, h2 em { font-style:normal !important; color:#c4452f !important; }
+  .hero { padding:48px 28px 56px !important; max-width:1080px; }
+  section { padding:64px 28px !important; }
+  .section-nav { top:65px !important; background:rgba(251,248,241,0.96) !important; border-bottom:1px solid #e6e1d3 !important; }
+  .section-nav a { color:#4a4a4a !important; }
+  .section-nav a:hover, .section-nav a.active { color:#c4452f !important; border-bottom-color:#c4452f !important; }
+  p, .bar-label, .illus-text, .quote-text, .claim-text, .sermon-table td, .distinction-box p { color:#4a4a4a !important; }
+  .sermon-title { color:#1a1a1a !important; font-weight:700 !important; }
+  .bar-track { background:rgba(0,0,0,0.06) !important; }
+  .stat-box, .illus-card, .distinction-box, .quote-card, .claim-card { background:#fff; border-color:#e6e1d3 !important; }
+  .site-header { background:rgba(251,248,241,0.92); backdrop-filter:blur(8px); border-bottom:1px solid #e6e1d3; position:sticky; top:0; z-index:100; }
+  .site-header-inner { max-width:1180px; margin:0 auto; padding:16px 28px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+  .wordmark { font-weight:800; font-size:21px; letter-spacing:-0.02em; color:#1a1a1a; text-decoration:none; }
+  .wordmark .dot { color:#c4452f; }
+  nav { position:static !important; background:none !important; padding:0 !important; border:0 !important; }
+  .site-nav { font-size:15px; font-weight:500; display:flex; gap:22px; align-items:center; }
+  .site-nav a { color:#4a4a4a; text-decoration:none; letter-spacing:0; text-transform:none; font-size:15px; }
+  .site-nav a:hover { color:#1a1a1a; }
+  .site-footer { border-top:1px solid #e6e1d3; padding:40px 28px; background:#fbf8f1; }
+  .foot-inner { max-width:1080px; margin:0 auto; display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; align-items:center; }
+  .foot-brand { font-weight:800; font-size:18px; color:#1a1a1a; }
+  .foot-brand .dot { color:#c4452f; }
+  .foot-imprint { font-size:13px; color:#828282; margin-top:2px; }
+  .foot-nav { display:flex; gap:20px; font-size:14px; }
+  .foot-nav a { color:#4a4a4a; text-decoration:none; }
+  @media (max-width: 720px) { .site-nav { display:none; } }
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="wordmark" href="/">Sermon Steward<span class="dot">.</span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/hall/">Hall</a>
+      <a href="/product.html">Product</a>
+      <a href="/samples.html">Samples</a>
+      <a href="/how-we-read-a-sermon/">How we read</a>
+    </nav>
+  </div>
+</header>
+
+<div class="section-nav" id="sectionNav">
+  <a href="#overview" class="active">Archive Overview</a>
+  <a href="#fingerprint">Theological Fingerprint</a>
+  <a href="#rhetorical">Rhetorical Profile</a>
+  <a href="#illustrations">Illustration Arsenal</a>
+  <a href="#lineage">Intellectual Lineage</a>
+  <a href="#btmoves">BT Moves</a>
+  <a href="#claims">Key Claims</a>
+  <a href="#corpus">Corpus Table</a>
+</div>
+
+<div class="hero">
+  <div class="hero-eyebrow">Archive analysis · <a href="/preacher-boice.html">Back to profile</a></div>
+  <h1>James <em>Boice</em></h1>
+  <p class="hero-role">10th Presbyterian Church, Philadelphia · 1938–2000 · Alliance of Confessing Evangelicals</p>
+  <div class="hero-tags">
+    <span class="tag">Reformed</span>
+    <span class="tag">Presbyterian</span>
+    <span class="tag">Expository</span>
+    <span class="tag">Confessional</span>
+    <span class="tag">Anti-seeker</span>
+    <span class="tag">Philadelphia</span>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="hero-stat-n">22</div>
+      <div class="hero-stat-l">Sermons Indexed</div>
+    </div>
+    <div>
+      <div class="hero-stat-n" style="font-size:1.2rem;">Soteriology</div>
+      <div class="hero-stat-l">Top Doctrinal Locus</div>
+    </div>
+    <div>
+      <div class="hero-stat-n">10.6% units</div>
+      <div class="hero-stat-l">Illustration Rate</div>
+    </div>
+    <div>
+      <div class="hero-stat-n">86</div>
+      <div class="hero-stat-l">BT Move Instances</div>
+    </div>
+    <div>
+      <div class="hero-stat-n" style="font-size:1rem;">St. Augustine</div>
+      <div class="hero-stat-l">Most Cited (9×)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION 1: ARCHIVE OVERVIEW ══ -->
+<section id="overview">
+  <div class="eyebrow">01 — Archive Overview</div>
+  <h2>22 sermons.<br><em>902 decomposed units.</em></h2>
+
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="stat-box-n">22</div>
+      <div class="stat-box-l">Total Sermons</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-n">902</div>
+      <div class="stat-box-l">Rhetorical Units</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-n">96</div>
+      <div class="stat-box-l">Illustrations</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-n">68%</div>
+      <div class="stat-box-l">Expository Rate</div>
+    </div>
+  </div>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <h3>Sermon Type Breakdown</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Expository</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">15</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Topical</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:47%"></div></div>
+          <span class="bar-n">7</span>
+        </div>
+      </div>
+      <div class="distinction-box" style="margin-top:32px;">
+        <div class="distinction-label">Corpus Note</div>
+        <p>James Montgomery Boice served at Tenth Presbyterian Church in Philadelphia for 32 years (1968–2000). Co-founder of the Alliance of Confessing Evangelicals and the Cambridge Declaration. Strong opponent of the seeker-sensitive movement and the &quot;dumbing down&quot; of evangelical worship and preaching. His multi-volume expository commentaries grew directly from his Sunday sermons: Genesis, John, Romans, Psalms, Daniel.</p>
+      </div>
+    </div>
+    <div class="analysis-col">
+      <h3>Series Distribution</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Standalone</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">5</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">The Attributes of God</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:60%"></div></div>
+          <span class="bar-n">3</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Developing a Christian Mind</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:40%"></div></div>
+          <span class="bar-n">2</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Ephesians</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:40%"></div></div>
+          <span class="bar-n">2</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Scripture and Authority Series</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:20%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Weekend Bible Conference on Scripture</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:20%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Understanding God&#39;s Word (Weekend Conference)</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:20%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Evangelism and Discipleship</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:20%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Evangelism and Discipleship Series</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:20%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">The Two Cities</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:20%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+      </div>
+      <div class="distinction-box" style="margin-top:32px;"><div class="distinction-label">Corpus Metrics</div><p>Avg units/sermon: 41.0 · Avg cross-refs: 10.0 · Avg quotations: 6.8</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 2: THEOLOGICAL FINGERPRINT ══ -->
+<section id="fingerprint">
+  <div class="eyebrow">02 — Theological Fingerprint</div>
+  <h2>What Boice's corpus<br><em>obsesses over.</em></h2>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <h3>Doctrinal Loci — Primary</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Soteriology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">201</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Ecclesiology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:89%"></div></div>
+          <span class="bar-n">178</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Bibliology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:73%"></div></div>
+          <span class="bar-n">146</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Sanctification</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:66%"></div></div>
+          <span class="bar-n">133</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Hamartiology</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:46%"></div></div>
+          <span class="bar-n">93</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Theology Proper</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:43%"></div></div>
+          <span class="bar-n">86</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Christology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:37%"></div></div>
+          <span class="bar-n">75</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Ethics / Moral Theology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:32%"></div></div>
+          <span class="bar-n">65</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Providence / Sovereignty</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:27%"></div></div>
+          <span class="bar-n">54</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Pneumatology</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:25%"></div></div>
+          <span class="bar-n">51</span>
+        </div>
+      </div>
+    </div>
+    <div class="analysis-col">
+      <h3>Doctrinal Loci — Secondary</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Doxology / Worship</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">51</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Anthropology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:94%"></div></div>
+          <span class="bar-n">48</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Eschatology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:84%"></div></div>
+          <span class="bar-n">43</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Pastoral Theology</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:80%"></div></div>
+          <span class="bar-n">41</span>
+        </div>
+      </div>
+      <div class="distinction-box" style="margin-top:32px;">
+        <div class="distinction-label">The Boice Signature</div>
+        <p>Boice&#39;s signature is confident Reformed exposition without apology. He preaches the confessional Reformed tradition as a fully integrated system — no theological question is too technical, no doctrinal nuance too subtle. Where others might soften a hard text, Boice lets it stand. His long 10th Presbyterian tenure means his congregation was formed by decades of consecutive expository preaching.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 3: RHETORICAL PROFILE ══ -->
+<section id="rhetorical">
+  <div class="eyebrow">03 — Rhetorical Profile</div>
+  <h2>How Boice structures<br><em>the sermon itself.</em></h2>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <h3>Unit Function Distribution</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Exposition</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">358</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Theological Claim</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:53%"></div></div>
+          <span class="bar-n">189</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Transition</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:28%"></div></div>
+          <span class="bar-n">101</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Illustration</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:27%"></div></div>
+          <span class="bar-n">96</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Application</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:17%"></div></div>
+          <span class="bar-n">62</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Introduction</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:11%"></div></div>
+          <span class="bar-n">38</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Prayer</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:9%"></div></div>
+          <span class="bar-n">33</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Pastoral Aside</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:4%"></div></div>
+          <span class="bar-n">15</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Conclusion</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:3%"></div></div>
+          <span class="bar-n">10</span>
+        </div>
+      </div>
+    </div>
+    <div class="analysis-col">
+      <h3>Tone Distribution</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Didactic</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">22</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Pastoral</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:91%"></div></div>
+          <span class="bar-n">20</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Prophetic</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:64%"></div></div>
+          <span class="bar-n">14</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Polemic</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:45%"></div></div>
+          <span class="bar-n">10</span>
+        </div>
+      </div>
+      <div style="margin-top:40px;">
+        <h3 style="font-family:var(--mono); font-size:0.85rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; font-weight:400; margin-bottom:20px;">Rhetorical Register</h3>
+        <div class="register-pills">
+          <span class="register-pill logos">Logos</span>
+          <span class="register-pill pathos">Pathos</span>
+          <span class="register-pill ethos">Ethos</span>
+          <span class="register-pill narrative">Narrative</span>
+          <span class="register-pill doxological">Doxological</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 4: ILLUSTRATION ARSENAL ══ -->
+<section id="illustrations">
+  <div class="eyebrow">04 — Illustration Arsenal</div>
+  <h2>96 illustrations from<br><em>22 sermons.</em></h2>
+
+  <div style="margin-bottom:48px;">
+    <div class="bar-chart" style="max-width:520px;">
+        <div class="bar-row">
+          <span class="bar-label">Historical Example</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">33</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Personal Story</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:79%"></div></div>
+          <span class="bar-n">26</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Cultural Reference</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:76%"></div></div>
+          <span class="bar-n">25</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Hypothetical</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:21%"></div></div>
+          <span class="bar-n">7</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Analogy</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:15%"></div></div>
+          <span class="bar-n">5</span>
+        </div>
+    </div>
+  </div>
+
+  <div class="illus-controls">
+    <button class="filter-btn active" onclick="filterIllus('all', this)">All · 12 shown</button>
+    <button class="filter-btn" onclick="filterIllus('personal_story', this)">Personal Story</button>
+    <button class="filter-btn" onclick="filterIllus('historical_example', this)">Historical Example</button>
+    <button class="filter-btn" onclick="filterIllus('cultural_reference', this)">Cultural Reference</button>
+  </div>
+
+  <div class="illus-grid" id="illusGrid">
+    
+    <div class="illus-card" data-type="personal_story">
+      <div class="illus-type">Personal Story</div>
+      <div class="illus-text">Now, I&#39;ll give you a personal example. In 1974, in the December 30 issue of Time magazine, there was an article on the Bible. It was a cover story. It had three wise men on the COVID and the title said, how True is the Bible? You know, in those days, Time magazine used to get religious at the very end of the year, around Christmas time. And there was always something that kind of had to do with religion. And this was their only offering in this particular year. And I got this and I read it, very interested to see what they had to say, because here they were dealing with a major problem. And I discovered that they did a very thorough job. They examined the liberal theories and the conservative answers and when they got to the end, they came out more or less on the side of the Bible. And their conclusion read like this. The breadth, sophistication and diversity of all this biblical investigation are impressive. But it begs a question. Has it made the Bible more credible or less? Literalists who feel the ground move when a verse is challenged would have to say that credibility has suffered, doubt has been sown, faith is in jeopardy. But believers who expect something else from the Bible may well conclude that its credibility has been enhanced. After more than two centuries of facing the heaviest scientific guns that could be brought to bear, the Bible has survived and is perhaps the better for the siege. Even on the critics own terms, historical fact, the Scriptures seem more acceptable now than they did when the rationalists began the attack. I said, now that&#39;s not bad for Time magazine. After all, Time magazine isn&#39;t an evangelical house organ. This is supposedly objective, and that&#39;s a pretty fair assessment. But I paused at the end of the article and said, now don&#39;t get too excited because in two weeks there&#39;s going to be letters in the letters column where people are responding to this and I better wait and see what&#39;s said. Well, two weeks later I got the issue and there were two long articles, letters that led off by two critics. One by Martin Marty from Chicago Divinity School and one by Harvey Cox from the Harvard Divinity School. And I forget which one it was, but one of them began with this sentence, the faith of your Bible believers is the opposite of biblical faith. Well, I got angry when I read that. I said, that&#39;s really not fair. Time magazine wasn&#39;t saying that the Bible was inerrant. Time wasn&#39;t even saying the Bible was inspired. All it said is, the Bible is a reliable historical book and these guys can&#39;t even stand to have Time magazine say something like that. Every Christian ought to rejoice at Time magazine would say something. I got so worked up I had to stop and pray about it. Now, I&#39;ve already said in this series that God does not speak to you independently of the Bible. But God said to me, It&#39;s not bothering me. Why should it bother you? Go on and read the magazine. Something like that. At any rate, I said, settled down. I decided that&#39;s what I ought to do. And here we were reading the Letters, I think, early on and about page 38. And I went on from that point toward the back of the magazine. Eventually I got to page 65 and there was the scientific section, which has nothing at all to do with religion, presumably, but the scientific section was reporting on an archaeological expedition that had taken place in the area of the southern Sinai under the direction of an Israeli archaeologist whose name was Bino Rothenberg. And he had gone down there, near the Gulf of Aqaba, to a site that guides today still point out as Solomon&#39;s Mines. It wasn&#39;t really a mine. It was an ancient smelting operation. But Bino Rothenberg went down there to try to find out who was actually responsible for that, what was the history of the site. And so he excavated it and he found out that the site actually had been occupied by Jews at about the time of Solomon. So it might be where he smelted down the gold for the temple. It wasn&#39;t a mine, but it might have some connection with the temple. And then he went down below that level and he found that before the Jews it had been occupied by the Egyptians. But everybody knows that the Egyptians didn&#39;t invent metallurgy. It was one of the weaknesses of their culture. And so he dug down beyond that and eventually he came to evidence that the site had been founded and developed by the Midianites. Now, at that point, Time magazine knew that nobody among its readership would know who the Midianites were. And so it threw in a little illustration, an explanation, and it read like the Midianites, comma, little known people who dwelled in the area and are identified in the book of Genesis as the first metal workers. And I thought, now isn&#39;t that interesting? God really does have a sense of humor. Because you see, that little bit of scientific information there could have appeared in any issue of Time magazine. There wasn&#39;t anything particularly dated about it. But as it happened, it appeared into the very issue in which the liberal scholars were saying, the faith of your Bible believers is the opposite of biblical faith. And I realized when I read that that what had happened is that that solid line had just moved a little bit further to the right. And it occurred to me that if you&#39;re going to sit on that line anywhere, it might be a lot better to sit upon the solid line than the dotted line, because it&#39;s getting shorter and shorter. And if that&#39;s the position that you occupy as a scholar, one day you&#39;re going to fall off.</div>
+      <div class="illus-source">Dealing With Bible Problems</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">One of the problems with the church is that it hasn&#39;t done that. I told a story earlier in the first hour about something I learned when I was in Guatemala years ago. It was a number of years ago, maybe 15 years ago now. And at that time, the Presbyterian Church in Guatemala, which had invited me and some other people down to do some teaching, had been there 90 years. They were looking ahead to their centennial 10 years hence. And their plan was to double the number of churches in Guatemala in the last 10 years. And I said, how are you doing? Well, they said, pretty well. And they began to tell me some stories of churches that had multiplied and had done it very well. And they said, here, let me tell you about one. There was a young fellow here a few years ago, about four years ago, whose name was. Was Bernardo Calderon. And he couldn&#39;t find a church right away. All the bigger churches were filled. But there was a church way up in the mountains. It was about 9,000ft high. It was in a town called Cabracan, a tiny little church. And nobody wanted to go there because it was an unpleasant place to go. It was so high. It was always cold, unpleasant, remote, hard to get to and all of that. The church wasn&#39;t very big, but, you know, he was a young guy out of seminary, had to go somewhere, and so he went up there. And the first Sunday he was there, they were all gathered together for their new preacher, about 20 people, 25 or so, something like that. And he began this way. He said, I&#39;m glad to be here, and so on, but I don&#39;t think this is glorifying to God that our church here only has 25 people when we&#39;ve got thousands of people out there in this community. Community. And I think the problem is that we spend all of our time in church. He&#39;d been there the week before. He talked with them. He found out what they did. There was nothing going on up there in this little mountain town. So the Christians came to church all the time. So they had a meeting Monday and Tuesday, Wednesday, Thursday, Friday and Saturday was off, and Sunday they came to church. So he said, I don&#39;t think that&#39;s what we ought to do. I think somehow we have to get out and mingle in the community. And so instead of meeting here on Monday, we&#39;ll go meet at Sister so and so&#39;s house on Monday. And as we go through the various streets of Cabra Khan, as you make your way, people are going to say, where are you going? And you say, well, we&#39;re going to Sister so and so. Why are you going there? Well, we&#39;re going to sing a little bit. We&#39;re going to study the Bible together. Would you like to come? You just invite everybody that you get into a conversation with. And then on Tuesday night, we&#39;ll go over to Brother so and so&#39;s house and we&#39;ll do the same thing there on Wednesday and Thursday and so forth. So throughout the week, as we go to these different locations, it was really home Bible studies that he was talking about. We&#39;ll pass through all these various streets of the city, we&#39;ll meet all kinds of people and we&#39;ll invite them to come. Now, that&#39;s a simple little device, but it worked phenomenally. Within four years, that church had grown to 800 members. In the next couple years, it planted six daughter churches. It founded a school and established an agricultural cooperative, which enabled them to buy and sell advantageously the kind of things that were produced by their own people. So somewhat like Calvin did in Geneva way back in the 1600s, they actually began to prosper as the people of God in fellowship. And it was much to the glory of God. Well, I told that story in a lot of different places, in churches and so on, especially admissions conferences. And I always thought to myself, what happens if someday I run into somebody who&#39;s actually been there? I only heard the story secondhand. I didn&#39;t know whether it was true or not. And I was in a missionary conference once and told that story. And afterwards, two young men came up to me and they said, have you ever been to Capricorn? I thought it sounded rather accusatory. And I said, no. And they said, well, we have. And I said, oh, yes. And then they said, you didn&#39;t begin to do it justice. And they began to tell me some of the other things that were going on there. And they said, now, when you go up that twisty mountain road up to that little mountain village, there is a sign across the road that says, welcome to Jesus Christ. Is the way the truth and the life. Isn&#39;t that a marvelous testimony?</div>
+      <div class="illus-source">Christ&#39;s Prayer for God&#39;s World</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">Now there&#39;s a lot in these last verses. You want to do a thorough study of it. I recommend a writing of one of the Puritans. His name was William Gurnall. And I recommend it because there&#39;s been nothing more thorough written, I suppose, in all of church history. Gernal looked at these last verses, beginning with verse 10, going really through verse 20, only 11 verses. And he wrote a book which in my edition has 1200 pages, double column. To give you an idea how big it is, all you have to do is read the title. Now the short title is the Christian in Complete Armor. And that&#39;s not actually the title Gerdahl gave it. And his title goes like this. Listen. The Christian in Complete Armor. A treatise on the Saints war against the Devil Wherein a discovery is made of that grand enemy of God and his people and his policies. Power, seat of his empire, wickedness and chief design he hath against the saints And a magazine is opened from whence the Christian is furnished with spiritual arms for the battle, helped on with his armor, taught the use of his weapon. And the happy issue of the whole war is spelled out. Now, that&#39;s a title for a book. You buy something like that, you know you&#39;re actually getting something.</div>
+      <div class="illus-source">Spiritual Warfare</div>
+    </div>
+    <div class="illus-card" data-type="personal_story">
+      <div class="illus-type">Personal Story</div>
+      <div class="illus-text">I&#39;ve noticed, just by observation on it, that the gift seems to me to be possessed particularly by laymen. Sometimes in churches, you know, they get the idea that it&#39;s the pastor&#39;s job to do everything and certainly to evangelize. And pastors should be evangelists, part of the teaching ministry. But I just find that often the best evangelists, those who really have the gift of communicating in a very clear and forthright way with other people who don&#39;t know Christ, tend to be laymen. In my experience in Philadelphia, the two best evangelists I&#39;ve ever seen. One was a man who had been a working man. He was retired at this time, and I knew him and actually helped us on the staff a bit. And another man&#39;s a truck driver from South Philadelphia. He drives around, delivers meat. But these men knew their theology, and it just filled their lives. And they were natural in talking about it. And they would talk about Christ and have people come to Christ in situations which I wouldn&#39;t even realize. It was an opportunity, let alone do very well. But they did it. So here&#39;s this great gift to the church of evangelists.</div>
+      <div class="illus-source">Body Life</div>
+    </div>
+    <div class="illus-card" data-type="personal_story">
+      <div class="illus-type">Personal Story</div>
+      <div class="illus-text">What are we going to do when we live there? We have to show what it really is to have a Christian environment and to be able to demonstrate a Real Christian presence. I want to tell you about what happened in one block near 10th Presbyterian Church. For years, we had a policy there, because the churches in the city, that all of our staff had to live in the city. You know, the city government requires. If you&#39;re going to work for the government, you have to live in the city. We said, if we&#39;re going to be Christians in the city, we ought to live in the city, too. Now, it&#39;s not always been practical in every case, so we haven&#39;t followed it rigidly. But a lot of our staff do live there. And our director of missions, our pastor of missions, lived just a few blocks from the church going south in what really was a bad area of inner city Philadelphia. It was a single street, didn&#39;t go the whole way through. It just ran from 18th street on the one hand to 17th on the other. It was in terrible condition. Just as a street, the houses were run down. There was a vacant lot where everybody had dumped all their trash. The sidewalks were unpaved. The garbage was seldom collected. And on the corner there was a drug house where a guy sold drugs to the neighborhood. Now, that&#39;s the kind of block my assistant moved into. Well, first of all, they fixed up their own house, and they gutted it. They just sort of tore the whole thing out. And doing the labor themselves, they began to redo this house. So it became sort of a model of what your house could look like. And people on the block began to take notice of that. And then they formed something like a block organization where they really were concerned about the neighborhood. And they did some amazing things. They approached the city to ask if the city wouldn&#39;t repave their streets and redo their sidewalks. And of all things, the city did. And so now, out of this bad area, here&#39;s this one block. Beautifully paved, beautiful sidewalks and so forth. And then they had this trash problem. Well, around the corner, there was a graduate hospital, and they had their own private trash collection. And so they went up and talked to the graduate hospital people, and they said, you know, we&#39;re part of your neighborhood, and I know you&#39;re really concerned about your neighborhood, and wouldn&#39;t it be nice if you would come by and collect our trash, too? And they agreed to do it. And so now Graduate hospital sends their truck by twice a week to collect their garbage. I live in a better area of the city, about four blocks further north. I only got it collected once, and it doesn&#39;t always happen then. So they got the Trash collected. Then they cleaned up the little vacant yard and they made it into a little park for the kids. And so suddenly the street&#39;s becoming nice. And the last problem they had was this guy that sold drugs down on the street corner. And they began to make life so unpleasant for him. I don&#39;t know know if he&#39;s actually changed his way of life, but the last we saw of him, he was driving around town in a car that had a bumper sticker that read, just say no. Well, one block of the city. You know, I tell that story because that&#39;s the way it&#39;s done. It&#39;s done one block at a time. Just as conversion is one individual at a time.</div>
+      <div class="illus-source">Making a Difference in Our World</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">The year following that, 1536, John Calvin came to Geneva and he began to preach. He didn&#39;t come with any prestige, and they didn&#39;t pay much attention to him. They didn&#39;t even pay him for the first year. But he began to teach the Bible. And as he began to teach, we know what he was teaching. He was teaching California. And people got upset with him just the way they got upset with Jesus when he taught the doctrines of grace. And so they got rid of him. They said, get this guy out of here. We don&#39;t want to hear that sort of thing. And Calvin went down the Rhine, actually to the north, to Strasbourg. And he settled in there, and he began to have a very fruitful ministry. And yet things were continuing to decline in Geneva. And finally they said, well, let&#39;s give Calvin another chance. Maybe we ought to take another crack at it. So they sent Pharaoh up to get him. And when Pharaoh came, Calvin didn&#39;t want to go back to Geneva. He said, I&#39;d be crucified there a thousand times a day. And Pharaoh said, if you don&#39;t go there, God is going to judge you, because that&#39;s where you ought to be. I don&#39;t know where Pharaoh got the revelation, but Calvin took it seriously. And so he went back to Geneva. Now he came without any political party or any. Any power. And he didn&#39;t have any money. All he was was the teacher. And he even failed once. They threw him out not many years before.</div>
+      <div class="illus-source">The Sufficiency of Scripture</div>
+    </div>
+    <div class="illus-card" data-type="cultural_reference">
+      <div class="illus-type">Cultural Reference</div>
+      <div class="illus-text">Well, I got the book and I read the preface and I discovered in the preface where the title came from. And of all things, that title came from something that had been written by Friedrich Nietzsche. You know, Nietzsche is the atheistic philosopher. He died of syphilis. And he had written in Beyond Good and Evil, something that Peterson picked up and quoted. And that&#39;s where he got his title. And here&#39;s what Nietzsche said. I never in my life thought I would ever be quoting Friedrich Nietzsche favorably in a sermon, a Bible study. But in this case, Nietzsche said something that&#39;s really true. Here&#39;s what he said. The essential thing in heaven and earth is that there should be a long obedience in the same direction thereby results and has always resulted in the long run something which has made life worth living.</div>
+      <div class="illus-source">The Call to Obedience</div>
+    </div>
+    <div class="illus-card" data-type="personal_story">
+      <div class="illus-type">Personal Story</div>
+      <div class="illus-text">A number of years ago, when I first began the work of the International Council on Biblical Inerrancy, which went from 1978 to 1988, I got an invitation from the evangelical students at Princeton Theological Seminary to come up and talk about the authority of the Bible. We had gotten some press coverage early on, and these students had found out about it, and they thought it might be good if I would come back to my old alma mater and defend the Bible. Well, that&#39;s the last thing in the world I wanted to do. When I was there, there were very few evangelicals. I felt that they would all fit around about one table in the dining room. And the professors that I had, some were very helpful, but for the most part, I guess the vast majority certainly did not have a high view of the Bible. And what I imagined happening is that I would show up and there would be just a few of those evangelical students that had invited me. And then I would have a whole roomful of my unbelieving professors. And I imagine what would happen. I would talk about the Bible and its reliability, and the question period would come, and they&#39;d start to ask me questions. And the first one would say something like this. He would say, Dr. Boyce. And I was hoping he would say Dr. Boyce and not Jimmy. Dr. Boyce, could you please. We understand what you&#39;re saying here, but could you please respond to the criticism of your position that has been provided by. And he would name a German scholar and some recent issue of the. And I would have to say. Because I wouldn&#39;t have read it. I&#39;m sorry, I haven&#39;t read that. And he would say, oh, all right. And then the next one would ask a question of the same type. And I would have to say, sorry, I haven&#39;t read that. And I would be discredited right away. And so I really didn&#39;t know what to do. I finally thought what I would do is invite a professor friend of mine to go with me. And I invited Dr. John Gerstner, who was well used to that kind of debate. And I thought, now we&#39;ll do what I have learned to do in question periods. You know, when you are in a question period, it&#39;s always good to have somebody with you, because if you know the answer well, you give it. You appear Very wise. And if you don&#39;t, you say, well, my friend here will answer that. You appear humble. And I thought, that&#39;s what I need to do. So I got Gerstner to come along and we arrived at noontime. We were supposed to eat together with the students, and then we were going to present our material briefly, and then there were going to be questions. All of this was supposed to be over about one o&#39;. Clock. Well, we made our presentation and we began to answer questions.</div>
+      <div class="illus-source">A Place to Stand</div>
+    </div>
+    <div class="illus-card" data-type="personal_story">
+      <div class="illus-type">Personal Story</div>
+      <div class="illus-text">You know, I mentioned at the beginning that great hymn, Amazing Grace by John Newton. It&#39;s hard to talk about grace without talking about Newton, because he learned it and demonstrated it in his life in an amazing way. Most of you know the story, I&#39;m sure. Newton lost his mother at a young age, though she had been a godly woman and had taught him Bible verses. But he was sent off to live with relatives that really didn&#39;t love him. He had a hard childhood and eventually ran away and went to sea and joined the British Navy, although he was too young to do it, got in trouble, he led a profligate life. Finally, he jumped ship. He ended up on the coast of Africa, where he got involved in the slave trade. And he suffered terribly as a person involved in that. He worked for a time with a man who operated a slave operation. They would capture black people in the inner part of the continent, bring them to the coast, ship them off on ships to the New World and so forth. And he worked for this man. But he would go off on slaving expeditions. And when he did, Newton would fall under the control of the slave trade. African wife who hated all white men and took out her hatred on Newton. And he describes how he got sick. It was a point at which he was forced to eat his food off the dusty floor like a dog. Eventually, he managed to break away from that. He made his way to the coast. He lit a bonfire. It attracted a ship coming by, and the ship stopped because they thought, here&#39;s somebody that must have ivory to sell. He didn&#39;t. But when they found out that he had learned navigation in the British Navy, they said, well, come on board. We could use another navigator. Now. He got in trouble even then, had a terrible life. But he got back into the trade where they were shipping slaves back and forth over the water, especially to the New World, used to go down into the hold and commit fornication with the slaves. He said he just did it to sin his fill. But then the time came that he was on his way back on one of these ships, and they got into a terrible storm in the North Sea. They thought they were going to sink. The water was pouring in. Newton was sent down into the hold to man the pumps to try to keep the water out long enough until they could outlast the storm and survive. And while water was coming in and he was pumping and he was sure that ship was going to go down, and he was going to go down with it, and he was absolutely terrified down there in the hold of the ship. Verses that he had learned as a child at his mother&#39;s knee years and years and years before came back to his mind. And God used that word implanted into his heart as a child to bring about his conversion. And he turned from his sin and he trusted Christ when he got out of the slave trade. Later he became a preacher, even preached before the Queen. He was one of the best known preachers of his day. But, you know, he got old, his old age. He got to the point where he couldn&#39;t remember things very well and he had to stop preaching because he would be repeating himself over and over again. But they still knew him, they respected him. And people would go by to visit him from time to time. And when they did, Newton would frequently say something like this. He would say, I am an old man. My mind is almost gone. I can&#39;t remember much. But he said, I remember two things. I am a great sinner and Jesus Christ is a great savior. That&#39;s the man who wrote Amazing grace. How sweet the sound that saved a wretch like me I once was lost but now I&#39;m found Was blind but now I see.</div>
+      <div class="illus-source">Grace: By Grace Alone</div>
+    </div>
+    <div class="illus-card" data-type="personal_story">
+      <div class="illus-type">Personal Story</div>
+      <div class="illus-text">For a long time, our church in Philadelphia was part of one of the mainline denominations, and I spent time trying to figure out what it was that was wrong with the denomination that I was a part of. It wasn&#39;t so much that it denied everything as that it was just trying to do God&#39;s work in the world&#39;s way. I said it was a secular church, and so it was embracing the world&#39;s wisdom. It had incorporated the world&#39;s theology, it was pursuing the world&#39;s agenda, and it was utilizing the world&#39;s methods.</div>
+      <div class="illus-source">What We Are, Where We&#39;re Going</div>
+    </div>
+    <div class="illus-card" data-type="personal_story">
+      <div class="illus-type">Personal Story</div>
+      <div class="illus-text">However, one day I was asked by the teacher of our senior high department if I would come and answer questions for the senior high because they were studying Genesis and I had been teaching for Genesis. I spent about six years going through the book, and our teaching was overlapping, and this teacher thought that would be a good idea. You know, it helped them feel closer to me and I get to know something about them. And so I said, well, sure, I&#39;ll do that. That&#39;s a big mistake. You know, you should never go answer questions for high school kids, above all, without having someone with you. I ought to know that. You know, when you do a question and answer period, you always have two of them. Because then if you know the answer, you answer it. You appear very wise and you don&#39;t know the answer. You say, well, my friend will answer that question and you&#39;ll feel very humble. I didn&#39;t do that. And I got there and they asked me some of these questions, and some of them were not all that surprising. I answered them. And then one of the students said this. He said, we&#39;ve been studying Genesis 22, and we had been told that what Abraham did here was struggle with how God was telling him to sacrifice his son. And how could God do that if this was the son of the promise? And he repeated almost all the things that I just said to you. And then came the question. He said, now, if this was the great struggle of Abraham and this was the great triumph of faith that we have been told it is, why aren&#39;t we told that in the chapter? And I said, I&#39;m very glad you asked that question. I have the faintest idea how to answer that question. Why doesn&#39;t it say that in the general? Why doesn&#39;t it describe Abraham&#39;s struggle?</div>
+      <div class="illus-source">The Call to Obedience</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">EV Hill has a wonderful story about that. There was a woman who was a block captain and was so aggressive that a man in her particular block couldn&#39;t stand it anymore, and he decided to leave. And so he decided to move the whole way across the city to another area. And he got all his things together and had a truck there, and he was moving. And when he was loading up, a block captain came out to wish him well in his new home, say goodbye and so forth. And incidentally, where are you moving? And he explained where he was going. And so he got in the truck and he moved off. She went back into the house. She got out her directory to see if there was a block captain over there in the block to which he was moving. Sure enough, there was. So when the truck got there, this block captain from Mount Zion Missionary Baptist Church was standing on the corner to welcome him in the name of Jesus Christ. And you know what the guy said? He said, my God, they&#39;re everywhere. Wouldn&#39;t it be wonderful if it ever could be in which we live? That&#39;s what the people of the world would be saying. You see a real Christian presence, participation, and then actually working for the good of the city.</div>
+      <div class="illus-source">Making a Difference in Our World</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 5: INTELLECTUAL LINEAGE ══ -->
+<section id="lineage">
+  <div class="eyebrow">05 — Intellectual Lineage</div>
+  <h2>The tradition Boice<br><em>draws from — and argues with.</em></h2>
+
+  <div class="author-counts">
+    <span class="author-chip">St. Augustine <span>9×</span></span>
+    <span class="author-chip">Martin Luther <span>7×</span></span>
+    <span class="author-chip">Robert Bratcher <span>4×</span></span>
+    <span class="author-chip">Paul <span>4×</span></span>
+    <span class="author-chip">Carl Sagan <span>4×</span></span>
+    <span class="author-chip">Jesus <span>4×</span></span>
+    <span class="author-chip">David Wells <span>4×</span></span>
+    <span class="author-chip">Harry Blamires <span>4×</span></span>
+    <span class="author-chip">John Calvin <span>3×</span></span>
+    <span class="author-chip">John Newton <span>3×</span></span>
+    <span class="author-chip">Chuck Colson <span>3×</span></span>
+    <span class="author-chip">Allan Bloom <span>2×</span></span>
+    <span class="author-chip">Martyn Lloyd Jones <span>2×</span></span>
+    <span class="author-chip">Jesus (paraphrase) <span>2×</span></span>
+    <span class="author-chip">Time magazine <span>2×</span></span>
+    <span class="author-chip">Ted Koppel <span>2×</span></span>
+    <span class="author-chip">Alexander Solzhenitsyn <span>2×</span></span>
+    <span class="author-chip">Herbert Butterfield <span>2×</span></span>
+  </div>
+
+  <div class="quotes-grid">
+    
+    <div class="quote-card">
+      <div class="quote-text">I have never held to the doctrine of inerrancy, and yet I found myself siding with you as today&#39;s discussion proceeded. Isn&#39;t it true that behind most of the questions you received was a cryptocultural Christianity, that is secret capitulation to the try it, you&#39;ll like it mentality of our civilization?</div>
+      <div class="quote-attr">Princeton Seminary student</div>
+      <div class="quote-source">A Place to Stand · 2 Timothy 3:1-5, 10-17</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">unwarranted confidence in human ability is a product of fallen human nature. And this false confidence now fills the evangelical world. From the self esteem gospel to the health and wealth gospel, from those who have transformed the gospel into a product to be sold and sinners into consumers who want to buy to others who treat Christian faith as being true simply because it works</div>
+      <div class="quote-attr">The Cambridge Declaration</div>
+      <div class="quote-source">Grace: By Grace Alone · Romans 3:21-31</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">I&#39;d rather have a competent Turk at the head of the empire than an incompetent Christian</div>
+      <div class="quote-attr">Martin Luther</div>
+      <div class="quote-source">The Sufficiency of Scripture · 2 Timothy 3:1-5, 10-17</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">When God gave us the Ten Commandments, he gave us ten Commandments, not ten suggestions. Furthermore, they are the Ten Commandments, not were the Ten Commandments.</div>
+      <div class="quote-attr">Ted Koppel</div>
+      <div class="quote-source">Mind Renewal in a Mindless World · Romans 12:1-2</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">if you&#39;re a Christian, you believe the Bible at all. You&#39;ve got to have some kind of doctrine of election, because it&#39;s there.</div>
+      <div class="quote-attr">my friends</div>
+      <div class="quote-source">Every Spiritual Blessing in Christ · Ephesians 1:1-23</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">Give me the plenary verbal theory of biblical inspiration with all its difficulties rather than the doubt. I accept the difficulties and I humbly wait for their solution. While I wait, I am standing on the rock.</div>
+      <div class="quote-attr">John Charles Ryle</div>
+      <div class="quote-source">A Place to Stand · 2 Timothy 3:1-5, 10-17</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">I&#39;d be crucified there a thousand times a day</div>
+      <div class="quote-attr">John Calvin</div>
+      <div class="quote-source">The Sufficiency of Scripture · 2 Timothy 3:1-5, 10-17</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">you have made us for yourself. And our hearts are restless until they rest in you</div>
+      <div class="quote-attr">St. Augustine</div>
+      <div class="quote-source">The Two Humanities · Genesis 3:15; 4:1-26; 5:21-24</div>
+    </div>
+  </div>
+
+  <div style="margin-top:48px;">
+    <div class="eyebrow" style="margin-bottom:16px;">Top Scripture Cross-References</div>
+    <div class="author-counts">
+      <span class="author-chip">Romans 1 <span>5×</span></span>
+    <span class="author-chip">Romans 6:11 <span>4×</span></span>
+    <span class="author-chip">Genesis 3-5 <span>4×</span></span>
+    <span class="author-chip">2 Timothy 3:1-5 <span>4×</span></span>
+    <span class="author-chip">Romans 9 <span>3×</span></span>
+    <span class="author-chip">Romans 13 <span>3×</span></span>
+    <span class="author-chip">Romans 11 <span>3×</span></span>
+    <span class="author-chip">Romans 5 <span>3×</span></span>
+    <span class="author-chip">Exodus 3 <span>2×</span></span>
+    <span class="author-chip">1 Corinthians 2:12-14 <span>2×</span></span>
+    <span class="author-chip">Ephesians 3 <span>2×</span></span>
+    <span class="author-chip">Ephesians 2:8-9 <span>2×</span></span>
+    <span class="author-chip">1 Corinthians 2:14 <span>2×</span></span>
+    <span class="author-chip">Ephesians 4 <span>2×</span></span>
+    <span class="author-chip">Genesis 22 <span>2×</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 6: BT MOVES ══ -->
+<section id="btmoves">
+  <div class="eyebrow">06 — Biblical-Theological Moves</div>
+  <h2>How Boice connects every text<br><em>to the whole-Bible narrative.</em></h2>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <h3>BT Move Type Distribution</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Typology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">27</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Thematic Thread</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:70%"></div></div>
+          <span class="bar-n">19</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Contrast</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:44%"></div></div>
+          <span class="bar-n">12</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Fulfillment</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:44%"></div></div>
+          <span class="bar-n">12</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Progressive Revelation</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:30%"></div></div>
+          <span class="bar-n">8</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Narrative Arc</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:15%"></div></div>
+          <span class="bar-n">4</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Intertextual Echo</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:11%"></div></div>
+          <span class="bar-n">3</span>
+        </div>
+      </div>
+    </div>
+    <div class="analysis-col">
+      <h3>What This Reveals</h3>
+      <p style="margin-bottom:20px;">The biblical-theological move profile reveals how James Boice connects individual texts to the larger redemptive-historical narrative. The leading move type indicates a characteristic approach to canon — whether primarily fulfillment-oriented, typological, or thematic-thread driven.</p>
+      <p>Total BT move instances: 85. The dominant move is <em>Typology</em> (27 instances), followed by Thematic Thread (19).</p>
+      <div class="distinction-box" style="margin-top:24px;">
+        <div class="distinction-label">BT Profile</div>
+        <p>Avg BT moves per sermon: 3.9. These moves represent the mechanism by which Boice's exposition connects local textual meaning to the whole-Bible argument.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 7: KEY CLAIMS ══ -->
+<section id="claims">
+  <div class="eyebrow">07 — Key Theological Claims</div>
+  <h2>15 claims from<br><em>the theological archive.</em></h2>
+
+  <div class="claims-list">
+    
+    <div class="claim-row">
+      <div class="claim-text">The cost of discipleship includes surrendering self-righteousness, cherished sins, and personal understanding — but what is received in exchange is infinitely greater: Christ&#39;s righteousness, holiness, and liberating truth.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">The Cost of Discipleship</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Liberalism teaches Works = Justification - Faith, which is the natural human desire to be justified by works alone without needing faith.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">The Final Test of True Evangelism</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Paul begins his practical application by establishing five essential Christian characteristics, culminating in unity as the goal that the subsequent section will develop.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Body Life</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Pragmatic evangelism that presents Christianity as a lifestyle option rather than God&#39;s truth produces shallow conversions and unstable churches.</div>
+      <div class="claim-meta">
+        <span class="claim-fn application">Application</span>
+        <div class="claim-sermon">Developing a Christian Mind – Part 2</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">The Reformation gospel is genuinely good news because salvation depends entirely on God&#39;s grace in Christ, not on human merit plus purgatorial punishment.</div>
+      <div class="claim-meta">
+        <span class="claim-fn theological_claim">Theological Claim</span>
+        <div class="claim-sermon">Grace: By Grace Alone</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Naturalism inevitably collapses into nihilism because without God there is no ultimate accountability, making all moral distinctions meaningless and producing the philosophy that nothing matters.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Developing a Christian Mind – Part 1</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Developing a Christian mind means acquiring a framework that enables us to think about everything from a Christian perspective, in opposition to secular patterns of thought.</div>
+      <div class="claim-meta">
+        <span class="claim-fn theological_claim">Theological Claim</span>
+        <div class="claim-sermon">Developing a Christian Mind – Part 1</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Adam and Eve&#39;s naming choices reveal their genuine faith in the protoevangelium promise, though Eve mistakenly believed Cain himself was the deliverer, setting up the ironic contrast between her messianic hope and Cain&#39;s actual character as the first murderer.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">The Two Humanities</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">The task of Christians in a collapsing culture is not to reclaim America as a Christian nation but to be distinctly Christian as the City of God within the City of Man.</div>
+      <div class="claim-meta">
+        <span class="claim-fn theological_claim">Theological Claim</span>
+        <div class="claim-sermon">The Barbarians Are Coming</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">The weekend will explore what it means to have a Christian mind, grounded in Romans 12:1-2, using a seminar format rather than traditional exposition.</div>
+      <div class="claim-meta">
+        <span class="claim-fn introduction">Introduction</span>
+        <div class="claim-sermon">Mind Renewal in a Mindless World</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Election is a beneficial doctrine, not a fearful one, and Paul rightly begins Ephesians with it.</div>
+      <div class="claim-meta">
+        <span class="claim-fn theological_claim">Theological Claim</span>
+        <div class="claim-sermon">Every Spiritual Blessing in Christ</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Greek philosophy could reason to the existence of a divine Logos but could not grasp the Incarnation or Atonement, which are known only through biblical revelation.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">The Barbarians Are Coming</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Following Jesus necessarily involves repentance — turning from sin to follow in the path of righteousness.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">The Cost of Discipleship</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Augustine&#39;s entire theology of history rests on the principle that two fundamentally opposed cities are formed by two fundamentally opposed loves—love of self versus love of God.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">The Two Humanities</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Without love, every other mark becomes corrupted—joy becomes hedonism, holiness becomes self-righteousness, truth becomes bitter orthodoxy, mission becomes imperialism, and unity becomes tyranny.</div>
+      <div class="claim-meta">
+        <span class="claim-fn theological_claim">Theological Claim</span>
+        <div class="claim-sermon">Christ&#39;s Prayer for God&#39;s World</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 8: CORPUS TABLE ══ -->
+<section id="corpus">
+  <div class="eyebrow">08 — Corpus Table</div>
+  <h2>22 sermons.<br><em>Fully decomposed.</em></h2>
+
+  <table class="sermon-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title · Primary Text</th>
+        <th>Series</th>
+        <th>Type</th>
+        <th>Tone</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr class="series-group-header"><td colspan="5">Series — Standalone Sermons</td></tr>
+      <tr>
+        <td>01</td>
+        <td><div class="sermon-title">A Place to Stand</div><div class="sermon-text">2 Timothy 3:1-5, 10-17</div></td>
+        <td>—</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Prophetic · Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>02</td>
+        <td><div class="sermon-title">The Cost of Discipleship</div><div class="sermon-text">Luke 9:18-26</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Polemic</td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td><div class="sermon-title">Mind Renewal in a Mindless World</div><div class="sermon-text">Romans 12:1-2</div></td>
+        <td>—</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Prophetic · Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>04</td>
+        <td><div class="sermon-title">Your Place in History</div><div class="sermon-text">Romans 12:1-2</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Prophetic</td>
+      </tr>
+      <tr>
+        <td>05</td>
+        <td><div class="sermon-title">Every Spiritual Blessing in Christ</div><div class="sermon-text">Ephesians 1:1-23</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — The Attributes of God</td></tr>
+      <tr>
+        <td>06</td>
+        <td><div class="sermon-title">Glory: Glory to God Alone</div><div class="sermon-text">Romans 11:33-36</div></td>
+        <td>The Attributes of God</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Prophetic</td>
+      </tr>
+      <tr>
+        <td>07</td>
+        <td><div class="sermon-title">Grace: By Grace Alone</div><div class="sermon-text">Romans 3:21-31</div></td>
+        <td>The Attributes of God</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>08</td>
+        <td><div class="sermon-title">Sovereignty: Who&#39;s in Charge?</div><div class="sermon-text">Daniel 4:28-37</div></td>
+        <td>The Attributes of God</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Prophetic · Pastoral</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Developing a Christian Mind</td></tr>
+      <tr>
+        <td>09</td>
+        <td><div class="sermon-title">Developing a Christian Mind – Part 1</div><div class="sermon-text">Romans 12:1-2</div></td>
+        <td>Developing a Christian Mind</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Prophetic · Polemic</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><div class="sermon-title">Developing a Christian Mind – Part 2</div><div class="sermon-text">Romans 12:1-2</div></td>
+        <td>Developing a Christian Mind</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Ephesians</td></tr>
+      <tr>
+        <td>11</td>
+        <td><div class="sermon-title">Body Life</div><div class="sermon-text">Ephesians 4:1-5:21</div></td>
+        <td>Ephesians</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Prophetic</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td><div class="sermon-title">Spiritual Warfare</div><div class="sermon-text">Ephesians 6:10-24</div></td>
+        <td>Ephesians</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Scripture and Authority Series</td></tr>
+      <tr>
+        <td>13</td>
+        <td><div class="sermon-title">Dealing With Bible Problems</div><div class="sermon-text">2 Timothy 3:10-17</div></td>
+        <td>Scripture and Authority Series</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Weekend Bible Conference on Scripture</td></tr>
+      <tr>
+        <td>14</td>
+        <td><div class="sermon-title">The Sufficiency of Scripture</div><div class="sermon-text">2 Timothy 3:1-5, 10-17</div></td>
+        <td>Weekend Bible Conference on Scripture</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Prophetic · Polemic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Understanding God&#39;s Word (Weekend Conference)</td></tr>
+      <tr>
+        <td>15</td>
+        <td><div class="sermon-title">Understanding God&#39;s Book</div><div class="sermon-text">2 Timothy 3:10-17</div></td>
+        <td>Understanding God&#39;s Word (Weekend Conference)</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Polemic · Pastoral</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Evangelism and Discipleship</td></tr>
+      <tr>
+        <td>16</td>
+        <td><div class="sermon-title">The Call to Obedience</div><div class="sermon-text">Genesis 22:1-18</div></td>
+        <td>Evangelism and Discipleship</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Prophetic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Evangelism and Discipleship Series</td></tr>
+      <tr>
+        <td>17</td>
+        <td><div class="sermon-title">The Final Test of True Evangelism</div><div class="sermon-text">Matthew 25:1-46</div></td>
+        <td>Evangelism and Discipleship Series</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Prophetic · Didactic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — The Two Cities</td></tr>
+      <tr>
+        <td>18</td>
+        <td><div class="sermon-title">Christ&#39;s Prayer for God&#39;s World</div><div class="sermon-text">John 17:1-26</div></td>
+        <td>The Two Cities</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Prophetic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — The Secular City</td></tr>
+      <tr>
+        <td>19</td>
+        <td><div class="sermon-title">Making a Difference in Our World</div><div class="sermon-text">2 Corinthians 10:3-5</div></td>
+        <td>The Secular City</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Prophetic · Didactic · Pastoral</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Two Cities, Two Loves</td></tr>
+      <tr>
+        <td>20</td>
+        <td><div class="sermon-title">The Barbarians Are Coming</div><div class="sermon-text">Hebrews 11:8-16</div></td>
+        <td>Two Cities, Two Loves</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Prophetic · Didactic · Pastoral</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — The City of God</td></tr>
+      <tr>
+        <td>21</td>
+        <td><div class="sermon-title">The Two Humanities</div><div class="sermon-text">Genesis 3:15; 4:1-26; 5:21-24</div></td>
+        <td>The City of God</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Prophetic · Pastoral</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Ephesians Study</td></tr>
+      <tr>
+        <td>22</td>
+        <td><div class="sermon-title">What We Are, Where We&#39;re Going</div><div class="sermon-text">Ephesians 2:1-22</div></td>
+        <td>Ephesians Study</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<footer class="site-footer">
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">Sermon Steward<span class="dot">.</span></div>
+      <div class="foot-imprint">Guild Hall — a gallery of masters, on the Sermon Steward site.</div>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/hall/">Hall</a>
+      <a href="/hall/glossary.html">Glossary</a>
+      <a href="/samples.html">Samples</a>
+      <a href="/product.html">Product</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.section-nav a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.section-nav a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+
+  function filterIllus(type, btn) {
+    document.querySelectorAll('.illus-controls .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cards = document.querySelectorAll('.illus-card');
+    cards.forEach(card => {
+      if (type === 'all' || card.dataset.type === type) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>
+</body>
+</html>

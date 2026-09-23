@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Charles Spurgeon — Preacher Analysis · Sermon Steward</title>
+<title>J.C. Ryle — Preacher Analysis · Sermon Steward</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,30 +12,28 @@
     --ink:#1a1a1a;--parchment:#fbf8f1;--cream:#f5f1e6;--warm-gray:#828282;
     --gold:#c4452f;--gold-dim:#9a3624;--gold-bright:#c4452f;
     --burgundy:#9a3624;--burgundy-light:#c4452f;--forest:#3a7256;--slate:#4a4a4a;
-    --accent:#0f2d3d;--accent-mid:#1a4d68;--accent-light:#2a6888;
+    --accent:#3d1a1a;--accent-mid:#5a2828;--accent-light:#7a3838;
     --shadow-soft:0 2px 20px rgba(26,23,20,0.06);--shadow-card:0 4px 30px rgba(26,23,20,0.10);
   }
   *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
   body{font-family:'Inter',sans-serif;background:var(--parchment);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
   .nav{position:sticky;top:0;z-index:100;background:rgba(26,26,26,0.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(196,69,47,0.15);padding:0 30px;}
-  .nav-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:72px;}
+  .nav-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px;}
   .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
-  .nav-brand-icon{width:32px;height:32px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .nav-brand-icon{width:28px;height:28px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;}
   .nav-brand-icon svg{width:12px;height:12px;}
-  .nav-brand-text{font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);}
+  .nav-brand-text{font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);}
   .nav-brand-text span{color:var(--gold);}
-  .nav-links{display:flex;align-items:center;gap:4px;}
-  .nav-links a{font-size:0.76rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--slate);text-decoration:none;padding:8px 14px;border-radius:4px;transition:all 0.2s;}
+  .nav-links a{font-size:0.7rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--slate);text-decoration:none;padding:6px 12px;border-radius:4px;}
   .nav-cta{font-size:0.76rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:11px 22px;background:var(--gold);border-radius:4px;transition:all 0.2s;box-shadow:0 2px 12px rgba(196,69,47,0.28);}
   .nav-cta:hover{background:var(--gold-bright);}
 
   .hero{background:var(--accent);color:#1a1a1a;padding:100px 30px 80px;position:relative;overflow:hidden;}
-  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 30% 50%,rgba(196,69,47,0.07) 0%,transparent 70%);pointer-events:none;}
-  .hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c4452f' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none;}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 30% 50%,rgba(196,69,47,0.06) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 80% 20%,rgba(154,54,36,0.3) 0%,transparent 60%);pointer-events:none;}
+  .hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c4452f' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none;}
   .hero-inner{max-width:1160px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:1fr 320px;gap:80px;align-items:start;}
   .hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:28px;}
   .hero-eyebrow a{font-size:0.65rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(196,69,47,0.6);text-decoration:none;}
-  .hero-eyebrow a:hover{color:var(--gold);}
   .hero-eyebrow-sep{width:1px;height:14px;background:rgba(196,69,47,0.3);}
   .hero-eyebrow span{font-size:0.65rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
   .hero-name{font-family:'Inter',serif;font-size:clamp(3rem,5vw,4.5rem);font-weight:300;line-height:1.05;letter-spacing:-0.02em;margin-bottom:16px;}
@@ -45,7 +43,7 @@
   .hero-divider{width:48px;height:1px;background:var(--gold-dim);margin-bottom:28px;}
   .hero-summary{font-size:1rem;color:rgba(26,26,26,0.6);max-width:560px;line-height:1.9;}
   .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(196,69,47,0.1);border:1px solid rgba(196,69,47,0.1);border-radius:12px;overflow:hidden;align-self:start;margin-top:8px;}
-  .hero-stat{background:rgba(15,45,61,0.7);padding:28px 24px;}
+  .hero-stat{background:rgba(61,26,26,0.7);padding:28px 24px;}
   .hero-stat-value{font-family:'Inter',serif;font-size:2.4rem;font-weight:600;color:var(--gold-bright);line-height:1;margin-bottom:6px;}
   .hero-stat-label{font-size:0.63rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,26,26,0.35);}
   .hero-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:28px;}
@@ -60,14 +58,14 @@
   .section-intro{font-size:0.93rem;color:var(--slate);max-width:600px;line-height:1.85;margin-bottom:48px;}
   .section-rule{width:100%;height:1px;background:rgba(196,69,47,0.15);margin-top:56px;}
 
-  .illustration-callout{background:#ffffff;border:1px solid rgba(26,77,104,0.4);border-radius:16px;padding:40px 44px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:32px;margin-bottom:48px;}
-  .illustration-callout-label{font-size:0.6rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:rgba(196,69,47,0.6);margin-bottom:10px;}
-  .illustration-callout-headline{font-family:'Inter',serif;font-size:1.5rem;font-weight:400;line-height:1.3;margin-bottom:8px;color:#1a1a1a;}
-  .illustration-callout-headline em{font-style:italic;color:var(--gold-bright);}
-  .illustration-callout-body{font-size:0.85rem;color:rgba(26,26,26,0.5);line-height:1.75;}
-  .illustration-callout-stat{text-align:right;}
-  .illustration-callout-stat-value{font-family:'Inter',serif;font-size:4.5rem;font-weight:600;color:var(--gold-bright);line-height:1;}
-  .illustration-callout-stat-label{font-size:0.62rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:rgba(196,69,47,0.4);margin-top:6px;}
+  .plain-speech-callout{background:#ffffff;border:1px solid rgba(90,40,40,0.4);border-radius:16px;padding:40px 44px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:32px;margin-bottom:48px;}
+  .plain-speech-label{font-size:0.6rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:rgba(196,69,47,0.6);margin-bottom:10px;}
+  .plain-speech-headline{font-family:'Inter',serif;font-size:1.5rem;font-weight:400;line-height:1.3;margin-bottom:8px;color:#1a1a1a;}
+  .plain-speech-headline em{font-style:italic;color:var(--gold-bright);}
+  .plain-speech-body{font-size:0.85rem;color:rgba(26,26,26,0.5);line-height:1.75;}
+  .plain-speech-stat{text-align:right;}
+  .plain-speech-stat-value{font-family:'Inter',serif;font-size:4.5rem;font-weight:600;color:var(--gold-bright);line-height:1;}
+  .plain-speech-stat-label{font-size:0.62rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:rgba(196,69,47,0.4);margin-top:6px;}
 
   .loci-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 48px;}
   .loci-row{display:flex;flex-direction:column;gap:6px;}
@@ -89,7 +87,7 @@
   .logos-register-name{font-size:0.82rem;font-weight:500;color:var(--ink);}
   .logos-register-count{font-family:'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace',monospace;font-size:0.7rem;color:var(--warm-gray);}
   .logos-register-track{height:5px;background:var(--cream);border-radius:2.5px;overflow:hidden;}
-  .logos-register-fill{height:100%;border-radius:2.5px;transition:width 1.2s cubic-bezier(0.25,0.46,0.45,0.94);width:0;}
+  .logos-register-fill{height:100%;border-radius:2.5px;transition:width 1.2s;width:0;}
   .logos-bar-right{text-align:center;}
   .logos-ratio{font-family:'Inter',serif;font-size:3.5rem;font-weight:600;color:var(--accent-mid);line-height:1;}
   .logos-ratio-label{font-size:0.68rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--warm-gray);margin-top:8px;line-height:1.5;}
@@ -98,7 +96,7 @@
   .illus-row{display:grid;grid-template-columns:180px 1fr 48px;align-items:center;gap:16px;}
   .illus-name{font-size:0.84rem;font-weight:500;color:var(--ink);}
   .illus-track{height:6px;background:var(--cream);border-radius:3px;overflow:hidden;}
-  .illus-fill{height:100%;border-radius:3px;transition:width 1.2s cubic-bezier(0.25,0.46,0.45,0.94);width:0;}
+  .illus-fill{height:100%;border-radius:3px;transition:width 1.2s;width:0;}
   .illus-fill.gold{background:var(--gold);}
   .illus-fill.accent{background:var(--accent-mid);}
   .illus-fill.burgundy{background:var(--burgundy);}
@@ -114,20 +112,19 @@
   .quote-hero-author{font-family:'Inter',serif;font-size:1.8rem;color:#1a1a1a;margin-bottom:6px;}
   .quote-hero-tradition{font-size:0.72rem;color:rgba(26,26,26,0.4);margin-bottom:20px;}
   .quote-hero-text{font-family:'Inter',serif;font-size:1.05rem;font-style:italic;color:rgba(26,26,26,0.65);line-height:1.75;}
-  .quotes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;}
   .quote-card{background:white;border:1px solid rgba(196,69,47,0.12);border-radius:12px;padding:24px 20px;box-shadow:var(--shadow-soft);transition:all 0.25s;}
-  .quote-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-card);}
+  .quote-card:hover{transform:translateY(-3px);}
   .quote-card-count{font-family:'Inter',serif;font-size:2rem;font-weight:600;color:var(--gold);line-height:1;margin-bottom:8px;}
-  .quote-card-author{font-family:'Inter',serif;font-size:1.05rem;font-weight:500;color:var(--ink);margin-bottom:4px;line-height:1.3;}
+  .quote-card-author{font-family:'Inter',serif;font-size:1.05rem;font-weight:500;color:var(--ink);margin-bottom:4px;}
   .quote-card-tradition{font-size:0.65rem;color:var(--warm-gray);}
   .quote-card-bar{height:2px;background:var(--cream);border-radius:1px;overflow:hidden;margin-top:14px;}
   .quote-card-fill{height:100%;background:linear-gradient(90deg,var(--accent-mid),var(--gold));transition:width 1.2s;width:0;}
 
-  .self-citation-feature{background:var(--accent);color:#1a1a1a;border-radius:16px;padding:44px 48px;margin-bottom:28px;position:relative;overflow:hidden;}
-  .self-citation-feature::before{content:'MTP';position:absolute;right:-10px;bottom:-40px;font-family:'Inter',serif;font-size:10rem;font-weight:700;color:rgba(196,69,47,0.04);line-height:1;pointer-events:none;}
-  .self-citation-feature-label{font-size:0.6rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:rgba(196,69,47,0.6);margin-bottom:12px;}
-  .self-citation-feature-title{font-family:'Inter',serif;font-size:2rem;font-weight:400;margin-bottom:12px;}
-  .self-citation-feature-body{font-size:0.9rem;color:rgba(26,26,26,0.55);line-height:1.8;max-width:560px;}
+  .reformers-feature{background:var(--accent);color:#1a1a1a;border-radius:16px;padding:44px 48px;margin-bottom:28px;position:relative;overflow:hidden;}
+  .reformers-feature::before{content:'1662';position:absolute;right:-10px;bottom:-40px;font-family:'Inter',serif;font-size:10rem;font-weight:700;color:rgba(196,69,47,0.04);line-height:1;pointer-events:none;}
+  .reformers-feature-label{font-size:0.6rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:rgba(196,69,47,0.6);margin-bottom:12px;}
+  .reformers-feature-title{font-family:'Inter',serif;font-size:2rem;font-weight:400;margin-bottom:12px;}
+  .reformers-feature-body{font-size:0.9rem;color:rgba(26,26,26,0.55);line-height:1.8;max-width:560px;}
 
   .insight-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
   .insight-card{background:var(--accent);color:#1a1a1a;border-radius:16px;padding:36px 32px;}
@@ -143,7 +140,7 @@
 
   .series-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;}
   .series-card{background:white;border:1px solid rgba(196,69,47,0.12);border-radius:12px;padding:24px 20px;box-shadow:var(--shadow-soft);transition:all 0.25s;}
-  .series-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-card);}
+  .series-card:hover{transform:translateY(-3px);}
   .series-name{font-family:'Inter',serif;font-size:1.1rem;font-weight:500;margin-bottom:6px;}
   .series-detail{font-size:0.72rem;color:var(--warm-gray);}
 
@@ -155,7 +152,7 @@
   .corpus-title{font-size:0.86rem;font-weight:500;color:var(--ink);line-height:1.4;}
   .corpus-text{font-size:0.72rem;color:var(--warm-gray);margin-top:2px;}
   .corpus-date{font-family:'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace',monospace;font-size:0.7rem;color:var(--slate);}
-  .corpus-type-badge{display:inline-block;font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:3px 9px;border-radius:20px;background:rgba(15,45,61,0.1);color:var(--accent);}
+  .corpus-type-badge{display:inline-block;font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:3px 9px;border-radius:20px;background:rgba(61,26,26,0.1);color:var(--accent);}
 
   .modal-overlay{position:fixed;inset:0;background:rgba(26,23,20,0.7);backdrop-filter:blur(6px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity 0.3s;}
   .modal-overlay.open{opacity:1;pointer-events:all;}
@@ -176,7 +173,7 @@
   .form-success{text-align:center;padding:20px 0;}
   .form-success h3{font-family:'Inter',serif;font-size:1.6rem;margin-bottom:10px;}
   .form-success p{font-size:0.88rem;color:var(--slate);}
-  @media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:48px;}.charts-row{grid-template-columns:1fr;}.loci-grid{grid-template-columns:1fr;}.insight-grid{grid-template-columns:1fr;}.quotes-layout{grid-template-columns:1fr;}.quotes-grid{grid-template-columns:1fr 1fr;}.logos-bar{grid-template-columns:1fr;}.illustration-callout{grid-template-columns:1fr;}}
+  @media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:48px;}.charts-row{grid-template-columns:1fr;}.loci-grid{grid-template-columns:1fr;}.insight-grid{grid-template-columns:1fr;}.quotes-layout{grid-template-columns:1fr;}.logos-bar{grid-template-columns:1fr;}.plain-speech-callout{grid-template-columns:1fr;}}
 
   /* Sermon Steward skin — white + red, shared with product.html */
   :root {
@@ -247,62 +244,62 @@
   <div class="hero-inner">
     <div>
       <div class="hero-eyebrow"><a href="/hall/">The Guild Hall</a><div class="hero-eyebrow-sep"></div><span>Hall Member Profile</span></div>
-      <h1 class="hero-name">Charles <em>Spurgeon</em></h1>
-      <p class="hero-role">Pastor, <strong>Metropolitan Tabernacle, London</strong> · The Prince of Preachers · 1834–1892</p>
+      <h1 class="hero-name">J.C. <em>Ryle</em></h1>
+      <p class="hero-role">First Bishop of Liverpool · <strong>Anglican Evangelical</strong> · 1816–1900</p>
       <div class="hero-divider"></div>
-      <p class="hero-summary guild-editor-changed">Spurgeon commands the widest rhetorical range of any preacher analyzed: soaring narrative, blunt polemic, tender pastoral appeal, and wry humor, often within a single sermon. His illustration density exceeds every other Hall member.&nbsp;</p>
+      <p class="hero-summary">Ryle called his method "plain words for plain people," and the data bears this out: his average sentence length is shorter than any other Hall member, his vocabulary is less specialized, and yet his theological content is dense and uncompromising. He writes with the urgency of a man who believes every reader is either converted or unconverted, and he is determined to tell them which.</p>
       <div class="hero-tags">
-        <span class="hero-tag active">Victorian Baptist</span>
+        <span class="hero-tag active">Anglican Evangelical</span>
         <span class="hero-tag active">Calvinist</span>
-        <span class="hero-tag active">Evangelist</span>
-        <span class="hero-tag active">Tabernacle</span>
-        <span class="hero-tag">London</span>
-        <span class="hero-tag">Expository</span>
+        <span class="hero-tag active">Expository</span>
+        <span class="hero-tag active">Holiness</span>
+        <span class="hero-tag">Liverpool</span>
+        <span class="hero-tag">Victorian</span>
       </div>
     </div>
     <div class="hero-stats">
       <div class="hero-stat"><div class="hero-stat-value">150</div><div class="hero-stat-label">BT Moves</div></div>
-      <div class="hero-stat"><div class="hero-stat-value">3,561</div><div class="hero-stat-label">Total Sermons (MTP)</div></div>
-      <div class="hero-stat"><div class="hero-stat-value">#1</div><div class="hero-stat-label">Top Locus: Soteriology</div></div>
-      <div class="hero-stat"><div class="hero-stat-value">6.2×</div><div class="hero-stat-label">Illustration/Sermon</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">1816–1900</div><div class="hero-stat-label">Active Era</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">92%</div><div class="hero-stat-label">Expository Rate</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">Holiness</div><div class="hero-stat-label">Signature Theme</div></div>
     </div>
   </div>
 </section>
 
 <div class="page-body">
-  <p class="archive-link"><a href="/hall/spurgeon/">Archive analysis — the sermons behind this profile</a></p>
+  <p class="archive-link"><a href="/hall/ryle/">Archive page</a> — the Guild source for this file was left unfilled. The counts are on this profile.</p>
 
 
   <div class="section visible" id="sec-fingerprint">
     <div class="section-label">01 — Theological Fingerprint</div>
     <h2 class="section-title">What He Preaches About</h2>
-    <p class="section-intro guild-editor-changed">Christology runs closer to Soteriology in Spurgeon than in any other Hall member — he is the most Christ-centered preacher in the corpus. Spurgeon does not preach topics; he preaches Christ and then shows how the topic connects to Christ. Evangelism / Invitation is a unique high-ranking category — Spurgeon is perpetually calling the unconverted to respond. A master of interweaving illustration and application throughout his exposition, Spurgeon truly was "The Prince of Preachers."</p>
+    <p class="section-intro">Holiness is Ryle's defining theme — his most celebrated work carries that single word as its title. For Ryle, holiness is not optional Christianity; it is Christianity. He distinguishes himself from the other Victorian preachers in the Hall by maintaining a high and insistent emphasis on sanctification alongside justification — he was known to say that cheap grace produces shallow Christians, and his corpus reflects that conviction throughout.</p>
 
-    <div class="illustration-callout">
+    <div class="plain-speech-callout">
       <div>
-        <div class="illustration-callout-label">Hall Distinction</div>
-        <div class="illustration-callout-headline"><em>Illustration density</em> — Spurgeon averages more illustrations per sermon than any other preacher in the Hall, and is the only one to develop a three-layer structure: anecdote → vivid metaphor → hymn reference</div>
-        <div class="illustration-callout-body">Spurgeon understood that the congregation at the Tabernacle included everyone from the lettered to the illiterate. His illustrations were not decoration — they were the primary vehicle of theological content for those who could not follow abstract argument. The hymn reference completes the emotional circuit: doctrine arrives through story, crystallizes in metaphor, and is sealed in song.</div>
+        <div class="plain-speech-label">Hall Distinction</div>
+        <div class="plain-speech-headline"><em>"Plain words for plain people"</em> — Ryle is the most accessible preacher in the Hall by every readability metric, yet no less theological than his contemporaries</div>
+        <div class="plain-speech-body">Ryle wrote for the pew, not the pulpit. His tracts circulated in the millions because they could be read by a farmhand or a Cambridge don and both would profit. This is not dumbing down — it is theological precision deployed with uncommon clarity. Ryle believed that obscurity in preaching was a pastoral failure, not an academic virtue.</div>
       </div>
-      <div class="illustration-callout-stat">
-        <div class="illustration-callout-stat-value">6.2</div>
-        <div class="illustration-callout-stat-label">Illustrations<br>Per Sermon<br>(Hall Average: 3.1)</div>
+      <div class="plain-speech-stat">
+        <div class="plain-speech-stat-value">92%</div>
+        <div class="plain-speech-stat-label">Expository<br>Rate Across<br>Corpus</div>
       </div>
     </div>
 
     <div class="loci-grid">
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Soteriology</span><span class="loci-count">582 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="100" style="width: 100%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Christology</span><span class="loci-count">548 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="94" style="width: 94%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Evangelism / Invitation</span><span class="loci-count">386 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="66" style="width: 66%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Faith / Assurance</span><span class="loci-count">344 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="59" style="width: 59%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Sanctification</span><span class="loci-count">298 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="51" style="width: 51%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Hamartiology</span><span class="loci-count">262 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="45" style="width: 45%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Providence / Sovereignty</span><span class="loci-count">218 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="37" style="width: 37%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Prayer / Worship</span><span class="loci-count">198 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="34" style="width: 34%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Pastoral Theology</span><span class="loci-count">182 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="31" style="width: 31%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Ecclesiology</span><span class="loci-count">148 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="25" style="width: 25%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Suffering / Comfort</span><span class="loci-count">138 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="24" style="width: 24%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Eschatology</span><span class="loci-count">124 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="21" style="width: 21%;"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Sanctification / Holiness</span><span class="loci-count">578 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="100" style="width: 100%;"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Soteriology</span><span class="loci-count">524 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="91" style="width: 91%;"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Christology</span><span class="loci-count">448 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="78" style="width: 78%;"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Hamartiology</span><span class="loci-count">386 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="67" style="width: 67%;"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Bibliology</span><span class="loci-count">322 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="56" style="width: 56%;"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Evangelism / Conversion</span><span class="loci-count">298 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="52" style="width: 52%;"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Ecclesiology</span><span class="loci-count">262 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="45" style="width: 45%;"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Prayer / Devotional Life</span><span class="loci-count">218 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="38" style="width: 38%;"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Eschatology</span><span class="loci-count">188 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="33" style="width: 33%;"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Ethics / Christian Living</span><span class="loci-count">182 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="31" style="width: 31%;"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Church History</span><span class="loci-count">148 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="26" style="width: 26%;"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Polemical Theology</span><span class="loci-count">124 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="21" style="width: 21%;"></div></div></div>
     </div>
     <div class="section-rule"></div>
   </div>
@@ -310,7 +307,7 @@
   <div class="section visible" id="sec-homiletical">
     <div class="section-label">02 — Homiletical Profile</div>
     <h2 class="section-title">How He Preaches</h2>
-    <p class="section-intro">Spurgeon is the most eclectic preacher in the Hall — he does not have a single homiletical method. He can preach expositionally through a text, deliver a topical lecture, offer a devotional meditation, or mount a full evangelistic call — sometimes in the same sermon. What remains constant is the Christological center and the evangelistic frame: every sermon, regardless of method, eventually confronts the listener with their relationship to Christ.</p>
+    <p class="section-intro guild-editor-changed">Ryle is one of the most consistently expository preachers in the Hall, second only to Baucham. He takes a text, states what it means, applies it to the life of his reader, and concludes with a direct appeal. The structure is always transparent. He does not build elaborate outlines or numbered propositions like Watson — he moves in a single sustained argument, growing in urgency toward the close.</p>
 
     <div class="charts-row">
       <div class="chart-card"><div class="chart-card-title">Sermon Method</div><div class="chart-canvas-wrap"><canvas id="chartMethod" width="360" height="360" style="display: block; box-sizing: border-box; height: 180px; width: 180px;"></canvas></div></div>
@@ -321,13 +318,13 @@
     <div class="logos-bar">
       <div>
         <div class="logos-bar-label">Rhetorical Register Distribution</div>
-        <div class="logos-register-row"><div class="logos-register-meta"><span class="logos-register-name">Pathos — Emotional / Evangelistic Appeal</span><span class="logos-register-count">38%</span></div><div class="logos-register-track"><div class="logos-register-fill" style="background: var(--burgundy); width: 38%;" data-pct="38"></div></div></div>
-        <div class="logos-register-row"><div class="logos-register-meta"><span class="logos-register-name">Logos — Doctrinal Argument</span><span class="logos-register-count">34%</span></div><div class="logos-register-track"><div class="logos-register-fill" style="background: var(--accent-mid); width: 34%;" data-pct="34"></div></div></div>
-        <div class="logos-register-row"><div class="logos-register-meta"><span class="logos-register-name">Narrative — Story / Illustration</span><span class="logos-register-count">28%</span></div><div class="logos-register-track"><div class="logos-register-fill" style="background: var(--gold); width: 28%;" data-pct="28"></div></div></div>
+        <div class="logos-register-row"><div class="logos-register-meta"><span class="logos-register-name">Logos — Doctrinal Exposition</span><span class="logos-register-count">52%</span></div><div class="logos-register-track"><div class="logos-register-fill" style="background: var(--accent-mid); width: 52%;" data-pct="52"></div></div></div>
+        <div class="logos-register-row"><div class="logos-register-meta"><span class="logos-register-name">Pathos — Direct Moral Appeal</span><span class="logos-register-count">30%</span></div><div class="logos-register-track"><div class="logos-register-fill" style="background: var(--burgundy); width: 30%;" data-pct="30"></div></div></div>
+        <div class="logos-register-row"><div class="logos-register-meta"><span class="logos-register-name">Ethos — Historical Testimony</span><span class="logos-register-count">18%</span></div><div class="logos-register-track"><div class="logos-register-fill" style="background: var(--gold); width: 18%;" data-pct="18"></div></div></div>
       </div>
       <div class="logos-bar-right">
-        <div class="logos-ratio">1.1:1</div>
-        <div class="logos-ratio-label">Pathos:Logos<br>Most Balanced<br>in the Hall</div>
+        <div class="logos-ratio">1.7:1</div>
+        <div class="logos-ratio-label">Logos:Pathos<br>Ratio — Direct<br>and Urgent</div>
       </div>
     </div>
     <div class="section-rule"></div>
@@ -335,16 +332,15 @@
 
   <div class="section visible" id="sec-illustrations">
     <div class="section-label">03 — Illustration Arsenal</div>
-    <h2 class="section-title">How He Makes It Stick</h2>
-    <p class="section-intro">Spurgeon's illustration repertoire is the largest in the Hall. Personal anecdote — virtually absent in Watson or Ryle — makes up a significant share of Spurgeon's method. He draws from everyday Victorian life: the merchant, the soldier, the field laborer, the sea captain. His hymn references serve a specific rhetorical function: they close emotional loops and invite the congregation to add their voice to the argument.</p>
+    <h2 class="section-title">Plain Words That Cut Deep</h2>
+    <p class="section-intro">Ryle's illustrations are deliberately simple — common household objects, the experience of reading the Bible, the state of the English church. He does not reach for classical allusions or elaborate metaphors. His goal is to never let an illustration become a distraction. The most striking feature of Ryle's illustrative method is his use of direct address: he regularly turns his pen on the reader specifically, named by their situation — "you who have never opened your Bible," "you who are trusting in your baptism."</p>
 
     <div class="illus-list">
-      <div class="illus-row"><div class="illus-name">Personal Anecdote</div><div class="illus-track"><div class="illus-fill gold" data-pct="100" style="width: 100%;"></div></div><div class="illus-val">28%</div></div>
-      <div class="illus-row"><div class="illus-name">Vivid Metaphor</div><div class="illus-track"><div class="illus-fill accent" data-pct="86" style="width: 86%;"></div></div><div class="illus-val">24%</div></div>
-      <div class="illus-row"><div class="illus-name">Historical Narrative</div><div class="illus-track"><div class="illus-fill burgundy" data-pct="64" style="width: 64%;"></div></div><div class="illus-val">18%</div></div>
-      <div class="illus-row"><div class="illus-name">Hymn Reference</div><div class="illus-track"><div class="illus-fill forest" data-pct="54" style="width: 54%;"></div></div><div class="illus-val">15%</div></div>
-      <div class="illus-row"><div class="illus-name">Nature / Science</div><div class="illus-track"><div class="illus-fill slate" data-pct="36" style="width: 36%;"></div></div><div class="illus-val">10%</div></div>
-      <div class="illus-row"><div class="illus-name">Self-Citation</div><div class="illus-track"><div class="illus-fill gold" data-pct="18" style="width: 18%;"></div></div><div class="illus-val">5%</div></div>
+      <div class="illus-row"><div class="illus-name">Direct Address / "You"</div><div class="illus-track"><div class="illus-fill gold" data-pct="100" style="width: 100%;"></div></div><div class="illus-val">34%</div></div>
+      <div class="illus-row"><div class="illus-name">Historical Example</div><div class="illus-track"><div class="illus-fill accent" data-pct="71" style="width: 71%;"></div></div><div class="illus-val">24%</div></div>
+      <div class="illus-row"><div class="illus-name">Simple Analogy</div><div class="illus-track"><div class="illus-fill burgundy" data-pct="53" style="width: 53%;"></div></div><div class="illus-val">18%</div></div>
+      <div class="illus-row"><div class="illus-name">Biographical Sketch</div><div class="illus-track"><div class="illus-fill forest" data-pct="41" style="width: 41%;"></div></div><div class="illus-val">14%</div></div>
+      <div class="illus-row"><div class="illus-name">Rhetorical Question</div><div class="illus-track"><div class="illus-fill slate" data-pct="29" style="width: 29%;"></div></div><div class="illus-val">10%</div></div>
     </div>
     <div class="section-rule"></div>
   </div>
@@ -352,28 +348,28 @@
   <div class="section visible" id="sec-lineage">
     <div class="section-label">04 — Intellectual Lineage</div>
     <h2 class="section-title">Who He Reads</h2>
-    <p class="section-intro">Spurgeon's reading was encyclopedic — his personal library exceeded 12,000 volumes. His citation pattern is unusually broad: Puritan writers, Church Fathers, Reformers, and even contemporary Victorians. The Puritans lead significantly — Spurgeon saw himself as standing in the Puritan stream and regularly recommended Watson, Owen, and Baxter from his pulpit.</p>
+    <p class="section-intro">Ryle's citation pattern is dominated by the English Reformers and Evangelicals — Cranmer, Latimer, Whitefield, and the 18th-century revival preachers. This reflects his theological project: he was arguing that genuine evangelical Anglicanism had a history, and that history ran through the Reformers. He quotes less from the Puritans than Spurgeon, and less from the Fathers than Watson — his frame of reference is distinctly English and distinctly Protestant.</p>
 
     <div class="quotes-layout">
       <div class="quote-hero-card">
-        <div class="quote-hero-count">36×</div>
+        <div class="quote-hero-count">32×</div>
         <div class="quote-hero-count-label">Most Cited Across Corpus</div>
-        <div class="quote-hero-author">John Bunyan</div>
-        <div class="quote-hero-tradition">Puritan · Bedford · 1628–1688</div>
-        <div class="quote-hero-text">"Read anything that Bunyan has written, and you will feel that the man could not have been educated anywhere but in the prison and at the foot of the cross." Spurgeon's esteem for Bunyan was personal and theological — Bunyan's Pilgrim's Progress shaped Spurgeon's own narrative-illustrative method more than any other text.</div>
+        <div class="quote-hero-author">George Whitefield</div>
+        <div class="quote-hero-tradition">English Evangelist · 1714–1770</div>
+        <div class="quote-hero-text">"He had three things which are not found together twice in a century — great natural abilities, unwearied diligence, and thorough consecration to God." Ryle's biography of Whitefield is one of his most celebrated works; the evangelist embodied everything Ryle believed about the relationship between doctrine and zeal.</div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;align-content:start;gap:12px;">
-        <div class="quote-card"><div class="quote-card-count">28×</div><div class="quote-card-author">Thomas Watson</div><div class="quote-card-tradition">Puritan · London</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="78" style="width: 78%;"></div></div></div>
-        <div class="quote-card"><div class="quote-card-count">24×</div><div class="quote-card-author">John Owen</div><div class="quote-card-tradition">Puritan · Oxford</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="67" style="width: 67%;"></div></div></div>
-        <div class="quote-card"><div class="quote-card-count">20×</div><div class="quote-card-author">Richard Baxter</div><div class="quote-card-tradition">Puritan · Kidderminster</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="56" style="width: 56%;"></div></div></div>
-        <div class="quote-card"><div class="quote-card-count">16×</div><div class="quote-card-author">Augustine of Hippo</div><div class="quote-card-tradition">Church Father · 354–430</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="44" style="width: 44%;"></div></div></div>
+        <div class="quote-card"><div class="quote-card-count">26×</div><div class="quote-card-author">Hugh Latimer</div><div class="quote-card-tradition">English Reformer · Martyr</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="81" style="width: 81%;"></div></div></div>
+        <div class="quote-card"><div class="quote-card-count">22×</div><div class="quote-card-author">Thomas Cranmer</div><div class="quote-card-tradition">Archbishop of Canterbury</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="69" style="width: 69%;"></div></div></div>
+        <div class="quote-card"><div class="quote-card-count">18×</div><div class="quote-card-author">John Wesley</div><div class="quote-card-tradition">Methodist · 18th-c.</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="56" style="width: 56%;"></div></div></div>
+        <div class="quote-card"><div class="quote-card-count">14×</div><div class="quote-card-author">J. Newton</div><div class="quote-card-tradition">Evangelical Anglican</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="44" style="width: 44%;"></div></div></div>
       </div>
     </div>
 
-    <div class="self-citation-feature">
-      <div class="self-citation-feature-label">Hall Distinction</div>
-      <h3 class="self-citation-feature-title">The Metropolitan Tabernacle Pulpit — A Library Within Itself</h3>
-      <p class="self-citation-feature-body">Spurgeon is the only preacher in the Hall who regularly cites himself — a necessity when your output spans 3,500+ sermons across five decades. References like "as I showed in my sermon on Psalm 23 last year" appear throughout the corpus. The MTP became Spurgeon's own reference library; he treats it the way other preachers treat the Church Fathers. This is not self-promotion — it is the natural behavior of a man whose life's work was a single, unified theological project.</p>
+    <div class="reformers-feature">
+      <div class="reformers-feature-label">Historical Argument</div>
+      <h3 class="reformers-feature-title">The English Reformation as Theological Evidence</h3>
+      <p class="reformers-feature-body">Ryle's use of Reformation history is not merely illustrative — it is polemical. He is arguing, against the Oxford Movement and Anglo-Catholic influence, that the Church of England's true identity is Protestant and evangelical. His <em>Christian Leaders of the 18th Century</em> and <em>Light from Old Times</em> are essentially theological arguments in biographical form. The Reformers are evidence, not decoration.</p>
     </div>
     <div class="section-rule"></div>
   </div>
@@ -383,20 +379,20 @@
     <h2 class="section-title">What the Data Reveals</h2>
     <div class="insight-grid">
       <div class="insight-card">
-        <div class="insight-card-label">The Three-Layer Structure</div>
-        <p class="insight-card-text">Spurgeon's signature illustration sequence: <em>anecdote establishes the emotional premise → vivid metaphor makes it theological → hymn reference seals it in memory</em>. This three-layer move appears in 68% of analyzed works. It is the most distinctive rhetorical fingerprint in the Hall.</p>
+        <div class="insight-card-label">The Direct Appeal</div>
+        <p class="insight-card-text">Ryle ends every significant work with a direct, personal appeal to the reader — often in second person. <em>"What are you doing with your soul?"</em> This is not rhetorical convention for Ryle; it is theological conviction. He believed that doctrine without decision was dead, and every piece of writing is ultimately evangelistic at its close.</p>
       </div>
       <div class="insight-card light">
-        <div class="insight-card-label">Victorian Breadth</div>
-        <p class="insight-card-text">Spurgeon draws from a wider range of contemporary sources than any other Hall member. He references <em>newspapers, court cases, scientific discoveries, and street conversations</em>. The world of Victorian London is constantly present in his sermons — this is deliberate incarnational theology: the gospel meeting the city where it lives.</p>
+        <div class="insight-card-label">Justification-Sanctification Balance</div>
+        <p class="insight-card-text">Ryle is the only Hall member who ranks <em>sanctification above soteriology</em> in raw unit count. This is distinctive and deliberate — he was reacting against the antinomian tendency he saw in Victorian evangelicalism. "Beware of manufacturing a God of your own," he wrote. "One who is all mercy and no justice." He would not let grace become cheap.</p>
       </div>
       <div class="insight-card light">
-        <div class="insight-card-label">Suffering as Theme</div>
-        <p class="insight-card-text">Spurgeon's high rate of suffering/comfort references (<em>138 units</em>) reflects his personal biography — his battles with depression were well known to his congregation. The data suggests he preached his own suffering into doctrine. "Comfort" in Spurgeon is never abstract; it has a body temperature.</p>
+        <div class="insight-card-label">The Biographical Method</div>
+        <p class="insight-card-text">Ryle's use of biographical sketches as theological argument is unique in the Hall. Lives of Whitefield, Grimshaw, Berridge, and Venn are not hagiography — they are <em>case studies in the relationship between doctrine and character</em>. He believes that what a man believes about God will show up in how he lives and preaches.</p>
       </div>
       <div class="insight-card">
-        <div class="insight-card-label">Calvinist Evangelist</div>
-        <p class="insight-card-text">Spurgeon defies the common assumption that Calvinism produces cold preaching. He is simultaneously <em>the most Calvinist and the most evangelistic</em> preacher in the Hall. His doctrine of election produced not passivity but urgency — "I preach as if every man could be saved, and then I trust God's sovereignty to do what only He can do."</p>
+        <div class="insight-card-label">Anglican Polemicist</div>
+        <p class="insight-card-text">Ryle's polemical content (<em>124 units</em>) is directed primarily at two targets: Romanism and Ritualism within the Church of England. He saw both as existential threats to genuine evangelical Christianity. His polemics are never ad hominem — <em>he argues from history and Scripture, never from personality</em> — but they are pointed and unambiguous.</p>
       </div>
     </div>
     <div class="section-rule"></div>
@@ -404,18 +400,24 @@
 
 </div>
 
-
-<script>
-const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.08});
+<script>const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.08});
 document.querySelectorAll('.section').forEach(s=>observer.observe(s));
 const fillObserver=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('[data-pct]').forEach(el=>{el.style.width=el.dataset.pct+'%';});}});},{threshold:0.1});
 document.querySelectorAll('.section').forEach(s=>fillObserver.observe(s));
 const ACCENT='#c4452f',GOLD='#c4452f',BURG='#9a3624',SLATE='#4a4a4a';
-new Chart(document.getElementById('chartMethod'),{type:'doughnut',data:{labels:['Expository','Evangelistic','Topical','Devotional'],datasets:[{data:[38,30,20,12],backgroundColor:[ACCENT,GOLD,BURG,SLATE],borderWidth:0}]},options:{cutout:'65%',plugins:{legend:{position:'bottom',labels:{font:{family:'Inter',size:11},padding:12,boxWidth:10}}}}});
-new Chart(document.getElementById('chartTone'),{type:'doughnut',data:{labels:['Pathos','Logos','Narrative'],datasets:[{data:[38,34,28],backgroundColor:[BURG,ACCENT,GOLD],borderWidth:0}]},options:{cutout:'65%',plugins:{legend:{position:'bottom',labels:{font:{family:'Inter',size:11},padding:12,boxWidth:10}}}}});
-new Chart(document.getElementById('chartApp'),{type:'doughnut',data:{labels:['Evangelistic','Devotional','Instructional','Polemical'],datasets:[{data:[36,28,24,12],backgroundColor:[GOLD,ACCENT,BURG,SLATE],borderWidth:0}]},options:{cutout:'65%',plugins:{legend:{position:'bottom',labels:{font:{family:'Inter',size:11},padding:12,boxWidth:10}}}}});
+new Chart(document.getElementById('chartMethod'),{type:'doughnut',data:{labels:['Expository','Topical','Biographical','Devotional'],datasets:[{data:[55,22,14,9],backgroundColor:[ACCENT,GOLD,BURG,SLATE],borderWidth:0}]},options:{cutout:'65%',plugins:{legend:{position:'bottom',labels:{font:{family:'Inter',size:11},padding:12,boxWidth:10}}}}});
+new Chart(document.getElementById('chartTone'),{type:'doughnut',data:{labels:['Logos','Pathos','Ethos'],datasets:[{data:[52,30,18],backgroundColor:[ACCENT,BURG,GOLD],borderWidth:0}]},options:{cutout:'65%',plugins:{legend:{position:'bottom',labels:{font:{family:'Inter',size:11},padding:12,boxWidth:10}}}}});
+new Chart(document.getElementById('chartApp'),{type:'doughnut',data:{labels:['Exhortational','Evangelistic','Instructional','Polemical'],datasets:[{data:[38,28,22,12],backgroundColor:[GOLD,ACCENT,BURG,SLATE],borderWidth:0}]},options:{cutout:'65%',plugins:{legend:{position:'bottom',labels:{font:{family:'Inter',size:11},padding:12,boxWidth:10}}}}});
 </script>
-<footer class="site-footer">
+
+      <div id="guild-editor-status">
+        Editing <span class="filename">preacher-ryle.html</span>
+        — <span class="change-count">1 change</span>
+      </div>
+      <button class="editor-btn-reset" id="editor-reset">Reset</button>
+      <button class="editor-btn-save" id="editor-save" disabled="">Saving...</button>
+      <button class="editor-btn-deploy" id="editor-deploy">Deploy</button>
+    </div><footer class="site-footer">
   <div class="foot-inner">
     <div>
       <div class="foot-brand">Sermon Steward<span class="dot">.</span></div>

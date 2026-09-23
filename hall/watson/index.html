@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thomas Watson · Archive Analysis · Sermon Steward</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:        #1a1a1a;
+      --parchment:  #fbf8f1;
+      --gold:       #c4452f;
+      --gold-light: #c4452f;
+      --burgundy:   #9a3624;
+      --forest:     #3a7256;
+      --muted:      #4a4a4a;
+      --rule:       rgba(196,69,47,0.22);
+      --serif:      'Inter', Georgia, serif;
+      --sans:       'Inter', system-ui, sans-serif;
+      --mono:       'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--ink); color:#1a1a1a; font-family: var(--sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: linear-gradient(to bottom, rgba(26,23,16,0.98), rgba(26,23,16,0)); border-bottom: 1px solid rgba(196,69,47,0.08); }
+    .nav-brand { font-family: var(--serif); font-size: 0.95rem; color:#1a1a1a; text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 28px; }
+    .nav-right a { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-right a:hover { color: var(--gold-light); }
+    .section-nav { position: sticky; top: 57px; z-index: 90; background: rgba(26,23,16,0.97); border-bottom: 1px solid var(--rule); display: flex; gap: 0; overflow-x: auto; }
+    .section-nav a { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none; padding: 14px 24px; border-bottom: 2px solid transparent; white-space: nowrap; transition: color 0.2s, border-color 0.2s; }
+    .section-nav a:hover, .section-nav a.active { color: var(--gold-light); border-bottom-color: var(--gold); }
+    .hero { padding: 130px 48px 80px; max-width: 1000px; border-bottom: 1px solid var(--rule); }
+    .hero-eyebrow { font-family: var(--mono); font-size: 0.65rem; color: var(--gold); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
+    .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+    h1 { font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 300; line-height: 1.1; margin-bottom: 8px; }
+    h1 em { font-style: italic; color: var(--gold-light); }
+    .hero-role { font-family: var(--sans); font-size: 0.9rem; color: var(--muted); margin-bottom: 36px; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+    .tag { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--rule); padding: 4px 10px; border-radius: 2px; }
+    .hero-stats { display: grid; grid-template-columns: repeat(5, auto); gap: 40px; width: fit-content; }
+    .hero-stat-n { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: var(--gold-light); line-height: 1; }
+    .hero-stat-l { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
+    section { padding: 80px 48px; max-width: 1100px; margin: 0 auto; border-bottom: 1px solid var(--rule); }
+    .eyebrow { font-family: var(--mono); font-size: 0.62rem; color: var(--gold); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 12px; }
+    h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300; line-height: 1.2; margin-bottom: 48px; }
+    h2 em { font-style: italic; color: var(--gold-light); }
+    h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; margin-bottom: 10px; }
+    p { font-family: var(--sans); font-size: 0.9rem; color: rgba(26,26,26,0.7); line-height: 1.8; }
+    .analysis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .analysis-col h3 { font-size: 1rem; font-family: var(--mono); letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; margin-bottom: 20px; font-weight: 400; }
+    .bar-chart { display: flex; flex-direction: column; gap: 10px; }
+    .bar-row { display: flex; align-items: center; gap: 12px; }
+    .bar-label { font-family: var(--sans); font-size: 0.78rem; color: rgba(26,26,26,0.65); width: 180px; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 6px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 3px; background: var(--gold); transition: width 1s ease; }
+    .bar-fill.forest { background: var(--forest); }
+    .bar-fill.burgundy { background: var(--burgundy); }
+    .bar-fill.muted { background: var(--muted); }
+    .bar-n { font-family: var(--mono); font-size: 0.65rem; color: var(--muted); width: 52px; text-align: right; flex-shrink: 0; }
+    .register-block { margin-top: 40px; }
+    .register-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+    .register-pill { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 14px; border-radius: 2px; border: 1px solid var(--rule); }
+    .register-pill.logos { background: rgba(45,74,53,0.3); border-color: var(--forest); color: #7ab88a; }
+    .register-pill.pathos { background: rgba(122,45,45,0.3); border-color: var(--burgundy); color: #c47a7a; }
+    .register-pill.ethos { background: rgba(196,69,47,0.15); border-color: var(--gold); color: var(--gold-light); }
+    .register-pill.doxological { background: rgba(107,100,85,0.3); border-color: var(--muted); color: #a89d8a; }
+    .register-pill.narrative { background: rgba(60,80,100,0.3); border-color: #4a6a8a; color: #7a9aaa; }
+    .distinction-box { background: rgba(196,69,47,0.04); border: 1px solid rgba(196,69,47,0.2); border-radius: 2px; padding: 24px 28px; margin-top: 32px; }
+    .distinction-label { font-family: var(--mono); font-size: 0.6rem; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; }
+    .distinction-box p { font-size: 0.88rem; font-style: italic; color: rgba(26,26,26,0.75); }
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 56px; }
+    .stat-box { border: 1px solid var(--rule); border-radius: 2px; padding: 28px 24px; text-align: center; }
+    .stat-box-n { font-family: var(--serif); font-size: 2.4rem; font-weight: 300; color: var(--gold-light); line-height: 1; }
+    .stat-box-l { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 8px; }
+    .illus-controls { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+    .filter-btn { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 14px; border: 1px solid var(--rule); border-radius: 2px; background: none; color: var(--muted); cursor: pointer; transition: all 0.2s; }
+    .filter-btn:hover, .filter-btn.active { border-color: var(--gold); color: var(--gold-light); background: rgba(196,69,47,0.06); }
+    .illus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .illus-card { border: 1px solid var(--rule); border-radius: 2px; padding: 24px; transition: border-color 0.2s; cursor: default; }
+    .illus-card:hover { border-color: rgba(196,69,47,0.35); }
+    .illus-type { font-family: var(--mono); font-size: 0.58rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
+    .illus-text { font-family: var(--sans); font-size: 0.85rem; color: rgba(26,26,26,0.72); line-height: 1.7; }
+    .illus-source { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); margin-top: 12px; }
+    .quotes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .quote-card { border-left: 2px solid var(--rule); padding: 20px 24px; transition: border-color 0.2s; }
+    .quote-card:hover { border-left-color: var(--gold); }
+    .quote-text { font-family: var(--serif); font-size: 1.05rem; font-style: italic; color: rgba(26,26,26,0.82); line-height: 1.65; margin-bottom: 12px; }
+    .quote-attr { font-family: var(--mono); font-size: 0.6rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
+    .quote-source { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); margin-top: 2px; }
+    .author-counts { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+    .author-chip { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; padding: 5px 12px; border: 1px solid var(--rule); border-radius: 20px; color: var(--muted); }
+    .author-chip span { color: var(--gold-light); margin-left: 4px; }
+    .claims-list { display: flex; flex-direction: column; gap: 0; }
+    .claim-row { padding: 18px 0; border-bottom: 1px solid rgba(196,69,47,0.08); display: grid; grid-template-columns: 1fr 220px; gap: 24px; align-items: start; }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-text { font-family: var(--sans); font-size: 0.88rem; color: rgba(26,26,26,0.82); line-height: 1.65; }
+    .claim-meta { text-align: right; }
+    .claim-fn { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; border: 1px solid var(--rule); color: var(--muted); display: inline-block; margin-bottom: 6px; }
+    .claim-fn.theological_claim { border-color: rgba(196,69,47,0.4); color: var(--gold-light); }
+    .claim-fn.exposition { border-color: rgba(45,74,53,0.5); color: #7ab88a; }
+    .claim-sermon { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); }
+    .sermon-table { width: 100%; border-collapse: collapse; }
+    .sermon-table th { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); letter-spacing: 0.14em; text-transform: uppercase; text-align: left; padding: 10px 16px; border-bottom: 1px solid var(--rule); }
+    .sermon-table td { font-family: var(--sans); font-size: 0.84rem; color: rgba(26,26,26,0.7); padding: 13px 16px; border-bottom: 1px solid rgba(196,69,47,0.06); vertical-align: top; }
+    .sermon-table tr:hover td { background: rgba(196,69,47,0.03); }
+    .sermon-title { color:#1a1a1a; font-weight: 400; }
+    .sermon-text { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+    .sermon-type { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; border: 1px solid var(--rule); color: var(--muted); white-space: nowrap; }
+    .sermon-type.expository { border-color: rgba(45,74,53,0.5); color: #7ab88a; }
+    .sermon-type.topical { border-color: rgba(122,45,45,0.5); color: #c47a7a; }
+    .sermon-type.textual { border-color: rgba(196,69,47,0.4); color: var(--gold-light); }
+    .series-group-header td { padding: 24px 16px 8px; font-family: var(--mono); font-size: 0.6rem; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; border-bottom: 1px solid var(--rule); background: rgba(196,69,47,0.03); }
+    footer { border-top: 1px solid var(--rule); padding: 40px 48px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-brand { font-family: var(--serif); font-size: 0.95rem; color:#1a1a1a; }
+    footer p { font-size: 0.75rem; color: var(--muted); }
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .hero, section { padding-left: 20px; padding-right: 20px; }
+      .hero-stats { grid-template-columns: repeat(3,auto); gap: 24px; }
+      .analysis-grid, .illus-grid, .quotes-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .claim-row { grid-template-columns: 1fr; }
+      .section-nav a { padding: 12px 16px; }
+    }
+  
+  :root {
+    --ink:#fbf8f1; --parchment:#1a1a1a; --gold:#c4452f; --gold-light:#c4452f;
+    --burgundy:#9a3624; --forest:#3a7256; --muted:#4a4a4a; --rule:#e6e1d3;
+    --serif: Inter, system-ui, sans-serif; --sans: Inter, system-ui, sans-serif;
+  }
+  body { background:#fbf8f1 !important; color:#1a1a1a !important; font-family:Inter, system-ui, sans-serif !important; }
+  h1, h2, h3, .footer-brand, .nav-brand { font-family:Inter, system-ui, sans-serif !important; font-weight:800; color:#1a1a1a; }
+  h1 em, h2 em { font-style:normal !important; color:#c4452f !important; }
+  .hero { padding:48px 28px 56px !important; max-width:1080px; }
+  section { padding:64px 28px !important; }
+  .section-nav { top:65px !important; background:rgba(251,248,241,0.96) !important; border-bottom:1px solid #e6e1d3 !important; }
+  .section-nav a { color:#4a4a4a !important; }
+  .section-nav a:hover, .section-nav a.active { color:#c4452f !important; border-bottom-color:#c4452f !important; }
+  p, .bar-label, .illus-text, .quote-text, .claim-text, .sermon-table td, .distinction-box p { color:#4a4a4a !important; }
+  .sermon-title { color:#1a1a1a !important; font-weight:700 !important; }
+  .bar-track { background:rgba(0,0,0,0.06) !important; }
+  .stat-box, .illus-card, .distinction-box, .quote-card, .claim-card { background:#fff; border-color:#e6e1d3 !important; }
+  .site-header { background:rgba(251,248,241,0.92); backdrop-filter:blur(8px); border-bottom:1px solid #e6e1d3; position:sticky; top:0; z-index:100; }
+  .site-header-inner { max-width:1180px; margin:0 auto; padding:16px 28px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+  .wordmark { font-weight:800; font-size:21px; letter-spacing:-0.02em; color:#1a1a1a; text-decoration:none; }
+  .wordmark .dot { color:#c4452f; }
+  nav { position:static !important; background:none !important; padding:0 !important; border:0 !important; }
+  .site-nav { font-size:15px; font-weight:500; display:flex; gap:22px; align-items:center; }
+  .site-nav a { color:#4a4a4a; text-decoration:none; letter-spacing:0; text-transform:none; font-size:15px; }
+  .site-nav a:hover { color:#1a1a1a; }
+  .site-footer { border-top:1px solid #e6e1d3; padding:40px 28px; background:#fbf8f1; }
+  .foot-inner { max-width:1080px; margin:0 auto; display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; align-items:center; }
+  .foot-brand { font-weight:800; font-size:18px; color:#1a1a1a; }
+  .foot-brand .dot { color:#c4452f; }
+  .foot-imprint { font-size:13px; color:#828282; margin-top:2px; }
+  .foot-nav { display:flex; gap:20px; font-size:14px; }
+  .foot-nav a { color:#4a4a4a; text-decoration:none; }
+  @media (max-width: 720px) { .site-nav { display:none; } }
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="wordmark" href="/">Sermon Steward<span class="dot">.</span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/hall/">Hall</a>
+      <a href="/product.html">Product</a>
+      <a href="/samples.html">Samples</a>
+      <a href="/how-we-read-a-sermon/">How we read</a>
+    </nav>
+  </div>
+</header>
+
+<div class="section-nav" id="sectionNav">
+  <a href="#overview" class="active">Archive Overview</a>
+  <a href="#fingerprint">Theological Fingerprint</a>
+  <a href="#rhetorical">Rhetorical Profile</a>
+  <a href="#illustrations">Illustration Arsenal</a>
+  <a href="#lineage">Intellectual Lineage</a>
+  <a href="#btmoves">BT Moves</a>
+  <a href="#claims">Key Claims</a>
+  <a href="#corpus">Corpus Table</a>
+</div>
+
+<div class="hero">
+  <div class="hero-eyebrow">Archive analysis · <a href="/preacher-watson.html">Back to profile</a></div>
+  <h1>Thomas <em>Watson</em></h1>
+  <p class="hero-role">Puritan Divine · Crosby Square, London · c.1620–1686</p>
+  <div class="hero-tags">
+    <span class="tag">Puritan</span>
+    <span class="tag">17th Century</span>
+    <span class="tag">Doctrinal</span>
+    <span class="tag">Applicatory</span>
+    <span class="tag">Aphoristic</span>
+    <span class="tag">Westminster</span>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="hero-stat-n">20</div>
+      <div class="hero-stat-l">Sermons Indexed</div>
+    </div>
+    <div>
+      <div class="hero-stat-n" style="font-size:1.2rem;">Sanctification</div>
+      <div class="hero-stat-l">Top Doctrinal Locus</div>
+    </div>
+    <div>
+      <div class="hero-stat-n">3.1% units</div>
+      <div class="hero-stat-l">Illustration Rate</div>
+    </div>
+    <div>
+      <div class="hero-stat-n">68</div>
+      <div class="hero-stat-l">BT Move Instances</div>
+    </div>
+    <div>
+      <div class="hero-stat-n" style="font-size:1.6rem;">Watson</div>
+      <div class="hero-stat-l">Most Cited (31×)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION 1: ARCHIVE OVERVIEW ══ -->
+<section id="overview">
+  <div class="eyebrow">01 — Archive Overview</div>
+  <h2>20 sermons.<br><em>743 decomposed units.</em></h2>
+
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="stat-box-n">20</div>
+      <div class="stat-box-l">Total Sermons</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-n">743</div>
+      <div class="stat-box-l">Rhetorical Units</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-n">23</div>
+      <div class="stat-box-l">Illustrations</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-n">50%</div>
+      <div class="stat-box-l">Expository Rate</div>
+    </div>
+  </div>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <h3>Sermon Type Breakdown</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Expository</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">10</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Topical</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:70%"></div></div>
+          <span class="bar-n">7</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Unknown</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:20%"></div></div>
+          <span class="bar-n">2</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Textual</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:10%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+      </div>
+      <div class="distinction-box" style="margin-top:32px;">
+        <div class="distinction-label">Corpus Note</div>
+        <p>Thomas Watson was a Puritan minister ejected in 1662 under the Act of Uniformity. His chief works — A Body of Divinity, All Things for Good, The Beatitudes, The Lord&#39;s Prayer, The Ten Commandments — are Puritan divinity at its most accessible. Dense doctrinal application with vivid metaphors and memorable aphorisms. His Body of Divinity is a catechetical exposition of the Westminster Shorter Catechism.</p>
+      </div>
+    </div>
+    <div class="analysis-col">
+      <h3>Series Distribution</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Standalone</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">8</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">The Beatitudes</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:63%"></div></div>
+          <span class="bar-n">5</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Body of Divinity</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:50%"></div></div>
+          <span class="bar-n">4</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">The Lord&#39;s Prayer</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:25%"></div></div>
+          <span class="bar-n">2</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">The Ten Commandments</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:13%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+      </div>
+      <div class="distinction-box" style="margin-top:32px;"><div class="distinction-label">Corpus Metrics</div><p>Avg units/sermon: 37.2 · Avg cross-refs: 48.5 · Avg quotations: 6.2</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 2: THEOLOGICAL FINGERPRINT ══ -->
+<section id="fingerprint">
+  <div class="eyebrow">02 — Theological Fingerprint</div>
+  <h2>What Watson's corpus<br><em>obsesses over.</em></h2>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <h3>Doctrinal Loci — Primary</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Sanctification</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">213</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Theology Proper</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:73%"></div></div>
+          <span class="bar-n">155</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Soteriology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:43%"></div></div>
+          <span class="bar-n">91</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Hamartiology</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:40%"></div></div>
+          <span class="bar-n">85</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Eschatology</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:33%"></div></div>
+          <span class="bar-n">71</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Ethics / Moral Theology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:29%"></div></div>
+          <span class="bar-n">61</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Providence / Sovereignty</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:27%"></div></div>
+          <span class="bar-n">58</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Christology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:26%"></div></div>
+          <span class="bar-n">56</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Ecclesiology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:21%"></div></div>
+          <span class="bar-n">44</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Pastoral Theology</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:18%"></div></div>
+          <span class="bar-n">39</span>
+        </div>
+      </div>
+    </div>
+    <div class="analysis-col">
+      <h3>Doctrinal Loci — Secondary</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Doxology / Worship</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">37</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Anthropology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:97%"></div></div>
+          <span class="bar-n">36</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Bibliology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:68%"></div></div>
+          <span class="bar-n">25</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Pneumatology</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:57%"></div></div>
+          <span class="bar-n">21</span>
+        </div>
+      </div>
+      <div class="distinction-box" style="margin-top:32px;">
+        <div class="distinction-label">The Watson Signature</div>
+        <p>Watson&#39;s signature is the memorable doctrinal aphorism — concentrated truth in unforgettable form. His sentences have the weight of proverbs. He employs rapid-fire uses/abuses structures, then drives application home with images drawn from nature, commerce, and domestic life. The 17th-century Puritan tradition at its most quotable and most practically pastoral.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 3: RHETORICAL PROFILE ══ -->
+<section id="rhetorical">
+  <div class="eyebrow">03 — Rhetorical Profile</div>
+  <h2>How Watson structures<br><em>the sermon itself.</em></h2>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <h3>Unit Function Distribution</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Exposition</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">283</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Theological Claim</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:68%"></div></div>
+          <span class="bar-n">192</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Application</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:40%"></div></div>
+          <span class="bar-n">112</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Transition</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:35%"></div></div>
+          <span class="bar-n">98</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Illustration</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:8%"></div></div>
+          <span class="bar-n">23</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Introduction</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:8%"></div></div>
+          <span class="bar-n">22</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Conclusion</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:3%"></div></div>
+          <span class="bar-n">9</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Pastoral Aside</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:1%"></div></div>
+          <span class="bar-n">4</span>
+        </div>
+      </div>
+    </div>
+    <div class="analysis-col">
+      <h3>Tone Distribution</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Pastoral</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">18</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Didactic</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">18</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Polemic</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:61%"></div></div>
+          <span class="bar-n">11</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Prophetic</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:22%"></div></div>
+          <span class="bar-n">4</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Celebratory</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:17%"></div></div>
+          <span class="bar-n">3</span>
+        </div>
+      </div>
+      <div style="margin-top:40px;">
+        <h3 style="font-family:var(--mono); font-size:0.85rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; font-weight:400; margin-bottom:20px;">Rhetorical Register</h3>
+        <div class="register-pills">
+          <span class="register-pill logos">Logos</span>
+          <span class="register-pill pathos">Pathos</span>
+          <span class="register-pill ethos">Ethos</span>
+          <span class="register-pill narrative">Narrative</span>
+          <span class="register-pill doxological">Doxological</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 4: ILLUSTRATION ARSENAL ══ -->
+<section id="illustrations">
+  <div class="eyebrow">04 — Illustration Arsenal</div>
+  <h2>23 illustrations from<br><em>20 sermons.</em></h2>
+
+  <div style="margin-bottom:48px;">
+    <div class="bar-chart" style="max-width:520px;">
+        <div class="bar-row">
+          <span class="bar-label">Historical Example</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">12</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Analogy</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:67%"></div></div>
+          <span class="bar-n">8</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Hypothetical</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:17%"></div></div>
+          <span class="bar-n">2</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Personal Story</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:8%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+    </div>
+  </div>
+
+  <div class="illus-controls">
+    <button class="filter-btn active" onclick="filterIllus('all', this)">All · 12 shown</button>
+    <button class="filter-btn" onclick="filterIllus('personal_story', this)">Personal Story</button>
+    <button class="filter-btn" onclick="filterIllus('historical_example', this)">Historical Example</button>
+    <button class="filter-btn" onclick="filterIllus('hypothetical', this)">Hypothetical</button>
+  </div>
+
+  <div class="illus-grid" id="illusGrid">
+    
+    <div class="illus-card" data-type="personal_story">
+      <div class="illus-type">Personal Story</div>
+      <div class="illus-text">I once heard of a woman who lived in malice, and being requested by some of her neighbors when she lay on her deathbed, to forgive, she answered, &#39;I cannot forgive though I go to hell&#39;.</div>
+      <div class="illus-source">Christian Meekness</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">Love will carry men out above their own strength. Tertullian observes how much the heathen suffered, for love to their country. If the spring head of nature rises so high, surely grace will rise higher. If love to their country will make men suffer, much more should love to Christ.</div>
+      <div class="illus-source">A Divine Cordial</div>
+    </div>
+    <div class="illus-card" data-type="hypothetical">
+      <div class="illus-type">Hypothetical</div>
+      <div class="illus-text">This is the language of a gracious spirit: &quot;My God sees what a hard heart I have, therefore He drives in one wedge of affliction after another, to break my heart. He knows how full I am of the cancer of covetousness, or the swelling of pride, or the fever of lust—therefore He gives me bitter remedies, to save my life. This severe dispensation is either to mortify some corruption, or to exercise some grace. How good is God, who will not let me alone in my sins—but smites my body to save my soul!&quot; Thus he who loves God, receives all of God&#39;s dealings in the best sense. Love puts a good gloss upon all God&#39;s actions.</div>
+      <div class="illus-source">A Divine Cordial</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">When one reviled Pericles and followed him home to his gate at night, railing upon him, he answered not a word—but commanded one of his servants to light a torch, and bring the railer home to his own house. Frederick, Duke of Saxony, when he was angry, would shut himself up in his closet and let none come near him, until he had mastered his passion. Plutarch reports of the Pythagoreans, if they argued in the day, they would embrace and be friends before sunset. Cicero, in one of his Orations, reports of Pompey the Great, that he was a man of a meek disposition. He admitted all to come to him so freely, and heard the complaints of those who were wronged so mildly, that he excelled all the princes before him. He was of that sweet temper that it was hard to say whether his enemies more feared his valor, or his subjects loved his meekness. Julius Caesar not only forgave Brutus and Cassius, his enemies—but advanced them. He thought himself most honored by acts of mercy and meekness. Did the spring-head of nature rise so high, and shall not grace rise higher? Shall we debase faith below reason? Let us write according to these fair copies.</div>
+      <div class="illus-source">Christian Meekness</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">It is reported of Philip, king of Macedon, that when it was told him Nicanor openly railed against his Majesty, the king instead of putting him to death (as his council advised), sent Nicanor a rich present, which so overcame the man&#39;s heart, that he went up and down to recant what he had said against the king, and highly extolled the king&#39;s mercy. Roughness hardens men&#39;s hearts; meekness causes them to relent (2 Kings 6:22). When the king of Israel feasted the captives he had taken in war, they were more conquered by his meekness—than by his sword. &#39;The bands of Syria came no more into the land of Israel&#39; (2 Kings 6:22)</div>
+      <div class="illus-source">Christian Meekness</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">This is like a sick man, who says, &#39;If I had but such a food, I could eat it.&#39; But when he has it, his stomach is nauseated, and he can hardly endure to smell it. God has put not only an emptiness—but bitterness into the creature, and it is good for us that there is no perfection here, that we may raise our thoughts higher to more noble and generous delights. Could we distill and draw out the quintessence of the creature, we would say as once the emperor Severus said, who grew from a low estate to be head of the greatest empire in the world: &#39;I have run through all conditions—yet could never find full contentment.&#39;</div>
+      <div class="illus-source">The Beatitudes</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">I have read of two men who lived in malice, who being asked how they could say the Lord&#39;s prayer, one answered, he thanked God there were many good prayers besides. The other answered, when he said the Lord&#39;s prayer he left out those words, &#39;as we forgive those who trespass against us&#39;.</div>
+      <div class="illus-source">Christian Meekness</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">As in the case of Abraham&#39;s offering up Isaac; Isaac being the son of his old age, no question he loved him entirely, and doted on him; but when God said, &quot;Abraham, offer up your son&quot; (Gen. 22:2), though it were a thing which might seem, not only to oppose his reason—but his faith, for the Messiah was to come of Isaac, and if he be cut off, where shall the world have a Mediator! Yet such was the strength of Abraham&#39;s faith and ardency of his love to God—that he will take the sacrificing knife, and let out Isaac&#39;s blood.</div>
+      <div class="illus-source">A Divine Cordial</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">As Moses&#39; hand was first leprous before it wrought salvation (Exodus 4:6), so God may let his people be belepered with the cursings and revilings of men, before he shower down some blessings upon them. &#39;It may be the Lord will requite me good for his cursing this day.&#39;</div>
+      <div class="illus-source">Christian Meekness</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">When the Protestants in Rochelle were besieged by the French king, God by his providence sent a great number of small fish to feed them, such as were never seen before in that haven. So the raven, that unnatural creature (that will hardly feed its own young), providentially brought sustenance to the prophet Elijah. The Virgin Mary, through bearing and bringing forth the Messiah, helped to make the world rich—yet she herself was very poor; and now, being warned of the angel to go into Egypt, she had scarce enough to bear her expenses there; but see how God provides for her beforehand. By his providence he sends wise men from the east, who bring costly gifts, gold, myrrh, and frankincense, and present them to Christ; and now she has enough to defray her expenses into Egypt. God&#39;s children sometimes scarce know how they are fed, except that providence feeds them. &quot;Truly you shall be fed.&quot; Psalm 37:3. If God will give his people a kingdom when they die, he will not deny them daily bread while they live.</div>
+      <div class="illus-source">Body of Divinity: The Unity of God, The Trinity, and Divine Providence</div>
+    </div>
+    <div class="illus-card" data-type="hypothetical">
+      <div class="illus-type">Hypothetical</div>
+      <div class="illus-text">Oh eternity! If all the body of the earth and sea were turned to sand, and all the air up to the starry heaven were nothing but sand, and a little bird should come every thousand years, and fetch away in her bill but the tenth part of a grain of all that heap of sand; what numberless years would be spent before that vast heap of sand would be fetched away! Yet, if at the end of all that time, the sinner might come out of hell, there would be some hope. But that word &quot;Forever&quot; breaks the heart. &quot;The smoke of their torment ascends up forever and ever.&quot; What a terror is this to the wicked--enough to put them into a cold sweat, to think, as long as God is eternal, he lives forever to be avenged upon them!</div>
+      <div class="illus-source">The Eternity, Immutability, Wisdom, and Omnipotence of God</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">King Solomon had more worldly things, than any man. He was the most magnificent prince who ever held the scepter. For his parentage: he sprang from the royal line, not only that line from which many kings came—but of which Christ himself came. Jesus Christ descended from Solomon&#39;s line and race, so that for heraldry and nobility none could show a fairer coat of arms. For the situation of his palace: it was in Jerusalem, the princess and paragon of the earth. Jerusalem, for its renown, was called &#39;the city of God&#39;. It was the most famous metropolis in the world. For wealth: his crown was hung full of jewels. He had treasures of gold and of pearl and &#39;made silver to be as common as stones&#39; (1 Kings 10:27). For worldly joy: he had the flower and quintessence of all delights—sumptuous fare, stately edifices, vineyards, farms, all sorts of music to enchant and ravish the senses with joy. If there were any rarity—it was present in king Solomon&#39;s court. Thus did he bathe himself in the perfumed waters of pleasure. For wisdom: he was the oracle of his time. When the queen of Sheba came to pose him with hard questions, he gave a solution to all her queries (1 Kings 10:3). He had a key of knowledge to unlock nature&#39;s dark cabinet, so that if wisdom had been lost, it might have been found here, and the whole world might have lighted their understanding at Solomon&#39;s lamp! He was an earthly angel, so that a carnal eye surveying his glory would have been ready to imagine that Solomon had entered into that paradise out of which Adam was once driven, or that he had found another as good. Never did the world cast a more smiling aspect upon any man.</div>
+      <div class="illus-source">The Beatitudes</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 5: INTELLECTUAL LINEAGE ══ -->
+<section id="lineage">
+  <div class="eyebrow">05 — Intellectual Lineage</div>
+  <h2>The tradition Watson<br><em>draws from — and argues with.</em></h2>
+
+  <div class="author-counts">
+    <span class="author-chip">Watson <span>31×</span></span>
+    <span class="author-chip">Augustine <span>13×</span></span>
+    <span class="author-chip">Chrysostom <span>8×</span></span>
+    <span class="author-chip">Scripture <span>7×</span></span>
+    <span class="author-chip">Ambrose <span>4×</span></span>
+    <span class="author-chip">Bernard <span>4×</span></span>
+    <span class="author-chip">Watson (self-reference) <span>3×</span></span>
+    <span class="author-chip">Ignatius <span>3×</span></span>
+    <span class="author-chip">Dr Jewel <span>2×</span></span>
+    <span class="author-chip">Jerome <span>2×</span></span>
+    <span class="author-chip">Solomon <span>2×</span></span>
+    <span class="author-chip">Seneca <span>2×</span></span>
+    <span class="author-chip">Basil <span>2×</span></span>
+    <span class="author-chip">Aquinas <span>2×</span></span>
+    <span class="author-chip">Bucer <span>2×</span></span>
+    <span class="author-chip">unspecified contemporary observer <span>1×</span></span>
+    <span class="author-chip">A virgin martyr (reported by Basil) <span>1×</span></span>
+    <span class="author-chip">Prosper <span>1×</span></span>
+  </div>
+
+  <div class="quotes-grid">
+    
+    <div class="quote-card">
+      <div class="quote-text">the alms-preacher, or the preacher for mercy</div>
+      <div class="quote-attr">Many (regarding Chrysostom)</div>
+      <div class="quote-source">A Discourse of Mercifulness · Matthew 5:7</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">meek man (or rather earthly angel)</div>
+      <div class="quote-attr">Watson</div>
+      <div class="quote-source">Christian Meekness · Matthew 5:5</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">I have spent and exhausted myself in the labors of my holy calling.</div>
+      <div class="quote-attr">Dr Jewel</div>
+      <div class="quote-source">The Lord&#39;s Prayer: The First Petition · Matthew 6:9</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">how could it be said, &#39;Blessed are the meek&#39;?</div>
+      <div class="quote-attr">Chrysostom</div>
+      <div class="quote-source">Christian Meekness · Matthew 5:5</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">The footprints to hell show no return.</div>
+      <div class="quote-attr">Unknown (proverbial)</div>
+      <div class="quote-source">The Beatitudes - Appendix: His Commandments Are Not Grievous · 1 John 5:3</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">jarring string which brought all out of tune</div>
+      <div class="quote-attr">Watson</div>
+      <div class="quote-source">Christian Meekness · Matthew 5:5</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">Never talk of your love to Christ, when you prefer the world before the Pearl of price!</div>
+      <div class="quote-attr">Ignatius</div>
+      <div class="quote-source">A Divine Cordial · Romans 8:28</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">Because you do not say my prayer, I will not hear yours</div>
+      <div class="quote-attr">Augustine (as God&#39;s reply)</div>
+      <div class="quote-source">Christian Meekness · Matthew 5:5</div>
+    </div>
+  </div>
+
+  <div style="margin-top:48px;">
+    <div class="eyebrow" style="margin-bottom:16px;">Top Scripture Cross-References</div>
+    <div class="author-counts">
+      <span class="author-chip">Matthew 11:29 <span>4×</span></span>
+    <span class="author-chip">James 1:21 <span>4×</span></span>
+    <span class="author-chip">Revelation 22:17 <span>3×</span></span>
+    <span class="author-chip">John 5:23 <span>3×</span></span>
+    <span class="author-chip">Revelation 4:10 <span>3×</span></span>
+    <span class="author-chip">Romans 1:30 <span>3×</span></span>
+    <span class="author-chip">Deuteronomy 32:4 <span>3×</span></span>
+    <span class="author-chip">1 Peter 5:4 <span>3×</span></span>
+    <span class="author-chip">Ephesians 4:24 <span>3×</span></span>
+    <span class="author-chip">Psalm 48:14 <span>3×</span></span>
+    <span class="author-chip">Psalm 81:11 <span>3×</span></span>
+    <span class="author-chip">2 Corinthians 5:20 <span>2×</span></span>
+    <span class="author-chip">2 Samuel 16:11 <span>2×</span></span>
+    <span class="author-chip">2 Corinthians 7:11 <span>2×</span></span>
+    <span class="author-chip">1 Samuel 3:18 <span>2×</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 6: BT MOVES ══ -->
+<section id="btmoves">
+  <div class="eyebrow">06 — Biblical-Theological Moves</div>
+  <h2>How Watson connects every text<br><em>to the whole-Bible narrative.</em></h2>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <h3>BT Move Type Distribution</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Typology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">29</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Contrast</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:66%"></div></div>
+          <span class="bar-n">19</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Fulfillment</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:34%"></div></div>
+          <span class="bar-n">10</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Progressive Revelation</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:17%"></div></div>
+          <span class="bar-n">5</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Thematic Thread</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:10%"></div></div>
+          <span class="bar-n">3</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Narrative Arc</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:7%"></div></div>
+          <span class="bar-n">2</span>
+        </div>
+      </div>
+    </div>
+    <div class="analysis-col">
+      <h3>What This Reveals</h3>
+      <p style="margin-bottom:20px;">The biblical-theological move profile reveals how Thomas Watson connects individual texts to the larger redemptive-historical narrative. The leading move type indicates a characteristic approach to canon — whether primarily fulfillment-oriented, typological, or thematic-thread driven.</p>
+      <p>Total BT move instances: 68. The dominant move is <em>Typology</em> (29 instances), followed by Contrast (19).</p>
+      <div class="distinction-box" style="margin-top:24px;">
+        <div class="distinction-label">BT Profile</div>
+        <p>Avg BT moves per sermon: 3.4. These moves represent the mechanism by which Watson's exposition connects local textual meaning to the whole-Bible argument.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 7: KEY CLAIMS ══ -->
+<section id="claims">
+  <div class="eyebrow">07 — Key Theological Claims</div>
+  <h2>15 claims from<br><em>the theological archive.</em></h2>
+
+  <div class="claims-list">
+    
+    <div class="claim-row">
+      <div class="claim-text">The First Commandment is the foundation of all true religion, requiring that we sanctify God in our hearts and give him precedence above all created beings.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">The Ten Commandments: The First Commandment</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Sin is maximally contrary to God&#39;s holiness—it is the quintessence of evil with no mixture of good, and it strikes directly at God&#39;s holiness.</div>
+      <div class="claim-meta">
+        <span class="claim-fn application">Application</span>
+        <div class="claim-sermon">Body of Divinity</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">There is but one God because only a single omnipotent power could produce the order and harmony we observe in creation.</div>
+      <div class="claim-meta">
+        <span class="claim-fn theological_claim">Theological Claim</span>
+        <div class="claim-sermon">Body of Divinity: The Unity of God, The Trinity, and Divine Providence</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">We cannot be saved by Christ&#39;s death if we do not imitate His life.</div>
+      <div class="claim-meta">
+        <span class="claim-fn theological_claim">Theological Claim</span>
+        <div class="claim-sermon">Christian Meekness</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">The prevalence of seductive heresy from Satan&#39;s emissaries obligates ministers to constant preaching as antidote to doctrinal poison.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">The Beatitudes</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Christ&#39;s response to the crowds by immediately preaching reveals that soul-work through preaching was his primary business and establishes a pattern for ministers.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">The Beatitudes</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Love to God must be active, producing visible labor and not merely verbal profession.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">A Divine Cordial</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Forgiveness is a herculean work that runs directly counter to corrupt human nature.</div>
+      <div class="claim-meta">
+        <span class="claim-fn theological_claim">Theological Claim</span>
+        <div class="claim-sermon">Christian Meekness</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">The unity of the Trinity consists in the mutual indwelling of the three persons in one another.</div>
+      <div class="claim-meta">
+        <span class="claim-fn theological_claim">Theological Claim</span>
+        <div class="claim-sermon">Body of Divinity: The Unity of God, The Trinity, and Divine Providence</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">God saves His church by making enemies destroy themselves—the very forces arrayed against the church become instruments of its deliverance.</div>
+      <div class="claim-meta">
+        <span class="claim-fn application">Application</span>
+        <div class="claim-sermon">Body of Divinity: The Unity of God, The Trinity, and Divine Providence</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Whatever we love more than God becomes our god—some make pleasure their god.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Body of Divinity: The Unity of God, The Trinity, and Divine Providence</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">We hallow God&#39;s name by hallowing His Sabbath, which requires rest from all secular work and devotion to God throughout the entire day.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">The Lord&#39;s Prayer: The First Petition</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Gospel mourning must be speedy—procrastination is deadly, for we do not know if tomorrow will be granted.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Gospel Mourning</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">The meek have the earth as sojourning-house and heaven as mansion-house; they are lords of earth and heirs of salvation.</div>
+      <div class="claim-meta">
+        <span class="claim-fn theological_claim">Theological Claim</span>
+        <div class="claim-sermon">Christian Meekness</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Godliness can be precisely identified and distinguished through characteristic marks drawn directly from Scripture.</div>
+      <div class="claim-meta">
+        <span class="claim-fn introduction">Introduction</span>
+        <div class="claim-sermon">The Godly Man&#39;s Picture, Drawn with a Scripture Pencil, or, Some Characteristic Marks of a Man who is Going to Heaven</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 8: CORPUS TABLE ══ -->
+<section id="corpus">
+  <div class="eyebrow">08 — Corpus Table</div>
+  <h2>20 sermons.<br><em>Fully decomposed.</em></h2>
+
+  <table class="sermon-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title · Primary Text</th>
+        <th>Series</th>
+        <th>Type</th>
+        <th>Tone</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr class="series-group-header"><td colspan="5">Series — Standalone Sermons</td></tr>
+      <tr>
+        <td>01</td>
+        <td><div class="sermon-title">A Divine Cordial</div><div class="sermon-text">Romans 8:28</div></td>
+        <td>—</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Celebratory</td>
+      </tr>
+      <tr>
+        <td>02</td>
+        <td><div class="sermon-title">A Divine Cordial</div><div class="sermon-text">Romans 8:28</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td><div class="sermon-title">Index of /Watson/</div><div class="sermon-text"></div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);"></td>
+      </tr>
+      <tr>
+        <td>04</td>
+        <td><div class="sermon-title">Index of /Watson/</div><div class="sermon-text"></div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);"></td>
+      </tr>
+      <tr>
+        <td>05</td>
+        <td><div class="sermon-title">The Beatitudes</div><div class="sermon-text">Matthew 5:1-12</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Prophetic</td>
+      </tr>
+      <tr>
+        <td>06</td>
+        <td><div class="sermon-title">The Beatitudes</div><div class="sermon-text">Matthew 5:1-12</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Celebratory</td>
+      </tr>
+      <tr>
+        <td>07</td>
+        <td><div class="sermon-title">The Beatitudes</div><div class="sermon-text">Matthew 5:3-12</div></td>
+        <td>—</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>08</td>
+        <td><div class="sermon-title">The Godly Man&#39;s Picture, Drawn with a Scripture Pencil, or, Some Characteristic Marks of a Man who is Going to Heaven</div><div class="sermon-text"></div></td>
+        <td>—</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — The Beatitudes</td></tr>
+      <tr>
+        <td>09</td>
+        <td><div class="sermon-title">A Discourse of Mercifulness</div><div class="sermon-text">Matthew 5:7</div></td>
+        <td>The Beatitudes</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Prophetic · Polemic</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><div class="sermon-title">Beatitudes: Poverty of Spirit</div><div class="sermon-text">Matthew 5:3</div></td>
+        <td>The Beatitudes</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td><div class="sermon-title">Christian Meekness</div><div class="sermon-text">Matthew 5:5</div></td>
+        <td>The Beatitudes</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Prophetic</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td><div class="sermon-title">Gospel Mourning</div><div class="sermon-text">Matthew 5:4</div></td>
+        <td>The Beatitudes</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Celebratory</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td><div class="sermon-title">The Beatitudes - Appendix: His Commandments Are Not Grievous</div><div class="sermon-text">1 John 5:3</div></td>
+        <td>The Beatitudes</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Body of Divinity</td></tr>
+      <tr>
+        <td>14</td>
+        <td><div class="sermon-title">Body of Divinity</div><div class="sermon-text"></div></td>
+        <td>Body of Divinity</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td><div class="sermon-title">Body of Divinity: God and His Creation - The Being of God</div><div class="sermon-text"></div></td>
+        <td>Body of Divinity</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Polemic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td><div class="sermon-title">Body of Divinity: The Unity of God, The Trinity, and Divine Providence</div><div class="sermon-text"></div></td>
+        <td>Body of Divinity</td>
+        <td><span class="sermon-type textual">Textual</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td><div class="sermon-title">The Eternity, Immutability, Wisdom, and Omnipotence of God</div><div class="sermon-text"></div></td>
+        <td>Body of Divinity</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — The Lord&#39;s Prayer</td></tr>
+      <tr>
+        <td>18</td>
+        <td><div class="sermon-title">The Lord&#39;s Prayer</div><div class="sermon-text">Matthew 6:9-13</div></td>
+        <td>The Lord&#39;s Prayer</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td><div class="sermon-title">The Lord&#39;s Prayer: The First Petition</div><div class="sermon-text">Matthew 6:9</div></td>
+        <td>The Lord&#39;s Prayer</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Prophetic · Polemic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — The Ten Commandments</td></tr>
+      <tr>
+        <td>20</td>
+        <td><div class="sermon-title">The Ten Commandments: The First Commandment</div><div class="sermon-text">Exodus 20:3</div></td>
+        <td>The Ten Commandments</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<footer class="site-footer">
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">Sermon Steward<span class="dot">.</span></div>
+      <div class="foot-imprint">Guild Hall — a gallery of masters, on the Sermon Steward site.</div>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/hall/">Hall</a>
+      <a href="/hall/glossary.html">Glossary</a>
+      <a href="/samples.html">Samples</a>
+      <a href="/product.html">Product</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.section-nav a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.section-nav a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+
+  function filterIllus(type, btn) {
+    document.querySelectorAll('.illus-controls .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cards = document.querySelectorAll('.illus-card');
+    cards.forEach(card => {
+      if (type === 'all' || card.dataset.type === type) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>
+</body>
+</html>

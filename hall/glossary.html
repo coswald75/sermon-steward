@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decomposition Glossary — Sermon Steward</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a; --parchment: #fbf8f1; --cream: #f5f1e6;
+    --warm-gray: #828282; --gold: #c4452f; --gold-dim: #9a3624;
+    --gold-bright: #c4452f; --burgundy: #9a3624; --forest: #3a7256;
+    --slate: #4a4a4a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--parchment); color: var(--ink); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
+  .nav { position: sticky; top: 0; z-index: 100; background: rgba(26,26,26,0.94); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(196,69,47,0.15); padding: 0 30px; }
+  .nav-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-brand-icon { width: 28px; height: 28px; border: 1px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .nav-brand-icon svg { width: 12px; height: 12px; }
+  .nav-brand-text { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); }
+  .nav-brand-text span { color: var(--gold); }
+  .nav-back { font-size: 0.7rem; font-weight: 500; color: var(--slate); text-decoration: none; letter-spacing: 0.04em; }
+  .nav-back:hover { color: var(--gold); }
+
+  /* HERO */
+  .page-hero { background: var(--ink); color:#1a1a1a; padding: 80px 30px 72px; text-align: center; }
+  .page-hero-inner { max-width: 720px; margin: 0 auto; }
+  .page-eyebrow { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .page-title { font-family: 'Inter', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 24px; }
+  .page-title em { font-style: italic; color: var(--gold-bright); }
+  .page-intro { font-size: 0.95rem; color: rgba(26,26,26,0.55); line-height: 1.85; max-width: 560px; margin: 0 auto; }
+
+  /* CONTENT */
+  .content { max-width: 900px; margin: 0 auto; padding: 80px 30px 120px; }
+
+  /* TOC */
+  .toc { background: #fff; border: 1px solid rgba(196,69,47,0.15); border-radius: 12px; padding: 32px 36px; margin-bottom: 64px; }
+  .toc-title { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .toc-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 40px; }
+  .toc-list a { font-size: 0.88rem; color: var(--slate); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+  .toc-list a:hover { color: var(--burgundy); }
+  .toc-list a::before { content: '→'; color: var(--gold); font-size: 0.75rem; }
+
+  /* SECTIONS */
+  .gloss-section { margin-bottom: 72px; }
+  .gloss-section-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .gloss-section-title { font-family: 'Inter', serif; font-size: 1.7rem; font-weight: 500; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(196,69,47,0.2); }
+  .gloss-section-intro { font-size: 0.9rem; color: var(--slate); line-height: 1.8; margin-bottom: 28px; max-width: 680px; }
+
+  /* TABLE */
+  .gloss-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; font-size: 0.88rem; }
+  .gloss-table th { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-gray); text-align: left; padding: 10px 16px; background: var(--cream); border-bottom: 1px solid rgba(196,69,47,0.15); }
+  .gloss-table td { padding: 14px 16px; border-bottom: 1px solid rgba(196,69,47,0.08); vertical-align: top; line-height: 1.65; }
+  .gloss-table tr:last-child td { border-bottom: none; }
+  .gloss-table tr:hover td { background: rgba(196,69,47,0.04); }
+  .term { font-family: 'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace', monospace; font-size: 0.8rem; color: var(--burgundy); background: rgba(154,54,36,0.06); padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
+  .term-plain { font-weight: 600; color: var(--ink); }
+
+  /* TIER CARDS */
+  .tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 28px; }
+  .tier-card { background: #fff; border-radius: 10px; padding: 24px; border: 1px solid rgba(196,69,47,0.12); }
+  .tier-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .tier-name { font-family: 'Inter', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+  .tier-desc { font-size: 0.82rem; color: var(--slate); line-height: 1.7; }
+
+  /* FOOTER */
+  .page-footer { background: var(--ink); color:#1a1a1a; padding: 48px 30px; text-align: center; }
+  .page-footer a { color: var(--gold); text-decoration: none; font-size: 0.85rem; }
+  .page-footer p { font-size: 0.75rem; color: rgba(26,26,26,0.3); margin-top: 12px; }
+
+  @media (max-width: 700px) {
+    .toc-list { grid-template-columns: 1fr; }
+    .tier-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Sermon Steward skin — white + red, shared with product.html */
+  :root {
+    --ink:#1a1a1a; --parchment:#fbf8f1; --cream:#f5f1e6; --warm-gray:#828282; --slate:#4a4a4a;
+    --gold:#c4452f; --gold-dim:#9a3624; --gold-bright:#c4452f;
+    --burgundy:#9a3624; --burgundy-light:#c4452f; --forest:#3a7256;
+    --bg:#fbf8f1; --rule:#e6e1d3; --accent:#c4452f; --accent-deep:#9a3624;
+  }
+  body { font-family: Inter, system-ui, sans-serif !important; background:#fbf8f1 !important; color:#1a1a1a !important; }
+  .hero, .page-hero { background:#fff !important; background-image:none !important; color:#1a1a1a !important; border-bottom:1px solid #e6e1d3; }
+  .hero::before, .hero::after, .page-hero::before, .page-hero::after { display:none !important; }
+  .hero-name, .section-title, .page-title, .hero-stat-value, .quote-hero-count, .quote-hero-author,
+  .bio-name, .insight-card-label, [class$="-headline"], [class$="-stat-value"], [class$="-title"] {
+    font-family: Inter, system-ui, sans-serif !important;
+  }
+  .hero-name, .section-title, .page-title { font-weight:800 !important; letter-spacing:-0.03em; color:#1a1a1a !important; }
+  .hero-name em, .page-title em, .section-label, .hero-eyebrow span, .page-eyebrow { color:#c4452f !important; font-style:normal !important; }
+  .hero-stat { background:#f5f1e6 !important; }
+  .hero-stat-value, [class$="-stat-value"], .quote-hero-count { color:#c4452f !important; }
+  .hero-summary, .hero-role, .hero-role strong, .section-intro, [class$="-body"], .insight-card-text, .quote-hero-text {
+    color:#4a4a4a !important;
+  }
+  .hero-tag, .hero-stat-label { color:#4a4a4a !important; border-color:#e6e1d3 !important; }
+  .hero-tag.active { background:#f0d4cc !important; color:#9a3624 !important; border-color:#f0d4cc !important; }
+  [class*="callout"], .quote-hero-card, .bio-card, .insight-card, .chart-card, .explainer-card {
+    background:#fff !important; background-image:none !important; color:#1a1a1a !important;
+    border:1px solid #e6e1d3 !important;
+  }
+  .site-header { background:rgba(251,248,241,0.92); backdrop-filter:blur(8px); border-bottom:1px solid #e6e1d3; position:sticky; top:0; z-index:50; }
+  .site-header-inner { max-width:1180px; margin:0 auto; padding:16px 28px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+  .wordmark { font-family:Inter, system-ui, sans-serif; font-weight:800; font-size:21px; letter-spacing:-0.02em; color:#1a1a1a; text-decoration:none; }
+  .wordmark .dot { color:#c4452f; }
+  .site-nav { font-family:Inter, system-ui, sans-serif; font-size:15px; font-weight:500; display:flex; gap:22px; align-items:center; flex-wrap:wrap; }
+  .site-nav a { color:#4a4a4a; text-decoration:none; letter-spacing:0; text-transform:none; font-size:15px; font-weight:500; padding:0; }
+  .site-nav a:hover { color:#1a1a1a; background:transparent; }
+  .archive-link { font-family:Inter, system-ui, sans-serif; font-size:15px; font-weight:600; margin:0 0 8px; }
+  .archive-link a { color:#c4452f; text-decoration:none; }
+  .archive-link a:hover { color:#9a3624; }
+  .site-footer { padding:40px 28px; border-top:1px solid #e6e1d3; background:#fbf8f1; margin-top:48px; }
+  .foot-inner { max-width:1080px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; }
+  .foot-brand { font-family:Inter, system-ui, sans-serif; font-weight:800; font-size:18px; color:#1a1a1a; }
+  .foot-brand .dot { color:#c4452f; }
+  .foot-imprint { font-family:Inter, system-ui, sans-serif; font-size:13px; color:#828282; margin-top:2px; }
+  .foot-nav { font-family:Inter, system-ui, sans-serif; font-size:14px; display:flex; gap:20px; }
+  .foot-nav a { color:#4a4a4a; text-decoration:none; }
+  .foot-nav a:hover { color:#1a1a1a; }
+  @media (max-width: 720px) {
+    .site-nav { display:none; }
+    .hero-inner, .charts-row, .loci-grid, .insight-grid, .quotes-featured { grid-template-columns:1fr !important; }
+  }
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="wordmark" href="/">Sermon Steward<span class="dot">.</span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/hall/">Hall</a>
+      <a href="/product.html">Product</a>
+      <a href="/samples.html">Samples</a>
+      <a href="/how-we-read-a-sermon/">How we read</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-eyebrow">Sermon Steward — Methodology</div>
+    <h1 class="page-title">The Decomposition <em>Glossary</em></h1>
+    <p class="page-intro">Every Guild Hall profile is built from the same controlled vocabulary — a precise taxonomy of rhetorical, theological, and structural features. This glossary defines every term you'll encounter in a preacher's analysis. Once you're fluent in the terms, see <a href="/exemplar-coaching.html" style="color:var(--gold-bright); border-bottom: 1px dotted rgba(196,69,47,0.5); text-decoration:none;">Exemplar-Based Coaching: The Nuts &amp; Bolts</a> to learn how the vocabulary drives our matching engine and growth-area generation.</p>
+  </div>
+</div>
+
+<div class="content">
+
+  <nav class="toc">
+    <div class="toc-title">In This Glossary</div>
+    <ul class="toc-list">
+      <li><a href="#rhetorical-function">Rhetorical Function (9 types)</a></li>
+      <li><a href="#hermeneutical">Hermeneutical Method (5 types)</a></li>
+      <li><a href="#tone">Tone (7 values)</a></li>
+      <li><a href="#doctrinal-loci">Doctrinal Loci (16 categories)</a></li>
+      <li><a href="#bt-moves">Biblical-Theological Moves (7 types)</a></li>
+      <li><a href="#citation">Three-Tier Citation Architecture</a></li>
+    </ul>
+  </nav>
+
+  <!-- RHETORICAL FUNCTION -->
+  <div class="gloss-section" id="rhetorical-function">
+    <div class="gloss-section-label">Unit Classification</div>
+    <h2 class="gloss-section-title">Rhetorical Function</h2>
+    <p class="gloss-section-intro">Every sermon is broken into functional units — segments defined by a shift in rhetorical purpose, not paragraph length. Each unit is classified by one of nine functions that describe what the preacher is <em>doing</em> at that moment.</p>
+    <table class="gloss-table">
+      <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+      <tbody>
+        <tr><td><span class="term">exposition</span></td><td>Direct engagement with the biblical text. Exegetical work: explaining words, verb tenses, historical context, passage logic. The preacher is working the text itself.</td></tr>
+        <tr><td><span class="term">theological_claim</span></td><td>A doctrinal assertion derived from or supported by the exposition. Moves from "the text says this" to "therefore this is true about God, humanity, or the world."</td></tr>
+        <tr><td><span class="term">illustration</span></td><td>A story, analogy, historical example, or hypothetical scenario that serves the argument. Its job is to make the claim vivid — not to be the claim itself.</td></tr>
+        <tr><td><span class="term">application</span></td><td>Direct address about what to do, believe, or become in response to the truth established. Imperative verbs. Second-person address. The sermon turning toward the congregation's actual lives.</td></tr>
+        <tr><td><span class="term">introduction</span></td><td>The opening frame — sets up text, problem, question, or tension. Makes the congregation care about what's coming.</td></tr>
+        <tr><td><span class="term">conclusion</span></td><td>The closing frame — summarizes argument, reiterates thesis, issues final charge, or lifts into worship.</td></tr>
+        <tr><td><span class="term">transition</span></td><td>Connective tissue between major sections. Signals structural shifts. Often a single sentence.</td></tr>
+        <tr><td><span class="term">pastoral_aside</span></td><td>The pastor steps outside the expositional flow to address his people personally. The voice shifts from teacher to shepherd.</td></tr>
+        <tr><td><span class="term">prayer</span></td><td>An opening, closing, or mid-sermon prayer. Rhetorical register shifts from horizontal (pastor-to-people) to vertical (pastor-to-God).</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- HERMENEUTICAL METHOD -->
+  <div class="gloss-section" id="hermeneutical">
+    <div class="gloss-section-label">Interpretive Approach</div>
+    <h2 class="gloss-section-title">Hermeneutical Method</h2>
+    <p class="gloss-section-intro">The dominant interpretive lens a preacher uses to move from text to meaning. Most preachers combine methods, but each has a characteristic default — the approach they reach for first when the text opens.</p>
+    <table class="gloss-table">
+      <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+      <tbody>
+        <tr><td><span class="term">grammatical_historical</span></td><td>Close attention to original language, historical context, and authorial intent. The primary question: <em>What did these words mean in their original setting?</em></td></tr>
+        <tr><td><span class="term">redemptive_historical</span></td><td>Reads the passage as a moment in the unfolding drama of redemption. Christotelic — every text points toward or is fulfilled in Christ.</td></tr>
+        <tr><td><span class="term">canonical</span></td><td>Interprets the passage in light of the whole canon. Scripture interprets Scripture — other biblical texts brought to bear on this one to illuminate its meaning.</td></tr>
+        <tr><td><span class="term">applicatory</span></td><td>Primary emphasis on "what does this mean for us today." Moves quickly from text to life without extended exegetical scaffolding.</td></tr>
+        <tr><td><span class="term">polemic</span></td><td>Marshals the passage to refute an error or defend a contested doctrine. The text as weapon against a specific theological threat.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TONE -->
+  <div class="gloss-section" id="tone">
+    <div class="gloss-section-label">Affective Register</div>
+    <h2 class="gloss-section-title">Tone</h2>
+    <p class="gloss-section-intro">The emotional and relational register in which a unit is delivered. Tone is not about volume or passion — it's about the nature of the relationship the preacher is enacting with his audience at that moment.</p>
+    <table class="gloss-table">
+      <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+      <tbody>
+        <tr><td><span class="term">pastoral</span></td><td>The voice of the shepherd — warm, caring, personally engaged with the listener's struggles and spiritual condition.</td></tr>
+        <tr><td><span class="term">prophetic</span></td><td>The voice of confrontation — addressing sin, complacency, or spiritual danger with urgency and moral weight.</td></tr>
+        <tr><td><span class="term">didactic</span></td><td>The voice of the teacher — information-dense, explanatory, structured for comprehension.</td></tr>
+        <tr><td><span class="term">celebratory</span></td><td>The voice of worship — joyful, exultant, marked by wonder at who God is and what he has done.</td></tr>
+        <tr><td><span class="term">lament</span></td><td>The voice of grief — honest about pain, loss, or tragedy without rushing to resolution or false comfort.</td></tr>
+        <tr><td><span class="term">polemic</span></td><td>The voice of contention — arguing against a specific error, false idea, or theological drift.</td></tr>
+        <tr><td><span class="term">evangelistic</span></td><td>The voice of invitation — addressing the unconverted and urging them toward Christ, often with appeals, urgency, and personal directness.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- DOCTRINAL LOCI -->
+  <div class="gloss-section" id="doctrinal-loci">
+    <div class="gloss-section-label">Theological Categories</div>
+    <h2 class="gloss-section-title">Doctrinal Loci</h2>
+    <p class="gloss-section-intro">Every theological unit is tagged against one or more of sixteen doctrinal categories. The distribution of these tags across a preacher's corpus reveals their theological center of gravity — what they return to, what they neglect, and what they assume.</p>
+    <table class="gloss-table">
+      <thead><tr><th>Category</th><th>What It Covers</th></tr></thead>
+      <tbody>
+        <tr><td><span class="term-plain">Theology Proper</span></td><td>The doctrine of God himself — his existence, nature, attributes, and works (creation, providence, decree).</td></tr>
+        <tr><td><span class="term-plain">Christology</span></td><td>The doctrine of Christ — his divine and human natures, his three offices (Prophet, Priest, King), and his saving work.</td></tr>
+        <tr><td><span class="term-plain">Pneumatology</span></td><td>The doctrine of the Holy Spirit — his person, role in salvation, gifts, indwelling, and sanctifying work.</td></tr>
+        <tr><td><span class="term-plain">Soteriology</span></td><td>The doctrine of salvation — justification, redemption, reconciliation, adoption, election, perseverance, and the ordo salutis.</td></tr>
+        <tr><td><span class="term-plain">Hamartiology</span></td><td>The doctrine of sin — its origin, nature, extent, and consequences. Includes original sin, total depravity, and the fall.</td></tr>
+        <tr><td><span class="term-plain">Anthropology</span></td><td>The doctrine of humanity — the image of God, the nature of the soul, human dignity, gender, embodiment, and creatureliness.</td></tr>
+        <tr><td><span class="term-plain">Ecclesiology</span></td><td>The doctrine of the church — its nature, marks, mission, ordinances, governance, membership, and discipline.</td></tr>
+        <tr><td><span class="term-plain">Eschatology</span></td><td>The doctrine of last things — death, resurrection, judgment, heaven, hell, Christ's return, and the new creation.</td></tr>
+        <tr><td><span class="term-plain">Bibliology</span></td><td>The doctrine of Scripture — inspiration, authority, inerrancy, sufficiency, clarity, and the canon.</td></tr>
+        <tr><td><span class="term-plain">Sanctification</span></td><td>The ongoing process of becoming more like Christ — growth in holiness, the means of grace, mortification, and the battle against sin.</td></tr>
+        <tr><td><span class="term-plain">Providence / Sovereignty</span></td><td>God's active governance of all things — history, nations, circumstances, suffering, and individual lives.</td></tr>
+        <tr><td><span class="term-plain">Covenant Theology</span></td><td>God's relationship with his people through covenants — continuity and discontinuity between Old and New Testaments.</td></tr>
+        <tr><td><span class="term-plain">Ethics / Moral Theology</span></td><td>How Christians should live — moral reasoning, natural law, ethical principles, and specific behavioral instruction.</td></tr>
+        <tr><td><span class="term-plain">Doxology / Worship</span></td><td>The theology and practice of worship — why we worship, how we worship, and when the sermon itself becomes doxology.</td></tr>
+        <tr><td><span class="term-plain">Spiritual Warfare</span></td><td>The reality and dynamics of spiritual conflict — Satan, demonic opposition, and the believer's armor and resistance.</td></tr>
+        <tr><td><span class="term-plain">Pastoral Theology</span></td><td>The theology of care — ministry to people in suffering, doubt, and grief. Also covers the pastoral calling, its nature, and its weight.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- BT MOVES -->
+  <div class="gloss-section" id="bt-moves">
+    <div class="gloss-section-label">Intertextual Connections</div>
+    <h2 class="gloss-section-title">Biblical-Theological Moves</h2>
+    <p class="gloss-section-intro">A biblical-theological move is the moment a preacher reaches across the canon to connect two texts, two eras, or two moments in redemptive history. These moves reveal how a preacher reads the whole Bible — and what canonical patterns they find themselves drawn to.</p>
+    <table class="gloss-table">
+      <thead><tr><th>Move Type</th><th>Definition</th></tr></thead>
+      <tbody>
+        <tr><td><span class="term">typology</span></td><td>An OT person, event, or institution presented as a divinely intended prefiguration of an NT reality. The type points forward; the antitype fulfills and surpasses it.</td></tr>
+        <tr><td><span class="term">fulfillment</span></td><td>A direct prophecy-to-fulfillment connection — an explicit OT promise shown where and how it landed in history.</td></tr>
+        <tr><td><span class="term">progressive_revelation</span></td><td>The same doctrine shown to develop and deepen across the canon — what was dimly understood in Moses becoming clear in Paul.</td></tr>
+        <tr><td><span class="term">narrative_arc</span></td><td>Connecting the passage to the larger story of Scripture — creation, fall, redemption, consummation. Situating this text within the whole drama.</td></tr>
+        <tr><td><span class="term">intertextual_echo</span></td><td>Shared language, imagery, or themes between two passages suggesting one author drew on the other — the canon whispering to itself.</td></tr>
+        <tr><td><span class="term">contrast</span></td><td>Two canonical moments placed side by side to show how they differ — the contrast illuminating what makes each distinctive, often showing the superiority of the new covenant.</td></tr>
+        <tr><td><span class="term">thematic_thread</span></td><td>A recurring theme traced across multiple books or eras — showing the through-line that runs from Genesis to Revelation.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- CITATION TIERS -->
+  <div class="gloss-section" id="citation">
+    <div class="gloss-section-label">Source Architecture</div>
+    <h2 class="gloss-section-title">Three-Tier Citation Architecture</h2>
+    <p class="gloss-section-intro">Every citation in a sermon is classified into one of three tiers depending on its source and function. The distribution across tiers reveals a preacher's relationship to Scripture, the broader canon, and human intellectual tradition.</p>
+    <div class="tier-grid">
+      <div class="tier-card">
+        <div class="tier-label">Tier 1</div>
+        <div class="tier-name">Primary Text Citations</div>
+        <div class="tier-desc">Verses from the passage being exposited — the sermon's source material, not quoted in support of an argument, but as the argument itself.</div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-label">Tier 2</div>
+        <div class="tier-name">Cross-References</div>
+        <div class="tier-desc">Scripture from outside the primary passage, brought in for support, contrast, illumination, or typological connection. Reveals hermeneutical instincts.</div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-label">Tier 3</div>
+        <div class="tier-name">Human Quotations</div>
+        <div class="tier-desc">Words from human authors only — theologians, hymn writers, secular authors, church fathers. Tracked with verbatim text, attribution, and function.</div>
+      </div>
+    </div>
+    <table class="gloss-table">
+      <thead><tr><th>Cross-Reference Function</th><th>Definition</th></tr></thead>
+      <tbody>
+        <tr><td><span class="term">authority</span></td><td>Brought in as proof — another passage settling the question or lending decisive canonical weight.</td></tr>
+        <tr><td><span class="term">contrast</span></td><td>Shows the difference between two realities — the passage juxtaposed to illuminate what makes this text distinctive.</td></tr>
+        <tr><td><span class="term">echo</span></td><td>A softer connection — shared imagery or vocabulary, the canon whispering to itself without an explicit link.</td></tr>
+        <tr><td><span class="term">fulfillment</span></td><td>Shows a promise-fulfillment relationship — OT prophecy finding its realization in an NT event or person.</td></tr>
+        <tr><td><span class="term">parallel</span></td><td>Structural or thematic parallel — similar situations or patterns illuminating each other without explicit fulfillment logic.</td></tr>
+        <tr><td><span class="term">corrective</span></td><td>Guards against misreading the primary text — "you might think X, but this passage clarifies Y."</td></tr>
+      </tbody>
+    </table>
+    <table class="gloss-table" style="margin-top:20px;">
+      <thead><tr><th>Quotation Function</th><th>Definition</th></tr></thead>
+      <tbody>
+        <tr><td><span class="term">authority</span></td><td>Cited because the author carries weight — a trusted theologian, church father, or confessional document.</td></tr>
+        <tr><td><span class="term">illustration</span></td><td>Serves as an illustration — a vivid, memorable way of saying what the pastor is already arguing.</td></tr>
+        <tr><td><span class="term">provocation</span></td><td>Cited to shock, challenge, or disrupt complacency — from ally or opponent.</td></tr>
+        <tr><td><span class="term">devotional</span></td><td>Cited for affective power — to move the heart, not just the mind. Hymns, poetry, prayers.</td></tr>
+        <tr><td><span class="term">opponent</span></td><td>Comes from someone the pastor disagrees with — cited in order to be refuted or corrected.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<footer class="page-footer">
+  <a href="/">← Return to the Guild Hall</a>
+  <p>© 2026 Sermon Steward. Proprietary decomposition methodology.</p>
+</footer>
+<footer class="site-footer">
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">Sermon Steward<span class="dot">.</span></div>
+      <div class="foot-imprint">Guild Hall — a gallery of masters, on the Sermon Steward site.</div>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/hall/">Hall</a>
+      <a href="/hall/glossary.html">Glossary</a>
+      <a href="/samples.html">Samples</a>
+      <a href="/product.html">Product</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

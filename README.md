@@ -9,6 +9,7 @@ Static HTML, deployed to Cloudflare Pages.
 - `index.html` — landing splash with two CTAs
 - `product.html` — full product marketing page (how it works, surfaces, pricing, contact form)
 - `samples.html` — gallery of customer samples and famous-preacher showcases
+- `hall/` — Guild Hall index. Preacher profiles stay at `/preacher-*.html`. Archive analyses (sermon tables) are at `/hall/<slug>/`.
 - `growing-in-christ.html` — sample sermon page (linked from samples)
 - `weekly-report.html` — sample weekly anatomy report (linked from samples)
 
