@@ -12,6 +12,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "_src/prep-media/character-b.jpg": "prep/character-b.jpg",
   });
+  eleventyConfig.addPassthroughCopy({
+    "_src/img": "img",
+  });
 
   return {
     dir: {
