@@ -1,5 +1,6 @@
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("*.html");
+  eleventyConfig.addPassthroughCopy("hall");
   eleventyConfig.addPassthroughCopy("CoGElPaso");
   eleventyConfig.addPassthroughCopy("ProvidenceLenexa");
   eleventyConfig.addPassthroughCopy("admin");

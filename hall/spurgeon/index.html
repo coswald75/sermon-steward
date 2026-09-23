@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charles Spurgeon · Archive Analysis · Sermon Steward</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:        #1a1a1a;
+      --parchment:  #fbf8f1;
+      --gold:       #c4452f;
+      --gold-light: #c4452f;
+      --burgundy:   #9a3624;
+      --forest:     #3a7256;
+      --muted:      #4a4a4a;
+      --rule:       rgba(196,69,47,0.22);
+      --serif:      'Inter', Georgia, serif;
+      --sans:       'Inter', system-ui, sans-serif;
+      --mono:       'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--ink); color:#1a1a1a; font-family: var(--sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: linear-gradient(to bottom, rgba(26,23,16,0.98), rgba(26,23,16,0)); border-bottom: 1px solid rgba(196,69,47,0.08); }
+    .nav-brand { font-family: var(--serif); font-size: 0.95rem; color:#1a1a1a; text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 28px; }
+    .nav-right a { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-right a:hover { color: var(--gold-light); }
+    .section-nav { position: sticky; top: 57px; z-index: 90; background: rgba(26,23,16,0.97); border-bottom: 1px solid var(--rule); display: flex; gap: 0; overflow-x: auto; }
+    .section-nav a { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none; padding: 14px 24px; border-bottom: 2px solid transparent; white-space: nowrap; transition: color 0.2s, border-color 0.2s; }
+    .section-nav a:hover, .section-nav a.active { color: var(--gold-light); border-bottom-color: var(--gold); }
+    .hero { padding: 130px 48px 80px; max-width: 1000px; border-bottom: 1px solid var(--rule); }
+    .hero-eyebrow { font-family: var(--mono); font-size: 0.65rem; color: var(--gold); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
+    .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+    h1 { font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 300; line-height: 1.1; margin-bottom: 8px; }
+    h1 em { font-style: italic; color: var(--gold-light); }
+    .hero-role { font-family: var(--sans); font-size: 0.9rem; color: var(--muted); margin-bottom: 36px; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+    .tag { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--rule); padding: 4px 10px; border-radius: 2px; }
+    .hero-stats { display: grid; grid-template-columns: repeat(5, auto); gap: 40px; width: fit-content; }
+    .hero-stat-n { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: var(--gold-light); line-height: 1; }
+    .hero-stat-l { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
+    section { padding: 80px 48px; max-width: 1100px; margin: 0 auto; border-bottom: 1px solid var(--rule); }
+    .eyebrow { font-family: var(--mono); font-size: 0.62rem; color: var(--gold); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 12px; }
+    h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300; line-height: 1.2; margin-bottom: 48px; }
+    h2 em { font-style: italic; color: var(--gold-light); }
+    h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; margin-bottom: 10px; }
+    p { font-family: var(--sans); font-size: 0.9rem; color: rgba(26,26,26,0.7); line-height: 1.8; }
+    .analysis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .analysis-col h3 { font-size: 1rem; font-family: var(--mono); letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; margin-bottom: 20px; font-weight: 400; }
+    .bar-chart { display: flex; flex-direction: column; gap: 10px; }
+    .bar-row { display: flex; align-items: center; gap: 12px; }
+    .bar-label { font-family: var(--sans); font-size: 0.78rem; color: rgba(26,26,26,0.65); width: 180px; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 6px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 3px; background: var(--gold); transition: width 1s ease; }
+    .bar-fill.forest { background: var(--forest); }
+    .bar-fill.burgundy { background: var(--burgundy); }
+    .bar-fill.muted { background: var(--muted); }
+    .bar-n { font-family: var(--mono); font-size: 0.65rem; color: var(--muted); width: 52px; text-align: right; flex-shrink: 0; }
+    .register-block { margin-top: 40px; }
+    .register-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+    .register-pill { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 14px; border-radius: 2px; border: 1px solid var(--rule); }
+    .register-pill.logos { background: rgba(45,74,53,0.3); border-color: var(--forest); color: #7ab88a; }
+    .register-pill.pathos { background: rgba(122,45,45,0.3); border-color: var(--burgundy); color: #c47a7a; }
+    .register-pill.ethos { background: rgba(196,69,47,0.15); border-color: var(--gold); color: var(--gold-light); }
+    .register-pill.doxological { background: rgba(107,100,85,0.3); border-color: var(--muted); color: #a89d8a; }
+    .register-pill.narrative { background: rgba(60,80,100,0.3); border-color: #4a6a8a; color: #7a9aaa; }
+    .distinction-box { background: rgba(196,69,47,0.04); border: 1px solid rgba(196,69,47,0.2); border-radius: 2px; padding: 24px 28px; margin-top: 32px; }
+    .distinction-label { font-family: var(--mono); font-size: 0.6rem; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; }
+    .distinction-box p { font-size: 0.88rem; font-style: italic; color: rgba(26,26,26,0.75); }
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 56px; }
+    .stat-box { border: 1px solid var(--rule); border-radius: 2px; padding: 28px 24px; text-align: center; }
+    .stat-box-n { font-family: var(--serif); font-size: 2.4rem; font-weight: 300; color: var(--gold-light); line-height: 1; }
+    .stat-box-l { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 8px; }
+    .illus-controls { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+    .filter-btn { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 14px; border: 1px solid var(--rule); border-radius: 2px; background: none; color: var(--muted); cursor: pointer; transition: all 0.2s; }
+    .filter-btn:hover, .filter-btn.active { border-color: var(--gold); color: var(--gold-light); background: rgba(196,69,47,0.06); }
+    .illus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .illus-card { border: 1px solid var(--rule); border-radius: 2px; padding: 24px; transition: border-color 0.2s; cursor: default; }
+    .illus-card:hover { border-color: rgba(196,69,47,0.35); }
+    .illus-type { font-family: var(--mono); font-size: 0.58rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
+    .illus-text { font-family: var(--sans); font-size: 0.85rem; color: rgba(26,26,26,0.72); line-height: 1.7; }
+    .illus-source { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); margin-top: 12px; }
+    .quotes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .quote-card { border-left: 2px solid var(--rule); padding: 20px 24px; transition: border-color 0.2s; }
+    .quote-card:hover { border-left-color: var(--gold); }
+    .quote-text { font-family: var(--serif); font-size: 1.05rem; font-style: italic; color: rgba(26,26,26,0.82); line-height: 1.65; margin-bottom: 12px; }
+    .quote-attr { font-family: var(--mono); font-size: 0.6rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
+    .quote-source { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); margin-top: 2px; }
+    .author-counts { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+    .author-chip { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; padding: 5px 12px; border: 1px solid var(--rule); border-radius: 20px; color: var(--muted); }
+    .author-chip span { color: var(--gold-light); margin-left: 4px; }
+    .claims-list { display: flex; flex-direction: column; gap: 0; }
+    .claim-row { padding: 18px 0; border-bottom: 1px solid rgba(196,69,47,0.08); display: grid; grid-template-columns: 1fr 220px; gap: 24px; align-items: start; }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-text { font-family: var(--sans); font-size: 0.88rem; color: rgba(26,26,26,0.82); line-height: 1.65; }
+    .claim-meta { text-align: right; }
+    .claim-fn { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; border: 1px solid var(--rule); color: var(--muted); display: inline-block; margin-bottom: 6px; }
+    .claim-fn.theological_claim { border-color: rgba(196,69,47,0.4); color: var(--gold-light); }
+    .claim-fn.exposition { border-color: rgba(45,74,53,0.5); color: #7ab88a; }
+    .claim-sermon { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); }
+    .sermon-table { width: 100%; border-collapse: collapse; }
+    .sermon-table th { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); letter-spacing: 0.14em; text-transform: uppercase; text-align: left; padding: 10px 16px; border-bottom: 1px solid var(--rule); }
+    .sermon-table td { font-family: var(--sans); font-size: 0.84rem; color: rgba(26,26,26,0.7); padding: 13px 16px; border-bottom: 1px solid rgba(196,69,47,0.06); vertical-align: top; }
+    .sermon-table tr:hover td { background: rgba(196,69,47,0.03); }
+    .sermon-title { color:#1a1a1a; font-weight: 400; }
+    .sermon-text { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+    .sermon-type { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; border: 1px solid var(--rule); color: var(--muted); white-space: nowrap; }
+    .sermon-type.expository { border-color: rgba(45,74,53,0.5); color: #7ab88a; }
+    .sermon-type.topical { border-color: rgba(122,45,45,0.5); color: #c47a7a; }
+    .sermon-type.textual { border-color: rgba(196,69,47,0.4); color: var(--gold-light); }
+    .series-group-header td { padding: 24px 16px 8px; font-family: var(--mono); font-size: 0.6rem; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; border-bottom: 1px solid var(--rule); background: rgba(196,69,47,0.03); }
+    footer { border-top: 1px solid var(--rule); padding: 40px 48px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-brand { font-family: var(--serif); font-size: 0.95rem; color:#1a1a1a; }
+    footer p { font-size: 0.75rem; color: var(--muted); }
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .hero, section { padding-left: 20px; padding-right: 20px; }
+      .hero-stats { grid-template-columns: repeat(3,auto); gap: 24px; }
+      .analysis-grid, .illus-grid, .quotes-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .claim-row { grid-template-columns: 1fr; }
+      .section-nav a { padding: 12px 16px; }
+    }
+  
+  :root {
+    --ink:#fbf8f1; --parchment:#1a1a1a; --gold:#c4452f; --gold-light:#c4452f;
+    --burgundy:#9a3624; --forest:#3a7256; --muted:#4a4a4a; --rule:#e6e1d3;
+    --serif: Inter, system-ui, sans-serif; --sans: Inter, system-ui, sans-serif;
+  }
+  body { background:#fbf8f1 !important; color:#1a1a1a !important; font-family:Inter, system-ui, sans-serif !important; }
+  h1, h2, h3, .footer-brand, .nav-brand { font-family:Inter, system-ui, sans-serif !important; font-weight:800; color:#1a1a1a; }
+  h1 em, h2 em { font-style:normal !important; color:#c4452f !important; }
+  .hero { padding:48px 28px 56px !important; max-width:1080px; }
+  section { padding:64px 28px !important; }
+  .section-nav { top:65px !important; background:rgba(251,248,241,0.96) !important; border-bottom:1px solid #e6e1d3 !important; }
+  .section-nav a { color:#4a4a4a !important; }
+  .section-nav a:hover, .section-nav a.active { color:#c4452f !important; border-bottom-color:#c4452f !important; }
+  p, .bar-label, .illus-text, .quote-text, .claim-text, .sermon-table td, .distinction-box p { color:#4a4a4a !important; }
+  .sermon-title { color:#1a1a1a !important; font-weight:700 !important; }
+  .bar-track { background:rgba(0,0,0,0.06) !important; }
+  .stat-box, .illus-card, .distinction-box, .quote-card, .claim-card { background:#fff; border-color:#e6e1d3 !important; }
+  .site-header { background:rgba(251,248,241,0.92); backdrop-filter:blur(8px); border-bottom:1px solid #e6e1d3; position:sticky; top:0; z-index:100; }
+  .site-header-inner { max-width:1180px; margin:0 auto; padding:16px 28px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+  .wordmark { font-weight:800; font-size:21px; letter-spacing:-0.02em; color:#1a1a1a; text-decoration:none; }
+  .wordmark .dot { color:#c4452f; }
+  nav { position:static !important; background:none !important; padding:0 !important; border:0 !important; }
+  .site-nav { font-size:15px; font-weight:500; display:flex; gap:22px; align-items:center; }
+  .site-nav a { color:#4a4a4a; text-decoration:none; letter-spacing:0; text-transform:none; font-size:15px; }
+  .site-nav a:hover { color:#1a1a1a; }
+  .site-footer { border-top:1px solid #e6e1d3; padding:40px 28px; background:#fbf8f1; }
+  .foot-inner { max-width:1080px; margin:0 auto; display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; align-items:center; }
+  .foot-brand { font-weight:800; font-size:18px; color:#1a1a1a; }
+  .foot-brand .dot { color:#c4452f; }
+  .foot-imprint { font-size:13px; color:#828282; margin-top:2px; }
+  .foot-nav { display:flex; gap:20px; font-size:14px; }
+  .foot-nav a { color:#4a4a4a; text-decoration:none; }
+  @media (max-width: 720px) { .site-nav { display:none; } }
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="wordmark" href="/">Sermon Steward<span class="dot">.</span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/hall/">Hall</a>
+      <a href="/product.html">Product</a>
+      <a href="/samples.html">Samples</a>
+      <a href="/how-we-read-a-sermon/">How we read</a>
+    </nav>
+  </div>
+</header>
+
+<div class="section-nav" id="sectionNav">
+  <a href="#overview" class="active">Archive Overview</a>
+  <a href="#fingerprint">Theological Fingerprint</a>
+  <a href="#rhetorical">Rhetorical Profile</a>
+  <a href="#illustrations">Illustration Arsenal</a>
+  <a href="#lineage">Intellectual Lineage</a>
+  <a href="#btmoves">BT Moves</a>
+  <a href="#claims">Key Claims</a>
+  <a href="#corpus">Corpus Table</a>
+</div>
+
+<div class="hero">
+  <div class="hero-eyebrow">Archive analysis · <a href="/preacher-spurgeon.html">Back to profile</a></div>
+  <h1>Charles <em>Spurgeon</em></h1>
+  <p class="hero-role">Pastor · Metropolitan Tabernacle, London · 1834–1892 · Prince of Preachers</p>
+  <div class="hero-tags">
+    <span class="tag">Reformed Baptist</span>
+    <span class="tag">Victorian</span>
+    <span class="tag">Calvinistic</span>
+    <span class="tag">Evangelical</span>
+    <span class="tag">Narrative</span>
+    <span class="tag">Prince of Preachers</span>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="hero-stat-n">30</div>
+      <div class="hero-stat-l">Sermons Indexed</div>
+    </div>
+    <div>
+      <div class="hero-stat-n" style="font-size:1.2rem;">Soteriology</div>
+      <div class="hero-stat-l">Top Doctrinal Locus</div>
+    </div>
+    <div>
+      <div class="hero-stat-n">2.5% units</div>
+      <div class="hero-stat-l">Illustration Rate</div>
+    </div>
+    <div>
+      <div class="hero-stat-n">210</div>
+      <div class="hero-stat-l">BT Move Instances</div>
+    </div>
+    <div>
+      <div class="hero-stat-n" style="font-size:1rem;">Thomas Watson</div>
+      <div class="hero-stat-l">Most Cited (11×)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION 1: ARCHIVE OVERVIEW ══ -->
+<section id="overview">
+  <div class="eyebrow">01 — Archive Overview</div>
+  <h2>30 sermons.<br><em>910 decomposed units.</em></h2>
+
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="stat-box-n">30</div>
+      <div class="stat-box-l">Total Sermons</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-n">910</div>
+      <div class="stat-box-l">Rhetorical Units</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-n">23</div>
+      <div class="stat-box-l">Illustrations</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-n">90%</div>
+      <div class="stat-box-l">Expository Rate</div>
+    </div>
+  </div>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <h3>Sermon Type Breakdown</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Expository</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">27</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Unknown</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:11%"></div></div>
+          <span class="bar-n">3</span>
+        </div>
+      </div>
+      <div class="distinction-box" style="margin-top:32px;">
+        <div class="distinction-label">Corpus Note</div>
+        <p>The most widely-read preacher in Christian history. 3,561 sermons published in the New Park Street Pulpit and Metropolitan Tabernacle Pulpit. Spurgeon&#39;s corpus spans the widest rhetorical range in the Hall — soaring narrative, pastoral humor, blunt polemic, tender gospel appeal. Converted 1850, pastor at New Park Street age 19. Metropolitan Tabernacle opened 1861, capacity 6,000.</p>
+      </div>
+    </div>
+    <div class="analysis-col">
+      <h3>Series Distribution</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Treasury of David</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">21</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">The Treasury of David</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:38%"></div></div>
+          <span class="bar-n">8</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Standalone</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:5%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+      </div>
+      <div class="distinction-box" style="margin-top:32px;"><div class="distinction-label">Corpus Metrics</div><p>Avg units/sermon: 30.3 · Avg cross-refs: 8.9 · Avg quotations: 8.3</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 2: THEOLOGICAL FINGERPRINT ══ -->
+<section id="fingerprint">
+  <div class="eyebrow">02 — Theological Fingerprint</div>
+  <h2>What Spurgeon's corpus<br><em>obsesses over.</em></h2>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <h3>Doctrinal Loci — Primary</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Soteriology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">235</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Christology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:90%"></div></div>
+          <span class="bar-n">211</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Theology Proper</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:84%"></div></div>
+          <span class="bar-n">198</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Sanctification</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:78%"></div></div>
+          <span class="bar-n">183</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Providence / Sovereignty</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:63%"></div></div>
+          <span class="bar-n">147</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Hamartiology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:57%"></div></div>
+          <span class="bar-n">135</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Eschatology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:51%"></div></div>
+          <span class="bar-n">119</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Doxology / Worship</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:32%"></div></div>
+          <span class="bar-n">76</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Ethics / Moral Theology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:30%"></div></div>
+          <span class="bar-n">70</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Pastoral Theology</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:30%"></div></div>
+          <span class="bar-n">70</span>
+        </div>
+      </div>
+    </div>
+    <div class="analysis-col">
+      <h3>Doctrinal Loci — Secondary</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Ecclesiology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">66</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Anthropology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:89%"></div></div>
+          <span class="bar-n">59</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Spiritual Warfare</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:68%"></div></div>
+          <span class="bar-n">45</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Bibliology</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:68%"></div></div>
+          <span class="bar-n">45</span>
+        </div>
+      </div>
+      <div class="distinction-box" style="margin-top:32px;">
+        <div class="distinction-label">The Spurgeon Signature</div>
+        <p>Spurgeon&#39;s signature is the wedding of doctrinal precision with popular accessibility. He preached Calvinism to working-class London without condescension, using vivid imagery drawn from everyday Victorian life. Unlike his Reformed contemporaries, he never sacrificed illustration for argument — he made Whitefield&#39;s legacy sing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 3: RHETORICAL PROFILE ══ -->
+<section id="rhetorical">
+  <div class="eyebrow">03 — Rhetorical Profile</div>
+  <h2>How Spurgeon structures<br><em>the sermon itself.</em></h2>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <h3>Unit Function Distribution</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Exposition</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">600</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Theological Claim</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:19%"></div></div>
+          <span class="bar-n">112</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Application</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:12%"></div></div>
+          <span class="bar-n">70</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Introduction</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:8%"></div></div>
+          <span class="bar-n">45</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Transition</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:6%"></div></div>
+          <span class="bar-n">34</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Illustration</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:4%"></div></div>
+          <span class="bar-n">23</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Conclusion</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:2%"></div></div>
+          <span class="bar-n">14</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Pastoral Aside</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:2%"></div></div>
+          <span class="bar-n">12</span>
+        </div>
+      </div>
+    </div>
+    <div class="analysis-col">
+      <h3>Tone Distribution</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Pastoral</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">27</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Didactic</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">27</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Celebratory</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:41%"></div></div>
+          <span class="bar-n">11</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Prophetic</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:26%"></div></div>
+          <span class="bar-n">7</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Polemic</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:11%"></div></div>
+          <span class="bar-n">3</span>
+        </div>
+      </div>
+      <div style="margin-top:40px;">
+        <h3 style="font-family:var(--mono); font-size:0.85rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; font-weight:400; margin-bottom:20px;">Rhetorical Register</h3>
+        <div class="register-pills">
+          <span class="register-pill logos">Logos</span>
+          <span class="register-pill pathos">Pathos</span>
+          <span class="register-pill ethos">Ethos</span>
+          <span class="register-pill narrative">Narrative</span>
+          <span class="register-pill doxological">Doxological</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 4: ILLUSTRATION ARSENAL ══ -->
+<section id="illustrations">
+  <div class="eyebrow">04 — Illustration Arsenal</div>
+  <h2>23 illustrations from<br><em>30 sermons.</em></h2>
+
+  <div style="margin-bottom:48px;">
+    <div class="bar-chart" style="max-width:520px;">
+        <div class="bar-row">
+          <span class="bar-label">Historical Example</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">8</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Cultural Reference</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:88%"></div></div>
+          <span class="bar-n">7</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Analogy</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:75%"></div></div>
+          <span class="bar-n">6</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Hypothetical</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:13%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Personal Story</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:13%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+    </div>
+  </div>
+
+  <div class="illus-controls">
+    <button class="filter-btn active" onclick="filterIllus('all', this)">All · 12 shown</button>
+    <button class="filter-btn" onclick="filterIllus('analogy', this)">Analogy</button>
+    <button class="filter-btn" onclick="filterIllus('historical_example', this)">Historical Example</button>
+    <button class="filter-btn" onclick="filterIllus('hypothetical', this)">Hypothetical</button>
+    <button class="filter-btn" onclick="filterIllus('cultural_reference', this)">Cultural Reference</button>
+    <button class="filter-btn" onclick="filterIllus('personal_story', this)">Personal Story</button>
+  </div>
+
+  <div class="illus-grid" id="illusGrid">
+    
+    <div class="illus-card" data-type="analogy">
+      <div class="illus-type">Analogy</div>
+      <div class="illus-text">Such store is a sad sore. Ruminating upon trouble is bitter work. Children fill their mouths with bitterness when they rebelliously chew the pill which they ought obediently to have taken at once.</div>
+      <div class="illus-source">Treasury of David - Psalm 13</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">With a sling and a stone, David had smitten a giant before whom the whole hosts of Israel were trembling, and the Lord, who delivered him from the uncircumcised Philistine, could surely deliver him from King Saul and his myrmidons.</div>
+      <div class="illus-source">The Song of the Steadfast</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">Absalom&#39;s faction, like a snowball, strangely gathered in 
+    its motion. David speaks of it as one amazed; and well he might, that a 
+    people he had so many ways obliged, should almost generally revolt from him, 
+    and rebel against him, and choose for their head such a silly, giddy young 
+    fellow as Absalom was.
+How slippery and deceitful are the many!
+And 
+    how little fidelity and constancy is to be found among men! David had had 
+    the hearts of his subjects as much as ever any king had, and yet how 
+    suddenly he had lost them! As people must not trust too much to princes 
+    (Psalm 146:3), so princes must not build too much upon their interest in the 
+    people. Christ, the Son of David, had many enemies, when a great multitude 
+    came to seize him, when the crowd cried, &quot;Crucify him! Crucify him!&quot; how 
+    were they then increased who troubled him! Even good people must not think 
+    it strange if the stream goes against them, and the powers that threaten 
+    them grow more and more formidable.
+Matthew Henry.</div>
+      <div class="illus-source">The Treasury of David - Psalm 3</div>
+    </div>
+    <div class="illus-card" data-type="hypothetical">
+      <div class="illus-type">Hypothetical</div>
+      <div class="illus-text">When I consider your heavens, etc. &#39;Could we transport ourselves above the moon, could we reach the highest star above our heads--we would instantly discover new skies, new stars, new suns, new systems, and perhaps more magnificently adorned. But even there, the vast dominions of our great Creator would not terminate; we would then find, to our astonishment, that we had only arrived at the borders of the works of God. It is but little that we can know of his works, but that little should teach us to be humble, and to admire God&#39;s wisdom, power and goodness. How great must that Being be, who produced these immense globes out of nothing, who regulates their courses, and whose mighty hand directs and supports them all! &#39;What is the clod of earth which we inhabit, with all the magnificent scenes it presents to us--in comparison of those innumerable worlds? Were this earth annihilated, its absence would no more be observed, than that of a grain of sand from the sea shore! What then are all our fine homes and belongings--when compared with those infinite worlds? They are but atoms dancing in the air, which are revealed to us by the sunbeams. &#39;What then am I, when reckoned among the infinite number of God&#39;s creatures? I am lost in my own nothingness! &#39;But as little as I appear in this respect--I find myself great in others. There is great beauty in this starry firmament which God has chosen for his throne! How admirable are those celestial bodies! I am dazzled with their splendor, and enchanted with their beauty! But notwithstanding this, however beautiful, and however richly adorned--yet this sky is void of intelligence. It is a stranger to its own beauty, while I, who am mere clay, molded by a divine hand, am endowed with sense and reason. I can contemplate the beauty of these shining worlds; nay, more, I am already, to a certain degree, acquainted with their sublime Author; and by faith I see some small rays of his divine glory. &#39;O may I be more and more acquainted with his works, and make the study of them my employ, until by a glorious change I rise to dwell with him above the starry regions!&#39; Christopher Christian Sturm&#39;s &#39;Reflections&#39;, 1750-1786.</div>
+      <div class="illus-source">Psalm 8</div>
+    </div>
+    <div class="illus-card" data-type="cultural_reference">
+      <div class="illus-type">Cultural Reference</div>
+      <div class="illus-text">&quot;Jesus&#39; tremendous name
+Puts all our foes to flight;
+Jesus, the meek, the angry Lamb
+A lion is in fight.&quot;</div>
+      <div class="illus-source">Treasury of David - Psalm 20</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">Verse 6. You shall destroy those who tell lies, etc. In the same field where Absalom raised battle against his father, stood the oak which was his gibbet. The mule whereon he rode was his hangman, for the mule carried him to the tree, and the hair wherein he gloried served for a rope to hang. Little do the wicked know—how everything which they now have shall be a snare to trap them when God begins to punish them!
+
+William Cowper, 1612.</div>
+      <div class="illus-source">PSALM 5</div>
+    </div>
+    <div class="illus-card" data-type="analogy">
+      <div class="illus-type">Analogy</div>
+      <div class="illus-text">When the little 
+    bird in my bosom sings a merry song, it is no matter to me if a thousand 
+    owls hoot at me from without.</div>
+      <div class="illus-source">Treasury of David - Psalm 26</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">Observe the state of the world before the flood, as portrayed in Genesis 6:12, and remember that human nature is unchanged. He who would see a terrible photograph of the world without God must read that most painful of all inspired Scriptures, the first chapter of the epistle to the Romans. Learned Hindus have confessed that the description is literally correct in Hindustan at the present moment; and were it not for the restraining grace of God, it would be so in England. Alas! it is even here but too correct a picture of things which are done by men in secret. Things loathsome to God and man are sweet to some palates.</div>
+      <div class="illus-source">Treasury of David - Psalm 14</div>
+    </div>
+    <div class="illus-card" data-type="personal_story">
+      <div class="illus-type">Personal Story</div>
+      <div class="illus-text">When wandering among the Alps, we felt that the Lord was infinitely greater than all his grandest works, and under that feeling, we roughly wrote these few lines: Yet in all these how great soe&#39;er they be, We see not Him. The glass is all too dense And dark, or else our earthborn eyes too dim. Yon Alps, that lift their heads above the clouds And hold familiar converse with the stars, Are dust, at which the balance trembles not, Compared with His divine immensity. The snow-crowned summits fail to set Him forth, Who dwells in Eternity, and bears Alone, the name of High and Lofty One. Depths unfathomed are too shallow to express The wisdom and the knowledge of the Lord. The mirror of the creatures has no space To bear the image of the Infinite. &#39;Tis true the Lord has fairly writ his name, And set his seal upon creation&#39;s brow. But as the skillful potter much excels The vessel which he fashions on the wheel, E&#39;en so, but in proportion greater far, Jehovah&#39;s self transcends his noblest works. Earth&#39;s ponderous wheels would break, her axles snap, If freighted with the load of Deity. Space is too narrow for the Eternal&#39;s rest, And time too short a footstool for his throne. E&#39;en avalanche and thunder lack a voice, To utter the full volume of his praise. How then can I declare him? Where are words With which my glowing tongue may speak his name? Silent I bow, and humbly I adore. &#39;How excellent is your name in all the earth!&#39; &#39;How illustrious is the name of Jesus throughout the world! His incarnation, birth, humble and obscure life, preaching, miracles, passion, death, resurrection, and ascension, are celebrated through the whole world. His religion, the gifts and graces of his Spirit, his people--Christians, his gospel, and the preachers of it, are everywhere spoken of. No name is so universal, no power and influence so generally felt, as those of the Savior of mankind. Amen!&#39; Adam Clarke</div>
+      <div class="illus-source">Psalm 8</div>
+    </div>
+    <div class="illus-card" data-type="analogy">
+      <div class="illus-type">Analogy</div>
+      <div class="illus-text">&quot;How long?&quot; Ah! how long do our days appear when our soul is cast down within us! Time flies with full-fledged wing in our summer days, but in our winters he flutters painfully. A week within prison-walls is longer than a month at liberty.</div>
+      <div class="illus-source">Treasury of David - Psalm 13</div>
+    </div>
+    <div class="illus-card" data-type="cultural_reference">
+      <div class="illus-type">Cultural Reference</div>
+      <div class="illus-text">Bishop Mant&#39;s version of the two preceding verses is forcible and accurate:
+
+&quot;Poured forth like water is my frame;
+My bones asunder start;
+As wax that feels the searching flame,
+Within me melts my heart.
+My withered sinews shrink unstrung
+Like potsherd dried and dead;
+Cleaves to my jaws my burning tongue
+The dust of death my bed.&quot;</div>
+      <div class="illus-source">Treasury of David - Psalm 22</div>
+    </div>
+    <div class="illus-card" data-type="cultural_reference">
+      <div class="illus-type">Cultural Reference</div>
+      <div class="illus-text">A far more fitting prayer 
+    for a sinful mortal is the petition, &quot;Enter not into judgment with your 
+    servant.&quot;</div>
+      <div class="illus-source">Treasury of David - Psalm 26</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 5: INTELLECTUAL LINEAGE ══ -->
+<section id="lineage">
+  <div class="eyebrow">05 — Intellectual Lineage</div>
+  <h2>The tradition Spurgeon<br><em>draws from — and argues with.</em></h2>
+
+  <div class="author-counts">
+    <span class="author-chip">Thomas Watson <span>11×</span></span>
+    <span class="author-chip">George Swinnock <span>8×</span></span>
+    <span class="author-chip">John Trapp <span>7×</span></span>
+    <span class="author-chip">Unknown <span>7×</span></span>
+    <span class="author-chip">Scripture <span>6×</span></span>
+    <span class="author-chip">William Gurnall <span>6×</span></span>
+    <span class="author-chip">Unknown hymn writer <span>6×</span></span>
+    <span class="author-chip">Trapp <span>5×</span></span>
+    <span class="author-chip">Matthew Henry <span>5×</span></span>
+    <span class="author-chip">Thomas Brooks <span>5×</span></span>
+    <span class="author-chip">proverb <span>5×</span></span>
+    <span class="author-chip">Joseph Caryl <span>4×</span></span>
+    <span class="author-chip">Robert Leighton <span>3×</span></span>
+    <span class="author-chip">old proverb <span>3×</span></span>
+    <span class="author-chip">Jesus Christ <span>3×</span></span>
+    <span class="author-chip">William Cowper <span>3×</span></span>
+    <span class="author-chip">Albert Barnes <span>3×</span></span>
+    <span class="author-chip">Thomas Adams <span>3×</span></span>
+  </div>
+
+  <div class="quotes-grid">
+    
+    <div class="quote-card">
+      <div class="quote-text">It is certain that the greater part of men, as they babble out vain, languid, and inefficacious prayers, most unworthy the ear of the blessed God, so they seem in some degree to set a just estimate upon them, neither hoping for any success from them, nor indeed seeming to be at all solicitous about it—but committing them to the wind as vain words, which in truth they are.</div>
+      <div class="quote-attr">Robert Leighton</div>
+      <div class="quote-source">PSALM 5 · Psalm 5:1-12</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">For unto which of the angels said he at any time, You are my Son, this day have I begotten you?</div>
+      <div class="quote-attr">Hebrews</div>
+      <div class="quote-source">The Treasury of David - Psalm 2 · Psalm 2:1-12</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">This brutish and monstrous stupidity in men compels God to invent new modes of expression, and as it were to clothe himself with a different character.</div>
+      <div class="quote-attr">Calvin</div>
+      <div class="quote-source">Treasury of David - Psalm 18 · Psalm 18:1-50</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">You have not, because you ask not.</div>
+      <div class="quote-attr">James</div>
+      <div class="quote-source">The Treasury of David - Psalm 2 · Psalm 2:1-12</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">The saints are blessed before they are crowned. This seems a paradox to flesh and blood... Not only they shall be blessed—but they are so.</div>
+      <div class="quote-attr">Thomas Watson</div>
+      <div class="quote-source">The Treasury of David - Psalm 3 · Psalm 3</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">Whoever eats of this bread shall live forever</div>
+      <div class="quote-attr">Jesus Christ</div>
+      <div class="quote-source">Treasury of David - Psalm 22 · Psalm 22</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">who alone spreads out the heavens, and treads upon the waves of the sea; who makes Arcturus, Orion, and Pleiades, and the chambers of the south.</div>
+      <div class="quote-attr">Job</div>
+      <div class="quote-source">Psalm 8 · Psalm 8:1-9</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">and if you walk contrary unto (or perversely with) me, then I will also walk contrary unto (or perversely, or roughly, or at random with) you.</div>
+      <div class="quote-attr">Scripture (Leviticus 26:21-24)</div>
+      <div class="quote-source">Treasury of David - Psalm 18 · Psalm 18:1-50</div>
+    </div>
+  </div>
+
+  <div style="margin-top:48px;">
+    <div class="eyebrow" style="margin-bottom:16px;">Top Scripture Cross-References</div>
+    <div class="author-counts">
+      <span class="author-chip">Hebrews 5:7 <span>3×</span></span>
+    <span class="author-chip">Luke 15:16 <span>2×</span></span>
+    <span class="author-chip">Romans 3 <span>2×</span></span>
+    <span class="author-chip">Acts 2:25 <span>2×</span></span>
+    <span class="author-chip">Romans 15:9 <span>2×</span></span>
+    <span class="author-chip">Malachi 3:17 <span>2×</span></span>
+    <span class="author-chip">2 Samuel 22 <span>2×</span></span>
+    <span class="author-chip">Revelation 21:8 <span>2×</span></span>
+    <span class="author-chip">Romans 15:13 <span>2×</span></span>
+    <span class="author-chip">John 16:24 <span>2×</span></span>
+    <span class="author-chip">Hebrews 1:6 <span>1×</span></span>
+    <span class="author-chip">2 Samuel 16:5 <span>1×</span></span>
+    <span class="author-chip">Romans 8:35-37 <span>1×</span></span>
+    <span class="author-chip">Matthew 2:13-23 <span>1×</span></span>
+    <span class="author-chip">Romans 8:28 <span>1×</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 6: BT MOVES ══ -->
+<section id="btmoves">
+  <div class="eyebrow">06 — Biblical-Theological Moves</div>
+  <h2>How Spurgeon connects every text<br><em>to the whole-Bible narrative.</em></h2>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <h3>BT Move Type Distribution</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Typology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">75</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Fulfillment</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:79%"></div></div>
+          <span class="bar-n">59</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Contrast</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:41%"></div></div>
+          <span class="bar-n">31</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Intertextual Echo</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:28%"></div></div>
+          <span class="bar-n">21</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Thematic Thread</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:15%"></div></div>
+          <span class="bar-n">11</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Progressive Revelation</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:13%"></div></div>
+          <span class="bar-n">10</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Narrative Arc</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:5%"></div></div>
+          <span class="bar-n">4</span>
+        </div>
+      </div>
+    </div>
+    <div class="analysis-col">
+      <h3>What This Reveals</h3>
+      <p style="margin-bottom:20px;">The biblical-theological move profile reveals how Charles Spurgeon connects individual texts to the larger redemptive-historical narrative. The leading move type indicates a characteristic approach to canon — whether primarily fulfillment-oriented, typological, or thematic-thread driven.</p>
+      <p>Total BT move instances: 211. The dominant move is <em>Typology</em> (75 instances), followed by Fulfillment (59).</p>
+      <div class="distinction-box" style="margin-top:24px;">
+        <div class="distinction-label">BT Profile</div>
+        <p>Avg BT moves per sermon: 7.0. These moves represent the mechanism by which Spurgeon's exposition connects local textual meaning to the whole-Bible argument.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 7: KEY CLAIMS ══ -->
+<section id="claims">
+  <div class="eyebrow">07 — Key Theological Claims</div>
+  <h2>15 claims from<br><em>the theological archive.</em></h2>
+
+  <div class="claims-list">
+    
+    <div class="claim-row">
+      <div class="claim-text">David&#39;s request to hide under God&#39;s wings appeals to parental protection that both shields from evil and cherishes with intimate warmth, with the Hebrew future tense revealing his confidence that earnest supplication produces certain answer.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Treasury of David - Psalm 17</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Verse 2&#39;s record of past deliverance demonstrates how believers should use experience to strengthen faith during present trials.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Treasury of David - Psalm 27</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">The rebels falsely portray Christ&#39;s laws as bondage, but to the regenerate, these laws are no more a burden than wings are to a bird.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">The Treasury of David - Psalm 2</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Jesus as man depended utterly on the Father&#39;s strength given through prayer, and now joys in heaven&#39;s temple over the victory that strength secured.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Treasury of David - Psalm 21</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Every word of &#39;Why have you forsaken me?&#39; must be individually emphasized to grasp the full horror of the moment, and the only sufficient explanation for why the innocent Son was utterly forsaken by his faithful God is that Jesus bore the separation our sins had caused between us and God.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Treasury of David - Psalm 22</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Bribery should be utterly abhorrent to Christians, and those who practice it cannot escape final judgment through the same corrupt means they employed in life.</div>
+      <div class="claim-meta">
+        <span class="claim-fn application">Application</span>
+        <div class="claim-sermon">Treasury of David - Psalm 26</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Prayer is always in its place, and meditation refreshes the soul for the weighty work of wrestling with God.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Treasury of David - Psalm 25</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">The name of the God of Jacob—his revealed covenant character—defended Christ through his earthly warfare and now continues to defend the church, his mystical body, in ongoing spiritual conflict.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Treasury of David - Psalm 20</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">God&#39;s ways are perfect, his word is tried and proven reliable like refined silver, and he himself is the buckler protecting all who trust him—a progression from act to revelation to person that grounds perfect peace.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Treasury of David - Psalm 18</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Constant thanksgiving is the appropriate daily occupation of pardoned sinners and must continue regardless of opposition.</div>
+      <div class="claim-meta">
+        <span class="claim-fn application">Application</span>
+        <div class="claim-sermon">Treasury of David - Psalm 26</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Deep distress legitimately serves as an argument with God in prayer—not a claim of right, but a plea that engages divine compassion through grace.</div>
+      <div class="claim-meta">
+        <span class="claim-fn theological_claim">Theological Claim</span>
+        <div class="claim-sermon">Treasury of David - Psalm 13</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">David and the dying thief both grounded their prayers in free grace and unmerited goodness, daring not to appeal to justice but only to mercy.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Treasury of David - Psalm 25</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">To &#39;kiss the Son&#39; is to embrace Him in love, submission, and worship, fulfilling the Old Testament longing and responding to His gracious invitation, but also in holy fear, recognizing that the Son may be angry if we refuse.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">The Treasury of David - Psalm 2</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Though believers are weak as sheep facing a lion-like foe, they may rest fearlessly in their Shepherd&#39;s superior wisdom and strength, yet must maintain vigilance especially in seemingly secure areas where ambush is most likely.</div>
+      <div class="claim-meta">
+        <span class="claim-fn application">Application</span>
+        <div class="claim-sermon">Treasury of David - Psalm 17</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">The Father has granted Christ his heart&#39;s desire, which was the redemption of his people, a desire Christ pursued through all his earthly work and now sees fulfilled in heaven.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Treasury of David - Psalm 21</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 8: CORPUS TABLE ══ -->
+<section id="corpus">
+  <div class="eyebrow">08 — Corpus Table</div>
+  <h2>30 sermons.<br><em>Fully decomposed.</em></h2>
+
+  <table class="sermon-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title · Primary Text</th>
+        <th>Series</th>
+        <th>Type</th>
+        <th>Tone</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr class="series-group-header"><td colspan="5">Series — Treasury of David</td></tr>
+      <tr>
+        <td>01</td>
+        <td><div class="sermon-title">Contents</div><div class="sermon-text"></div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);"></td>
+      </tr>
+      <tr>
+        <td>02</td>
+        <td><div class="sermon-title">Contents</div><div class="sermon-text"></div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);"></td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td><div class="sermon-title">Contents</div><div class="sermon-text"></div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);"></td>
+      </tr>
+      <tr>
+        <td>04</td>
+        <td><div class="sermon-title">PSALM 10</div><div class="sermon-text">Psalm 10:1-18</div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Prophetic</td>
+      </tr>
+      <tr>
+        <td>05</td>
+        <td><div class="sermon-title">Psalm 7</div><div class="sermon-text">Psalm 7</div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Prophetic · Polemic</td>
+      </tr>
+      <tr>
+        <td>06</td>
+        <td><div class="sermon-title">Psalm 8</div><div class="sermon-text">Psalm 8:1-9</div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>07</td>
+        <td><div class="sermon-title">Psalm 9</div><div class="sermon-text">Psalm 9:1-20</div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Prophetic</td>
+      </tr>
+      <tr>
+        <td>08</td>
+        <td><div class="sermon-title">Treasury of David - Psalm 12</div><div class="sermon-text">Psalm 12</div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Prophetic</td>
+      </tr>
+      <tr>
+        <td>09</td>
+        <td><div class="sermon-title">Treasury of David - Psalm 13</div><div class="sermon-text">Psalm 13:1-6</div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><div class="sermon-title">Treasury of David - Psalm 14</div><div class="sermon-text">Psalm 14:1-7</div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Prophetic</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td><div class="sermon-title">Treasury of David - Psalm 15</div><div class="sermon-text">Psalm 15:1-5</div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td><div class="sermon-title">Treasury of David - Psalm 16</div><div class="sermon-text">Psalm 16:1-11</div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Celebratory</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td><div class="sermon-title">Treasury of David - Psalm 17</div><div class="sermon-text">Psalm 17:1-15</div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td><div class="sermon-title">Treasury of David - Psalm 18</div><div class="sermon-text">Psalm 18:1-50</div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Celebratory</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td><div class="sermon-title">Treasury of David - Psalm 20</div><div class="sermon-text">Psalm 20:1-9</div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Celebratory</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td><div class="sermon-title">Treasury of David - Psalm 21</div><div class="sermon-text">Psalm 21:1-13</div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Celebratory · Pastoral</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td><div class="sermon-title">Treasury of David - Psalm 22</div><div class="sermon-text">Psalm 22</div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Celebratory</td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td><div class="sermon-title">Treasury of David - Psalm 25</div><div class="sermon-text">Psalm 25:1-22</div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic</td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td><div class="sermon-title">Treasury of David - Psalm 26</div><div class="sermon-text">Psalm 26</div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic</td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td><div class="sermon-title">Treasury of David - Psalm 27</div><div class="sermon-text">Psalm 27:1-14</div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Celebratory</td>
+      </tr>
+      <tr>
+        <td>21</td>
+        <td><div class="sermon-title">Treasury of David: Psalm 24</div><div class="sermon-text">Psalm 24:1-10</div></td>
+        <td>Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Celebratory</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — The Treasury of David</td></tr>
+      <tr>
+        <td>22</td>
+        <td><div class="sermon-title">PSALM 5</div><div class="sermon-text">Psalm 5:1-12</div></td>
+        <td>The Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>23</td>
+        <td><div class="sermon-title">PSALM 6</div><div class="sermon-text">Psalm 6:1-10</div></td>
+        <td>The Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic</td>
+      </tr>
+      <tr>
+        <td>24</td>
+        <td><div class="sermon-title">The Song of the Steadfast</div><div class="sermon-text">Psalm 11:1-7</div></td>
+        <td>The Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Prophetic</td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td><div class="sermon-title">The Treasury of David - Psalm 1</div><div class="sermon-text">Psalm 1:1-6</div></td>
+        <td>The Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>26</td>
+        <td><div class="sermon-title">The Treasury of David - Psalm 2</div><div class="sermon-text">Psalm 2:1-12</div></td>
+        <td>The Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Prophetic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>27</td>
+        <td><div class="sermon-title">The Treasury of David - Psalm 23</div><div class="sermon-text">Psalm 23:1-6</div></td>
+        <td>The Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Celebratory</td>
+      </tr>
+      <tr>
+        <td>28</td>
+        <td><div class="sermon-title">The Treasury of David - Psalm 3</div><div class="sermon-text">Psalm 3</div></td>
+        <td>The Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Celebratory</td>
+      </tr>
+      <tr>
+        <td>29</td>
+        <td><div class="sermon-title">The Treasury of David - Psalm 4</div><div class="sermon-text">Psalm 4:1-8</div></td>
+        <td>The Treasury of David</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Celebratory</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Standalone Sermons</td></tr>
+      <tr>
+        <td>30</td>
+        <td><div class="sermon-title">Faith: What it Is, and What it Leads to</div><div class="sermon-text">John 3:18</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Celebratory</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<footer class="site-footer">
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">Sermon Steward<span class="dot">.</span></div>
+      <div class="foot-imprint">Guild Hall — a gallery of masters, on the Sermon Steward site.</div>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/hall/">Hall</a>
+      <a href="/hall/glossary.html">Glossary</a>
+      <a href="/samples.html">Samples</a>
+      <a href="/product.html">Product</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.section-nav a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.section-nav a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+
+  function filterIllus(type, btn) {
+    document.querySelectorAll('.illus-controls .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cards = document.querySelectorAll('.illus-card');
+    cards.forEach(card => {
+      if (type === 'all' || card.dataset.type === type) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>
+</body>
+</html>

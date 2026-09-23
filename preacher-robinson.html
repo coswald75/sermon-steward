@@ -1,8 +1,9 @@
-<!DOCTYPE html>
-<html lang="en"><head>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>R.C. Sproul — Preacher Analysis · Sermon Steward</title>
+<title>Haddon Robinson — Preacher Analysis · Sermon Steward</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,7 +13,7 @@
     --ink:#1a1a1a;--parchment:#fbf8f1;--cream:#f5f1e6;--warm-gray:#828282;
     --gold:#c4452f;--gold-dim:#9a3624;--gold-bright:#c4452f;
     --burgundy:#9a3624;--forest:#3a7256;--slate:#4a4a4a;
-    --mahogany:#3d1c0e;--mahogany-mid:#5a2c18;--mahogany-light:#7a4228;
+    --primary:#1d3250;--primary-mid:#2a4468;--primary-light:#3a5a82;
     --shadow-soft:0 2px 20px rgba(26,23,20,0.06);--shadow-card:0 4px 30px rgba(26,23,20,0.10);
   }
   *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
@@ -29,8 +30,8 @@
   .nav-links a:hover{color:var(--burgundy);background:rgba(196,69,47,0.08);}
   .nav-cta{font-size:0.76rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:11px 22px;background:var(--gold);border-radius:4px;transition:all 0.2s;box-shadow:0 2px 12px rgba(196,69,47,0.28);}
   .nav-cta:hover{background:var(--gold-bright);}
-  .hero{background:var(--mahogany);color:#1a1a1a;padding:100px 30px 80px;position:relative;overflow:hidden;}
-  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 30% 50%,rgba(196,69,47,0.07) 0%,transparent 70%),radial-gradient(ellipse 50% 70% at 80% 20%,rgba(90,44,24,0.5) 0%,transparent 60%);pointer-events:none;}
+  .hero{background:var(--primary);color:#1a1a1a;padding:100px 30px 80px;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 30% 50%,rgba(196,69,47,0.07) 0%,transparent 70%),radial-gradient(ellipse 50% 70% at 80% 20%,rgba(29,50,80,0.5) 0%,transparent 60%);pointer-events:none;}
   .hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c4452f' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none;}
   .hero-inner{max-width:1160px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:1fr 320px;gap:80px;align-items:start;}
   .hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:28px;}
@@ -45,7 +46,7 @@
   .hero-divider{width:48px;height:1px;background:var(--gold-dim);margin-bottom:28px;}
   .hero-summary{font-size:1rem;color:rgba(26,26,26,0.6);max-width:560px;line-height:1.9;}
   .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(196,69,47,0.1);border:1px solid rgba(196,69,47,0.1);border-radius:12px;overflow:hidden;align-self:start;margin-top:8px;}
-  .hero-stat{background:rgba(61,28,14,0.7);padding:28px 24px;}
+  .hero-stat{background:rgba(29,50,80,0.7);padding:28px 24px;}
   .hero-stat-value{font-family:'Inter',serif;font-size:2.4rem;font-weight:600;color:var(--gold-bright);line-height:1;margin-bottom:6px;}
   .hero-stat-label{font-size:0.63rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,26,26,0.35);}
   .hero-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:28px;}
@@ -58,19 +59,18 @@
   .section-title{font-family:'Inter',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;line-height:1.2;margin-bottom:14px;}
   .section-intro{font-size:0.93rem;color:var(--slate);max-width:600px;line-height:1.85;margin-bottom:48px;}
   .section-rule{width:100%;height:1px;background:rgba(196,69,47,0.15);margin-top:56px;}
-  .mahogany-callout{background:#ffffff;border:1px solid rgba(122,66,40,0.3);border-radius:16px;padding:44px 48px;margin-bottom:48px;position:relative;overflow:hidden;}
-  .mahogany-callout::before{content:'Luke';position:absolute;right:-10px;bottom:-30px;font-family:'Inter',serif;font-size:10rem;font-weight:700;color:rgba(196,69,47,0.05);line-height:1;pointer-events:none;}
-  .mahogany-callout-label{font-size:0.6rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:rgba(196,69,47,0.6);margin-bottom:12px;}
-  .mahogany-callout-title{font-family:'Inter',serif;font-size:1.9rem;font-weight:400;line-height:1.25;color:#1a1a1a;margin-bottom:10px;}
-  .mahogany-callout-title em{font-style:italic;color:var(--gold-bright);}
-  .mahogany-callout-body{font-size:0.88rem;color:rgba(26,26,26,0.52);line-height:1.8;max-width:620px;}
+  .primary-callout{background:#ffffff;border:1px solid rgba(58,90,130,0.3);border-radius:16px;padding:44px 48px;margin-bottom:48px;position:relative;overflow:hidden;}
+  .primary-callout-label{font-size:0.6rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:rgba(196,69,47,0.6);margin-bottom:12px;}
+  .primary-callout-title{font-family:'Inter',serif;font-size:1.9rem;font-weight:400;line-height:1.25;color:#1a1a1a;margin-bottom:10px;}
+  .primary-callout-title em{font-style:italic;color:var(--gold-bright);}
+  .primary-callout-body{font-size:0.88rem;color:rgba(26,26,26,0.52);line-height:1.8;max-width:620px;}
   .loci-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 48px;}
   .loci-row{display:flex;flex-direction:column;gap:6px;}
   .loci-meta{display:flex;align-items:baseline;justify-content:space-between;}
   .loci-name{font-size:0.82rem;font-weight:500;color:var(--ink);}
   .loci-count{font-family:'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace',monospace;font-size:0.72rem;color:var(--warm-gray);}
   .loci-bar{height:4px;background:var(--cream);border-radius:2px;overflow:hidden;}
-  .loci-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--mahogany-mid),var(--gold));transition:width 1.2s cubic-bezier(0.25,0.46,0.45,0.94);width:0;}
+  .loci-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--primary-mid),var(--gold));transition:width 1.2s cubic-bezier(0.25,0.46,0.45,0.94);width:0;}
   .charts-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;}
   .chart-card{background:white;border:1px solid rgba(196,69,47,0.12);border-radius:16px;padding:32px 28px;box-shadow:var(--shadow-soft);}
   .chart-card-title{font-size:0.68rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--warm-gray);margin-bottom:24px;}
@@ -81,7 +81,7 @@
   .illus-track{height:6px;background:var(--cream);border-radius:3px;overflow:hidden;}
   .illus-fill{height:100%;border-radius:3px;transition:width 1.2s cubic-bezier(0.25,0.46,0.45,0.94);width:0;}
   .illus-fill.gold{background:var(--gold);}
-  .illus-fill.mahogany{background:var(--mahogany-mid);}
+  .illus-fill.primary{background:var(--primary-mid);}
   .illus-fill.burgundy{background:var(--burgundy);}
   .illus-fill.forest{background:var(--forest);}
   .illus-fill.slate{background:var(--slate);}
@@ -100,12 +100,7 @@
   .quote-card-author{font-family:'Inter',serif;font-size:1.05rem;font-weight:500;color:var(--ink);margin-bottom:4px;line-height:1.3;}
   .quote-card-tradition{font-size:0.65rem;color:var(--warm-gray);}
   .quote-card-bar{height:2px;background:var(--cream);border-radius:1px;overflow:hidden;margin-top:14px;}
-  .quote-card-fill{height:100%;background:linear-gradient(90deg,var(--mahogany-mid),var(--gold));transition:width 1.2s;width:0;}
-  .characters-feature{background:var(--cream);border:1px solid rgba(196,69,47,0.2);border-radius:16px;padding:36px 40px;margin-bottom:24px;display:grid;grid-template-columns:1fr 1fr;gap:32px;}
-  .char-card{background:white;border-radius:12px;padding:24px 20px;border:1px solid rgba(196,69,47,0.1);box-shadow:var(--shadow-soft);}
-  .char-count{font-family:'Inter',serif;font-size:2.5rem;font-weight:600;color:var(--gold);line-height:1;margin-bottom:6px;}
-  .char-name{font-family:'Inter',serif;font-size:1.3rem;margin-bottom:6px;}
-  .char-desc{font-size:0.8rem;color:var(--slate);line-height:1.7;}
+  .quote-card-fill{height:100%;background:linear-gradient(90deg,var(--primary-mid),var(--gold));transition:width 1.2s;width:0;}
   .quotes-minor{display:flex;flex-wrap:wrap;gap:8px;}
   .quote-chip{display:flex;align-items:center;gap:8px;background:var(--cream);border-radius:40px;padding:7px 14px;}
   .quote-chip-name{font-size:0.78rem;font-weight:500;color:var(--slate);}
@@ -123,7 +118,7 @@
   .corpus-title{font-size:0.86rem;font-weight:500;color:var(--ink);line-height:1.4;}
   .corpus-text{font-size:0.72rem;color:var(--warm-gray);margin-top:2px;}
   .corpus-date{font-family:'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace',monospace;font-size:0.7rem;color:var(--slate);}
-  .corpus-type-badge{display:inline-block;font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:3px 9px;border-radius:20px;background:rgba(61,28,14,0.1);color:var(--mahogany-mid);}
+  .corpus-type-badge{display:inline-block;font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:3px 9px;border-radius:20px;background:rgba(29,50,80,0.1);color:var(--primary-mid);}
   .modal-overlay{position:fixed;inset:0;background:rgba(26,23,20,0.7);backdrop-filter:blur(6px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity 0.3s;}
   .modal-overlay.open{opacity:1;pointer-events:all;}
   .modal{background:var(--parchment);border-radius:16px;padding:52px 48px;max-width:480px;width:100%;position:relative;transform:translateY(20px);transition:transform 0.3s;box-shadow:0 24px 80px rgba(26,23,20,0.25);}
@@ -145,7 +140,7 @@
   .form-success{text-align:center;padding:20px 0;}
   .form-success h3{font-family:'Inter',serif;font-size:1.6rem;margin-bottom:10px;}
   .form-success p{font-size:0.88rem;color:var(--slate);}
-  @media(max-width:900px){.hero-inner,.charts-row,.insight-grid,.characters-feature{grid-template-columns:1fr;}.hero-stats{grid-template-columns:repeat(4,1fr);}.loci-grid{grid-template-columns:1fr;}.quotes-grid{grid-template-columns:1fr 1fr;}.corpus-header,.corpus-row{grid-template-columns:40px 1fr 90px;}}
+  @media(max-width:900px){.hero-inner,.charts-row,.insight-grid{grid-template-columns:1fr;}.hero-stats{grid-template-columns:repeat(4,1fr);}.loci-grid{grid-template-columns:1fr;}.quotes-grid{grid-template-columns:1fr 1fr;}.corpus-header,.corpus-row{grid-template-columns:40px 1fr 90px;}}
 
   /* Sermon Steward skin — white + red, shared with product.html */
   :root {
@@ -216,184 +211,158 @@
   <div class="hero-inner">
     <div>
       <div class="hero-eyebrow"><a href="/hall/">The Guild Hall</a><div class="hero-eyebrow-sep"></div><span>Hall Member Profile</span></div>
-      <h1 class="hero-name">R.C. <em>Sproul</em></h1>
-      <p class="hero-role">Founder, <strong>Ligonier Ministries</strong> · Senior Minister, Saint Andrew's Chapel, Sanford, FL</p>
+      <h1 class="hero-name">Haddon <em>Robinson</em></h1>
+      <p class="hero-role">Professor, <strong>Gordon-Conwell Theological Seminary</strong> · Author, <em>Biblical Preaching</em> · 1931–2017</p>
       <div class="hero-divider"></div>
-      <p class="hero-summary guild-editor-changed">While indexing for all the usual metrics at work within our proprietary analyzer, we wanted to lean into Sproul's preaching of narrative. Thus sixty percent of the corpus comes from a single Gospel. 100% expository, 100% grammatical-historical, with an unusually high narrative register (203 units) that reflects the storytelling texture of Luke itself.</p>
+      <p class="hero-summary">Robinson's analyzed sermons show the master practitioner of his own theory: nearly 70% expository, driven by Ethics and Sanctification before Soteriology, with a narrative gift (personal story leads his illustration arsenal) that made doctrine land on Monday morning. He shaped a generation of preachers who learned to ask, "What is the big idea of this text?"</p>
       <div class="hero-tags">
-        <span class="hero-tag active">Reformed</span>
-        <span class="hero-tag active">Classical Theist</span>
         <span class="hero-tag active">Expository</span>
-        <span class="hero-tag active">Ligonier</span>
-        <span class="hero-tag">Saint Andrew's Chapel</span>
-        <span class="hero-tag">2007–2016</span>
+        <span class="hero-tag active">Big Idea Preaching</span>
+        <span class="hero-tag active">Gordon-Conwell</span>
+        <span class="hero-tag active">Evangelical</span>
+        <span class="hero-tag">Homiletics Professor</span>
+        <span class="hero-tag">1931–2017</span>
       </div>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-value">135</div><div class="hero-stat-label">BT Moves</div></div>
-      <div class="hero-stat"><div class="hero-stat-value">100%</div><div class="hero-stat-label">Expository Rate</div></div>
-      <div class="hero-stat"><div class="hero-stat-value">60%</div><div class="hero-stat-label">From Luke</div></div>
-      <div class="hero-stat"><div class="hero-stat-value">2007–16</div><div class="hero-stat-label">Corpus Era</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">27</div><div class="hero-stat-label">BT Moves</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">68%</div><div class="hero-stat-label">Expository Rate</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">736</div><div class="hero-stat-label">Rhetorical Units</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">1931–2017</div><div class="hero-stat-label">Life Span</div></div>
     </div>
   </div>
 </section>
 
 <div class="page-body">
-  <p class="archive-link"><a href="/hall/sproul/">Archive analysis — the sermons behind this profile</a></p>
+  <p class="archive-link"><a href="/hall/robinson/">Archive analysis — the sermons behind this profile</a></p>
 
-  <div class="section visible" id="sec-fingerprint">
+  <div class="section" id="sec-fingerprint">
     <div class="section-label">01 — Theological Fingerprint</div>
     <h2 class="section-title">What He Preaches About</h2>
-    <p class="section-intro">Christology leads at 263 units — with a Luke series corpus this is expected; the Gospel is about Jesus. Eschatology at #4 (132) is the distinctive feature: unusually high for a Reformed preacher, reflecting Luke's end-times parables and apocalyptic sections that Sproul engaged seriously rather than passing over. Christology and Eschatology together constitute his theological center of gravity in this corpus.</p>
+    <p class="section-intro">Ethics and Sanctification lead at 114 and 105 units — an unusual ordering for a Reformed-adjacent preacher. Robinson's corpus skews heavily practical: he preaches about how to live, not primarily about what to believe. Soteriology arrives fourth (82), beneath Hamartiology (88). The practical orientation of his corpus reflects his conviction that the Big Idea must always land in the congregation's Monday-morning world.</p>
     <div class="loci-grid">
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Christology</span><span class="loci-count">263 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="100" style="width: 100%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Soteriology</span><span class="loci-count">162 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="62" style="width: 62%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Hamartiology</span><span class="loci-count">134 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="51" style="width: 51%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Eschatology</span><span class="loci-count">132 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="50" style="width: 50%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Bibliology</span><span class="loci-count">104 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="40" style="width: 40%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Ethics / Moral Theology</span><span class="loci-count">94 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="36" style="width: 36%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Sanctification</span><span class="loci-count">92 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="35" style="width: 35%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Ecclesiology</span><span class="loci-count">90 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="34" style="width: 34%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Theology Proper</span><span class="loci-count">89 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="34" style="width: 34%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Providence / Sovereignty</span><span class="loci-count">70 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="27" style="width: 27%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Anthropology</span><span class="loci-count">62 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="24" style="width: 24%;"></div></div></div>
-      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Pastoral Theology</span><span class="loci-count">51 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="19" style="width: 19%;"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Ethics / Moral Theology</span><span class="loci-count">114 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="100"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Sanctification</span><span class="loci-count">105 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="92"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Hamartiology</span><span class="loci-count">88 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="77"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Soteriology</span><span class="loci-count">82 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="72"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Theology Proper</span><span class="loci-count">70 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="61"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Christology</span><span class="loci-count">58 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="51"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Providence / Sovereignty</span><span class="loci-count">51 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="45"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Anthropology</span><span class="loci-count">49 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="43"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Ecclesiology</span><span class="loci-count">46 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="40"></div></div></div>
+      <div class="loci-row"><div class="loci-meta"><span class="loci-name">Doxology / Worship</span><span class="loci-count">30 units</span></div><div class="loci-bar"><div class="loci-fill" data-pct="26"></div></div></div>
     </div>
   </div>
   <div class="section-rule"></div>
 
-  <div class="section visible" id="sec-homiletical">
+  <div class="section" id="sec-homiletical">
     <div class="section-label">02 — Homiletical Profile</div>
     <h2 class="section-title">How He Preaches</h2>
-    <div class="mahogany-callout">
-      <div class="mahogany-callout-label">Hall Distinction — The Luke Decade</div>
-      <div class="mahogany-callout-title"><em>The majority of sermons</em> drawn from a single Gospel — a decade of sustained exposition through one book</div>
-      <div class="mahogany-callout-body">Sixty percent of the analyzed corpus comes from Sproul's Luke series at Saint Andrew's Chapel (2012–2016). This is what long-haul expository preaching looks like at scale: a congregation shaped by a single extended Gospel over years. The high narrative register in this corpus (203 units) is not an accident of style — it is a consequence of Luke, the most narrative of the Gospels, forming the preacher's texture over time.</div>
+    <div class="primary-callout">
+      <div class="primary-callout-label">Hall Distinction — The Big Idea Method</div>
+      <div class="primary-callout-title">Every sermon organized around <em>one central proposition</em> — the method that trained a generation</div>
+      <div class="primary-callout-body">Robinson's <em>Biblical Preaching</em> (1980, revised 2001) became the standard homiletics textbook at hundreds of seminaries worldwide. His argument: the preacher must first determine the "Big Idea" — the one thing the text is saying — and then build every element of the sermon to drive home that single idea with clarity, compulsion, and concrete application. The corpus bears this out: exposition at 267 units (36% of all units) and theological claims at 163 (22%) together constitute a tightly argued structure in every message.</div>
     </div>
     <div class="charts-row">
-      <div class="chart-card"><div class="chart-card-title">Hermeneutical Methods</div><div class="chart-canvas-wrap"><canvas id="chartMethod" width="600" height="300" style="display: block; box-sizing: border-box; height: 150px; width: 300px;"></canvas></div></div>
-      <div class="chart-card"><div class="chart-card-title">Rhetorical Register</div><div class="chart-canvas-wrap"><canvas id="chartTone" width="600" height="300" style="display: block; box-sizing: border-box; height: 150px; width: 300px;"></canvas></div></div>
-      <div class="chart-card"><div class="chart-card-title">Corpus by Book</div><div class="chart-canvas-wrap"><canvas id="chartBook" width="360" height="360" style="display: block; box-sizing: border-box; height: 180px; width: 180px;"></canvas></div></div>
+      <div class="chart-card"><div class="chart-card-title">Sermon Types</div><div class="chart-canvas-wrap"><canvas id="chartMethod"></canvas></div></div>
+      <div class="chart-card"><div class="chart-card-title">Rhetorical Functions</div><div class="chart-canvas-wrap"><canvas id="chartTone"></canvas></div></div>
+      <div class="chart-card"><div class="chart-card-title">BT Moves</div><div class="chart-canvas-wrap"><canvas id="chartBook"></canvas></div></div>
     </div>
   </div>
   <div class="section-rule"></div>
 
-  <div class="section visible" id="sec-illustrations">
+  <div class="section" id="sec-illustrations">
     <div class="section-label">03 — Illustration Arsenal</div>
     <h2 class="section-title">How He Makes It Concrete</h2>
-    <p class="section-intro">Personal story leads strongly (50), with historical example close behind (34). Sproul is an accessible, narrative preacher — the Luke series drew out his storytelling instincts. Analogy (2) is extremely low, the inverse of DeYoung. He illustrates by narrating, not comparing.</p>
+    <p class="section-intro">Personal story leads (32) — Robinson is a natural narrator, with personal anecdotes and cultural references running nearly equal (32 vs 24). Historical example and analogy are both significant, reflecting an academic's comfort with the full illustration toolkit. He draws from literature, history, and real life with equal ease. No single mode dominates: 110 illustrations spread across five types.</p>
     <div class="illus-list">
-      <div class="illus-row"><span class="illus-name">Personal Story</span><div class="illus-track"><div class="illus-fill gold" data-pct="100" style="width: 100%;"></div></div><span class="illus-val">50</span></div>
-      <div class="illus-row"><span class="illus-name">Historical Example</span><div class="illus-track"><div class="illus-fill mahogany" data-pct="68" style="width: 68%;"></div></div><span class="illus-val">34</span></div>
-      <div class="illus-row"><span class="illus-name">Hypothetical</span><div class="illus-track"><div class="illus-fill burgundy" data-pct="32" style="width: 32%;"></div></div><span class="illus-val">16</span></div>
-      <div class="illus-row"><span class="illus-name">Cultural Reference</span><div class="illus-track"><div class="illus-fill forest" data-pct="26" style="width: 26%;"></div></div><span class="illus-val">13</span></div>
-      <div class="illus-row"><span class="illus-name">Analogy</span><div class="illus-track"><div class="illus-fill slate" data-pct="4" style="width: 4%;"></div></div><span class="illus-val">2</span></div>
+      <div class="illus-row"><span class="illus-name">Personal Story</span><div class="illus-track"><div class="illus-fill gold" data-pct="100"></div></div><span class="illus-val">32</span></div>
+      <div class="illus-row"><span class="illus-name">Cultural Reference</span><div class="illus-track"><div class="illus-fill primary" data-pct="75"></div></div><span class="illus-val">24</span></div>
+      <div class="illus-row"><span class="illus-name">Historical Example</span><div class="illus-track"><div class="illus-fill burgundy" data-pct="66"></div></div><span class="illus-val">21</span></div>
+      <div class="illus-row"><span class="illus-name">Analogy</span><div class="illus-track"><div class="illus-fill forest" data-pct="53"></div></div><span class="illus-val">17</span></div>
+      <div class="illus-row"><span class="illus-name">Hypothetical</span><div class="illus-track"><div class="illus-fill slate" data-pct="50"></div></div><span class="illus-val">16</span></div>
     </div>
   </div>
   <div class="section-rule"></div>
 
-  <div class="section visible" id="sec-quotes">
+  <div class="section" id="sec-quotes">
     <div class="section-label">04 — Intellectual Lineage</div>
-    <h2 class="section-title">Who Sproul Quotes</h2>
-    <p class="section-intro">Luther (10×) and Edwards (8×) anchor the citation list — the expected Reformed inheritance. But the next tier is where Sproul is surprising: Augustus Toplady (6×), Meredith Kline (4×), and secular thinkers Marx, Russell, and Mill at 4× each. He quotes the enemies of the faith by name to expose and answer them.</p>
-
+    <h2 class="section-title">Who Robinson Quotes</h2>
+    <p class="section-intro">Paul leads at 8× across variant references — Robinson is deeply Pauline, with 1 Corinthians 13 dominating his scripture citation list. Will Durant (3×) and Martin Luther (3×) represent the historian and the Reformer. The appearance of Cole Porter, Francis Scott Key, and Ian MacLaren suggests an eclectic, culturally engaged citation sensibility — the preacher reaching across the aisle to make doctrine comprehensible to everyday people.</p>
     <div class="quote-hero-card">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
         <div>
-          <div class="quote-hero-count">10×</div>
+          <div class="quote-hero-count">8×</div>
           <div class="quote-hero-count-label">Top citation</div>
-          <div class="quote-hero-author">Martin Luther</div>
-          <div class="quote-hero-tradition">German Reformer · Diet of Worms · Here I Stand</div>
-          <p class="quote-hero-text">"Here I stand. I can do no other. God help me."</p>
+          <div class="quote-hero-author">The Apostle Paul</div>
+          <div class="quote-hero-tradition">NT Apostle · 1 Corinthians · Romans · Ephesians</div>
+          <p class="quote-hero-text">"Love is patient, love is kind. It does not envy, it does not boast, it is not proud."</p>
         </div>
         <div>
-          <div class="quote-hero-count" style="font-size:2.8rem;">8×</div>
+          <div class="quote-hero-count" style="font-size:2.8rem;">3×</div>
           <div class="quote-hero-count-label">Second citation</div>
-          <div class="quote-hero-author">Jonathan Edwards</div>
-          <div class="quote-hero-tradition">New England divine · Sinners in the Hands of an Angry God</div>
-          <p class="quote-hero-text">"The God that holds you over the pit of Hell, much as one holds a spider over the fire, abhors you and is dreadfully provoked."</p>
+          <div class="quote-hero-author">Martin Luther</div>
+          <div class="quote-hero-tradition">German Reformer · Reformation founder</div>
+          <p class="quote-hero-text">"A theology of the cross is not a comfortable theology — it is a true one."</p>
         </div>
       </div>
     </div>
-
     <div class="quotes-grid">
-      <div class="quote-card"><div class="quote-card-count">6×</div><div class="quote-card-author">Augustus Toplady</div><div class="quote-card-tradition">Calvinist Anglican · Rock of Ages</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="60" style="width: 60%;"></div></div></div>
-      <div class="quote-card"><div class="quote-card-count">4×</div><div class="quote-card-author">Meredith Kline</div><div class="quote-card-tradition">OT scholar · covenant theologian</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="40" style="width: 40%;"></div></div></div>
-      <div class="quote-card"><div class="quote-card-count">4×</div><div class="quote-card-author">Karl Marx</div><div class="quote-card-tradition">Quoted to refute · secular critic</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="40" style="width: 40%;"></div></div></div>
-      <div class="quote-card"><div class="quote-card-count">4×</div><div class="quote-card-author">Bertrand Russell</div><div class="quote-card-tradition">Quoted to refute · atheist philosopher</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="40" style="width: 40%;"></div></div></div>
-      <div class="quote-card"><div class="quote-card-count">4×</div><div class="quote-card-author">John Stuart Mill</div><div class="quote-card-tradition">Quoted to refute · utilitarian philosopher</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="40" style="width: 40%;"></div></div></div>
-      <div class="quote-card"><div class="quote-card-count">4×</div><div class="quote-card-author">Saint Augustine</div><div class="quote-card-tradition">Bishop of Hippo · Confessions</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="40" style="width: 40%;"></div></div></div>
-      <div class="quote-card"><div class="quote-card-count">4×</div><div class="quote-card-author">R.C. Sproul Jr.</div><div class="quote-card-tradition">Son · theologian · St. Peter Presbyterian</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="40" style="width: 40%;"></div></div></div>
-      <div class="quote-card"><div class="quote-card-count">4×</div><div class="quote-card-author">John Stuart Mill</div><div class="quote-card-tradition">Utilitarian philosopher</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="40" style="width: 40%;"></div></div></div>
+      <div class="quote-card"><div class="quote-card-count">3×</div><div class="quote-card-author">Will Durant</div><div class="quote-card-tradition">Historian · The Story of Civilization</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="38"></div></div></div>
+      <div class="quote-card"><div class="quote-card-count">2×</div><div class="quote-card-author">Cole Porter</div><div class="quote-card-tradition">American composer · cultural touchstone</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="25"></div></div></div>
+      <div class="quote-card"><div class="quote-card-count">2×</div><div class="quote-card-author">Immanuel Kant</div><div class="quote-card-tradition">German philosopher · moral philosophy</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="25"></div></div></div>
+      <div class="quote-card"><div class="quote-card-count">2×</div><div class="quote-card-author">Ian MacLaren</div><div class="quote-card-tradition">Scottish minister · popular Victorian preacher</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="25"></div></div></div>
+      <div class="quote-card"><div class="quote-card-count">2×</div><div class="quote-card-author">Francis Scott Key</div><div class="quote-card-tradition">American attorney · Star-Spangled Banner</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="25"></div></div></div>
+      <div class="quote-card"><div class="quote-card-count">2×</div><div class="quote-card-author">E.A. Robinson</div><div class="quote-card-tradition">American poet · Richard Cory</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="25"></div></div></div>
+      <div class="quote-card"><div class="quote-card-count">2×</div><div class="quote-card-author">Bishop Gore</div><div class="quote-card-tradition">Anglican bishop · theologian</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="25"></div></div></div>
+      <div class="quote-card"><div class="quote-card-count">2×</div><div class="quote-card-author">African man (Dan Crawford)</div><div class="quote-card-tradition">Missionary account · Africa</div><div class="quote-card-bar"><div class="quote-card-fill" data-pct="25"></div></div></div>
     </div>
-
-    <div style="font-size:0.63rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--warm-gray);margin-bottom:16px;">The Recurring Characters — Personal Illustration Archive</div>
-    <div class="characters-feature">
-      <div class="char-card">
-        <div class="char-count">6×</div>
-        <div class="char-name">Ken the Handyman</div>
-        <p class="char-desc">A recurring figure in Sproul's personal illustration archive — a tradesman whose practical wisdom and direct manner provided Sproul with accessible anchors for theological points across multiple sermons and years.</p>
-      </div>
-      <div class="char-card">
-        <div class="char-count">6×</div>
-        <div class="char-name">The Eccentric Philanthropist</div>
-        <p class="char-desc">A wealthy figure who appears repeatedly in Sproul's illustrations, typically in the context of grace, generosity, and the economics of salvation. Possibly based on a real individual; used to make abstract doctrines tangible.</p>
-      </div>
-    </div>
-
     <div class="quotes-minor">
-      <div class="quote-chip"><span class="quote-chip-name">John Newton</span><span class="quote-chip-count">2×</span></div>
-      <div class="quote-chip"><span class="quote-chip-name">Michelangelo</span><span class="quote-chip-count">2×</span></div>
-      <div class="quote-chip"><span class="quote-chip-name">Hungarian pastors</span><span class="quote-chip-count">2×</span></div>
-      <div class="quote-chip"><span class="quote-chip-name">R.C. Sproul (self)</span><span class="quote-chip-count">4×</span></div>
+      <div class="quote-chip"><span class="quote-chip-name">Thornton Wilder</span><span class="quote-chip-count">1×</span></div>
+      <div class="quote-chip"><span class="quote-chip-name">Jesus Christ</span><span class="quote-chip-count">2×</span></div>
+      <div class="quote-chip"><span class="quote-chip-name">Gordon Seminary colleague</span><span class="quote-chip-count">1×</span></div>
     </div>
   </div>
   <div class="section-rule"></div>
 
-  <div class="section visible" id="sec-insights">
+  <div class="section" id="sec-insights">
     <div class="section-label">05 — Analytical Insights</div>
     <h2 class="section-title">What the Data Reveals</h2>
     <div class="insight-grid">
       <div class="insight-card">
-        <div class="insight-card-label">The Luke Decade</div>
-        <p class="insight-card-text">Years spent in one Gospel — this is not a preacher who circles the full canon annually but one who <em>goes deep before going wide</em>. The congregation at Saint Andrew's knew Luke. They had been formed by it. The high narrative register (203 units) is partly Sproul's gift, but it is also Luke's — the most story-dense Gospel, and a decade of it shapes a preacher's instincts irreversibly.</p>
+        <div class="insight-card-label">Ethics Before Soteriology</div>
+        <p class="insight-card-text">Robinson's top doctrinal locus is Ethics/Moral Theology (114), not Soteriology (82). This is a striking reversal of the typical Reformed order. <em>He preached to people who already believed — and his question was whether they were living it.</em> The Big Idea framework is inherently applicational: not just "what does this text say?" but "what should people do differently Monday morning?" The data bears out the method.</p>
       </div>
       <div class="insight-card">
-        <div class="insight-card-label">Eschatology as Attention</div>
-        <p class="insight-card-text">Eschatology at #4 with 132 units is a Hall outlier. Most Reformed preachers treat end-times material cautiously, aware of the speculative dangers. Sproul does not pass over Luke's apocalyptic sections — he engages them carefully and at length. <em>For him, eschatology was not a distraction from the present but a frame that gave the present its weight.</em> He took seriously what many Reformed preachers quietly skip.</p>
+        <div class="insight-card-label">The Broadest Illustration Palette in the Hall</div>
+        <p class="insight-card-text">Five illustration types with relatively even distribution — personal story, cultural reference, historical example, analogy, hypothetical — reflects the homiletics professor's self-awareness. Robinson taught preachers <em>how</em> to illustrate, and his own corpus shows mastery of every mode. No single type dominates (unlike Sproul's strong narrative lean), suggesting a deliberate, trained versatility.</p>
       </div>
       <div class="insight-card">
-        <div class="insight-card-label">The Philosopher's Foil</div>
-        <p class="insight-card-text">Marx, Russell, and Mill at 4× each — Sproul's academic training (theology and philosophy at Pittsburgh, Amsterdam, and the Free University) never left him. He quotes the secular tradition not to appreciate it but to answer it. <em>He believed the enemies of the faith deserved a serious response, not a dismissal.</em> This is the Ligonier instinct: apologetics as the preacher's permanent duty.</p>
+        <div class="insight-card-label">Deeply Pauline, Practically Wired</div>
+        <p class="insight-card-text">1 Corinthians 13:4 is his #1 most-cited verse (13×). Romans 4 and Ephesians also appear prominently. <em>Paul's ethical and applicational letters dominate Robinson's scripture palette.</em> He is less drawn to narrative OT books (very few narrative sermons in the corpus) and more to the epistles — the part of scripture most naturally suited to the Big Idea method, where propositions are stated rather than embedded in story.</p>
       </div>
       <div class="insight-card">
-        <div class="insight-card-label">The Personal Archive</div>
-        <p class="insight-card-text">"Ken the handyman" (6×) and "the eccentric philanthropist" (6×) are recurring illustration characters — a preaching signature. Sproul had a library of personal stories he returned to across sermons and years. <em>The characters became known to the congregation</em>, creating a shared illustrative vocabulary between preacher and people. Consistent with 34 historical examples: he narrates, he doesn't compare.</p>
+        <div class="insight-card-label">The Professor Who Practiced</div>
+        <p class="insight-card-text">Robinson wrote the textbook, but the corpus proves he was also a practitioner. The corpus shows consistent application of Big Idea principles: single-thesis structure, clear exposition, concrete illustration, targeted application. <em>He did not just teach a method — he inhabited it.</em> When he died in 2017, former students at hundreds of churches were preaching with tools he gave them.</p>
       </div>
     </div>
   </div>
   <div class="section-rule"></div>
+
+  
 </div>
 
 <script>
-const C={mahogany:'#c4452f',mahoganyMid:'#9a3624',gold:'#c4452f',goldBright:'#c4452f',burgundy:'#9a3624',forest:'#3a7256',slate:'#4a4a4a',warm:'#828282'};
-new Chart(document.getElementById('chartMethod'),{type:'bar',data:{labels:['Gram-Hist','Canonical','Redemp-Hist','Applicatory'],datasets:[{data:[45,36,21,13],backgroundColor:[C.mahoganyMid,C.gold,C.burgundy,C.warm],borderRadius:4,borderWidth:0}]},options:{indexAxis:'y',layout:{padding:{left:8}},scales:{x:{display:false,grid:{display:false}},y:{grid:{display:false},ticks:{font:{family:'Inter',size:11},color:C.slate}}},plugins:{legend:{display:false}},animation:{duration:1200}}});
-new Chart(document.getElementById('chartTone'),{type:'bar',data:{labels:['Logos','Narrative','Pathos','Ethos','Doxological','Pastoral'],datasets:[{data:[773,203,310,159,75,56],backgroundColor:[C.mahoganyMid,C.gold,C.burgundy,C.forest,C.slate,C.warm],borderRadius:4,borderWidth:0}]},options:{indexAxis:'y',layout:{padding:{left:8}},scales:{x:{display:false,grid:{display:false}},y:{grid:{display:false},ticks:{font:{family:'Inter',size:11},color:C.slate}}},plugins:{legend:{display:false}},animation:{duration:1200}}});
-new Chart(document.getElementById('chartBook'),{type:'doughnut',data:{labels:['Luke','Romans','Other'],datasets:[{data:[27,4,14],backgroundColor:[C.mahoganyMid,C.gold,C.slate],borderWidth:0,hoverOffset:6}]},options:{cutout:'62%',plugins:{legend:{display:true,position:'right',labels:{font:{family:'Inter',size:10},color:C.mahogany,padding:10,boxWidth:10}}},animation:{duration:1200}}});
+const C={primary:'#c4452f',primaryMid:'#9a3624',gold:'#c4452f',goldBright:'#c4452f',burgundy:'#9a3624',forest:'#3a7256',slate:'#4a4a4a',warm:'#828282'};
+new Chart(document.getElementById('chartMethod'),{type:'doughnut',data:{labels:['Expository','Topical','Textual','Narrative'],datasets:[{data:[13,3,2,1],backgroundColor:[C.primaryMid,C.gold,C.burgundy,C.warm],borderWidth:0,hoverOffset:6}]},options:{cutout:'62%',plugins:{legend:{display:true,position:'right',labels:{font:{family:'Inter',size:10},color:C.primary,padding:10,boxWidth:10}}},animation:{duration:1200}}});
+new Chart(document.getElementById('chartTone'),{type:'bar',data:{labels:['Exposition','Theo. Claim','Illustration','Application','Transition','Prayer'],datasets:[{data:[267,163,110,61,53,31],backgroundColor:[C.primaryMid,C.gold,C.burgundy,C.forest,C.slate,C.warm],borderRadius:4,borderWidth:0}]},options:{indexAxis:'y',layout:{padding:{left:8}},scales:{x:{display:false,grid:{display:false}},y:{grid:{display:false},ticks:{font:{family:'Inter',size:11},color:C.slate}}},plugins:{legend:{display:false}},animation:{duration:1200}}});
+new Chart(document.getElementById('chartBook'),{type:'bar',data:{labels:['Typology','Theme Thread','Intertextual','Fulfillment','Prog. Rev.','Narrative'],datasets:[{data:[7,5,5,4,4,2],backgroundColor:[C.primaryMid,C.gold,C.burgundy,C.forest,C.slate,C.warm],borderRadius:4,borderWidth:0}]},options:{indexAxis:'y',layout:{padding:{left:8}},scales:{x:{display:false,grid:{display:false}},y:{grid:{display:false},ticks:{font:{family:'Inter',size:11},color:C.slate}}},plugins:{legend:{display:false}},animation:{duration:1200}}});
 const observer=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');observer.unobserve(x.target);}}),{threshold:0.06});
 document.querySelectorAll('.section').forEach(s=>observer.observe(s));
 document.querySelectorAll('[data-pct]').forEach(el=>{const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){setTimeout(()=>{el.style.width=el.dataset.pct+'%';},120);o.unobserve(el);}}),{threshold:0.1});o.observe(el);});
 </script>
 </div>
-
-      <div id="guild-editor-status">
-        Editing <span class="filename">preacher-sproul.html</span>
-        — <span class="change-count">1 change</span>
-      </div>
-      <button class="editor-btn-reset" id="editor-reset">Reset</button>
-      <button class="editor-btn-save" id="editor-save" disabled="">Saving...</button>
-      <button class="editor-btn-deploy" id="editor-deploy">Deploy</button>
-    </div><footer class="site-footer">
+<footer class="site-footer">
   <div class="foot-inner">
     <div>
       <div class="foot-brand">Sermon Steward<span class="dot">.</span></div>
@@ -407,4 +376,5 @@ document.querySelectorAll('[data-pct]').forEach(el=>{const o=new IntersectionObs
     </nav>
   </div>
 </footer>
-</body></html>
+</body>
+</html>

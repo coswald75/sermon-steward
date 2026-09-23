@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John MacArthur · Archive Analysis · Sermon Steward</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:        #1a1a1a;
+      --parchment:  #fbf8f1;
+      --gold:       #c4452f;
+      --gold-light: #c4452f;
+      --burgundy:   #9a3624;
+      --forest:     #3a7256;
+      --muted:      #4a4a4a;
+      --rule:       rgba(196,69,47,0.22);
+      --serif:      'Inter', Georgia, serif;
+      --sans:       'Inter', system-ui, sans-serif;
+      --mono:       'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--ink); color:#1a1a1a; font-family: var(--sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: linear-gradient(to bottom, rgba(26,23,16,0.98), rgba(26,23,16,0)); border-bottom: 1px solid rgba(196,69,47,0.08); }
+    .nav-brand { font-family: var(--serif); font-size: 0.95rem; color:#1a1a1a; text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 28px; }
+    .nav-right a { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-right a:hover { color: var(--gold-light); }
+    .section-nav { position: sticky; top: 57px; z-index: 90; background: rgba(26,23,16,0.97); border-bottom: 1px solid var(--rule); display: flex; gap: 0; overflow-x: auto; }
+    .section-nav a { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none; padding: 14px 24px; border-bottom: 2px solid transparent; white-space: nowrap; transition: color 0.2s, border-color 0.2s; }
+    .section-nav a:hover, .section-nav a.active { color: var(--gold-light); border-bottom-color: var(--gold); }
+    .hero { padding: 130px 48px 80px; max-width: 1000px; border-bottom: 1px solid var(--rule); }
+    .hero-eyebrow { font-family: var(--mono); font-size: 0.65rem; color: var(--gold); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
+    .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+    h1 { font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 300; line-height: 1.1; margin-bottom: 8px; }
+    h1 em { font-style: italic; color: var(--gold-light); }
+    .hero-role { font-family: var(--sans); font-size: 0.9rem; color: var(--muted); margin-bottom: 36px; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+    .tag { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--rule); padding: 4px 10px; border-radius: 2px; }
+    .hero-stats { display: grid; grid-template-columns: repeat(5, auto); gap: 40px; width: fit-content; }
+    .hero-stat-n { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: var(--gold-light); line-height: 1; }
+    .hero-stat-l { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
+    section { padding: 80px 48px; max-width: 1100px; margin: 0 auto; border-bottom: 1px solid var(--rule); }
+    .eyebrow { font-family: var(--mono); font-size: 0.62rem; color: var(--gold); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 12px; }
+    h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300; line-height: 1.2; margin-bottom: 48px; }
+    h2 em { font-style: italic; color: var(--gold-light); }
+    h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; margin-bottom: 10px; }
+    p { font-family: var(--sans); font-size: 0.9rem; color: rgba(26,26,26,0.7); line-height: 1.8; }
+    .analysis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .analysis-col h3 { font-size: 1rem; font-family: var(--mono); letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; margin-bottom: 20px; font-weight: 400; }
+    .bar-chart { display: flex; flex-direction: column; gap: 10px; }
+    .bar-row { display: flex; align-items: center; gap: 12px; }
+    .bar-label { font-family: var(--sans); font-size: 0.78rem; color: rgba(26,26,26,0.65); width: 180px; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 6px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 3px; background: var(--gold); transition: width 1s ease; }
+    .bar-fill.forest { background: var(--forest); }
+    .bar-fill.burgundy { background: var(--burgundy); }
+    .bar-fill.muted { background: var(--muted); }
+    .bar-n { font-family: var(--mono); font-size: 0.65rem; color: var(--muted); width: 52px; text-align: right; flex-shrink: 0; }
+    .register-block { margin-top: 40px; }
+    .register-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+    .register-pill { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 14px; border-radius: 2px; border: 1px solid var(--rule); }
+    .register-pill.logos { background: rgba(45,74,53,0.3); border-color: var(--forest); color: #7ab88a; }
+    .register-pill.pathos { background: rgba(122,45,45,0.3); border-color: var(--burgundy); color: #c47a7a; }
+    .register-pill.ethos { background: rgba(196,69,47,0.15); border-color: var(--gold); color: var(--gold-light); }
+    .register-pill.doxological { background: rgba(107,100,85,0.3); border-color: var(--muted); color: #a89d8a; }
+    .register-pill.narrative { background: rgba(60,80,100,0.3); border-color: #4a6a8a; color: #7a9aaa; }
+    .distinction-box { background: rgba(196,69,47,0.04); border: 1px solid rgba(196,69,47,0.2); border-radius: 2px; padding: 24px 28px; margin-top: 32px; }
+    .distinction-label { font-family: var(--mono); font-size: 0.6rem; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; }
+    .distinction-box p { font-size: 0.88rem; font-style: italic; color: rgba(26,26,26,0.75); }
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 56px; }
+    .stat-box { border: 1px solid var(--rule); border-radius: 2px; padding: 28px 24px; text-align: center; }
+    .stat-box-n { font-family: var(--serif); font-size: 2.4rem; font-weight: 300; color: var(--gold-light); line-height: 1; }
+    .stat-box-l { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 8px; }
+    .illus-controls { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+    .filter-btn { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 14px; border: 1px solid var(--rule); border-radius: 2px; background: none; color: var(--muted); cursor: pointer; transition: all 0.2s; }
+    .filter-btn:hover, .filter-btn.active { border-color: var(--gold); color: var(--gold-light); background: rgba(196,69,47,0.06); }
+    .illus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .illus-card { border: 1px solid var(--rule); border-radius: 2px; padding: 24px; transition: border-color 0.2s; cursor: default; }
+    .illus-card:hover { border-color: rgba(196,69,47,0.35); }
+    .illus-type { font-family: var(--mono); font-size: 0.58rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
+    .illus-text { font-family: var(--sans); font-size: 0.85rem; color: rgba(26,26,26,0.72); line-height: 1.7; }
+    .illus-source { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); margin-top: 12px; }
+    .quotes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .quote-card { border-left: 2px solid var(--rule); padding: 20px 24px; transition: border-color 0.2s; }
+    .quote-card:hover { border-left-color: var(--gold); }
+    .quote-text { font-family: var(--serif); font-size: 1.05rem; font-style: italic; color: rgba(26,26,26,0.82); line-height: 1.65; margin-bottom: 12px; }
+    .quote-attr { font-family: var(--mono); font-size: 0.6rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
+    .quote-source { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); margin-top: 2px; }
+    .author-counts { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+    .author-chip { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; padding: 5px 12px; border: 1px solid var(--rule); border-radius: 20px; color: var(--muted); }
+    .author-chip span { color: var(--gold-light); margin-left: 4px; }
+    .claims-list { display: flex; flex-direction: column; gap: 0; }
+    .claim-row { padding: 18px 0; border-bottom: 1px solid rgba(196,69,47,0.08); display: grid; grid-template-columns: 1fr 220px; gap: 24px; align-items: start; }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-text { font-family: var(--sans); font-size: 0.88rem; color: rgba(26,26,26,0.82); line-height: 1.65; }
+    .claim-meta { text-align: right; }
+    .claim-fn { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; border: 1px solid var(--rule); color: var(--muted); display: inline-block; margin-bottom: 6px; }
+    .claim-fn.theological_claim { border-color: rgba(196,69,47,0.4); color: var(--gold-light); }
+    .claim-fn.exposition { border-color: rgba(45,74,53,0.5); color: #7ab88a; }
+    .claim-sermon { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); }
+    .sermon-table { width: 100%; border-collapse: collapse; }
+    .sermon-table th { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); letter-spacing: 0.14em; text-transform: uppercase; text-align: left; padding: 10px 16px; border-bottom: 1px solid var(--rule); }
+    .sermon-table td { font-family: var(--sans); font-size: 0.84rem; color: rgba(26,26,26,0.7); padding: 13px 16px; border-bottom: 1px solid rgba(196,69,47,0.06); vertical-align: top; }
+    .sermon-table tr:hover td { background: rgba(196,69,47,0.03); }
+    .sermon-title { color:#1a1a1a; font-weight: 400; }
+    .sermon-text { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+    .sermon-type { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; border: 1px solid var(--rule); color: var(--muted); white-space: nowrap; }
+    .sermon-type.expository { border-color: rgba(45,74,53,0.5); color: #7ab88a; }
+    .sermon-type.topical { border-color: rgba(122,45,45,0.5); color: #c47a7a; }
+    .sermon-type.textual { border-color: rgba(196,69,47,0.4); color: var(--gold-light); }
+    .series-group-header td { padding: 24px 16px 8px; font-family: var(--mono); font-size: 0.6rem; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; border-bottom: 1px solid var(--rule); background: rgba(196,69,47,0.03); }
+    footer { border-top: 1px solid var(--rule); padding: 40px 48px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-brand { font-family: var(--serif); font-size: 0.95rem; color:#1a1a1a; }
+    footer p { font-size: 0.75rem; color: var(--muted); }
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .hero, section { padding-left: 20px; padding-right: 20px; }
+      .hero-stats { grid-template-columns: repeat(3,auto); gap: 24px; }
+      .analysis-grid, .illus-grid, .quotes-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .claim-row { grid-template-columns: 1fr; }
+      .section-nav a { padding: 12px 16px; }
+    }
+  
+  :root {
+    --ink:#fbf8f1; --parchment:#1a1a1a; --gold:#c4452f; --gold-light:#c4452f;
+    --burgundy:#9a3624; --forest:#3a7256; --muted:#4a4a4a; --rule:#e6e1d3;
+    --serif: Inter, system-ui, sans-serif; --sans: Inter, system-ui, sans-serif;
+  }
+  body { background:#fbf8f1 !important; color:#1a1a1a !important; font-family:Inter, system-ui, sans-serif !important; }
+  h1, h2, h3, .footer-brand, .nav-brand { font-family:Inter, system-ui, sans-serif !important; font-weight:800; color:#1a1a1a; }
+  h1 em, h2 em { font-style:normal !important; color:#c4452f !important; }
+  .hero { padding:48px 28px 56px !important; max-width:1080px; }
+  section { padding:64px 28px !important; }
+  .section-nav { top:65px !important; background:rgba(251,248,241,0.96) !important; border-bottom:1px solid #e6e1d3 !important; }
+  .section-nav a { color:#4a4a4a !important; }
+  .section-nav a:hover, .section-nav a.active { color:#c4452f !important; border-bottom-color:#c4452f !important; }
+  p, .bar-label, .illus-text, .quote-text, .claim-text, .sermon-table td, .distinction-box p { color:#4a4a4a !important; }
+  .sermon-title { color:#1a1a1a !important; font-weight:700 !important; }
+  .bar-track { background:rgba(0,0,0,0.06) !important; }
+  .stat-box, .illus-card, .distinction-box, .quote-card, .claim-card { background:#fff; border-color:#e6e1d3 !important; }
+  .site-header { background:rgba(251,248,241,0.92); backdrop-filter:blur(8px); border-bottom:1px solid #e6e1d3; position:sticky; top:0; z-index:100; }
+  .site-header-inner { max-width:1180px; margin:0 auto; padding:16px 28px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+  .wordmark { font-weight:800; font-size:21px; letter-spacing:-0.02em; color:#1a1a1a; text-decoration:none; }
+  .wordmark .dot { color:#c4452f; }
+  nav { position:static !important; background:none !important; padding:0 !important; border:0 !important; }
+  .site-nav { font-size:15px; font-weight:500; display:flex; gap:22px; align-items:center; }
+  .site-nav a { color:#4a4a4a; text-decoration:none; letter-spacing:0; text-transform:none; font-size:15px; }
+  .site-nav a:hover { color:#1a1a1a; }
+  .site-footer { border-top:1px solid #e6e1d3; padding:40px 28px; background:#fbf8f1; }
+  .foot-inner { max-width:1080px; margin:0 auto; display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; align-items:center; }
+  .foot-brand { font-weight:800; font-size:18px; color:#1a1a1a; }
+  .foot-brand .dot { color:#c4452f; }
+  .foot-imprint { font-size:13px; color:#828282; margin-top:2px; }
+  .foot-nav { display:flex; gap:20px; font-size:14px; }
+  .foot-nav a { color:#4a4a4a; text-decoration:none; }
+  @media (max-width: 720px) { .site-nav { display:none; } }
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="wordmark" href="/">Sermon Steward<span class="dot">.</span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/hall/">Hall</a>
+      <a href="/product.html">Product</a>
+      <a href="/samples.html">Samples</a>
+      <a href="/how-we-read-a-sermon/">How we read</a>
+    </nav>
+  </div>
+</header>
+
+<div class="section-nav" id="sectionNav">
+  <a href="#overview" class="active">Archive Overview</a>
+  <a href="#fingerprint">Theological Fingerprint</a>
+  <a href="#rhetorical">Rhetorical Profile</a>
+  <a href="#illustrations">Illustration Arsenal</a>
+  <a href="#lineage">Intellectual Lineage</a>
+  <a href="#btmoves">BT Moves</a>
+  <a href="#claims">Key Claims</a>
+  <a href="#corpus">Corpus Table</a>
+</div>
+
+<div class="hero">
+  <div class="hero-eyebrow">Archive analysis · <a href="/preacher-macarthur.html">Back to profile</a></div>
+  <h1>John <em>MacArthur</em></h1>
+  <p class="hero-role">Grace Community Church, Sun Valley CA · b. 1939 · 55+ Years · Grace to You</p>
+  <div class="hero-tags">
+    <span class="tag">Reformed Baptist</span>
+    <span class="tag">Verse-by-Verse</span>
+    <span class="tag">Expository</span>
+    <span class="tag">Grace Community</span>
+    <span class="tag">Masters Seminary</span>
+    <span class="tag">GTY</span>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="hero-stat-n">47</div>
+      <div class="hero-stat-l">Sermons Indexed</div>
+    </div>
+    <div>
+      <div class="hero-stat-n" style="font-size:1.2rem;">Sanctification</div>
+      <div class="hero-stat-l">Top Doctrinal Locus</div>
+    </div>
+    <div>
+      <div class="hero-stat-n">7.0% units</div>
+      <div class="hero-stat-l">Illustration Rate</div>
+    </div>
+    <div>
+      <div class="hero-stat-n">273</div>
+      <div class="hero-stat-l">BT Move Instances</div>
+    </div>
+    <div>
+      <div class="hero-stat-n" style="font-size:1.6rem;">Paul</div>
+      <div class="hero-stat-l">Most Cited (20×)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION 1: ARCHIVE OVERVIEW ══ -->
+<section id="overview">
+  <div class="eyebrow">01 — Archive Overview</div>
+  <h2>47 sermons.<br><em>1477 decomposed units.</em></h2>
+
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="stat-box-n">47</div>
+      <div class="stat-box-l">Total Sermons</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-n">1477</div>
+      <div class="stat-box-l">Rhetorical Units</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-n">103</div>
+      <div class="stat-box-l">Illustrations</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-n">60%</div>
+      <div class="stat-box-l">Expository Rate</div>
+    </div>
+  </div>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <h3>Sermon Type Breakdown</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Expository</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">28</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Topical</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:68%"></div></div>
+          <span class="bar-n">19</span>
+        </div>
+      </div>
+      <div class="distinction-box" style="margin-top:32px;">
+        <div class="distinction-label">Corpus Note</div>
+        <p>John MacArthur has served as pastor-teacher at Grace Community Church in Sun Valley, California since 1969 — one of the longest consecutive pastorates in modern church history. Over 3,500 sermons. Founder of Grace to You media ministry and The Master&#39;s University and Seminary. Strict verse-by-verse exposition through complete books of Scripture. This corpus = 50 GTY/SermonAudio sermons from 2022–2024.</p>
+      </div>
+    </div>
+    <div class="analysis-col">
+      <h3>Series Distribution</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Keys to Spiritual Growth</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">14</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Standalone</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:93%"></div></div>
+          <span class="bar-n">13</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Revelation</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:36%"></div></div>
+          <span class="bar-n">5</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Heaven on Earth</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:29%"></div></div>
+          <span class="bar-n">4</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Characteristics of a Faithful Shepherd</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:14%"></div></div>
+          <span class="bar-n">2</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Passion Week</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:14%"></div></div>
+          <span class="bar-n">2</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">The Book of Revelation</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:14%"></div></div>
+          <span class="bar-n">2</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Conversations with Jesus</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:14%"></div></div>
+          <span class="bar-n">2</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Christian Deconstruction</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:7%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Conversations with Our Lord</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:7%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+      </div>
+      <div class="distinction-box" style="margin-top:32px;"><div class="distinction-label">Corpus Metrics</div><p>Avg units/sermon: 31.4 · Avg cross-refs: 23.4 · Avg quotations: 3.4</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 2: THEOLOGICAL FINGERPRINT ══ -->
+<section id="fingerprint">
+  <div class="eyebrow">02 — Theological Fingerprint</div>
+  <h2>What MacArthur's corpus<br><em>obsesses over.</em></h2>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <h3>Doctrinal Loci — Primary</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Sanctification</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">341</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Eschatology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:84%"></div></div>
+          <span class="bar-n">285</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Ecclesiology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:74%"></div></div>
+          <span class="bar-n">251</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Soteriology</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:71%"></div></div>
+          <span class="bar-n">241</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Christology</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:68%"></div></div>
+          <span class="bar-n">231</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Theology Proper</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:66%"></div></div>
+          <span class="bar-n">226</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Bibliology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:61%"></div></div>
+          <span class="bar-n">209</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Hamartiology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:47%"></div></div>
+          <span class="bar-n">159</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Pastoral Theology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:37%"></div></div>
+          <span class="bar-n">127</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Doxology / Worship</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:34%"></div></div>
+          <span class="bar-n">116</span>
+        </div>
+      </div>
+    </div>
+    <div class="analysis-col">
+      <h3>Doctrinal Loci — Secondary</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Providence / Sovereignty</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">104</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Ethics / Moral Theology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:94%"></div></div>
+          <span class="bar-n">98</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Pneumatology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:64%"></div></div>
+          <span class="bar-n">67</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Anthropology</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:47%"></div></div>
+          <span class="bar-n">49</span>
+        </div>
+      </div>
+      <div class="distinction-box" style="margin-top:32px;">
+        <div class="distinction-label">The MacArthur Signature</div>
+        <p>MacArthur&#39;s signature is relentless verse-by-verse textual immersion. No text is too long, no passage too detailed. His sermons can run 50+ minutes working through three verses. The application is implicit — he trusts that careful exposition produces transformation. Of all the Hall preachers, he is least concerned with cultural engagement and most concerned with textual completeness.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 3: RHETORICAL PROFILE ══ -->
+<section id="rhetorical">
+  <div class="eyebrow">03 — Rhetorical Profile</div>
+  <h2>How MacArthur structures<br><em>the sermon itself.</em></h2>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <h3>Unit Function Distribution</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Exposition</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">756</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Theological Claim</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:41%"></div></div>
+          <span class="bar-n">313</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Transition</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:15%"></div></div>
+          <span class="bar-n">117</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Illustration</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:14%"></div></div>
+          <span class="bar-n">104</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Application</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:9%"></div></div>
+          <span class="bar-n">67</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Introduction</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:6%"></div></div>
+          <span class="bar-n">47</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Prayer</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:5%"></div></div>
+          <span class="bar-n">35</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Conclusion</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:3%"></div></div>
+          <span class="bar-n">22</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Pastoral Aside</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:2%"></div></div>
+          <span class="bar-n">16</span>
+        </div>
+      </div>
+    </div>
+    <div class="analysis-col">
+      <h3>Tone Distribution</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Didactic</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">46</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Pastoral</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:96%"></div></div>
+          <span class="bar-n">44</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Prophetic</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:59%"></div></div>
+          <span class="bar-n">27</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Polemic</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:24%"></div></div>
+          <span class="bar-n">11</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Celebratory</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:9%"></div></div>
+          <span class="bar-n">4</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Evangelistic</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:2%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+      </div>
+      <div style="margin-top:40px;">
+        <h3 style="font-family:var(--mono); font-size:0.85rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; font-weight:400; margin-bottom:20px;">Rhetorical Register</h3>
+        <div class="register-pills">
+          <span class="register-pill logos">Logos</span>
+          <span class="register-pill pathos">Pathos</span>
+          <span class="register-pill ethos">Ethos</span>
+          <span class="register-pill narrative">Narrative</span>
+          <span class="register-pill doxological">Doxological</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 4: ILLUSTRATION ARSENAL ══ -->
+<section id="illustrations">
+  <div class="eyebrow">04 — Illustration Arsenal</div>
+  <h2>103 illustrations from<br><em>47 sermons.</em></h2>
+
+  <div style="margin-bottom:48px;">
+    <div class="bar-chart" style="max-width:520px;">
+        <div class="bar-row">
+          <span class="bar-label">Historical Example</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">45</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Personal Story</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:58%"></div></div>
+          <span class="bar-n">26</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Hypothetical</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:36%"></div></div>
+          <span class="bar-n">16</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Cultural Reference</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:27%"></div></div>
+          <span class="bar-n">12</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Analogy</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:9%"></div></div>
+          <span class="bar-n">4</span>
+        </div>
+    </div>
+  </div>
+
+  <div class="illus-controls">
+    <button class="filter-btn active" onclick="filterIllus('all', this)">All · 12 shown</button>
+    <button class="filter-btn" onclick="filterIllus('historical_example', this)">Historical Example</button>
+    <button class="filter-btn" onclick="filterIllus('hypothetical', this)">Hypothetical</button>
+    <button class="filter-btn" onclick="filterIllus('cultural_reference', this)">Cultural Reference</button>
+    <button class="filter-btn" onclick="filterIllus('personal_story', this)">Personal Story</button>
+  </div>
+
+  <div class="illus-grid" id="illusGrid">
+    
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">Turn to Philippians 4. Philippians 4. Here&#39;s Paul. Things aren&#39;t going real well. He&#39;s a prisoner. Tough, really tough. Life is in constant threat. And what&#39;s his attitude? Chapter 4, verse 4. Rejoice in the Lord Always. Again I will say, rejoice. There&#39;s the joy, right? There&#39;s the joy. This is a living illustration of someone who knew all that was his in Christ. So let your gentle spirit, your moderation, your temperateness, your calmness, your tranquility be visible to everyone. And why? Because the Lord is near. The Lord is near, and I have all his promises. So verse 6. Be anxious. For what? For nothing. And oh, by the way, he said, if you prayed for anything, he would give it to you if it&#39;s in his name. So in everything, by prayer and supplication, with thanksgiving, let your request be made known to God. You want peace? Pray, give it to him. And the peace of God, which surpasses all comprehension, will guard your hearts and minds in Christ Jesus. What else would you want in life but joy and peace? And oh, by the way, you have the truth, verse 8. So concentrate on it. Whatever is true and honorable and right and pure and lovely and good report worthy of praise, dwell on those things, the things that you&#39;ve learned and received and seen in me. So sums it up in verse 13. I can do all things through him who strengthens me. He&#39;s not saying that in some fickle way. He&#39;s saying, I have received all the promises of Christ for my life. This is plenty to do what he&#39;s called me to do. I can do all things through him who strengthened me. There&#39;s a guy who could handle life right, and life was really tough for him. But the promises were true and he believed them. Amen.</div>
+      <div class="illus-source">Christ Is Sufficient for All Your Crises</div>
+    </div>
+    <div class="illus-card" data-type="hypothetical">
+      <div class="illus-type">Hypothetical</div>
+      <div class="illus-text">Like the guy who wrote his sweetheart and said, I&#39;d cross the burning sand to be by your side. I&#39;d swim the English Channel to be near you. And if it doesn&#39;t rain tonight, I&#39;m coming over.</div>
+      <div class="illus-source">Keys to Spiritual Growth - Part 5</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">I always go back to the story of John Payton, that great missionary who went to the New Hebrides. He graduated from school and he was sent to the New Hebrides with his wife. There were only man-eating cannibals there. They landed on that little place. They had to row a dinghy because the ship went by, didn&#39;t even go to the shore. They rowed to shore, didn&#39;t speak the language, didn&#39;t know anybody. All they knew was people had come there and never returned. They had become somebody&#39;s lunch. So they got on the shore. It&#39;s pretty tough, you know, to get on the shore of a place inhabited by cannibals whose languages don&#39;t speak and figure out how you start, right? I mean, you don&#39;t put a little sign that says, Sunday school class, Sunday at 930, we welcome you all. That isn&#39;t really the way you do. What do you do? You don&#39;t know the language, you don&#39;t know the people, and your threat of life hangs over your head. I remember reading in a particular book something of the story of that, and later on the chief of the tribe in that area was saved and he came to John Payton and he said to him, Mr. Payton, I want to ask you a question. He says, in those early months that you were here, he says, who was the army that girded your place of dwelling every night and protected you? God&#39;s holy angels apparently even became manifest in that protecting time. But Payton stayed there after a few weeks. His wife gave birth to a baby. The baby died. A few days later she died. He slept on their graves for three or four nights to keep the natives from digging them up and eating them. Stayed there alone, and he stayed there for 35 years. He says in his biography that at the end of those 35 years, I don&#39;t know of one native that hasn&#39;t made at least a profession of faith in Jesus Christ. He went there with all the great hopes. The only thing he ever loved really in the world was his wife, and then the cherished baby had to sleep on their graves, and all alone he stayed. But God used him because he was content to do God&#39;s will no matter what it cost him, and that&#39;s what it means to aim your life at his purposes.</div>
+      <div class="illus-source">Keys to Spiritual Growth - Part 2</div>
+    </div>
+    <div class="illus-card" data-type="cultural_reference">
+      <div class="illus-type">Cultural Reference</div>
+      <div class="illus-text">When I confess my sin, I&#39;m not saying, Oh God, please forgive me. I beg you, please forgive me. I want you to forgive me like they used to say in revivalist-type meetings. Pray it through, brother. Pray it through.
+
+Keep plowing in there. Keep banging on the door and God will forgive. No, no, no.</div>
+      <div class="illus-source">Keys to Spiritual Growth - Part 3</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">Just to kind of wrap up, I want to go back to the Reformation and give you a couple of illustrations. The greatest revival the church ever knew, in my judgment, was the Reformation back in the 16th century. And the Reformation really came about because there was a restoration of biblical expository preaching. Take for example, John Calvin, whose impact was probably without parallel. He was relentless in his exposition of Scripture in Geneva. He started in 1536 and he exposited the scripture until 1564 with a three year break when he was exiled by the city council. But it wasn&#39;t just Calvin. R.L. dabney says all the leading reformers, whether in Germany, Switzerland, England or Scotland, were constant preachers and their sermons were expository. We may assume with safety that the instrumentality to which the Spirit unleashed power in that greatest of all revolutions was the restoration of scriptural preaching. That was the Reformation came because of that.</div>
+      <div class="illus-source">Heaven on Earth, Part 3</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">Yes, I remember that well, in the first few weeks of the shutdown, when it really wasn&#39;t clear how dangerous the virus might be. And so you preached to a nearly empty auditorium. When I say nearly empty, I mean in an auditorium that seats, what, close to 3,000 people. There were eight, maybe 10 of us. But then people just started naturally to filter back in and just come. And within a couple of months, the building was half full. And that was before we even announced, we&#39;re just going to open the church. The church opened and was packed before we ever made it official. Looking back, people have said to me, why did you take that stand? Where did you get the courage to do that? And I said, that&#39;s not courage, that&#39;s just consistency. This is the church we meet because that&#39;s what we&#39;re demanded to do. It is consistency, too. One of the moments in the documentary shows a clip from a tape that you preached back in 1975. So that&#39;s what, close to 50 years ago, in which you said, and these were your exact words in if, for example, some ordinance came along and tried to close down Grace Community Church, would we say, oh, it&#39;s all right, we forgive you. We&#39;ll all go home and just forget the work of God. And then you say, not on your life. We&#39;d be down there with every sort of legal thing you could imagine trying to prove that we had the right to exist and the right to exercise religious freedom. You said that in 1975.</div>
+      <div class="illus-source">Persecution and the Essential Church: An Interview with John MacArthur</div>
+    </div>
+    <div class="illus-card" data-type="personal_story">
+      <div class="illus-type">Personal Story</div>
+      <div class="illus-text">You know why? For example, an illustration. In my life, I have found that the closer I am to the circle of people around me, the easier it is for me to live a righteous life. You know why? Because that circle holds me accountable, right? When I have a circle of godly friends that I love who are close to me, they make me accountable. They keep my life in their perspective, in their view. And if something isn&#39;t right, they point it out, and that forces me in to the line.</div>
+      <div class="illus-source">Keys to Spiritual Growth - Part 6</div>
+    </div>
+    <div class="illus-card" data-type="personal_story">
+      <div class="illus-type">Personal Story</div>
+      <div class="illus-text">You know, I&#39;ve spent so many years studying the Bible and preaching, and I know if you poked me in the middle of the night and I popped up, I&#39;d probably recite Bible verses or preach a sermon. I dream about spiritual things. I have biblical dreams. That happens to me a lot, or dreams about the church. That&#39;s the context of my thinking, see, and I thank God for that. God is gracious to me because he could have put me somewhere else and I wouldn&#39;t have the luxury of studying the Bible all the time. But the filling of the mind, and then as you teach it, you see, when you need to teach the Word like I do or any other Bible teacher, you have to take it and saturate yourself and saturate and saturate. You can&#39;t just write it on the notes and fire it off. It&#39;s got to go through you. And whatever you give away has become so much a part of you that it controls your life. And as you proclaim it, your life is evidently glorifying God in the speaking of his Word.</div>
+      <div class="illus-source">Keys to Spiritual Growth - Part 5</div>
+    </div>
+    <div class="illus-card" data-type="personal_story">
+      <div class="illus-type">Personal Story</div>
+      <div class="illus-text">You&#39;ll hear sometimes a wife will come in and she&#39;ll say in the counseling situation, oh, she&#39;ll say, Pastor, there&#39;s no way we can get along in our marriage. No way. I&#39;ll say, well, is your husband a Christian? Yes. Are you a Christian? Yes. I mean, there&#39;s no way two Christians can get along. Well, you don&#39;t understand. We&#39;re not compatible. Does the Holy Spirit dwell in both of you? Yes. You both have Christ living in you? Yes. You think Christ is compatible with himself? Well, yes. But you just don&#39;t understand. No, you don&#39;t understand. You don&#39;t believe God. You don&#39;t believe God that if God be pleased to keep a marriage together and if God be powerful to make it so, if you just get your life lined up in the right direction, it&#39;ll all happen. But don&#39;t disbelieve the power of God. You know, it&#39;s like the lady who came to see her pastor and said, my husband rubs me the wrong way, to which the pastor replied, well, turn around you old cat and everything will be fine. The solution to the problem is to get yourself right, not to disbelieve God&#39;s power. You see, God can do it, if you&#39;re in the right position. And the simplest things in life, we need to believe God.</div>
+      <div class="illus-source">Keys to Spiritual Growth - Part 4</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">And so even though he has helped Peter in the past, he&#39;s gone out of his way to show him his power to walk on water, he has fed him at the point of the feeding of the five thousand, he was there at the transfiguration, he has heard the great confession, and really it came out of his own mouth, but from God&#39;s heart, thou art the Christ, the Son of the living God. Peter has been on some tremendous adventures with Christ, where he has seen displays of power, even in the garden as the soldiers came, and when Jesus spoke, they all fell over backwards like dominoes. I mean, Peter has seen some great things. Amazingly enough, he&#39;s even seen the resurrected Christ in the upper room, and by this time of John 21, had a personal audience with the resurrected Christ. And yet after all of that, he&#39;s still flaky. I think he felt inadequate. I think he looked at himself and said, Peter, every time you&#39;ve ever been given a test, you blew it. Who&#39;s to say you&#39;re going to pass one now?</div>
+      <div class="illus-source">Keys to Spiritual Growth - Part 2</div>
+    </div>
+    <div class="illus-card" data-type="hypothetical">
+      <div class="illus-type">Hypothetical</div>
+      <div class="illus-text">Illustration. If somebody comes to a prayer meeting and they stand up and they say, oh, I had the most wonderful thing happen. You know, this lady that I&#39;ve been sharing Christ with, I&#39;ve been praying for her for years, and this week we knelt together in my house and she opened her heart and she invited Jesus Christ to come in. And I&#39;m so thrilled now she&#39;s a believer. And here she is with us tonight. Thank you for praying for her for these last few months. And immediately when that happens, ripples are going to go through that and some of you are going to say, oh, praise the Lord. You&#39;re going to get big grins on their face, oh Lord, thank you. You know who those people are going to be? Who are they going to be? They&#39;re going to be the ones who are doing what? Praying for her. And there&#39;s going to be some people sitting back there going, staring around, totally indifferent. You know why? They weren&#39;t involved. You see, the reason to pray is not to force God&#39;s hand. The reason to pray is so that you can be in on what he&#39;s doing, because then you can join the hallelujah chorus, you see, and praise him.</div>
+      <div class="illus-source">Keys to Spiritual Growth - Part 5</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">And then there was Hophni and Phinehas, who were the two sons of Eli, the high priest. And they decided that even though their father was the high priest, and even though they were in the priesthood line, and even though the standard for their kind of life was very high, they would live any way they wanted. And so they committed sexual orgies on the very steps of the temple, and God literally slew them both. They were slaughtered. The terrible consequence of this.</div>
+      <div class="illus-source">Keys to Spiritual Growth - Part 6</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 5: INTELLECTUAL LINEAGE ══ -->
+<section id="lineage">
+  <div class="eyebrow">05 — Intellectual Lineage</div>
+  <h2>The tradition MacArthur<br><em>draws from — and argues with.</em></h2>
+
+  <div class="author-counts">
+    <span class="author-chip">Paul <span>20×</span></span>
+    <span class="author-chip">Jesus Christ <span>13×</span></span>
+    <span class="author-chip">Apostle Paul <span>12×</span></span>
+    <span class="author-chip">Jesus <span>10×</span></span>
+    <span class="author-chip">Author of Hebrews <span>7×</span></span>
+    <span class="author-chip">Jeremiah <span>5×</span></span>
+    <span class="author-chip">John MacArthur <span>5×</span></span>
+    <span class="author-chip">Scripture <span>4×</span></span>
+    <span class="author-chip">17th century Puritan catechism <span>3×</span></span>
+    <span class="author-chip">John <span>3×</span></span>
+    <span class="author-chip">E. M. Bounds <span>2×</span></span>
+    <span class="author-chip">Bible <span>2×</span></span>
+    <span class="author-chip">Apostle Peter <span>2×</span></span>
+    <span class="author-chip">Trumbull <span>2×</span></span>
+    <span class="author-chip">God <span>2×</span></span>
+    <span class="author-chip">Isaiah <span>2×</span></span>
+    <span class="author-chip">Paul (Apostle) <span>2×</span></span>
+    <span class="author-chip">hymn writer <span>2×</span></span>
+  </div>
+
+  <div class="quotes-grid">
+    
+    <div class="quote-card">
+      <div class="quote-text">he uses the weak and despised things to confound the wise</div>
+      <div class="quote-attr">Scripture</div>
+      <div class="quote-source">Persecution and the Essential Church: An Interview with John MacArthur</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">Whoever perished being innocent... when were the righteous destroyed?</div>
+      <div class="quote-attr">Eliphaz</div>
+      <div class="quote-source">Seek the Lord While He May Be Found · Luke 13:1-9</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">Let the pastors boldly dare all things by the Word of God. Let them constrain all the power, glory and excellence of the world to give place to and to obey the divine majesty of this Word. Let them enjoin everyone by it, from the highest to the lowest. Let them edify the body of Christ. Let them die, devastate Satan&#39;s reign. Let them pasture the sheep, kill the wolves, instruct and exhort the rebellious. Let them bind and loose thunder and lightning if necessary, but let them do all of it according to the Word of God.</div>
+      <div class="quote-attr">John Calvin</div>
+      <div class="quote-source">Heaven on Earth, Part 3 · Selected Scriptures</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">thy words were found and I did eat them</div>
+      <div class="quote-attr">Jeremiah</div>
+      <div class="quote-source">Keys to Spiritual Growth - Part 3 · Nehemiah 9:33</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">what is the chief end of man? The chief end of man is to glorify God and enjoy him forever</div>
+      <div class="quote-attr">17th century Puritan catechism</div>
+      <div class="quote-source">Keys to Spiritual Growth - Part 1 · Ephesians 3:19</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">the disciples were first called Christians</div>
+      <div class="quote-attr">Luke</div>
+      <div class="quote-source">The Church&#39;s Singular Focus · 1 Corinthians 2:2</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">Your house is left to you desolate until you come to the knowledge of your Messiah.</div>
+      <div class="quote-attr">Jesus Christ</div>
+      <div class="quote-source">Seek the Lord While He May Be Found · Luke 13:1-9</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">There are only two kinds of ministers, those who are humble and those who are about to be humbled.</div>
+      <div class="quote-attr">Charles Spurgeon</div>
+      <div class="quote-source">Characteristics of a Faithful Shepherd, Part 1 · 1 Corinthians 4:1-13</div>
+    </div>
+  </div>
+
+  <div style="margin-top:48px;">
+    <div class="eyebrow" style="margin-bottom:16px;">Top Scripture Cross-References</div>
+    <div class="author-counts">
+      <span class="author-chip">2 Corinthians 3:18 <span>16×</span></span>
+    <span class="author-chip">2 Peter 3:18 <span>12×</span></span>
+    <span class="author-chip">Romans 1 <span>11×</span></span>
+    <span class="author-chip">1 Corinthians 10:31 <span>9×</span></span>
+    <span class="author-chip">Matthew 24 <span>8×</span></span>
+    <span class="author-chip">Revelation 4-5 <span>7×</span></span>
+    <span class="author-chip">John 15:8 <span>7×</span></span>
+    <span class="author-chip">Joshua 7:19 <span>7×</span></span>
+    <span class="author-chip">John 1:14 <span>5×</span></span>
+    <span class="author-chip">2 Timothy 2:15 <span>5×</span></span>
+    <span class="author-chip">Romans 4:20 <span>5×</span></span>
+    <span class="author-chip">2 Timothy 3:16-17 <span>5×</span></span>
+    <span class="author-chip">Psalm 50:23 <span>5×</span></span>
+    <span class="author-chip">Isaiah 6 <span>5×</span></span>
+    <span class="author-chip">Philippians 2 <span>5×</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 6: BT MOVES ══ -->
+<section id="btmoves">
+  <div class="eyebrow">06 — Biblical-Theological Moves</div>
+  <h2>How MacArthur connects every text<br><em>to the whole-Bible narrative.</em></h2>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <h3>BT Move Type Distribution</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Fulfillment</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">63</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Typology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:78%"></div></div>
+          <span class="bar-n">49</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Thematic Thread</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:73%"></div></div>
+          <span class="bar-n">46</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Narrative Arc</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:54%"></div></div>
+          <span class="bar-n">34</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Progressive Revelation</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:51%"></div></div>
+          <span class="bar-n">32</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Contrast</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:44%"></div></div>
+          <span class="bar-n">28</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Intertextual Echo</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:32%"></div></div>
+          <span class="bar-n">20</span>
+        </div>
+      </div>
+    </div>
+    <div class="analysis-col">
+      <h3>What This Reveals</h3>
+      <p style="margin-bottom:20px;">The biblical-theological move profile reveals how John MacArthur connects individual texts to the larger redemptive-historical narrative. The leading move type indicates a characteristic approach to canon — whether primarily fulfillment-oriented, typological, or thematic-thread driven.</p>
+      <p>Total BT move instances: 272. The dominant move is <em>Fulfillment</em> (63 instances), followed by Typology (49).</p>
+      <div class="distinction-box" style="margin-top:24px;">
+        <div class="distinction-label">BT Profile</div>
+        <p>Avg BT moves per sermon: 5.8. These moves represent the mechanism by which MacArthur's exposition connects local textual meaning to the whole-Bible argument.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 7: KEY CLAIMS ══ -->
+<section id="claims">
+  <div class="eyebrow">07 — Key Theological Claims</div>
+  <h2>15 claims from<br><em>the theological archive.</em></h2>
+
+  <div class="claims-list">
+    
+    <div class="claim-row">
+      <div class="claim-text">Humble reception of God&#39;s Word means approaching Scripture with a teachable, conquered spirit rather than predetermined convictions, which maximizes salvation and produces spiritual blessing and fruit.</div>
+      <div class="claim-meta">
+        <span class="claim-fn transition">Transition</span>
+        <div class="claim-sermon">Hearers and Doers</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Christ&#39;s two comings—first as sacrifice, second as judge—are both essential to understanding His complete purpose.</div>
+      <div class="claim-meta">
+        <span class="claim-fn theological_claim">Theological Claim</span>
+        <div class="claim-sermon">Heavenly Worship, Part 3</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Jesus rebuked Peter&#39;s tendency to compare his calling with others&#39; callings, commanding him to focus exclusively on following regardless of what happens to anyone else.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Keys to Spiritual Growth - Part 5</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">The seventh seal equates to the launch point of the Day of the Lord, God&#39;s final comprehensive judgment following the first six seal judgments during the tribulation.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Final Judgment Launched</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Paul&#39;s declaration in 1 Corinthians 2:2 defines the singular purpose of Christians in the world.</div>
+      <div class="claim-meta">
+        <span class="claim-fn introduction">Introduction</span>
+        <div class="claim-sermon">The Church&#39;s Singular Focus</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">God&#39;s judgment was executed on Achan despite his confession, creating a permanent memorial of the consequences of sin.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Keys to Spiritual Growth - Part 3</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">God placed His glory in the tabernacle at the center of Israel&#39;s camp, but despite this constant visible presence, they continued to murmur and disobey.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Keys to Spiritual Growth - Part 1</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Spiritual stagnation manifests as cyclical defeat without increasing strength, resources, or victory—a condition the sermon aims to correct through biblical principles.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Keys to Spiritual Growth - Part 5</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Christ&#39;s high priestly intercession guarantees that the elect cannot be lost or separated from God&#39;s love because He who died, rose, and now intercedes secures their certain glorification.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">A Vision of Christ&#39;s Work in His Church</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">The purpose of prayer is not to change God&#39;s sovereign will but to include believers in witnessing His work so they can glorify Him when He acts.</div>
+      <div class="claim-meta">
+        <span class="claim-fn theological_claim">Theological Claim</span>
+        <div class="claim-sermon">Keys to Spiritual Growth - Part 5</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Scripture produces five effects: transforming the soul (conversion), making wise the simple (sanctification), bringing joy, enlightening understanding, and enduring forever.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">A Testimony to Scripture&#39;s Sufficiency (TMU Chapel) (Psalm 19:7-9)</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Confessing Jesus as Lord is the foundational requirement for glorifying God and growing spiritually—no growth occurs apart from genuine conversion.</div>
+      <div class="claim-meta">
+        <span class="claim-fn application">Application</span>
+        <div class="claim-sermon">Keys to Spiritual Growth - Part 5</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">An unbridled tongue reveals an unbridled heart, worthless religion, and quarreling rooted in sinful desires rather than submission to truth.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Hearers and Doers</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Being &#39;in the Spirit&#39; means being spiritually sensitive and attuned to the Holy Spirit&#39;s work, often through meditation on Scripture.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">A Vision of Christ&#39;s Work in His Church</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Worldwide hatred of Israel is satanic in origin—Satan&#39;s failed attempt to destroy the Messiah has shifted to an attempt to destroy the people through whom Messiah came and to whom Messiah will return.</div>
+      <div class="claim-meta">
+        <span class="claim-fn theological_claim">Theological Claim</span>
+        <div class="claim-sermon">In God We Trust</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 8: CORPUS TABLE ══ -->
+<section id="corpus">
+  <div class="eyebrow">08 — Corpus Table</div>
+  <h2>47 sermons.<br><em>Fully decomposed.</em></h2>
+
+  <table class="sermon-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title · Primary Text</th>
+        <th>Series</th>
+        <th>Type</th>
+        <th>Tone</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr class="series-group-header"><td colspan="5">Series — Keys to Spiritual Growth</td></tr>
+      <tr>
+        <td>01</td>
+        <td><div class="sermon-title">Keys to Spiritual Growth - Part 1</div><div class="sermon-text">Ephesians 3:19</div></td>
+        <td>Keys to Spiritual Growth</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>02</td>
+        <td><div class="sermon-title">Keys to Spiritual Growth - Part 1</div><div class="sermon-text">Ephesians 3:19</div></td>
+        <td>Keys to Spiritual Growth</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td><div class="sermon-title">Keys to Spiritual Growth - Part 1</div><div class="sermon-text">Ephesians 3:19</div></td>
+        <td>Keys to Spiritual Growth</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>04</td>
+        <td><div class="sermon-title">Keys to Spiritual Growth - Part 2</div><div class="sermon-text">1 Corinthians 10:31</div></td>
+        <td>Keys to Spiritual Growth</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Prophetic</td>
+      </tr>
+      <tr>
+        <td>05</td>
+        <td><div class="sermon-title">Keys to Spiritual Growth - Part 2</div><div class="sermon-text">1 Corinthians 10:31</div></td>
+        <td>Keys to Spiritual Growth</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Prophetic</td>
+      </tr>
+      <tr>
+        <td>06</td>
+        <td><div class="sermon-title">Keys to Spiritual Growth - Part 3</div><div class="sermon-text">Nehemiah 9:33</div></td>
+        <td>Keys to Spiritual Growth</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>07</td>
+        <td><div class="sermon-title">Keys to Spiritual Growth - Part 3</div><div class="sermon-text">Nehemiah 9:33</div></td>
+        <td>Keys to Spiritual Growth</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>08</td>
+        <td><div class="sermon-title">Keys to Spiritual Growth - Part 4</div><div class="sermon-text">Psalm 86:12</div></td>
+        <td>Keys to Spiritual Growth</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>09</td>
+        <td><div class="sermon-title">Keys to Spiritual Growth - Part 4</div><div class="sermon-text">Psalm 86:12</div></td>
+        <td>Keys to Spiritual Growth</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><div class="sermon-title">Keys to Spiritual Growth - Part 5</div><div class="sermon-text">1 Peter 2:2</div></td>
+        <td>Keys to Spiritual Growth</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Prophetic</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td><div class="sermon-title">Keys to Spiritual Growth - Part 5</div><div class="sermon-text">1 Peter 2:2</div></td>
+        <td>Keys to Spiritual Growth</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Prophetic</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td><div class="sermon-title">Keys to Spiritual Growth - Part 5</div><div class="sermon-text">1 Peter 2:2</div></td>
+        <td>Keys to Spiritual Growth</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Prophetic</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td><div class="sermon-title">Keys to Spiritual Growth - Part 6</div><div class="sermon-text">Psalm 16:8</div></td>
+        <td>Keys to Spiritual Growth</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td><div class="sermon-title">Keys to Spiritual Growth - Part 6</div><div class="sermon-text">Psalm 16:8</div></td>
+        <td>Keys to Spiritual Growth</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Standalone Sermons</td></tr>
+      <tr>
+        <td>15</td>
+        <td><div class="sermon-title">A Testimony to Scripture&#39;s Sufficiency (TMU Chapel) (Psalm 19:7-9)</div><div class="sermon-text">Psalm 19:7-14</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Celebratory</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td><div class="sermon-title">Christ Is Sufficient for All Your Crises</div><div class="sermon-text">John 13-16</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Polemic · Prophetic · Pastoral · Didactic</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td><div class="sermon-title">Final Judgment Launched</div><div class="sermon-text">Revelation 8:1-5</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Prophetic · Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td><div class="sermon-title">Future Witnesses and God&#39;s Faithfulness (Revelation 11:1-2)</div><div class="sermon-text">Revelation 11:1-2</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td><div class="sermon-title">Grace for the Children</div><div class="sermon-text">Selected Scriptures</div></td>
+        <td>—</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Prophetic</td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td><div class="sermon-title">Hearers and Doers</div><div class="sermon-text">James 1:19-25</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Prophetic</td>
+      </tr>
+      <tr>
+        <td>21</td>
+        <td><div class="sermon-title">Heavenly Worship, Part 1</div><div class="sermon-text">Revelation 4:1-4</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>22</td>
+        <td><div class="sermon-title">In God We Trust</div><div class="sermon-text">Selected Scriptures</div></td>
+        <td>—</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Prophetic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>23</td>
+        <td><div class="sermon-title">Persecution and the Essential Church: An Interview with John MacArthur</div><div class="sermon-text"></div></td>
+        <td>—</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Prophetic</td>
+      </tr>
+      <tr>
+        <td>24</td>
+        <td><div class="sermon-title">Seek the Lord While He May Be Found</div><div class="sermon-text">Luke 13:1-9</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Prophetic · Evangelistic</td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td><div class="sermon-title">The Beginning of God&#39;s Final Wrath (Revelation 6:3-8)</div><div class="sermon-text">Revelation 6:1-8</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Prophetic · Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>26</td>
+        <td><div class="sermon-title">The Church&#39;s Singular Focus</div><div class="sermon-text">1 Corinthians 2:2</div></td>
+        <td>—</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Prophetic · Polemic · Didactic</td>
+      </tr>
+      <tr>
+        <td>27</td>
+        <td><div class="sermon-title">The Coming Demonic Invasion (Revelation 9:12-21)</div><div class="sermon-text">Revelation 9:12-21</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Prophetic · Pastoral · Didactic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Revelation</td></tr>
+      <tr>
+        <td>28</td>
+        <td><div class="sermon-title">A Vision of Christ&#39;s Work in His Church</div><div class="sermon-text">Revelation 1:9-20</div></td>
+        <td>Revelation</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Prophetic</td>
+      </tr>
+      <tr>
+        <td>29</td>
+        <td><div class="sermon-title">Mercy in the Midst of Wrath (Revelation 6:12-17)</div><div class="sermon-text">Revelation 7:1-8</div></td>
+        <td>Revelation</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>30</td>
+        <td><div class="sermon-title">The Coming Ecological Destruction</div><div class="sermon-text">Revelation 8:6-13</div></td>
+        <td>Revelation</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Prophetic · Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>31</td>
+        <td><div class="sermon-title">The Coming Global Salvation (Revelation 7:9-17)</div><div class="sermon-text">Revelation 7:9-17</div></td>
+        <td>Revelation</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Prophetic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>32</td>
+        <td><div class="sermon-title">The Coming of a False Peace (Revelation 6:1-2)</div><div class="sermon-text">Revelation 6:1-2</div></td>
+        <td>Revelation</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Prophetic · Pastoral</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Heaven on Earth</td></tr>
+      <tr>
+        <td>33</td>
+        <td><div class="sermon-title">Heaven on Earth, Part 1</div><div class="sermon-text">Selected Scriptures</div></td>
+        <td>Heaven on Earth</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Celebratory</td>
+      </tr>
+      <tr>
+        <td>34</td>
+        <td><div class="sermon-title">Heaven on Earth, Part 2</div><div class="sermon-text">Selected Scriptures</div></td>
+        <td>Heaven on Earth</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Prophetic</td>
+      </tr>
+      <tr>
+        <td>35</td>
+        <td><div class="sermon-title">Heaven on Earth, Part 3</div><div class="sermon-text">Selected Scriptures</div></td>
+        <td>Heaven on Earth</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Prophetic · Polemic</td>
+      </tr>
+      <tr>
+        <td>36</td>
+        <td><div class="sermon-title">Heaven on Earth, Part 4</div><div class="sermon-text">Selected Scriptures</div></td>
+        <td>Heaven on Earth</td>
+        <td><span class="sermon-type topical">Topical</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Prophetic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Characteristics of a Faithful Shepherd</td></tr>
+      <tr>
+        <td>37</td>
+        <td><div class="sermon-title">Characteristics of a Faithful Shepherd, Part 1</div><div class="sermon-text">1 Corinthians 4:1-13</div></td>
+        <td>Characteristics of a Faithful Shepherd</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Polemic</td>
+      </tr>
+      <tr>
+        <td>38</td>
+        <td><div class="sermon-title">Characteristics of a Faithful Shepherd, Part 2</div><div class="sermon-text">1 Corinthians 4:1-13</div></td>
+        <td>Characteristics of a Faithful Shepherd</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Prophetic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Passion Week</td></tr>
+      <tr>
+        <td>39</td>
+        <td><div class="sermon-title">False Praise to the True King (Mark 11:1-11)</div><div class="sermon-text">Mark 11:1-11</div></td>
+        <td>Passion Week</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Prophetic · Didactic · Polemic</td>
+      </tr>
+      <tr>
+        <td>40</td>
+        <td><div class="sermon-title">Forsaking Christ</div><div class="sermon-text">Mark 14:43-52</div></td>
+        <td>Passion Week</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — The Book of Revelation</td></tr>
+      <tr>
+        <td>41</td>
+        <td><div class="sermon-title">Heavenly Worship, Part 2</div><div class="sermon-text">Revelation 4:5-8</div></td>
+        <td>The Book of Revelation</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Celebratory</td>
+      </tr>
+      <tr>
+        <td>42</td>
+        <td><div class="sermon-title">Heavenly Worship, Part 4 (Revelation 5)</div><div class="sermon-text">Revelation 5:1-14</div></td>
+        <td>The Book of Revelation</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Celebratory · Pastoral</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Conversations with Jesus</td></tr>
+      <tr>
+        <td>43</td>
+        <td><div class="sermon-title">Jesus&#39; View of Scripture</div><div class="sermon-text">Matthew 5:17-20</div></td>
+        <td>Conversations with Jesus</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Prophetic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>44</td>
+        <td><div class="sermon-title">Sowing the Gospel and Sleeping Well (Mark 4:1-32)</div><div class="sermon-text">Mark 4:1-32</div></td>
+        <td>Conversations with Jesus</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Christian Deconstruction</td></tr>
+      <tr>
+        <td>45</td>
+        <td><div class="sermon-title">Christian Deconstruction, Part 2</div><div class="sermon-text">John 6:60-71</div></td>
+        <td>Christian Deconstruction</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Prophetic · Pastoral · Polemic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Conversations with Our Lord</td></tr>
+      <tr>
+        <td>46</td>
+        <td><div class="sermon-title">Divine Barriers to Superficial Seekers</div><div class="sermon-text">Mark 10:17-22</div></td>
+        <td>Conversations with Our Lord</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Heavenly Worship</td></tr>
+      <tr>
+        <td>47</td>
+        <td><div class="sermon-title">Heavenly Worship, Part 3</div><div class="sermon-text">Revelation 4:8-11</div></td>
+        <td>Heavenly Worship</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Prophetic · Pastoral</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<footer class="site-footer">
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">Sermon Steward<span class="dot">.</span></div>
+      <div class="foot-imprint">Guild Hall — a gallery of masters, on the Sermon Steward site.</div>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/hall/">Hall</a>
+      <a href="/hall/glossary.html">Glossary</a>
+      <a href="/samples.html">Samples</a>
+      <a href="/product.html">Product</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.section-nav a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.section-nav a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+
+  function filterIllus(type, btn) {
+    document.querySelectorAll('.illus-controls .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cards = document.querySelectorAll('.illus-card');
+    cards.forEach(card => {
+      if (type === 'all' || card.dataset.type === type) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>
+</body>
+</html>

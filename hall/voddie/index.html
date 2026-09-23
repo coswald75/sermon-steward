@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voddie Baucham · Archive Analysis · Sermon Steward</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:        #1a1a1a;
+      --parchment:  #fbf8f1;
+      --gold:       #c4452f;
+      --gold-light: #c4452f;
+      --burgundy:   #9a3624;
+      --forest:     #3a7256;
+      --muted:      #4a4a4a;
+      --rule:       rgba(196,69,47,0.22);
+      --serif:      'Inter', Georgia, serif;
+      --sans:       'Inter', system-ui, sans-serif;
+      --mono:       'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--ink); color:#1a1a1a; font-family: var(--sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: linear-gradient(to bottom, rgba(26,23,16,0.98), rgba(26,23,16,0)); border-bottom: 1px solid rgba(196,69,47,0.08); }
+    .nav-brand { font-family: var(--serif); font-size: 0.95rem; color:#1a1a1a; text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 28px; }
+    .nav-right a { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-right a:hover { color: var(--gold-light); }
+    .section-nav { position: sticky; top: 57px; z-index: 90; background: rgba(26,23,16,0.97); border-bottom: 1px solid var(--rule); display: flex; gap: 0; overflow-x: auto; }
+    .section-nav a { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none; padding: 14px 24px; border-bottom: 2px solid transparent; white-space: nowrap; transition: color 0.2s, border-color 0.2s; }
+    .section-nav a:hover, .section-nav a.active { color: var(--gold-light); border-bottom-color: var(--gold); }
+    .hero { padding: 130px 48px 80px; max-width: 1000px; border-bottom: 1px solid var(--rule); }
+    .hero-eyebrow { font-family: var(--mono); font-size: 0.65rem; color: var(--gold); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
+    .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+    h1 { font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 300; line-height: 1.1; margin-bottom: 8px; }
+    h1 em { font-style: italic; color: var(--gold-light); }
+    .hero-role { font-family: var(--sans); font-size: 0.9rem; color: var(--muted); margin-bottom: 36px; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+    .tag { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--rule); padding: 4px 10px; border-radius: 2px; }
+    .hero-stats { display: grid; grid-template-columns: repeat(5, auto); gap: 40px; width: fit-content; }
+    .hero-stat-n { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: var(--gold-light); line-height: 1; }
+    .hero-stat-l { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
+    section { padding: 80px 48px; max-width: 1100px; margin: 0 auto; border-bottom: 1px solid var(--rule); }
+    .eyebrow { font-family: var(--mono); font-size: 0.62rem; color: var(--gold); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 12px; }
+    h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300; line-height: 1.2; margin-bottom: 48px; }
+    h2 em { font-style: italic; color: var(--gold-light); }
+    h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; margin-bottom: 10px; }
+    p { font-family: var(--sans); font-size: 0.9rem; color: rgba(26,26,26,0.7); line-height: 1.8; }
+    .analysis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .analysis-col h3 { font-size: 1rem; font-family: var(--mono); letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; margin-bottom: 20px; font-weight: 400; }
+    .bar-chart { display: flex; flex-direction: column; gap: 10px; }
+    .bar-row { display: flex; align-items: center; gap: 12px; }
+    .bar-label { font-family: var(--sans); font-size: 0.78rem; color: rgba(26,26,26,0.65); width: 180px; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 6px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 3px; background: var(--gold); transition: width 1s ease; }
+    .bar-fill.forest { background: var(--forest); }
+    .bar-fill.burgundy { background: var(--burgundy); }
+    .bar-fill.muted { background: var(--muted); }
+    .bar-n { font-family: var(--mono); font-size: 0.65rem; color: var(--muted); width: 52px; text-align: right; flex-shrink: 0; }
+    .register-block { margin-top: 40px; }
+    .register-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+    .register-pill { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 14px; border-radius: 2px; border: 1px solid var(--rule); }
+    .register-pill.logos { background: rgba(45,74,53,0.3); border-color: var(--forest); color: #7ab88a; }
+    .register-pill.pathos { background: rgba(122,45,45,0.3); border-color: var(--burgundy); color: #c47a7a; }
+    .register-pill.ethos { background: rgba(196,69,47,0.15); border-color: var(--gold); color: var(--gold-light); }
+    .register-pill.doxological { background: rgba(107,100,85,0.3); border-color: var(--muted); color: #a89d8a; }
+    .register-pill.narrative { background: rgba(60,80,100,0.3); border-color: #4a6a8a; color: #7a9aaa; }
+    .distinction-box { background: rgba(196,69,47,0.04); border: 1px solid rgba(196,69,47,0.2); border-radius: 2px; padding: 24px 28px; margin-top: 32px; }
+    .distinction-label { font-family: var(--mono); font-size: 0.6rem; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; }
+    .distinction-box p { font-size: 0.88rem; font-style: italic; color: rgba(26,26,26,0.75); }
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 56px; }
+    .stat-box { border: 1px solid var(--rule); border-radius: 2px; padding: 28px 24px; text-align: center; }
+    .stat-box-n { font-family: var(--serif); font-size: 2.4rem; font-weight: 300; color: var(--gold-light); line-height: 1; }
+    .stat-box-l { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 8px; }
+    .illus-controls { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+    .filter-btn { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 14px; border: 1px solid var(--rule); border-radius: 2px; background: none; color: var(--muted); cursor: pointer; transition: all 0.2s; }
+    .filter-btn:hover, .filter-btn.active { border-color: var(--gold); color: var(--gold-light); background: rgba(196,69,47,0.06); }
+    .illus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .illus-card { border: 1px solid var(--rule); border-radius: 2px; padding: 24px; transition: border-color 0.2s; cursor: default; }
+    .illus-card:hover { border-color: rgba(196,69,47,0.35); }
+    .illus-type { font-family: var(--mono); font-size: 0.58rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
+    .illus-text { font-family: var(--sans); font-size: 0.85rem; color: rgba(26,26,26,0.72); line-height: 1.7; }
+    .illus-source { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); margin-top: 12px; }
+    .quotes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .quote-card { border-left: 2px solid var(--rule); padding: 20px 24px; transition: border-color 0.2s; }
+    .quote-card:hover { border-left-color: var(--gold); }
+    .quote-text { font-family: var(--serif); font-size: 1.05rem; font-style: italic; color: rgba(26,26,26,0.82); line-height: 1.65; margin-bottom: 12px; }
+    .quote-attr { font-family: var(--mono); font-size: 0.6rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
+    .quote-source { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); margin-top: 2px; }
+    .author-counts { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+    .author-chip { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; padding: 5px 12px; border: 1px solid var(--rule); border-radius: 20px; color: var(--muted); }
+    .author-chip span { color: var(--gold-light); margin-left: 4px; }
+    .claims-list { display: flex; flex-direction: column; gap: 0; }
+    .claim-row { padding: 18px 0; border-bottom: 1px solid rgba(196,69,47,0.08); display: grid; grid-template-columns: 1fr 220px; gap: 24px; align-items: start; }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-text { font-family: var(--sans); font-size: 0.88rem; color: rgba(26,26,26,0.82); line-height: 1.65; }
+    .claim-meta { text-align: right; }
+    .claim-fn { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; border: 1px solid var(--rule); color: var(--muted); display: inline-block; margin-bottom: 6px; }
+    .claim-fn.theological_claim { border-color: rgba(196,69,47,0.4); color: var(--gold-light); }
+    .claim-fn.exposition { border-color: rgba(45,74,53,0.5); color: #7ab88a; }
+    .claim-sermon { font-family: var(--mono); font-size: 0.58rem; color: var(--muted); }
+    .sermon-table { width: 100%; border-collapse: collapse; }
+    .sermon-table th { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); letter-spacing: 0.14em; text-transform: uppercase; text-align: left; padding: 10px 16px; border-bottom: 1px solid var(--rule); }
+    .sermon-table td { font-family: var(--sans); font-size: 0.84rem; color: rgba(26,26,26,0.7); padding: 13px 16px; border-bottom: 1px solid rgba(196,69,47,0.06); vertical-align: top; }
+    .sermon-table tr:hover td { background: rgba(196,69,47,0.03); }
+    .sermon-title { color:#1a1a1a; font-weight: 400; }
+    .sermon-text { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+    .sermon-type { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; border: 1px solid var(--rule); color: var(--muted); white-space: nowrap; }
+    .sermon-type.expository { border-color: rgba(45,74,53,0.5); color: #7ab88a; }
+    .sermon-type.topical { border-color: rgba(122,45,45,0.5); color: #c47a7a; }
+    .sermon-type.textual { border-color: rgba(196,69,47,0.4); color: var(--gold-light); }
+    .series-group-header td { padding: 24px 16px 8px; font-family: var(--mono); font-size: 0.6rem; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; border-bottom: 1px solid var(--rule); background: rgba(196,69,47,0.03); }
+    footer { border-top: 1px solid var(--rule); padding: 40px 48px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-brand { font-family: var(--serif); font-size: 0.95rem; color:#1a1a1a; }
+    footer p { font-size: 0.75rem; color: var(--muted); }
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .hero, section { padding-left: 20px; padding-right: 20px; }
+      .hero-stats { grid-template-columns: repeat(3,auto); gap: 24px; }
+      .analysis-grid, .illus-grid, .quotes-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .claim-row { grid-template-columns: 1fr; }
+      .section-nav a { padding: 12px 16px; }
+    }
+  
+  :root {
+    --ink:#fbf8f1; --parchment:#1a1a1a; --gold:#c4452f; --gold-light:#c4452f;
+    --burgundy:#9a3624; --forest:#3a7256; --muted:#4a4a4a; --rule:#e6e1d3;
+    --serif: Inter, system-ui, sans-serif; --sans: Inter, system-ui, sans-serif;
+  }
+  body { background:#fbf8f1 !important; color:#1a1a1a !important; font-family:Inter, system-ui, sans-serif !important; }
+  h1, h2, h3, .footer-brand, .nav-brand { font-family:Inter, system-ui, sans-serif !important; font-weight:800; color:#1a1a1a; }
+  h1 em, h2 em { font-style:normal !important; color:#c4452f !important; }
+  .hero { padding:48px 28px 56px !important; max-width:1080px; }
+  section { padding:64px 28px !important; }
+  .section-nav { top:65px !important; background:rgba(251,248,241,0.96) !important; border-bottom:1px solid #e6e1d3 !important; }
+  .section-nav a { color:#4a4a4a !important; }
+  .section-nav a:hover, .section-nav a.active { color:#c4452f !important; border-bottom-color:#c4452f !important; }
+  p, .bar-label, .illus-text, .quote-text, .claim-text, .sermon-table td, .distinction-box p { color:#4a4a4a !important; }
+  .sermon-title { color:#1a1a1a !important; font-weight:700 !important; }
+  .bar-track { background:rgba(0,0,0,0.06) !important; }
+  .stat-box, .illus-card, .distinction-box, .quote-card, .claim-card { background:#fff; border-color:#e6e1d3 !important; }
+  .site-header { background:rgba(251,248,241,0.92); backdrop-filter:blur(8px); border-bottom:1px solid #e6e1d3; position:sticky; top:0; z-index:100; }
+  .site-header-inner { max-width:1180px; margin:0 auto; padding:16px 28px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+  .wordmark { font-weight:800; font-size:21px; letter-spacing:-0.02em; color:#1a1a1a; text-decoration:none; }
+  .wordmark .dot { color:#c4452f; }
+  nav { position:static !important; background:none !important; padding:0 !important; border:0 !important; }
+  .site-nav { font-size:15px; font-weight:500; display:flex; gap:22px; align-items:center; }
+  .site-nav a { color:#4a4a4a; text-decoration:none; letter-spacing:0; text-transform:none; font-size:15px; }
+  .site-nav a:hover { color:#1a1a1a; }
+  .site-footer { border-top:1px solid #e6e1d3; padding:40px 28px; background:#fbf8f1; }
+  .foot-inner { max-width:1080px; margin:0 auto; display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; align-items:center; }
+  .foot-brand { font-weight:800; font-size:18px; color:#1a1a1a; }
+  .foot-brand .dot { color:#c4452f; }
+  .foot-imprint { font-size:13px; color:#828282; margin-top:2px; }
+  .foot-nav { display:flex; gap:20px; font-size:14px; }
+  .foot-nav a { color:#4a4a4a; text-decoration:none; }
+  @media (max-width: 720px) { .site-nav { display:none; } }
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="wordmark" href="/">Sermon Steward<span class="dot">.</span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/hall/">Hall</a>
+      <a href="/product.html">Product</a>
+      <a href="/samples.html">Samples</a>
+      <a href="/how-we-read-a-sermon/">How we read</a>
+    </nav>
+  </div>
+</header>
+
+<div class="section-nav" id="sectionNav">
+  <a href="#overview" class="active">Archive Overview</a>
+  <a href="#fingerprint">Theological Fingerprint</a>
+  <a href="#rhetorical">Rhetorical Profile</a>
+  <a href="#illustrations">Illustration Arsenal</a>
+  <a href="#lineage">Intellectual Lineage</a>
+  <a href="#btmoves">BT Moves</a>
+  <a href="#claims">Key Claims</a>
+  <a href="#corpus">Corpus Table</a>
+</div>
+
+<div class="hero">
+  <div class="hero-eyebrow">Archive analysis · <a href="/preacher-voddie.html">Back to profile</a></div>
+  <h1>Voddie <em>Baucham</em></h1>
+  <p class="hero-role">Dean · African Christian University / Grace Family Baptist · b. 1969</p>
+  <div class="hero-tags">
+    <span class="tag">Reformed Baptist</span>
+    <span class="tag">Family Discipleship</span>
+    <span class="tag">Cultural Critique</span>
+    <span class="tag">Expository</span>
+    <span class="tag">Apologetic</span>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="hero-stat-n">45</div>
+      <div class="hero-stat-l">Sermons Indexed</div>
+    </div>
+    <div>
+      <div class="hero-stat-n" style="font-size:1.2rem;">Soteriology</div>
+      <div class="hero-stat-l">Top Doctrinal Locus</div>
+    </div>
+    <div>
+      <div class="hero-stat-n">8.5% units</div>
+      <div class="hero-stat-l">Illustration Rate</div>
+    </div>
+    <div>
+      <div class="hero-stat-n">248</div>
+      <div class="hero-stat-l">BT Move Instances</div>
+    </div>
+    <div>
+      <div class="hero-stat-n" style="font-size:1rem;">Second London Baptist Confession</div>
+      <div class="hero-stat-l">Most Cited (6×)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION 1: ARCHIVE OVERVIEW ══ -->
+<section id="overview">
+  <div class="eyebrow">01 — Archive Overview</div>
+  <h2>45 sermons.<br><em>1573 decomposed units.</em></h2>
+
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="stat-box-n">45</div>
+      <div class="stat-box-l">Total Sermons</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-n">1573</div>
+      <div class="stat-box-l">Rhetorical Units</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-n">133</div>
+      <div class="stat-box-l">Illustrations</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-n">100%</div>
+      <div class="stat-box-l">Expository Rate</div>
+    </div>
+  </div>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <h3>Sermon Type Breakdown</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Expository</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">45</span>
+        </div>
+      </div>
+      <div class="distinction-box" style="margin-top:32px;">
+        <div class="distinction-label">Corpus Note</div>
+        <p>Voddie Baucham Jr. is Dean of the Seminary at African Christian University in Zambia, formerly Grace Family Baptist in Spring, TX. Bold expository preacher with a distinctive emphasis on biblical manhood, family discipleship, and cultural critique from a Reformed Baptist framework. Known for engaging intersectionality, social justice debates, and the sufficiency of Scripture.</p>
+      </div>
+    </div>
+    <div class="analysis-col">
+      <h3>Series Distribution</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Standalone</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">32</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Romans</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:16%"></div></div>
+          <span class="bar-n">5</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Revelation</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:6%"></div></div>
+          <span class="bar-n">2</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Second London Baptist Confession of 1689</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:3%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">The Better Half</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:3%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Sermon on the Mount</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:3%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">The Other Half</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:3%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Reformation Observation</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:3%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">True Love</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:3%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+      </div>
+      <div class="distinction-box" style="margin-top:32px;"><div class="distinction-label">Corpus Metrics</div><p>Avg units/sermon: 35.0 · Avg cross-refs: 11.3 · Avg quotations: 2.2</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 2: THEOLOGICAL FINGERPRINT ══ -->
+<section id="fingerprint">
+  <div class="eyebrow">02 — Theological Fingerprint</div>
+  <h2>What Baucham's corpus<br><em>obsesses over.</em></h2>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <h3>Doctrinal Loci — Primary</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Soteriology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">493</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Christology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:62%"></div></div>
+          <span class="bar-n">308</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Hamartiology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:52%"></div></div>
+          <span class="bar-n">256</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Ecclesiology</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:51%"></div></div>
+          <span class="bar-n">251</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Sanctification</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:38%"></div></div>
+          <span class="bar-n">189</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Bibliology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:34%"></div></div>
+          <span class="bar-n">167</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Theology Proper</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:33%"></div></div>
+          <span class="bar-n">161</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Pastoral Theology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:32%"></div></div>
+          <span class="bar-n">156</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Ethics / Moral Theology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:27%"></div></div>
+          <span class="bar-n">134</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Providence / Sovereignty</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:26%"></div></div>
+          <span class="bar-n">130</span>
+        </div>
+      </div>
+    </div>
+    <div class="analysis-col">
+      <h3>Doctrinal Loci — Secondary</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Anthropology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">130</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Doxology / Worship</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:68%"></div></div>
+          <span class="bar-n">89</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Eschatology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:64%"></div></div>
+          <span class="bar-n">83</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Pneumatology</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:43%"></div></div>
+          <span class="bar-n">56</span>
+        </div>
+      </div>
+      <div class="distinction-box" style="margin-top:32px;">
+        <div class="distinction-label">The Baucham Signature</div>
+        <p>Baucham&#39;s signature is the confrontational theological argument — he preaches as though the stakes of getting the text wrong are civilizational. His cultural engagement is direct where other Hall preachers are indirect. He names the ideologies, refutes them by name, and drives the text through them like a wedge. The combination of warm pastoral concern with hard polemical edge is his distinctive.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 3: RHETORICAL PROFILE ══ -->
+<section id="rhetorical">
+  <div class="eyebrow">03 — Rhetorical Profile</div>
+  <h2>How Baucham structures<br><em>the sermon itself.</em></h2>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <h3>Unit Function Distribution</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Exposition</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">622</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Theological Claim</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:63%"></div></div>
+          <span class="bar-n">389</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Application</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:23%"></div></div>
+          <span class="bar-n">144</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Illustration</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:21%"></div></div>
+          <span class="bar-n">133</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Transition</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:18%"></div></div>
+          <span class="bar-n">113</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Pastoral Aside</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:9%"></div></div>
+          <span class="bar-n">56</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Introduction</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:8%"></div></div>
+          <span class="bar-n">52</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Prayer</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:6%"></div></div>
+          <span class="bar-n">37</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Conclusion</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:4%"></div></div>
+          <span class="bar-n">27</span>
+        </div>
+      </div>
+    </div>
+    <div class="analysis-col">
+      <h3>Tone Distribution</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Pastoral</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">45</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Didactic</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">45</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Polemic</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:64%"></div></div>
+          <span class="bar-n">29</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Prophetic</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:29%"></div></div>
+          <span class="bar-n">13</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Celebratory</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:13%"></div></div>
+          <span class="bar-n">6</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Lament</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:2%"></div></div>
+          <span class="bar-n">1</span>
+        </div>
+      </div>
+      <div style="margin-top:40px;">
+        <h3 style="font-family:var(--mono); font-size:0.85rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; font-weight:400; margin-bottom:20px;">Rhetorical Register</h3>
+        <div class="register-pills">
+          <span class="register-pill logos">Logos</span>
+          <span class="register-pill pathos">Pathos</span>
+          <span class="register-pill ethos">Ethos</span>
+          <span class="register-pill narrative">Narrative</span>
+          <span class="register-pill doxological">Doxological</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 4: ILLUSTRATION ARSENAL ══ -->
+<section id="illustrations">
+  <div class="eyebrow">04 — Illustration Arsenal</div>
+  <h2>133 illustrations from<br><em>45 sermons.</em></h2>
+
+  <div style="margin-bottom:48px;">
+    <div class="bar-chart" style="max-width:520px;">
+        <div class="bar-row">
+          <span class="bar-label">Personal Story</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">37</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Cultural Reference</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:78%"></div></div>
+          <span class="bar-n">29</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Hypothetical</span>
+          <div class="bar-track"><div class="bar-fill burgundy" style="width:78%"></div></div>
+          <span class="bar-n">29</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Historical Example</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:65%"></div></div>
+          <span class="bar-n">24</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Analogy</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:38%"></div></div>
+          <span class="bar-n">14</span>
+        </div>
+    </div>
+  </div>
+
+  <div class="illus-controls">
+    <button class="filter-btn active" onclick="filterIllus('all', this)">All · 12 shown</button>
+    <button class="filter-btn" onclick="filterIllus('hypothetical', this)">Hypothetical</button>
+    <button class="filter-btn" onclick="filterIllus('historical_example', this)">Historical Example</button>
+    <button class="filter-btn" onclick="filterIllus('personal_story', this)">Personal Story</button>
+    <button class="filter-btn" onclick="filterIllus('cultural_reference', this)">Cultural Reference</button>
+  </div>
+
+  <div class="illus-grid" id="illusGrid">
+    
+    <div class="illus-card" data-type="hypothetical">
+      <div class="illus-type">Hypothetical</div>
+      <div class="illus-text">Fill a room with people hearing the gospel, and there will be different responses. And that response is not based on demographics. That response is not based on ethnicity. It&#39;s not based on education. It&#39;s not based on income or wealth. The response to the gospel. You take two twins who are not only raised in the same family by the same parents, but who share the same DNA. And they can hear the gospel at the same time. And one finds it beautiful and the other finds it repulsive. Because there&#39;s something else at work.</div>
+      <div class="illus-source">The Hidden Beauty of the Gospel</div>
+    </div>
+    <div class="illus-card" data-type="hypothetical">
+      <div class="illus-type">Hypothetical</div>
+      <div class="illus-text">That&#39;s why those folks who say, you know, I would go to church, but you know, there&#39;s a lot of stuff in my life that I got to get straightened out first. Help you. I would come to God, but I&#39;m not worthy of God yet. When I get worthy of God, then I&#39;ll come to God. If you could get yourself worthy of God, you wouldn&#39;t need God. You can&#39;t get yourself worthy of God. There is nothing in you that would satisfy God. On your best day, it&#39;s filthy rags. That&#39;s not the answer.</div>
+      <div class="illus-source">Sanctification is of Grace</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">بویژه در مورد اپلوس در نظر بگیرید. او در مورد یونانیان صحبت می‌کنه در قرنتس جایی که یونانیان هستن و به دنبال حکمت هستن و عاشق سخنوری هستن. در نظر بگیرید مسیحیانی که در قرنتس بودن و اپلوس براشون صحبت می‌کرد که در زمینه سخنوری استاد بود. هر آنچه که یونانیان به‌ش احترام می‌گذاشتن، در او خلاصه می‌شد. و بعد احتمالاً کلیسا می‌گفتن اگر ما این فرد را داشته باشیم در بین یونانیان کار بزرگ انجام می‌شه و همه ایمان می‌آورن.</div>
+      <div class="illus-source">حکمت انجیل احمقانه ما</div>
+    </div>
+    <div class="illus-card" data-type="personal_story">
+      <div class="illus-type">Personal Story</div>
+      <div class="illus-text">When we have this, then we&#39;ll have the kind of marriages that will cause the world to stop and take notice and eventually come to us and say, can you help us? Because we would give anything to have what you have. My wife and I have had millionaires in our home asking us to help them rescue their marriages. Millionaires sitting at our table saying we&#39;ve got everything and we would give it all away to have what you two have. Why? Because they bought a lie. Don&#39;t you do that.</div>
+      <div class="illus-source">The Better Half: Part 4</div>
+    </div>
+    <div class="illus-card" data-type="cultural_reference">
+      <div class="illus-type">Cultural Reference</div>
+      <div class="illus-text">But you know what? I meet people who resent their parents all the time. And here&#39;s usually the difference in the story. Their mother was working like a slave, not because she was a single teenage mother who had to, but because she wanted more stuff. And she thought stuff was more important than her children. and so she sacrificed her children on the altar of prosperity and instead of giving herself to her children she gave nice things to her children somehow thinking that number one she could pay somebody ten dollars an hour and they would give her children what God designed her to give them and secondly somehow thinking that giving her children toys that got bigger as they got older would make up for the fact that she chose to sacrifice them on the altar of prosperity those people are the ones who have problems with their mothers.</div>
+      <div class="illus-source">The Better Half: Part 4</div>
+    </div>
+    <div class="illus-card" data-type="cultural_reference">
+      <div class="illus-type">Cultural Reference</div>
+      <div class="illus-text">Y de hecho esto es lo que decimos en nuestros votos de boda. Y si yo no estuviera en el punto de vista de la permanencia, yo tuviera que buscar una manera de cambiar lo que decimos cuando hacemos matrimonios. Porque los votos de boda son votos de boda promesas del punto de vista de la permanencia del matrimonio. decimos en la pobreza o en la riqueza en lo mejor o en lo malo en la enfermedad o en la salud para mejor o para mal déjame te pregunto algo el adulterio es parte de lo bueno o de lo malo es de lo malo y eso fue parte de las promesas que se hicieron cuando se hizo la boda olvidarte de todos los demás. ¿Hasta cuándo? ¿Hasta que él te traicione? ¿O hasta cuando tú te aburras? No. ¿Hasta cuándo? ¿Hasta que mi pareja no haga esto? No. ¡Hasta que nos separe la muerte! Esas son las promesas de la del matrimonio.</div>
+      <div class="illus-source">El Matrimonio Permanente</div>
+    </div>
+    <div class="illus-card" data-type="cultural_reference">
+      <div class="illus-type">Cultural Reference</div>
+      <div class="illus-text">و در یوهنا فصل 14، در همون شبیه که به او خیانت میشه، خداوند این مراسلیم را تحسیص میکنه و به این شکل شاگردانش تسلیم میده قبل از اینکه از این جهان بره یوهنا فصل 14 دل شما مسترب نشود به خدا ایمان آوردید به من نیز ایمان آوردید در خانه پدر من منزل بسیار است وگرنه به شما میگفتم میروم تا برای شما مکانی حاضر کنم وگر بروم و از برای شما مکانی حاضر کنم باز میایم و شما را برداشت و با خود خواهم برد تا جایی که من میباشم شما نیز باشید و جایی که من میروم میدانید و راه را می دانید خداوند ما رفته تا جایی و برای ما فراهم کنه او باز خواهد گشت برای ما مسیحیان این چیزی که ما اعلام می کنیم در مراسم شام ربانی</div>
+      <div class="illus-source">آیین شام خداوند</div>
+    </div>
+    <div class="illus-card" data-type="personal_story">
+      <div class="illus-type">Personal Story</div>
+      <div class="illus-text">A dear friend of mine, Dan Urey, he&#39;s a pastor of a church in Phoenix. His wife has multiple sclerosis. I was with them a few months ago. And she is so advanced in this disease now that she&#39;s in a wheelchair, and she can&#39;t walk, and she can&#39;t get around, and they&#39;re both advancing in age. And I spent the day with them. And everywhere they went, he would grab her arms, and he&#39;d wrap them around his neck, and he&#39;d grab her Do the same thing again. Struggle to get her in the car. Get the chair in the car. Get to where they&#39;re going. Same thing again. Over and over and over. He bathes her. He feeds her. He takes her to the bathroom. You don&#39;t get that with the Greco-Roman myth of romantic love. Cupid doesn&#39;t give you that. That is the will. That is a man who says, I choose to love you with everything that I have for the rest of our life together. I choose to love you. That is what you&#39;re looking for. They don&#39;t look like they used to when they first got married. So if they built their marriage on that, it would be gone. She can&#39;t even get around like she used to. If they built their marriage on that, it would be gone. Do you not think he gets tired?</div>
+      <div class="illus-source">True Love: Part 2</div>
+    </div>
+    <div class="illus-card" data-type="personal_story">
+      <div class="illus-type">Personal Story</div>
+      <div class="illus-text">I thought about this. You know, the last couple of years I&#39;ve had to cancel tours in Israel. Last year, I was supposed to be leaving a few days after October 7th to lead a tour in Israel. That got canceled. This year, I&#39;m supposed to be leaving to do two tours, one at the end of this month, one at the beginning of November. We had to cancel those as things heat up over there. And so it&#39;s been a long time since I&#39;ve had the opportunity to lead a tour in Israel. there is something powerful and spiritually moving about reading the Bible and being able to say that happened right here. It&#39;s hard to put into words. And somebody asked me once, you know, what it was like, and I talked about what it was like, and they talked about how they wish they could have that experience. And I said, you can, every time you take the Lord&#39;s Supper. What? Listen, that night, Jesus is with his disciples. And they&#39;re at this very familiar meal, this Passover meal, but he&#39;s about to pour an entirely different meaning into it. So he takes this bread and he breaks it and he gives it to him. He says, this is my body, which is for you. Take this and eat it. He takes the cup. This is my blood of the new covenant. He hasn&#39;t died yet, folks. They don&#39;t fully understand what he means yet. It is only later that he&#39;s going to be arrested and then beaten and then nailed to a tree and then die this gruesome, bloody death. It&#39;s only after that, that they eat this bread again, and they drink this cup again, and they are reminded of what Jesus meant when he said those words. Something happens when you physically, tangibly experience something connected to a memory. And that&#39;s what they did, and that&#39;s what we do. You eat that bread. and physically, tangibly, you&#39;re reminded of a spiritual truth and a spiritual reality. And there is communion in that. And you drink that cup, physically, tangibly, you&#39;re reminded of this real thing that took place. And there is communion in that. And it is serious. It is not like any bread that you ever eat any other time in that regard. And so we are sober. We are serious. We are not joyless, but we think rightly.</div>
+      <div class="illus-source">The Reformation Doctrine of the Lord&#39;s Supper</div>
+    </div>
+    <div class="illus-card" data-type="historical_example">
+      <div class="illus-type">Historical Example</div>
+      <div class="illus-text">شما از مردم می‌خواهید تا در برابر خداوند عیسی مسیح تسلیم بشند به عنوان یک نجات دهنده. در زمان باستان اگر شما می‌خواستید نجات دهنده‌ای را به مردم معرفی کنید که در برابر او تسلیم بشند و به او ایمان بیاورند شما باید یک ابرمرد را معرفی می‌کردید. کسی که قدرت داشت و ثروت داشت. زیرا آن‌ها به قدرت و ثروت احترام می‌گذاشتن. اما کسی که مصلوب شده، منظورش این بود که آن فرد ضعیفه، قدرتی ندارد. و به احتمال زیاد آن فرد یک جنایتکاره. و کسی به دنبال چنین فردی نمی‌آید. کسیانی که مصلوب می‌شن، چنین افرادی بودن.</div>
+      <div class="illus-source">حکمت انجیل احمقانه ما</div>
+    </div>
+    <div class="illus-card" data-type="personal_story">
+      <div class="illus-type">Personal Story</div>
+      <div class="illus-text">It&#39;s interesting, you know, when I was a boy, I was fascinated with gangsters. I just was. Probably because I grew up in South Central Los Angeles, surrounded by gangsters. But I was fascinated with the old gangsters. Right? With the guys who wore double-breasted pinstripe suits and fedoras and machine guns. The combination of those things, the wingtips, the whole deal. I was just fascinated. And the interesting thing about that to me was that even in this world, We think of the world of gangsters and mobsters as this anything goes kind of world, but it&#39;s really not. There&#39;s rules. And in many ways, they&#39;re more serious about the rules than people who live outside of their worlds. But there&#39;s an entire world that they live in with rules that just make sense to them. And in that world, there&#39;s certain things that you do, and that means I&#39;ve got to kill you. And it just makes sense. And if you&#39;re outside of that world looking into that world, you go, that&#39;s crazy. Not if you&#39;re in it. If you&#39;re in it, it&#39;s completely logical.</div>
+      <div class="illus-source">Total Inability</div>
+    </div>
+    <div class="illus-card" data-type="hypothetical">
+      <div class="illus-type">Hypothetical</div>
+      <div class="illus-text">Again, you can put twins in the same room, and it has happened on a number of occasions. Many of you have multiple siblings. Some of you are here today, and you are a follower of Christ, and your siblings who were raised with you by the same parents, in the same family, maybe even in the same church, are not Christians. or maybe it&#39;s the other way around maybe you&#39;re here today at the invitation of someone and you grew up in the church you grew up in a family where you heard the gospel and you have siblings and parents and nieces and nephews and cousins and uncles who have come to faith in Christ but you have not Because the beauty of the gospel is not something that we access and we understand through our human effort. It&#39;s not mathematics. It&#39;s not if you add this plus this, then you get that. It&#39;s not a formula.</div>
+      <div class="illus-source">The Hidden Beauty of the Gospel</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 5: INTELLECTUAL LINEAGE ══ -->
+<section id="lineage">
+  <div class="eyebrow">05 — Intellectual Lineage</div>
+  <h2>The tradition Baucham<br><em>draws from — and argues with.</em></h2>
+
+  <div class="author-counts">
+    <span class="author-chip">Second London Baptist Confession <span>6×</span></span>
+    <span class="author-chip">John Calvin <span>4×</span></span>
+    <span class="author-chip">A.W. Pink <span>4×</span></span>
+    <span class="author-chip">Wayne Grudem <span>3×</span></span>
+    <span class="author-chip">B.B. Warfield <span>2×</span></span>
+    <span class="author-chip">Paul <span>2×</span></span>
+    <span class="author-chip">Council of Trent, Session Six, Canon Nine <span>2×</span></span>
+    <span class="author-chip">Voddie Baucham <span>2×</span></span>
+    <span class="author-chip">Martin Luther <span>2×</span></span>
+    <span class="author-chip">former leader in the Anglican Church <span>2×</span></span>
+    <span class="author-chip">Tony Evans <span>2×</span></span>
+    <span class="author-chip">Tom Schreiner <span>2×</span></span>
+    <span class="author-chip">Second London Baptist Confession, Article 14 <span>2×</span></span>
+    <span class="author-chip">یکی از پدران کلیسا <span>2×</span></span>
+    <span class="author-chip">Zephaniah 3:5 <span>1×</span></span>
+    <span class="author-chip">Robert Raymond <span>1×</span></span>
+    <span class="author-chip">Second London Baptist Confession of 1689 <span>1×</span></span>
+    <span class="author-chip">Luther <span>1×</span></span>
+  </div>
+
+  <div class="quotes-grid">
+    
+    <div class="quote-card">
+      <div class="quote-text">The explanation I was given went something like this. God was very angry with us for sins... he sent his son Jesus as a substitute to suffer and die in our place... Well, I don&#39;t know about you, But even at the age of 10, I thought this explanation was pretty repulsive as well as nonsensical. What sort of God was this getting angry with the world and the people he created and then to calm himself down, demanding the blood of his own son?</div>
+      <div class="quote-attr">Dr. Jeffrey John</div>
+      <div class="quote-source">Mark 8:27-38 · Mark 8:27-38</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">a new commandment I give to you, that you love one another. Just as I have loved you, you also are to love one another. By this, all people will know that you are my disciples if you have love for one another.</div>
+      <div class="quote-attr">Jesus</div>
+      <div class="quote-source">I Leave You with This · 2 Timothy 2:1-7</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">How can you say that you love God whom you&#39;ve never seen, if you don&#39;t love your brother who you see every day?</div>
+      <div class="quote-attr">John (paraphrase from 1 John)</div>
+      <div class="quote-source">The Costly Call to Community · 2 Timothy 4:9-18</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">Christ designs so to honor marriage as to make it an image of his sacred union with the church</div>
+      <div class="quote-attr">John Calvin</div>
+      <div class="quote-source">Be Careful How You Talk About Christ&#39;s Bride · Ephesians 5:32</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">Romans regarded crucifixion as a death appropriate for slaves. Jews also saw it as shameful. Those viewed As saviors were normally gods, kings, wealthy benefactors, or miracle workers, Roman society was built around power and status. Power was concentrated in the male head of household, in wealthy and aristocratic families, and so forth. Associating power with a crucified man, the epitome of weakness, thus made no more sense to ancients than it does to modern people outside of Christ.</div>
+      <div class="quote-attr">Craig Keener</div>
+      <div class="quote-source">The Wisdom of Our Foolish Gospel · 1 Corinthians 1:18-25</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">You believe in a woman&#39;s right to choose to hire a doctor to assassinate her unborn child in the womb.</div>
+      <div class="quote-attr">Voddie Baucham</div>
+      <div class="quote-source">Adam&#39;s Sin and Headship · Romans 5</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">The doctrine of this high mystery of predestination is to be handled with special prudence and care that men attending the will of God revealed in his word and yielding obedience thereunto may from the certainty of their effectual vocation be assured of their eternal election. So shall this doctrine afford matter of praise, reverence, and admiration of God, and of humility, diligence, and abundant consolation to all that sincerely obey the gospel</div>
+      <div class="quote-attr">Second London Baptist Confession</div>
+      <div class="quote-source">Be Careful How You Talk About Christ&#39;s Bride · Ephesians 5:32</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">that heartbeat you hear on an ultrasound, that&#39;s manufactured to deceive women</div>
+      <div class="quote-attr">Stacey Abrams</div>
+      <div class="quote-source">Ephesians 5 - Voddie Baucham · Ephesians 5</div>
+    </div>
+  </div>
+
+  <div style="margin-top:48px;">
+    <div class="eyebrow" style="margin-bottom:16px;">Top Scripture Cross-References</div>
+    <div class="author-counts">
+      <span class="author-chip">Ephesians 2:1-3 <span>7×</span></span>
+    <span class="author-chip">John 6:44 <span>6×</span></span>
+    <span class="author-chip">Genesis 3 <span>5×</span></span>
+    <span class="author-chip">2 Corinthians 5:21 <span>5×</span></span>
+    <span class="author-chip">Romans 1:7 <span>4×</span></span>
+    <span class="author-chip">Mateo 19 <span>4×</span></span>
+    <span class="author-chip">Romans 3 <span>4×</span></span>
+    <span class="author-chip">1 Corinthians 2:1-5 <span>4×</span></span>
+    <span class="author-chip">Isaiah 53:6 <span>4×</span></span>
+    <span class="author-chip">1 Corintios 7 <span>4×</span></span>
+    <span class="author-chip">Romans 1:18 <span>4×</span></span>
+    <span class="author-chip">1 Corinthians 15:3-8 <span>4×</span></span>
+    <span class="author-chip">2 Corinthians 5:17 <span>4×</span></span>
+    <span class="author-chip">Luke 10:21-22 <span>3×</span></span>
+    <span class="author-chip">John 12:36-40 <span>3×</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 6: BT MOVES ══ -->
+<section id="btmoves">
+  <div class="eyebrow">06 — Biblical-Theological Moves</div>
+  <h2>How Baucham connects every text<br><em>to the whole-Bible narrative.</em></h2>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <h3>BT Move Type Distribution</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Fulfillment</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:100%"></div></div>
+          <span class="bar-n">63</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Typology</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:87%"></div></div>
+          <span class="bar-n">55</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Thematic Thread</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:62%"></div></div>
+          <span class="bar-n">39</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Contrast</span>
+          <div class="bar-track"><div class="bar-fill forest" style="width:40%"></div></div>
+          <span class="bar-n">25</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Intertextual Echo</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:40%"></div></div>
+          <span class="bar-n">25</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Narrative Arc</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:33%"></div></div>
+          <span class="bar-n">21</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Progressive Revelation</span>
+          <div class="bar-track"><div class="bar-fill muted" style="width:30%"></div></div>
+          <span class="bar-n">19</span>
+        </div>
+      </div>
+    </div>
+    <div class="analysis-col">
+      <h3>What This Reveals</h3>
+      <p style="margin-bottom:20px;">The biblical-theological move profile reveals how Voddie Baucham connects individual texts to the larger redemptive-historical narrative. The leading move type indicates a characteristic approach to canon — whether primarily fulfillment-oriented, typological, or thematic-thread driven.</p>
+      <p>Total BT move instances: 247. The dominant move is <em>Fulfillment</em> (63 instances), followed by Typology (55).</p>
+      <div class="distinction-box" style="margin-top:24px;">
+        <div class="distinction-label">BT Profile</div>
+        <p>Avg BT moves per sermon: 5.5. These moves represent the mechanism by which Baucham's exposition connects local textual meaning to the whole-Bible argument.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 7: KEY CLAIMS ══ -->
+<section id="claims">
+  <div class="eyebrow">07 — Key Theological Claims</div>
+  <h2>15 claims from<br><em>the theological archive.</em></h2>
+
+  <div class="claims-list">
+    
+    <div class="claim-row">
+      <div class="claim-text">We must understand the purpose of marriage and the requirements for husband and wife roles before entering into marriage relationships.</div>
+      <div class="claim-meta">
+        <span class="claim-fn theological_claim">Theological Claim</span>
+        <div class="claim-sermon">True Love: Part 2</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Women must establish biblical minimum requirements for a husband and refuse to settle for less, while men must meet these requirements before pursuing marriage.</div>
+      <div class="claim-meta">
+        <span class="claim-fn application">Application</span>
+        <div class="claim-sermon">The Other Half: Part 3</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">The nation&#39;s greatest need is not better leaders or laws but redemption, because sin is the fundamental problem underlying all cultural and political crises.</div>
+      <div class="claim-meta">
+        <span class="claim-fn application">Application</span>
+        <div class="claim-sermon">Creation and the Fall</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">عیسی صریحاً اعلام می‌کند که پدر حقیقت را از حکیمان پنهان می‌دارد و آن را به کسانی که به عنوان کودکان آمده‌اند آشکار می‌کند.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">حکمت انجیل احمقانه ما</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Breaking the fangs of the unrighteous is an ongoing battle, not a completed victory, requiring continual vigilance and renewed engagement after each success.</div>
+      <div class="claim-meta">
+        <span class="claim-fn theological_claim">Theological Claim</span>
+        <div class="claim-sermon">Celebrating Roe&#39;s Destruction</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">La posición de permanencia no requiere divorciarse del segundo cónyuge para regresar al primero; no se comete un pecado adicional para demostrar arrepentimiento del pecado original.</div>
+      <div class="claim-meta">
+        <span class="claim-fn pastoral_aside">Pastoral Aside</span>
+        <div class="claim-sermon">El Matrimonio Permanente</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">All non-Christian religions fail because they cannot produce true heart transformation and provide no solution for past sin—problems that only Christ&#39;s substitutionary atonement resolves.</div>
+      <div class="claim-meta">
+        <span class="claim-fn theological_claim">Theological Claim</span>
+        <div class="claim-sermon">The Hidden Beauty of the Gospel</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">The third benefit of justification is hope—both hope in future glory and the capacity to rejoice in present sufferings, which Paul defines as the entire span of life before glorification.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Romans 5:1-5</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Scripture&#39;s consistent pairing of homosexual practice with general sexual immorality demonstrates that the homosexual&#39;s need for Christ is identical to every sinner&#39;s need for redemption.</div>
+      <div class="claim-meta">
+        <span class="claim-fn theological_claim">Theological Claim</span>
+        <div class="claim-sermon">Romans 1:26-27</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">دسترسی برابر به اطلاعات انجیل تضمینی برای فهم برابر نیست - تفاوت واقعی در دریافت روحانی است، نه در فرصت.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">حکمت انجیل احمقانه ما</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Paul deliberately constructed Romans 2:6-11 as a chiasm—a specific literary structure meant to communicate theological truth through its symmetrical pattern.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Romans 2:6-16</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Adam before the fall was able not to sin, but after the fall, humanity under Adam&#39;s federal headship is not able not to sin.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Total Inability</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Transcendent worship songs serve multiple audiences simultaneously by proclaiming objective theological truths that declare victory over spiritual enemies, make God known to unbelievers present, and plant seeds of faith in children who will later comprehend what they currently hear.</div>
+      <div class="claim-meta">
+        <span class="claim-fn exposition">Exposition</span>
+        <div class="claim-sermon">Preparing for Persecution</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">The congregation must both preserve the pattern of sound words and preserve it rightly.</div>
+      <div class="claim-meta">
+        <span class="claim-fn application">Application</span>
+        <div class="claim-sermon">I Leave You with This</div>
+      </div>
+    </div>
+    <div class="claim-row">
+      <div class="claim-text">Meeting these husbandly requirements is impossible in human strength but made possible through union with Christ, who gives believers everything needed for life and godliness.</div>
+      <div class="claim-meta">
+        <span class="claim-fn theological_claim">Theological Claim</span>
+        <div class="claim-sermon">The Other Half: Part 3</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 8: CORPUS TABLE ══ -->
+<section id="corpus">
+  <div class="eyebrow">08 — Corpus Table</div>
+  <h2>45 sermons.<br><em>Fully decomposed.</em></h2>
+
+  <table class="sermon-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title · Primary Text</th>
+        <th>Series</th>
+        <th>Type</th>
+        <th>Tone</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr class="series-group-header"><td colspan="5">Series — Standalone Sermons</td></tr>
+      <tr>
+        <td>01</td>
+        <td><div class="sermon-title">How Do You Beat Death? By Knowing Christ Is Worthy</div><div class="sermon-text">Revelation 1:4-6</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Celebratory</td>
+      </tr>
+      <tr>
+        <td>02</td>
+        <td><div class="sermon-title">Adam&#39;s Sin and Headship</div><div class="sermon-text">Romans 5</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td><div class="sermon-title">Analysis of the 144,000</div><div class="sermon-text">Revelation 7:1-8</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>04</td>
+        <td><div class="sermon-title">Apologetics Rightly Understood</div><div class="sermon-text">1 Peter 3:13-17</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>05</td>
+        <td><div class="sermon-title">Be Careful How You Talk About Christ&#39;s Bride</div><div class="sermon-text">Ephesians 5:32</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Polemic · Didactic</td>
+      </tr>
+      <tr>
+        <td>06</td>
+        <td><div class="sermon-title">Celebrating Roe&#39;s Destruction</div><div class="sermon-text">Job 29:2-17</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Celebratory · Prophetic</td>
+      </tr>
+      <tr>
+        <td>07</td>
+        <td><div class="sermon-title">Christ and Legalism, Clarification</div><div class="sermon-text">Galatians 2:1-3:14</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>08</td>
+        <td><div class="sermon-title">El Matrimonio Permanente</div><div class="sermon-text">Matthew 5:31-32</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>09</td>
+        <td><div class="sermon-title">Ephesians 5 - Voddie Baucham</div><div class="sermon-text">Ephesians 5</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Polemic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><div class="sermon-title">I Leave You with This</div><div class="sermon-text">2 Timothy 2:1-7</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Celebratory</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td><div class="sermon-title">Joseph and His Brothers: God Is in Control</div><div class="sermon-text">Genesis 42:1-11</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td><div class="sermon-title">Joseph Brings His Family to Egypt</div><div class="sermon-text">Genesis 46:1-27</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td><div class="sermon-title">Joseph Reunites with His Family</div><div class="sermon-text">Genesis 46:28-34</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Prophetic</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td><div class="sermon-title">Judge Them by Their Fruit</div><div class="sermon-text">Matthew 7:15-20</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Polemic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td><div class="sermon-title">Love Your Neighbor</div><div class="sermon-text">Matthew 5:43-48</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Prophetic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td><div class="sermon-title">Mark 8:27-38</div><div class="sermon-text">Mark 8:27-38</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Polemic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td><div class="sermon-title">Preparing for Persecution</div><div class="sermon-text">Psalm 96</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Prophetic · Celebratory · Pastoral</td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td><div class="sermon-title">Revelation 14:1-5, 144,000</div><div class="sermon-text">Revelation 14:1-5</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Prophetic · Didactic · Celebratory</td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td><div class="sermon-title">Romans 1:28-32</div><div class="sermon-text">Romans 1:28-32</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Prophetic</td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td><div class="sermon-title">Romans 2:6-16</div><div class="sermon-text">Romans 2:6-16</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>21</td>
+        <td><div class="sermon-title">Seek the Kingdom</div><div class="sermon-text">Matthew 6:25-34</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Prophetic</td>
+      </tr>
+      <tr>
+        <td>22</td>
+        <td><div class="sermon-title">The Costly Call to Community</div><div class="sermon-text">2 Timothy 4:9-18</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Lament · Didactic</td>
+      </tr>
+      <tr>
+        <td>23</td>
+        <td><div class="sermon-title">The Defeat of Five Kings</div><div class="sermon-text">Genesis 14</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Prophetic · Didactic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>24</td>
+        <td><div class="sermon-title">The Heart of a Father</div><div class="sermon-text">Proverbs 3:1-7</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Prophetic</td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td><div class="sermon-title">The Hidden Beauty of the Gospel</div><div class="sermon-text">1 Corinthians 1:18-25</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>26</td>
+        <td><div class="sermon-title">The Reformation Doctrine of Justification by Faith</div><div class="sermon-text">Romans 3:21-26</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Polemic · Pastoral</td>
+      </tr>
+      <tr>
+        <td>27</td>
+        <td><div class="sermon-title">The Wisdom of Our Foolish Gospel</div><div class="sermon-text">1 Corinthians 1:18-25</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>28</td>
+        <td><div class="sermon-title">Total Inability</div><div class="sermon-text">Ephesians 2:1-10</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>29</td>
+        <td><div class="sermon-title">Walk in the Light</div><div class="sermon-text">1 John 1:5-10</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>30</td>
+        <td><div class="sermon-title">آیین شام خداوند</div><div class="sermon-text">1 Corinthians 11:23-34</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>31</td>
+        <td><div class="sermon-title">حکمت انجیل احمقانه ما</div><div class="sermon-text">1 Corinthians 1:18-25</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>32</td>
+        <td><div class="sermon-title">زیبایی پنهان انجیل</div><div class="sermon-text">1 Corinthians 1:18-25</div></td>
+        <td>—</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Romans</td></tr>
+      <tr>
+        <td>33</td>
+        <td><div class="sermon-title">Romans 1:18-23</div><div class="sermon-text">Romans 1:18-23</div></td>
+        <td>Romans</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>34</td>
+        <td><div class="sermon-title">Romans 1:26-27</div><div class="sermon-text">Romans 1:26-27</div></td>
+        <td>Romans</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>35</td>
+        <td><div class="sermon-title">Romans 1:8-15</div><div class="sermon-text">Romans 1:8-15</div></td>
+        <td>Romans</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr>
+        <td>36</td>
+        <td><div class="sermon-title">Romans 5:1-5</div><div class="sermon-text">Romans 5:1-5</div></td>
+        <td>Romans</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Prophetic</td>
+      </tr>
+      <tr>
+        <td>37</td>
+        <td><div class="sermon-title">Sanctification is of Grace</div><div class="sermon-text">Romans 6:16-23</div></td>
+        <td>Romans</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Revelation</td></tr>
+      <tr>
+        <td>38</td>
+        <td><div class="sermon-title">Revelation 3:14-22 Voddie</div><div class="sermon-text">Revelation 3:14-22</div></td>
+        <td>Revelation</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Prophetic · Pastoral · Didactic</td>
+      </tr>
+      <tr>
+        <td>39</td>
+        <td><div class="sermon-title">The Glory of Heaven</div><div class="sermon-text">Revelation 7:15-17</div></td>
+        <td>Revelation</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic · Celebratory</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Second London Baptist Confession of 1689</td></tr>
+      <tr>
+        <td>40</td>
+        <td><div class="sermon-title">Creation and the Fall</div><div class="sermon-text">Genesis 1-3</div></td>
+        <td>Second London Baptist Confession of 1689</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Polemic · Pastoral</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — The Better Half</td></tr>
+      <tr>
+        <td>41</td>
+        <td><div class="sermon-title">The Better Half: Part 4</div><div class="sermon-text">Ephesians 5:22-24</div></td>
+        <td>The Better Half</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Polemic · Pastoral</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Sermon on the Mount</td></tr>
+      <tr>
+        <td>42</td>
+        <td><div class="sermon-title">The House on the Rock</div><div class="sermon-text">Matthew 7:24-27</div></td>
+        <td>Sermon on the Mount</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Prophetic · Pastoral</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — The Other Half</td></tr>
+      <tr>
+        <td>43</td>
+        <td><div class="sermon-title">The Other Half: Part 3</div><div class="sermon-text">Ephesians 5:25-33</div></td>
+        <td>The Other Half</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Pastoral · Didactic · Prophetic · Polemic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — Reformation Observation</td></tr>
+      <tr>
+        <td>44</td>
+        <td><div class="sermon-title">The Reformation Doctrine of the Lord&#39;s Supper</div><div class="sermon-text">1 Corinthians 11:27</div></td>
+        <td>Reformation Observation</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+      <tr class="series-group-header"><td colspan="5">Series — True Love</td></tr>
+      <tr>
+        <td>45</td>
+        <td><div class="sermon-title">True Love: Part 2</div><div class="sermon-text">Ephesians 5:25-33</div></td>
+        <td>True Love</td>
+        <td><span class="sermon-type expository">Expository</span></td>
+        <td style="font-size:0.75rem;color:var(--muted);">Didactic · Pastoral · Polemic</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<footer class="site-footer">
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">Sermon Steward<span class="dot">.</span></div>
+      <div class="foot-imprint">Guild Hall — a gallery of masters, on the Sermon Steward site.</div>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/hall/">Hall</a>
+      <a href="/hall/glossary.html">Glossary</a>
+      <a href="/samples.html">Samples</a>
+      <a href="/product.html">Product</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.section-nav a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.section-nav a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+
+  function filterIllus(type, btn) {
+    document.querySelectorAll('.illus-controls .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cards = document.querySelectorAll('.illus-card');
+    cards.forEach(card => {
+      if (type === 'all' || card.dataset.type === type) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>
+</body>
+</html>
