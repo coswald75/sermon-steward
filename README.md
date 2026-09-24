@@ -6,7 +6,9 @@ Static HTML, deployed to Cloudflare Pages.
 
 ## Pages
 
-- `index.html` — landing splash with two CTAs
+- `/` (`_src/index.njk`) — Guildhall door: Steward, Coach, and Prep King, with Enter Hall. Hovering the door (mouse) reveals the Hall interior.
+- `/hosting/` (`_src/hosting.njk`) — $30 sermon-hosting pitch (the previous homepage)
+- Door art in `_src/img/`, all 2304×1296. The landing hover pair is `door-hero.png` (cast, closed door) and `door-open-cast.png` (same cast, doors open to the Hall). `door-empty.png` and `door-open.png` are the empty pair, kept for testing. The PNGs are large; WebP can wait.
 - `product.html` — full product marketing page (how it works, surfaces, pricing, contact form)
 - `samples.html` — gallery of customer samples and famous-preacher showcases
 - `hall/` — Guild Hall index. Preacher profiles stay at `/preacher-*.html`. Archive analyses (sermon tables) are at `/hall/<slug>/`.
