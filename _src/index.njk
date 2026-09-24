@@ -55,48 +55,35 @@
   .nav a { color: var(--ink-soft); text-decoration: none; }
   .nav a:hover { color: var(--ink); }
 
-  /* Closed plate is the cast at the door. Open plate is the Hall interior.
-     Drop Walt's still in as /img/door-open.png — same 16:9 — and it replaces
-     the "art incoming" panel. door-empty.png is the clean door, kept aside. */
+  /* Closed and open plates are the same 2304×1296 frame.
+     They sit in one 16:9 box, so the door, floor, and perspective
+     do not move. Hover only swaps what is inside the doorway.
+     Replace img/door-open.png with Walt's interior when it matches
+     this geometry. door-empty.png is the clean plate, kept aside. */
   .door-stage {
     position: relative;
-    background: var(--bg-soft);
     line-height: 0;
+    background: #e6dcc6;
+  }
+  .door-layer {
+    width: 100%;
+    max-width: none;
+    object-position: center;
   }
   .door-closed {
-    display: block; width: 100%; height: auto;
-    position: relative; z-index: 1;
+    position: relative;
+    z-index: 1;
+    display: block;
+    height: auto;
     transition: opacity 0.45s ease;
   }
   .door-open {
-    position: absolute; inset: 0; z-index: 0;
-    display: flex; align-items: center; justify-content: center;
-    background:
-      linear-gradient(180deg, rgba(196,69,47,0.08), transparent 28%),
-      var(--bg);
-    text-align: center;
-    padding: 28px;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    height: 100%;
+    object-fit: fill;
   }
-  .door-open img {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-  }
-  .door-open img[hidden] { display: none; }
-  .door-open-label {
-    position: relative; z-index: 1;
-    margin: 0; max-width: 16em;
-    font-size: clamp(1.5rem, 3.2vw, 2.4rem);
-    font-weight: 800; letter-spacing: -0.03em; line-height: 1.15;
-    color: var(--ink);
-  }
-  .door-open-label::before {
-    content: "";
-    display: block; width: 48px; height: 3px;
-    margin: 0 auto 16px;
-    background: var(--accent);
-  }
-  .door-open.has-art .door-open-label { display: none; }
   @media (hover: hover) and (pointer: fine) {
     .door-stage:hover .door-closed,
     .door-stage:focus-within .door-closed { opacity: 0; }
@@ -248,11 +235,8 @@
 
 <section class="hero" aria-label="Guildhall door">
   <div class="door-stage" id="door-stage">
-    <img class="door-closed" src="/img/door-hero.png" width="2304" height="1296" alt="Steward, Coach, and Prep King standing at the Guildhall door.">
-    <div class="door-open" aria-hidden="true">
-      <img src="/img/door-open.png" alt="" width="2304" height="1296" hidden>
-      <p class="door-open-label">Hall interior — art incoming</p>
-    </div>
+    <img class="door-layer door-open" src="/img/door-open.png" width="2304" height="1296" alt="">
+    <img class="door-layer door-closed" src="/img/door-hero.png" width="2304" height="1296" alt="Steward, Coach, and Prep King standing at the Guildhall door.">
   </div>
 </section>
 
@@ -335,27 +319,12 @@
 <script>
   (function () {
     var stage = document.getElementById('door-stage');
-    var openLayer = stage.querySelector('.door-open');
-    var openImg = openLayer.querySelector('img');
     var peek = document.getElementById('peek');
-
-    function artReady() {
-      if (openImg.naturalWidth > 0) {
-        openLayer.classList.add('has-art');
-        openImg.hidden = false;
-      } else {
-        openImg.hidden = true;
-      }
-    }
-    if (openImg.complete) artReady();
-    openImg.addEventListener('load', artReady);
-    openImg.addEventListener('error', function () { openImg.hidden = true; });
 
     peek.addEventListener('click', function () {
       var open = stage.classList.toggle('is-open');
       peek.setAttribute('aria-pressed', open ? 'true' : 'false');
       peek.textContent = open ? 'Close the door' : 'Peek inside';
-      openLayer.setAttribute('aria-hidden', open ? 'false' : 'true');
     });
   })();
 </script>
