@@ -8,7 +8,7 @@ Static HTML, deployed to Cloudflare Pages.
 
 - `/` (`_src/index.njk`) — Guildhall door: Steward, Coach, and Prep King, with Enter Hall. Hovering the door (mouse) reveals the Hall interior.
 - `/hosting/` (`_src/hosting.njk`) — $30 sermon-hosting pitch (the previous homepage)
-- Door art in `_src/img/`, all 2304×1296: `door-hero.png` (cast, the closed door), `door-empty.png` (locked empty door, clean plate), `door-open.png` (placeholder interior in the same frame — replace this file with Walt’s interior when it matches that geometry). The PNGs are large; WebP can wait.
+- Door art in `_src/img/`, all 2304×1296: `door-hero.png` (cast, the closed door), `door-empty.png` (locked empty door, clean plate), `door-open.png` (locked Hall interior, same frame as the empty plate). The PNGs are large; WebP can wait.
 - `product.html` — full product marketing page (how it works, surfaces, pricing, contact form)
 - `samples.html` — gallery of customer samples and famous-preacher showcases
 - `hall/` — Guild Hall index. Preacher profiles stay at `/preacher-*.html`. Archive analyses (sermon tables) are at `/hall/<slug>/`.
