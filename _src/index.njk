@@ -59,7 +59,8 @@
      They sit in one 16:9 box, so the door, floor, and perspective
      do not move. Hover only swaps what is inside the doorway.
      door-hero.png is the cast at the closed door.
-     door-open.png is the locked Hall interior, matched to door-empty.png. */
+     door-open-cast.png is that same cast on the open Hall.
+     door-empty.png and door-open.png stay in img/ for the empty pair. */
   .door-stage {
     position: relative;
     line-height: 0;
@@ -235,7 +236,7 @@
 
 <section class="hero" aria-label="Guildhall door">
   <div class="door-stage" id="door-stage">
-    <img class="door-layer door-open" src="/img/door-open.png" width="2304" height="1296" alt="">
+    <img class="door-layer door-open" src="/img/door-open-cast.png" width="2304" height="1296" alt="">
     <img class="door-layer door-closed" src="/img/door-hero.png" width="2304" height="1296" alt="Steward, Coach, and Prep King standing at the Guildhall door.">
   </div>
 </section>
