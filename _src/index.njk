@@ -55,43 +55,12 @@
   .nav a { color: var(--ink-soft); text-decoration: none; }
   .nav a:hover { color: var(--ink); }
 
-  /* Closed and open plates are the same 2304×1296 frame.
-     They sit in one 16:9 box, so the door, floor, and perspective
-     do not move. Hover only swaps what is inside the doorway.
-     door-hero.png is the cast at the closed door.
-     door-open-cast.png is that same cast on the open Hall.
-     door-empty.png and door-open.png stay in img/ for the empty pair. */
-  .door-stage {
-    position: relative;
+  .hero-still {
+    display: block;
+    width: 100%;
+    height: auto;
     line-height: 0;
     background: #e6dcc6;
-  }
-  .door-layer {
-    width: 100%;
-    max-width: none;
-    object-position: center;
-  }
-  .door-closed {
-    position: relative;
-    z-index: 1;
-    display: block;
-    height: auto;
-    transition: opacity 0.45s ease;
-  }
-  .door-open {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    height: 100%;
-    object-fit: fill;
-  }
-  @media (hover: hover) and (pointer: fine) {
-    .door-stage:hover .door-closed,
-    .door-stage:focus-within .door-closed { opacity: 0; }
-  }
-  .door-stage.is-open .door-closed { opacity: 0; }
-  @media (prefers-reduced-motion: reduce) {
-    .door-closed { transition: none; }
   }
 
   .intro { max-width: 760px; margin: 0 auto; padding: 48px 28px 12px; text-align: center; }
@@ -118,15 +87,9 @@
   }
   .btn-primary { background: var(--accent); color: #fff; box-shadow: var(--shadow-accent); text-decoration: none; }
   .btn-primary:hover { background: var(--accent-deep); color: #fff; transform: translateY(-1px); }
-  .btn-secondary { background: #fff; color: var(--ink); border-color: var(--rule); box-shadow: var(--shadow-sm); }
-  .btn-secondary:hover { border-color: var(--ink-soft); color: var(--ink); transform: translateY(-1px); }
   .btn .arrow { transition: transform 0.12s; }
   .btn:hover .arrow { transform: translateX(3px); }
-  .hover-hint, .hosting-path { margin: 14px 0 0; font-size: 14px; color: var(--ink-faint); }
-  .hover-hint { display: none; }
-  @media (hover: hover) and (pointer: fine) {
-    .hover-hint { display: block; }
-  }
+  .hosting-path { margin: 14px 0 0; font-size: 14px; color: var(--ink-faint); }
 
   .section { max-width: 1080px; margin: 0 auto; padding: 56px 28px; }
   .section h2 {
@@ -235,10 +198,7 @@
 </header>
 
 <section class="hero" aria-label="Guildhall door">
-  <div class="door-stage" id="door-stage">
-    <img class="door-layer door-open" src="/img/door-open-cast.png" width="2304" height="1296" alt="">
-    <img class="door-layer door-closed" src="/img/door-hero.png" width="2304" height="1296" alt="Steward, Coach, and Prep King standing at the Guildhall door.">
-  </div>
+  <img class="hero-still" src="/img/door-open-cast.png" width="2304" height="1296" alt="Steward, Coach, and Prep King standing at the open Guildhall door.">
 </section>
 
 <section class="intro">
@@ -247,9 +207,7 @@
   <p class="deck">Steward, Coach, and Prep King are three doors into one craft. The Hall behind them is a gallery of masters.</p>
   <div class="cta-row">
     <a class="btn btn-primary" href="/hall/">Enter Hall <span class="arrow">&rarr;</span></a>
-    <button type="button" class="btn btn-secondary" id="peek" aria-pressed="false" aria-controls="door-stage">Peek inside</button>
   </div>
-  <p class="hover-hint">Hover the door to look inside.</p>
   <p class="hosting-path"><a href="/hosting/">Sermon hosting is $30 a month.</a></p>
 </section>
 
@@ -316,19 +274,6 @@
     </nav>
   </div>
 </footer>
-
-<script>
-  (function () {
-    var stage = document.getElementById('door-stage');
-    var peek = document.getElementById('peek');
-
-    peek.addEventListener('click', function () {
-      var open = stage.classList.toggle('is-open');
-      peek.setAttribute('aria-pressed', open ? 'true' : 'false');
-      peek.textContent = open ? 'Close the door' : 'Peek inside';
-    });
-  })();
-</script>
 
 </body>
 </html>
