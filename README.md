@@ -6,9 +6,12 @@ Static HTML, deployed to Cloudflare Pages.
 
 ## Pages
 
-- `/` (`_src/index.njk`) — Guildhall door: Steward, Coach, and Prep King, with Enter Hall. Hovering the door (mouse) reveals the Hall interior.
-- `/hosting/` (`_src/hosting.njk`) — $30 sermon-hosting pitch (the previous homepage)
-- Door art in `_src/img/`, all 2304×1296. The landing hover pair is `door-hero.png` (cast, closed door) and `door-open-cast.png` (same cast, doors open to the Hall). `door-empty.png` and `door-open.png` are the empty pair, kept for testing. The PNGs are large; WebP can wait.
+- `/` (`_src/index.njk`) — founder letter. A centered closed door (`door-hero.png`: Steward, Coach, and Prep King at the Guildhall door) and four links: Hall, Steward, Coach, Prep King. Static. No hover, no peek.
+- `/steward/` — local-church pitch, with a handful of real sermons from `/ProvidenceLenexa/sermons/`.
+- `/coach/` — one-to-one manuscript feedback. Interest by email. No upload form.
+- `/prep-king/` — Prep King pitch and a brief player. Demo audio is not in the repo yet, so the player and transcript are an empty shell. The earlier access page remains at `/prep/`.
+- `/hosting/` (`_src/hosting.njk`) — $30 sermon-hosting pitch (a previous homepage)
+- Door art in `_src/img/`, all 2304×1296. Home uses `door-hero.png` only. `door-empty.png` is the closed door without the cast. `door-open-cast.png` and `door-open.png` are the open pair, kept in `img/` and not used on the homepage. The PNGs are large; WebP can wait.
 - `product.html` — full product marketing page (how it works, surfaces, pricing, contact form)
 - `samples.html` — gallery of customer samples and famous-preacher showcases
 - `hall/` — Guild Hall index. Preacher profiles stay at `/preacher-*.html`. Archive analyses (sermon tables) are at `/hall/<slug>/`.

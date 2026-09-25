@@ -1,0 +1,11 @@
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="wordmark" href="/">Sermon Steward<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/hall/"{% if current == "hall" %} aria-current="page"{% endif %}>Hall</a>
+      <a href="/steward/"{% if current == "steward" %} aria-current="page"{% endif %}>Steward</a>
+      <a href="/coach/"{% if current == "coach" %} aria-current="page"{% endif %}>Coach</a>
+      <a href="/prep-king/"{% if current == "prep-king" %} aria-current="page"{% endif %}>Prep King</a>
+    </nav>
+  </div>
+</header>

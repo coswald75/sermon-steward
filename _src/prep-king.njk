@@ -1,0 +1,53 @@
+---
+permalink: /prep-king/index.html
+title: Prep King — Sermon Steward
+description: Prep King is a private, listenable sermon-prep brief. You send a text or a topic. You get prep you can hear and read.
+current: prep-king
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+{% include "letter-assets.njk" %}
+</head>
+<body>
+{% include "letter-header.njk" %}
+
+<main>
+  <article class="sheet letter">
+    <h1>Prep King</h1>
+    <p>Prep King is the week before you preach. You send a text or a topic. You get sixty minutes of prep you can hear and read, on a private link. Prep King is $20 a month for four Sundays.</p>
+    <p>Use that month’s packs for your own preaching. We keep the audio and the coverage. We do not keep the sermon you write.</p>
+
+    <div class="player">
+      <p class="player-kicker">Prep brief</p>
+      <div class="player-row">
+        <button type="button" class="play" disabled aria-label="Play is unavailable. No brief is loaded.">
+          <span class="play-icon" aria-hidden="true"></span>
+        </button>
+        <div class="player-meta">
+          <p class="player-title">Prep brief</p>
+          <p class="player-sub">Listenable brief for the pastor</p>
+          <div class="scrub" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="No audio loaded" aria-label="Prep brief progress">
+            <span></span>
+          </div>
+          <div class="times"><span>0:00</span><span>0:00</span></div>
+        </div>
+      </div>
+      <div class="transcript">
+        <h2>Transcript</h2>
+        <p>The transcript sits here with the audio.</p>
+      </div>
+      <p class="player-note">No demo brief is loaded yet.</p>
+    </div>
+
+    <p>Write <a href="mailto:chris@sovgracekc.org?subject=Prep%20King">Chris Oswald</a> if you want in.</p>
+  </article>
+</main>
+
+{% include "letter-footer.njk" %}
+</body>
+</html>
