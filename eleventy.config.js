@@ -1,5 +1,7 @@
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("*.html");
+  // Root and /product share one landing: product.html is also the homepage.
+  eleventyConfig.addPassthroughCopy({ "product.html": "index.html" });
   eleventyConfig.addPassthroughCopy("hall");
   eleventyConfig.addPassthroughCopy("CoGElPaso");
   eleventyConfig.addPassthroughCopy("ProvidenceLenexa");
