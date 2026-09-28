@@ -6,10 +6,9 @@ Static HTML, deployed to Cloudflare Pages.
 
 ## Pages
 
-- `/` (`_src/index.njk`) — Guildhall door: a static picture of Steward, Coach, and Prep King at the open door, with Enter Hall.
-- `/hosting/` (`_src/hosting.njk`) — $30 sermon-hosting pitch (the previous homepage)
-- Door art in `_src/img/`, all 2304×1296. The homepage uses `door-open-cast.png` only. `door-hero.png`, `door-empty.png`, and `door-open.png` stay in the folder and are not on the page. The PNGs are large; WebP can wait.
-- `product.html` — full product marketing page (how it works, surfaces, pricing, contact form)
+- `/` and `/product` (`product.html`) — product landing. Eleventy also copies `product.html` to `index.html`, so the site root and `/product` serve the same page. Pricing on that page is $30 a month, cancel anytime.
+- `/hosting/` (`_src/hosting.njk`) — $30 sermon-hosting pitch (an earlier homepage)
+- Door art in `_src/img/`, all 2304×1296. `door-hero.png`, `door-empty.png`, `door-open.png`, and `door-open-cast.png` stay in the folder. The PNGs are large; WebP can wait.
 - `samples.html` — gallery of customer samples and famous-preacher showcases
 - `hall/` — Guild Hall index. Preacher profiles stay at `/preacher-*.html`. Archive analyses (sermon tables) are at `/hall/<slug>/`.
 - `growing-in-christ.html` — sample sermon page (linked from samples)
