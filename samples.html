@@ -41,6 +41,7 @@
   .nav { font-size: 15px; font-weight: 500; display: flex; gap: 28px; align-items: center; }
   .nav a { color: var(--ink-soft); text-decoration: none; }
   .nav a:hover { color: var(--ink); }
+  .nav a[aria-current="page"] { color: var(--ink); font-weight: 700; }
   .nav .btn-sm { background: var(--accent); color: #fff; padding: 9px 16px; border-radius: 8px; font-size: 14px; font-weight: 600; box-shadow: var(--shadow-sm); }
   .nav .btn-sm:hover { background: var(--accent-deep); color: #fff; text-decoration: none; }
 
@@ -143,11 +144,11 @@
     <nav class="nav">
       <a href="/">Home</a>
       <a href="/how-it-works/">How it works</a>
-      <a href="/product.html#surfaces">Surfaces</a>
+      <a href="/#surfaces">Surfaces</a>
       <a href="/hall/">Guildhall</a>
-      <a href="/samples.html" style="color:var(--ink)">Samples</a>
-      <a href="/product.html#pricing">Pricing</a>
-      <a class="btn-sm" href="/product.html#contact-form">Talk to us</a>
+      <a href="/samples.html" aria-current="page">Samples</a>
+      <a href="/#pricing">Pricing</a>
+      <a class="btn-sm" href="/#contact-form">Talk to us</a>
     </nav>
   </div>
 </header>
