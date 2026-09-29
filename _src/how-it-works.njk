@@ -1,0 +1,352 @@
+---
+permalink: /how-it-works/index.html
+title: How it works — Sermon Steward
+description: How a sermon moves from audio to a published page, in plain words. The church reviews every piece before it is used or published. What gets written is drawn from the church's own preaching.
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #fbf8f1;
+    --bg-card:   #ffffff;
+    --bg-soft:   #f5f1e6;
+    --ink:       #1a1a1a;
+    --ink-soft:  #4a4a4a;
+    --ink-faint: #828282;
+    --rule:      #e6e1d3;
+    --accent:    #c4452f;
+    --accent-deep: #9a3624;
+    --accent-soft: #f0d4cc;
+    --highlight: #fef0c8;
+    --green:     #3a7256;
+    --sans: 'Inter', system-ui, -apple-system, "Segoe UI", sans-serif;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-md: 0 2px 4px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.05);
+    --shadow-accent: 0 1px 2px rgba(0,0,0,0.08), 0 4px 12px rgba(196,69,47,0.18);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-decoration: none; text-underline-offset: 3px; }
+  a:hover { color: var(--accent-deep); text-decoration: underline; }
+
+  .site-header { background: rgba(251,248,241,0.92); border-bottom: 1px solid var(--rule); position: sticky; top: 0; z-index: 10; backdrop-filter: blur(8px); }
+  .site-header-inner { max-width: 1180px; margin: 0 auto; padding: 16px 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .wordmark { font-weight: 800; font-size: 21px; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+  .wordmark:hover { color: var(--ink); text-decoration: none; }
+  .wordmark .dot { color: var(--accent); }
+  .nav { font-size: 15px; font-weight: 500; display: flex; gap: 28px; align-items: center; }
+  .nav a { color: var(--ink-soft); text-decoration: none; }
+  .nav a:hover { color: var(--ink); }
+  .nav a[aria-current="page"] { color: var(--ink); font-weight: 700; }
+  .nav .btn-sm { background: var(--accent); color: #fff; padding: 9px 16px; border-radius: 8px; font-size: 14px; font-weight: 600; box-shadow: var(--shadow-sm); }
+  .nav .btn-sm:hover { background: var(--accent-deep); color: #fff; text-decoration: none; }
+
+  .btn { font-family: var(--sans); font-size: 16px; font-weight: 600; padding: 14px 22px; border-radius: 10px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: transform 0.12s, box-shadow 0.12s, background 0.12s; border: 1px solid transparent; cursor: pointer; }
+  .btn-primary { background: var(--accent); color: #fff; box-shadow: var(--shadow-accent); }
+  .btn-primary:hover { background: var(--accent-deep); color: #fff; transform: translateY(-1px); text-decoration: none; }
+  .btn-secondary { background: #fff; color: var(--ink); border-color: var(--rule); box-shadow: var(--shadow-sm); }
+  .btn-secondary:hover { border-color: var(--ink-soft); color: var(--ink); transform: translateY(-1px); text-decoration: none; }
+  .btn .arrow { transition: transform 0.12s; }
+  .btn:hover .arrow { transform: translateX(3px); }
+
+  .page { max-width: 760px; margin: 0 auto; padding: 64px 28px 24px; }
+  .section-title { font-size: 13px; font-weight: 700; letter-spacing: 0.04em; color: var(--accent); margin-bottom: 12px; text-transform: uppercase; }
+  h1 { font-weight: 800; font-size: clamp(2.1rem, 4.6vw, 3.1rem); line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 18px; }
+  .lede { font-size: 18px; line-height: 1.55; color: var(--ink-soft); margin: 0 0 28px; }
+
+  .review {
+    background: var(--highlight);
+    border: 1px solid #ead7a2;
+    border-radius: 14px;
+    padding: 26px 28px;
+    margin: 8px 0 36px;
+  }
+  .review h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 8px; }
+  .review p { margin: 0; color: var(--ink); }
+
+  .toc {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 0 0 12px;
+    box-shadow: var(--shadow-sm);
+  }
+  .toc p { margin: 0 0 10px; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); }
+  .toc ol { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px; }
+  .toc a { color: var(--ink-soft); text-decoration: none; font-weight: 600; font-size: 15px; }
+  .toc a:hover { color: var(--ink); text-decoration: none; }
+  .toc .num { color: var(--accent); font-weight: 800; margin-right: 8px; }
+
+  .glossary { margin: 8px 0 8px; }
+  .entry {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    padding: 28px 28px 24px;
+    margin: 18px 0;
+    box-shadow: var(--shadow-sm);
+  }
+  .entry h2 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    line-height: 1.25;
+  }
+  .n {
+    flex: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: var(--accent-soft);
+    color: var(--accent-deep);
+    font-size: 15px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+  .entry p { margin: 0 0 12px; }
+  .entry p:last-child { margin-bottom: 0; }
+  .tool { font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-faint); margin: -4px 0 12px; }
+  .entry ul { list-style: none; margin: 4px 0 12px; padding: 0; }
+  .entry li { display: flex; align-items: flex-start; gap: 10px; padding: 5px 0; }
+  .entry li .tick { color: var(--accent); font-weight: 700; flex: none; }
+
+  .band {
+    background: var(--bg-soft);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-top: 28px;
+  }
+  .band-inner { max-width: 1080px; margin: 0 auto; padding: 72px 28px; }
+  .band h2 { font-weight: 800; font-size: clamp(1.8rem, 3.4vw, 2.4rem); line-height: 1.12; letter-spacing: -0.025em; margin: 0 0 14px; }
+  .band .lede { max-width: 680px; }
+
+  .samples { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 8px; }
+  .sample {
+    display: block;
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 20px 20px 16px;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: var(--shadow-sm);
+  }
+  .sample:hover { color: inherit; text-decoration: none; border-color: var(--accent-soft); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .sample .kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+  .sample h3 { font-size: 18px; font-weight: 800; letter-spacing: -0.02em; margin: 6px 0 6px; }
+  .sample p { font-size: 14px; line-height: 1.45; color: var(--ink-soft); margin: 0 0 10px; }
+  .sample .go { font-size: 13px; font-weight: 600; color: var(--accent); }
+
+  .close { max-width: 760px; margin: 0 auto; padding: 56px 28px 72px; }
+  .close h2 { font-weight: 800; font-size: 1.7rem; letter-spacing: -0.02em; margin: 0 0 12px; }
+  .close p { margin: 0 0 12px; color: var(--ink-soft); }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+
+  footer { padding: 40px 28px; border-top: 1px solid var(--rule); }
+  .foot-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .foot-brand { font-weight: 800; font-size: 18px; color: var(--ink); }
+  .foot-brand .dot { color: var(--accent); }
+  .foot-imprint { font-size: 13px; color: var(--ink-faint); margin-top: 2px; }
+  .foot-nav { font-size: 14px; display: flex; gap: 24px; flex-wrap: wrap; }
+  .foot-nav a { color: var(--ink-soft); text-decoration: none; }
+  .foot-nav a:hover { color: var(--ink); }
+  .foot-nav a[aria-current="page"] { color: var(--ink); font-weight: 700; }
+
+  @media (max-width: 900px) {
+    .samples { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .nav { display: none; }
+    .page { padding: 40px 20px 8px; }
+    .band-inner, .close { padding-left: 20px; padding-right: 20px; }
+    .toc ol, .samples { grid-template-columns: 1fr; }
+    .entry, .review { padding: 22px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="wordmark" href="/">Sermon Steward<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/how-it-works/" aria-current="page">How it works</a>
+      <a href="/#surfaces">Surfaces</a>
+      <a href="/hall/">Hall</a>
+      <a href="/samples.html">Samples</a>
+      <a href="/#pricing">Pricing</a>
+      <a class="btn-sm" href="/#contact-form">Talk to us</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <article class="page">
+    <p class="section-title">How it works</p>
+    <h1>From the sermon you preached to a page your church has already read.</h1>
+    <p class="lede">Sermon Steward starts with Sunday's audio. It reads that sermon, writes the page and the guides from what your church has actually preached, and stops for you before any of it is used or published.</p>
+
+    <aside class="review" aria-labelledby="review-heading">
+      <h2 id="review-heading">You review all of it first.</h2>
+      <p>The sermon page, the small group guide, the daily readings, the family card, the couples guide, and the memory verse come back to the church before they are used or published. You see the content. If something does not belong in front of your people, it is corrected here. Nothing skips that review.</p>
+    </aside>
+
+    <nav class="toc" aria-label="Pipeline">
+      <p>The path, in order</p>
+      <ol>
+        <li><a href="#audio"><span class="num">1</span>Sermon audio</a></li>
+        <li><a href="#transcript"><span class="num">2</span>Transcript</a></li>
+        <li><a href="#elements"><span class="num">3</span>Homiletical elements</a></li>
+        <li><a href="#index"><span class="num">4</span>Index</a></li>
+        <li><a href="#artifacts"><span class="num">5</span>Artifacts</a></li>
+        <li><a href="#review"><span class="num">6</span>Review</a></li>
+        <li><a href="#published"><span class="num">7</span>Published page</a></li>
+      </ol>
+    </nav>
+
+    <div class="glossary">
+      <section class="entry" id="audio">
+        <h2><span class="n">1</span> Sermon audio</h2>
+        <p>The recording of the sermon you preached. That file is the starting point. The work begins from what was said in the pulpit, not from a topic we supplied or a theme we guessed.</p>
+      </section>
+
+      <section class="entry" id="transcript">
+        <h2><span class="n">2</span> Transcript</h2>
+        <p class="tool">AssemblyAI</p>
+        <p>The audio is written out, word for word. AssemblyAI makes that transcript. It is the record of the sermon: the sentences you spoke, in order. It is not a summary, and it is not a guide yet.</p>
+      </section>
+
+      <section class="entry" id="elements">
+        <h2><span class="n">3</span> Homiletical elements</h2>
+        <p class="tool">Claude</p>
+        <p>The sermon is then broken into the moves of preaching. Not by the paragraph. Not by the word count. By what you are doing in the pulpit at that moment — explaining the text, making a claim, telling a story, turning to your people. Claude does that reading.</p>
+        <p>We are not grading the sermon. We are naming the moves so the writing that follows can stay with the sermon you actually preached. The longer account of that reading is on <a href="/how-we-read-a-sermon/">How we read a sermon</a>. The <a href="#samples">Hall samples below</a> show the same kind of reading on real sermons.</p>
+      </section>
+
+      <section class="entry" id="index">
+        <h2><span class="n">4</span> Index</h2>
+        <p class="tool">Voyage</p>
+        <p>Those pieces are indexed so they can be found again by meaning, not only by a matching word. Voyage builds that index. Each piece of the sermon can be looked up alongside the rest of what this church has preached.</p>
+        <p>When a guide is written, it looks the sermon up in that index and draws from the church's own preaching. That is the whole idea. The writing is retrieved from sermons the church actually preached, which makes it more reliable. It is tied to your pulpit. It is not a draft written as if no sermon were behind it.</p>
+      </section>
+
+      <section class="entry" id="artifacts">
+        <h2><span class="n">5</span> Artifacts</h2>
+        <p>From that indexed sermon, drafts are prepared for the church to use. Each one is drawn from the preaching, not invented beside it:</p>
+        <ul>
+          <li><span class="tick">✓</span> Sermon page</li>
+          <li><span class="tick">✓</span> Small group guide</li>
+          <li><span class="tick">✓</span> Daily readings</li>
+          <li><span class="tick">✓</span> Family card</li>
+          <li><span class="tick">✓</span> Couples guide</li>
+          <li><span class="tick">✓</span> Memory verse</li>
+        </ul>
+        <p>A small-group question should come from a claim you made. A family card should come from the same sermon. A memory verse should be a verse the sermon actually opened.</p>
+      </section>
+
+      <section class="entry" id="review">
+        <h2><span class="n">6</span> Review</h2>
+        <p>The church reviews all of that content before it is used or published. You read the page and the guides. You can correct a line that does not sound like the sermon, or that you do not want in front of your people. Publication waits on that review.</p>
+      </section>
+
+      <section class="entry" id="published">
+        <h2><span class="n">7</span> Published page</h2>
+        <p>After the review, the sermon page is published for the church to share, with the guides that belong to it. What the congregation receives is content the church has already seen.</p>
+      </section>
+    </div>
+  </article>
+
+  <section class="band" id="samples">
+    <div class="band-inner">
+      <p class="section-title">Hall</p>
+      <h2>The kind of data we pull from a sermon.</h2>
+      <p class="lede">The Hall is a set of public samples, read the same way a church's sermons are read. Open one and you can see how a sermon is thought about: the moves in the pulpit, the doctrines it touches, the illustrations, the shape of the argument. That is the data the writing draws from. These pages are samples of that reading. They are not your church's sermons, and your church is not mixed into them.</p>
+      <div class="samples">
+        <a class="sample" href="/hall/">
+          <div class="kicker">All the samples</div>
+          <h3>Hall</h3>
+          <p>Eighteen preachers, each corpus broken into the same kind of pieces.</p>
+          <span class="go">Open the Hall →</span>
+        </a>
+        <a class="sample" href="/preacher-keller.html">
+          <div class="kicker">A preacher, read</div>
+          <h3>Tim Keller</h3>
+          <p>Doctrines, illustrations, and the habits of the sermons — the shape of the reading.</p>
+          <span class="go">Open the profile →</span>
+        </a>
+        <a class="sample" href="/hall/keller/">
+          <div class="kicker">Sermons in the corpus</div>
+          <h3>Keller in the Hall</h3>
+          <p>The sermon table behind the profile: units counted, the corpus laid out.</p>
+          <span class="go">Open the archive →</span>
+        </a>
+        <a class="sample" href="/preacher-spurgeon.html">
+          <div class="kicker">A preacher, read</div>
+          <h3>Charles Spurgeon</h3>
+          <p>The same reading on a different voice, so you can see what is held constant.</p>
+          <span class="go">Open the profile →</span>
+        </a>
+        <a class="sample" href="/preacher-piper.html">
+          <div class="kicker">A preacher, read</div>
+          <h3>John Piper</h3>
+          <p>Another sample of the data pulled from a sermon before any guide is written.</p>
+          <span class="go">Open the profile →</span>
+        </a>
+        <a class="sample" href="/hall/glossary.html">
+          <div class="kicker">The words on those pages</div>
+          <h3>Hall glossary</h3>
+          <p>Exposition, illustration, application, and the other names used on the sample pages.</p>
+          <span class="go">Open the glossary →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="close">
+    <h2>Two pages, two jobs.</h2>
+    <p><a href="/how-we-read-a-sermon/">How we read a sermon</a> is the closer look at the reading itself: where a sermon turns, and why the guides are taken from those turns. This page is the path from audio to a published page, and the promise that you see the content first.</p>
+    <p>Questions go to <a href="mailto:chris@sovgracekc.org">chris@sovgracekc.org</a>.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/hall/">See the Hall samples <span class="arrow">→</span></a>
+      <a class="btn btn-secondary" href="/#contact-form">Talk to us</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">Sermon Steward<span class="dot">.</span></div>
+      <div class="foot-imprint">Built by pastors, for pastors.</div>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/how-it-works/" aria-current="page">How it works</a>
+      <a href="/#surfaces">Surfaces</a>
+      <a href="/hall/">Hall</a>
+      <a href="/samples.html">Samples</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#contact-form">Talk to us</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
