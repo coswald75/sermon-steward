@@ -29,6 +29,8 @@
   .nav { font-size:15px; font-weight:500; display:flex; gap:28px; align-items:center; }
   .nav a { color:var(--ink-soft); text-decoration:none; }
   .nav a:hover { color:var(--ink); }
+  .nav .btn-sm { background:var(--accent); color:#fff; padding:9px 16px; border-radius:8px; font-size:14px; font-weight:600; box-shadow:var(--shadow-sm); }
+  .nav .btn-sm:hover { background:var(--accent-deep); color:#fff; text-decoration:none; }
   .nav a[aria-current="page"] { color:var(--ink); font-weight:700; }
   .hero { max-width:820px; margin:0 auto; padding:72px 28px 28px; text-align:center; }
   .tag { display:inline-block; background:var(--highlight); color:var(--ink); font-size:13px; font-weight:600; padding:6px 14px; border-radius:999px; margin-bottom:22px; }
@@ -81,11 +83,13 @@
   <div class="site-header-inner">
     <a class="wordmark" href="/">Sermon Steward<span class="dot">.</span></a>
     <nav class="nav" aria-label="Primary">
-      <a href="/hall/" aria-current="page">Guildhall</a>
       <a href="/">Home</a>
+      <a href="/how-it-works/">How it works</a>
+      <a href="/#surfaces">Surfaces</a>
+      <a href="/hall/" aria-current="page">Guildhall</a>
       <a href="/samples.html">Samples</a>
-      <a href="/hosting/">Hosting</a>
-      <a href="/how-we-read-a-sermon/">How we read</a>
+      <a href="/#pricing">Pricing</a>
+      <a class="btn-sm" href="/#contact-form">Talk to us</a>
     </nav>
   </div>
 </header>
