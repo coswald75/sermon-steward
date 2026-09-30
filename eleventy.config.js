@@ -2,8 +2,11 @@ import fs from "node:fs";
 import { CHURCHES } from "./churches.js";
 import { applyChurchPublishing } from "./site-publish.js";
 import { applyPublishFixes } from "./scripts/publish-fixes.js";
+import { renderTopics } from "./scripts/topics.js";
 
 export default function (eleventyConfig) {
+  // Drop-in topic files are content, not pages. scripts/topics.js publishes them.
+  eleventyConfig.ignores.add("_src/topics/**");
   eleventyConfig.addPassthroughCopy("*.html");
   // Root and /product share one landing: product.html is also the homepage.
   eleventyConfig.addPassthroughCopy({ "product.html": "index.html" });
@@ -35,6 +38,9 @@ export default function (eleventyConfig) {
     // sermon folder is corrected in the same build. Church routes, robots,
     // and the sitemap stay in applyChurchPublishing.
     applyPublishFixes(dir.output);
+    // Topic HTML is generated here, after sermon HTML is copied, and before
+    // the sitemap is written so /SGchurch/<church>/topics/ stays indexable.
+    renderTopics(dir.output);
     applyChurchPublishing(dir.output);
   });
 

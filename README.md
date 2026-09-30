@@ -22,7 +22,9 @@ Public links use a network prefix. The only map is `churches.js`.
 
 No non-SG church is wired up yet. To add one, append a row with `network: "other"` and a `slug` like `ChurchNameCity`. Another SG church is the same row with `network: "sg"`. The slug is the folder name. Eleventy passthrough-copies whatever slugs in that file already have a folder. `sermonsPath` is the sermon list the public URL currently sends people to.
 
-For now those public URLs 302 to the sermon list (any casing, with or without a trailing slash). That redirect lives in `worker.js`, not in the church folder. The sermon ingest rewrites files inside `ProvidenceLenexa/` and `CoGElPaso/` and then runs Eleventy, so a folder of static redirect HTML would get wiped. The Worker reads `churches.js` on each request.
+For now the bare public URL (`/SGchurch/<ChurchNameCity>` or `/church/<ChurchNameCity>`) 302s to the sermon list (any casing, with or without a trailing slash). That redirect lives in `worker.js`, not in the church folder. The sermon ingest rewrites files inside `ProvidenceLenexa/` and `CoGElPaso/` and then runs Eleventy, so a folder of static redirect HTML would get wiped. The Worker reads `churches.js` on each request.
+
+Topic pages are the exception. They are real, indexable pages at `/SGchurch/<ChurchNameCity>/topics/` and `/SGchurch/<ChurchNameCity>/topics/<slug>/` (a non-SG church uses `/church/` the same way). Drop one HTML file per topic in `_src/topics/<ChurchSlug>/`. The build pours that file into the site header and type, keeps footnote links (`#src-N`), and lists every file on the topics index. The canonical URL is the `/SGchurch/…` (or `/church/…`) path. Legacy copies under `/<ChurchSlug>/topics/` stay noindexed with the rest of the old church folder.
 
 `/<ChurchNameCity>/` and everything under it except `/<ChurchNameCity>/sermons/` stays on the server for a later product. The Eleventy publish step (`site-publish.js`) marks those pages `noindex`, leaves them out of `sitemap.xml`, and repoints links to the bare church landing at `/SGchurch/...` or `/church/...`. Sermon pages are not noindexed.
 
