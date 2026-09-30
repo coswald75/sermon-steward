@@ -5,6 +5,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("hall");
   eleventyConfig.addPassthroughCopy("CoGElPaso");
   eleventyConfig.addPassthroughCopy("ProvidenceLenexa");
+  eleventyConfig.addPassthroughCopy("SignificantSermons");
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("biblestory");
   eleventyConfig.addPassthroughCopy("7391842");
