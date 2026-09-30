@@ -60,7 +60,7 @@ Cloudflare deploys _site/ via `npx wrangler deploy`
 Live on sermonsteward.com (~60 seconds total)
 ```
 
-The bot commits from `weekly_ingest.py` use this same path — they push new sermon HTML into `CoGElPaso/` or `ProvidenceLenexa/`, which get passthrough-copied into `_site/` unchanged.
+The bot commits from `weekly_ingest.py` use this same path — they push new sermon HTML into `CoGElPaso/` or `ProvidenceLenexa/`, which get passthrough-copied into `_site/`. After that copy, the Eleventy `eleventy.after` hook (`site-publish.js`, driven by `churches.js`) noindexes legacy church pages outside `/sermons/`, drops them from `sitemap.xml`, and repoints landing-page links at `/SGchurch/...`. The public church URLs themselves are Worker redirects in `worker.js`, not files inside those folders, so the ingest cannot delete them.
 
 ## Local development
 
