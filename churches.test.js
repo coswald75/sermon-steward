@@ -2,15 +2,19 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   CHURCHES,
+  headersDocument,
   includeInSitemap,
   injectRobotsMeta,
   isDelistedLegacyPath,
+  isDelistedProductPath,
   matchChurchRoute,
   publicChurchPath,
   publicTopicsPath,
   rewriteLandingHrefs,
+  stripDelistedProductLinks,
   urlPathForOutputFile,
 } from "./churches.js";
+import { PRICE_CARD, rewritePublicProductCopy } from "./site-publish.js";
 
 const example = {
   slug: "ExampleTown",
@@ -125,6 +129,69 @@ test("noindex meta is inserted once", () => {
   const once = injectRobotsMeta("<head>\n<title>x</title></head>");
   assert.match(once, /<meta name="robots" content="noindex, follow">/);
   assert.equal(injectRobotsMeta(once), once);
+});
+
+test("Prep King and Coach paths are delisted and sermon lookalikes are not", () => {
+  for (const path of [
+    "/prep",
+    "/prep/",
+    "/prep/index.html",
+    "/PREP/",
+    "/prep-king/",
+    "/prepking",
+    "/prep.html",
+    "/coach",
+    "/coach/",
+    "/Coach/index.html",
+    "/coach/start/",
+  ]) {
+    assert.equal(isDelistedProductPath(path), true, path);
+    assert.equal(includeInSitemap(path), false, path);
+  }
+  assert.equal(isDelistedProductPath("/preacher-spurgeon.html"), false);
+  assert.equal(isDelistedProductPath("/preparation"), false);
+  assert.equal(isDelistedProductPath("/ProvidenceLenexa/sermons/the-conscience-coach-an-introduction-2025-04-11"), false);
+  assert.equal(isDelistedProductPath("/pastors/"), false);
+  assert.equal(includeInSitemap("/how-it-works/"), true);
+});
+
+test("product pages get an exact noindex meta and header", () => {
+  const html = injectRobotsMeta("<head>\n<title>Prep King</title></head>", "noindex");
+  assert.match(html, /<meta name="robots" content="noindex">/);
+  assert.doesNotMatch(html, /noindex, follow/);
+  const replaced = injectRobotsMeta(
+    '<head><meta name="robots" content="index, follow"></head>',
+    "noindex"
+  );
+  assert.match(replaced, /<meta name="robots" content="noindex">/);
+  assert.doesNotMatch(replaced, /index, follow/);
+  const headers = headersDocument();
+  assert.match(headers, /\/prep\/\n {2}X-Robots-Tag: noindex\n/);
+  assert.match(headers, /\/prep-king\/\n {2}X-Robots-Tag: noindex\n/);
+  assert.match(headers, /\/coach\/\n {2}X-Robots-Tag: noindex\n/);
+  assert.match(headers, /\/ProvidenceLenexa\n {2}X-Robots-Tag: noindex, follow\n/);
+});
+
+test("links to delisted products are removed and other links stay", () => {
+  const html = [
+    '<nav><a href="/">Home</a><a href="/prep/">Prep King</a><a href="/coach">Coach</a></nav>',
+    '<a href="https://sermonsteward.com/prep-king/">Prep</a>',
+    '<a href="/ProvidenceLenexa/sermons/the-conscience-coach-an-introduction-2025-04-11">The Conscience Coach</a>',
+    '<a href="/hall/">Guildhall</a>',
+  ].join("");
+  const out = stripDelistedProductLinks(html);
+  assert.doesNotMatch(out, /href="\/prep|href="\/coach"|prep-king/);
+  assert.match(out, /href="\/">Home/);
+  assert.match(out, /the-conscience-coach/);
+  assert.match(out, /href="\/hall\/"/);
+});
+
+test("retired price card copy is rewritten to Sermon Steward only", () => {
+  const old =
+    "Guildhall — free. Sermon Steward, Coach, Prep King — $30/month each; suite $75/month. Past-sermon ingest $100 per year of sermons. First month free, cancel anytime, no contract.";
+  assert.equal(rewritePublicProductCopy(`<p>${old}</p>`), `<p>${PRICE_CARD}</p>`);
+  assert.equal(rewritePublicProductCopy(`<p>${PRICE_CARD}</p>`), `<p>${PRICE_CARD}</p>`);
+  assert.equal(PRICE_CARD, "Guildhall — free. Sermon Steward — $30/month. Past-sermon ingest $100 per year of sermons. First month free, cancel anytime, no contract.");
 });
 
 test("landing links move to the public URL and sermon links stay", () => {
