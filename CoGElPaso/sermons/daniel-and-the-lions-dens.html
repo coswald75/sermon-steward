@@ -974,15 +974,24 @@
     .site-nav { display: none; }
   }
 </style>
+<style id="sermon-mobile-fit">
+@media (max-width: 420px) {
+  .asx { left: 12px; right: 12px; width: auto; display: flex; justify-content: flex-end; }
+  .asx-btn { max-width: 100%; height: auto; min-height: 44px; padding: 10px 14px; white-space: normal; text-align: left; }
+  .asx-panel { left: 0; right: 0; width: auto; }
+}
+pre, code { max-width: 100%; }
+pre { overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+</style>
 </head>
 <body><header class="site-header">
   <div class="site-header-inner">
     <a href="/CoGElPaso/" class="site-brand">Cross of Grace Church</a>
     <nav class="site-nav ui">
       <a href="/CoGElPaso/sermons">Sermons</a>
-      <a href="/CoGElPaso/topics">Topics</a>
-      <a href="/CoGElPaso/about">About</a>
-      <a href="/CoGElPaso/visit">Visit</a>
+      
+      
+      
     </nav>
   </div>
 </header>
@@ -1373,7 +1382,7 @@
 
       
       <div class="echo-card">
-        <div class="echo-label ui">Earlier in the corpus · </div>
+        <div class="echo-label ui">Earlier in the corpus</div>
         <div style="font-weight:600; font-size:16px; margin-bottom:6px;">
           <a href="/CoGElPaso/sermons/daniel-and-the-lions-den" style="color:var(--ink); text-decoration:none;">A prior sermon on Daniel 6</a>
         </div>
@@ -1440,10 +1449,10 @@
           <div class="church-addr ui">
             
             
-            <a href="/CoGElPaso/about" style="color:var(--accent);">About us</a> · <a href="/CoGElPaso/what-we-believe" style="color:var(--accent);">What we believe</a>
+
           </div>
         </div>
-        <a href="/CoGElPaso/visit" class="visit-cta ui">Plan a visit →</a>
+        
       </div>
 
       <!-- Crawler hygiene -->
@@ -1479,8 +1488,8 @@ A church preaching expository sermons through the books of the Bible.
 - [Daniel and the Lions&#39; Dens (Daniel 6)](/CoGElPaso/sermons/daniel-and-the-lions-dens)
 
 ## About
-- [About the church](/about)
-- [Plan a visit](/visit)</pre>
+- About the church
+- Plan a visit</pre>
 
           <p>The page itself ships with Schema.org <code>Article</code> + <code>Church</code> markup, Open Graph + Twitter cards for share previews, and a canonical URL. Transcripts are server-rendered HTML — no JS dependency for the readable body.</p>
         </div>

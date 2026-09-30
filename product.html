@@ -4,6 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sermon Steward — Sunday's sermon stewarded and shipped by Monday afternoon</title>
+<meta name="description" content="Guildhall — free. Sermon Steward, Coach, Prep King — $30/month each; suite $75/month. Past-sermon ingest $100 per year of sermons. First month free, cancel anytime, no contract.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sermon Steward — Sunday's sermon stewarded and shipped by Monday afternoon">
+<meta property="og:description" content="Guildhall — free. Sermon Steward, Coach, Prep King — $30/month each; suite $75/month. Past-sermon ingest $100 per year of sermons. First month free, cancel anytime, no contract.">
+<meta property="og:url" content="https://sermonsteward.com/">
+<meta property="og:image" content="https://sermonsteward.com/og-sermon-steward-a.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sermon Steward — Scottish steward character beside sermonsteward.com and Simply Superior Sermon Hosting.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sermon Steward — Sunday's sermon stewarded and shipped by Monday afternoon">
+<meta name="twitter:description" content="Guildhall — free. Sermon Steward, Coach, Prep King — $30/month each; suite $75/month. Past-sermon ingest $100 per year of sermons. First month free, cancel anytime, no contract.">
+<meta name="twitter:image" content="https://sermonsteward.com/og-sermon-steward-a.jpg">
+<meta name="twitter:image:alt" content="Sermon Steward — Scottish steward character beside sermonsteward.com and Simply Superior Sermon Hosting.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -38,7 +52,9 @@
   .site-header-inner { max-width: 1180px; margin: 0 auto; padding: 16px 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
   .wordmark { font-weight: 800; font-size: 21px; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
   .wordmark .dot { color: var(--accent); }
+  .nav, .site-nav, .foot-nav { flex-wrap: wrap; }
   .nav { font-size: 15px; font-weight: 500; display: flex; gap: 28px; align-items: center; }
+  .nav-toggle { display: none; font: inherit; font-size: 14px; font-weight: 600; background: #fff; color: var(--ink); border: 1px solid var(--rule); border-radius: 8px; padding: 8px 12px; cursor: pointer; }
   .nav a { color: var(--ink-soft); text-decoration: none; }
   .nav a:hover { color: var(--ink); }
   .nav .btn-sm { background: var(--accent); color: #fff; padding: 9px 16px; border-radius: 8px; font-size: 14px; font-weight: 600; box-shadow: var(--shadow-sm); }
@@ -105,7 +121,7 @@
   .charter-wrap { display: flex; justify-content: center; }
   .charter-card { background: var(--bg-card); border: 2px solid var(--accent); border-radius: 18px; padding: 44px 44px 36px; max-width: 540px; width: 100%; text-align: center; box-shadow: 0 4px 20px rgba(196,69,47,0.1); position: relative; }
   .charter-tier { font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
-  .charter-price { font-weight: 800; font-size: clamp(2rem, 5vw, 3.25rem); color: var(--ink); line-height: 1.1; letter-spacing: -0.03em; margin: 0 0 8px; }
+  .charter-price { font-weight: 600; font-size: 1.15rem; color: var(--ink); line-height: 1.45; letter-spacing: -0.01em; margin: 0 0 28px; text-align: left; }
   .charter-cancel { font-size: 16px; font-weight: 500; color: var(--ink-soft); margin: 0 0 30px; }
   .charter-list { font-size: 15px; line-height: 1.7; color: var(--ink-soft); padding-left: 0; list-style: none; margin: 0 0 30px; text-align: left; max-width: 400px; margin-left: auto; margin-right: auto; }
   .charter-list li { padding-left: 28px; position: relative; margin-bottom: 8px; }
@@ -142,7 +158,7 @@
   .foot-brand .dot { color: var(--accent); }
   .foot-imprint { font-size: 13px; color: var(--ink-faint); margin-top: 2px; }
   .foot-imprint a { color: var(--ink-soft); text-decoration: underline; text-underline-offset: 3px; }
-  .foot-nav { font-size: 14px; display: flex; gap: 24px; }
+  .foot-nav { font-size: 14px; display: flex; gap: 24px; flex-wrap: wrap; }
   .foot-nav a { color: var(--ink-soft); text-decoration: none; }
   .foot-nav a:hover { color: var(--ink); }
 
@@ -151,8 +167,13 @@
     .split { grid-template-columns: 1fr; }
     .surfaces-grid { grid-template-columns: 1fr; }
   }
+  @media (max-width: 800px) {
+    .nav-toggle { display: inline-flex; }
+    .site-header-inner { flex-wrap: wrap; }
+    .nav { display: none; width: 100%; flex-basis: 100%; gap: 14px 18px; }
+    .nav.is-open { display: flex; }
+  }
   @media (max-width: 640px) {
-    .nav { display: none; }
     .hero { padding: 56px 20px 40px; }
     .section, .section-narrow, .pricing-section, .contact-form-section { padding: 56px 20px; }
     .charter-card { padding: 32px 24px 28px; }
@@ -164,14 +185,15 @@
 <header class="site-header">
   <div class="site-header-inner">
     <a class="wordmark" href="/">Sermon Steward<span class="dot">.</span></a>
-    <nav class="nav">
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav id="primary-nav" class="nav site-nav" aria-label="Primary">
       <a href="/">Home</a>
       <a href="/how-it-works/">How it works</a>
       <a href="#surfaces">Surfaces</a>
       <a href="/hall/">Guildhall</a>
       <a href="/samples.html">Samples</a>
       <a href="#pricing">Pricing</a>
-      <a class="btn-sm" href="#contact-form">Talk to us</a>
+      <a class="btn-sm" href="mailto:chris@sovgracekc.org">Talk to us</a>
     </nav>
   </div>
 </header>
@@ -181,7 +203,7 @@
   <h1>One Sermon Can Seed a Mighty <span class="accent">Harvest</span></h1>
   <p class="deck">We take Sunday's sermon and turn it into many things your church can use through the week and for years to come.</p>
   <div class="cta-row">
-    <a class="btn btn-primary" href="#contact-form">Get a sample sermon stewarded</a>
+    <a class="btn btn-primary" href="https://try.sermonsteward.com">Try one sermon</a>
     <a class="btn btn-secondary" href="/SGchurch/ProvidenceLenexa">Show me the sermons <span class="arrow">→</span></a>
   </div>
 </section>
@@ -280,9 +302,8 @@
   <div class="pricing-inner">
     <div class="charter-wrap">
       <div class="charter-card">
-        <div class="charter-tier">Sermon Steward</div>
-        <p class="charter-price">$30 a month</p>
-        <p class="charter-cancel">Cancel anytime.</p>
+        <div class="charter-tier">Pricing</div>
+        <p class="charter-price">Guildhall — free. Sermon Steward, Coach, Prep King — $30/month each; suite $75/month. Past-sermon ingest $100 per year of sermons. First month free, cancel anytime, no contract.</p>
         <ul class="charter-list">
           <li>Every sermon you preach becomes a web page</li>
           <li>Sermon-led church website on your own domain</li>
@@ -293,7 +314,7 @@
           <li>Weekly anatomy report</li>
           <li>Works with your existing audio host</li>
         </ul>
-        <a class="btn btn-primary charter-cta" href="#contact-form">Claim your spot</a>
+        <a class="btn btn-primary charter-cta" href="https://try.sermonsteward.com">Try one sermon</a>
       </div>
     </div>
   </div>
@@ -302,29 +323,18 @@
 <section class="cta-band" id="contact">
   <h2>Hand us one sermon. See what stewardship looks like.</h2>
   <p>Send us Sunday's audio or a transcript. Within seven days we'll send you back what the same sermon looks like stewarded. No card, no commitment.</p>
-  <a class="btn btn-primary" href="#contact-form">Send us a sermon</a>
+  <a class="btn btn-primary" href="https://try.sermonsteward.com">Try one sermon</a>
 </section>
 
 <section class="contact-form-section" id="contact-form">
   <div class="contact-form-inner">
     <div class="section-title">Get a sample sermon stewarded</div>
     <h2>Tell us where to reach you.</h2>
-    <p class="lede">Paste your sermon transcript below and we'll send back the stewarded version within seven days. Or leave it blank and we'll reach out to discuss what you're working with.</p>
-    <form class="contact-form" action="#" method="POST" novalidate>
-      <div class="field">
-        <label for="cf-name">Name</label>
-        <input id="cf-name" name="name" type="text" autocomplete="name" placeholder="Pastor John Smith" required>
-      </div>
-      <div class="field">
-        <label for="cf-email">Email</label>
-        <input id="cf-email" name="email" type="email" autocomplete="email" placeholder="you@church.org" required>
-      </div>
-      <div class="field">
-        <label for="cf-transcript">Your sermon</label>
-        <textarea id="cf-transcript" name="transcript" rows="10" placeholder="Paste your sermon transcript here — or just leave it blank and we will reach out."></textarea>
-      </div>
-      <button type="submit">Send</button>
-    </form>
+    <p class="lede">Upload one sermon at try.sermonsteward.com — name, email, one MP3. Or write Chris. Nothing on this page sends a form into the void.</p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn btn-primary" href="https://try.sermonsteward.com">Try one sermon</a>
+      <a class="btn btn-secondary" href="mailto:chris@sovgracekc.org">Email Chris</a>
+    </div>
   </div>
 </section>
 
@@ -340,10 +350,18 @@
       <a href="/hall/">Hall</a>
       <a href="/samples.html">Samples</a>
       <a href="#pricing">Pricing</a>
-      <a href="#contact-form">Talk to us</a>
+      <a href="mailto:chris@sovgracekc.org">Talk to us</a>
     </div>
   </div>
 </footer>
+<script>
+  document.querySelector(".nav-toggle").addEventListener("click", function () {
+    var nav = document.getElementById("primary-nav");
+    var open = nav.classList.toggle("is-open");
+    this.setAttribute("aria-expanded", open ? "true" : "false");
+    this.textContent = open ? "Close" : "Menu";
+  });
+</script>
 
 </body>
 </html>

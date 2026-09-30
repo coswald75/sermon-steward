@@ -989,15 +989,24 @@
     .site-nav { display: none; }
   }
 </style>
+<style id="sermon-mobile-fit">
+@media (max-width: 420px) {
+  .asx { left: 12px; right: 12px; width: auto; display: flex; justify-content: flex-end; }
+  .asx-btn { max-width: 100%; height: auto; min-height: 44px; padding: 10px 14px; white-space: normal; text-align: left; }
+  .asx-panel { left: 0; right: 0; width: auto; }
+}
+pre, code { max-width: 100%; }
+pre { overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+</style>
 </head>
 <body><header class="site-header">
   <div class="site-header-inner">
     <a href="/ProvidenceLenexa/" class="site-brand">Providence Community Church</a>
     <nav class="site-nav ui">
       <a href="/ProvidenceLenexa/sermons">Sermons</a>
-      <a href="/ProvidenceLenexa/topics">Topics</a>
-      <a href="/ProvidenceLenexa/about">About</a>
-      <a href="/ProvidenceLenexa/visit">Visit</a>
+      
+      
+      
     </nav>
   </div>
 </header>
@@ -1491,10 +1500,10 @@
             Lenexa, KS<br>
             
             Sundays · 10:00 AM<br>
-            <a href="/ProvidenceLenexa/about" style="color:var(--accent);">About us</a> · <a href="/ProvidenceLenexa/what-we-believe" style="color:var(--accent);">What we believe</a>
+             
           </div>
         </div>
-        <a href="/ProvidenceLenexa/visit" class="visit-cta ui">Plan a visit →</a>
+        
       </div>
 
       <!-- Crawler hygiene -->
@@ -1530,8 +1539,8 @@ A church preaching expository sermons through the books of the Bible.
 - [Blessed Citizens (Luke 6:12-26)](/ProvidenceLenexa/sermons/blessed-citizens)
 
 ## About
-- [About the church](/about)
-- [Plan a visit](/visit)</pre>
+- About the church
+- Plan a visit</pre>
 
           <p>The page itself ships with Schema.org <code>Article</code> + <code>Church</code> markup (with real geo coordinates), Open Graph + Twitter cards for share previews, and a canonical URL. Transcripts are server-rendered HTML — no JS dependency for the readable body.</p>
         </div>

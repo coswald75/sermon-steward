@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import { CHURCHES } from "./churches.js";
 import { applyChurchPublishing } from "./site-publish.js";
+import { applyPublishFixes } from "./scripts/publish-fixes.js";
 
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("*.html");
@@ -25,8 +26,15 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "_src/img": "img",
   });
+  eleventyConfig.addPassthroughCopy({
+    "_src/og-sermon-steward-a.jpg": "og-sermon-steward-a.jpg",
+  });
 
   eleventyConfig.on("eleventy.after", ({ dir }) => {
+    // Link and emphasis fixes run before church publishing so a regenerated
+    // sermon folder is corrected in the same build. Church routes, robots,
+    // and the sitemap stay in applyChurchPublishing.
+    applyPublishFixes(dir.output);
     applyChurchPublishing(dir.output);
   });
 

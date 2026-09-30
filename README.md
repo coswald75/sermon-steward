@@ -6,13 +6,12 @@ Static HTML, deployed as a Cloudflare Worker (`wrangler.jsonc` serves `_site/`).
 
 ## Pages
 
-- `/` and `/product` (`product.html`) — product landing. Eleventy also copies `product.html` to `index.html`, so the site root and `/product` serve the same page. Pricing on that page is $30 a month, cancel anytime.
-- `/hosting/` (`_src/hosting.njk`) — $30 sermon-hosting pitch (an earlier homepage)
+- `/` and `/product` (`product.html`) — product landing. Eleventy also copies `product.html` to `index.html`, so the site root and `/product` serve the same page. The price card is: Guildhall — free. Sermon Steward, Coach, Prep King — $30/month each; suite $75/month. Past-sermon ingest $100 per year of sermons. First month free, cancel anytime, no contract. Homepage calls to action go to [try.sermonsteward.com](https://try.sermonsteward.com) or `mailto:chris@sovgracekc.org`.
+- `/hosting/` (`_src/hosting.njk`) — sermon-hosting pitch (an earlier homepage), using the same price card as the homepage
 - Door art in `_src/img/`, all 2304×1296. `door-hero.png`, `door-empty.png`, `door-open.png`, and `door-open-cast.png` stay in the folder. The PNGs are large; WebP can wait.
 - `samples.html` — gallery of customer samples and famous-preacher showcases
 - `hall/` — Guild Hall index. Preacher profiles stay at `/preacher-*.html`. Archive analyses (sermon tables) are at `/hall/<slug>/`.
-- `growing-in-christ.html` — sample sermon page (linked from samples)
-- `weekly-report.html` — sample weekly anatomy report (linked from samples)
+- `weekly-report.html` — sample weekly anatomy report (linked from samples). The Growing in Christ sample links to `/ProvidenceLenexa/sermons/growing-in-christ-2026-02-22`.
 
 ## Church URLs
 
@@ -33,7 +32,6 @@ Push to `main` builds with Eleventy and deploys the Cloudflare Worker (`wrangler
 
 ## TODO (v1 post-launch)
 
-- Wire contact form to Supabase `sermon_steward_leads` table (currently `action="#"`, non-functional)
-- Anonymize byline on `growing-in-christ.html` and `weekly-report.html` if desired
+- Anonymize the byline on `weekly-report.html` if desired
 - Add favicon
 - Add `#preacher-*` profile pages (or repoint links once the bailey product is decided)
