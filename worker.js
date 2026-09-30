@@ -4,12 +4,18 @@
 // `assets.directory: _site`), NOT a Pages project — so password
 // protection lives here, not in a Pages functions/ middleware.
 //
-// Only /pastors/* is gated (see `run_worker_first` in wrangler.jsonc —
-// every other path is served straight from the asset cache without
-// invoking this Worker at all, so the gate adds zero latency to the
-// public site). HTTP Basic Auth: any username, password checked
-// against the PASTORS_PASSWORD Worker secret, enforced at the edge —
-// content never reaches the browser without it.
+// /pastors/* is gated (see `run_worker_first` in wrangler.jsonc).
+// /SGchurch/* and /church/* are public vanity URLs. They 302 to the
+// church's existing sermon list. The map is churches.js. A missing
+// asset also reaches this Worker, which is what makes /sgchurch/…
+// (any casing) resolve even when run_worker_first only lists the
+// canonical prefix.
+//
+// Every other existing asset is served straight from the asset cache
+// without invoking this Worker. HTTP Basic Auth: any username, password
+// checked against the PASTORS_PASSWORD Worker secret, enforced at the
+// edge — content never reaches the browser without it.
+import { matchChurchRoute } from "./churches.js";
 
 const REALM = "Sermon Steward — Pastors";
 
@@ -35,6 +41,32 @@ function authNotConfigured() {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const church = matchChurchRoute(url.pathname);
+    if (church?.location) {
+      const dest = new URL(church.location, url.origin);
+      dest.search = url.search;
+      // no-cache: this 302 is temporary. The public URL should be free
+      // to become a real church page later without browsers sticking
+      // on the sermon-list redirect.
+      return new Response(null, {
+        status: 302,
+        headers: {
+          Location: dest.toString(),
+          "Cache-Control": "no-cache",
+        },
+      });
+    }
+    if (church?.status === 404) {
+      return new Response("Church not found.", {
+        status: 404,
+        headers: {
+          "Content-Type": "text/plain; charset=utf-8",
+          "X-Robots-Tag": "noindex",
+          "Cache-Control": "no-cache",
+        },
+      });
+    }
+
     const gated =
       url.pathname === "/pastors" || url.pathname.startsWith("/pastors/");
 

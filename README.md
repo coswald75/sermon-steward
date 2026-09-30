@@ -2,7 +2,7 @@
 
 Marketing site for [sermonsteward.com](https://sermonsteward.com).
 
-Static HTML, deployed to Cloudflare Pages.
+Static HTML, deployed as a Cloudflare Worker (`wrangler.jsonc` serves `_site/`).
 
 ## Pages
 
@@ -14,9 +14,22 @@ Static HTML, deployed to Cloudflare Pages.
 - `growing-in-christ.html` — sample sermon page (linked from samples)
 - `weekly-report.html` — sample weekly anatomy report (linked from samples)
 
+## Church URLs
+
+Public links use a network prefix. The only map is `churches.js`.
+
+- Sovereign Grace: `https://sermonsteward.com/SGchurch/<ChurchNameCity>`
+- Not Sovereign Grace: `https://sermonsteward.com/church/<ChurchNameCity>`
+
+No non-SG church is wired up yet. To add one, append a row with `network: "other"` and a `slug` like `ChurchNameCity`. Another SG church is the same row with `network: "sg"`. The slug is the folder name. Eleventy passthrough-copies whatever slugs in that file already have a folder. `sermonsPath` is the sermon list the public URL currently sends people to.
+
+For now those public URLs 302 to the sermon list (any casing, with or without a trailing slash). That redirect lives in `worker.js`, not in the church folder. The sermon ingest rewrites files inside `ProvidenceLenexa/` and `CoGElPaso/` and then runs Eleventy, so a folder of static redirect HTML would get wiped. The Worker reads `churches.js` on each request.
+
+`/<ChurchNameCity>/` and everything under it except `/<ChurchNameCity>/sermons/` stays on the server for a later product. The Eleventy publish step (`site-publish.js`) marks those pages `noindex`, leaves them out of `sitemap.xml`, and repoints links to the bare church landing at `/SGchurch/...` or `/church/...`. Sermon pages are not noindexed.
+
 ## Deployment
 
-Push to `main` → Cloudflare Pages auto-deploys.
+Push to `main` builds with Eleventy and deploys the Cloudflare Worker (`wrangler.jsonc`, assets in `_site/`). The sermon ingest also runs that build and `wrangler deploy` after it commits new sermon HTML. There is no GitHub Actions workflow in this repo.
 
 ## TODO (v1 post-launch)
 
