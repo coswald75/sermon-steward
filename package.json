@@ -5,7 +5,7 @@
   "scripts": {
     "build": "eleventy",
     "dev": "eleventy --serve",
-    "test": "node --test churches.test.js",
+    "test": "node --test churches.test.js scripts/publish-fixes.test.js scripts/topics.test.js",
     "deploy:prep": "eleventy && npx wrangler pages deploy _site/prep --project-name prepking"
   },
   "devDependencies": {

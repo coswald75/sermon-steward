@@ -7,6 +7,10 @@
 // `slug` is the folder name (ChurchNameCity). `network` is "sg" or "other".
 // `sermonsPath` is the sermon list that the public URL sends people to.
 //
+// Topic pages are the exception under the public prefix: they are real
+// HTML at /SGchurch/<slug>/topics/ (or /church/<slug>/topics/), built
+// from one drop-in file per topic. The bare church URL still 302s.
+//
 // Nothing in here lives inside a church folder. The ingest pipeline
 // (shepherds-guild-pipeline: scripts/deploy_sermon_pages.py and
 // scripts/build_church_indexes.py) rewrites files inside those folders,
@@ -44,10 +48,16 @@ export function publicChurchPath(church) {
   return `/${prefix}/${church.slug}`;
 }
 
+// Topic pages live under the public church path, not the legacy folder.
+// /SGchurch/ProvidenceLenexa still 302s to the sermon list. This path does not.
+export function publicTopicsPath(church) {
+  return `${publicChurchPath(church)}/topics/`;
+}
+
 // Vanity URL → where the Worker should send the request.
-// null means this path is not a church vanity URL.
-// { status: 404 } means the prefix matched but the church does not.
-// { status: 302, location } means redirect to the sermon list.
+// null means "not a redirect": serve the asset (topic pages) or ignore the path.
+// { status: 404 } means the prefix matched but this is not a page we serve.
+// { status: 302, location } means redirect (sermon list, or the canonical topics URL).
 export function matchChurchRoute(pathname, churches = CHURCHES) {
   const parts = pathname.split("/").filter((part) => part.length > 0);
   if (parts.length === 0) return null;
@@ -58,9 +68,8 @@ export function matchChurchRoute(pathname, churches = CHURCHES) {
   )?.[0];
   if (!network) return null;
 
-  // /SGchurch and /SGchurch/foo/bar are not a church root.
-  // Deeper paths stay free for a future church site.
-  if (parts.length !== 2) return { status: 404 };
+  // /SGchurch alone is not a church.
+  if (parts.length === 1) return { status: 404 };
 
   const church = churches.find(
     (candidate) =>
@@ -68,7 +77,18 @@ export function matchChurchRoute(pathname, churches = CHURCHES) {
       candidate.slug.toLowerCase() === parts[1].toLowerCase()
   );
   if (!church) return { status: 404 };
-  return { status: 302, location: church.sermonsPath };
+
+  // Bare /SGchurch/<ChurchNameCity> opens the sermon list.
+  if (parts.length === 2) return { status: 302, location: church.sermonsPath };
+
+  // /SGchurch/<Church>/topics/ is a real page. Anything else under the
+  // vanity prefix stays a 404 so it does not swallow future church paths.
+  if (parts[2].toLowerCase() !== "topics") return { status: 404 };
+
+  const tail = parts.slice(3).join("/");
+  const canonical = tail ? `${publicTopicsPath(church)}${tail}/` : publicTopicsPath(church);
+  if (pathname !== canonical) return { status: 302, location: canonical };
+  return null;
 }
 
 // Legacy church product pages stay on disk and answer by direct URL,

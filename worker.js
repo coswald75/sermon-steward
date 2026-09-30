@@ -5,11 +5,12 @@
 // protection lives here, not in a Pages functions/ middleware.
 //
 // /pastors/* is gated (see `run_worker_first` in wrangler.jsonc).
-// /SGchurch/* and /church/* are public vanity URLs. They 302 to the
-// church's existing sermon list. The map is churches.js. A missing
-// asset also reaches this Worker, which is what makes /sgchurch/…
-// (any casing) resolve even when run_worker_first only lists the
-// canonical prefix.
+// /SGchurch/<Church> and /church/<Church> 302 to that church's sermon
+// list. /SGchurch/<Church>/topics/ and everything under it are real
+// pages: matchChurchRoute returns null and this Worker serves the
+// asset. The map is churches.js. A missing asset also reaches this
+// Worker, which is what makes /sgchurch/… (any casing) resolve even
+// when run_worker_first only lists the canonical prefix.
 //
 // Every other existing asset is served straight from the asset cache
 // without invoking this Worker. HTTP Basic Auth: any username, password

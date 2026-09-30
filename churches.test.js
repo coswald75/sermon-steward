@@ -7,6 +7,7 @@ import {
   isDelistedLegacyPath,
   matchChurchRoute,
   publicChurchPath,
+  publicTopicsPath,
   rewriteLandingHrefs,
   urlPathForOutputFile,
 } from "./churches.js";
@@ -62,6 +63,26 @@ test("deeper vanity paths and ordinary site paths are not church roots", () => {
   assert.equal(matchChurchRoute("/ProvidenceLenexa/sermons/"), null);
   assert.equal(matchChurchRoute("/hall/"), null);
   assert.equal(matchChurchRoute("/"), null);
+});
+
+test("topic pages are served at the public church path", () => {
+  assert.equal(publicTopicsPath(CHURCHES[0]), "/SGchurch/ProvidenceLenexa/topics/");
+  assert.equal(publicTopicsPath(example), "/church/ExampleTown/topics/");
+  assert.equal(matchChurchRoute("/SGchurch/ProvidenceLenexa/topics/"), null);
+  assert.equal(matchChurchRoute("/SGchurch/ProvidenceLenexa/topics/suffering/"), null);
+  assert.deepEqual(matchChurchRoute("/SGchurch/ProvidenceLenexa/topics"), {
+    status: 302,
+    location: "/SGchurch/ProvidenceLenexa/topics/",
+  });
+  assert.deepEqual(matchChurchRoute("/sgchurch/providencelenexa/topics/suffering"), {
+    status: 302,
+    location: "/SGchurch/ProvidenceLenexa/topics/suffering/",
+  });
+  assert.deepEqual(matchChurchRoute("/church/ExampleTown/topics/", [example, ...CHURCHES]), null);
+  assert.equal(isDelistedLegacyPath("/SGchurch/ProvidenceLenexa/topics/suffering/"), false);
+  assert.equal(includeInSitemap("/SGchurch/ProvidenceLenexa/topics/"), true);
+  assert.equal(includeInSitemap("/SGchurch/ProvidenceLenexa/topics/suffering/"), true);
+  assert.equal(isDelistedLegacyPath("/ProvidenceLenexa/topics/suffering/"), true);
 });
 
 test("legacy church pages are delisted and sermon pages are not", () => {
