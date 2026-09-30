@@ -108,14 +108,15 @@ export function rewriteLandingHrefs(html, churches = CHURCHES) {
   for (const church of churches) {
     const pub = publicChurchPath(church);
     const slug = church.slug.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    // Only anchors. Canonical and og:url tags stay put.
     // The closing quote has to come right after the slug so
     // /ProvidenceLenexa/sermons/… is not treated as the landing.
     out = out.replace(
       new RegExp(
-        `href=(["'])(?:https://sermonsteward\\.com)?/${slug}/?\\1`,
-        "g"
+        `(<a\\b[^>]*?\\bhref=(["']))(?:https://sermonsteward\\.com)?/${slug}/?\\2`,
+        "gi"
       ),
-      `href=$1${pub}$1`
+      `$1${pub}$2`
     );
   }
   return out;

@@ -121,4 +121,7 @@ test("landing links move to the public URL and sermon links stay", () => {
   assert.match(out, /href="\/ProvidenceLenexa\/sermons\/">list/);
   assert.match(out, /href="\/ProvidenceLenexa\/sermons\/foo"/);
   assert.match(out, /href="\/CoGElPaso\/topics"/);
+  const canonical =
+    '<link rel="canonical" href="https://sermonsteward.com/CoGElPaso/">';
+  assert.equal(rewriteLandingHrefs(canonical), canonical);
 });
