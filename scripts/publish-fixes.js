@@ -16,12 +16,13 @@ const MOBILE_STYLE_ID = "sermon-mobile-fit";
 
 const MOBILE_STYLE = `<style id="${MOBILE_STYLE_ID}">
 @media (max-width: 420px) {
-  .asx { left: 12px; right: 12px; width: auto; display: flex; justify-content: flex-end; }
-  .asx-btn { max-width: 100%; height: auto; min-height: 44px; padding: 10px 14px; white-space: normal; text-align: left; }
-  .asx-panel { left: 0; right: 0; width: auto; }
+  .asx { left: 12px !important; right: 12px !important; width: auto !important; max-width: calc(100vw - 24px) !important; display: flex !important; justify-content: flex-end !important; }
+  .asx-btn { max-width: 100% !important; height: auto !important; min-height: 44px !important; padding: 10px 14px !important; white-space: normal !important; text-align: left !important; }
+  .asx-panel { left: 0 !important; right: 0 !important; width: auto !important; max-width: 100% !important; }
 }
 pre, code { max-width: 100%; }
-pre { overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+pre, code { overflow-wrap: anywhere; word-break: break-word; }
+pre { overflow-x: auto; white-space: pre-wrap; }
 </style>`;
 
 export function applyPublishFixes(root) {
@@ -205,7 +206,13 @@ function emphasizeText(text) {
 }
 
 function injectMobileStyle(html) {
-  if (html.includes(`id="${MOBILE_STYLE_ID}"`)) return html;
+  if (html.includes(`id="${MOBILE_STYLE_ID}"`)) {
+    if (html.includes("pre, code { overflow-wrap: anywhere; word-break: break-word; }")) return html;
+    return html.replace(
+      new RegExp(`<style id="${MOBILE_STYLE_ID}">[\\s\\S]*?</style>`),
+      MOBILE_STYLE
+    );
+  }
   if (!html.includes("</head>")) return html;
   if (!html.includes("sermon-title") && !html.includes("asx-btn") && !html.includes("<pre")) {
     return html;

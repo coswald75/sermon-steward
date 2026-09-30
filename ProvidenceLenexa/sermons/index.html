@@ -185,12 +185,13 @@
 </style>
 <style id="sermon-mobile-fit">
 @media (max-width: 420px) {
-  .asx { left: 12px; right: 12px; width: auto; display: flex; justify-content: flex-end; }
-  .asx-btn { max-width: 100%; height: auto; min-height: 44px; padding: 10px 14px; white-space: normal; text-align: left; }
-  .asx-panel { left: 0; right: 0; width: auto; }
+  .asx { left: 12px !important; right: 12px !important; width: auto !important; max-width: calc(100vw - 24px) !important; display: flex !important; justify-content: flex-end !important; }
+  .asx-btn { max-width: 100% !important; height: auto !important; min-height: 44px !important; padding: 10px 14px !important; white-space: normal !important; text-align: left !important; }
+  .asx-panel { left: 0 !important; right: 0 !important; width: auto !important; max-width: 100% !important; }
 }
 pre, code { max-width: 100%; }
-pre { overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+pre, code { overflow-wrap: anywhere; word-break: break-word; }
+pre { overflow-x: auto; white-space: pre-wrap; }
 </style>
 </head>
 <body>
