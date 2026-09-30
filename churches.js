@@ -91,15 +91,64 @@ export function matchChurchRoute(pathname, churches = CHURCHES) {
   return null;
 }
 
-// Legacy church product pages stay on disk and answer by direct URL,
-// but they are not the public church site. Everything under /<slug>/
-// except /<slug>/sermons/ is delisted.
-export function isDelistedLegacyPath(pathname, churches = CHURCHES) {
-  let path = pathname.split("?")[0].split("#")[0];
+// Prep King and Coach stay on disk and answer by direct URL, but they are
+// not for sale on the public site. The weekly ingest rebuilds _site, so
+// this list — not a one-time edit of sitemap.xml — is what keeps them delisted.
+export const DELISTED_PRODUCT_ROOTS = ["/prep", "/prep-king", "/prepking", "/coach"];
+
+export function normalizeSitePath(pathname) {
+  let path = String(pathname ?? "").split("?")[0].split("#")[0];
   if (!path.startsWith("/")) path = `/${path}`;
   if (path.length > 1 && path.endsWith("/")) path = path.slice(0, -1);
   if (path.endsWith("/index.html")) path = path.slice(0, -"/index.html".length);
   if (path === "") path = "/";
+  return path;
+}
+
+export function isDelistedProductPath(pathname) {
+  const path = normalizeSitePath(pathname).toLowerCase();
+  return DELISTED_PRODUCT_ROOTS.some(
+    (root) => path === root || path === `${root}.html` || path.startsWith(`${root}/`)
+  );
+}
+
+export function isDelistedProductHref(href) {
+  if (!href) return false;
+  let value = String(href).trim();
+  if (
+    value.startsWith("#") ||
+    value.startsWith("mailto:") ||
+    value.startsWith("tel:") ||
+    value.startsWith("javascript:")
+  ) {
+    return false;
+  }
+  value = value.split("#")[0].split("?")[0];
+  if (value.startsWith("https://sermonsteward.com")) {
+    value = value.slice("https://sermonsteward.com".length) || "/";
+  } else if (value.startsWith("http://sermonsteward.com")) {
+    value = value.slice("http://sermonsteward.com".length) || "/";
+  } else if (/^[a-z][a-z0-9+.-]*:/i.test(value)) {
+    return false;
+  }
+  if (!value.startsWith("/")) return false;
+  return isDelistedProductPath(value);
+}
+
+// Drop the anchor, not just the href, so a nav label cannot keep the product name.
+export function stripDelistedProductLinks(html) {
+  return html.replace(/<a\b[^>]*>[\s\S]*?<\/a>/gi, (full) => {
+    const hrefMatch = full.match(/\bhref\s*=\s*(["'])(.*?)\1/i);
+    if (!hrefMatch || !isDelistedProductHref(hrefMatch[2])) return full;
+    return "";
+  });
+}
+
+// Legacy church product pages stay on disk and answer by direct URL,
+// but they are not the public church site. Everything under /<slug>/
+// except /<slug>/sermons/ is delisted.
+export function isDelistedLegacyPath(pathname, churches = CHURCHES) {
+  const path = normalizeSitePath(pathname);
 
   for (const church of churches) {
     const root = `/${church.slug}`;
@@ -112,13 +161,15 @@ export function isDelistedLegacyPath(pathname, churches = CHURCHES) {
   return false;
 }
 
-export function injectRobotsMeta(html) {
-  if (/<meta\s[^>]*name=["']robots["']/i.test(html)) return html;
+export function injectRobotsMeta(html, content = "noindex, follow") {
+  const tag = `<meta name="robots" content="${content}">`;
+  const existing = html.match(/<meta\s[^>]*name=["']robots["'][^>]*>/i);
+  if (existing) {
+    if (content === "noindex, follow" || existing[0] === tag) return html;
+    return html.replace(existing[0], tag);
+  }
   if (!/<head[^>]*>/i.test(html)) return html;
-  return html.replace(
-    /<head[^>]*>/i,
-    (open) => `${open}\n<meta name="robots" content="noindex, follow">`
-  );
+  return html.replace(/<head[^>]*>/i, (open) => `${open}\n${tag}`);
 }
 
 // Point links that target a legacy church landing at the public church URL.
@@ -166,6 +217,22 @@ export function headersDocument(churches = CHURCHES) {
       `  ! X-Robots-Tag`
     );
   }
+  blocks.push(
+    "# Retired product URLs stay reachable by direct URL and are noindex.",
+    "# Do not Disallow them. A crawler has to fetch the page to see noindex."
+  );
+  for (const root of DELISTED_PRODUCT_ROOTS) {
+    blocks.push(
+      root,
+      `  X-Robots-Tag: noindex`,
+      `${root}/`,
+      `  X-Robots-Tag: noindex`,
+      `${root}/*`,
+      `  X-Robots-Tag: noindex`,
+      `${root}.html`,
+      `  X-Robots-Tag: noindex`
+    );
+  }
   return `${blocks.join("\n")}\n`;
 }
 
@@ -173,6 +240,7 @@ export function robotsTxt() {
   return `# Sermon Steward
 # Legacy church landings (everything under a church folder except /sermons/)
 # stay reachable and are marked noindex in the HTML and in _headers.
+# Retired product URLs are the same: reachable, noindex, and absent from the sitemap.
 # Do not Disallow those paths. A crawler has to fetch the page to see noindex.
 
 User-agent: *
@@ -211,6 +279,7 @@ export function urlPathForOutputFile(relPosix) {
 
 export function includeInSitemap(urlPath) {
   if (isDelistedLegacyPath(urlPath)) return false;
+  if (isDelistedProductPath(urlPath)) return false;
   if (urlPath === "/admin" || urlPath.startsWith("/admin/")) return false;
   if (urlPath === "/pastors" || urlPath.startsWith("/pastors/")) return false;
   return true;
