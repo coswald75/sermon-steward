@@ -23,7 +23,13 @@ header .wrap{display:flex;justify-content:space-between;align-items:center;paddi
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:34px 0 10px}
 .stat{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:16px;text-align:center} .stat b{display:block;font-size:1.9rem;letter-spacing:-.02em} .stat span{font-size:13px;color:var(--faint)}
 h2{font-size:1.7rem;letter-spacing:-.02em;margin:56px 0 6px} .sub{color:var(--ink2);margin:0 0 22px;max-width:780px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px} @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.qtile{grid-column:1/-1}} @media(max-width:600px){.grid{grid-template-columns:1fr}}
+.qtile{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;gap:12px;background:linear-gradient(150deg,#c4452f 0%,#9a3624 100%);color:#fff;border-radius:16px;padding:22px;box-shadow:0 10px 28px rgba(154,54,36,.28);transition:transform .12s,box-shadow .12s}
+.qtile:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(154,54,36,.36);text-decoration:none}
+.qtile::before{content:"\201C";position:absolute;right:-6px;top:-58px;font-family:var(--serif);font-size:240px;line-height:1;color:rgba(255,255,255,.13)}
+.qtile .qk{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--hl)} .qtile h3{font-size:2rem;line-height:1.05;letter-spacing:-.02em;margin:4px 0 0;font-weight:800}
+.qtile blockquote{margin:0;font-family:var(--serif);font-style:italic;font-size:1.05rem;line-height:1.4;color:#fff5ee;border-left:3px solid var(--hl);padding-left:12px} .qtile cite{display:block;margin-top:6px;font-style:normal;font-family:var(--sans);font-size:12.5px;font-weight:600;color:#f6d9cf}
+.qtile .qgo{display:inline-block;align-self:flex-start;background:#fff;color:var(--accent2);font-weight:800;font-size:14px;padding:8px 14px;border-radius:999px}
 .card{display:flex;flex-direction:column;gap:8px;background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:18px;color:var(--ink);transition:transform .12s,box-shadow .12s}
 .card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.08);text-decoration:none}
 .card-top{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:baseline} .church{font-weight:700;font-size:14px} .loc{font-size:13px;color:var(--faint)}
@@ -71,7 +77,12 @@ footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--faint);f
 <h2>The pulpits</h2>
 <p class="sub">Each card opens that church's stewarded sermon page. <b>People</b> view: reading plan, discussion questions, family and couples guides, memory verse. <b>Preacher</b> view: outline, homiletic analysis, and the full transcript. The color bar shows how the sermon's words split across exposition, theology, application, and illustration.</p>
 <div class="legend"><span><i style="background:#2d5a4a"></i>Exposition</span><span><i style="background:#6b8f71"></i>Theological claim</span><span><i style="background:#c4452f"></i>Application</span><span><i style="background:#e0a43a"></i>Illustration</span><span><i style="background:#8a7fb5"></i>Intro / conclusion</span><span><i style="background:#b9b2a3"></i>Transitions, asides, prayer</span></div>
-<div class="grid"><a class="card" href="/ProvidenceLenexa/sermons/productive-problem-solving-2026-09-27.html">
+<div class="grid"><a class="qtile" href="/SGchurch/MidwestNorthwest/quotes/">
+  <div><div class="qk">Sunday, September 27, 2026 · 49 lines</div><h3>Gimme da quotes!</h3></div>
+  <blockquote>He is tearing down our hiding places so that the only place left to run is grace.<cite>Jeff Carmichael · Center Church of Star</cite></blockquote>
+  <div style="font-size:14px;color:#f6d9cf">The best lines from all 8 pulpits, verbatim, each linked to the moment in the transcript.</div>
+  <span class="qgo">Read the quotes →</span>
+</a><a class="card" href="/ProvidenceLenexa/sermons/productive-problem-solving-2026-09-27.html">
   <div class="card-top"><div class="church">Providence Community Church</div><div class="loc">Lenexa, KS</div><span class="badge cust">On Sermon Steward</span></div>
   <h3>Productive Problem Solving</h3>
   <div class="meta">1 Samuel 8:1-22 · Chris Oswald</div>
