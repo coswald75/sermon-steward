@@ -35,6 +35,20 @@ export const CHURCHES = [
   },
 ];
 
+// Unlisted pitch pages. Real HTML that answers by direct URL only:
+// noindex in the HTML and in _headers, never in the sitemap, and never
+// linked from a public page. /SGchurch/MidwestNorthwest/ is the Sovereign
+// Grace Midwest/Northwest regional dashboard (pitch email, 2026-10).
+export const UNLISTED_ROOTS = ["/SGchurch/MidwestNorthwest"];
+
+export function isUnlistedPath(pathname) {
+  const path = normalizeSitePath(pathname).toLowerCase();
+  return UNLISTED_ROOTS.some((root) => {
+    const r = root.toLowerCase();
+    return path === r || path.startsWith(`${r}/`);
+  });
+}
+
 const PREFIX_BY_NETWORK = {
   sg: "SGchurch",
   other: "church",
@@ -70,6 +84,9 @@ export function matchChurchRoute(pathname, churches = CHURCHES) {
 
   // /SGchurch alone is not a church.
   if (parts.length === 1) return { status: 404 };
+
+  // Unlisted regional pages are real assets, not church vanity routes.
+  if (isUnlistedPath(pathname)) return null;
 
   const church = churches.find(
     (candidate) =>
@@ -217,6 +234,10 @@ export function headersDocument(churches = CHURCHES) {
       `  ! X-Robots-Tag`
     );
   }
+  blocks.push("# Unlisted pitch pages: reachable by direct URL, never indexed.");
+  for (const root of UNLISTED_ROOTS) {
+    blocks.push(root, `  X-Robots-Tag: noindex, nofollow`, `${root}/`, `  X-Robots-Tag: noindex, nofollow`, `${root}/*`, `  X-Robots-Tag: noindex, nofollow`);
+  }
   blocks.push(
     "# Retired product URLs stay reachable by direct URL and are noindex.",
     "# Do not Disallow them. A crawler has to fetch the page to see noindex."
@@ -278,6 +299,7 @@ export function urlPathForOutputFile(relPosix) {
 }
 
 export function includeInSitemap(urlPath) {
+  if (isUnlistedPath(urlPath)) return false;
   if (isDelistedLegacyPath(urlPath)) return false;
   if (isDelistedProductPath(urlPath)) return false;
   if (urlPath === "/admin" || urlPath.startsWith("/admin/")) return false;
