@@ -213,3 +213,15 @@ test("landing links move to the public URL and sermon links stay", () => {
     '<link rel="canonical" href="https://sermonsteward.com/CoGElPaso/">';
   assert.equal(rewriteLandingHrefs(canonical), canonical);
 });
+
+test("unlisted regional pages are served as assets, noindex, and kept out of the sitemap", async () => {
+  const { isUnlistedPath } = await import("./churches.js");
+  assert.equal(matchChurchRoute("/SGchurch/MidwestNorthwest/"), null);
+  assert.equal(matchChurchRoute("/SGchurch/MidwestNorthwest/CLFRoseburg/x.html"), null);
+  assert.equal(isUnlistedPath("/sgchurch/midwestnorthwest"), true);
+  assert.equal(includeInSitemap("/SGchurch/MidwestNorthwest/"), false);
+  assert.equal(includeInSitemap("/SGchurch/MidwestNorthwest/CLFRoseburg/where-is-your-trust-2026-09-27.html"), false);
+  assert.match(headersDocument(), /\/SGchurch\/MidwestNorthwest\/\*\n  X-Robots-Tag: noindex, nofollow/);
+  // Other unknown SGchurch paths still 404.
+  assert.deepEqual(matchChurchRoute("/SGchurch/Nowhere"), { status: 404 });
+});

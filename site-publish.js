@@ -10,6 +10,7 @@ import {
   injectRobotsMeta,
   isDelistedLegacyPath,
   isDelistedProductPath,
+  isUnlistedPath,
   rewriteLandingHrefs,
   robotsTxt,
   sitemapXml,
@@ -55,8 +56,10 @@ export function applyChurchPublishing(outputDir) {
       isDelistedProductPath(urlPath) || isDelistedProductPath(`/${rel}`);
     if (delistedChurch) html = injectRobotsMeta(html);
     if (delistedProduct) html = injectRobotsMeta(html, "noindex");
+    const unlisted = isUnlistedPath(urlPath) || isUnlistedPath(`/${rel}`);
+    if (unlisted) html = injectRobotsMeta(html, "noindex, nofollow");
     if (html !== original) fs.writeFileSync(file, html);
-    if (!delistedChurch && !delistedProduct && includeInSitemap(urlPath)) urls.push(urlPath);
+    if (!delistedChurch && !delistedProduct && !unlisted && includeInSitemap(urlPath)) urls.push(urlPath);
   }
 
   fs.writeFileSync(path.join(outputDir, "_headers"), headersDocument());
