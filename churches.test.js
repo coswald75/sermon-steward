@@ -216,7 +216,17 @@ test("landing links move to the public URL and sermon links stay", () => {
 
 test("unlisted regional pages are served as assets, noindex, and kept out of the sitemap", async () => {
   const { isUnlistedPath } = await import("./churches.js");
-  assert.equal(matchChurchRoute("/SGchurch/MidwestNorthwest/"), null);
+  for (const p of ["/SGchurch/MidwestNorthwest", "/SGchurch/MidwestNorthwest/", "/sgchurch/midwestnorthwest/"]) {
+    assert.deepEqual(matchChurchRoute(p), { status: 302, location: "/SGchurch/MidwestNorthwest/9-27-26/" });
+  }
+  for (const p of ["/SGchurch/MidwestNorthwest/how-we-said-it", "/SGchurch/MidwestNorthwest/how-we-said-it/", "/SGchurch/MidwestNorthwest/quotes", "/SGchurch/MidwestNorthwest/quotes/", "/SGchurch/MidwestNorthwest/quotes/index.html"]) {
+    assert.deepEqual(matchChurchRoute(p), { status: 302, location: "/SGchurch/MidwestNorthwest/how-we-said-it/9-27-26/" });
+  }
+  assert.deepEqual(matchChurchRoute("/SGchurch/MidwestNorthwest/gimme-da-quotes"), { status: 302, location: "/SGchurch/MidwestNorthwest/gimme-da-quotes/9-27-26/" });
+  assert.equal(matchChurchRoute("/SGchurch/MidwestNorthwest/9-27-26/"), null);
+  assert.equal(matchChurchRoute("/SGchurch/MidwestNorthwest/how-we-said-it/9-27-26"), null);
+  assert.equal(matchChurchRoute("/SGchurch/MidwestNorthwest/gimme-da-quotes/9-27-26/"), null);
+  assert.equal(includeInSitemap("/SGchurch/MidwestNorthwest/gimme-da-quotes/9-27-26/"), false);
   assert.equal(matchChurchRoute("/SGchurch/MidwestNorthwest/CLFRoseburg/x.html"), null);
   assert.equal(isUnlistedPath("/sgchurch/midwestnorthwest"), true);
   assert.equal(includeInSitemap("/SGchurch/MidwestNorthwest/"), false);
