@@ -43,6 +43,39 @@ export const CHURCHES = [
 // Grace Midwest/Northwest regional dashboard (pitch email, 2026-10).
 export const UNLISTED_ROOTS = ["/SGchurch/MidwestNorthwest"];
 
+// Sovereign Grace Midwest/Northwest church pages (launch, 2026-10). Each church lives at
+// /SGchurch/<ChurchCity>/ (index) and /SGchurch/<ChurchCity>/sermons/<slug>. They are real assets,
+// unlisted like the regional dashboard: noindex, never in the sitemap, served by direct URL.
+// Providence is a CHURCHES row above (/SGchurch/ProvidenceLenexa 302s to /ProvidenceLenexa/sermons/).
+export const REGION_CHURCH_DIRS = [
+  "CrossOfGraceChaska",
+  "CornerstoneBurnsville",
+  "EmmausRoadSiouxFalls",
+  "GraceLifeHastings",
+  "CovenantLifeRoseburg",
+  "EmmausRoadBozeman",
+  "CenterChurchStar",
+];
+for (const dir of REGION_CHURCH_DIRS) UNLISTED_ROOTS.push(`/SGchurch/${dir}`);
+
+// The Sep 27 pages first lived under the dashboard. Old links 301 to the church's own root.
+export const REGION_CHURCH_MOVES = {
+  "/SGchurch/MidwestNorthwest/CLFRoseburg": "/SGchurch/CovenantLifeRoseburg",
+  ...Object.fromEntries(
+    REGION_CHURCH_DIRS.filter((d) => d !== "CovenantLifeRoseburg").map((d) => [`/SGchurch/MidwestNorthwest/${d}`, `/SGchurch/${d}`])
+  ),
+};
+
+export function matchRegionChurchMove(pathname) {
+  const raw = String(pathname ?? "").split("?")[0].split("#")[0];
+  const lower = raw.toLowerCase();
+  for (const [from, to] of Object.entries(REGION_CHURCH_MOVES)) {
+    const f = from.toLowerCase();
+    if (lower === f || lower.startsWith(`${f}/`)) return { status: 301, location: `${to}${raw.slice(from.length) || "/"}` };
+  }
+  return null;
+}
+
 // Weekly regional pages live at <root>/<M-D-YY>/, <root>/how-we-said-it/<M-D-YY>/ and
 // <root>/gimme-da-quotes/<M-D-YY>/. The bare section URLs (slash or no slash, any casing)
 // 302 to the latest week so shared links never go stale. /quotes was the first name of
@@ -108,7 +141,7 @@ export function matchChurchRoute(pathname, churches = CHURCHES) {
   if (parts.length === 1) return { status: 404 };
 
   // Unlisted regional pages are real assets, not church vanity routes.
-  if (isUnlistedPath(pathname)) return matchRegionWeekRedirect(pathname);
+  if (isUnlistedPath(pathname)) return matchRegionChurchMove(pathname) || matchRegionWeekRedirect(pathname);
 
   const church = churches.find(
     (candidate) =>

@@ -49,11 +49,13 @@ export default {
       // no-cache: this 302 is temporary. The public URL should be free
       // to become a real church page later without browsers sticking
       // on the sermon-list redirect.
+      // 301 only for pages that have permanently moved (churches.js REGION_CHURCH_MOVES).
+      const status = church.status === 301 ? 301 : 302;
       return new Response(null, {
-        status: 302,
+        status,
         headers: {
           Location: dest.toString(),
-          "Cache-Control": "no-cache",
+          "Cache-Control": status === 301 ? "public, max-age=3600" : "no-cache",
         },
       });
     }

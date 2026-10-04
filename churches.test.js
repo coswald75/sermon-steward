@@ -227,11 +227,24 @@ test("unlisted regional pages are served as assets, noindex, and kept out of the
   assert.equal(matchChurchRoute("/SGchurch/MidwestNorthwest/how-we-said-it/9-27-26"), null);
   assert.equal(matchChurchRoute("/SGchurch/MidwestNorthwest/gimme-da-quotes/9-27-26/"), null);
   assert.equal(includeInSitemap("/SGchurch/MidwestNorthwest/gimme-da-quotes/9-27-26/"), false);
-  assert.equal(matchChurchRoute("/SGchurch/MidwestNorthwest/CLFRoseburg/x.html"), null);
+  // Sep 27 church pages moved to /SGchurch/<ChurchCity>/: old URLs 301 there.
+  assert.deepEqual(matchChurchRoute("/SGchurch/MidwestNorthwest/CLFRoseburg/sermons/x.html"), { status: 301, location: "/SGchurch/CovenantLifeRoseburg/sermons/x.html" });
+  assert.deepEqual(matchChurchRoute("/sgchurch/midwestnorthwest/centerchurchstar/sermons/the-justice-of-god-2026-09-27.html"), { status: 301, location: "/SGchurch/CenterChurchStar/sermons/the-justice-of-god-2026-09-27.html" });
+  assert.deepEqual(matchChurchRoute("/SGchurch/MidwestNorthwest/GraceLifeHastings"), { status: 301, location: "/SGchurch/GraceLifeHastings/" });
   assert.equal(isUnlistedPath("/sgchurch/midwestnorthwest"), true);
   assert.equal(includeInSitemap("/SGchurch/MidwestNorthwest/"), false);
   assert.equal(includeInSitemap("/SGchurch/MidwestNorthwest/CLFRoseburg/where-is-your-trust-2026-09-27.html"), false);
   assert.match(headersDocument(), /\/SGchurch\/MidwestNorthwest\/\*\n  X-Robots-Tag: noindex, nofollow/);
+  // Regional church pages are unlisted assets at /SGchurch/<ChurchCity>/.
+  for (const d of ["CrossOfGraceChaska", "CornerstoneBurnsville", "EmmausRoadSiouxFalls", "GraceLifeHastings", "CovenantLifeRoseburg", "EmmausRoadBozeman", "CenterChurchStar"]) {
+    assert.equal(matchChurchRoute(`/SGchurch/${d}/`), null);
+    assert.equal(matchChurchRoute(`/SGchurch/${d}/sermons/a-2026-10-04.html`), null);
+    assert.equal(isUnlistedPath(`/SGchurch/${d}/sermons/a-2026-10-04.html`), true);
+    assert.equal(includeInSitemap(`/SGchurch/${d}/`), false);
+    assert.match(headersDocument(), new RegExp(`/SGchurch/${d}/\\*\n  X-Robots-Tag: noindex, nofollow`));
+  }
+  // Providence keeps its vanity redirect.
+  assert.deepEqual(matchChurchRoute("/SGchurch/ProvidenceLenexa"), { status: 302, location: "/ProvidenceLenexa/sermons/" });
   // Other unknown SGchurch paths still 404.
   assert.deepEqual(matchChurchRoute("/SGchurch/Nowhere"), { status: 404 });
 });
