@@ -235,6 +235,16 @@ test("unlisted regional pages are served as assets, noindex, and kept out of the
   assert.equal(includeInSitemap("/SGchurch/MidwestNorthwest/"), false);
   assert.equal(includeInSitemap("/SGchurch/MidwestNorthwest/CLFRoseburg/where-is-your-trust-2026-09-27.html"), false);
   assert.match(headersDocument(), /\/SGchurch\/MidwestNorthwest\/\*\n  X-Robots-Tag: noindex, nofollow/);
+  // Sovereign Grace network dashboard (MWNW + CoG El Paso)
+  for (const path of ["/SGchurch/SovereignGrace", "/SGchurch/SovereignGrace/", "/sgchurch/sovereigngrace/"]) {
+    assert.deepEqual(matchChurchRoute(path), { status: 302, location: "/SGchurch/SovereignGrace/9-27-26/" });
+  }
+  assert.deepEqual(matchChurchRoute("/SGchurch/SovereignGrace/how-we-said-it"), { status: 302, location: "/SGchurch/SovereignGrace/how-we-said-it/9-27-26/" });
+  assert.deepEqual(matchChurchRoute("/SGchurch/SovereignGrace/gimme-da-quotes"), { status: 302, location: "/SGchurch/SovereignGrace/gimme-da-quotes/9-27-26/" });
+  assert.equal(matchChurchRoute("/SGchurch/SovereignGrace/9-27-26/"), null);
+  assert.equal(includeInSitemap("/SGchurch/SovereignGrace/"), false);
+  assert.match(headersDocument(), /\/SGchurch\/SovereignGrace\/\*\n  X-Robots-Tag: noindex, nofollow/);
+
   // Regional church pages are unlisted assets at /SGchurch/<ChurchCity>/.
   for (const d of ["CrossOfGraceChaska", "CornerstoneBurnsville", "EmmausRoadSiouxFalls", "GraceLifeHastings", "CovenantLifeRoseburg", "EmmausRoadBozeman", "CenterChurchStar"]) {
     assert.equal(matchChurchRoute(`/SGchurch/${d}/`), null);

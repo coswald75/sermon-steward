@@ -1,4 +1,4 @@
-// Sovereign Grace Midwest/Northwest weekly pages. One JSON per Sunday in ./weeks/ drives:
+// Regional weekly pages (Midwest/Northwest, Sovereign Grace, …). One JSON per Sunday per region in ./weeks/ drives:
 //   /SGchurch/MidwestNorthwest/how-we-said-it/<M-D-YY>/   (the preachers' own lines)
 //   /SGchurch/MidwestNorthwest/gimme-da-quotes/<M-D-YY>/  (who they quoted: authors, theologians...)
 //   the "How We Said It" tile, "Gimme da quotes!" panel and prev/next nav inside the dashboard
@@ -20,14 +20,18 @@ const longDate = (iso) => new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-US
 const churchId = (s) => s.url.split("/").filter(Boolean).find((p, i, a) => a[i + 1] === "sermons") || "church";
 
 export function loadWeeks(dir = path.join(here, "weeks")) {
-  return fs.readdirSync(dir).filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+  // YYYY-MM-DD.json (one region) or YYYY-MM-DD-<label>.json (extra region for the same Sunday).
+  return fs.readdirSync(dir).filter((f) => /^\d{4}-\d{2}-\d{2}(?:-[a-z0-9-]+)?\.json$/.test(f))
     .map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")))
-    .sort((a, b) => a.date.localeCompare(b.date)); // oldest → newest
+    .sort((a, b) => a.date.localeCompare(b.date) || a.region.localeCompare(b.region));
 }
 
 function weekNav(weeks, i, section) {
   const href = (w) => `${w.region}/${section ? section + "/" : ""}${slugFor(w.date)}/`;
-  const prev = weeks[i - 1], next = weeks[i + 1];
+  // Stay inside this region — other regions may share the same Sunday date.
+  const mine = weeks.filter((w) => w.region === weeks[i].region);
+  const j = mine.findIndex((w) => w.date === weeks[i].date && w.region === weeks[i].region);
+  const prev = mine[j - 1], next = mine[j + 1];
   if (!prev && !next) return "";
   return `<nav class="weeknav">${prev ? `<a href="${href(prev)}">← Previous week (${esc(longDate(prev.date))})</a>` : "<span></span>"}${next ? `<a href="${href(next)}">Next week (${esc(longDate(next.date))}) →</a>` : "<span></span>"}</nav>`;
 }
@@ -49,7 +53,7 @@ function shell({ title, description, week, nav, hero, body, cta, method, footer 
 ${nav}
 ${hero}
 ${body}
-<section class="cta"><div>${cta}</div><a class="btn" href="${TRY}">Sovereign Grace Midwest: try it free</a></section>
+<section class="cta"><div>${cta}</div>${week.region === "/SGchurch/MidwestNorthwest" ? `<a class="btn" href="${TRY}">Sovereign Grace Midwest: try it free</a>` : `<a class="btn" href="https://try.sermonsteward.com/">Try Sermon Steward</a>`}</section>
 <ul class="method">${method}</ul>
 </main>
 <footer><div class="wrap">${footer} · <a href="${dash}">Regional dashboard</a></div></footer>
@@ -75,7 +79,7 @@ export function renderHowWeSaidIt(weeks, i) {
   <h1>How We <span>Said It</span></h1>
   <p class="deck">Same gospel, ${w.sermons.length} pulpits, ${w.sermons.length} voices. These are lines our brothers preached on ${esc(longDate(w.date).replace(/^\w+, /, ""))}, in their own words, so we can hear each other, learn from each other, and give thanks for each other. Tap any line to read it in context in that sermon's transcript.</p></section>`,
     body: `<section class="week" id="${w.date}"><h2>${esc(longDate(w.date))}</h2><p class="sub">${w.sermons.length} pulpits · ${n} lines</p>\n${body}</section>`,
-    cta: `<h2>Add your voice next Sunday.</h2><p>Upload your sermon at the Sovereign Grace Midwest link and your lines show up here with everyone else's. Free for Sovereign Grace Midwest/Northwest churches for at least the next year.</p>`,
+    cta: `<h2>Add your voice next Sunday.</h2><p>Upload your sermon and your lines show up here with everyone else's. ${w.region === "/SGchurch/MidwestNorthwest" ? "Free for Sovereign Grace Midwest/Northwest churches for at least the next year." : "Shared among these Sovereign Grace pulpits."}</p>`,
     method: `<li><b>Their words.</b> Every line is copied word for word from Sermon Steward's machine transcript of that sermon (AssemblyAI) and checked by code as an exact match. Nothing is paraphrased; transcription quirks are left as heard. Only the first letter is capitalized.</li>
 <li><b>Selection.</b> An AI model suggested lines spoken by the preacher himself (no Scripture readings, quotations of other authors, announcements, or prayers). Lines that turned out to be someone else's words moved to <a href="${w.region}/gimme-da-quotes/${slugFor(w.date)}/">Gimme da quotes!</a>, and weak picks were dropped.</li>
 <li><b>Filler.</b> Filler words like "um" and "uh" may be removed. Any line where that happened is marked <span class="fill">*</span>.</li>`,
@@ -102,7 +106,7 @@ export function renderGimme(weeks, i) {
   <h1>Gimme da <span>quotes!</span></h1>
   <p class="deck">Who the region's preachers quoted this Sunday: authors, theologians, pastors, articles. Each line is shown as spoken from the pulpit, with the source the preacher named. Scripture has its own charts on the dashboard, so it isn't listed here.</p></section>`,
     body: `<section class="week" id="${w.date}"><h2>${esc(longDate(w.date))}</h2><p class="sub">${n} quotations from ${w.sermons.filter((s) => s.external.length).length} of ${w.sermons.length} pulpits</p>\n${body}</section>`,
-    cta: `<h2>See who you quoted.</h2><p>Upload next Sunday's sermon at the Sovereign Grace Midwest link. Free for Sovereign Grace Midwest/Northwest churches for at least the next year.</p>`,
+    cta: `<h2>See who you quoted.</h2><p>Upload next Sunday's sermon. ${w.region === "/SGchurch/MidwestNorthwest" ? "Free for Sovereign Grace Midwest/Northwest churches for at least the next year." : "Shared among these Sovereign Grace pulpits."}</p>`,
     method: `<li><b>As spoken.</b> Each line is copied word for word from the sermon's machine transcript (AssemblyAI) and checked by code as an exact match. It is what the preacher said from the pulpit, which may differ from the printed original. Long readings show an <i>excerpt</i>.</li>
 <li><b>Sources.</b> Candidates come from Sermon Steward's quotation tags plus an AI scan of the transcript. An author or work is shown only when the preacher names it in the sermon. Nothing is filled in from outside knowledge. When he doesn't name the source, the line is marked <i>Unattributed</i>.</li>
 <li><b>Not included:</b> Scripture, and lines reported from unnamed private conversations.</li>`,
