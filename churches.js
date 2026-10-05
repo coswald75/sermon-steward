@@ -41,7 +41,10 @@ export const CHURCHES = [
 // noindex in the HTML and in _headers, never in the sitemap, and never
 // linked from a public page. /SGchurch/MidwestNorthwest/ is the Sovereign
 // Grace Midwest/Northwest regional dashboard (pitch email, 2026-10).
-export const UNLISTED_ROOTS = ["/SGchurch/MidwestNorthwest"];
+export const UNLISTED_ROOTS = [
+  "/SGchurch/MidwestNorthwest",
+  "/SGchurch/SovereignGrace", // network-wide dashboard (MWNW + Cross of Grace El Paso / Ricky); unlisted
+];
 
 // Sovereign Grace Midwest/Northwest church pages (launch, 2026-10). Each church lives at
 // /SGchurch/<ChurchCity>/ (index) and /SGchurch/<ChurchCity>/sermons/<slug>. They are real assets,
