@@ -36,15 +36,6 @@
           "excerpt": false
         },
         {
-          "text": "I got the joy, joy, joy of Baal, Down in my heart, where? Down in my heart",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "a hymn/song",
-          "anchor": "unit-3",
-          "excerpt": false
-        },
-        {
           "text": "the Holy Ghost is present with many as unto powerful operations, with whom he is not present as to grace— gracious inhabitation",
           "author": "John Owen",
           "work": null,
@@ -98,15 +89,6 @@
           "attributed": false,
           "as_said": "someone he quoted",
           "anchor": "unit-25",
-          "excerpt": false
-        },
-        {
-          "text": "Broad is the way that leads to destruction, but narrow is the path that leads to life everlasting.",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "someone he quoted",
-          "anchor": "unit-29",
           "excerpt": false
         }
       ],
@@ -323,15 +305,6 @@
           "as_said": null,
           "anchor": "unit-7",
           "excerpt": false
-        },
-        {
-          "text": "back in '82, he could throw a football a quarter mile. He bets Napoleon, you see those mountains out there? I bet I could throw this football over those mountains. And then he just thinks nostalgically about his high school days and he says, coach would have put me in in the 4th quarter, we would have won the state championship. I would have gone pro, be living in a mansion somewhere right now.",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "the movie Napoleon Dynamite",
-          "anchor": "unit-27",
-          "excerpt": false
         }
       ],
       "short": "Emmaus Rd · Sioux Falls",
@@ -370,62 +343,7 @@
           "anchor": "unit-24"
         }
       ],
-      "external": [
-        {
-          "text": "as to righteousness under the law, blameless",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "someone he quoted",
-          "anchor": "unit-26",
-          "excerpt": false
-        },
-        {
-          "text": "he was educated at the feet of Gamaliel according to the strict manner of the law of our fathers",
-          "author": "Paul",
-          "work": "Acts (from earlier in Acts)",
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-15",
-          "excerpt": false
-        },
-        {
-          "text": "If anyone else thinks he has reason for confidence in the flesh, I have more: circumcised on the 8th day, of the people of Israel, of the tribe of Benjamin, a Hebrew of Hebrews.",
-          "author": "Paul",
-          "work": "Philippians 3",
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-14",
-          "excerpt": false
-        },
-        {
-          "text": "I thank him who has given me strength, Christ Jesus our Lord, because he judged me faithful, appointing me to his service. Though formerly I was a blasphemer, persecutor, and insolent opponent, but I received mercy because I had acted ignorantly in unbelief, and the grace of our Lord overflowed for me with the faith and love that are in Christ Jesus. The saying is trustworthy and deserving of full acceptance, that Christ Jesus came into the world to save sinners, of whom I am the foremost. But I received mercy for this reason, that in me as the foremost Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life. To the King of the Ages, immortal, invisible, the only God, be honor and glory forever and ever. Amen.",
-          "author": "Paul",
-          "work": "1 Timothy",
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-50",
-          "excerpt": false
-        },
-        {
-          "text": "as to the law of Pharisee",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "someone he quoted",
-          "anchor": "unit-15",
-          "excerpt": false
-        },
-        {
-          "text": "As to the law, a Pharisee. As to zeal, a persecutor of the church.",
-          "author": "Paul",
-          "work": null,
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-16",
-          "excerpt": false
-        }
-      ],
+      "external": [],
       "short": "Emmaus Rd · Bozeman",
       "ref": "Acts 9:1-19"
     },
@@ -463,15 +381,6 @@
         }
       ],
       "external": [
-        {
-          "text": "Bob Ross became a part of all our culture by inviting his audience to watch the process of brushstrokes and happy trees becoming the most realistic displays of nature on canvas",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "Bob Ross became a part of all our culture",
-          "anchor": "unit-12",
-          "excerpt": false
-        },
         {
           "text": "these are merely drops in the bucket compared to the majesty of God's power at work in front of your own eyes",
           "author": null,
@@ -563,24 +472,6 @@
           "attributed": true,
           "as_said": null,
           "anchor": "unit-10",
-          "excerpt": false
-        },
-        {
-          "text": "John Calvin wrote a commentary on every book of the Bible except Revelation",
-          "author": "John Calvin",
-          "work": null,
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-3",
-          "excerpt": false
-        },
-        {
-          "text": "John Piper, took him 8 years and 8 months to preach through Romans",
-          "author": "John Piper",
-          "work": null,
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-4",
           "excerpt": false
         }
       ],
