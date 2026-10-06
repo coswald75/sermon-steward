@@ -44,6 +44,7 @@ export const CHURCHES = [
 export const UNLISTED_ROOTS = [
   "/SGchurch/MidwestNorthwest",
   "/SGchurch/SovereignGrace", // network-wide dashboard (MWNW + Cross of Grace El Paso / Ricky); unlisted
+  "/SGchurch/CrossOfGraceElPaso", // Cross of Grace El Paso (Sovereign Grace, not MWNW); SG dashboard only; unlisted
 ];
 
 // Sovereign Grace Midwest/Northwest church pages (launch, 2026-10). Each church lives at

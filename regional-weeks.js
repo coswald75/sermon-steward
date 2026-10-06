@@ -3,9 +3,11 @@
 // bare region URLs to the last one.
 export const REGION_WEEKS = {
   "/SGchurch/MidwestNorthwest": [
-    "9-27-26"
+    "9-27-26",
+    "10-4-26"
   ],
   "/SGchurch/SovereignGrace": [
-    "9-27-26"
+    "9-27-26",
+    "10-4-26"
   ]
 };
