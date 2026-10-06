@@ -2,6 +2,7 @@
 //   /SGchurch/MidwestNorthwest/how-we-said-it/<M-D-YY>/   (the preachers' own lines)
 //   /SGchurch/MidwestNorthwest/gimme-da-quotes/<M-D-YY>/  (who they quoted: authors, theologians...)
 //   the "How We Said It" tile, "Gimme da quotes!" panel and prev/next nav inside the dashboard
+//   (from 10-4-26: "Gimme da quotes!" is the top-left tile and "How We Said It" sits below the church grid)
 //   /SGchurch/MidwestNorthwest/<M-D-YY>/index.html (between <!-- region:... --> markers)
 //   ../../regional-weeks.js (week list the Worker uses to redirect bare URLs to the latest week)
 // See README.md.   Run: node scripts/sg-region/build.mjs
@@ -141,6 +142,67 @@ ${f ? `<div class="gdq-feat">${esc(f.q.text)}<cite>${esc(f.q.author)}, quoted by
 <a class="gdq-more" href="${page}">Every quotation, as spoken, with the transcript link →</a></div>`;
 }
 
+// Names that are Scripture, vague, or not a person: never featured on the dashboard tile (the full page still lists them).
+const BIBLE_NAMES = new Set(["Paul", "the apostle Paul", "Apostle Paul", "Peter", "John", "James", "Jude", "Luke", "Matthew", "Mark", "Moses", "David", "Solomon", "Isaiah", "Jeremiah", "Jesus"]);
+const named = (q) => {
+  const a = (q.author || "").trim();
+  return q.attributed && /^[A-Z]/.test(a) && !/^(One|A|An|The|Some)\s/i.test(a) && !/interviewer|commentator|website|poet/i.test(a) && !BIBLE_NAMES.has(a);
+};
+// Up to n short, named quotations for the tile: one per pulpit first (pulpit order), then more from the same pulpits,
+// always distinct authors. Skips lines that mention their own author (usually remarks about him, not his words).
+function tileQuotes(w, n = 3, max = 120) {
+  const ok = (x) => named(x) && !x.excerpt && x.text.length >= 30 && x.text.length <= max &&
+    !x.text.toLowerCase().includes(x.author.trim().split(/\s+/).pop().toLowerCase());
+  const picks = [];
+  for (const pass of [1, 2]) for (const s of w.sermons) {
+    if (picks.length === n) break;
+    if (pass === 1 && picks.some((p) => p.s === s)) continue;
+    const q = s.external.find((x) => ok(x) && !picks.some((p) => p.q.author === x.author));
+    if (q) picks.push({ s, q });
+  }
+  return picks.sort((a, b) => w.sermons.indexOf(a.s) - w.sermons.indexOf(b.s));
+}
+
+function gdqTile(w) {
+  const page = `${w.region}/gimme-da-quotes/${slugFor(w.date)}/`;
+  const all = w.sermons.flatMap((s) => s.external);
+  const withQ = w.sermons.filter((s) => s.external.length).length;
+  const picks = tileQuotes(w);
+  const quotes = picks.length
+    ? picks.map(({ s, q }) => `<blockquote>${esc(q.text)}<cite>${esc(q.author)} · quoted by ${esc(s.preacher)}, ${esc(s.short || s.church)}</cite></blockquote>`).join("\n  ")
+    : `<div style="font-size:14px;color:#f6d9cf">No named outside quotations this week.</div>`;
+  return `<a class="qtile gdqt" href="${page}">
+  <div><div class="qk">${esc(longDate(w.date))} · beyond Scripture</div><h3>Gimme da quotes!</h3></div>
+  ${quotes}
+  <span class="qgo">All ${all.length} quotations, ${withQ} of ${w.sermons.length} pulpits →</span>
+</a>`;
+}
+
+const WIDE_CSS = `<style>
+.gdqt{gap:10px}
+.gdqt blockquote{font-size:.93rem;line-height:1.36}
+.gdqt blockquote cite{margin-top:4px}
+.qwide{margin-top:16px;flex-direction:row;align-items:center;gap:28px}
+.qwide .qw-l{flex:0 0 36%;display:flex;flex-direction:column;gap:10px}
+.qwide .qw-l h3{margin:0}
+.qwide blockquote{flex:1;font-size:1.2rem}
+@media(max-width:760px){.qwide{flex-direction:column;align-items:stretch}.qwide .qw-l{flex:none}}
+.two>.panel:last-child:nth-child(odd){grid-column:1/-1}
+</style>`;
+
+function hwsiWide(w) {
+  const lines = w.sermons.reduce((m, s) => m + s.lines.length, 0);
+  const feat = w.feature || (() => { const s = w.sermons.find((x) => x.lines.length); return { text: s.lines[0].text, preacher: s.preacher, church: s.church }; })();
+  const fs_ = w.sermons.find((x) => x.church === feat.church && x.preacher === feat.preacher) || w.sermons.find((x) => x.church === feat.church);
+  const where = fs_ ? (fs_.short || `${fs_.church}, ${fs_.city}`) : feat.church;   // name + city
+  return `${WIDE_CSS}<a class="qtile qwide" href="${w.region}/how-we-said-it/${slugFor(w.date)}/">
+  <div class="qw-l"><div class="qk">${esc(longDate(w.date))} · ${lines} lines</div><h3>How We Said It</h3>
+  <div style="font-size:14px;color:#f6d9cf">Read your brothers' best lines from Sunday, from all ${w.sermons.length} pulpits, in their own words.</div>
+  <span class="qgo">Hear each other →</span></div>
+  <blockquote>${esc(feat.text)}<cite>${esc(feat.preacher)} · ${esc(where)}</cite></blockquote>
+</a>`;
+}
+
 function fill(html, name, content, file) {
   const re = new RegExp(`(<!-- region:${name} -->)[\\s\\S]*?(<!-- /region:${name} -->)`);
   if (!re.test(html)) { console.warn(`! ${file}: missing <!-- region:${name} --> markers`); return html; }
@@ -161,8 +223,17 @@ export function build() {
     const dash = path.join(base, slug, "index.html");
     if (fs.existsSync(dash)) {
       let h = fs.readFileSync(dash, "utf8");
-      h = fill(h, "hwsi-tile", tile(w), dash);
-      h = fill(h, "gdq-panel", panel(w), dash);
+      if (h.includes("<!-- region:hwsi-below -->")) {
+        // Layout from 10-4-26 on (dashboards that carry the hwsi-below marker): the top-left grid tile is
+        // "Gimme da quotes!" with the quotes visible; "How We Said It" is a wide tile right below the church grid;
+        // the old Gimme da quotes chart panel is dropped so nothing is duplicated. Older weeks keep their layout.
+        h = fill(h, "hwsi-tile", gdqTile(w), dash);
+        h = fill(h, "hwsi-below", hwsiWide(w), dash);
+        h = fill(h, "gdq-panel", "", dash);
+      } else {
+        h = fill(h, "hwsi-tile", tile(w), dash);
+        h = fill(h, "gdq-panel", panel(w), dash);
+      }
       h = fill(h, "weeknav", weekNav(weeks, i, ""), dash);
       fs.writeFileSync(dash, h);
     } else console.warn(`! no dashboard page yet at ${path.relative(repo, dash)}`);
