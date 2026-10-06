@@ -54,7 +54,8 @@
           "excerpt": false
         }
       ],
-      "short": "Providence · Lenexa"
+      "short": "Providence · Lenexa",
+      "ref": "1 Samuel 8:1-31:13"
     },
     {
       "church": "Cross of Grace Church Chaska",
@@ -109,14 +110,15 @@
           "excerpt": false
         }
       ],
-      "short": "Cross of Grace · Chaska"
+      "short": "Cross of Grace · Chaska",
+      "ref": "Ruth 1:1-5"
     },
     {
       "church": "Cornerstone Community Church",
       "city": "Burnsville",
       "state": "MN",
       "preacher": "Rick Gamache",
-      "title": "The Theological Center (Acts 15:1-35)",
+      "title": "The Theological Center",
       "url": "/SGchurch/CornerstoneBurnsville/sermons/the-theological-center-acts-15-1-35-2026-10-04.html",
       "lines": [
         {
@@ -182,7 +184,8 @@
           "excerpt": false
         }
       ],
-      "short": "Cornerstone · Burnsville"
+      "short": "Cornerstone · Burnsville",
+      "ref": "Acts 15:1-35"
     },
     {
       "church": "Grace Life Church",
@@ -248,14 +251,15 @@
           "excerpt": false
         }
       ],
-      "short": "Grace Life · Hastings"
+      "short": "Grace Life · Hastings",
+      "ref": "Colossians 1:15-20"
     },
     {
       "church": "Emmaus Road Church",
       "city": "Sioux Falls",
       "state": "SD",
       "preacher": "Ryan Chase",
-      "title": "Where to Begin When Your Life Is in Ruins | Ezra 3",
+      "title": "Where to Begin When Your Life Is in Ruins",
       "url": "/SGchurch/EmmausRoadSiouxFalls/sermons/where-to-begin-when-your-life-is-in-ruins-ezra-3-2026-10-04.html",
       "lines": [
         {
@@ -330,14 +334,15 @@
           "excerpt": false
         }
       ],
-      "short": "Emmaus Rd · Sioux Falls"
+      "short": "Emmaus Rd · Sioux Falls",
+      "ref": "Ezra 3"
     },
     {
       "church": "Emmaus Road Church",
       "city": "Bozeman",
       "state": "MT",
       "preacher": "Ben Shields",
-      "title": "Acts 9:1-19 An Unlikely Convert",
+      "title": "An Unlikely Convert",
       "url": "/SGchurch/EmmausRoadBozeman/sermons/acts-9-1-19-an-unlikely-convert-2026-10-04.html",
       "lines": [
         {
@@ -421,7 +426,8 @@
           "excerpt": false
         }
       ],
-      "short": "Emmaus Rd · Bozeman"
+      "short": "Emmaus Rd · Bozeman",
+      "ref": "Acts 9:1-19"
     },
     {
       "church": "Center Church of Star",
@@ -476,14 +482,15 @@
           "excerpt": false
         }
       ],
-      "short": "Center Church · Star"
+      "short": "Center Church · Star",
+      "ref": "Psalm 127:1"
     },
     {
       "church": "Covenant Life Fellowship",
       "city": "Roseburg",
       "state": "OR",
       "preacher": "Dave York",
-      "title": "Introduction | Romans 1:1",
+      "title": "Introduction",
       "url": "/SGchurch/CovenantLifeRoseburg/sermons/introduction-romans-1-1-2026-10-04.html",
       "lines": [
         {
@@ -577,7 +584,8 @@
           "excerpt": false
         }
       ],
-      "short": "Covenant Life · Roseburg"
+      "short": "Covenant Life · Roseburg",
+      "ref": "Romans 1:1"
     },
     {
       "church": "Cross of Grace Church El Paso",
@@ -650,7 +658,8 @@
           "excerpt": false
         }
       ],
-      "short": "Cross of Grace · El Paso"
+      "short": "Cross of Grace · El Paso",
+      "ref": "Romans 1:1-15"
     }
   ]
 }

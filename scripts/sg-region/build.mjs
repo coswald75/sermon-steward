@@ -61,8 +61,9 @@ ${body}
 `;
 }
 
+// Title rule (2026-10-06): s.title never carries scripture; the reference (s.ref, when present) sits on its own line under it.
 const subhead = (s, w, prefix) => `<div class="ph"><div><div class="church">${esc(s.church)} <span class="loc">${esc(s.city)}, ${esc(s.state)}</span></div>
-  <h3>${esc(s.preacher)}</h3></div><a class="sermon" href="${esc(s.url)}">${esc(s.title)} →</a></div>`;
+  <h3>${esc(s.preacher)}</h3></div><a class="sermon" href="${esc(s.url)}">${esc(s.title)} →${s.ref ? `<span class="sref" style="display:block;font-family:var(--sans,Inter,system-ui,sans-serif);font-style:normal;font-size:13px;font-weight:600;color:var(--faint);margin-top:2px">${esc(s.ref)}</span>` : ""}</a></div>`;
 
 export function renderHowWeSaidIt(weeks, i) {
   const w = weeks[i];
