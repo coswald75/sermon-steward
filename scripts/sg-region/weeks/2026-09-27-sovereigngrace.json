@@ -165,60 +165,6 @@
           "as_said": null,
           "anchor": "unit-8",
           "excerpt": false
-        },
-        {
-          "text": "for this is a gracious thing when, mindful of God, one endures sorrow while suffering unjustly. For what credit is it if when you sin and are beaten for it you endure? But if when you do good and suffer for it you endure, this is a gracious thing in the sight of God.",
-          "author": "Apostle Peter",
-          "work": "1 Peter 2:19-20",
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-12",
-          "excerpt": false
-        },
-        {
-          "text": "if the world hates you, know that it has hated me before it hated you. If you were of the world, the world would love you as its own. But because you are not of the world, but I chose you out of the world, therefore the world hates you.",
-          "author": "Jesus",
-          "work": "John 15:18-19",
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-12",
-          "excerpt": false
-        },
-        {
-          "text": "from now on let no one cause me trouble, for I bear on my body the marks of Jesus.",
-          "author": "Apostle Paul",
-          "work": "Galatians 6:17",
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-29",
-          "excerpt": false
-        },
-        {
-          "text": "my persecutions and sufferings that happened to me at Antioch, at Iconium, and at Lystra, which persecutions I endured, yet from them all, the Lord rescued me.",
-          "author": "Apostle Paul",
-          "work": "2 Timothy 3:11",
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-29",
-          "excerpt": false
-        },
-        {
-          "text": "indeed, all who desire to live a godly life in Christ will be persecuted.",
-          "author": "Apostle Paul",
-          "work": "2 Timothy 3:12",
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-38",
-          "excerpt": false
-        },
-        {
-          "text": "Paul would write that down in Romans 1:20 later, right?",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "someone he quoted",
-          "anchor": "unit-25",
-          "excerpt": false
         }
       ],
       "short": "Cornerstone · Burnsville"
@@ -310,15 +256,6 @@
           "attributed": true,
           "as_said": null,
           "anchor": "unit-11",
-          "excerpt": false
-        },
-        {
-          "text": "Seven Generations of the Descendants of Aquila and Thomas Chase",
-          "author": "John Carroll Chase",
-          "work": null,
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-13",
           "excerpt": false
         },
         {
@@ -430,26 +367,7 @@
           "anchor": "unit-13"
         }
       ],
-      "external": [
-        {
-          "text": "in him, meaning Jesus, also you were circumcised with a circumcision made without hands. By putting off the body of flesh by the circumcision of Christ, having been buried with him in baptism, in which you were also raised with him through faith in the powerful working of God who raised him from the dead. And you who were dead in your trespasses and the uncircumcision of your flesh, God, made alive together with him, having forgiven us all our trespasses by canceling the record of debt that stood against us with its legal demands. This he set aside, nailing it to the cross.",
-          "author": "Paul",
-          "work": null,
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-19",
-          "excerpt": false
-        },
-        {
-          "text": "that you may be justified in your words and prevail when you are judged",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "that Psalm was one of David's",
-          "anchor": "unit-2",
-          "excerpt": false
-        }
-      ],
+      "external": [],
       "short": "Center Church · Star"
     },
     {
