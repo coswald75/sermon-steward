@@ -1,0 +1,49 @@
+# Deploy the sermon-steward Worker with wrangler.
+# Self-contained so it is easy to delete if deploy-on-push moves to
+# Cloudflare Workers Builds: remove this file and nothing else depends on it.
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Only run `wrangler whoami` and `wrangler deploy --dry-run` (no publish)"
+        type: boolean
+        default: true
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: 38642edcc9fafe172e2f3ca70013eff0
+      # push events have no inputs; only a manual run can be a dry run.
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Build (if package.json has a build script)
+        run: |
+          if node -e "process.exit(require('./package.json').scripts?.build ? 0 : 1)"; then npm run build; else echo "No build script; skipping."; fi
+      - name: wrangler whoami (dry run)
+        if: env.DRY_RUN == 'true'
+        run: npx --yes wrangler@4 whoami
+      - name: wrangler deploy --dry-run
+        if: env.DRY_RUN == 'true'
+        run: npx --yes wrangler@4 deploy --dry-run --outdir dist-dry-run
+      - name: wrangler deploy
+        if: env.DRY_RUN != 'true'
+        run: npx --yes wrangler@4 deploy
