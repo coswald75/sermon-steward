@@ -1,0 +1,37 @@
+# PR guards. Logic lives in scripts/ci/pr_guards.py (tests: scripts/ci/test_pr_guards.py).
+name: guards
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+
+permissions:
+  contents: read
+
+jobs:
+  guards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Guard unit tests
+        run: python3 -m unittest discover -s scripts/ci -p 'test_*.py' -v
+      - name: Folder-prefix guard
+        env:
+          BRANCH: ${{ github.head_ref }}
+          LABELS: ${{ join(github.event.pull_request.labels.*.name, ',') }}
+        run: >
+          python3 scripts/ci/pr_guards.py folder
+          --base "${{ github.event.pull_request.base.sha }}"
+          --head "${{ github.event.pull_request.head.sha }}"
+          --branch "$BRANCH" --labels "$LABELS"
+      - name: Browse-count guard
+        run: >
+          python3 scripts/ci/pr_guards.py counts
+          --base "${{ github.event.pull_request.base.sha }}"
+          --head "${{ github.event.pull_request.head.sha }}"
