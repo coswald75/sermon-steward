@@ -7,6 +7,7 @@ import {
   injectRobotsMeta,
   isDelistedLegacyPath,
   isDelistedProductPath,
+  isUnlistedPath,
   matchChurchRoute,
   publicChurchPath,
   publicTopicsPath,
@@ -263,4 +264,12 @@ test("unlisted regional pages are served as assets, noindex, and kept out of the
   assert.deepEqual(matchChurchRoute("/SGchurch/ProvidenceLenexa"), { status: 302, location: "/ProvidenceLenexa/sermons/" });
   // Other unknown SGchurch paths still 404.
   assert.deepEqual(matchChurchRoute("/SGchurch/Nowhere"), { status: 404 });
+});
+
+test("SG quotes preview page is not redirected, is unlisted, and stays out of the sitemap", () => {
+  for (const p of ["/SGchurch/SovereignGrace/sg-quotes", "/SGchurch/SovereignGrace/sg-quotes/", "/SGchurch/SovereignGrace/sg-quotes/sg-quotes.json", "/sgchurch/sovereigngrace/sg-quotes/"]) {
+    assert.equal(matchChurchRoute(p), null, p);
+    assert.equal(isUnlistedPath(p), true, p);
+    assert.equal(includeInSitemap(p), false, p);
+  }
 });
