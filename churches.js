@@ -19,6 +19,7 @@
 // again, so a rebuilt sermon index cannot drop the routes or the noindex.
 
 import { REGION_WEEKS } from "./regional-weeks.js";
+import { isCogHiddenPath } from "./scripts/cog-paths.js";
 
 export const SITE_ORIGIN = "https://sermonsteward.com";
 
@@ -359,6 +360,7 @@ export function urlPathForOutputFile(relPosix) {
 
 export function includeInSitemap(urlPath) {
   if (isUnlistedPath(urlPath)) return false;
+  if (isCogHiddenPath(urlPath)) return false;
   if (isDelistedLegacyPath(urlPath)) return false;
   if (isDelistedProductPath(urlPath)) return false;
   if (urlPath === "/admin" || urlPath.startsWith("/admin/")) return false;
