@@ -4,6 +4,7 @@ import { applyChurchPublishing } from "./site-publish.js";
 import { applyPublishFixes } from "./scripts/publish-fixes.js";
 import { applySermonViewToggle } from "./scripts/sermon-view-toggle.js";
 import { renderTopics } from "./scripts/topics.js";
+import { applyCogCleanup } from "./scripts/cog-cleanup.js";
 
 export default function (eleventyConfig) {
   // Drop-in topic files are content, not pages. scripts/topics.js publishes them.
@@ -46,6 +47,8 @@ export default function (eleventyConfig) {
     // Topic HTML is generated here, after sermon HTML is copied, and before
     // the sitemap is written so /SGchurch/<church>/topics/ stays indexable.
     renderTopics(dir.output);
+    // Cross of Grace El Paso: undated duplicates, city, landing count line.
+    applyCogCleanup(dir.output);
     applyChurchPublishing(dir.output);
   });
 
