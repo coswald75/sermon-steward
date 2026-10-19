@@ -225,16 +225,12 @@ export function stripDelistedProductLinks(html) {
 // but they are not the public church site. Everything under /<slug>/
 // except /<slug>/sermons/ is delisted.
 export function isDelistedLegacyPath(pathname, churches = CHURCHES) {
-  const path = normalizeSitePath(pathname);
-
-  for (const church of churches) {
-    const root = `/${church.slug}`;
-    if (path !== root && !path.startsWith(`${root}/`)) continue;
-    if (path === root) return true;
-    const rest = path.slice(root.length);
-    if (rest === "/sermons" || rest.startsWith("/sermons/")) return false;
-    return true;
-  }
+  // 2026-10-19: Chris approved letting Google list every public church page
+  // (landing, sermons, series, topics, doctrine). Nothing under a CHURCHES
+  // folder is delisted any more. Private/unlisted paths are handled by
+  // UNLISTED_ROOTS, DELISTED_PRODUCT_ROOTS, and isCogHiddenPath.
+  void pathname;
+  void churches;
   return false;
 }
 
@@ -273,27 +269,9 @@ export function rewriteLandingHrefs(html, churches = CHURCHES) {
 export function headersDocument(churches = CHURCHES) {
   const blocks = [
     "# Generated from churches.js during the Eleventy build.",
-    "# Legacy church product pages are noindex. /<slug>/sermons/ stays indexable.",
-    "# A repeated header is joined with a comma, so sermons detach the tag",
-    "# instead of setting a second value.",
+    "# Church pages (CHURCHES) are indexable: no X-Robots-Tag rules for them.",
   ];
-  for (const church of churches) {
-    const root = `/${church.slug}`;
-    blocks.push(
-      `${root}`,
-      `  X-Robots-Tag: noindex, follow`,
-      `${root}/`,
-      `  X-Robots-Tag: noindex, follow`,
-      `${root}/*`,
-      `  X-Robots-Tag: noindex, follow`,
-      `${root}/sermons`,
-      `  ! X-Robots-Tag`,
-      `${root}/sermons/`,
-      `  ! X-Robots-Tag`,
-      `${root}/sermons/*`,
-      `  ! X-Robots-Tag`
-    );
-  }
+  void churches;
   blocks.push("# Unlisted pitch pages: reachable by direct URL, never indexed.");
   for (const root of UNLISTED_ROOTS) {
     blocks.push(root, `  X-Robots-Tag: noindex, nofollow`, `${root}/`, `  X-Robots-Tag: noindex, nofollow`, `${root}/*`, `  X-Robots-Tag: noindex, nofollow`);
@@ -317,15 +295,42 @@ export function headersDocument(churches = CHURCHES) {
   return `${blocks.join("\n")}\n`;
 }
 
+export const AI_CRAWLERS = [
+  "GPTBot",
+  "OAI-SearchBot",
+  "ChatGPT-User",
+  "ClaudeBot",
+  "Claude-SearchBot",
+  "Claude-User",
+  "PerplexityBot",
+  "Google-Extended",
+  "Applebot-Extended",
+  "CCBot",
+];
+
+// Paths that stay out of search and AI tools. Everything else is open.
+export const ROBOTS_PRIVATE_PATHS = [...new Set([
+  ...UNLISTED_ROOTS.map((root) => `${root}/`),
+  ...REGION_CHURCH_DIRS.map((dir) => `/SGchurch/${dir}/`),
+  "/admin/",
+  "/pastors/",
+])];
+
 export function robotsTxt() {
+  const disallow = ROBOTS_PRIVATE_PATHS.map((p) => `Disallow: ${p}`).join("\n");
+  const ai = AI_CRAWLERS.map((bot) => `User-agent: ${bot}\nAllow: /\n${disallow}`).join("\n\n");
   return `# Sermon Steward
-# Legacy church landings (everything under a church folder except /sermons/)
-# stay reachable and are marked noindex in the HTML and in _headers.
-# Retired product URLs are the same: reachable, noindex, and absent from the sitemap.
-# Do not Disallow those paths. A crawler has to fetch the page to see noindex.
+# Public pages (home, Guild Hall, church pages and sermons) are open to search
+# engines and AI tools. Unlisted pitch pages, retired product URLs, and
+# private paths are marked noindex in the HTML and in _headers. The general
+# group does not Disallow them: a crawler has to fetch the page to see noindex.
+# See also /llms.txt.
 
 User-agent: *
 Allow: /
+
+# AI crawlers and AI search/answer tools: welcome to read and cite.
+${ai}
 
 Sitemap: ${SITE_ORIGIN}/sitemap.xml
 `;

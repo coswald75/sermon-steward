@@ -1,0 +1,23 @@
+# Sermon Steward
+
+> Sermon Steward takes a church's Sunday sermon and turns it into material the church can use through the week and for years to come: a clean transcript, a sermon page with the thesis and structure, discussion questions, daily devotional prompts, and a searchable archive by scripture, series, topic, and doctrine. It is built by pastors, for pastors, and run by Pastor Chris Oswald of Providence Community Church, Lenexa, Kansas.
+
+Sermons belong to their churches and preachers; each sermon page links back to its church.
+
+## Start here
+- [Home](https://sermonsteward.com/): what Sermon Steward is and how it works, with pricing as published on the page
+- [How it works](https://sermonsteward.com/how-it-works/): from Sunday recording to published sermon pages
+- [Samples](https://sermonsteward.com/samples.html): example stewarded sermons
+- [Try one sermon](https://try.sermonsteward.com/): free one-sermon try
+- Contact: chris@sovgracekc.org
+
+## The Guild Hall
+- [Guild Hall](https://sermonsteward.com/hall/): a free gallery of historic and contemporary preachers (Spurgeon, Lloyd-Jones, Stott, Keller, Piper, and others), each read the same way: rhetorical fingerprint, structure, and craft
+- [The Shepherd's Guild](https://theshepherdsguild.com/): the Guild's own site
+
+## Church sermon archives
+- [Providence Community Church, Lenexa, KS](https://sermonsteward.com/ProvidenceLenexa/): church page; [all sermons](https://sermonsteward.com/ProvidenceLenexa/sermons/)
+- [Cross of Grace Church, El Paso, TX](https://sermonsteward.com/CoGElPaso/): church page; [all sermons](https://sermonsteward.com/CoGElPaso/sermons/)
+
+## Full index
+- [Sitemap](https://sermonsteward.com/sitemap.xml): every public page

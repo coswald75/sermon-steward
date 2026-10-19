@@ -87,16 +87,16 @@ test("topic pages are served at the public church path", () => {
   assert.equal(isDelistedLegacyPath("/SGchurch/ProvidenceLenexa/topics/suffering/"), false);
   assert.equal(includeInSitemap("/SGchurch/ProvidenceLenexa/topics/"), true);
   assert.equal(includeInSitemap("/SGchurch/ProvidenceLenexa/topics/suffering/"), true);
-  assert.equal(isDelistedLegacyPath("/ProvidenceLenexa/topics/suffering/"), true);
+  assert.equal(isDelistedLegacyPath("/ProvidenceLenexa/topics/suffering/"), false);
 });
 
-test("legacy church pages are delisted and sermon pages are not", () => {
-  assert.equal(isDelistedLegacyPath("/ProvidenceLenexa"), true);
-  assert.equal(isDelistedLegacyPath("/ProvidenceLenexa/"), true);
-  assert.equal(isDelistedLegacyPath("/ProvidenceLenexa/index.html"), true);
-  assert.equal(isDelistedLegacyPath("/ProvidenceLenexa/doctrine/bibliology/"), true);
-  assert.equal(isDelistedLegacyPath("/ProvidenceLenexa/topics/anxiety/index.html"), true);
-  assert.equal(isDelistedLegacyPath("/CoGElPaso/series/revelation-of-jesus-christ/"), true);
+test("all church pages are indexable (2026-10-19)", () => {
+  assert.equal(isDelistedLegacyPath("/ProvidenceLenexa"), false);
+  assert.equal(isDelistedLegacyPath("/ProvidenceLenexa/"), false);
+  assert.equal(isDelistedLegacyPath("/ProvidenceLenexa/index.html"), false);
+  assert.equal(isDelistedLegacyPath("/ProvidenceLenexa/doctrine/bibliology/"), false);
+  assert.equal(isDelistedLegacyPath("/ProvidenceLenexa/topics/anxiety/index.html"), false);
+  assert.equal(isDelistedLegacyPath("/CoGElPaso/series/revelation-of-jesus-christ/"), false);
   assert.equal(isDelistedLegacyPath("/ProvidenceLenexa/sermons"), false);
   assert.equal(isDelistedLegacyPath("/ProvidenceLenexa/sermons/"), false);
   assert.equal(isDelistedLegacyPath("/ProvidenceLenexa/sermons/index.html"), false);
@@ -106,12 +106,12 @@ test("legacy church pages are delisted and sermon pages are not", () => {
   assert.equal(isDelistedLegacyPath("/hall/"), false);
 });
 
-test("sitemap keeps sermon archives and drops landings, admin, and pastors", () => {
+test("sitemap keeps church pages and drops admin and pastors", () => {
   assert.equal(includeInSitemap("/ProvidenceLenexa/sermons/"), true);
   assert.equal(includeInSitemap("/CoGElPaso/sermons/who-am-i.html"), true);
   assert.equal(includeInSitemap("/"), true);
-  assert.equal(includeInSitemap("/ProvidenceLenexa/"), false);
-  assert.equal(includeInSitemap("/ProvidenceLenexa/doctrine/bibliology/"), false);
+  assert.equal(includeInSitemap("/ProvidenceLenexa/"), true);
+  assert.equal(includeInSitemap("/ProvidenceLenexa/doctrine/bibliology/"), true);
   assert.equal(includeInSitemap("/admin/"), false);
   assert.equal(includeInSitemap("/pastors/"), false);
 });
@@ -170,7 +170,8 @@ test("product pages get an exact noindex meta and header", () => {
   assert.match(headers, /\/prep\/\n {2}X-Robots-Tag: noindex\n/);
   assert.match(headers, /\/prep-king\/\n {2}X-Robots-Tag: noindex\n/);
   assert.match(headers, /\/coach\/\n {2}X-Robots-Tag: noindex\n/);
-  assert.match(headers, /\/ProvidenceLenexa\n {2}X-Robots-Tag: noindex, follow\n/);
+  assert.doesNotMatch(headers, /\/ProvidenceLenexa\n {2}X-Robots-Tag/);
+  assert.doesNotMatch(headers, /\/CoGElPaso\/\*\n {2}X-Robots-Tag/);
 });
 
 test("links to delisted products are removed and other links stay", () => {
@@ -272,4 +273,25 @@ test("SG quotes preview page is not redirected, is unlisted, and stays out of th
     assert.equal(isUnlistedPath(p), true, p);
     assert.equal(includeInSitemap(p), false, p);
   }
+});
+
+test("robots.txt welcomes AI crawlers but keeps private paths out", async () => {
+  const { robotsTxt } = await import("./churches.js");
+  const r = robotsTxt();
+  for (const bot of ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User", "PerplexityBot", "Google-Extended", "Applebot-Extended", "CCBot"]) {
+    assert.match(r, new RegExp(`User-agent: ${bot}\nAllow: /\n`));
+  }
+  assert.match(r, /Disallow: \/SGchurch\/SovereignGrace\//);
+  assert.match(r, /Disallow: \/SGchurch\/MidwestNorthwest\//);
+  assert.doesNotMatch(r, /Disallow: \/CoGElPaso/);
+  assert.doesNotMatch(r, /Disallow: \/ProvidenceLenexa/);
+  assert.match(r, /Sitemap: https:\/\/sermonsteward.com\/sitemap.xml/);
+});
+
+test("church landings drop static noindex; CoG hidden duplicates keep it", async () => {
+  const { isPublicChurchPath, stripNoindexMeta } = await import("./site-publish.js");
+  assert.equal(isPublicChurchPath("/CoGElPaso/"), true);
+  assert.equal(isPublicChurchPath("/ProvidenceLenexa/topics/envy/"), true);
+  assert.equal(isPublicChurchPath("/hall/"), false);
+  assert.equal(stripNoindexMeta('<head>\n<meta name="robots" content="noindex, follow">\n<title>x</title>'), "<head>\n<title>x</title>");
 });

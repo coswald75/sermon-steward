@@ -13,6 +13,7 @@ export default function (eleventyConfig) {
   // Root and /product share one landing: product.html is also the homepage.
   eleventyConfig.addPassthroughCopy({ "product.html": "index.html" });
   eleventyConfig.addPassthroughCopy("hall");
+  eleventyConfig.addPassthroughCopy("llms.txt");
   // Church folders follow churches.js. A slug with no folder yet (the
   // next non-SG church, before its sermons exist) is skipped.
   for (const church of CHURCHES) {

@@ -4,7 +4,9 @@
 // every build so a sermon deploy cannot relist the legacy church pages.
 import fs from "node:fs";
 import path from "node:path";
+import { isCogHiddenPath } from "./scripts/cog-paths.js";
 import {
+  CHURCHES,
   headersDocument,
   includeInSitemap,
   injectRobotsMeta,
@@ -58,6 +60,9 @@ export function applyChurchPublishing(outputDir) {
     if (delistedProduct) html = injectRobotsMeta(html, "noindex");
     const unlisted = isUnlistedPath(urlPath) || isUnlistedPath(`/${rel}`);
     if (unlisted) html = injectRobotsMeta(html, "noindex, nofollow");
+    if (!delistedChurch && !delistedProduct && !unlisted && isPublicChurchPath(urlPath)) {
+      html = stripNoindexMeta(html);
+    }
     if (html !== original) fs.writeFileSync(file, html);
     if (!delistedChurch && !delistedProduct && !unlisted && includeInSitemap(urlPath)) urls.push(urlPath);
   }
@@ -77,4 +82,18 @@ function walkHtml(dir) {
     else if (entry.isFile() && entry.name.endsWith(".html")) found.push(full);
   }
   return found;
+}
+
+// Public church pages (2026-10-19): drop any noindex robots meta left in the
+// static HTML (older topic drop-ins carry one). Cross of Grace undated
+// duplicates (isCogHiddenPath) keep theirs.
+export function isPublicChurchPath(urlPath) {
+  if (isCogHiddenPath(urlPath)) return false;
+  return CHURCHES.some(
+    (c) => urlPath === `/${c.slug}` || urlPath.startsWith(`/${c.slug}/`)
+  );
+}
+
+export function stripNoindexMeta(html) {
+  return html.replace(/[ \t]*<meta\s[^>]*name=["']robots["'][^>]*noindex[^>]*>\n?/gi, "");
 }
