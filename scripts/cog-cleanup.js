@@ -26,6 +26,14 @@ export function cogRedirectsDocument() {
   return lines.join("\n") + "\n";
 }
 
+// Remove every line of the El Paso redirects block from an existing _redirects.
+export function withoutCogRedirects(text) {
+  const ours = new Set(cogRedirectsDocument().split("\n").filter(Boolean));
+  const kept = text.split("\n").filter((line) => !ours.has(line));
+  const out = kept.join("\n").replace(/\n+$/, "");
+  return out ? out + "\n" : "";
+}
+
 const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 // Drop listing <li> entries that link to a hidden undated page.
@@ -86,5 +94,8 @@ export function applyCogCleanup(outputDir) {
   }
   const redirectsFile = path.join(outputDir, "_redirects");
   const existing = fs.existsSync(redirectsFile) ? fs.readFileSync(redirectsFile, "utf8") : "";
-  fs.writeFileSync(redirectsFile, existing + cogRedirectsDocument());
+  // _site persists between builds, so a previous run already appended this
+  // block. Drop earlier copies first; duplicate rules fail wrangler deploy
+  // (code 100324 "Duplicate rule for path").
+  fs.writeFileSync(redirectsFile, withoutCogRedirects(existing) + cogRedirectsDocument());
 }
