@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { fixCogLanding, stripHiddenListItems, cogRedirectsDocument, isCogHiddenPath } from "./cog-cleanup.js";
+import { fixCogLanding, stripHiddenListItems, cogRedirectsDocument, withoutCogRedirects, isCogHiddenPath } from "./cog-cleanup.js";
 import { includeInSitemap } from "../churches.js";
 
 test("landing shows the city and drops the Browse line", () => {
@@ -22,4 +22,12 @@ test("undated duplicates redirect and leave listings and the sitemap", () => {
   assert.equal(isCogHiddenPath("/CoGElPaso/sermons/carry-the-fire-week-4"), true);
   assert.equal(includeInSitemap("/CoGElPaso/sermons/forgiven-much"), false);
   assert.equal(includeInSitemap("/CoGElPaso/sermons/forgiven-much-2021-08-29"), true);
+});
+
+test("re-running the build does not duplicate the El Paso redirect rules", () => {
+  const other = "/old /new 301\n";
+  const once = other + cogRedirectsDocument();
+  const again = withoutCogRedirects(once + cogRedirectsDocument() + cogRedirectsDocument()) + cogRedirectsDocument();
+  assert.equal(again, once);
+  assert.equal(withoutCogRedirects(""), "");
 });
