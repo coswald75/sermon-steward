@@ -128,6 +128,15 @@
   .charter-list li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--accent); font-weight: 700; font-size: 16px; }
   .charter-cta { display: block; width: 100%; text-align: center; padding: 16px 24px; font-size: 16px; margin-bottom: 0; justify-content: center; }
 
+  .charter-addon { border-top: 1px solid var(--rule); margin-top: 32px; padding-top: 28px; text-align: left; }
+  .charter-addon h3 { font-size: 1.05rem; font-weight: 700; margin: 0 0 8px; letter-spacing: -0.01em; }
+  .charter-addon p { font-size: 15px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 18px; }
+  .charter-addon .btn { display: block; width: 100%; text-align: center; justify-content: center; }
+  .charter-note { font-size: 14px; color: var(--ink-faint); margin: 14px 0 0; text-align: center; }
+  .hero .sample-line { font-size: 15px; color: var(--ink-soft); margin: 0; }
+  .test-mode-banner { background: #1a1a1a; color: #fff; text-align: center; font-size: 14px; line-height: 1.4; padding: 10px 16px; border-bottom: 3px solid var(--accent); }
+  .test-mode-banner strong { background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 4px; margin-right: 6px; letter-spacing: 0.04em; }
+
   /* ───── CTA band ───── */
   .cta-band { background: var(--ink); color: #fff; padding: 88px 28px; text-align: center; }
   .cta-band h2 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.1; margin: 0 0 16px; color: #fff; letter-spacing: -0.025em; }
@@ -181,6 +190,7 @@
 </style>
 </head>
 <body>
+<!--STRIPE_TEST_BANNER-->
 
 <header class="site-header">
   <div class="site-header-inner">
@@ -203,9 +213,10 @@
   <h1>One Sermon Can Seed a Mighty <span class="accent">Harvest</span></h1>
   <p class="deck">We take Sunday's sermon and turn it into many things your church can use through the week and for years to come.</p>
   <div class="cta-row">
-    <a class="btn btn-primary" href="https://try.sermonsteward.com">Try one sermon</a>
+    <a class="btn btn-primary" href="{{STRIPE_HOSTING_URL}}">Start for $30/month</a>
     <a class="btn btn-secondary" href="/SGchurch/ProvidenceLenexa">Show me the sermons <span class="arrow">→</span></a>
   </div>
+  <p class="sample-line">Want to see it first? <a href="https://try.sermonsteward.com">Try one sermon</a> or <a href="mailto:chris@sovgracekc.org">talk to us</a>.</p>
 </section>
 
 <div class="stat-band">
@@ -314,7 +325,13 @@
           <li>Weekly anatomy report</li>
           <li>Works with your existing audio host</li>
         </ul>
-        <a class="btn btn-primary charter-cta" href="https://try.sermonsteward.com">Try one sermon</a>
+        <a class="btn btn-primary charter-cta" href="{{STRIPE_HOSTING_URL}}">Start for $30/month</a>
+        <div class="charter-addon" id="archive">
+          <h3>Add a year of past sermons</h3>
+          <p>If you want to add a year's worth of sermons to your archive, we can do it. We run an ingest of 52 sermons for each year. It is $100 per year of sermons, paid once. You choose how many years (1 to 10) on the payment page.</p>
+          <a class="btn btn-secondary" href="{{STRIPE_ARCHIVE_URL}}">Add a year of past sermons ($100 per year)</a>
+        </div>
+        <p class="charter-note">Payment is handled on Stripe's page. Questions first? <a href="mailto:chris@sovgracekc.org">Talk to us</a>.</p>
       </div>
     </div>
   </div>

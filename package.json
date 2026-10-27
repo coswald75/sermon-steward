@@ -3,9 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "eleventy",
-    "dev": "eleventy --serve",
-    "test": "node --test churches.test.js scripts/publish-fixes.test.js scripts/topics.test.js scripts/sermon-view-toggle.test.js scripts/cog-cleanup.test.js",
+    "build": "node scripts/stripe-links.js && eleventy",
+    "build:test": "ALLOW_STRIPE_TEST=1 eleventy",
+    "dev": "ALLOW_STRIPE_TEST=1 eleventy --serve",
+    "test": "node --test churches.test.js scripts/publish-fixes.test.js scripts/topics.test.js scripts/sermon-view-toggle.test.js scripts/cog-cleanup.test.js scripts/stripe-links.test.js",
     "deploy:prep": "eleventy && npx wrangler pages deploy _site/prep --project-name prepking"
   },
   "devDependencies": {

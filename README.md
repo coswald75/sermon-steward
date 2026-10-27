@@ -6,7 +6,7 @@ Static HTML, deployed as a Cloudflare Worker (`wrangler.jsonc` serves `_site/`).
 
 ## Pages
 
-- `/` and `/product` (`product.html`) — product landing. Eleventy also copies `product.html` to `index.html`, so the site root and `/product` serve the same page. The price card is: Guildhall — free. Sermon Steward — $30/month. Past-sermon ingest $100 per year of sermons. First month free, cancel anytime, no contract. Sermon Steward is the only product for sale. `/prep/`, `/prep-king/`, `/prepking/`, and `/coach/` stay on disk, are marked noindex, and are left out of the sitemap. Homepage calls to action go to [try.sermonsteward.com](https://try.sermonsteward.com) or `mailto:chris@sovgracekc.org`.
+- `/` and `/product` (`product.html`) — product landing. Eleventy also copies `product.html` to `index.html`, so the site root and `/product` serve the same page. The price card is: Guildhall — free. Sermon Steward — $30/month. Past-sermon ingest $100 per year of sermons. First month free, cancel anytime, no contract. Sermon Steward is the only product for sale. `/prep/`, `/prep-king/`, `/prepking/`, and `/coach/` stay on disk, are marked noindex, and are left out of the sitemap. The main homepage buttons are Stripe Payment Links (see Stripe Payment Links below). The sample path stays: [try.sermonsteward.com](https://try.sermonsteward.com) or `mailto:chris@sovgracekc.org`.
 - `/hosting/` (`_src/hosting.njk`) — sermon-hosting pitch (an earlier homepage), using the same price card as the homepage
 - Door art in `_src/img/`, all 2304×1296. `door-hero.png`, `door-empty.png`, `door-open.png`, and `door-open-cast.png` stay in the folder. The PNGs are large; WebP can wait.
 - `samples.html` — gallery of customer samples and famous-preacher showcases
@@ -31,6 +31,20 @@ Topic pages are the exception. They are real, indexable pages at `/SGchurch/<Chu
 ## Deployment
 
 Push to `main` builds with Eleventy and deploys the Cloudflare Worker (`wrangler.jsonc`, assets in `_site/`). The sermon ingest also runs that build and `wrangler deploy` after it commits new sermon HTML. There is no GitHub Actions workflow in this repo.
+
+## Stripe Payment Links (home page)
+
+The two payment buttons on `/` read their URLs from one file, `stripe-links.json`:
+
+- `hosting` — Sermon Steward, $30/month
+- `archive` — past-sermon ingest, $100 per year of sermons (the buyer picks 1 to 10 in Stripe's checkout)
+
+`product.html` holds the placeholders `{{STRIPE_HOSTING_URL}}` and `{{STRIPE_ARCHIVE_URL}}`; `scripts/stripe-links.js` fills them in `_site/index.html` and `_site/product.html` on every build.
+
+**Test mode safeguard.** The links in the file today are Stripe TEST links (they contain `/test_`). While any link contains `/test_`, `npm run build` and `eleventy` stop with an error unless `ALLOW_STRIPE_TEST=1` is set, so test links cannot be deployed by accident (the deploy workflow does not set it). With the variable set, the page shows a TEST MODE banner.
+
+- Preview with test cards (local only): `npm install`, then `npm run dev` and open the address it prints. Pay with card `4242 4242 4242 4242`, any future expiry, any CVC.
+- Go live: replace both values in `stripe-links.json` with the live Payment Links (no `test_` in them). Nothing else changes.
 
 ## TODO (v1 post-launch)
 
