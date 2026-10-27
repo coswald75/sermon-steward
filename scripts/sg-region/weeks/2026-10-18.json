@@ -42,7 +42,6 @@
           "anchor": "unit-31"
         }
       ],
-      "short": "Providence · Lenexa",
       "external": [
         {
           "text": "the sins of man, the wickedness of our race, the crimes of nations, the iniquities of kings, the cruelties of wars, the terrific scourge of pestilence, all these things are in some mysterious way working the will of God. And then he says, I cannot explain this.",
@@ -71,7 +70,8 @@
           "anchor": "unit-35",
           "excerpt": false
         }
-      ]
+      ],
+      "short": "Providence · Lenexa"
     },
     {
       "church": "Cross of Grace Church Chaska",
@@ -107,7 +107,6 @@
           "anchor": "unit-18"
         }
       ],
-      "short": "Cross of Grace · Chaska",
       "external": [
         {
           "text": "Providence is nothing more than goodness in action.",
@@ -181,7 +180,8 @@
           "anchor": "unit-10",
           "excerpt": false
         }
-      ]
+      ],
+      "short": "Cross of Grace · Chaska"
     },
     {
       "church": "Cornerstone Community Church",
@@ -213,7 +213,6 @@
           "anchor": "unit-15"
         }
       ],
-      "short": "Cornerstone · Burnsville",
       "external": [
         {
           "text": "had any other condition been better for you than the one in which you are, divine love would have put you there",
@@ -260,7 +259,8 @@
           "anchor": "unit-34",
           "excerpt": false
         }
-      ]
+      ],
+      "short": "Cornerstone · Burnsville"
     },
     {
       "church": "Grace Life Church",
@@ -288,7 +288,6 @@
           "anchor": "unit-13"
         }
       ],
-      "short": "Grace Life · Hastings",
       "external": [
         {
           "text": "No word in my vocabulary expressed deeper hatred than the word interference.",
@@ -362,7 +361,51 @@
           "anchor": "unit-14",
           "excerpt": false
         }
-      ]
+      ],
+      "short": "Grace Life · Hastings"
+    },
+    {
+      "church": "Emmaus Road Church",
+      "city": "Sioux Falls",
+      "state": "SD",
+      "preacher": "Ryan Chase",
+      "title": "The Parable of the Great Banquet",
+      "ref": "Luke 14:12-24",
+      "url": "/SGchurch/EmmausRoadSiouxFalls/sermons/the-parable-of-the-great-banquet-luke-14-12-24-2026-10-18.html",
+      "lines": [
+        {
+          "text": "Do you remember when you were in that line? Do you remember when you were staggering toward your own death, stumbling to the slaughter? We had no way to escape. We were doomed until Jesus tapped us on the shoulder and took our place in that line.",
+          "anchor": "unit-28"
+        },
+        {
+          "text": "This is the heart of God. This is so beautiful. This is the heart of Christ. He does not desire that anyone would perish. He desires to bless. He desires to forgive. He desires to save. He desires that his house may be filled.",
+          "anchor": "unit-27"
+        },
+        {
+          "text": "God actually, and surprisingly, celebrates when people discover and receive his mercy. Now, throughout the book of Luke, Jesus is forming a new Israel. He's forming a new family, a new kingdom community, and every kind of person, including the Pharisees, is joyfully invited to join this family.",
+          "anchor": "unit-4"
+        },
+        {
+          "text": "Jesus is saying, don't just do things that result in you getting repaid here. Do things that result in you getting repaid in heaven. God will bless you when man cannot.",
+          "anchor": "unit-7"
+        },
+        {
+          "text": "There is still room for people to be forgiven of their sins, There is still room for men and women to come to know Christ. There is still room for the lost and the dying. There is still room for the condemned and guilty.",
+          "anchor": "unit-26"
+        }
+      ],
+      "external": [
+        {
+          "text": "there are some things that pour out of God more naturally than others. God is unswervingly just. But what is his disposition? What is he on the edge of his seat eager to do? If you catch me off guard, what will leap out of me before I have time to regain composure will likely be grouchiness. If you catch God off guard, and brothers and sisters, hear this, let this sink into your soul. If you catch God off guard, what leaps out most freely is blessing, the impulse to do good, The desire to sweep us up, to swallow us up in joy. That is the heart of God.",
+          "author": "Dane Ortlund",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-15",
+          "excerpt": false
+        }
+      ],
+      "short": "Emmaus Rd · Sioux Falls"
     },
     {
       "church": "Emmaus Road Church",
@@ -398,7 +441,6 @@
           "anchor": "unit-31"
         }
       ],
-      "short": "Emmaus Rd · Bozeman",
       "external": [
         {
           "text": "it was not merely given to the apostles for their ministry, It was given to the church for its ministry as long as this age lasts",
@@ -436,7 +478,8 @@
           "anchor": "unit-36",
           "excerpt": false
         }
-      ]
+      ],
+      "short": "Emmaus Rd · Bozeman"
     },
     {
       "church": "Center Church of Star",
@@ -472,7 +515,6 @@
           "anchor": "unit-22"
         }
       ],
-      "short": "Center Church · Star",
       "external": [
         {
           "text": "The final apologetic for the reality of Jesus being sent by God is the observable love of true Christians for true Christians.",
@@ -501,7 +543,8 @@
           "anchor": "unit-40",
           "excerpt": false
         }
-      ]
+      ],
+      "short": "Center Church · Star"
     },
     {
       "church": "Covenant Life Fellowship",
@@ -521,7 +564,6 @@
           "anchor": "unit-20"
         }
       ],
-      "short": "Covenant Life · Roseburg",
       "external": [
         {
           "text": "The only person who dares wake up a king at 3 AM for a glass of water is a child. We have that kind of access?",
@@ -541,7 +583,8 @@
           "anchor": "unit-41",
           "excerpt": false
         }
-      ]
+      ],
+      "short": "Covenant Life · Roseburg"
     }
   ]
 }
