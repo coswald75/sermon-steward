@@ -5,6 +5,7 @@ import { applyPublishFixes } from "./scripts/publish-fixes.js";
 import { applySermonViewToggle } from "./scripts/sermon-view-toggle.js";
 import { renderTopics } from "./scripts/topics.js";
 import { applyCogCleanup } from "./scripts/cog-cleanup.js";
+import { applyStripeLinks } from "./scripts/stripe-links.js";
 
 export default function (eleventyConfig) {
   // Drop-in topic files are content, not pages. scripts/topics.js publishes them.
@@ -51,6 +52,9 @@ export default function (eleventyConfig) {
     // Cross of Grace El Paso: undated duplicates, city, landing count line.
     applyCogCleanup(dir.output);
     applyChurchPublishing(dir.output);
+    // Home page Stripe Payment Links (stripe-links.json). Stops the build if a
+    // test link is present and ALLOW_STRIPE_TEST=1 is not set.
+    applyStripeLinks(dir.output);
   });
 
   return {

@@ -1,0 +1,5 @@
+{
+  "_readme": "The only place the Stripe Payment Link URLs live (live mode). The build refuses Stripe test links (any URL containing /test_); see scripts/stripe-links.js.",
+  "hosting": "https://buy.stripe.com/fZubIT9iCaar8s9eZX24000",
+  "archive": "https://buy.stripe.com/9B64grdyS6Yf8s919724001"
+}
