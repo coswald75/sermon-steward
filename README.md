@@ -41,10 +41,7 @@ The two payment buttons on `/` read their URLs from one file, `stripe-links.json
 
 `product.html` holds the placeholders `{{STRIPE_HOSTING_URL}}` and `{{STRIPE_ARCHIVE_URL}}`; `scripts/stripe-links.js` fills them in `_site/index.html` and `_site/product.html` on every build.
 
-**Test mode safeguard.** The links in the file today are Stripe TEST links (they contain `/test_`). While any link contains `/test_`, `npm run build` and `eleventy` stop with an error unless `ALLOW_STRIPE_TEST=1` is set, so test links cannot be deployed by accident (the deploy workflow does not set it). With the variable set, the page shows a TEST MODE banner.
-
-- Preview with test cards (local only): `npm install`, then `npm run dev` and open the address it prints. Pay with card `4242 4242 4242 4242`, any future expiry, any CVC.
-- Go live: replace both values in `stripe-links.json` with the live Payment Links (no `test_` in them). Nothing else changes.
+**Safeguard.** The links are live Stripe Payment Links. If a Stripe test link (containing `/test_`) is ever put in the file, `npm run build` and `eleventy` stop with an error, so test links cannot be deployed. The hosting link includes a 30-day free trial (card collected up front, $30/month after day 30), matching "First month free" on the price card.
 
 ## TODO (v1 post-launch)
 
