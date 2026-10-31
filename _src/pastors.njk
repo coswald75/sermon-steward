@@ -231,14 +231,14 @@ title: Pastors — Sermon Steward
 
   <div class="pastor-grid">
     {% for p in pastors.preachers %}
-    {% set mcpUrl = pastors.mcp_base_url + "/p/" + p.slug %}
+    {% set mcpUrl = pastors.mcp_base_url + "/p/" + p.slug + "/YOUR-PRIVATE-KEY" %}
     <article class="pastor-card">
       <h2 class="card-name">{{ p.church }}</h2>
       <p class="card-location">{{ p.location }}</p>
 
       <!-- ─── CONNECTOR URL ─── -->
       <div class="card-section">
-        <div class="section-label">Connector URL</div>
+        <div class="section-label">Connector URL (private)</div>
         <div class="url-row">
           <code class="url-display">{{ mcpUrl }}</code>
           <button
@@ -250,8 +250,12 @@ title: Pastors — Sermon Steward
           >Copy URL</button>
         </div>
         <p class="url-hint">
-          Public — no token, no auth. Same URL works in every supported
-          LLM client. Pick yours below for setup steps.
+          Private — each church has its own long, unguessable connector link,
+          sent to the pastor by email. Use the link from that email (the
+          address above only shows its shape). Older links without a key no
+          longer work: remove the old connector and add the new link. Keep
+          the link private; it grants access to your church's whole sermon
+          corpus. Same link works in every supported LLM client.
         </p>
       </div>
 
@@ -276,8 +280,8 @@ title: Pastors — Sermon Steward
             <ol class="steps-list">
               <li>Open Cowork / Claude Desktop.</li>
               <li><strong>Customize → Connectors</strong> → click <code>+</code> or <strong>Add custom connector</strong>.</li>
-              <li>Paste URL above · name it <code>{{ p.slug }}</code> · save.</li>
-              <li>No token / auth needed.</li>
+              <li>Paste your private link from the email · name it <code>{{ p.slug }}</code> · save.</li>
+              <li>No separate sign-in — the key is part of the link.</li>
             </ol>
           </div>
 
@@ -295,7 +299,7 @@ title: Pastors — Sermon Steward
               to edit your <code>claude_desktop_config.json</code>,
               then tells you to restart.
             </p>
-            <script type="text/plain" id="prompt-{{ p.slug }}">You are helping me add the {{ p.church }} Sermon Steward connector to this machine. Do not ask clarifying questions. Just do the steps below, report success, and stop.
+            <script type="text/plain" id="prompt-{{ p.slug }}">You are helping me add the {{ p.church }} Sermon Steward connector to this machine. Before starting, replace YOUR-PRIVATE-KEY in the URL below with the full private link I received by email (I will paste it here if needed). Do not ask other clarifying questions. Just do the steps below, report success, and stop.
 
 # Steps
 
@@ -371,7 +375,7 @@ If you can't read or write the config file because of permissions, tell me exact
                 <li><strong>Name:</strong> <code>{{ p.church_short }} Sermons</code></li>
                 <li><strong>Description:</strong> <em>Search the {{ p.church_short }} sermon archive by topic, scripture, or theme.</em> (optional)</li>
                 <li><strong>Connection:</strong> leave as <strong>Server URL</strong>.</li>
-                <li><strong>Server URL:</strong> paste the URL above.</li>
+                <li><strong>Server URL:</strong> paste your private link from the email.</li>
                 <li><strong>Authentication:</strong> change to <strong>No Auth</strong>.</li>
               </ul>
             </li>
@@ -390,7 +394,7 @@ If you can't read or write the config file because of permissions, tell me exact
           <ol class="steps-list">
             <li>Go to <a href="https://grok.com/connectors" target="_blank" rel="noopener"><strong>grok.com/connectors</strong></a>.</li>
             <li>Click <strong>New Connector</strong> → select <strong>Custom</strong>.</li>
-            <li>Paste the URL above as the MCP server URL.</li>
+            <li>Paste your private link from the email as the MCP server URL.</li>
             <li>No authentication required.</li>
             <li>Save. The connector appears in your Grok connectors list.</li>
           </ol>
@@ -402,7 +406,6 @@ If you can't read or write the config file because of permissions, tell me exact
 
       </div>
 
-      <a class="raw-link" href="{{ mcpUrl }}" target="_blank" rel="noopener">View raw endpoint ↗</a>
     </article>
     {% endfor %}
   </div>
