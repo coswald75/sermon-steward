@@ -1,0 +1,460 @@
+{
+  "date": "2026-11-01",
+  "region": "/SGchurch/MidwestNorthwest",
+  "region_name": "Sovereign Grace Midwest/Northwest",
+  "feature": {
+    "text": "It's only God's Word that matters. It's only God's Word that's powerful. It's only God's Word that saves.",
+    "preacher": "Rick Gamache",
+    "church": "Cornerstone Community Church"
+  },
+  "sermons": [
+    {
+      "church": "Providence Community Church",
+      "city": "Lenexa",
+      "state": "KS",
+      "preacher": "Chris Oswald",
+      "title": "God Sees",
+      "ref": "Isaiah 1:1-20",
+      "url": "/ProvidenceLenexa/sermons/god-sees-2026-11-01.html",
+      "lines": [
+        {
+          "text": "God made you to act as his image by representing him back to himself and to the universe. God made you to be his image.",
+          "anchor": "unit-11"
+        },
+        {
+          "text": "To see things the way that God sees them is to see them as they actually are.",
+          "anchor": "unit-3"
+        },
+        {
+          "text": "Sin breaks your purpose. Sin violates your purpose. Sin turns your purpose upside down.",
+          "anchor": "unit-10"
+        },
+        {
+          "text": "Repentance is a spiritual medicine made up of six special ingredients. The sight of sin, sorrow for sin, confession of sin, shame for sin, hatred for sin, and turning from sin.",
+          "anchor": "unit-21"
+        }
+      ],
+      "external": [
+        {
+          "text": "An infinite mind does not judge by veils and shadows. It judges by what is true.",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-3",
+          "excerpt": false
+        },
+        {
+          "text": "Repentance is a spiritual medicine made up of six special ingredients. The sight of sin, sorrow for sin, confession of sin, shame for sin, hatred for sin, and turning from sin.",
+          "author": "Thomas Watson",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-21",
+          "excerpt": false
+        },
+        {
+          "text": "Many that will readily part with their sacrifices will not be persuaded to part with their sins.",
+          "author": "Matthew Henry",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-22",
+          "excerpt": false
+        },
+        {
+          "text": "empowering what he commands",
+          "author": "Augustine",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-34",
+          "excerpt": false
+        },
+        {
+          "text": "Create in me a clean heart, O Lord. Renew in me a steadfast spirit. Search me and know me, O Lord, and see if there is any offensive way in me.",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-37",
+          "excerpt": false
+        }
+      ],
+      "short": "Providence · Lenexa"
+    },
+    {
+      "church": "Cross of Grace Church Chaska",
+      "city": "Chaska",
+      "state": "MN",
+      "preacher": "Dan Birkholz",
+      "title": "Seaking Rest",
+      "ref": "Ruth 3",
+      "url": "/SGchurch/CrossOfGraceChaska/sermons/seaking-rest-ruth-3-2026-11-01.html",
+      "lines": [
+        {
+          "text": "Church, let it be known there is a man, there is a God-man who has not ceased working for us until the matters of our lives are settled, till he has brought us safely home to a final place of rest.",
+          "anchor": "unit-45"
+        },
+        {
+          "text": "If God brings us into a wilderness, there's always a promised land that he is going to bring about. He's always there to ground our feet.",
+          "anchor": "unit-7"
+        },
+        {
+          "text": "God may suspend you in circumstances of not knowing, but he'll never call you to a posture of not doing. That is to say, uncertainty doesn't excuse inactivity.",
+          "anchor": "unit-25"
+        },
+        {
+          "text": "It is simply to continue to recognize that God rewards those who by faith diligently seek him. He loves when we act by faith.",
+          "anchor": "unit-3"
+        },
+        {
+          "text": "He is jealous to be our rest, we could say, even when great questions and hard times abound.",
+          "anchor": "unit-9"
+        },
+        {
+          "text": "To say it simply, worship your way to a place of rest in Christ. Pray your way to a place of contentment in Christ.",
+          "anchor": "unit-47"
+        }
+      ],
+      "external": [
+        {
+          "text": "my presence will go before you and I, I will give you rest",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "Scripture",
+          "anchor": "unit-4",
+          "excerpt": false
+        },
+        {
+          "text": "come to me, all you who labor and are heavy laden, and I I will give you rest",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "Matthew chapter 11",
+          "anchor": "unit-4",
+          "excerpt": false
+        }
+      ],
+      "short": "Cross of Grace · Chaska"
+    },
+    {
+      "church": "Cornerstone Community Church",
+      "city": "Burnsville",
+      "state": "MN",
+      "preacher": "Rick Gamache",
+      "title": "The Rabble and the Noble",
+      "ref": "Acts 17:1-15",
+      "url": "/SGchurch/CornerstoneBurnsville/sermons/the-rabble-and-the-noble-acts-17-1-15-2026-11-01.html",
+      "lines": [
+        {
+          "text": "It's only God's Word that matters. It's only God's Word that's powerful. It's only God's Word that saves.",
+          "anchor": "unit-28"
+        },
+        {
+          "text": "The choice isn't either the head or the heart when it comes to the Word of God. The Bereans were noble for the very reason that they had clear heads and open hearts.",
+          "anchor": "unit-23"
+        },
+        {
+          "text": "His gospel focus was always on what Jesus did on behalf of sinners, right? He suffered, died, and rose again. And his gospel focus was always on who Jesus is. He's the Savior, the Messiah, not just of the Jews, but for all peoples.",
+          "anchor": "unit-11"
+        },
+        {
+          "text": "All of that is the world turned right side up by the gospel. But from the perspective of those who love darkness, it seems all upside down.",
+          "anchor": "unit-16"
+        },
+        {
+          "text": "God's Word is power. By his Word he made everything, and by his Word he sustains all things.",
+          "anchor": "unit-27"
+        },
+        {
+          "text": "There is no certain type of person that's more attracted to Christianity than others. There is no Christian type at all. Christianity is the most culturally diverse religion in the world for the simple reason that it's true.",
+          "anchor": "unit-2"
+        }
+      ],
+      "external": [
+        {
+          "text": "We need to hear the gospel every week because we forget it every week.",
+          "author": "Martin Luther",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-26",
+          "excerpt": false
+        },
+        {
+          "text": "it is an urgent necessity that the preaching of the gospel continue among us, that we may hear and retain it. Otherwise, we would soon forget our Lord.",
+          "author": "Martin Luther",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-26",
+          "excerpt": false
+        },
+        {
+          "text": "I simply taught, preached, wrote God's Word. Otherwise, I did nothing. I did nothing. The Word did it all. I did nothing. You get it? I did nothing. I left it to the Word and let it alone do the work.",
+          "author": "Martin Luther",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-28",
+          "excerpt": false
+        }
+      ],
+      "short": "Cornerstone · Burnsville"
+    },
+    {
+      "church": "Grace Life Church",
+      "city": "Hastings",
+      "state": "NE",
+      "preacher": "Chad Haygood",
+      "title": "All The Treasures",
+      "ref": "Colossians 1:24-2:3",
+      "url": "/SGchurch/GraceLifeHastings/sermons/all-the-treasures-2026-11-01.html",
+      "lines": [
+        {
+          "text": "The treasure isn't under a church in Philadelphia and nobody has a secret map to this treasure. Paul knows exactly where it is and he's willing to tell you about it because it is in a person. The treasure is in a person.",
+          "anchor": "unit-4"
+        },
+        {
+          "text": "Paul's suffering doesn't pay for anybody's sin, and neither will yours, and neither will mine. Our suffering will never pay for an ounce of sin. Not one drop. Christ's suffering paid the price. But our suffering gets to carry the news of that price being paid to the world.",
+          "anchor": "unit-11"
+        },
+        {
+          "text": "Church, nobody's got a bigger secret than Christ in you. There's nothing bigger, there's nothing greater, there's nothing more meaningful or deeper than that.",
+          "anchor": "unit-20"
+        },
+        {
+          "text": "Full assurance does not happen to people who go at it alone. You grow, we grow into the riches of Christ together.",
+          "anchor": "unit-29"
+        },
+        {
+          "text": "Whatever God has allotted for you tomorrow morning, you have as much Christ in you tomorrow morning as the Apostle Paul had in Him. There's no deeper Christ for the spiritually elite. You've got Him. He's in you.",
+          "anchor": "unit-19"
+        },
+        {
+          "text": "The job that God has called us to is to bring people to this one, bring people to Christ and grow them up in Him. And that job is going to cost us.",
+          "anchor": "unit-6"
+        }
+      ],
+      "external": [
+        {
+          "text": "you put the lonely in families",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-0",
+          "excerpt": false
+        },
+        {
+          "text": "Not one sparrow falls without your knowledge.",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-0",
+          "excerpt": false
+        },
+        {
+          "text": "Lord, how great is the love you have lavished on us that we should be called the children of God. And that, by your grace, is what we are.",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-0",
+          "excerpt": false
+        },
+        {
+          "text": "if God spared his life, that within many years he would cause a boy that drives the plow to know more of the Scripture than he did",
+          "author": "William Tyndale",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-12",
+          "excerpt": false
+        },
+        {
+          "text": "we were better to be without God's law than the Pope's",
+          "author": "unnamed learned churchman (opponent of William Tyndale)",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-12",
+          "excerpt": false
+        },
+        {
+          "text": "Lord, open the King of England's eyes!",
+          "author": "William Tyndale (final words at the stake)",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-12",
+          "excerpt": false
+        }
+      ],
+      "short": "Grace Life · Hastings"
+    },
+    {
+      "church": "Emmaus Road Church",
+      "city": "Sioux Falls",
+      "state": "SD",
+      "preacher": "Ryan Chase",
+      "title": "Restored by God’s Word",
+      "ref": "Ezra 7",
+      "url": "/SGchurch/EmmausRoadSiouxFalls/sermons/restored-by-god-s-word-ezra-7-2026-11-01.html",
+      "lines": [
+        {
+          "text": "God restores ruined people by his word. From Adam and Eve in the garden down to today, God has always ruled the world by his word.",
+          "anchor": "unit-7"
+        },
+        {
+          "text": "Ezra is the model of an ideal reformer, a man who loves and who learns and who lives God's word.",
+          "anchor": "unit-16"
+        }
+      ],
+      "external": [
+        {
+          "text": "the law is but words and paper without the hands and swords of men",
+          "author": "someone",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-24",
+          "excerpt": false
+        },
+        {
+          "text": "he taught them as one who had authority and not as their scribes",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-16",
+          "excerpt": false
+        },
+        {
+          "text": "I own the cattle on a thousand hills. If I'm hungry, I'm not going to tell you. I don't need anything from you. I own it all. The earth is the Lord's and the fullness thereof",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-22",
+          "excerpt": false
+        },
+        {
+          "text": "the Word became flesh and dwelt among us. And we have seen His glory, glory as of the only Father, the only Son from the Father, full of grace and truth",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-29",
+          "excerpt": false
+        }
+      ],
+      "short": "Emmaus Rd · Sioux Falls"
+    },
+    {
+      "church": "Emmaus Road Church",
+      "city": "Bozeman",
+      "state": "MT",
+      "preacher": "Josh Montegue",
+      "title": "Col 3:15-17 - Pleasurable Commands",
+      "ref": "Colossians 3:15-17",
+      "url": "/SGchurch/EmmausRoadBozeman/sermons/col-3-15-17-pleasurable-commands-2026-11-01.html",
+      "lines": [
+        {
+          "text": "Thanksgiving should be a distinguishing mark of a Christian. When someone thinks of someone who is a follower of Jesus, someone who has placed their faith in Jesus, they should just almost automatically say, you know, he's also a very thankful person.",
+          "anchor": "unit-2",
+          "filler_removed": true
+        },
+        {
+          "text": "Your fight for control leads to turmoil in your life because you aren't sovereign and you never will be. You weren't made to be. Jesus is and forever will be. Enjoy it.",
+          "anchor": "unit-16"
+        },
+        {
+          "text": "Gratitude results in a peaceful, rich life joyfully lived under Jesus' reign.",
+          "anchor": "unit-29"
+        },
+        {
+          "text": "Christ has won and he has taken his throne and he reigns over all and he has saved his people from their sins. Let that word dwell in you.",
+          "anchor": "unit-25"
+        },
+        {
+          "text": "The Christian's allegiance is not ultimately to a political state or a king. The Christian's allegiance is ultimately to the Lord of all, Jesus Christ, the Lord of Lords and the King of Kings.",
+          "anchor": "unit-13"
+        },
+        {
+          "text": "Jesus is Lord of all things. He is Lord over all. He is the one by whom and through whom and for whom all things are created, is how Paul starts the book of Colossians.",
+          "anchor": "unit-4"
+        }
+      ],
+      "external": [
+        {
+          "text": "they're pleasurable commands",
+          "author": "Kent Hughes",
+          "work": "commentary on Colossians",
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-5",
+          "excerpt": false
+        },
+        {
+          "text": "the empire was the wealthiest, the most formidable, the most terrifying state that had ever existed, a state that had repeatedly made a show of its invincibility so that even its enemies came to believe it could never be defeated",
+          "author": "Tom Holland",
+          "work": "book about the 1st century Roman Empire",
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-11",
+          "excerpt": false
+        },
+        {
+          "text": "whatever disagreements or mutual suspicions occur in the church, they are to be dealt with at the deepest level by all parties, allowing the fact of their unity in Christ to settle the issue in their hearts. The Pax Christiana is to prevail in the church as the Pax Romana did in the world of Paul's day.",
+          "author": "N.T. Wright",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-17",
+          "excerpt": false
+        },
+        {
+          "text": "an estimated 20 to 40% of the planet's population lived within the Roman Empire in the 1st century",
+          "author": "Tom Holland",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-10",
+          "excerpt": false
+        },
+        {
+          "text": "the period in the history of the world during which the condition of the human race was most happy prosperous",
+          "author": "Edward Gibbon",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-10",
+          "excerpt": false
+        },
+        {
+          "text": "His peace will then rule in the fellowship",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "one commentator says",
+          "anchor": "unit-15",
+          "excerpt": false
+        },
+        {
+          "text": "an unthankful person is a monster in nature, a paradox in Christianity. The Puritans have a way of saying things. He says, he is the scorn of heaven and the plague of the earth. That's what an ungrateful person is. An ungrateful man never does well except in one thing, that is when he dies.",
+          "author": "Thomas Watson",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-29",
+          "excerpt": false
+        }
+      ],
+      "short": "Emmaus Rd · Bozeman"
+    }
+  ]
+}
