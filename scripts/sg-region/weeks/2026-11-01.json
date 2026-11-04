@@ -9,96 +9,106 @@
   },
   "sermons": [
     {
-      "church": "Grace Life Church",
-      "city": "Hastings",
-      "state": "NE",
-      "preacher": "Chad Haygood",
-      "title": "All The Treasures",
-      "ref": "Colossians 1:24-2:3",
-      "url": "/SGchurch/GraceLifeHastings/sermons/all-the-treasures-2026-11-01.html",
+      "church": "Emmaus Road Church",
+      "city": "Bozeman",
+      "state": "MT",
+      "preacher": "Josh Montegue",
+      "title": "Col 3:15-17 - Pleasurable Commands",
+      "ref": "Colossians 3:15-17",
+      "url": "/SGchurch/EmmausRoadBozeman/sermons/col-3-15-17-pleasurable-commands-2026-11-01.html",
       "lines": [
         {
-          "text": "The treasure isn't under a church in Philadelphia and nobody has a secret map to this treasure. Paul knows exactly where it is and he's willing to tell you about it because it is in a person. The treasure is in a person.",
-          "anchor": "unit-4"
+          "text": "Thanksgiving should be a distinguishing mark of a Christian. When someone thinks of someone who is a follower of Jesus, someone who has placed their faith in Jesus, they should just almost automatically say, you know, he's also a very thankful person.",
+          "anchor": "unit-2",
+          "filler_removed": true
         },
         {
-          "text": "Paul's suffering doesn't pay for anybody's sin, and neither will yours, and neither will mine. Our suffering will never pay for an ounce of sin. Not one drop. Christ's suffering paid the price. But our suffering gets to carry the news of that price being paid to the world.",
-          "anchor": "unit-11"
+          "text": "Your fight for control leads to turmoil in your life because you aren't sovereign and you never will be. You weren't made to be. Jesus is and forever will be. Enjoy it.",
+          "anchor": "unit-16"
         },
         {
-          "text": "Church, nobody's got a bigger secret than Christ in you. There's nothing bigger, there's nothing greater, there's nothing more meaningful or deeper than that.",
-          "anchor": "unit-20"
-        },
-        {
-          "text": "Full assurance does not happen to people who go at it alone. You grow, we grow into the riches of Christ together.",
+          "text": "Gratitude results in a peaceful, rich life joyfully lived under Jesus' reign.",
           "anchor": "unit-29"
         },
         {
-          "text": "Whatever God has allotted for you tomorrow morning, you have as much Christ in you tomorrow morning as the Apostle Paul had in Him. There's no deeper Christ for the spiritually elite. You've got Him. He's in you.",
-          "anchor": "unit-19"
+          "text": "Christ has won and he has taken his throne and he reigns over all and he has saved his people from their sins. Let that word dwell in you.",
+          "anchor": "unit-25"
         },
         {
-          "text": "The job that God has called us to is to bring people to this one, bring people to Christ and grow them up in Him. And that job is going to cost us.",
-          "anchor": "unit-6"
+          "text": "The Christian's allegiance is not ultimately to a political state or a king. The Christian's allegiance is ultimately to the Lord of all, Jesus Christ, the Lord of Lords and the King of Kings.",
+          "anchor": "unit-13"
+        },
+        {
+          "text": "Jesus is Lord of all things. He is Lord over all. He is the one by whom and through whom and for whom all things are created, is how Paul starts the book of Colossians.",
+          "anchor": "unit-4"
         }
       ],
       "external": [
         {
-          "text": "you put the lonely in families",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "someone he quoted",
-          "anchor": "unit-0",
+          "text": "they're pleasurable commands",
+          "author": "Kent Hughes",
+          "work": "commentary on Colossians",
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-5",
           "excerpt": false
         },
         {
-          "text": "Not one sparrow falls without your knowledge.",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "someone he quoted",
-          "anchor": "unit-0",
+          "text": "the empire was the wealthiest, the most formidable, the most terrifying state that had ever existed, a state that had repeatedly made a show of its invincibility so that even its enemies came to believe it could never be defeated",
+          "author": "Tom Holland",
+          "work": "book about the 1st century Roman Empire",
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-11",
           "excerpt": false
         },
         {
-          "text": "Lord, how great is the love you have lavished on us that we should be called the children of God. And that, by your grace, is what we are.",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "someone he quoted",
-          "anchor": "unit-0",
-          "excerpt": false
-        },
-        {
-          "text": "if God spared his life, that within many years he would cause a boy that drives the plow to know more of the Scripture than he did",
-          "author": "William Tyndale",
+          "text": "whatever disagreements or mutual suspicions occur in the church, they are to be dealt with at the deepest level by all parties, allowing the fact of their unity in Christ to settle the issue in their hearts. The Pax Christiana is to prevail in the church as the Pax Romana did in the world of Paul's day.",
+          "author": "N.T. Wright",
           "work": null,
           "attributed": true,
           "as_said": null,
-          "anchor": "unit-12",
+          "anchor": "unit-17",
           "excerpt": false
         },
         {
-          "text": "we were better to be without God's law than the Pope's",
-          "author": "unnamed learned churchman (opponent of William Tyndale)",
+          "text": "an estimated 20 to 40% of the planet's population lived within the Roman Empire in the 1st century",
+          "author": "Tom Holland",
           "work": null,
           "attributed": true,
           "as_said": null,
-          "anchor": "unit-12",
+          "anchor": "unit-10",
           "excerpt": false
         },
         {
-          "text": "Lord, open the King of England's eyes!",
-          "author": "William Tyndale (final words at the stake)",
+          "text": "the period in the history of the world during which the condition of the human race was most happy prosperous",
+          "author": "Edward Gibbon",
           "work": null,
           "attributed": true,
           "as_said": null,
-          "anchor": "unit-12",
+          "anchor": "unit-10",
+          "excerpt": false
+        },
+        {
+          "text": "His peace will then rule in the fellowship",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "one commentator says",
+          "anchor": "unit-15",
+          "excerpt": false
+        },
+        {
+          "text": "an unthankful person is a monster in nature, a paradox in Christianity. The Puritans have a way of saying things. He says, he is the scorn of heaven and the plague of the earth. That's what an ungrateful person is. An ungrateful man never does well except in one thing, that is when he dies.",
+          "author": "Thomas Watson",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-29",
           "excerpt": false
         }
       ],
-      "short": "Grace Life · Hastings"
+      "short": "Emmaus Rd · Bozeman"
     },
     {
       "church": "Providence Community Church",
@@ -382,6 +392,98 @@
         }
       ],
       "short": "Cornerstone · Burnsville"
+    },
+    {
+      "church": "Grace Life Church",
+      "city": "Hastings",
+      "state": "NE",
+      "preacher": "Chad Haygood",
+      "title": "All The Treasures",
+      "ref": "Colossians 1:24-2:3",
+      "url": "/SGchurch/GraceLifeHastings/sermons/all-the-treasures-2026-11-01.html",
+      "lines": [
+        {
+          "text": "The treasure isn't under a church in Philadelphia and nobody has a secret map to this treasure. Paul knows exactly where it is and he's willing to tell you about it because it is in a person. The treasure is in a person.",
+          "anchor": "unit-4"
+        },
+        {
+          "text": "Paul's suffering doesn't pay for anybody's sin, and neither will yours, and neither will mine. Our suffering will never pay for an ounce of sin. Not one drop. Christ's suffering paid the price. But our suffering gets to carry the news of that price being paid to the world.",
+          "anchor": "unit-11"
+        },
+        {
+          "text": "Church, nobody's got a bigger secret than Christ in you. There's nothing bigger, there's nothing greater, there's nothing more meaningful or deeper than that.",
+          "anchor": "unit-20"
+        },
+        {
+          "text": "Full assurance does not happen to people who go at it alone. You grow, we grow into the riches of Christ together.",
+          "anchor": "unit-29"
+        },
+        {
+          "text": "Whatever God has allotted for you tomorrow morning, you have as much Christ in you tomorrow morning as the Apostle Paul had in Him. There's no deeper Christ for the spiritually elite. You've got Him. He's in you.",
+          "anchor": "unit-19"
+        },
+        {
+          "text": "The job that God has called us to is to bring people to this one, bring people to Christ and grow them up in Him. And that job is going to cost us.",
+          "anchor": "unit-6"
+        }
+      ],
+      "external": [
+        {
+          "text": "you put the lonely in families",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-0",
+          "excerpt": false
+        },
+        {
+          "text": "Not one sparrow falls without your knowledge.",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-0",
+          "excerpt": false
+        },
+        {
+          "text": "Lord, how great is the love you have lavished on us that we should be called the children of God. And that, by your grace, is what we are.",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-0",
+          "excerpt": false
+        },
+        {
+          "text": "if God spared his life, that within many years he would cause a boy that drives the plow to know more of the Scripture than he did",
+          "author": "William Tyndale",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-12",
+          "excerpt": false
+        },
+        {
+          "text": "we were better to be without God's law than the Pope's",
+          "author": "unnamed learned churchman (opponent of William Tyndale)",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-12",
+          "excerpt": false
+        },
+        {
+          "text": "Lord, open the King of England's eyes!",
+          "author": "William Tyndale (final words at the stake)",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-12",
+          "excerpt": false
+        }
+      ],
+      "short": "Grace Life · Hastings"
     }
   ]
 }
