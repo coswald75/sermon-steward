@@ -3,11 +3,86 @@
   "region": "/SGchurch/MidwestNorthwest",
   "region_name": "Sovereign Grace Midwest/Northwest",
   "feature": {
-    "text": "The only solution, the only solution for us and for the world is the gospel that rescues us from that sin.",
-    "preacher": "Jeff",
-    "church": "Center Church of Star"
+    "text": "To see things the way that God sees them is to see them as they actually are.",
+    "preacher": "Chris Oswald",
+    "church": "Providence Community Church"
   },
   "sermons": [
+    {
+      "church": "Providence Community Church",
+      "city": "Lenexa",
+      "state": "KS",
+      "preacher": "Chris Oswald",
+      "title": "God Sees",
+      "ref": "Isaiah 1:1-20",
+      "url": "/ProvidenceLenexa/sermons/god-sees-2026-11-01.html",
+      "lines": [
+        {
+          "text": "God made you to act as his image by representing him back to himself and to the universe. God made you to be his image.",
+          "anchor": "unit-11"
+        },
+        {
+          "text": "To see things the way that God sees them is to see them as they actually are.",
+          "anchor": "unit-3"
+        },
+        {
+          "text": "Sin breaks your purpose. Sin violates your purpose. Sin turns your purpose upside down.",
+          "anchor": "unit-10"
+        },
+        {
+          "text": "Repentance is a spiritual medicine made up of six special ingredients. The sight of sin, sorrow for sin, confession of sin, shame for sin, hatred for sin, and turning from sin.",
+          "anchor": "unit-21"
+        }
+      ],
+      "external": [
+        {
+          "text": "An infinite mind does not judge by veils and shadows. It judges by what is true.",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-3",
+          "excerpt": false
+        },
+        {
+          "text": "Repentance is a spiritual medicine made up of six special ingredients. The sight of sin, sorrow for sin, confession of sin, shame for sin, hatred for sin, and turning from sin.",
+          "author": "Thomas Watson",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-21",
+          "excerpt": false
+        },
+        {
+          "text": "Many that will readily part with their sacrifices will not be persuaded to part with their sins.",
+          "author": "Matthew Henry",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-22",
+          "excerpt": false
+        },
+        {
+          "text": "empowering what he commands",
+          "author": "Augustine",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-34",
+          "excerpt": false
+        },
+        {
+          "text": "Create in me a clean heart, O Lord. Renew in me a steadfast spirit. Search me and know me, O Lord, and see if there is any offensive way in me.",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-37",
+          "excerpt": false
+        }
+      ],
+      "short": "Providence · Lenexa"
+    },
     {
       "church": "Center Church of Star",
       "city": "Star",
