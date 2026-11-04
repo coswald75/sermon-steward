@@ -9,62 +9,60 @@
   },
   "sermons": [
     {
-      "church": "Emmaus Road Church",
-      "city": "Sioux Falls",
-      "state": "SD",
-      "preacher": "Ryan Chase",
-      "title": "Restored by God’s Word",
-      "ref": "Ezra 7",
-      "url": "/SGchurch/EmmausRoadSiouxFalls/sermons/restored-by-god-s-word-ezra-7-2026-11-01.html",
+      "church": "Cross of Grace Church",
+      "city": "Chaska",
+      "state": "MN",
+      "preacher": "Dan Birkholz",
+      "title": "Seaking Rest",
+      "ref": "Ruth 3",
+      "url": "/SGchurch/CrossOfGraceChaska/sermons/seaking-rest-ruth-3-2026-11-01.html",
       "lines": [
         {
-          "text": "God restores ruined people by his word. From Adam and Eve in the garden down to today, God has always ruled the world by his word.",
+          "text": "Church, let it be known there is a man, there is a God-man who has not ceased working for us until the matters of our lives are settled, till he has brought us safely home to a final place of rest.",
+          "anchor": "unit-45"
+        },
+        {
+          "text": "If God brings us into a wilderness, there's always a promised land that he is going to bring about. He's always there to ground our feet.",
           "anchor": "unit-7"
         },
         {
-          "text": "Ezra is the model of an ideal reformer, a man who loves and who learns and who lives God's word.",
-          "anchor": "unit-16"
+          "text": "God may suspend you in circumstances of not knowing, but he'll never call you to a posture of not doing. That is to say, uncertainty doesn't excuse inactivity.",
+          "anchor": "unit-25"
+        },
+        {
+          "text": "It is simply to continue to recognize that God rewards those who by faith diligently seek him. He loves when we act by faith.",
+          "anchor": "unit-3"
+        },
+        {
+          "text": "He is jealous to be our rest, we could say, even when great questions and hard times abound.",
+          "anchor": "unit-9"
+        },
+        {
+          "text": "To say it simply, worship your way to a place of rest in Christ. Pray your way to a place of contentment in Christ.",
+          "anchor": "unit-47"
         }
       ],
       "external": [
         {
-          "text": "the law is but words and paper without the hands and swords of men",
-          "author": "someone",
-          "work": null,
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-24",
-          "excerpt": false
-        },
-        {
-          "text": "he taught them as one who had authority and not as their scribes",
+          "text": "my presence will go before you and I, I will give you rest",
           "author": null,
           "work": null,
           "attributed": false,
-          "as_said": "someone he quoted",
-          "anchor": "unit-16",
+          "as_said": "Scripture",
+          "anchor": "unit-4",
           "excerpt": false
         },
         {
-          "text": "I own the cattle on a thousand hills. If I'm hungry, I'm not going to tell you. I don't need anything from you. I own it all. The earth is the Lord's and the fullness thereof",
+          "text": "come to me, all you who labor and are heavy laden, and I I will give you rest",
           "author": null,
           "work": null,
           "attributed": false,
-          "as_said": "someone he quoted",
-          "anchor": "unit-22",
-          "excerpt": false
-        },
-        {
-          "text": "the Word became flesh and dwelt among us. And we have seen His glory, glory as of the only Father, the only Son from the Father, full of grace and truth",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "someone he quoted",
-          "anchor": "unit-29",
+          "as_said": "Matthew chapter 11",
+          "anchor": "unit-4",
           "excerpt": false
         }
       ],
-      "short": "Emmaus Rd · Sioux Falls"
+      "short": "Cross of Grace · Chaska"
     },
     {
       "church": "Providence Community Church",
@@ -169,6 +167,64 @@
       ],
       "external": [],
       "short": "Center Church · Star"
+    },
+    {
+      "church": "Emmaus Road Church",
+      "city": "Sioux Falls",
+      "state": "SD",
+      "preacher": "Ryan Chase",
+      "title": "Restored by God’s Word",
+      "ref": "Ezra 7",
+      "url": "/SGchurch/EmmausRoadSiouxFalls/sermons/restored-by-god-s-word-ezra-7-2026-11-01.html",
+      "lines": [
+        {
+          "text": "God restores ruined people by his word. From Adam and Eve in the garden down to today, God has always ruled the world by his word.",
+          "anchor": "unit-7"
+        },
+        {
+          "text": "Ezra is the model of an ideal reformer, a man who loves and who learns and who lives God's word.",
+          "anchor": "unit-16"
+        }
+      ],
+      "external": [
+        {
+          "text": "the law is but words and paper without the hands and swords of men",
+          "author": "someone",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-24",
+          "excerpt": false
+        },
+        {
+          "text": "he taught them as one who had authority and not as their scribes",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-16",
+          "excerpt": false
+        },
+        {
+          "text": "I own the cattle on a thousand hills. If I'm hungry, I'm not going to tell you. I don't need anything from you. I own it all. The earth is the Lord's and the fullness thereof",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-22",
+          "excerpt": false
+        },
+        {
+          "text": "the Word became flesh and dwelt among us. And we have seen His glory, glory as of the only Father, the only Son from the Father, full of grace and truth",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-29",
+          "excerpt": false
+        }
+      ],
+      "short": "Emmaus Rd · Sioux Falls"
     }
   ]
 }
