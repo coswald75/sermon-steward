@@ -3,66 +3,75 @@
   "region": "/SGchurch/MidwestNorthwest",
   "region_name": "Sovereign Grace Midwest/Northwest",
   "feature": {
-    "text": "The only solution, the only solution for us and for the world is the gospel that rescues us from that sin.",
-    "preacher": "Jeff",
-    "church": "Center Church of Star"
+    "text": "To say it simply, worship your way to a place of rest in Christ. Pray your way to a place of contentment in Christ.",
+    "preacher": "Dan Birkholz",
+    "church": "Cross of Grace Church"
   },
   "sermons": [
     {
-      "church": "Cross of Grace Church",
-      "city": "Chaska",
+      "church": "Cornerstone Community Church",
+      "city": "Burnsville",
       "state": "MN",
-      "preacher": "Dan Birkholz",
-      "title": "Seaking Rest",
-      "ref": "Ruth 3",
-      "url": "/SGchurch/CrossOfGraceChaska/sermons/seaking-rest-ruth-3-2026-11-01.html",
+      "preacher": "Rick Gamache",
+      "title": "The Rabble and the Noble",
+      "ref": "Acts 17:1-15",
+      "url": "/SGchurch/CornerstoneBurnsville/sermons/the-rabble-and-the-noble-acts-17-1-15-2026-11-01.html",
       "lines": [
         {
-          "text": "Church, let it be known there is a man, there is a God-man who has not ceased working for us until the matters of our lives are settled, till he has brought us safely home to a final place of rest.",
-          "anchor": "unit-45"
+          "text": "It's only God's Word that matters. It's only God's Word that's powerful. It's only God's Word that saves.",
+          "anchor": "unit-28"
         },
         {
-          "text": "If God brings us into a wilderness, there's always a promised land that he is going to bring about. He's always there to ground our feet.",
-          "anchor": "unit-7"
+          "text": "The choice isn't either the head or the heart when it comes to the Word of God. The Bereans were noble for the very reason that they had clear heads and open hearts.",
+          "anchor": "unit-23"
         },
         {
-          "text": "God may suspend you in circumstances of not knowing, but he'll never call you to a posture of not doing. That is to say, uncertainty doesn't excuse inactivity.",
-          "anchor": "unit-25"
+          "text": "His gospel focus was always on what Jesus did on behalf of sinners, right? He suffered, died, and rose again. And his gospel focus was always on who Jesus is. He's the Savior, the Messiah, not just of the Jews, but for all peoples.",
+          "anchor": "unit-11"
         },
         {
-          "text": "It is simply to continue to recognize that God rewards those who by faith diligently seek him. He loves when we act by faith.",
-          "anchor": "unit-3"
+          "text": "All of that is the world turned right side up by the gospel. But from the perspective of those who love darkness, it seems all upside down.",
+          "anchor": "unit-16"
         },
         {
-          "text": "He is jealous to be our rest, we could say, even when great questions and hard times abound.",
-          "anchor": "unit-9"
+          "text": "God's Word is power. By his Word he made everything, and by his Word he sustains all things.",
+          "anchor": "unit-27"
         },
         {
-          "text": "To say it simply, worship your way to a place of rest in Christ. Pray your way to a place of contentment in Christ.",
-          "anchor": "unit-47"
+          "text": "There is no certain type of person that's more attracted to Christianity than others. There is no Christian type at all. Christianity is the most culturally diverse religion in the world for the simple reason that it's true.",
+          "anchor": "unit-2"
         }
       ],
       "external": [
         {
-          "text": "my presence will go before you and I, I will give you rest",
-          "author": null,
+          "text": "We need to hear the gospel every week because we forget it every week.",
+          "author": "Martin Luther",
           "work": null,
-          "attributed": false,
-          "as_said": "Scripture",
-          "anchor": "unit-4",
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-26",
           "excerpt": false
         },
         {
-          "text": "come to me, all you who labor and are heavy laden, and I I will give you rest",
-          "author": null,
+          "text": "it is an urgent necessity that the preaching of the gospel continue among us, that we may hear and retain it. Otherwise, we would soon forget our Lord.",
+          "author": "Martin Luther",
           "work": null,
-          "attributed": false,
-          "as_said": "Matthew chapter 11",
-          "anchor": "unit-4",
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-26",
+          "excerpt": false
+        },
+        {
+          "text": "I simply taught, preached, wrote God's Word. Otherwise, I did nothing. I did nothing. The Word did it all. I did nothing. You get it? I did nothing. I left it to the Word and let it alone do the work.",
+          "author": "Martin Luther",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-28",
           "excerpt": false
         }
       ],
-      "short": "Cross of Grace · Chaska"
+      "short": "Cornerstone · Burnsville"
     },
     {
       "church": "Providence Community Church",
@@ -225,6 +234,62 @@
         }
       ],
       "short": "Emmaus Rd · Sioux Falls"
+    },
+    {
+      "church": "Cross of Grace Church",
+      "city": "Chaska",
+      "state": "MN",
+      "preacher": "Dan Birkholz",
+      "title": "Seaking Rest",
+      "ref": "Ruth 3",
+      "url": "/SGchurch/CrossOfGraceChaska/sermons/seaking-rest-ruth-3-2026-11-01.html",
+      "lines": [
+        {
+          "text": "Church, let it be known there is a man, there is a God-man who has not ceased working for us until the matters of our lives are settled, till he has brought us safely home to a final place of rest.",
+          "anchor": "unit-45"
+        },
+        {
+          "text": "If God brings us into a wilderness, there's always a promised land that he is going to bring about. He's always there to ground our feet.",
+          "anchor": "unit-7"
+        },
+        {
+          "text": "God may suspend you in circumstances of not knowing, but he'll never call you to a posture of not doing. That is to say, uncertainty doesn't excuse inactivity.",
+          "anchor": "unit-25"
+        },
+        {
+          "text": "It is simply to continue to recognize that God rewards those who by faith diligently seek him. He loves when we act by faith.",
+          "anchor": "unit-3"
+        },
+        {
+          "text": "He is jealous to be our rest, we could say, even when great questions and hard times abound.",
+          "anchor": "unit-9"
+        },
+        {
+          "text": "To say it simply, worship your way to a place of rest in Christ. Pray your way to a place of contentment in Christ.",
+          "anchor": "unit-47"
+        }
+      ],
+      "external": [
+        {
+          "text": "my presence will go before you and I, I will give you rest",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "Scripture",
+          "anchor": "unit-4",
+          "excerpt": false
+        },
+        {
+          "text": "come to me, all you who labor and are heavy laden, and I I will give you rest",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "Matthew chapter 11",
+          "anchor": "unit-4",
+          "excerpt": false
+        }
+      ],
+      "short": "Cross of Grace · Chaska"
     }
   ]
 }
