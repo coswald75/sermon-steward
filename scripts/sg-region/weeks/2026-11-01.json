@@ -3,11 +3,69 @@
   "region": "/SGchurch/MidwestNorthwest",
   "region_name": "Sovereign Grace Midwest/Northwest",
   "feature": {
-    "text": "To see things the way that God sees them is to see them as they actually are.",
-    "preacher": "Chris Oswald",
-    "church": "Providence Community Church"
+    "text": "The only solution, the only solution for us and for the world is the gospel that rescues us from that sin.",
+    "preacher": "Jeff",
+    "church": "Center Church of Star"
   },
   "sermons": [
+    {
+      "church": "Emmaus Road Church",
+      "city": "Sioux Falls",
+      "state": "SD",
+      "preacher": "Ryan Chase",
+      "title": "Restored by God’s Word",
+      "ref": "Ezra 7",
+      "url": "/SGchurch/EmmausRoadSiouxFalls/sermons/restored-by-god-s-word-ezra-7-2026-11-01.html",
+      "lines": [
+        {
+          "text": "God restores ruined people by his word. From Adam and Eve in the garden down to today, God has always ruled the world by his word.",
+          "anchor": "unit-7"
+        },
+        {
+          "text": "Ezra is the model of an ideal reformer, a man who loves and who learns and who lives God's word.",
+          "anchor": "unit-16"
+        }
+      ],
+      "external": [
+        {
+          "text": "the law is but words and paper without the hands and swords of men",
+          "author": "someone",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-24",
+          "excerpt": false
+        },
+        {
+          "text": "he taught them as one who had authority and not as their scribes",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-16",
+          "excerpt": false
+        },
+        {
+          "text": "I own the cattle on a thousand hills. If I'm hungry, I'm not going to tell you. I don't need anything from you. I own it all. The earth is the Lord's and the fullness thereof",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-22",
+          "excerpt": false
+        },
+        {
+          "text": "the Word became flesh and dwelt among us. And we have seen His glory, glory as of the only Father, the only Son from the Father, full of grace and truth",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-29",
+          "excerpt": false
+        }
+      ],
+      "short": "Emmaus Rd · Sioux Falls"
+    },
     {
       "church": "Providence Community Church",
       "city": "Lenexa",
