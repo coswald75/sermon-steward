@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-01",
+  "region": "/SGchurch/MidwestNorthwest",
+  "region_name": "Sovereign Grace Midwest/Northwest",
+  "feature": {
+    "text": "The only solution, the only solution for us and for the world is the gospel that rescues us from that sin.",
+    "preacher": "Jeff",
+    "church": "Center Church of Star"
+  },
+  "sermons": [
+    {
+      "church": "Center Church of Star",
+      "city": "Star",
+      "state": "ID",
+      "preacher": "Jeff",
+      "title": "Center Church Star | November 1, 2026",
+      "ref": "Romans 3:9-20",
+      "url": "/SGchurch/CenterChurchStar/sermons/center-church-star-november-1-2026-2026-11-01.html",
+      "lines": [
+        {
+          "text": "Our passage this morning has one point for us to consider: no one, no one is innocent before God on the strength of what they do.",
+          "anchor": "unit-6"
+        },
+        {
+          "text": "We cannot truly believe the Gospel if we do not believe we need the Gospel. And not just needing it like, I did need it at one time, but always continually needing it.",
+          "anchor": "unit-29"
+        },
+        {
+          "text": "The only thing that makes the Jewish people significant, the only thing, is God alone. That's it. God alone makes this people significant.",
+          "anchor": "unit-16"
+        },
+        {
+          "text": "The only solution, the only solution for us and for the world is the gospel that rescues us from that sin.",
+          "anchor": "unit-32"
+        }
+      ],
+      "external": [],
+      "short": "Center Church · Star"
+    }
+  ]
+}
