@@ -9,106 +9,33 @@
   },
   "sermons": [
     {
-      "church": "Emmaus Road Church",
-      "city": "Bozeman",
-      "state": "MT",
-      "preacher": "Josh Montegue",
-      "title": "Col 3:15-17 - Pleasurable Commands",
-      "ref": "Colossians 3:15-17",
-      "url": "/SGchurch/EmmausRoadBozeman/sermons/col-3-15-17-pleasurable-commands-2026-11-01.html",
+      "church": "Center Church of Star",
+      "city": "Star",
+      "state": "ID",
+      "preacher": "Jeff Palen",
+      "title": "Center Church Star | November 1, 2026",
+      "ref": "Romans 3:9-20",
+      "url": "/SGchurch/CenterChurchStar/sermons/center-church-star-november-1-2026-2026-11-01.html",
       "lines": [
         {
-          "text": "Thanksgiving should be a distinguishing mark of a Christian. When someone thinks of someone who is a follower of Jesus, someone who has placed their faith in Jesus, they should just almost automatically say, you know, he's also a very thankful person.",
-          "anchor": "unit-2",
-          "filler_removed": true
+          "text": "Our passage this morning has one point for us to consider: no one, no one is innocent before God on the strength of what they do.",
+          "anchor": "unit-6"
         },
         {
-          "text": "Your fight for control leads to turmoil in your life because you aren't sovereign and you never will be. You weren't made to be. Jesus is and forever will be. Enjoy it.",
-          "anchor": "unit-16"
-        },
-        {
-          "text": "Gratitude results in a peaceful, rich life joyfully lived under Jesus' reign.",
+          "text": "We cannot truly believe the Gospel if we do not believe we need the Gospel. And not just needing it like, I did need it at one time, but always continually needing it.",
           "anchor": "unit-29"
         },
         {
-          "text": "Christ has won and he has taken his throne and he reigns over all and he has saved his people from their sins. Let that word dwell in you.",
-          "anchor": "unit-25"
+          "text": "The only thing that makes the Jewish people significant, the only thing, is God alone. That's it. God alone makes this people significant.",
+          "anchor": "unit-16"
         },
         {
-          "text": "The Christian's allegiance is not ultimately to a political state or a king. The Christian's allegiance is ultimately to the Lord of all, Jesus Christ, the Lord of Lords and the King of Kings.",
-          "anchor": "unit-13"
-        },
-        {
-          "text": "Jesus is Lord of all things. He is Lord over all. He is the one by whom and through whom and for whom all things are created, is how Paul starts the book of Colossians.",
-          "anchor": "unit-4"
+          "text": "The only solution, the only solution for us and for the world is the gospel that rescues us from that sin.",
+          "anchor": "unit-32"
         }
       ],
-      "external": [
-        {
-          "text": "they're pleasurable commands",
-          "author": "Kent Hughes",
-          "work": "commentary on Colossians",
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-5",
-          "excerpt": false
-        },
-        {
-          "text": "the empire was the wealthiest, the most formidable, the most terrifying state that had ever existed, a state that had repeatedly made a show of its invincibility so that even its enemies came to believe it could never be defeated",
-          "author": "Tom Holland",
-          "work": "book about the 1st century Roman Empire",
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-11",
-          "excerpt": false
-        },
-        {
-          "text": "whatever disagreements or mutual suspicions occur in the church, they are to be dealt with at the deepest level by all parties, allowing the fact of their unity in Christ to settle the issue in their hearts. The Pax Christiana is to prevail in the church as the Pax Romana did in the world of Paul's day.",
-          "author": "N.T. Wright",
-          "work": null,
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-17",
-          "excerpt": false
-        },
-        {
-          "text": "an estimated 20 to 40% of the planet's population lived within the Roman Empire in the 1st century",
-          "author": "Tom Holland",
-          "work": null,
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-10",
-          "excerpt": false
-        },
-        {
-          "text": "the period in the history of the world during which the condition of the human race was most happy prosperous",
-          "author": "Edward Gibbon",
-          "work": null,
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-10",
-          "excerpt": false
-        },
-        {
-          "text": "His peace will then rule in the fellowship",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "one commentator says",
-          "anchor": "unit-15",
-          "excerpt": false
-        },
-        {
-          "text": "an unthankful person is a monster in nature, a paradox in Christianity. The Puritans have a way of saying things. He says, he is the scorn of heaven and the plague of the earth. That's what an ungrateful person is. An ungrateful man never does well except in one thing, that is when he dies.",
-          "author": "Thomas Watson",
-          "work": null,
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-29",
-          "excerpt": false
-        }
-      ],
-      "short": "Emmaus Rd · Bozeman"
+      "external": [],
+      "short": "Center Church · Star"
     },
     {
       "church": "Providence Community Church",
@@ -184,35 +111,6 @@
         }
       ],
       "short": "Providence · Lenexa"
-    },
-    {
-      "church": "Center Church of Star",
-      "city": "Star",
-      "state": "ID",
-      "preacher": "Jeff",
-      "title": "Center Church Star | November 1, 2026",
-      "ref": "Romans 3:9-20",
-      "url": "/SGchurch/CenterChurchStar/sermons/center-church-star-november-1-2026-2026-11-01.html",
-      "lines": [
-        {
-          "text": "Our passage this morning has one point for us to consider: no one, no one is innocent before God on the strength of what they do.",
-          "anchor": "unit-6"
-        },
-        {
-          "text": "We cannot truly believe the Gospel if we do not believe we need the Gospel. And not just needing it like, I did need it at one time, but always continually needing it.",
-          "anchor": "unit-29"
-        },
-        {
-          "text": "The only thing that makes the Jewish people significant, the only thing, is God alone. That's it. God alone makes this people significant.",
-          "anchor": "unit-16"
-        },
-        {
-          "text": "The only solution, the only solution for us and for the world is the gospel that rescues us from that sin.",
-          "anchor": "unit-32"
-        }
-      ],
-      "external": [],
-      "short": "Center Church · Star"
     },
     {
       "church": "Emmaus Road Church",
@@ -484,6 +382,108 @@
         }
       ],
       "short": "Grace Life · Hastings"
+    },
+    {
+      "church": "Emmaus Road Church",
+      "city": "Bozeman",
+      "state": "MT",
+      "preacher": "Josh Montegue",
+      "title": "Col 3:15-17 - Pleasurable Commands",
+      "ref": "Colossians 3:15-17",
+      "url": "/SGchurch/EmmausRoadBozeman/sermons/col-3-15-17-pleasurable-commands-2026-11-01.html",
+      "lines": [
+        {
+          "text": "Thanksgiving should be a distinguishing mark of a Christian. When someone thinks of someone who is a follower of Jesus, someone who has placed their faith in Jesus, they should just almost automatically say, you know, he's also a very thankful person.",
+          "anchor": "unit-2",
+          "filler_removed": true
+        },
+        {
+          "text": "Your fight for control leads to turmoil in your life because you aren't sovereign and you never will be. You weren't made to be. Jesus is and forever will be. Enjoy it.",
+          "anchor": "unit-16"
+        },
+        {
+          "text": "Gratitude results in a peaceful, rich life joyfully lived under Jesus' reign.",
+          "anchor": "unit-29"
+        },
+        {
+          "text": "Christ has won and he has taken his throne and he reigns over all and he has saved his people from their sins. Let that word dwell in you.",
+          "anchor": "unit-25"
+        },
+        {
+          "text": "The Christian's allegiance is not ultimately to a political state or a king. The Christian's allegiance is ultimately to the Lord of all, Jesus Christ, the Lord of Lords and the King of Kings.",
+          "anchor": "unit-13"
+        },
+        {
+          "text": "Jesus is Lord of all things. He is Lord over all. He is the one by whom and through whom and for whom all things are created, is how Paul starts the book of Colossians.",
+          "anchor": "unit-4"
+        }
+      ],
+      "external": [
+        {
+          "text": "they're pleasurable commands",
+          "author": "Kent Hughes",
+          "work": "commentary on Colossians",
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-5",
+          "excerpt": false
+        },
+        {
+          "text": "the empire was the wealthiest, the most formidable, the most terrifying state that had ever existed, a state that had repeatedly made a show of its invincibility so that even its enemies came to believe it could never be defeated",
+          "author": "Tom Holland",
+          "work": "book about the 1st century Roman Empire",
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-11",
+          "excerpt": false
+        },
+        {
+          "text": "whatever disagreements or mutual suspicions occur in the church, they are to be dealt with at the deepest level by all parties, allowing the fact of their unity in Christ to settle the issue in their hearts. The Pax Christiana is to prevail in the church as the Pax Romana did in the world of Paul's day.",
+          "author": "N.T. Wright",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-17",
+          "excerpt": false
+        },
+        {
+          "text": "an estimated 20 to 40% of the planet's population lived within the Roman Empire in the 1st century",
+          "author": "Tom Holland",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-10",
+          "excerpt": false
+        },
+        {
+          "text": "the period in the history of the world during which the condition of the human race was most happy prosperous",
+          "author": "Edward Gibbon",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-10",
+          "excerpt": false
+        },
+        {
+          "text": "His peace will then rule in the fellowship",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "one commentator says",
+          "anchor": "unit-15",
+          "excerpt": false
+        },
+        {
+          "text": "an unthankful person is a monster in nature, a paradox in Christianity. The Puritans have a way of saying things. He says, he is the scorn of heaven and the plague of the earth. That's what an ungrateful person is. An ungrateful man never does well except in one thing, that is when he dies.",
+          "author": "Thomas Watson",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-29",
+          "excerpt": false
+        }
+      ],
+      "short": "Emmaus Rd · Bozeman"
     }
   ]
 }
