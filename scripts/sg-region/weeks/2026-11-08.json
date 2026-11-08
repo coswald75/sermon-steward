@@ -1,0 +1,142 @@
+{
+  "date": "2026-11-08",
+  "region": "/SGchurch/MidwestNorthwest",
+  "region_name": "Sovereign Grace Midwest/Northwest",
+  "feature": {
+    "text": "In Christ, you are a beloved child of God. You are more loved than you'll ever know, and that will never change.",
+    "preacher": "Brian Kiama",
+    "church": "Cornerstone Community Church"
+  },
+  "sermons": [
+    {
+      "church": "Cornerstone Community Church",
+      "city": "Burnsville",
+      "state": "MN",
+      "preacher": "Brian Kiama",
+      "title": "The Reason for the Mission",
+      "ref": "Revelation 5:9-10",
+      "url": "/SGchurch/CornerstoneBurnsville/sermons/the-reason-for-the-mission-revelation-5-9-10-2026-11-08.html",
+      "lines": [
+        {
+          "text": "If no one was able to open this scroll, then all suffering, pain, and sorrow that God's people face in this life would be meaningless.",
+          "anchor": "unit-21"
+        },
+        {
+          "text": "He conquered our greatest enemies sin and death through His sacrificial death on the cross.",
+          "anchor": "unit-30"
+        },
+        {
+          "text": "In Christ, you are a beloved child of God. You are more loved than you'll ever know, and that will never change.",
+          "anchor": "unit-39"
+        },
+        {
+          "text": "If there was no one worthy to open the scroll, then history would not be governed for the good of the church. And if history is not being governed for the good of the church, then prayer itself will be meaningless and useless.",
+          "anchor": "unit-22"
+        },
+        {
+          "text": "Christ will have what he paid for in full.",
+          "anchor": "unit-43"
+        },
+        {
+          "text": "We were born slaves to sin. And because of our sin, we deserve death and everlasting punishment.",
+          "anchor": "unit-32"
+        }
+      ],
+      "external": [
+        {
+          "text": "My kingdom come and my will be done on earth as it is in my imagination",
+          "author": "Gary Ricucci",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-31",
+          "excerpt": false
+        },
+        {
+          "text": "he will abundantly pardon all your sins and bring you into a glorious, eternal relationship with himself",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "Micah tells us",
+          "anchor": "unit-35",
+          "excerpt": false
+        }
+      ],
+      "short": "Cornerstone · Burnsville"
+    },
+    {
+      "church": "Grace Life Church",
+      "city": "Hastings",
+      "state": "NE",
+      "preacher": "Chad Haygood",
+      "title": "Alive in Christ, Nailed To The Cross",
+      "ref": "Colossians 2:6-15",
+      "url": "/SGchurch/GraceLifeHastings/sermons/alive-in-christ-nailed-to-the-cross-2026-11-08.html",
+      "lines": [
+        {
+          "text": "Christ is not a starter kit. If there is a system that wants Jesus to step aside so that they can actually— that system can actually get to your real problem, well, that system just told you what it really thinks about Jesus Christ.",
+          "anchor": "unit-16"
+        },
+        {
+          "text": "The Savior who brought you in is the Savior who carries you through. When you received Christ, you received a person, Christ Jesus the Lord. You didn't sign up for a method that you could eventually master and then leave behind.",
+          "anchor": "unit-7"
+        },
+        {
+          "text": "You are in Christ, you are joined to the living Lord. You're not reaching through Christ to some higher spiritual power.",
+          "anchor": "unit-20"
+        },
+        {
+          "text": "Staying put in Christ, it doesn't mean that we stand still. Roots don't stand still. They go deep, they draw life, and then buildings don't stay still.",
+          "anchor": "unit-9"
+        },
+        {
+          "text": "Our growth and healing in the Christian life comes From our union with a crucified and risen Christ.",
+          "anchor": "unit-25"
+        },
+        {
+          "text": "You can feel at the end of yourself. You can feel broken. You can feel empty and still have a complete Savior. It's just that in that moment, we know what to do with our brokenness. We know what to do with our emptiness. We take it to the one who is full, and in him we get full.",
+          "anchor": "unit-21"
+        }
+      ],
+      "external": [
+        {
+          "text": "that is, keep on as you began. Christ was enough for you when, as poor guilty sinners, you came and trusted him. So keep on trusting him in the same way as you did at the first.",
+          "author": "Charles Spurgeon",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-7",
+          "excerpt": false
+        },
+        {
+          "text": "for we know that as to debts, the obligation is still in force so long as the handwriting remains, and that on the other hand, by the erasing or tearing of the handwriting, the debtor is set free.",
+          "author": "John Calvin",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-26",
+          "excerpt": false
+        },
+        {
+          "text": "in his book The Screwtape Letters, he actually wrote a chapter about this, which is commonly called Christ and",
+          "author": "C.S. Lewis",
+          "work": "The Screwtape Letters",
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-3",
+          "excerpt": false
+        },
+        {
+          "text": "For from his fullness we have all received grace upon grace.",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "John says the same thing about the grace Christ gives to his people",
+          "anchor": "unit-21",
+          "excerpt": false
+        }
+      ],
+      "short": "Grace Life · Hastings"
+    }
+  ]
+}

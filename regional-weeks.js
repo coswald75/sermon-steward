@@ -8,7 +8,8 @@ export const REGION_WEEKS = {
     "10-11-26",
     "10-18-26",
     "10-25-26",
-    "11-1-26"
+    "11-1-26",
+    "11-8-26"
   ],
   "/SGchurch/SovereignGrace": [
     "9-27-26",
