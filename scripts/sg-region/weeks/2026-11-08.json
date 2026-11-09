@@ -9,6 +9,71 @@
   },
   "sermons": [
     {
+      "church": "Providence Community Church",
+      "city": "Lenexa",
+      "state": "KS",
+      "preacher": "Chris Oswald",
+      "title": "Isaiah 1:1-28",
+      "ref": "Isaiah 1:1-28",
+      "url": "/ProvidenceLenexa/sermons/isaiah-1-1-28-2026-11-08.html",
+      "lines": [
+        {
+          "text": "God doesn't judge by appearances. A work that looks good on the outside doesn't fool him. So his knowledge, and therefore his judgment, works on a completely different level from ours.",
+          "anchor": "unit-11"
+        },
+        {
+          "text": "The people in Isaiah are nose blind to their own sin. And friends, I'd love to tell you, I'd love to give you this false comfort and say, but that was just them. It's definitely not you. That's not why Isaiah exists.",
+          "anchor": "unit-6"
+        },
+        {
+          "text": "God's holiness is telling us, is assigning meaning to what he sees. He is seeing through the lens, if you will, of his holiness.",
+          "anchor": "unit-3"
+        },
+        {
+          "text": "By definition, true victims are often invisible. In some cases, the whole, a whole system, a whole culture gets to, gets built to make the victims invisible.",
+          "anchor": "unit-13"
+        },
+        {
+          "text": "Spurgeon said, I believe that one reason why the church of God at this present moment has so little influence over the world is because the world has so much influence over the church.",
+          "anchor": "unit-8"
+        },
+        {
+          "text": "When you understand how firmly God stands with the victim and you're in that position, if you have the love of Christ inside of you, you will actively intercede for your enemies because you understand what's coming for them.",
+          "anchor": "unit-21"
+        }
+      ],
+      "external": [
+        {
+          "text": "I believe that one reason why the church of God at this present moment has so little influence over the world is because the world has so much influence over the church.",
+          "author": "Spurgeon",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-8",
+          "excerpt": false
+        },
+        {
+          "text": "God doesn't judge by appearances. A work that looks good on the outside doesn't fool him. So his knowledge, and therefore his judgment, works on a completely different level from ours. Because his understanding is perfect, God looks through the veil and sees the heap of filth hidden in the soul. He sees that each act— he sees what each act really is and the motive behind it. And he judges things as they are, not as they look. Disguises can't deceive him since he knows them long before they were woven. He reaches into the deepest and most tangled wills, and every hidden motive is laid bare, laid open before him. Each action is bare on the outside and open on the inside. Everything is as clear to him as if our bodies were made of glass. So if we hold anything back in secret, he will surely call us to account.",
+          "author": "Stephen Charnock",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-11",
+          "excerpt": false
+        },
+        {
+          "text": "it's wanting more than you need. It's enough isn't enough.",
+          "author": "Augustine",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-23",
+          "excerpt": false
+        }
+      ],
+      "short": "Providence · Lenexa"
+    },
+    {
       "church": "Cornerstone Community Church",
       "city": "Burnsville",
       "state": "MN",
