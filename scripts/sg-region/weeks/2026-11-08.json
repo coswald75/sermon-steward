@@ -10,48 +10,68 @@
   "sermons": [
     {
       "church": "Emmaus Road Church",
-      "city": "Bozeman",
-      "state": "MT",
-      "preacher": "Ron Boomsma",
-      "title": "Act 9:32-43, Preparing for Expansion",
-      "ref": "Acts 9:32-43",
-      "url": "/SGchurch/EmmausRoadBozeman/sermons/act-9-32-43-preparing-for-expansion-2026-11-08.html",
+      "city": "Sioux Falls",
+      "state": "SD",
+      "preacher": "Ryan Chase",
+      "title": "The Good Hand of Our God",
+      "ref": "Ezra 8",
+      "url": "/SGchurch/EmmausRoadSiouxFalls/sermons/the-good-hand-of-our-god-ezra-8-2026-11-08.html",
       "lines": [
         {
-          "text": "For the earth to be filled with the knowledge of the glory of the Lord as the waters cover the sea.",
-          "anchor": "unit-60",
-          "filler_removed": true
+          "text": "There is something that matters more than how many are on your side. There's something that matters more than how strong you are or how much you have.",
+          "anchor": "unit-9"
         },
         {
-          "text": "The Bible is full of details, lots of trees, but there is a forest to be seen. And sometimes we can read our Bibles and get lost in the details, lost in the trees, and lose sight of the forest.",
-          "anchor": "unit-3"
+          "text": "The most significant factor about Ezra is not who was with him or how many were with him, but that the good hand of his God was on him.",
+          "anchor": "unit-19"
         },
         {
-          "text": "You can't walk. Jesus says, I know how to walk, and I will walk for you. I will live the life for you. I will live the perfect life.",
-          "anchor": "unit-52"
+          "text": "Ezra 8 is going to point you to God himself. To God himself as the source of all of the satisfaction and all of the security that your heart craves.",
+          "anchor": "unit-4"
+        },
+        {
+          "text": "Whatever you lack today personally, what, what you need the most is the good hand of God on you.",
+          "anchor": "unit-22"
+        },
+        {
+          "text": "This is an enormous truth that the hand of God is for good on all those who seek Him. Do you seek God?",
+          "anchor": "unit-8"
+        },
+        {
+          "text": "Parents and grandparents, do not underestimate what God can do for generations through your faithfulness and your example, through your trusting obedience to Jesus, through your prayers for your children and your grandchildren.",
+          "anchor": "unit-13"
         }
       ],
       "external": [
         {
-          "text": "you can't see the forest from the trees",
-          "author": null,
+          "text": "whatever I trust the most to satisfy me, that is what I'm going to desire. And whatever I desire the most, I obey.",
+          "author": "Steve Fuller",
           "work": null,
-          "attributed": false,
-          "as_said": "a phrase",
-          "anchor": "unit-2",
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-1",
           "excerpt": false
         },
         {
-          "text": "once like a child under the protection of a tutor, the Jews had been graced with the guardianship of a divinely authored law. But now, with the coming of Christ, the need for such guardianship was past. No longer were the Jews alone the children of God. The exclusive character of their covenant was abrogated. The venerable distinctions between them and everyone else, of which male circumcision had always been the preeminent symbol, were transcended. Jews and Greeks, Galatians and Scythians, all alike, so long as they opened themselves to believe in Jesus Christ, were henceforth God's holy people.",
-          "author": "Tom Holland",
-          "work": "Dominion",
+          "text": "he who has God and everything else has no more than he who has God only.",
+          "author": "C.S. Lewis",
+          "work": "The Weight of Glory",
           "attributed": true,
           "as_said": null,
           "anchor": "unit-8",
           "excerpt": false
+        },
+        {
+          "text": "this is similar to like the beginning of a good heist movie. If you've seen Ocean's Eleven, Danny Ocean is planning to rob about $150 million from 3 different casinos in Las Vegas at the same time.",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "a good heist movie",
+          "anchor": "unit-16",
+          "excerpt": false
         }
       ],
-      "short": "Emmaus Rd · Bozeman"
+      "short": "Emmaus Rd · Sioux Falls"
     },
     {
       "church": "Providence Community Church",
@@ -346,6 +366,51 @@
         }
       ],
       "short": "Grace Life · Hastings"
+    },
+    {
+      "church": "Emmaus Road Church",
+      "city": "Bozeman",
+      "state": "MT",
+      "preacher": "Ron Boomsma",
+      "title": "Act 9:32-43, Preparing for Expansion",
+      "ref": "Acts 9:32-43",
+      "url": "/SGchurch/EmmausRoadBozeman/sermons/act-9-32-43-preparing-for-expansion-2026-11-08.html",
+      "lines": [
+        {
+          "text": "For the earth to be filled with the knowledge of the glory of the Lord as the waters cover the sea.",
+          "anchor": "unit-60",
+          "filler_removed": true
+        },
+        {
+          "text": "The Bible is full of details, lots of trees, but there is a forest to be seen. And sometimes we can read our Bibles and get lost in the details, lost in the trees, and lose sight of the forest.",
+          "anchor": "unit-3"
+        },
+        {
+          "text": "You can't walk. Jesus says, I know how to walk, and I will walk for you. I will live the life for you. I will live the perfect life.",
+          "anchor": "unit-52"
+        }
+      ],
+      "external": [
+        {
+          "text": "you can't see the forest from the trees",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "a phrase",
+          "anchor": "unit-2",
+          "excerpt": false
+        },
+        {
+          "text": "once like a child under the protection of a tutor, the Jews had been graced with the guardianship of a divinely authored law. But now, with the coming of Christ, the need for such guardianship was past. No longer were the Jews alone the children of God. The exclusive character of their covenant was abrogated. The venerable distinctions between them and everyone else, of which male circumcision had always been the preeminent symbol, were transcended. Jews and Greeks, Galatians and Scythians, all alike, so long as they opened themselves to believe in Jesus Christ, were henceforth God's holy people.",
+          "author": "Tom Holland",
+          "work": "Dominion",
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-8",
+          "excerpt": false
+        }
+      ],
+      "short": "Emmaus Rd · Bozeman"
     }
   ]
 }
