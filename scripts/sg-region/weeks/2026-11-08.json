@@ -9,56 +9,49 @@
   },
   "sermons": [
     {
-      "church": "Cross of Grace Church",
-      "city": "Chaska",
-      "state": "MN",
-      "preacher": "Nate Treguboff",
-      "title": "Redemption - A Costly Reward",
-      "ref": "Ruth 4:1-12",
-      "url": "/SGchurch/CrossOfGraceChaska/sermons/redemption-a-costly-reward-2026-11-08.html",
+      "church": "Emmaus Road Church",
+      "city": "Bozeman",
+      "state": "MT",
+      "preacher": "Ron Boomsma",
+      "title": "Act 9:32-43, Preparing for Expansion",
+      "ref": "Acts 9:32-43",
+      "url": "/SGchurch/EmmausRoadBozeman/sermons/act-9-32-43-preparing-for-expansion-2026-11-08.html",
       "lines": [
         {
-          "text": "Jesus is the one that paid the greatest price at the cost of himself, the cost of his self-sacrificial life, emptying himself, all of his rights, all of his privileges as King of Heaven, made himself of no reputation to pour himself out, forsaking his wealth so that his people may become rich and no true redemption that flows through his life and his death and his resurrection.",
-          "anchor": "unit-18"
+          "text": "For the earth to be filled with the knowledge of the glory of the Lord as the waters cover the sea.",
+          "anchor": "unit-60",
+          "filler_removed": true
         },
         {
-          "text": "Boaz moves from sharing food to going beyond that, to putting his own name and his own money and his own security, not to boost his own investments, but to carry on someone else's and redeem the future of another. Do you see that? This is the work that he steps in to do at personal cost of himself so that someone else may no safety, provision, and hope. This is grace enacted. This is grace displayed.",
-          "anchor": "unit-16"
+          "text": "The Bible is full of details, lots of trees, but there is a forest to be seen. And sometimes we can read our Bibles and get lost in the details, lost in the trees, and lose sight of the forest.",
+          "anchor": "unit-3"
         },
         {
-          "text": "Saints, we would have no future without his death and his resurrection on our behalf. Our name— we would be cut off, we would be blotted out of his presence and of sharing an inheritance of his grace, obliterated. Yet Jesus, by offering his life and death and resurrection, the power to take us into his name, we are not left with death or no future, we are actually given great future.",
-          "anchor": "unit-26"
-        },
-        {
-          "text": "God is telling Israel, God is telling his people a resounding yes. Yes, I will do that. Yes, I do have a man who will accomplish that.",
-          "anchor": "unit-8"
-        },
-        {
-          "text": "When we lose sight of that, we get comfortable here. The things of the world can take our hearts and our allegiances, or we can lean towards hopelessness and despair because the hard, the suffering maybe seems overwhelming, and it feels like, is this just the end?",
-          "anchor": "unit-30"
+          "text": "You can't walk. Jesus says, I know how to walk, and I will walk for you. I will live the life for you. I will live the perfect life.",
+          "anchor": "unit-52"
         }
       ],
       "external": [
         {
-          "text": "In contemporary terms, the kinsman redeemer would have to attend Little League games and pay for piano lessons, braces, and college, and all the responsibilities that come with being a parent. And he would also have to put an addition on the house for his new, perhaps second, mother-in-law.",
-          "author": "One commenter",
-          "work": null,
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-13",
-          "excerpt": false
-        },
-        {
-          "text": "you are not your own because you were bought with a price",
+          "text": "you can't see the forest from the trees",
           "author": null,
           "work": null,
           "attributed": false,
-          "as_said": "someone he quoted",
-          "anchor": "unit-19",
+          "as_said": "a phrase",
+          "anchor": "unit-2",
+          "excerpt": false
+        },
+        {
+          "text": "once like a child under the protection of a tutor, the Jews had been graced with the guardianship of a divinely authored law. But now, with the coming of Christ, the need for such guardianship was past. No longer were the Jews alone the children of God. The exclusive character of their covenant was abrogated. The venerable distinctions between them and everyone else, of which male circumcision had always been the preeminent symbol, were transcended. Jews and Greeks, Galatians and Scythians, all alike, so long as they opened themselves to believe in Jesus Christ, were henceforth God's holy people.",
+          "author": "Tom Holland",
+          "work": "Dominion",
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-8",
           "excerpt": false
         }
       ],
-      "short": "Cross of Grace · Chaska"
+      "short": "Emmaus Rd · Bozeman"
     },
     {
       "church": "Providence Community Church",
@@ -171,6 +164,58 @@
         }
       ],
       "short": "Center Church · Star"
+    },
+    {
+      "church": "Cross of Grace Church",
+      "city": "Chaska",
+      "state": "MN",
+      "preacher": "Nate Treguboff",
+      "title": "Redemption - A Costly Reward",
+      "ref": "Ruth 4:1-12",
+      "url": "/SGchurch/CrossOfGraceChaska/sermons/redemption-a-costly-reward-2026-11-08.html",
+      "lines": [
+        {
+          "text": "Jesus is the one that paid the greatest price at the cost of himself, the cost of his self-sacrificial life, emptying himself, all of his rights, all of his privileges as King of Heaven, made himself of no reputation to pour himself out, forsaking his wealth so that his people may become rich and no true redemption that flows through his life and his death and his resurrection.",
+          "anchor": "unit-18"
+        },
+        {
+          "text": "Boaz moves from sharing food to going beyond that, to putting his own name and his own money and his own security, not to boost his own investments, but to carry on someone else's and redeem the future of another. Do you see that? This is the work that he steps in to do at personal cost of himself so that someone else may no safety, provision, and hope. This is grace enacted. This is grace displayed.",
+          "anchor": "unit-16"
+        },
+        {
+          "text": "Saints, we would have no future without his death and his resurrection on our behalf. Our name— we would be cut off, we would be blotted out of his presence and of sharing an inheritance of his grace, obliterated. Yet Jesus, by offering his life and death and resurrection, the power to take us into his name, we are not left with death or no future, we are actually given great future.",
+          "anchor": "unit-26"
+        },
+        {
+          "text": "God is telling Israel, God is telling his people a resounding yes. Yes, I will do that. Yes, I do have a man who will accomplish that.",
+          "anchor": "unit-8"
+        },
+        {
+          "text": "When we lose sight of that, we get comfortable here. The things of the world can take our hearts and our allegiances, or we can lean towards hopelessness and despair because the hard, the suffering maybe seems overwhelming, and it feels like, is this just the end?",
+          "anchor": "unit-30"
+        }
+      ],
+      "external": [
+        {
+          "text": "In contemporary terms, the kinsman redeemer would have to attend Little League games and pay for piano lessons, braces, and college, and all the responsibilities that come with being a parent. And he would also have to put an addition on the house for his new, perhaps second, mother-in-law.",
+          "author": "One commenter",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-13",
+          "excerpt": false
+        },
+        {
+          "text": "you are not your own because you were bought with a price",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-19",
+          "excerpt": false
+        }
+      ],
+      "short": "Cross of Grace · Chaska"
     },
     {
       "church": "Cornerstone Community Church",
