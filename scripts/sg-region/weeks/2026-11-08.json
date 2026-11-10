@@ -9,6 +9,89 @@
   },
   "sermons": [
     {
+      "church": "Covenant Life Fellowship",
+      "city": "Roseburg",
+      "state": "OR",
+      "preacher": "Dave York",
+      "title": "When God Gives Us Over",
+      "ref": "Romans 1:24-32",
+      "url": "/SGchurch/CovenantLifeRoseburg/sermons/when-god-gives-us-over-2026-11-08.html",
+      "lines": [
+        {
+          "text": "God's wrath is revealed against humanity's rejection of him when he gives people over to the destructive power of sin.",
+          "anchor": "unit-2"
+        },
+        {
+          "text": "God's wrath operates not by God's intervention, but precisely by his not intervening, by letting men and women go their own way.",
+          "anchor": "unit-12"
+        },
+        {
+          "text": "Here's the lie, that we can find life, joy, satisfaction, happiness, peace, you name it, in created things apart from worshiping and obeying the God who made us.",
+          "anchor": "unit-22"
+        },
+        {
+          "text": "The gospel is the power of God to save us from God's wrath while at the same time empowering us to no longer be dominated by sin.",
+          "anchor": "unit-40"
+        },
+        {
+          "text": "The Gospel didn't merely change our standing before God. It did that. But it changed our relationship with sin forever.",
+          "anchor": "unit-47"
+        },
+        {
+          "text": "Romans 1 should cause us to look with humility, to enter the world with compassion, to realize that we too are sinners in need of God's mercy.",
+          "anchor": "unit-53"
+        }
+      ],
+      "external": [
+        {
+          "text": "be killing sin or sin will be killing you",
+          "author": "John Owen",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-51",
+          "excerpt": false
+        },
+        {
+          "text": "God's wrath operates not by God's intervention, but precisely by his not intervening, by letting men and women go their own way.",
+          "author": "John Zysler",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-12",
+          "excerpt": false
+        },
+        {
+          "text": "God's judgment on godlessness and wickedness is to give us what we want. He gave them over to the sinful desires of their hearts. The things we serve will not free us. Rather, they control us.",
+          "author": "Tim Keller",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-17",
+          "excerpt": false
+        },
+        {
+          "text": "I'm going to agree with Garth Brooks here that sometimes I thank God for unanswered prayers.",
+          "author": "Garth Brooks",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-24",
+          "excerpt": false
+        },
+        {
+          "text": "if God believed what you prayed for was good for you and he's resisted from giving it to you, that must mean it's his goodness to not give it to you.",
+          "author": "Charles Spurgeon",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-24",
+          "excerpt": false
+        }
+      ],
+      "short": "Covenant Life · Roseburg"
+    },
+    {
       "church": "Providence Community Church",
       "city": "Lenexa",
       "state": "KS",
