@@ -9,6 +9,62 @@
   },
   "sermons": [
     {
+      "church": "Cornerstone Community Church",
+      "city": "Burnsville",
+      "state": "MN",
+      "preacher": "Rick Gamache",
+      "title": "Singing and Making Melody",
+      "ref": "Ephesians 5:18-20",
+      "url": "/SGchurch/CornerstoneBurnsville/sermons/singing-and-making-melody-ephesians-5-18-20-2026-11-15.html",
+      "lines": [
+        {
+          "text": "When we sing on Sunday mornings, here's what it means: the glory of God that I see in the face of Jesus by the Spirit And the joy and satisfaction and delight that I experience as I behold the glory of Christ is so great, so intense, so deep, so majestic, so profound, that merely talking about it is not sufficient.",
+          "anchor": "unit-10"
+        },
+        {
+          "text": "Worship is our right response to the glory of God seen in Jesus Christ through the Holy Spirit.",
+          "anchor": "unit-8"
+        },
+        {
+          "text": "We do not sing as a means of entering into God's presence. We sing as an expression of joy that by the death of Jesus, we are already in God's presence.",
+          "anchor": "unit-23"
+        },
+        {
+          "text": "I am not saying that worship is only authentic when your emotions are burning white-hot for God. Sometimes, being the fickle, distracted creatures we are, all we have to bring to God is the desire to feel white-hot affection for him again.",
+          "anchor": "unit-18"
+        },
+        {
+          "text": "We no longer have to fear eternal separation from God. Death for us is a doorway to unimaginable joy. Our sin is conquered. Hell is defeated. Jesus saved us for unending pleasures in his presence forever.",
+          "anchor": "unit-24"
+        },
+        {
+          "text": "Authentic worship expressed by authentic singing begins with simply asking our Father in heaven to increase our capacity to contain more of the Spirit, and he promises to do that in response to our prayers, right?",
+          "anchor": "unit-15"
+        }
+      ],
+      "external": [
+        {
+          "text": "at home he didn't always experience appropriate warmth and vigor for the things of God, but when he gathered with the church, a fire was kindled in his heart",
+          "author": "Martin Luther",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-26",
+          "excerpt": false
+        },
+        {
+          "text": "I have no use for cranks who who despise music because it is a gift of God. Music drives away the devil. It makes people happy. They forget thereby all wrath, unchastity, arrogance, and the like. Next after theology, I give music the highest place and greatest honor. I would not exchange what little I know of music for something great. Experience proves that next to the Word of God, Only music deserves to be extolled as the mistress and governess of the feeling of the human heart. We know that to the devil music is distasteful and insufferable. My heart bubbles up and overflows in response to music, which so often refreshed me and delivered me from dire plagues.",
+          "author": "Martin Luther",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-19",
+          "excerpt": false
+        }
+      ],
+      "short": "Cornerstone · Burnsville"
+    },
+    {
       "church": "Providence Community Church",
       "city": "Lenexa",
       "state": "KS",
