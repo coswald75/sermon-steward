@@ -3,11 +3,67 @@
   "region": "/SGchurch/MidwestNorthwest",
   "region_name": "Sovereign Grace Midwest/Northwest",
   "feature": {
-    "text": "You cannot discipline yourself into union with Christ.",
-    "preacher": "Chad Haygood",
-    "church": "Grace Life Church"
+    "text": "So, playing it safe is not the safest option with Jesus.",
+    "preacher": "Dov Cohen",
+    "church": "Providence Community Church"
   },
   "sermons": [
+    {
+      "church": "Providence Community Church",
+      "city": "Lenexa",
+      "state": "KS",
+      "preacher": "Dov Cohen",
+      "title": "Living In Light of the Mater's Return",
+      "ref": "Matthew 25:14-30",
+      "url": "/ProvidenceLenexa/sermons/living-in-light-of-the-master-s-return-2026-11-15.html",
+      "lines": [
+        {
+          "text": "The servants didn't manufacture the increase. They did work. They did expend energy and try their best, but the master is the one who gives the growth.",
+          "anchor": "unit-14"
+        },
+        {
+          "text": "Bad theology led to fear, and fear led to a hole in the ground.",
+          "anchor": "unit-21"
+        },
+        {
+          "text": "So don't dismiss sloth as a harmless weakness. Jesus wants us to see the seriousness of a life that claims him as master, but shows little desire to serve him.",
+          "anchor": "unit-22"
+        },
+        {
+          "text": "So, playing it safe is not the safest option with Jesus.",
+          "anchor": "unit-11"
+        },
+        {
+          "text": "The master doesn't simply say, well done. He says, enter into the joy of the Lord. Your master. He invites his faithful servants to share in his own joy.",
+          "anchor": "unit-24"
+        },
+        {
+          "text": "My desire for you is not simply that you would be busy for Christ, but instead that you would live a life of sustainable fruitfulness for him.",
+          "anchor": "unit-36"
+        }
+      ],
+      "external": [
+        {
+          "text": "money was best protected in the ground",
+          "author": "Rabbi Shmuel",
+          "work": "Babylonian Talmud",
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-11",
+          "excerpt": false
+        },
+        {
+          "text": "let no man say, I have but one talent and can do nothing, for you can even by one approve yourself",
+          "author": "John Chrysostom",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-8",
+          "excerpt": false
+        }
+      ],
+      "short": "Providence · Lenexa"
+    },
     {
       "church": "Grace Life Church",
       "city": "Hastings",
