@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-15",
+  "region": "/SGchurch/MidwestNorthwest",
+  "region_name": "Sovereign Grace Midwest/Northwest",
+  "feature": {
+    "text": "You cannot discipline yourself into union with Christ.",
+    "preacher": "Chad Haygood",
+    "church": "Grace Life Church"
+  },
+  "sermons": [
+    {
+      "church": "Grace Life Church",
+      "city": "Hastings",
+      "state": "NE",
+      "preacher": "Chad Haygood",
+      "title": "“Looks Holy”",
+      "ref": "Colossians 2:16-23",
+      "url": "/SGchurch/GraceLifeHastings/sermons/looks-holy-2026-11-15.html",
+      "lines": [
+        {
+          "text": "Not everything that looks holy produces holiness.",
+          "anchor": "unit-20"
+        },
+        {
+          "text": "In Christ, there is nowhere further to go. There is nothing higher. There is nothing deeper. There is nothing beyond him. There is nothing superior.",
+          "anchor": "unit-56"
+        },
+        {
+          "text": "You cannot discipline yourself into union with Christ.",
+          "anchor": "unit-85"
+        },
+        {
+          "text": "Rules can restrain behavior, but they cannot create spiritual life.",
+          "anchor": "unit-81"
+        },
+        {
+          "text": "We don't become more mature by drifting away from Christ. We don't become more mature by drifting away from Christ's Church in pursuit of some spiritual insight or secret.",
+          "anchor": "unit-63"
+        },
+        {
+          "text": "The question that Paul asks, and I'm encouraging all of us to ask, is, does any of it actually bring us closer to Christ?",
+          "anchor": "unit-19"
+        }
+      ],
+      "external": [
+        {
+          "text": "to abstain, it is true, from swine's flesh is in itself harmless, but the binding to do it is pernicious because it makes void the grace of Christ.",
+          "author": "John Calvin",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-41",
+          "excerpt": false
+        }
+      ],
+      "short": "Grace Life · Hastings"
+    }
+  ]
+}
