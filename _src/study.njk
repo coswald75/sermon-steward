@@ -295,6 +295,11 @@ permalink: /study/index.html
   const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR3YnVubWJ6eXFjcXpnZmZkcmliIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE1ODgxODUsImV4cCI6MjA4NzE2NDE4NX0.8Y6tMnX5bhIWxTS7llFZElPY-st7rji0MtlTzxeqiW8';
   const FN_URL = SUPABASE_URL + '/functions/v1/corpus-query';
 
+  // Capture auth tokens before supabase-js clears the URL hash.
+  // If Quiet Read's redirect URL is not yet on the allow list, confirm
+  // links fall back to this Site URL; we then send non-members back to Quiet Read.
+  const initialAuthHash = window.location.hash || '';
+
   const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
     auth: { detectSessionInUrl: true, persistSession: true, autoRefreshToken: true }
   });
@@ -317,14 +322,36 @@ permalink: /study/index.html
   const askBtn        = $('ask-btn');
 
   // ───── Auth state ─────
+  const NO_STUDY_ACCESS = "This account doesn't have access to The Study. If you signed in from Quiet Read, go back to quietread.app. Contact Chris if you should have access.";
+
+  async function hasStudyAccess() {
+    const { data, error } = await supabase.rpc('can_use_study');
+    return !error && data === true;
+  }
+
   async function refreshAuthState() {
     const { data: { session } } = await supabase.auth.getSession();
     if (session?.user) {
+      sessionBar.classList.remove('hidden');
+      sessionEmail.textContent = session.user.email || '';
+      const allowed = await hasStudyAccess();
+      if (!allowed) {
+        if (/access_token|refresh_token|type=signup|type=magiclink|type=email/.test(initialAuthHash)) {
+          window.location.replace('https://quietread.app/' + initialAuthHash);
+          return;
+        }
+        signinSection.classList.remove('hidden');
+        chatSection.classList.add('hidden');
+        composer.classList.add('hidden');
+        signinMsg.classList.add('error');
+        signinMsg.textContent = NO_STUDY_ACCESS;
+        return;
+      }
+      signinMsg.classList.remove('error');
+      signinMsg.textContent = '';
       signinSection.classList.add('hidden');
       chatSection.classList.remove('hidden');
       composer.classList.remove('hidden');
-      sessionBar.classList.remove('hidden');
-      sessionEmail.textContent = session.user.email || '';
     } else {
       signinSection.classList.remove('hidden');
       chatSection.classList.add('hidden');
@@ -468,6 +495,7 @@ permalink: /study/index.html
     try {
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) { throw new Error('Session expired — please sign in again.'); }
+      if (!(await hasStudyAccess())) { throw new Error(NO_STUDY_ACCESS); }
 
       const resp = await fetch(FN_URL, {
         method: 'POST',
