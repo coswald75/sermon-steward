@@ -3,66 +3,131 @@
   "region": "/SGchurch/MidwestNorthwest",
   "region_name": "Sovereign Grace Midwest/Northwest",
   "feature": {
-    "text": "You cannot discipline yourself into union with Christ.",
-    "preacher": "Chad Haygood",
-    "church": "Grace Life Church"
+    "text": "So, playing it safe is not the safest option with Jesus.",
+    "preacher": "Dov Cohen",
+    "church": "Providence Community Church"
   },
   "sermons": [
     {
-      "church": "Emmaus Road Church",
-      "city": "Bozeman",
-      "state": "MT",
-      "preacher": "Zach Boomsma",
-      "title": "Acts 11:19-30",
-      "ref": "Acts 11:19-30",
-      "url": "/SGchurch/EmmausRoadBozeman/sermons/acts-11-19-30-2026-11-15.html",
+      "church": "Center Church of Star",
+      "city": "Star",
+      "state": "ID",
+      "preacher": "Joe Terranova",
+      "title": "God's Love for His People",
+      "ref": "Ephesians 3:14-19",
+      "url": "/SGchurch/CenterChurchStar/sermons/gods-love-for-his-people-2026-11-15.html",
       "lines": [
         {
-          "text": "And it's by taking a long, intentional look at the sovereignty of God that can completely change the way that we view seasons of suffering and trial.",
-          "anchor": "unit-6"
+          "text": "Finding our grounding in ourselves provides a sort of joy that is momentary and inconsistent, and unreliable. But finding our grounding in God's perfect love provides security and persistence and resilience.",
+          "anchor": "unit-2"
         },
         {
-          "text": "The togetherness that's found in Jesus Christ expressed in the church, it is so utterly unifying that it strips away any dividing lines.",
-          "anchor": "unit-27"
+          "text": "This is an experiential knowledge. This is a knowledge that surpasses only gathering facts. This is a knowledge that is like a merchant in search of fine pearls who, on finding one pearl of great price, went and sold everything that he had and bought it.",
+          "anchor": "unit-4"
         },
         {
-          "text": "See, the gospel had such an effect on this group of scattered believers that they did the unthinkable, and it doesn't really make a lot of sense because their response to those horrible circumstances was evangelism, is to share the good news.",
-          "anchor": "unit-13"
+          "text": "In Christ, through his life, death, and resurrection, God has removed every single obstacle that could ever get in the way of his perfect love for you.",
+          "anchor": "unit-3"
         },
         {
-          "text": "The hand that scattered the seed stayed with the seed. The sovereign hand that allowed this persecution and allowed this trial, that allowed this diaspora, scatters them but then also accompanies them to Antioch.",
+          "text": "We're created to know about God, but also to know God. This is the aim of all of our reading and prayer, to know both with the mind and with the heart.",
           "anchor": "unit-5"
         },
         {
-          "text": "When you realize it's your Savior that's playing, he is the one that is calling the shots. He is the one that's calling all of these notes.",
-          "anchor": "unit-11"
+          "text": "Mere outward conformity to God's instructions without the Spirit operative in the heart is a formula for burnout, exhaustion, discouragement, hardness.",
+          "anchor": "unit-6"
         },
         {
-          "text": "Freedom is now available in Christ for everyone.",
-          "anchor": "unit-14"
+          "text": "We serve a big God. Massive. It's beyond what you can ask or imagine. That's what's explicitly said here. It's penned by the Holy Spirit. Dear friends, strive and fight to believe what God has said.",
+          "anchor": "unit-7"
         }
       ],
       "external": [
         {
-          "text": "The pulsating metropolis, it must have been clogged with boisterous traffic, bands of jugglers and dancing girls on their way to Antioch, cohorts on the march, merchants from Baghdad and Damascus with their silks, spices, and perfumes, itinerant Greek philosophers. There were gladiators and men with caged beasts to fight them, pagan priests begging their way with a god sitting in a tent. And somewhere in that crowd, symbols of the old world mixed with the new, a Roman senator traveling in state. This was a city of consumers, full of rich aristocrats and riches, and of wealthy retired people who sought here one of the finest climates in the world, something we associate with Venice in the 18th century, Paris in the 19th, and Hollywood today, with its deification of youth, beauty distinguished. Antioch during the lifetime of Paul was up-to-date, amusing, elegant, and wicked.",
-          "author": "H.V. Morton",
+          "text": "when the devil throws your sins in your face and declares that you deserve death and hell, tell him, I admit that I deserve death and hell. What of it? For I know one who suffered and made satisfaction on my behalf. His name is Jesus Christ. He's the Son of God. And where He is, there I will be also.",
+          "author": "Martin Luther",
           "work": null,
           "attributed": true,
           "as_said": null,
-          "anchor": "unit-14",
+          "anchor": "unit-3",
           "excerpt": false
         },
         {
-          "text": "oh, those Christers. Those dumb Christ fanatics.",
-          "author": "R.C. Sproul",
+          "text": "we are coming to the God who without any merit of our own, nothing, thought, word, or deed, but only by His pure grace grants and credits me the perfect satisfaction, righteousness, and holiness of Christ. He does so as if I have never committed any sin, indeed, as if I had fully accomplished all the obedience that Christ accomplished for me, so long as I receive this gift with a believing heart.",
+          "author": "last week's We Believe statement",
           "work": null,
           "attributed": true,
           "as_said": null,
-          "anchor": "unit-15",
+          "anchor": "unit-9",
+          "excerpt": false
+        },
+        {
+          "text": "when Satan tempts me to despair and tells me of the guilt within, upward I look. And I see him there who made an end of all my sin.",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "song and hymns and spiritual songs",
+          "anchor": "unit-3",
           "excerpt": false
         }
       ],
-      "short": "Emmaus Rd · Bozeman"
+      "short": "Center Church · Star"
+    },
+    {
+      "church": "Cross of Grace Church",
+      "city": "Chaska",
+      "state": "MN",
+      "preacher": "Dan Birkholz",
+      "title": "The Blessings of Redemption",
+      "ref": "Ruth 4:13-22",
+      "url": "/SGchurch/CrossOfGraceChaska/sermons/the-blessings-of-redemption-2026-11-15.html",
+      "lines": [
+        {
+          "text": "You just stick that in your pessimistic pipe, right, and smoke it. You— that inner pessimist just needs to be confronted with the glories of that cross, with the glories of how he saved us, he redeemed us, he took us from death to life.",
+          "anchor": "unit-16"
+        },
+        {
+          "text": "I am calling you to at least in some degree die to that pessimism, and not in exchange for some like flighty, naïve, unhinged optimism, but in exchange for the rock-solid truth that our God, our God, Yahweh God, never stops working for the good of his own.",
+          "anchor": "unit-3"
+        },
+        {
+          "text": "You and I were made to be needy. Take it in. Because we're just like, wait, no, like, I'm self-sufficient. I know how to do life. No, you were designed, created before sin ever like hit, hit the storyline, before things got— our need, if you will, got really nuanced by sin.",
+          "anchor": "unit-23"
+        },
+        {
+          "text": "God will meet you in the process of repentance. You come empty-handed, you feel like you've gone through the storm, you feel like God has been harsh with you, oh, you humble yourself, he will draw near to you.",
+          "anchor": "unit-20"
+        },
+        {
+          "text": "So the inner pessimist must die. The comparisons and jealousies truly have no place. And why? Because if you are in Christ, Your story is without question a happily ever after story.",
+          "anchor": "unit-32"
+        },
+        {
+          "text": "If we could say Obed was an immediate blessing to Ruth and Naomi, but he was a historical blessing for any and all who have put their faith in Jesus.",
+          "anchor": "unit-29"
+        }
+      ],
+      "external": [
+        {
+          "text": "We are going to the chapel and we're going to get married.",
+          "author": "The Dixie Cups",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-10",
+          "excerpt": false
+        },
+        {
+          "text": "child, you can't see your story apart from this story",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "the Holy Spirit sitting us down like Henry Gates",
+          "anchor": "unit-31",
+          "excerpt": false
+        }
+      ],
+      "short": "Cross of Grace · Chaska"
     },
     {
       "church": "Providence Community Church",
@@ -222,6 +287,62 @@
         }
       ],
       "short": "Grace Life · Hastings"
+    },
+    {
+      "church": "Emmaus Road Church",
+      "city": "Bozeman",
+      "state": "MT",
+      "preacher": "Zach Boomsma",
+      "title": "Acts 11:19-30",
+      "ref": "Acts 11:19-30",
+      "url": "/SGchurch/EmmausRoadBozeman/sermons/acts-11-19-30-2026-11-15.html",
+      "lines": [
+        {
+          "text": "And it's by taking a long, intentional look at the sovereignty of God that can completely change the way that we view seasons of suffering and trial.",
+          "anchor": "unit-6"
+        },
+        {
+          "text": "The togetherness that's found in Jesus Christ expressed in the church, it is so utterly unifying that it strips away any dividing lines.",
+          "anchor": "unit-27"
+        },
+        {
+          "text": "See, the gospel had such an effect on this group of scattered believers that they did the unthinkable, and it doesn't really make a lot of sense because their response to those horrible circumstances was evangelism, is to share the good news.",
+          "anchor": "unit-13"
+        },
+        {
+          "text": "The hand that scattered the seed stayed with the seed. The sovereign hand that allowed this persecution and allowed this trial, that allowed this diaspora, scatters them but then also accompanies them to Antioch.",
+          "anchor": "unit-5"
+        },
+        {
+          "text": "When you realize it's your Savior that's playing, he is the one that is calling the shots. He is the one that's calling all of these notes.",
+          "anchor": "unit-11"
+        },
+        {
+          "text": "Freedom is now available in Christ for everyone.",
+          "anchor": "unit-14"
+        }
+      ],
+      "external": [
+        {
+          "text": "The pulsating metropolis, it must have been clogged with boisterous traffic, bands of jugglers and dancing girls on their way to Antioch, cohorts on the march, merchants from Baghdad and Damascus with their silks, spices, and perfumes, itinerant Greek philosophers. There were gladiators and men with caged beasts to fight them, pagan priests begging their way with a god sitting in a tent. And somewhere in that crowd, symbols of the old world mixed with the new, a Roman senator traveling in state. This was a city of consumers, full of rich aristocrats and riches, and of wealthy retired people who sought here one of the finest climates in the world, something we associate with Venice in the 18th century, Paris in the 19th, and Hollywood today, with its deification of youth, beauty distinguished. Antioch during the lifetime of Paul was up-to-date, amusing, elegant, and wicked.",
+          "author": "H.V. Morton",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-14",
+          "excerpt": false
+        },
+        {
+          "text": "oh, those Christers. Those dumb Christ fanatics.",
+          "author": "R.C. Sproul",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-15",
+          "excerpt": false
+        }
+      ],
+      "short": "Emmaus Rd · Bozeman"
     }
   ]
 }
