@@ -9,6 +9,145 @@
   },
   "sermons": [
     {
+      "church": "Emmaus Road Church",
+      "city": "Sioux Falls",
+      "state": "SD",
+      "preacher": "Jordan Strand",
+      "title": "A Prayer of Repentance",
+      "ref": "Ezra 9",
+      "url": "/SGchurch/EmmausRoadSiouxFalls/sermons/a-prayer-of-repentance-ezra-9-2026-11-15.html",
+      "lines": [
+        {
+          "text": "So often our problem in the contemporary church and our embarrassment at passages like this is that we have lost a true sense of the holiness of God and thus a true awareness of our own sin.",
+          "anchor": "unit-8"
+        },
+        {
+          "text": "True repentance is primarily concerned with the glory of God, and that is the chief source of godly grief over sin.",
+          "anchor": "unit-11"
+        },
+        {
+          "text": "Sin is costly, both in your own life and to those around you.",
+          "anchor": "unit-1"
+        },
+        {
+          "text": "No amount of our own fervent prayer, our good resolve, sorrowful tears— none of these things can wash away our own sin.",
+          "anchor": "unit-21"
+        },
+        {
+          "text": "The path to true restoration, which is possible through repentance, requires us to see sin and call it what it is. It's rebellion against God's good design, and that must be put to death.",
+          "anchor": "unit-9"
+        },
+        {
+          "text": "Sin is insidious. It affects the whole community, right? Not just the individuals who are directly involved.",
+          "anchor": "unit-6"
+        }
+      ],
+      "external": [
+        {
+          "text": "in our days of lax behavior, and disdain for God's creation order in marriage, we need to listen well to what Ezra says. So often our problem in the contemporary church and our embarrassment at passages like this is that we have lost a true sense of the holiness of God and thus a true awareness of our own sin.",
+          "author": "Robert Feall",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-8",
+          "excerpt": false
+        },
+        {
+          "text": "confession is verbal humiliation.",
+          "author": "Richard Sibbes",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-13",
+          "excerpt": false
+        },
+        {
+          "text": "many people think to wash away their sins with their sorrow, but they must know there is something beyond sorrow. It is only the blood of Jesus Christ which can cleanse and take away this stain.",
+          "author": "Jeremiah Burroughs",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-21",
+          "excerpt": false
+        },
+        {
+          "text": "Rend your hearts and not your garments. Return to the Lord your God, for He is gracious and merciful, slow to anger, and abounding in steadfast love, and he relents over disaster",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "The prophet Joel writes",
+          "anchor": "unit-17",
+          "excerpt": false
+        },
+        {
+          "text": "thus have you said, surely our transgressions and our sins are upon us, and we rot away because of them. How then can we live? Say to them, as I live, declares the Lord God, I have no pleasure in the death of the wicked, but that the wicked turn from his way and live. Turn back, turn back from your evil ways, for why will you die, O house of Israel?",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "The prophet Ezekiel writes",
+          "anchor": "unit-24",
+          "excerpt": false
+        }
+      ],
+      "short": "Emmaus Rd · Sioux Falls"
+    },
+    {
+      "church": "Providence Community Church",
+      "city": "Lenexa",
+      "state": "KS",
+      "preacher": "Dov Cohen",
+      "title": "Living In Light of the Master's Return",
+      "ref": "Matthew 25:14-30",
+      "url": "/ProvidenceLenexa/sermons/living-in-light-of-the-master-s-return-2026-11-15.html",
+      "lines": [
+        {
+          "text": "The servants didn't manufacture the increase. They did work. They did expend energy and try their best, but the master is the one who gives the growth.",
+          "anchor": "unit-14"
+        },
+        {
+          "text": "Bad theology led to fear, and fear led to a hole in the ground.",
+          "anchor": "unit-21"
+        },
+        {
+          "text": "So don't dismiss sloth as a harmless weakness. Jesus wants us to see the seriousness of a life that claims him as master, but shows little desire to serve him.",
+          "anchor": "unit-22"
+        },
+        {
+          "text": "So, playing it safe is not the safest option with Jesus.",
+          "anchor": "unit-11"
+        },
+        {
+          "text": "The master doesn't simply say, well done. He says, enter into the joy of the Lord. Your master. He invites his faithful servants to share in his own joy.",
+          "anchor": "unit-24"
+        },
+        {
+          "text": "My desire for you is not simply that you would be busy for Christ, but instead that you would live a life of sustainable fruitfulness for him.",
+          "anchor": "unit-36"
+        }
+      ],
+      "external": [
+        {
+          "text": "money was best protected in the ground",
+          "author": "Rabbi Shmuel",
+          "work": "Babylonian Talmud",
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-11",
+          "excerpt": false
+        },
+        {
+          "text": "let no man say, I have but one talent and can do nothing, for you can even by one approve yourself",
+          "author": "John Chrysostom",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-8",
+          "excerpt": false
+        }
+      ],
+      "short": "Providence · Lenexa"
+    },
+    {
       "church": "Center Church of Star",
       "city": "Star",
       "state": "ID",
@@ -128,62 +267,6 @@
         }
       ],
       "short": "Cross of Grace · Chaska"
-    },
-    {
-      "church": "Providence Community Church",
-      "city": "Lenexa",
-      "state": "KS",
-      "preacher": "Dov Cohen",
-      "title": "Living In Light of the Master's Return",
-      "ref": "Matthew 25:14-30",
-      "url": "/ProvidenceLenexa/sermons/living-in-light-of-the-master-s-return-2026-11-15.html",
-      "lines": [
-        {
-          "text": "The servants didn't manufacture the increase. They did work. They did expend energy and try their best, but the master is the one who gives the growth.",
-          "anchor": "unit-14"
-        },
-        {
-          "text": "Bad theology led to fear, and fear led to a hole in the ground.",
-          "anchor": "unit-21"
-        },
-        {
-          "text": "So don't dismiss sloth as a harmless weakness. Jesus wants us to see the seriousness of a life that claims him as master, but shows little desire to serve him.",
-          "anchor": "unit-22"
-        },
-        {
-          "text": "So, playing it safe is not the safest option with Jesus.",
-          "anchor": "unit-11"
-        },
-        {
-          "text": "The master doesn't simply say, well done. He says, enter into the joy of the Lord. Your master. He invites his faithful servants to share in his own joy.",
-          "anchor": "unit-24"
-        },
-        {
-          "text": "My desire for you is not simply that you would be busy for Christ, but instead that you would live a life of sustainable fruitfulness for him.",
-          "anchor": "unit-36"
-        }
-      ],
-      "external": [
-        {
-          "text": "money was best protected in the ground",
-          "author": "Rabbi Shmuel",
-          "work": "Babylonian Talmud",
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-11",
-          "excerpt": false
-        },
-        {
-          "text": "let no man say, I have but one talent and can do nothing, for you can even by one approve yourself",
-          "author": "John Chrysostom",
-          "work": null,
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-8",
-          "excerpt": false
-        }
-      ],
-      "short": "Providence · Lenexa"
     },
     {
       "church": "Cornerstone Community Church",
