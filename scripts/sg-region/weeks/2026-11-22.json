@@ -3,11 +3,58 @@
   "region": "/SGchurch/MidwestNorthwest",
   "region_name": "Sovereign Grace Midwest/Northwest",
   "feature": {
-    "text": "The more serious you get about your sin, the sweeter the Savior seems, and the more glorious the gospel itself seems.",
-    "preacher": "Chris Oswald",
-    "church": "Providence Community Church"
+    "text": "When Christ is your life, you're not smaller, you're safer.",
+    "preacher": "Chad Haygood",
+    "church": "Grace Life Church"
   },
   "sermons": [
+    {
+      "church": "Cornerstone Community Church",
+      "city": "Burnsville",
+      "state": "MN",
+      "preacher": "Rick Gamache",
+      "title": "God Is For Us!",
+      "ref": "Romans 8:28-39",
+      "url": "/SGchurch/CornerstoneBurnsville/sermons/god-is-for-us-romans-8-28-39-2026-11-22.html",
+      "lines": [
+        {
+          "text": "Everything in the life of God's people serves to make us more like Jesus, and everything serves to get us to glory, the glory we will share with Jesus when our adoption by God is made final and we inherit the newly glorified heaven and earth.",
+          "anchor": "unit-7"
+        },
+        {
+          "text": "God is for us. God is for us. God is for you, Christian. That's not only the whole point of our verse this morning, That's the whole point of Romans chapter 8. In fact, it's the whole point of this entire Bible.",
+          "anchor": "unit-17"
+        },
+        {
+          "text": "And that unbroken, unbreakable chain— foreknown, predestined, called, justified, glorified— is the foundation of the promise that all things work together for good.",
+          "anchor": "unit-15"
+        },
+        {
+          "text": "You want the Christian life in just a handful of words? Here it is: like Jesus, with Jesus, worshiping Jesus forever.",
+          "anchor": "unit-10"
+        },
+        {
+          "text": "It's so huge, it's just, it's sweeping in its scope. Its scope, and it's weighty. It's heavy with potential to change the way we live and the way we think and the way we feel, and to do that every single day.",
+          "anchor": "unit-2"
+        },
+        {
+          "text": "Every good and eternal thing was accomplished on that cross. All of it. Satan and his minions defeated, our ransom paid, forgiveness purchased, justification secured, a way to God forged, wrath averted, freedom from slavery to sin, Adoption into God's family, death destroyed, eternal life guaranteed, heaven's gates open, glorification forever with every spiritual blessing thrown in.",
+          "anchor": "unit-21"
+        }
+      ],
+      "external": [
+        {
+          "text": "it was not because you were more in number than any other people that the Lord set his love on you and chose you, for you were the fewest of all people. Now here it is, verse 8, but it is because the Lord loves you",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "Deuteronomy 7:7-8",
+          "anchor": "unit-9",
+          "excerpt": false
+        }
+      ],
+      "short": "Cornerstone · Burnsville"
+    },
     {
       "church": "Providence Community Church",
       "city": "Lenexa",
