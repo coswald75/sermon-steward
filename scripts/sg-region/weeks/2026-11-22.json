@@ -3,11 +3,104 @@
   "region": "/SGchurch/MidwestNorthwest",
   "region_name": "Sovereign Grace Midwest/Northwest",
   "feature": {
-    "text": "When Christ is your life, you're not smaller, you're safer.",
-    "preacher": "Chad Haygood",
-    "church": "Grace Life Church"
+    "text": "The more serious you get about your sin, the sweeter the Savior seems, and the more glorious the gospel itself seems.",
+    "preacher": "Chris Oswald",
+    "church": "Providence Community Church"
   },
   "sermons": [
+    {
+      "church": "Providence Community Church",
+      "city": "Lenexa",
+      "state": "KS",
+      "preacher": "Chris Oswald",
+      "title": "Isaiah 2:1-4",
+      "ref": "Isaiah 2:1-4",
+      "url": "/ProvidenceLenexa/sermons/isaiah-2-1-4-2026-11-22.html",
+      "lines": [
+        {
+          "text": "God's purpose for his people has always been that they would proclaim his glory.",
+          "anchor": "unit-6"
+        },
+        {
+          "text": "The more serious you get about your sin, the sweeter the Savior seems, and the more glorious the gospel itself seems.",
+          "anchor": "unit-24"
+        },
+        {
+          "text": "There is something about Isaiah that will absolutely destroy any concept of cheap grace you have.",
+          "anchor": "unit-12"
+        },
+        {
+          "text": "My sin, my lack of holiness has disqualified me from fulfilling that purpose that God created me to fulfill.",
+          "anchor": "unit-13"
+        }
+      ],
+      "external": [
+        {
+          "text": "live a life that leads to why",
+          "author": "Early 2000s Christian phrase",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-15",
+          "excerpt": false
+        },
+        {
+          "text": "the greatest need of my people is my personal holiness",
+          "author": "Robert Murray M'Cheyne",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-18",
+          "excerpt": false
+        },
+        {
+          "text": "remember, you are God's sword, his instrument. In great measure, according to the purity and perfection of the instrument, will be success.",
+          "author": "Robert Murray M'Cheyne",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-18",
+          "excerpt": false
+        },
+        {
+          "text": "it is easier to decry the thousand sins from the outside than to mortify one sin on the inside",
+          "author": "John Flavel",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-20",
+          "excerpt": false
+        },
+        {
+          "text": "Your own soul is your first and greatest care. Seek advance of personal holiness. It's not great talents God blesses so much as great likeness to Jesus. A holy minister is an awful weapon in the hand of God. A word spoken by you when your conscience is clear and your heart full of God's Spirit is worth 10,000 words spoken in unbelief and sin.",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-20",
+          "excerpt": false
+        },
+        {
+          "text": "but inhabiting Greek as well as barbarian cities, describing Christians, according as the lot of each of them has determined, and following the customs of the natives in respect to clothing, food, and the rest of their ordinary conduct, they display to us their wonderful and confessedly striking method of life. They dwell in their own countries, but simply as sojourners. As citizens, they share in all things with others, and yet endure all things as if foreigners. Every foreign land is to them as their native country, and every land of their birth as a land of strangers. They marry as do all others, they beget children, but they do not destroy their offspring. They have a common table, but not a common bed. They are in the flesh, but they do not live after the flesh. They pass their days on earth, but they are citizens of heaven. They obey the prescribed laws and at the same time surpass the laws by their lives. They love all men and are persecuted by all. They are unknown and condemned, but they are put to death and restored to life. They are poor, yet they make many rich. They are in lack of all things and yet abound in all. They are dishonored, and yet in their very dishonor are glorified. They are evil spoken of and yet are justified. They are reviled and blessed. They are insulted and repay the insult with honor. They do good yet are punished as evildoers. When punished, they rejoice as if quickened into life. They are assailed by the Jews as foreigners and persecuted by the Greeks. Yet those who hate them are unable to assign any reason for their hatred.",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "one of my favorite ancient letters is from the 2nd century to Diognetus",
+          "anchor": "unit-15",
+          "excerpt": false
+        },
+        {
+          "text": "no discipline seems pleasant, at the time, seems painful at the time, but in the end yields a fruitful harvest.",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "the Bible says",
+          "anchor": "unit-21",
+          "excerpt": false
+        }
+      ],
+      "short": "Providence · Lenexa"
+    },
     {
       "church": "Grace Life Church",
       "city": "Hastings",
