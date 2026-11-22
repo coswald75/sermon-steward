@@ -3,57 +3,66 @@
   "region": "/SGchurch/MidwestNorthwest",
   "region_name": "Sovereign Grace Midwest/Northwest",
   "feature": {
-    "text": "When Christ is your life, you're not smaller, you're safer.",
-    "preacher": "Chad Haygood",
-    "church": "Grace Life Church"
+    "text": "You want the Christian life in just a handful of words? Here it is: like Jesus, with Jesus, worshiping Jesus forever.",
+    "preacher": "Rick Gamache",
+    "church": "Cornerstone Community Church"
   },
   "sermons": [
     {
-      "church": "Cornerstone Community Church",
-      "city": "Burnsville",
-      "state": "MN",
-      "preacher": "Rick Gamache",
-      "title": "God Is For Us!",
-      "ref": "Romans 8:28-39",
-      "url": "/SGchurch/CornerstoneBurnsville/sermons/god-is-for-us-romans-8-28-39-2026-11-22.html",
+      "church": "Emmaus Road Church",
+      "city": "Bozeman",
+      "state": "MT",
+      "preacher": "Ron Boomsma",
+      "title": "A Gospel for All",
+      "ref": "Acts 9:32-11:18",
+      "url": "/SGchurch/EmmausRoadBozeman/sermons/acts-10-a-gospel-for-all-2026-11-22.html",
       "lines": [
         {
-          "text": "Everything in the life of God's people serves to make us more like Jesus, and everything serves to get us to glory, the glory we will share with Jesus when our adoption by God is made final and we inherit the newly glorified heaven and earth.",
-          "anchor": "unit-7"
+          "text": "I am not saved because I kept the dietary laws. I am not saved because I kept myself from unclean food. I am saved by faith in what Christ has done for me and no other reason.",
+          "anchor": "unit-20"
         },
         {
-          "text": "God is for us. God is for us. God is for you, Christian. That's not only the whole point of our verse this morning, That's the whole point of Romans chapter 8. In fact, it's the whole point of this entire Bible.",
-          "anchor": "unit-17"
+          "text": "God has a plan for his grace in you to move beyond you to others, and that he's already at work preparing others to hear and preparing you to speak.",
+          "anchor": "unit-4"
         },
         {
-          "text": "And that unbroken, unbreakable chain— foreknown, predestined, called, justified, glorified— is the foundation of the promise that all things work together for good.",
+          "text": "God prepares hearers. God prepares messengers. And then when the messenger and the hearers come together, it's God that shows up. It's God that shows up and does the work.",
+          "anchor": "unit-27"
+        },
+        {
+          "text": "He needed this deeper understanding of the gospel. He needed to understand the reality of the gospel, and he needed to understand that he was in no position to call anybody else unclean.",
+          "anchor": "unit-22"
+        },
+        {
+          "text": "God is saving the worst. God is saving the good people. And both good and the bad need to be saved. And both get saved in the same way.",
+          "anchor": "unit-28"
+        },
+        {
+          "text": "God prepares the hearers. The point is you and I get to come and be a part of something that God is already doing in people's lives. This is the point of the first point, that you and I would understand this. We are stepping into something that God is already doing.",
           "anchor": "unit-15"
-        },
-        {
-          "text": "You want the Christian life in just a handful of words? Here it is: like Jesus, with Jesus, worshiping Jesus forever.",
-          "anchor": "unit-10"
-        },
-        {
-          "text": "It's so huge, it's just, it's sweeping in its scope. Its scope, and it's weighty. It's heavy with potential to change the way we live and the way we think and the way we feel, and to do that every single day.",
-          "anchor": "unit-2"
-        },
-        {
-          "text": "Every good and eternal thing was accomplished on that cross. All of it. Satan and his minions defeated, our ransom paid, forgiveness purchased, justification secured, a way to God forged, wrath averted, freedom from slavery to sin, Adoption into God's family, death destroyed, eternal life guaranteed, heaven's gates open, glorification forever with every spiritual blessing thrown in.",
-          "anchor": "unit-21"
         }
       ],
       "external": [
         {
-          "text": "it was not because you were more in number than any other people that the Lord set his love on you and chose you, for you were the fewest of all people. Now here it is, verse 8, but it is because the Lord loves you",
-          "author": null,
+          "text": "instead of symbolizing Israel's pollution along with the Gentiles, as Ezekiel's unclean diet was to do, Peter's diet was to symbolize Gentiles' purification along with Israel. The command that shocked Ezekiel announced the defilement and rejection of Israel, but the command that shocked Peter announced the cleansing and reception of the Gentiles.",
+          "author": "Dennis Johnson",
           "work": null,
-          "attributed": false,
-          "as_said": "Deuteronomy 7:7-8",
-          "anchor": "unit-9",
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-18",
+          "excerpt": false
+        },
+        {
+          "text": "the clean and the unclean provisions of the law were temporary, designed to keep Israel a holy and distinct people until the time when Jews and Gentiles could receive the forgiveness of sins and sanctification on the same basis, through faith in in Christ.",
+          "author": "David Peterson",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-19",
           "excerpt": false
         }
       ],
-      "short": "Cornerstone · Burnsville"
+      "short": "Emmaus Rd · Bozeman"
     },
     {
       "church": "Providence Community Church",
@@ -147,6 +156,53 @@
         }
       ],
       "short": "Providence · Lenexa"
+    },
+    {
+      "church": "Cornerstone Community Church",
+      "city": "Burnsville",
+      "state": "MN",
+      "preacher": "Rick Gamache",
+      "title": "God Is For Us!",
+      "ref": "Romans 8:28-39",
+      "url": "/SGchurch/CornerstoneBurnsville/sermons/god-is-for-us-romans-8-28-39-2026-11-22.html",
+      "lines": [
+        {
+          "text": "Everything in the life of God's people serves to make us more like Jesus, and everything serves to get us to glory, the glory we will share with Jesus when our adoption by God is made final and we inherit the newly glorified heaven and earth.",
+          "anchor": "unit-7"
+        },
+        {
+          "text": "God is for us. God is for us. God is for you, Christian. That's not only the whole point of our verse this morning, That's the whole point of Romans chapter 8. In fact, it's the whole point of this entire Bible.",
+          "anchor": "unit-17"
+        },
+        {
+          "text": "And that unbroken, unbreakable chain— foreknown, predestined, called, justified, glorified— is the foundation of the promise that all things work together for good.",
+          "anchor": "unit-15"
+        },
+        {
+          "text": "You want the Christian life in just a handful of words? Here it is: like Jesus, with Jesus, worshiping Jesus forever.",
+          "anchor": "unit-10"
+        },
+        {
+          "text": "It's so huge, it's just, it's sweeping in its scope. Its scope, and it's weighty. It's heavy with potential to change the way we live and the way we think and the way we feel, and to do that every single day.",
+          "anchor": "unit-2"
+        },
+        {
+          "text": "Every good and eternal thing was accomplished on that cross. All of it. Satan and his minions defeated, our ransom paid, forgiveness purchased, justification secured, a way to God forged, wrath averted, freedom from slavery to sin, Adoption into God's family, death destroyed, eternal life guaranteed, heaven's gates open, glorification forever with every spiritual blessing thrown in.",
+          "anchor": "unit-21"
+        }
+      ],
+      "external": [
+        {
+          "text": "it was not because you were more in number than any other people that the Lord set his love on you and chose you, for you were the fewest of all people. Now here it is, verse 8, but it is because the Lord loves you",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "Deuteronomy 7:7-8",
+          "anchor": "unit-9",
+          "excerpt": false
+        }
+      ],
+      "short": "Cornerstone · Burnsville"
     },
     {
       "church": "Grace Life Church",
