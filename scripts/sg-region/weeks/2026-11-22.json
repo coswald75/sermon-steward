@@ -3,75 +3,47 @@
   "region": "/SGchurch/MidwestNorthwest",
   "region_name": "Sovereign Grace Midwest/Northwest",
   "feature": {
-    "text": "You want the Christian life in just a handful of words? Here it is: like Jesus, with Jesus, worshiping Jesus forever.",
-    "preacher": "Rick Gamache",
-    "church": "Cornerstone Community Church"
+    "text": "The more serious you get about your sin, the sweeter the Savior seems, and the more glorious the gospel itself seems.",
+    "preacher": "Chris Oswald",
+    "church": "Providence Community Church"
   },
   "sermons": [
     {
-      "church": "Center Church of Star",
-      "city": "Star",
-      "state": "ID",
-      "preacher": "Jeff Palen",
-      "title": "Justified by Faith: The End of Boasting",
-      "ref": "Romans 3:21-31",
-      "url": "/SGchurch/CenterChurchStar/sermons/justified-by-faith-the-end-of-boasting-2026-11-22.html",
+      "church": "Cross of Grace Church",
+      "city": "Chaska",
+      "state": "MN",
+      "preacher": "Dan Birkholz",
+      "title": "Ruth Review",
+      "ref": "Ruth 1:1-4:22",
+      "url": "/SGchurch/CrossOfGraceChaska/sermons/ruth-review-ruth-1-1-4-22-2026-11-22.html",
       "lines": [
         {
-          "text": "Faith is confidence that nothing can be earned, purchased, or acquired. Faith is confidence that the gift is ours. Faith is confidence that it is really ours because the one who gave it has guaranteed it.",
-          "anchor": "unit-22"
+          "text": "We are at war. The enemy is a real foe. He is an active presence.",
+          "anchor": "unit-6"
         },
         {
-          "text": "It is grace that Because we don't deserve it. It is grace because we don't deserve it, and it is a gift because we could never obtain it.",
-          "anchor": "unit-31"
-        },
-        {
-          "text": "That is why Paul says all have sinned and fallen short of the glory of God, so that it is evident, that it is crystal clear, that I was never, ever, ever having a chance at getting called right before God on my Our boasting was a joke.",
-          "anchor": "unit-21"
-        },
-        {
-          "text": "They no longer stand being able to compare themselves, building confidence in their stature. They stand realizing that they should not be standing at all, but that they do.",
+          "text": "We are best given to others when we are most fully given to God.",
           "anchor": "unit-19"
         },
         {
-          "text": "Paul is saying very clearly, abruptly even, that our boasting in ourselves, our confidence in ourselves, in what we know and what we do, has no legs.",
-          "anchor": "unit-13"
+          "text": "God was providentially active in the worst of circumstances but with the aim to effect blessing upon future generations.",
+          "anchor": "unit-22"
         },
         {
-          "text": "Because if we're not careful, too soon this will all just normalize and we'll forget and we'll take it for granted. And we won't have the grace of being able to hold the familiar as precious as we do now.",
-          "anchor": "unit-6"
+          "text": "Is he everything to you? If he is, you will be a good friend to others.",
+          "anchor": "unit-20"
+        },
+        {
+          "text": "If by God's grace we would embody these principles, just know that we will frustrate hell, man.",
+          "anchor": "unit-14"
+        },
+        {
+          "text": "God uses one generation's faithfulness to bless future generations. That's what he's done here. That's what he intends to do here.",
+          "anchor": "unit-23"
         }
       ],
-      "external": [
-        {
-          "text": "James McPherson was justified at 8 o'clock this morning.",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "someone he quoted",
-          "anchor": "unit-30",
-          "excerpt": false
-        },
-        {
-          "text": "Hear, O Israel, the Lord our God, the Lord is one. You shall love the Lord your God with all your heart, and with all your soul and with all your might.",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "biblical text, excluded per instructions",
-          "anchor": "unit-26",
-          "excerpt": false
-        },
-        {
-          "text": "For I am not ashamed of the gospel, for it, it is the power of God for salvation to everyone who believes. To the Jew first and also to the Greek, for in it the righteousness of God is revealed, for from faith for faith, as it is written. May it be true of us, the righteous shall live by faith.",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "biblical text, excluded per instructions",
-          "anchor": "unit-34",
-          "excerpt": false
-        }
-      ],
-      "short": "Center Church · Star"
+      "external": [],
+      "short": "Cross of Grace · Chaska"
     },
     {
       "church": "Providence Community Church",
@@ -165,6 +137,71 @@
         }
       ],
       "short": "Providence · Lenexa"
+    },
+    {
+      "church": "Center Church of Star",
+      "city": "Star",
+      "state": "ID",
+      "preacher": "Jeff Palen",
+      "title": "Justified by Faith: The End of Boasting",
+      "ref": "Romans 3:21-31",
+      "url": "/SGchurch/CenterChurchStar/sermons/justified-by-faith-the-end-of-boasting-2026-11-22.html",
+      "lines": [
+        {
+          "text": "Faith is confidence that nothing can be earned, purchased, or acquired. Faith is confidence that the gift is ours. Faith is confidence that it is really ours because the one who gave it has guaranteed it.",
+          "anchor": "unit-22"
+        },
+        {
+          "text": "It is grace that Because we don't deserve it. It is grace because we don't deserve it, and it is a gift because we could never obtain it.",
+          "anchor": "unit-31"
+        },
+        {
+          "text": "That is why Paul says all have sinned and fallen short of the glory of God, so that it is evident, that it is crystal clear, that I was never, ever, ever having a chance at getting called right before God on my Our boasting was a joke.",
+          "anchor": "unit-21"
+        },
+        {
+          "text": "They no longer stand being able to compare themselves, building confidence in their stature. They stand realizing that they should not be standing at all, but that they do.",
+          "anchor": "unit-19"
+        },
+        {
+          "text": "Paul is saying very clearly, abruptly even, that our boasting in ourselves, our confidence in ourselves, in what we know and what we do, has no legs.",
+          "anchor": "unit-13"
+        },
+        {
+          "text": "Because if we're not careful, too soon this will all just normalize and we'll forget and we'll take it for granted. And we won't have the grace of being able to hold the familiar as precious as we do now.",
+          "anchor": "unit-6"
+        }
+      ],
+      "external": [
+        {
+          "text": "James McPherson was justified at 8 o'clock this morning.",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-30",
+          "excerpt": false
+        },
+        {
+          "text": "Hear, O Israel, the Lord our God, the Lord is one. You shall love the Lord your God with all your heart, and with all your soul and with all your might.",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "biblical text, excluded per instructions",
+          "anchor": "unit-26",
+          "excerpt": false
+        },
+        {
+          "text": "For I am not ashamed of the gospel, for it, it is the power of God for salvation to everyone who believes. To the Jew first and also to the Greek, for in it the righteousness of God is revealed, for from faith for faith, as it is written. May it be true of us, the righteous shall live by faith.",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "biblical text, excluded per instructions",
+          "anchor": "unit-34",
+          "excerpt": false
+        }
+      ],
+      "short": "Center Church · Star"
     },
     {
       "church": "Cornerstone Community Church",
