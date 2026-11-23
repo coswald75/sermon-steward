@@ -9,41 +9,69 @@
   },
   "sermons": [
     {
-      "church": "Cross of Grace Church",
-      "city": "Chaska",
-      "state": "MN",
-      "preacher": "Dan Birkholz",
-      "title": "Ruth Review",
-      "ref": "Ruth 1:1-4:22",
-      "url": "/SGchurch/CrossOfGraceChaska/sermons/ruth-review-ruth-1-1-4-22-2026-11-22.html",
+      "church": "Emmaus Road Church",
+      "city": "Sioux Falls",
+      "state": "SD",
+      "preacher": "Ryan Chase",
+      "title": "Even Now There Is Hope",
+      "ref": "Ezra 10:1-44",
+      "url": "/SGchurch/EmmausRoadSiouxFalls/sermons/even-now-there-is-hope-ezra-10-2026-11-22.html",
       "lines": [
         {
-          "text": "We are at war. The enemy is a real foe. He is an active presence.",
-          "anchor": "unit-6"
+          "text": "He upheld the glory of His justice by punishing the sins of all His people, past, present, and future, in the innocent substitute of His own Son, Jesus Christ.",
+          "anchor": "unit-33"
         },
         {
-          "text": "We are best given to others when we are most fully given to God.",
-          "anchor": "unit-19"
+          "text": "Even now there is hope in spite of this. Those 2 phrases, even now and in spite of this, acknowledge the devastating reality of sin and its consequences.",
+          "anchor": "unit-7"
         },
         {
-          "text": "God was providentially active in the worst of circumstances but with the aim to effect blessing upon future generations.",
-          "anchor": "unit-22"
+          "text": "Nothing reveals more about a person than how he responds to his sins and his sorrows.",
+          "anchor": "unit-1"
         },
         {
-          "text": "Is he everything to you? If he is, you will be a good friend to others.",
-          "anchor": "unit-20"
+          "text": "Sin is the biggest problem. And I say that's hopeful because sin can be confessed. Sin can be forsaken. Better yet, sin can be forgiven.",
+          "anchor": "unit-13"
         },
         {
-          "text": "If by God's grace we would embody these principles, just know that we will frustrate hell, man.",
-          "anchor": "unit-14"
+          "text": "Responsibility is your God-given ability to respond.",
+          "anchor": "unit-15"
         },
         {
-          "text": "God uses one generation's faithfulness to bless future generations. That's what he's done here. That's what he intends to do here.",
-          "anchor": "unit-23"
+          "text": "From a human vantage point, nothing seems less possible to us than change for sinners.",
+          "anchor": "unit-21"
         }
       ],
-      "external": [],
-      "short": "Cross of Grace · Chaska"
+      "external": [
+        {
+          "text": "there is no problem so bad you can't make it worse",
+          "author": "Chris Hadfield",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-1",
+          "excerpt": false
+        },
+        {
+          "text": "nothing reveals more about a person than how he responds to his sins and his sorrows",
+          "author": "Joel Beeke",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-1",
+          "excerpt": false
+        },
+        {
+          "text": "Responsibility is your God-given ability to respond",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-15",
+          "excerpt": false
+        }
+      ],
+      "short": "Emmaus Rd · Sioux Falls"
     },
     {
       "church": "Providence Community Church",
@@ -202,6 +230,43 @@
         }
       ],
       "short": "Center Church · Star"
+    },
+    {
+      "church": "Cross of Grace Church",
+      "city": "Chaska",
+      "state": "MN",
+      "preacher": "Dan Birkholz",
+      "title": "Ruth Review",
+      "ref": "Ruth 1:1-4:22",
+      "url": "/SGchurch/CrossOfGraceChaska/sermons/ruth-review-ruth-1-1-4-22-2026-11-22.html",
+      "lines": [
+        {
+          "text": "We are at war. The enemy is a real foe. He is an active presence.",
+          "anchor": "unit-6"
+        },
+        {
+          "text": "We are best given to others when we are most fully given to God.",
+          "anchor": "unit-19"
+        },
+        {
+          "text": "God was providentially active in the worst of circumstances but with the aim to effect blessing upon future generations.",
+          "anchor": "unit-22"
+        },
+        {
+          "text": "Is he everything to you? If he is, you will be a good friend to others.",
+          "anchor": "unit-20"
+        },
+        {
+          "text": "If by God's grace we would embody these principles, just know that we will frustrate hell, man.",
+          "anchor": "unit-14"
+        },
+        {
+          "text": "God uses one generation's faithfulness to bless future generations. That's what he's done here. That's what he intends to do here.",
+          "anchor": "unit-23"
+        }
+      ],
+      "external": [],
+      "short": "Cross of Grace · Chaska"
     },
     {
       "church": "Cornerstone Community Church",
