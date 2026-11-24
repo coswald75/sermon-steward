@@ -9,71 +9,6 @@
   },
   "sermons": [
     {
-      "church": "Emmaus Road Church",
-      "city": "Sioux Falls",
-      "state": "SD",
-      "preacher": "Ryan Chase",
-      "title": "Even Now There Is Hope",
-      "ref": "Ezra 10:1-44",
-      "url": "/SGchurch/EmmausRoadSiouxFalls/sermons/even-now-there-is-hope-ezra-10-2026-11-22.html",
-      "lines": [
-        {
-          "text": "He upheld the glory of His justice by punishing the sins of all His people, past, present, and future, in the innocent substitute of His own Son, Jesus Christ.",
-          "anchor": "unit-33"
-        },
-        {
-          "text": "Even now there is hope in spite of this. Those 2 phrases, even now and in spite of this, acknowledge the devastating reality of sin and its consequences.",
-          "anchor": "unit-7"
-        },
-        {
-          "text": "Nothing reveals more about a person than how he responds to his sins and his sorrows.",
-          "anchor": "unit-1"
-        },
-        {
-          "text": "Sin is the biggest problem. And I say that's hopeful because sin can be confessed. Sin can be forsaken. Better yet, sin can be forgiven.",
-          "anchor": "unit-13"
-        },
-        {
-          "text": "Responsibility is your God-given ability to respond.",
-          "anchor": "unit-15"
-        },
-        {
-          "text": "From a human vantage point, nothing seems less possible to us than change for sinners.",
-          "anchor": "unit-21"
-        }
-      ],
-      "external": [
-        {
-          "text": "there is no problem so bad you can't make it worse",
-          "author": "Chris Hadfield",
-          "work": null,
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-1",
-          "excerpt": false
-        },
-        {
-          "text": "nothing reveals more about a person than how he responds to his sins and his sorrows",
-          "author": "Joel Beeke",
-          "work": null,
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-1",
-          "excerpt": false
-        },
-        {
-          "text": "Responsibility is your God-given ability to respond",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "someone he quoted",
-          "anchor": "unit-15",
-          "excerpt": false
-        }
-      ],
-      "short": "Emmaus Rd · Sioux Falls"
-    },
-    {
       "church": "Providence Community Church",
       "city": "Lenexa",
       "state": "KS",
@@ -93,10 +28,6 @@
         {
           "text": "There is something about Isaiah that will absolutely destroy any concept of cheap grace you have.",
           "anchor": "unit-12"
-        },
-        {
-          "text": "My sin, my lack of holiness has disqualified me from fulfilling that purpose that God created me to fulfill.",
-          "anchor": "unit-13"
         }
       ],
       "external": [
@@ -155,84 +86,28 @@
           "excerpt": false
         },
         {
-          "text": "no discipline seems pleasant, at the time, seems painful at the time, but in the end yields a fruitful harvest.",
+          "text": "no discipline seems pleasant, at the time, seems painful at the time, but in the end yields a fruitful harvest",
           "author": null,
           "work": null,
           "attributed": false,
           "as_said": "the Bible says",
           "anchor": "unit-21",
           "excerpt": false
+        },
+        {
+          "text": "I am the chief of sinners, but grace was given to me so that through me, God might display his perfect patience to other sinners",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "Paul",
+          "anchor": "unit-27",
+          "excerpt": false
         }
       ],
       "short": "Providence · Lenexa"
     },
     {
-      "church": "Center Church of Star",
-      "city": "Star",
-      "state": "ID",
-      "preacher": "Jeff Palen",
-      "title": "Justified by Faith: The End of Boasting",
-      "ref": "Romans 3:21-31",
-      "url": "/SGchurch/CenterChurchStar/sermons/justified-by-faith-the-end-of-boasting-2026-11-22.html",
-      "lines": [
-        {
-          "text": "Faith is confidence that nothing can be earned, purchased, or acquired. Faith is confidence that the gift is ours. Faith is confidence that it is really ours because the one who gave it has guaranteed it.",
-          "anchor": "unit-22"
-        },
-        {
-          "text": "It is grace that Because we don't deserve it. It is grace because we don't deserve it, and it is a gift because we could never obtain it.",
-          "anchor": "unit-31"
-        },
-        {
-          "text": "That is why Paul says all have sinned and fallen short of the glory of God, so that it is evident, that it is crystal clear, that I was never, ever, ever having a chance at getting called right before God on my Our boasting was a joke.",
-          "anchor": "unit-21"
-        },
-        {
-          "text": "They no longer stand being able to compare themselves, building confidence in their stature. They stand realizing that they should not be standing at all, but that they do.",
-          "anchor": "unit-19"
-        },
-        {
-          "text": "Paul is saying very clearly, abruptly even, that our boasting in ourselves, our confidence in ourselves, in what we know and what we do, has no legs.",
-          "anchor": "unit-13"
-        },
-        {
-          "text": "Because if we're not careful, too soon this will all just normalize and we'll forget and we'll take it for granted. And we won't have the grace of being able to hold the familiar as precious as we do now.",
-          "anchor": "unit-6"
-        }
-      ],
-      "external": [
-        {
-          "text": "James McPherson was justified at 8 o'clock this morning.",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "someone he quoted",
-          "anchor": "unit-30",
-          "excerpt": false
-        },
-        {
-          "text": "Hear, O Israel, the Lord our God, the Lord is one. You shall love the Lord your God with all your heart, and with all your soul and with all your might.",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "biblical text, excluded per instructions",
-          "anchor": "unit-26",
-          "excerpt": false
-        },
-        {
-          "text": "For I am not ashamed of the gospel, for it, it is the power of God for salvation to everyone who believes. To the Jew first and also to the Greek, for in it the righteousness of God is revealed, for from faith for faith, as it is written. May it be true of us, the righteous shall live by faith.",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "biblical text, excluded per instructions",
-          "anchor": "unit-34",
-          "excerpt": false
-        }
-      ],
-      "short": "Center Church · Star"
-    },
-    {
-      "church": "Cross of Grace Church",
+      "church": "Cross of Grace Church Chaska",
       "city": "Chaska",
       "state": "MN",
       "preacher": "Dan Birkholz",
@@ -253,15 +128,15 @@
           "anchor": "unit-22"
         },
         {
-          "text": "Is he everything to you? If he is, you will be a good friend to others.",
-          "anchor": "unit-20"
-        },
-        {
           "text": "If by God's grace we would embody these principles, just know that we will frustrate hell, man.",
           "anchor": "unit-14"
         },
         {
-          "text": "God uses one generation's faithfulness to bless future generations. That's what he's done here. That's what he intends to do here.",
+          "text": "Is he everything to you? If he is, you will be a good friend to others.",
+          "anchor": "unit-20"
+        },
+        {
+          "text": "God uses one generation's faithfulness to bless future generations.",
           "anchor": "unit-23"
         }
       ],
@@ -278,37 +153,46 @@
       "url": "/SGchurch/CornerstoneBurnsville/sermons/god-is-for-us-romans-8-28-39-2026-11-22.html",
       "lines": [
         {
-          "text": "Everything in the life of God's people serves to make us more like Jesus, and everything serves to get us to glory, the glory we will share with Jesus when our adoption by God is made final and we inherit the newly glorified heaven and earth.",
+          "text": "It's his plan. It's his will. He ordained it, and it all happens for our good, just the way he intends.",
           "anchor": "unit-7"
         },
         {
-          "text": "God is for us. God is for us. God is for you, Christian. That's not only the whole point of our verse this morning, That's the whole point of Romans chapter 8. In fact, it's the whole point of this entire Bible.",
+          "text": "God is for us. God is for us. God is for you, Christian.",
           "anchor": "unit-17"
         },
         {
-          "text": "And that unbroken, unbreakable chain— foreknown, predestined, called, justified, glorified— is the foundation of the promise that all things work together for good.",
+          "text": "No one drops out of these verses. No one falls through the cracks. There are no cracks in this glorious foundation of salvation.",
           "anchor": "unit-15"
         },
         {
-          "text": "You want the Christian life in just a handful of words? Here it is: like Jesus, with Jesus, worshiping Jesus forever.",
+          "text": "Here it is: like Jesus, with Jesus, worshiping Jesus forever.",
           "anchor": "unit-10"
+        },
+        {
+          "text": "Every good and eternal thing was accomplished on that cross. All of it.",
+          "anchor": "unit-21"
         },
         {
           "text": "It's so huge, it's just, it's sweeping in its scope. Its scope, and it's weighty. It's heavy with potential to change the way we live and the way we think and the way we feel, and to do that every single day.",
           "anchor": "unit-2"
-        },
-        {
-          "text": "Every good and eternal thing was accomplished on that cross. All of it. Satan and his minions defeated, our ransom paid, forgiveness purchased, justification secured, a way to God forged, wrath averted, freedom from slavery to sin, Adoption into God's family, death destroyed, eternal life guaranteed, heaven's gates open, glorification forever with every spiritual blessing thrown in.",
-          "anchor": "unit-21"
         }
       ],
       "external": [
         {
-          "text": "it was not because you were more in number than any other people that the Lord set his love on you and chose you, for you were the fewest of all people. Now here it is, verse 8, but it is because the Lord loves you",
+          "text": "it was not because you were more in number than any other people that the Lord set his love on you and chose you, for you were the fewest of all people",
           "author": null,
           "work": null,
           "attributed": false,
-          "as_said": "Deuteronomy 7:7-8",
+          "as_said": "Deuteronomy 7:7",
+          "anchor": "unit-9",
+          "excerpt": false
+        },
+        {
+          "text": "but it is because the Lord loves you",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "Deuteronomy 7:8",
           "anchor": "unit-9",
           "excerpt": false
         }
@@ -427,6 +311,80 @@
     },
     {
       "church": "Emmaus Road Church",
+      "city": "Sioux Falls",
+      "state": "SD",
+      "preacher": "Ryan Chase",
+      "title": "Even Now There Is Hope",
+      "ref": "Ezra 10:1-44",
+      "url": "/SGchurch/EmmausRoadSiouxFalls/sermons/even-now-there-is-hope-ezra-10-2026-11-22.html",
+      "lines": [
+        {
+          "text": "He upheld the glory of His justice by punishing the sins of all His people, past, present, and future, in the innocent substitute of His own Son, Jesus Christ.",
+          "anchor": "unit-33"
+        },
+        {
+          "text": "Even now there is hope in spite of this. Those 2 phrases, even now and in spite of this, acknowledge the devastating reality of sin and its consequences.",
+          "anchor": "unit-7"
+        },
+        {
+          "text": "Sin is the biggest problem. And I say that's hopeful because sin can be confessed. Sin can be forsaken. Better yet, sin can be forgiven.",
+          "anchor": "unit-13"
+        },
+        {
+          "text": "Repentance without reform, without change, is fruitless. But at the same time, efforts at outward reform, outward external change without godly repentance is rootless.",
+          "anchor": "unit-5"
+        },
+        {
+          "text": "Responsibility is your God-given ability to respond. The question is, will you respond in godly or ungodly ways?",
+          "anchor": "unit-15"
+        },
+        {
+          "text": "Nothing reveals more about a person than how he responds to his sins and his sorrows.",
+          "anchor": "unit-1"
+        }
+      ],
+      "external": [
+        {
+          "text": "there is no problem so bad you can't make it worse",
+          "author": "Chris Hadfield",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-1",
+          "excerpt": false
+        },
+        {
+          "text": "nothing reveals more about a person than how he responds to his sins and his sorrows",
+          "author": "Joel Beeke",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-1",
+          "excerpt": false
+        },
+        {
+          "text": "Responsibility is your God-given ability to respond",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-15",
+          "excerpt": false
+        },
+        {
+          "text": "He removes our transgressions from us as far as the east is from the west",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-31",
+          "excerpt": false
+        }
+      ],
+      "short": "Emmaus Rd · Sioux Falls"
+    },
+    {
+      "church": "Emmaus Road Church",
       "city": "Bozeman",
       "state": "MT",
       "preacher": "Ron Boomsma",
@@ -443,19 +401,15 @@
           "anchor": "unit-4"
         },
         {
+          "text": "He needed to understand the reality of the gospel, and he needed to understand that he was in no position to call anybody else unclean.",
+          "anchor": "unit-22"
+        },
+        {
           "text": "God prepares hearers. God prepares messengers. And then when the messenger and the hearers come together, it's God that shows up. It's God that shows up and does the work.",
           "anchor": "unit-27"
         },
         {
-          "text": "He needed this deeper understanding of the gospel. He needed to understand the reality of the gospel, and he needed to understand that he was in no position to call anybody else unclean.",
-          "anchor": "unit-22"
-        },
-        {
-          "text": "God is saving the worst. God is saving the good people. And both good and the bad need to be saved. And both get saved in the same way.",
-          "anchor": "unit-28"
-        },
-        {
-          "text": "God prepares the hearers. The point is you and I get to come and be a part of something that God is already doing in people's lives. This is the point of the first point, that you and I would understand this. We are stepping into something that God is already doing.",
+          "text": "God is already doing something. He's just moving you in at a certain point in time to participate in what he is doing in a person's life.",
           "anchor": "unit-15"
         }
       ],
@@ -480,6 +434,127 @@
         }
       ],
       "short": "Emmaus Rd · Bozeman"
+    },
+    {
+      "church": "Center Church of Star",
+      "city": "Star",
+      "state": "ID",
+      "preacher": "Jeff Palen",
+      "title": "Justified by Faith: The End of Boasting",
+      "ref": "Romans 3:21-31",
+      "url": "/SGchurch/CenterChurchStar/sermons/justified-by-faith-the-end-of-boasting-2026-11-22.html",
+      "lines": [
+        {
+          "text": "Faith is confidence that nothing can be earned, purchased, or acquired. Faith is confidence that the gift is ours. Faith is confidence that it is really ours because the one who gave it has guaranteed it.",
+          "anchor": "unit-22"
+        },
+        {
+          "text": "It is grace because we don't deserve it, and it is a gift because we could never obtain it.",
+          "anchor": "unit-31"
+        },
+        {
+          "text": "They no longer stand being able to compare themselves, building confidence in their stature. They stand realizing that they should not be standing at all, but that they do.",
+          "anchor": "unit-19"
+        },
+        {
+          "text": "What we don't realize is that our high value on confidence is really just faith in ourselves. It's just faith in ourselves.",
+          "anchor": "unit-30"
+        },
+        {
+          "text": "Paul is saying very clearly, abruptly even, that our boasting in ourselves, our confidence in ourselves, in what we know and what we do, has no legs.",
+          "anchor": "unit-13"
+        },
+        {
+          "text": "Because if we're not careful, too soon this will all just normalize and we'll forget and we'll take it for granted. And we won't have the grace of being able to hold the familiar as precious as we do now.",
+          "anchor": "unit-6"
+        }
+      ],
+      "external": [
+        {
+          "text": "James McPherson was justified at 8 o'clock this morning.",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-30",
+          "excerpt": false
+        },
+        {
+          "text": "Hear, O Israel, the Lord our God, the Lord is one. You shall love the Lord your God with all your heart, and with all your soul and with all your might.",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-26",
+          "excerpt": false
+        },
+        {
+          "text": "For I am not ashamed of the gospel, for it, it is the power of God for salvation to everyone who believes. To the Jew first and also to the Greek, for in it the righteousness of God is revealed, for from faith for faith, as it is written. May it be true of us, the righteous shall live by faith.",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-34",
+          "excerpt": false
+        }
+      ],
+      "short": "Center Church · Star"
+    },
+    {
+      "church": "Covenant Life Fellowship",
+      "city": "Roseburg",
+      "state": "OR",
+      "preacher": "Robert Sidlow",
+      "title": "Nov 22 2026",
+      "ref": "Romans 2:6-11",
+      "url": "/SGchurch/CovenantLifeRoseburg/sermons/nov-22-2026-2026-11-22.html",
+      "lines": [
+        {
+          "text": "A person's works, how he lives day to day, is the truest expression of who they are in the depths of their heart.",
+          "anchor": "unit-14"
+        },
+        {
+          "text": "God will judge you by your works because how you actually live accurately reflects whether the gospel has truly transformed your hearts.",
+          "anchor": "unit-11"
+        },
+        {
+          "text": "The life that you live today is a direct reflection of your heart.",
+          "anchor": "unit-26"
+        },
+        {
+          "text": "God is far, God is far more interested in what's going on in your heart than he is about anything else.",
+          "anchor": "unit-15"
+        },
+        {
+          "text": "Greater knowledge brings greater responsibility.",
+          "anchor": "unit-29"
+        },
+        {
+          "text": "God judges all people according to their works, because their works are the objective evidence of whether salvation has truly transformed their hearts.",
+          "anchor": "unit-6"
+        }
+      ],
+      "external": [
+        {
+          "text": "the moralist is condemned because they continue in their sin and do not respond to God's kindness with repentance",
+          "author": "Andrew Crawford",
+          "work": "Previous sermon on Romans 2:1-5",
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-0",
+          "excerpt": false
+        },
+        {
+          "text": "the greatest difficulty in conversion is to win the heart to God, and the greatest difficulty after conversion is to keep the heart with God",
+          "author": "John Flavel",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-27",
+          "excerpt": false
+        }
+      ],
+      "short": "Covenant Life · Roseburg"
     }
   ]
 }
