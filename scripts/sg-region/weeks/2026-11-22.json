@@ -9,71 +9,6 @@
   },
   "sermons": [
     {
-      "church": "Emmaus Road Church",
-      "city": "Sioux Falls",
-      "state": "SD",
-      "preacher": "Ryan Chase",
-      "title": "Even Now There Is Hope",
-      "ref": "Ezra 10:1-44",
-      "url": "/SGchurch/EmmausRoadSiouxFalls/sermons/even-now-there-is-hope-ezra-10-2026-11-22.html",
-      "lines": [
-        {
-          "text": "He upheld the glory of His justice by punishing the sins of all His people, past, present, and future, in the innocent substitute of His own Son, Jesus Christ.",
-          "anchor": "unit-33"
-        },
-        {
-          "text": "Even now there is hope in spite of this. Those 2 phrases, even now and in spite of this, acknowledge the devastating reality of sin and its consequences.",
-          "anchor": "unit-7"
-        },
-        {
-          "text": "Nothing reveals more about a person than how he responds to his sins and his sorrows.",
-          "anchor": "unit-1"
-        },
-        {
-          "text": "Sin is the biggest problem. And I say that's hopeful because sin can be confessed. Sin can be forsaken. Better yet, sin can be forgiven.",
-          "anchor": "unit-13"
-        },
-        {
-          "text": "Responsibility is your God-given ability to respond.",
-          "anchor": "unit-15"
-        },
-        {
-          "text": "From a human vantage point, nothing seems less possible to us than change for sinners.",
-          "anchor": "unit-21"
-        }
-      ],
-      "external": [
-        {
-          "text": "there is no problem so bad you can't make it worse",
-          "author": "Chris Hadfield",
-          "work": null,
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-1",
-          "excerpt": false
-        },
-        {
-          "text": "nothing reveals more about a person than how he responds to his sins and his sorrows",
-          "author": "Joel Beeke",
-          "work": null,
-          "attributed": true,
-          "as_said": null,
-          "anchor": "unit-1",
-          "excerpt": false
-        },
-        {
-          "text": "Responsibility is your God-given ability to respond",
-          "author": null,
-          "work": null,
-          "attributed": false,
-          "as_said": "someone he quoted",
-          "anchor": "unit-15",
-          "excerpt": false
-        }
-      ],
-      "short": "Emmaus Rd · Sioux Falls"
-    },
-    {
       "church": "Providence Community Church",
       "city": "Lenexa",
       "state": "KS",
@@ -230,6 +165,71 @@
         }
       ],
       "short": "Center Church · Star"
+    },
+    {
+      "church": "Emmaus Road Church",
+      "city": "Sioux Falls",
+      "state": "SD",
+      "preacher": "Ryan Chase",
+      "title": "Even Now There Is Hope",
+      "ref": "Ezra 10:1-44",
+      "url": "/SGchurch/EmmausRoadSiouxFalls/sermons/even-now-there-is-hope-ezra-10-2026-11-22.html",
+      "lines": [
+        {
+          "text": "He upheld the glory of His justice by punishing the sins of all His people, past, present, and future, in the innocent substitute of His own Son, Jesus Christ.",
+          "anchor": "unit-33"
+        },
+        {
+          "text": "Even now there is hope in spite of this. Those 2 phrases, even now and in spite of this, acknowledge the devastating reality of sin and its consequences.",
+          "anchor": "unit-7"
+        },
+        {
+          "text": "Nothing reveals more about a person than how he responds to his sins and his sorrows.",
+          "anchor": "unit-1"
+        },
+        {
+          "text": "Sin is the biggest problem. And I say that's hopeful because sin can be confessed. Sin can be forsaken. Better yet, sin can be forgiven.",
+          "anchor": "unit-13"
+        },
+        {
+          "text": "Responsibility is your God-given ability to respond.",
+          "anchor": "unit-15"
+        },
+        {
+          "text": "From a human vantage point, nothing seems less possible to us than change for sinners.",
+          "anchor": "unit-21"
+        }
+      ],
+      "external": [
+        {
+          "text": "there is no problem so bad you can't make it worse",
+          "author": "Chris Hadfield",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-1",
+          "excerpt": false
+        },
+        {
+          "text": "nothing reveals more about a person than how he responds to his sins and his sorrows",
+          "author": "Joel Beeke",
+          "work": null,
+          "attributed": true,
+          "as_said": null,
+          "anchor": "unit-1",
+          "excerpt": false
+        },
+        {
+          "text": "Responsibility is your God-given ability to respond",
+          "author": null,
+          "work": null,
+          "attributed": false,
+          "as_said": "someone he quoted",
+          "anchor": "unit-15",
+          "excerpt": false
+        }
+      ],
+      "short": "Emmaus Rd · Sioux Falls"
     },
     {
       "church": "Cross of Grace Church",
